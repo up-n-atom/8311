@@ -10,6 +10,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.footer
+    - announce.dismiss
 extra:
   generator: false
   social:
