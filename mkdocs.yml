@@ -20,6 +20,15 @@ extra:
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - toc:
+    permalink: true
+  - tables
 nav:
   - Home: index.md
   - GPON:
