@@ -30,6 +30,9 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 nav:
   - Home: index.md
   - GPON:
