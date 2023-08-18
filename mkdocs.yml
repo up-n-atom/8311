@@ -30,4 +30,6 @@ nav:
       - BFW:
         - xgs-pon/ont/bfw/wag-d20.md
         - xgs-pon/ont/bfw/was-110i.md
+      - CIG:
+        - xgs-pon/ont/cig/xg-99s.md
 repo_url: https://github.com/up-n-atom/8311
