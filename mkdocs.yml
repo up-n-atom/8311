@@ -3,4 +3,7 @@ theme:
   name: material
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.com/servers/8311-886329492438671420
 repo_url: https://github.com/up-n-atom/8311
