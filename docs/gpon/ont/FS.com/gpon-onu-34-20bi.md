@@ -3,7 +3,7 @@
 
 ## Login Credentials
 
-=== "Telnet / SSH / UART"
+=== "SSH / UART"
     | Username | Password       |
     | -------- | -------------- |
     | ONTUSER  | 7sp!lwUBz1     |
