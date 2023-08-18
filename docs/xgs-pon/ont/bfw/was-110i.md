@@ -1,4 +1,4 @@
-# WAS-110I / XSS
+# WAS-110I
 ![Image of WAS-110I](/img/was-110i.png){ align=center }
 
 ## Login Credentials
