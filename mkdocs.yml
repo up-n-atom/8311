@@ -1,4 +1,6 @@
 site_name: pon.wiki
 theme:
   name: material
+extra:
+  generator: false
 repo_url: https://github.com/up-n-atom/8311
