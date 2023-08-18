@@ -1,9 +1,28 @@
 site_name: pon.wiki
 theme:
   name: material
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
 extra:
   generator: false
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
+nav:
+  - Home: index.md
+  - GPON:
+    - gpon/index.md
+  - XGS-PON:
+    - xgs-pon/index.md
+    - ONT:
+      - BFW:
+        - xgs-pon/ont/bfw/wag-d20.md
+        - xgs-pon/ont/bfw/was-110i.md
 repo_url: https://github.com/up-n-atom/8311
