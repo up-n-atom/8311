@@ -1,6 +1,9 @@
 site_name: pon.wiki
 theme:
   name: material
+  palette:
+    primary: blue
+    accent: blue
   features:
     - navigation.tracking
     - navigation.tabs
