@@ -21,10 +21,10 @@
 ### SSH/UART Login Credentials
 
 === "GPON-ONU-34-20BI"
-    --8<-- "gpon/ont/fs/gpon-onu-34-20bi.md:10:12"
+    --8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:10:12"
 
 === "G-010S-P"
-    --8<-- "gpon/ont/nokia/g-010s-p.md:10:12"
+    --8<-- "docs/gpon/ont/nokia/g-010s-p.md:10:12"
 
 === "MA5671A"
-    --8<-- "gpon/ont/huawei/ma5671a.md:8:10"
+    --8<-- "docs/gpon/ont/huawei/ma5671a.md:8:10"
