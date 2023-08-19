@@ -44,6 +44,7 @@ nav:
         - GPON-ONU-34-20BI: gpon/ont/fs/gpon-onu-34-20bi.md
       - Nokia:
         - G-010S-P: gpon/ont/nokia/g-010s-p.md
+        - G-440G-A: gpon/ont/nokia/g-440g-a.md
       - ODI:
         - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
   - XGS-PON:
