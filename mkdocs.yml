@@ -55,9 +55,17 @@ nav:
   - XGS-PON:
     - xgs-pon/index.md
     - ONT:
+      - Azores Networks:
+        - X1Z1E: xgs-pon/ont/bfw/wag-d20.md
+        - XSS: xgs-pon/ont/bfw/was-110i.md
       - CIG:
         - XG-99S OEM: xgs-pon/ont/cig/xg-99s.md
       - BFW:
         - WAG-D20 OEM: xgs-pon/ont/bfw/wag-d20.md
         - WAS-110I OEM: xgs-pon/ont/bfw/was-110i.md
+      - E.C.I. Networks:
+        - EN-XGSFPP-OMAC: xgs-pon/ont/cig/xg-99s.md
+        - EN-XGSFPP-OMAC-V2: xgs-pon/ont/bfw/was-110i.md
+      - FS:
+        - XGS-ONU-25-20NI: xgs-pon/ont/cig/xg-99s.md
 repo_url: https://github.com/up-n-atom/8311
