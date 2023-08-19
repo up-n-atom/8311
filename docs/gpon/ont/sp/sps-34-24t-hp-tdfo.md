@@ -9,13 +9,12 @@
    | RAM             | 64 MB                |
    | HSGMII          | Yes                  |
    | Optics          | SC/APC               |
-   | IP address      | 192.168.1.10         |
-   | SSH Access      | Yes                  |
-   | SCP Access      | Yes                  |
    | Serial Access   | SFP                  |
    | Serial baud     | 115200               |
    | Serial encoding | 8-N-1                |
-   | Form Factor     | miniONT SFP          |
+   | SSH Access      | Yes                  |
+   | SCP Access      | Yes                  |
+   | IP address      | 192.168.1.10         |
 
 ## Vendor Specific
 
