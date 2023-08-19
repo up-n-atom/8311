@@ -19,6 +19,8 @@ extra:
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
+extra_css:
+  - stylesheets/extra.css
 markdown_extensions:
   - abbr
   - admonition
@@ -37,12 +39,20 @@ nav:
   - Home: index.md
   - GPON:
     - gpon/index.md
+    - ONT:
+      - FS:
+        - GPON-ONU-34-20BI: gpon/ont/fs/gpon-onu-34-20bi.md
+      - Nokia:
+        - G-010S-P: gpon/ont/nokia/g-010s-p.md
+        - G-440G-A: gpon/ont/nokia/g-440g-a.md
+      - ODI:
+        - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
   - XGS-PON:
     - xgs-pon/index.md
     - ONT:
       - BFW:
-        - xgs-pon/ont/bfw/wag-d20.md
-        - xgs-pon/ont/bfw/was-110i.md
+        - WAG-D20 OEM: xgs-pon/ont/bfw/wag-d20.md
+        - WAS-110I OEM: xgs-pon/ont/bfw/was-110i.md
       - CIG:
-        - xgs-pon/ont/cig/xg-99s.md
+        - XG-99S OEM: xgs-pon/ont/cig/xg-99s.md
 repo_url: https://github.com/up-n-atom/8311

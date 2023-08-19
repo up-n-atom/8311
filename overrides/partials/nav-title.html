@@ -1,0 +1,7 @@
+{% if nav_item.title.endswith(' OEM') %}
+  <span class="pon-nav__item--oem">
+    {{ nav_item.title|replace(' OEM', '') }}
+  </span>
+{% else %}
+  {{ nav_item.title }}
+{% endif %}
