@@ -51,7 +51,7 @@ nav:
       - ODI:
         - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
       - Source Photonics:
-        - SPS-34-24T-HP-TDFO: gpon/ont/sp/sps-34-24t-hp-tdfo.md
+        - SPS-34-24T-HP-TDFO OEM: gpon/ont/sp/sps-34-24t-hp-tdfo.md
   - XGS-PON:
     - xgs-pon/index.md
     - ONT:
