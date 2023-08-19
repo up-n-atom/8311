@@ -7,7 +7,6 @@ theme:
   features:
     - navigation.tracking
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.indexes
@@ -30,6 +29,9 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 nav:
   - Home: index.md
   - GPON:
