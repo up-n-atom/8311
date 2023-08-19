@@ -1,5 +1,18 @@
 # WAG-D20
 
+## Login Credentials
+
+### Telnet / UART
+
+| Username | Password    |
+| -------- | ----------- |
+| admin    | ADMIN123!@# |
+| guest    | welcome     |
+| test     | default     |
+
+??? info "Hardcoded Passwords"
+    The `guest` and `test` user passwords are hardcoded in `/usr/bin/cli`.
+
 ## Value-Added Resellers
 
 | Company                                        | Product Number |
