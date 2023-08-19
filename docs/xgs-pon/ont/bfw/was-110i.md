@@ -11,7 +11,7 @@
     !!! warning "Changing Passwords"
         The password length isn't restricted from within the web UI; Passwords longer than 16 characters are sliced.
 
-    ??? note "Password Storage"
+    ??? info "Password Storage"
         The default web UI password is stored in `/ptconf/param_ct.xml`. Modifications from the web UI are stored in
         `/ptconf/usrconfig_conf` and take precedence.
 
