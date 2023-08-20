@@ -4,9 +4,8 @@
 
 ![Image of GPON-ONU-34-20BI](/img/gpon-onu-34-20bi.png){ align=center }
 
-## Login Credentials
-
 <!-- --8<-- [start:credentials] -->
+### Login Credentials
 === "SSH / UART"
     | Username | Password       |
     | -------- | -------------- |
