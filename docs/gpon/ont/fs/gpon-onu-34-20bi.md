@@ -1,11 +1,14 @@
 # GPON-ONU-34-20BI
 
+## Specifications
+
 --8<-- "docs/gpon/ont/sp/sps-34-24t-hp-tdfo.md:specifications"
 
 ![Image of GPON-ONU-34-20BI](/img/gpon-onu-34-20bi.png){ align=center }
 
+## Login Credentials
+
 <!-- --8<-- [start:credentials] -->
-### Login Credentials
 === "SSH / UART"
     | Username | Password       |
     | -------- | -------------- |
