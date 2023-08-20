@@ -33,6 +33,9 @@ markdown_extensions:
   - tables
   - pymdownx.details
   - pymdownx.snippets
+  - pymdownx.striphtml:
+      strip_js_on_attributes: false
+      strip_attributes: ''
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true 
