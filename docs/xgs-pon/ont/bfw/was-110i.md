@@ -7,6 +7,7 @@
     | Username | Password       |
     | -------- | -------------- |
     | admin    | QsCg@7249#5281 |
+    | user     | user1234       |
 
     !!! warning "Changing Passwords"
         The password length isn't restricted from within the web UI; Passwords longer than 16 characters are sliced.
