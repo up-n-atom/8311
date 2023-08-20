@@ -21,20 +21,14 @@
 
 ## Vendor Specific
 
-### G-010S-P
+### Login Credentials
 
-#### Login Credentials
+=== "G-010S-P"
+    --8<-- "docs/gpon/ont/nokia/g-010s-p.md:credentials"
 
---8<-- "docs/gpon/ont/nokia/g-010s-p.md:credentials"
+=== "GPON-ONU-34-20BI"
+    --8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:credentials"
 
-### GPON-ONU-34-20BI
-
-#### Login Credentials
-
---8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:credentials"
-
-### MA5671A
-
-#### Login Credentials
-
---8<-- "docs/gpon/ont/huawei/ma5671a.md:credentials"
+=== "MA5671A"
+    --8<-- "docs/gpon/ont/huawei/ma5671a.md:credentials"
+    
