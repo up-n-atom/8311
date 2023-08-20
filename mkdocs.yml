@@ -44,6 +44,8 @@ nav:
   - GPON:
     - gpon/index.md
     - ONT:
+      - ODI:
+        - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
       - FS:
         - GPON-ONU-34-20BI: gpon/ont/fs/gpon-onu-34-20bi.md
       - Huawei:
@@ -51,16 +53,22 @@ nav:
       - Nokia:
         - G-010S-P: gpon/ont/nokia/g-010s-p.md
         - G-440G-A: gpon/ont/nokia/g-440g-a.md
-      - ODI:
-        - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
       - Source Photonics:
         - SPS-34-24T-HP-TDFO OEM: gpon/ont/sp/sps-34-24t-hp-tdfo.md
   - XGS-PON:
     - xgs-pon/index.md
     - ONT:
+      - Azores Networks:
+        - X1Z1E: xgs-pon/ont/bfw/wag-d20.md
+        - XSS: xgs-pon/ont/bfw/was-110i.md
+      - CIG:
+        - XG-99S OEM: xgs-pon/ont/cig/xg-99s.md
       - BFW:
         - WAG-D20 OEM: xgs-pon/ont/bfw/wag-d20.md
         - WAS-110I OEM: xgs-pon/ont/bfw/was-110i.md
-      - CIG:
-        - XG-99S OEM: xgs-pon/ont/cig/xg-99s.md
+      - E.C.I. Networks:
+        - EN-XGSFPP-OMAC: xgs-pon/ont/cig/xg-99s.md
+        - EN-XGSFPP-OMAC-V2: xgs-pon/ont/bfw/was-110i.md
+      - FS:
+        - XGS-ONU-25-20NI: xgs-pon/ont/cig/xg-99s.md
 repo_url: https://github.com/up-n-atom/8311
