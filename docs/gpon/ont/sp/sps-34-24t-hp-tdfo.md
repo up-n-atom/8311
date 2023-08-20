@@ -1,5 +1,7 @@
 # SPS-34-24T-HP-TDFO
 
+<!-- --8<-- [start:specifications] -->
+
 === "Specifications"   
    | Chipset         | Lantiq PEB98035      |
    | --------------- | -------------------- |
@@ -15,16 +17,17 @@
    | SSH Access      | Yes                  |
    | SCP Access      | Yes                  |
    | IP address      | 192.168.1.10         |
+<!-- --8<-- [end:specifications] -->
 
 ## Vendor Specific
 
-### SSH/UART Login Credentials
+### Login Credentials
 
-=== "GPON-ONU-34-20BI"
---8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:10:12"
+### G-010S-P
+--8<-- "docs/gpon/ont/nokia/g-010s-p.md:credentials"
 
-=== "G-010S-P"
---8<-- "docs/gpon/ont/nokia/g-010s-p.md:10:12"
+### GPON-ONU-34-20BI"
+--8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:credentials"
 
-=== "MA5671A"
---8<-- "docs/gpon/ont/huawei/ma5671a.md:8:10"
+### MA5671A
+--8<-- "docs/gpon/ont/huawei/ma5671a.md:credentials"
