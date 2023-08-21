@@ -1,11 +1,7 @@
-.pon-nav__item--oem:after {
-  align-items: center;
+.pon-nav__item--oem {
   background-color: var(--md-primary-fg-color);
   border-radius: 9999px;
   color: var(--md-primary-bg-color);
-  content: 'OEM';
-  display: flex;
-  height: 1rem;
-  margin: 0 0.25rem;
+  display: inline-flex;
   padding: 0 0.25rem;
 }

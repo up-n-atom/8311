@@ -4,11 +4,11 @@
 
 ### Telnet / UART
 
-| Username | Password    |
-| -------- | ----------- |
-| admin    | ADMIN123!@# |
-| guest    | welcome     |
-| test     | default     |
+| Username | Password    | Privilege Level |
+| -------- | ----------- | --------------- |
+| admin    | ADMIN123!@# | 3               |
+| guest    | welcome     | 5               |
+| test     | default     | 4               |
 
 ??? info "Hardcoded Passwords"
     The `guest` and `test` user passwords are hardcoded in `/usr/bin/cli`.
