@@ -67,7 +67,6 @@ nav:
         - EN-XGSFPP-OMAC-V2: xgs-pon/ont/eci-networks/en-xgsfpp-omac-v2.md
       - FS:
         - XGS-ONU-25-20NI: xgs-pon/ont/fs/xgs-onu-25-20ni.md
-        - XGS-ONU-25-20NI: xgs-pon/ont/cig/xg-99s.md
 plugins:
   - search
   - macros:
