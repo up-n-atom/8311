@@ -14,19 +14,13 @@
 ### Login Credentials
 
 === "G-010S-P"
-    {% for cred in g_010s_p.credentials %}
-    {{ includes.credentials(cred.type, cred.username, cred.password) }}
-    {% endfor %}
+    {{ includes.iterate_credentials(g_010s_p) }}
 
 === "GPON-ONU-34-20BI"
-    {% for cred in gpon_onu_34_20bi.credentials %}
-    {{ includes.credentials(cred.type, cred.username, cred.password) }}
-    {% endfor %}
+    {{ includes.iterate_credentials(gpon_onu_34_20bi) }}
 
 === "MA5671A"
-    {% for cred in ma5671a.credentials %}
-    {{ includes.credentials(cred.type, cred.username, cred.password) }}
-    {% endfor %}
+    {{ includes.iterate_credentials(ma5671a) }}
 
 {% endblock %}
 
