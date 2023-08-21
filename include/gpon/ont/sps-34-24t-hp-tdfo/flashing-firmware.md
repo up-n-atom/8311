@@ -1,4 +1,4 @@
-# Flashing firmware
+## Flashing firmware
 
 To flash these firmwares on your G-010S-P stick, you must first upload them via SCP to the stick's /tmp folder like so:
 
