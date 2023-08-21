@@ -1,34 +1,31 @@
+{% from 'credentials.md' import credentials %}
 # SPS-34-24T-HP-TDFO
 
-## Specifications
-
-<!-- --8<-- [start:specifications] -->
-| Chipset         | Lantiq PEB98035      |
-| --------------- | -------------------- |
-| CPU             | MIPS 34Kc interAptiv |
-| CPU Clock       | 400MHz               |
-| Flash           | 16 MB                |
-| RAM             | 64 MB                |
-| HSGMII          | Yes                  |
-| Optics          | SC/APC               |
-| Serial Access   | SFP                  |
-| Serial baud     | 115200               |
-| Serial encoding | 8-N-1                |
-| SSH Access      | Yes                  |
-| SCP Access      | Yes                  |
-| IP address      | 192.168.1.10         |
-<!-- --8<-- [end:specifications] -->
+{% include "gpon/ont/sps-34-24t-hp-tdfo/specifications.md" %}
 
 ## Vendor Specific
 
 ### Login Credentials
 
 === "G-010S-P"
-    --8<-- "docs/gpon/ont/nokia/g-010s-p.md:credentials"
+    {% for cred in g_010s_p.credentials %}
+    {{ credentials(cred.type, cred.username, cred.password) }}
+    {% endfor %}
 
 === "GPON-ONU-34-20BI"
-    --8<-- "docs/gpon/ont/fs/gpon-onu-34-20bi.md:credentials"
+    {% for cred in gpon_onu_34_20bi.credentials %}
+    {{ credentials(cred.type, cred.username, cred.password) }}
+    {% endfor %}
 
 === "MA5671A"
-    --8<-- "docs/gpon/ont/huawei/ma5671a.md:credentials"
-    
+    {% for cred in ma5671a.credentials %}
+    {{ credentials(cred.type, cred.username, cred.password) }}
+    {% endfor %}
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/connection-notices.md" %}
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/backup-uboot-vars.md" %}
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md" %}
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md" %}

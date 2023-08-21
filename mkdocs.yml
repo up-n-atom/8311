@@ -31,11 +31,8 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
+  - markdown_grid_tables
   - pymdownx.details
-  - pymdownx.snippets
-  - pymdownx.striphtml:
-      strip_js_on_attributes: false
-      strip_attributes: ''
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true 
@@ -71,4 +68,14 @@ nav:
         - EN-XGSFPP-OMAC-V2: xgs-pon/ont/bfw/was-110i.md
       - FS:
         - XGS-ONU-25-20NI: xgs-pon/ont/cig/xg-99s.md
+plugins:
+  - search
+  - macros:
+      include_dir: include
+      include_yaml:
+        - g_010s_p: include/gpon/ont/g-010s-p.yml
+        - gpon_onu_34_20bi: include/gpon/ont/gpon-onu-34-20bi.yml
+        - ma5671a: include/gpon/ont/ma5671a.yml
+      on_error_fail: true
+      on_undefined: strict
 repo_url: https://github.com/up-n-atom/8311
