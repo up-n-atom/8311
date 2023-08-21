@@ -31,7 +31,6 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
-  - markdown_grid_tables
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:

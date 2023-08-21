@@ -1,5 +1,7 @@
 credentials:
   -
     type: "SSH / SCP / UART"
-    username: "root"
-    password: "admin123"
+    credentials:
+      -
+        username: "root"
+        password: "admin123"

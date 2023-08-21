@@ -1,0 +1,72 @@
+
+{% if device is eq "g_010s_p" %}
+    {% set ontuser = g_010s_p.credentials[0].credentials[0].username %}
+{% elif device is eq "gpon_onu_34_20bi" %}
+    {% set ontuser = gpon_onu_34_20bi.credentials[0].credentials[0].username %}
+{% elif device is eq "ma5671a" %}
+    {% set ontuser = ma5671a.credentials[0].credentials[0].username %}
+{% endif %}
+{% import  'credentials.md' as includes %}
+# {% block device_name %}SPS-34-24T-HP-TDFO{% endblock %}
+
+## Specifications
+
+| Chipset         | Lantiq PEB98035      |
+| --------------- | -------------------- |
+| CPU             | MIPS 34Kc interAptiv |
+| CPU Clock       | 400MHz               |
+| Flash           | 16 MB                |
+| RAM             | 64 MB                |
+| HSGMII          | Yes                  |
+| Optics          | SC/APC               |
+| Serial Access   | SFP                  |
+| Serial baud     | 115200               |
+| Serial encoding | 8-N-1                |
+| SSH Access      | Yes                  |
+| SCP Access      | Yes                  |
+| IP address      | 192.168.1.10         |
+
+{% block device_images %}{% endblock %}
+
+{% block vendor_specific %}
+## Vendor Specific
+
+### Login Credentials
+
+=== "G-010S-P"
+    {{ includes.iterate_credentials(g_010s_p) }}
+
+=== "GPON-ONU-34-20BI"
+    {{ includes.iterate_credentials(gpon_onu_34_20bi) }}
+
+=== "MA5671A"
+    {{ includes.iterate_credentials(ma5671a) }}
+{% endblock %}
+
+{% block device_credentials %}{% endblock %}
+
+??? info "Management Connection"
+    Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the
+    following parameters:
+
+        -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss
+
+??? info "Management Connection"
+    The module defaults to a gateway of `192.168.2.2` or `192.168.2.0`, so connecting can be tricky initially if it is not physically connected to the device you are connecting from.
+
+!!! warning "RX_LOS"
+    The module outputs an RX_LOS signal when no fibre/light is detected. Some equipment may disable the interface when detecting the RX_LOS signal.
+
+## Backing Up U-Boot Env Vars
+
+Run the command:
+
+```sh
+fw_printenv
+```
+
+and save the output somewhere safe.
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md" %}
+
+{% include "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md" %}

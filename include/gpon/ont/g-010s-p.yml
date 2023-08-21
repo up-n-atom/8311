@@ -1,5 +1,7 @@
 credentials:
   -
     type: "SSH / SCP / UART"
-    username: "ONTUSER"
-    password: "SUGAR2A041"
+    credentials:
+      -
+        username: "ONTUSER"
+        password: "SUGAR2A041"
