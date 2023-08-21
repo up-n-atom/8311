@@ -5,8 +5,8 @@
     | {{ username }} | {{ password }} |
 {%- endmacro %}
 
-{% macro iterate_credentials_heading(onu) -%}
-## Login Credentials
+{% macro iterate_credentials_heading(onu, lvl='##' ) -%}
+{{ lvl }} Login Credentials
 
 {% for cred in onu.credentials %}
 {{ credentials(cred.type, cred.username, cred.password) }}
