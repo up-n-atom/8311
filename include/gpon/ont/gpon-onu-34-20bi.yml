@@ -1,3 +1,5 @@
+title: GPON-ONU-34-20BI
+oem: SPS-34-24T-HP-TDFO
 credentials:
   -
     type: "SSH / SCP / UART"
@@ -5,3 +7,5 @@ credentials:
       -
         username: "ONTUSER"
         password: "7sp!lwUBz1"
+images:
+  - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']

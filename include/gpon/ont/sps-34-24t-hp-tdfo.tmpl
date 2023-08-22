@@ -1,15 +1,7 @@
+{% extends "device.tmpl" %}
 
-{% if device is eq "g_010s_p" %}
-    {% set ontuser = g_010s_p.credentials[0].credentials[0].username %}
-{% elif device is eq "gpon_onu_34_20bi" %}
-    {% set ontuser = gpon_onu_34_20bi.credentials[0].credentials[0].username %}
-{% elif device is eq "ma5671a" %}
-    {% set ontuser = ma5671a.credentials[0].credentials[0].username %}
-{% endif %}
-{% import  'credentials.md' as includes %}
-# {% block device_name %}SPS-34-24T-HP-TDFO{% endblock %}
-
-## Specifications
+{% block specifications %}
+## Specifications 
 
 | Chipset         | Lantiq PEB98035      |
 | --------------- | -------------------- |
@@ -25,8 +17,7 @@
 | SSH Access      | Yes                  |
 | SCP Access      | Yes                  |
 | IP address      | 192.168.1.10         |
-
-{% block device_images %}{% endblock %}
+{% endblock %}
 
 {% block vendor_specific %}
 ## Vendor Specific
@@ -43,8 +34,7 @@
     {{ includes.iterate_credentials(ma5671a) }}
 {% endblock %}
 
-{% block device_credentials %}{% endblock %}
-
+{% block connection_notifications %}
 ??? info "Management Connection"
     Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the
     following parameters:
@@ -56,7 +46,9 @@
 
 !!! warning "RX_LOS"
     The module outputs an RX_LOS signal when no fibre/light is detected. Some equipment may disable the interface when detecting the RX_LOS signal.
+{% endblock %}
 
+{% block content_00 %}
 ## Backing Up U-Boot Env Vars
 
 Run the command:
@@ -66,7 +58,8 @@ fw_printenv
 ```
 
 and save the output somewhere safe.
+{% endblock %}
 
-{% include "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md" %}
+{% block content_01 %}{% include "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md" %}{% endblock %}
 
-{% include "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md" %}
+{% block content_02 %}{% include "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md" %}{% endblock %}

@@ -1,3 +1,5 @@
+title: G-010S-P
+oem: SPS-34-24T-HP-TDFO
 credentials:
   -
     type: "SSH / SCP / UART"
@@ -5,3 +7,5 @@ credentials:
       -
         username: "ONTUSER"
         password: "SUGAR2A041"
+images:
+  - ['G-010S-P', '/img/g-010s-p.png']
