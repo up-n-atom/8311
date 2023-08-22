@@ -1,22 +1,11 @@
 {% extends "device.tmpl" %}
 
 {% block specifications %}
+{% if sps_34_24t_hp_tdfo.specifications is defined %}
 ## Specifications 
 
-| Chipset         | Lantiq PEB98035      |
-| --------------- | -------------------- |
-| CPU             | MIPS 34Kc interAptiv |
-| CPU Clock       | 400MHz               |
-| Flash           | 16 MB                |
-| RAM             | 64 MB                |
-| HSGMII          | Yes                  |
-| Optics          | SC/APC               |
-| Serial Access   | SFP                  |
-| Serial baud     | 115200               |
-| Serial encoding | 8-N-1                |
-| SSH Access      | Yes                  |
-| SCP Access      | Yes                  |
-| IP address      | 192.168.1.10         |
+{{ iterate_specifications(sps_34_24t_hp_tdfo) }}
+{% endif %}
 {% endblock %}
 
 {% block vendor_specific %}

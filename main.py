@@ -15,3 +15,17 @@ def define_env(env):
             else:
                 text += "Unknown |\n"
         return text.format(type)
+
+    @env.macro
+    def iterate_specifications(onu):
+        specifications = onu.get('specifications', None)
+        if specifications != None:
+            text = ""
+            first = True
+            for spec in specifications:
+                if first:
+                    text += "| " + spec[0] + " | " + spec[1] + " |\n| ------ | ------ |\n"
+                    first = False
+                else:
+                    text += "| " + spec[0] + " | " + spec[1] + " |\n"
+            return text

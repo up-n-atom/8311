@@ -1,14 +1,26 @@
 {% import  'macros.md' as includes %}
 
-# {% block name %}{{ device.title }}{% endblock %}
+# {% block name %}{{ device.title if device.title is defined }}{% endblock %}
 
-{% block specifications %}{% endblock %}
+{% block specifications %}
+{% if device.specifications is defined %}
+## Specifications 
 
-{% block images %}{{ includes.iterate_images(device) }}{% endblock %}
+{{ iterate_specifications(device) }}
+{% endif %}
+{% endblock %}
+
+{% block images %}
+{% if device.images is defined %}
+## Images
+
+{{ includes.iterate_images(device) }}
+{% endif %}
+{% endblock %}
 
 {% block vendor_specific %}{% endblock %}
 
-{% block credentials %}{{ includes.iterate_credentials_heading(device) }}{% endblock %}
+{% block credentials %}{{ includes.iterate_credentials_heading(device) if device.credentials is defined }}{% endblock %}
 
 {% block connection_notifications %}{% endblock %}
 
