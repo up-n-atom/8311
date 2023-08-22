@@ -1,8 +1,3 @@
----
-title: XG-99S
-aliases: ['EN-XGSFPP-OMAC', 'XGS-ONU-25-20NI']
----
-
 # XG-99S
 
 ## Value-Added Resellers

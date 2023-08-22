@@ -1,10 +1,4 @@
----
-title: WAS-110I
-aliases: ['XSS', 'EN-XGSFPP-OMAC-V2']
----
-
 # WAS-110I
-
 ![Image of WAS-110I](/img/was-110i.png){ align=center }
 
 ## Login Credentials
