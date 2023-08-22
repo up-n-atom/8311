@@ -1,3 +1,8 @@
+---
+title: SPS-34-24T-HP-TDFO
+aliases: ['G-010S-P', 'MA5671A', 'GPON-ONU-34-20BI']
+---
+
 # SPS-34-24T-HP-TDFO
 
 ## Specifications

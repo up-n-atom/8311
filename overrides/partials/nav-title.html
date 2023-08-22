@@ -1,10 +1,6 @@
-{% if nav_item.title.endswith(' OEM') %}
-  <span class="md-ellipsis">
-    {{ nav_item.title|replace(' OEM', '')|e }}
-  </span>
-  <span class="pon-nav__item--oem">
-    OEM
-  </span>
-{% else %}
+<span class="md-ellipsis">
   {{ nav_item.title|e }}
+</span>
+{% if nav_item.is_page and nav_item.meta.aliases is defined and nav_item.title not in nav_item.meta.aliases %}
+  <span class="pon-nav__link--tag">ODM</span>
 {% endif %}

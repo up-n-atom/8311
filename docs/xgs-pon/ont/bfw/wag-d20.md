@@ -1,3 +1,8 @@
+---
+title: WAG-D20
+aliases: ['X1Z1E']
+---
+
 # WAG-D20
 
 ## Login Credentials
