@@ -1,10 +1,10 @@
 {% extends "device.tmpl" %}
 
 {% block specifications %}
-{% if sps_34_24t_hp_tdfo.specifications is defined %}
+{% if gpon_onu.sps_34_24t_hp_tdfo.specifications is defined %}
 ## Specifications 
 
-{{ iterate_specifications(sps_34_24t_hp_tdfo) }}
+{{ iterate_specifications(gpon_onu.sps_34_24t_hp_tdfo) }}
 {% endif %}
 {% endblock %}
 
@@ -14,13 +14,13 @@
 ### Login Credentials
 
 === "G-010S-P"
-    {{ includes.iterate_credentials(g_010s_p) }}
+    {{ includes.iterate_credentials(gpon_onu.g_010s_p) }}
 
 === "GPON-ONU-34-20BI"
-    {{ includes.iterate_credentials(gpon_onu_34_20bi) }}
+    {{ includes.iterate_credentials(gpon_onu.gpon_onu_34_20bi) }}
 
 === "MA5671A"
-    {{ includes.iterate_credentials(ma5671a) }}
+    {{ includes.iterate_credentials(gpon_onu.ma5671a) }}
 {% endblock %}
 
 {% block connection_notifications %}

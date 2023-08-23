@@ -4,16 +4,16 @@ def define_env(env):
 
     @env.macro
     def credentials(type, cred_list):
-        text = "=== \"{0}\"\n    | Username            | Password            | Privilege                                                        |\n    | ------------------- | ------------------- | ---------------------------------------------------------------- |\n"
+        text = "=== \"{0}\"\n    | Username            | Password            | Privilege           |\n    | ------------------- | ------------------- | ------------------- |"
         for cred in cred_list:
             username = cred['username']
             password = cred['password']
             privilege = cred.get('privilege')
-            text += "    | " + username + " | " + password + " | "
+            text += "\n    | " + username + " | " + password + " | "
             if privilege is not None:
-                text += privilege + " |\n    "
+                text += privilege + " |"
             else:
-                text += "Unknown |\n"
+                text += "Unknown |"
         return text.format(type)
 
     @env.macro
@@ -24,8 +24,8 @@ def define_env(env):
             first = True
             for spec in specifications:
                 if first:
-                    text += "| " + spec[0] + " | " + spec[1] + " |\n| ------ | ------ |\n"
+                    text += "| " + spec[0] + " | " + spec[1] + " |\n| ------ | ------ |"
                     first = False
                 else:
-                    text += "| " + spec[0] + " | " + spec[1] + " |\n"
+                    text += "\n| " + spec[0] + " | " + spec[1] + " |"
             return text

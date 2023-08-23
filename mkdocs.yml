@@ -72,10 +72,7 @@ plugins:
   - macros:
       include_dir: include
       include_yaml:
-        - g_010s_p: include/gpon/ont/g-010s-p.yml
-        - gpon_onu_34_20bi: include/gpon/ont/gpon-onu-34-20bi.yml
-        - ma5671a: include/gpon/ont/ma5671a.yml
-        - sps_34_24t_hp_tdfo: include/gpon/ont/sps-34-24t-hp-tdfo.yml
+        - gpon_onu: include/gpon_onu.yml
       on_error_fail: true
       on_undefined: strict
 repo_url: https://github.com/up-n-atom/8311

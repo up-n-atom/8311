@@ -1,9 +1,0 @@
-title: MA5671A
-oem: SPS-34-24T-HP-TDFO
-credentials:
-  -
-    type: "SSH / SCP / UART"
-    credentials:
-      -
-        username: "root"
-        password: "admin123"
