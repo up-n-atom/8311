@@ -1,0 +1,51 @@
+sps_34_24t_hp_tdfo:
+  title: SPS-34-24T-HP-TDFO
+  aliases: ['G-010S-P', 'MA5671A', 'GPON-ONU-34-20BI']
+  specifications:
+    - ['Chipset', 'Lantiq PEB98035']
+    - ['CPU', 'MIPS 34Kc interAptiv']
+    - ['CPU Clock', '400MHz']
+    - ['Flash', '16 MB']
+    - ['RAM', '64 MB']
+    - ['HSGMII', 'Yes']
+    - ['Optics', 'SC/APC']
+    - ['Serial Access', 'SFP']
+    - ['Serial baud', '115200']
+    - ['Serial encoding', '8-N-1']
+    - ['SSH Access', 'Yes']
+    - ['SCP Access', 'Yes']
+    - ['IP address', '192.168.1.10']
+
+g_010s_p:
+  title: G-010S-P
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "ONTUSER"
+          password: "SUGAR2A041"
+  images:
+    - ['G-010S-P', '/img/g-010s-p.png']
+
+gpon_onu_34_20bi:
+  title: GPON-ONU-34-20BI
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "ONTUSER"
+          password: "7sp!lwUBz1"
+  images:
+    - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']
+
+ma5671a:
+  title: MA5671A
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "root"
+          password: "admin123"
