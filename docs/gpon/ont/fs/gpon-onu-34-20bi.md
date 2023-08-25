@@ -1,16 +1,3 @@
-# GPON-ONU-34-20BI
-
-## Specifications
-
---8<-- "docs/gpon/ont/sp/sps-34-24t-hp-tdfo.md:specifications"
-
-![Image of GPON-ONU-34-20BI](/img/gpon-onu-34-20bi.png){ align=center }
-
-## Login Credentials
-
-<!-- --8<-- [start:credentials] -->
-=== "SSH / UART"
-    | Username | Password       |
-    | -------- | -------------- |
-    | ONTUSER  | 7sp!lwUBz1     |
-<!-- --8<-- [end:credentials] -->
+{% extends "gpon/ont/sps-34-24t-hp-tdfo.tmpl" %}
+{% set device = gpon_onu.gpon_onu_34_20bi %}
+{% block vendor_specific %}{% endblock %}
