@@ -49,3 +49,30 @@ ma5671a:
         -
           username: "root"
           password: "admin123"
+
+g_440g_a:
+  title: G-440G-A
+  credentials:
+    -
+      type: "Web UI / Telnet"
+      credentials:
+        -
+          username: "adminadmin"
+          password: "ALC#FGU"
+  images:
+    - ['G-440G-A Top', '/img/g-440g-a-1.png']
+    - ['G-440G-A Back', '/img/g-440g-a-2.png']
+    - ['G-440G-A Front', '/img/g-440g-a-3.png']
+
+dfp_34x_2c2:
+  title: DFP-34X-2C2
+  credentials:
+    -
+      type: "WEB / SSH / UART"
+      credentials:
+        -
+          username: "admin"
+          password: "admin"
+  images:
+    - ['DFP-34X-2C2 Bottom', '/img/dfp-34x-2c2-1.png']
+    - ['DFP-34X-2C2 Top', '/img/dfp-34x-2c2-2.png']
