@@ -5,3 +5,7 @@
   display: inline-flex;
   padding: 0 0.25rem;
 }
+
+.headerless th {
+  display: none;
+}

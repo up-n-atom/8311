@@ -1,3 +1,69 @@
+# Alcatel-Lucent / Nokia
+g_010s_p:
+  title: G-010S-P
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "ONTUSER"
+          password: "SUGAR2A041"
+  images:
+    - ['G-010S-P', '/img/g-010s-p.png']
+
+g_440g_a:
+  title: G-440G-A
+  credentials:
+    -
+      type: "Web UI / Telnet"
+      credentials:
+        -
+          username: "adminadmin"
+          password: "ALC#FGU"
+  images:
+    - ['G-440G-A Top', '/img/g-440g-a-1.png']
+    - ['G-440G-A Back', '/img/g-440g-a-2.png']
+    - ['G-440G-A Front', '/img/g-440g-a-3.png']
+
+# FS.com
+gpon_onu_34_20bi:
+  title: GPON-ONU-34-20BI
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "ONTUSER"
+          password: "7sp!lwUBz1"
+  images:
+    - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']
+
+# Huawei
+ma5671a:
+  title: MA5671A
+  credentials:
+    -
+      type: "SSH / SCP / UART"
+      credentials:
+        -
+          username: "root"
+          password: "admin123"
+
+# ODI
+dfp_34x_2c2:
+  title: DFP-34X-2C2
+  credentials:
+    -
+      type: "WEB / SSH / UART"
+      credentials:
+        -
+          username: "admin"
+          password: "admin"
+  images:
+    - ['DFP-34X-2C2 Bottom', '/img/dfp-34x-2c2-1.png']
+    - ['DFP-34X-2C2 Top', '/img/dfp-34x-2c2-2.png']
+
+# Source Photonics
 sps_34_24t_hp_tdfo:
   title: SPS-34-24T-HP-TDFO
   aliases: ['G-010S-P', 'MA5671A', 'GPON-ONU-34-20BI']
@@ -15,64 +81,3 @@ sps_34_24t_hp_tdfo:
     - ['SSH Access', 'Yes']
     - ['SCP Access', 'Yes']
     - ['IP address', '192.168.1.10']
-
-g_010s_p:
-  title: G-010S-P
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "ONTUSER"
-          password: "SUGAR2A041"
-  images:
-    - ['G-010S-P', '/img/g-010s-p.png']
-
-gpon_onu_34_20bi:
-  title: GPON-ONU-34-20BI
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "ONTUSER"
-          password: "7sp!lwUBz1"
-  images:
-    - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']
-
-ma5671a:
-  title: MA5671A
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "root"
-          password: "admin123"
-
-g_440g_a:
-  title: G-440G-A
-  credentials:
-    -
-      type: "Web UI / Telnet"
-      credentials:
-        -
-          username: "adminadmin"
-          password: "ALC#FGU"
-  images:
-    - ['G-440G-A Top', '/img/g-440g-a-1.png']
-    - ['G-440G-A Back', '/img/g-440g-a-2.png']
-    - ['G-440G-A Front', '/img/g-440g-a-3.png']
-
-dfp_34x_2c2:
-  title: DFP-34X-2C2
-  credentials:
-    -
-      type: "WEB / SSH / UART"
-      credentials:
-        -
-          username: "admin"
-          password: "admin"
-  images:
-    - ['DFP-34X-2C2 Bottom', '/img/dfp-34x-2c2-1.png']
-    - ['DFP-34X-2C2 Top', '/img/dfp-34x-2c2-2.png']

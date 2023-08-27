@@ -12,7 +12,7 @@ def define_env(env):
             username = cred.get('username')
             password = cred.get('password')
             privilege = cred.get('privilege')
-            if privilege is not None:
+            if privilege != None:
                 priv = True
                 buffer += table_templ.format(username, password, privilege) + " |"
             else:
@@ -27,12 +27,9 @@ def define_env(env):
     def iterate_specifications(onu):
         specifications = onu.get('specifications', None)
         if specifications != None:
-            text = ""
+            div_templ = "<div class=\"headerless\" markdown=\"1\">\n{0}\n</div>"
+            text = "| | |\n| ---- | ---- |"
             first = True
             for spec in specifications:
-                if first:
-                    text += "| " + spec[0] + " | " + spec[1] + " |\n| ---- | ---- |"
-                    first = False
-                else:
-                    text += "\n| " + spec[0] + " | " + spec[1] + " |"
-            return text
+                text += "\n| " + spec[0] + " | " + spec[1] + " |"
+            return div_templ.format(text)
