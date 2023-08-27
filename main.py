@@ -4,7 +4,7 @@ def define_env(env):
 
     @env.macro
     def credentials(type, cred_list):
-        buffer = ""
+        buffer_templ = ""
         table_templ = "\n    | {0} | {1} | {2}"
         tab_templ = "=== \"{0}\"\n    | Username | Password | {1}\n    | ---- | ---- | {2}"
         priv = False
@@ -12,16 +12,12 @@ def define_env(env):
             username = cred.get('username')
             password = cred.get('password')
             privilege = cred.get('privilege')
-            if privilege != None:
-                priv = True
-                buffer += table_templ.format(username, password, privilege) + " |"
-            else:
-                buffer += table_templ.format(username, password, "")
+            if privilege != None: priv = True
+            buffer_templ += table_templ.format(username, password, privilege) + "{0}"
         if priv:
-            buffer = tab_templ.format(type, "Privilege |", "---- |") + buffer
+            return tab_templ.format(type, "Privilege |", "---- |") + buffer_templ.format(" |")
         else:
-            buffer = tab_templ.format(type, "", "") + buffer
-        return buffer
+            return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
     def iterate_specifications(onu):

@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block vendor_specific %}
+{% if device == oem %}
 ## Vendor Specific
 
 ### Login Credentials
@@ -18,12 +19,11 @@
 === "{{ alias.title }}"
     {{ iterate_credentials(alias) }}
 {% endfor %}
+{% endif %}
 {% endblock %}
 
 {% block connection_notifications %}
-{% if oem.notices is defined %}
-{{ iterate_notices(oem, notices) }}
-{% endif %}
+{{ iterate_notices(oem, notices) if oem.notices is defined }}
 {% endblock %}
 
 {% block content_00 %}
