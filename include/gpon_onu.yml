@@ -66,7 +66,7 @@ dfp_34x_2c2:
 # Source Photonics
 sps_34_24t_hp_tdfo:
   title: SPS-34-24T-HP-TDFO
-  aliases: ['G-010S-P', 'MA5671A', 'GPON-ONU-34-20BI']
+  aliases: ['g_010s_p', 'ma5671a', 'gpon_onu_34_20bi']
   specifications:
     - ['Chipset', 'Lantiq PEB98035']
     - ['CPU', 'MIPS 34Kc interAptiv']
@@ -81,3 +81,4 @@ sps_34_24t_hp_tdfo:
     - ['SSH Access', 'Yes']
     - ['SCP Access', 'Yes']
     - ['IP address', '192.168.1.10']
+  notices: ['rx_los', 'outdated_algorithms', ]

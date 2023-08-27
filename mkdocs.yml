@@ -73,6 +73,7 @@ plugins:
       include_dir: include
       include_yaml:
         - gpon_onu: include/gpon_onu.yml
+        - notices: include/notices.yml
       on_error_fail: true
       on_undefined: strict
 repo_url: https://github.com/up-n-atom/8311

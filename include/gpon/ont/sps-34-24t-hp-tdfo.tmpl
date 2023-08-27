@@ -1,10 +1,11 @@
 {% extends "device.tmpl" %}
+{% set oem = gpon_onu.sps_34_24t_hp_tdfo %}
 
 {% block specifications %}
-{% if gpon_onu.sps_34_24t_hp_tdfo.specifications is defined %}
+{% if oem.specifications is defined %}
 ## Specifications
 
-{{ iterate_specifications(gpon_onu.sps_34_24t_hp_tdfo) }}
+{{ iterate_specifications(oem) }}
 {% endif %}
 {% endblock %}
 
@@ -12,29 +13,17 @@
 ## Vendor Specific
 
 ### Login Credentials
-
-=== "G-010S-P"
-    {{ includes.iterate_credentials(gpon_onu.g_010s_p) }}
-
-=== "GPON-ONU-34-20BI"
-    {{ includes.iterate_credentials(gpon_onu.gpon_onu_34_20bi) }}
-
-=== "MA5671A"
-    {{ includes.iterate_credentials(gpon_onu.ma5671a) }}
+{% for name in oem.aliases %}
+{% set alias = gpon_onu.get(name) %}
+=== "{{ alias.title }}"
+    {{ iterate_credentials(alias) }}
+{% endfor %}
 {% endblock %}
 
 {% block connection_notifications %}
-??? info "Management Connection"
-    Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the
-    following parameters:
-
-        -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss
-
-??? info "Management Connection"
-    The module defaults to a gateway of `192.168.2.2` or `192.168.2.0`, so connecting can be tricky initially if it is not physically connected to the device you are connecting from.
-
-!!! warning "RX_LOS"
-    The module outputs an RX_LOS signal when no fibre/light is detected. Some equipment may disable the interface when detecting the RX_LOS signal.
+{% if oem.notices is defined %}
+{{ iterate_notices(oem, notices) }}
+{% endif %}
 {% endblock %}
 
 {% block content_00 %}
