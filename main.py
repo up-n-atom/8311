@@ -31,5 +31,40 @@ def define_env(env):
             text = "| | |\n| ---- | ---- |"
             first = True
             for spec in specifications:
-                text += "\n| " + spec[0] + " | " + spec[1] + " |"
+                text += "\n| **" + spec[0] + "** | " + spec[1] + " |"
             return div_templ.format(text)
+
+    @env.macro
+    def iterate_credentials(onu):
+        buffer = ""
+        creds = onu.get('credentials')
+        for cred in creds:
+            type = cred.get('type')
+            cred_list = cred.get('credentials')
+            buffer += credentials(type, cred_list)
+        return buffer
+
+    @env.macro
+    def admonition(notice):
+        admon_templ = " {0} \"{1}\"\n    {2}"
+        type = notice.get('type', 'info')
+        title = notice.get('title', '')
+        text = notice.get('text', '')
+        expanding = notice.get('expanding', False)
+        expand = notice.get('expand', False)
+        if expanding:
+            buffer = "???"
+            if expand: buffer += "?"
+            return buffer + admon_templ.format(type, title, text)
+        else:
+            return "!!!" + admon_templ.format(type, title, text)
+
+    @env.macro
+    def iterate_notices(onu, notices):
+        names = onu.get('notices')
+        buffer = ""
+        for name in names:
+            notice = notices.get(name)
+            if notice != None:
+                buffer += "\n" + admonition(notice)
+        return buffer

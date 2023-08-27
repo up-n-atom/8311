@@ -20,9 +20,17 @@
 
 {% block vendor_specific %}{% endblock %}
 
-{% block credentials %}{{ includes.iterate_credentials_heading(device) if device.credentials is defined }}{% endblock %}
+{% block credentials %}
+## Login Credentials
 
-{% block connection_notifications %}{% endblock %}
+{{ iterate_credentials(device) if device.credentials is defined }}
+{% endblock %}
+
+{% block connection_notifications %}
+{% if device.notices is defined %}
+{{ iterate_notices(device, notices) }}
+{% endif %}
+{% endblock %}
 
 {% block content_00 %}{% endblock %}
 
