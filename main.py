@@ -37,7 +37,17 @@ def define_env(env):
         for cred in creds:
             type = cred.get('type')
             cred_list = cred.get('credentials')
-            buffer += credentials(type, cred_list)
+            buffer += credentials(type, cred_list) + "\n"
+        return buffer
+
+    @env.macro
+    def iterate_credentials_nested(onu):
+        buffer = ""
+        creds = onu.get('credentials')
+        for cred in creds:
+            type = cred.get('type')
+            cred_list = cred.get('credentials')
+            buffer += credentials(type, cred_list) + "\n    "
         return buffer
 
     @env.macro
@@ -63,4 +73,22 @@ def define_env(env):
             notice = notices.get(name)
             if notice != None:
                 buffer += "\n" + admonition(notice)
+        return buffer
+
+    @env.macro
+    def generate_vendor_credentials(onu, odm, onu_type):
+        templ = "=== \"{0}\"\n    {1}"
+        buffer = ''
+        if onu != odm:
+            return
+
+        for name in odm.get('aliases'):
+            if name == None:
+                break
+            alias = onu_type.get(name)
+            if alias == None or alias.get('credentials') == None or not alias['credentials']:
+                return
+            buffer += templ.format(alias['title'], iterate_credentials(alias))
+        if len(buffer) > 0:
+            buffer = '## Vendor Credentials\n\n' + buffer
         return buffer

@@ -5,76 +5,45 @@ theme:
     primary: blue
     accent: blue
   features:
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.indexes
-    - navigation.top
-    - navigation.footer
-    - announce.dismiss
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.sections
+  - navigation.expand
+  - navigation.indexes
+  - navigation.top
+  - navigation.footer
+  - announce.dismiss
   custom_dir: overrides
 extra:
   generator: false
   social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.com/servers/8311-886329492438671420
+  - icon: fontawesome/brands/discord
+    link: https://discord.com/servers/8311-886329492438671420
 extra_css:
-  - stylesheets/extra.css
+- stylesheets/extra.css
 markdown_extensions:
-  - abbr
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
-  - toc:
-      permalink: true
-  - tables
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true 
-nav:
-  - Home: index.md
-  - GPON:
-    - gpon/index.md
-    - ONT:
-      - ODI:
-        - DFP-34X-2C2: gpon/ont/odi/dfp-34x-2c2.md
-      - FS:
-        - GPON-ONU-34-20BI: gpon/ont/fs/gpon-onu-34-20bi.md
-      - Huawei:
-        - MA5671A: gpon/ont/huawei/ma5671a.md
-      - Nokia:
-        - G-010S-P: gpon/ont/nokia/g-010s-p.md
-        - G-440G-A: gpon/ont/nokia/g-440g-a.md
-      - Source Photonics:
-        - SPS-34-24T-HP-TDFO OEM: gpon/ont/sp/sps-34-24t-hp-tdfo.md
-  - XGS-PON:
-    - xgs-pon/index.md
-    - ONT:
-      - Azores Networks:
-        - X1Z1E: xgs-pon/ont/azores-networks/x1z1e.md
-        - XSS: xgs-pon/ont/azores-networks/xss.md
-      - CIG:
-        - XG-99S OEM: xgs-pon/ont/cig/xg-99s.md
-      - BFW:
-        - WAG-D20 OEM: xgs-pon/ont/bfw/wag-d20.md
-        - WAS-110I OEM: xgs-pon/ont/bfw/was-110i.md
-      - E.C.I. Networks:
-        - EN-XGSFPP-OMAC: xgs-pon/ont/eci-networks/en-xgsfpp-omac.md
-        - EN-XGSFPP-OMAC-V2: xgs-pon/ont/eci-networks/en-xgsfpp-omac-v2.md
-      - FS:
-        - XGS-ONU-25-20NI: xgs-pon/ont/fs/xgs-onu-25-20ni.md
+- abbr
+- admonition
+- attr_list
+- def_list
+- footnotes
+- md_in_html
+- toc:
+    permalink: true
+- tables
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+nav: []
 plugins:
-  - search
-  - macros:
-      include_dir: include
-      include_yaml:
-        - gpon_onu: include/gpon_onu.yml
-        - xgs_pon_onu: include/xgs_pon_onu.yml
-        - notices: include/notices.yml
-      on_error_fail: true
-      on_undefined: strict
+- search
+- macros:
+    include_dir: include
+    include_yaml:
+    - gpon_onu: include/gpon_onu.yml
+    - xgs_pon_onu: include/xgs_pon_onu.yml
+    - notices: include/notices.yml
+    on_error_fail: true
+    on_undefined: strict
 repo_url: https://github.com/up-n-atom/8311

@@ -1,5 +1,7 @@
 # Alcatel-Lucent / Nokia
 g_010s_p:
+  vendor: Nokia
+  odm: sps_34_24t_hp_tdfo
   title: G-010S-P
   credentials:
     -
@@ -12,6 +14,7 @@ g_010s_p:
     - ['G-010S-P', '/img/g-010s-p.png']
 
 g_440g_a:
+  vendor: Nokia
   title: G-440G-A
   credentials:
     -
@@ -27,6 +30,8 @@ g_440g_a:
 
 # FS.com
 gpon_onu_34_20bi:
+  vendor: FS
+  odm: sps_34_24t_hp_tdfo
   title: GPON-ONU-34-20BI
   credentials:
     -
@@ -40,6 +45,8 @@ gpon_onu_34_20bi:
 
 # Huawei
 ma5671a:
+  vendor: Huawei
+  odm: sps_34_24t_hp_tdfo
   title: MA5671A
   credentials:
     -
@@ -51,6 +58,7 @@ ma5671a:
 
 # ODI
 dfp_34x_2c2:
+  vendor: ODI
   title: DFP-34X-2C2
   credentials:
     -
@@ -65,8 +73,10 @@ dfp_34x_2c2:
 
 # Source Photonics
 sps_34_24t_hp_tdfo:
+  vendor: "Source Photonics"
   title: SPS-34-24T-HP-TDFO
   aliases: ['g_010s_p', 'gpon_onu_34_20bi', 'ma5671a']
+  template: "gpon/ont/sps_34_24t_hp_tdfo.tmpl"
   specifications:
     - ['Chipset', 'Lantiq PEB98035']
     - ['CPU', 'MIPS 34Kc interAptiv']
@@ -82,3 +92,7 @@ sps_34_24t_hp_tdfo:
     - ['SCP Access', 'Yes']
     - ['IP address', '192.168.1.10']
   notices: ['rx_los', 'outdated_algorithms', ]
+  content:
+    - "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md"
+    - "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md"
+    

@@ -3,7 +3,7 @@
 # {% block name %}{{ device.title if device.title is defined }}{% endblock %}
 
 {% block specifications %}
-{% if device.specifications is defined %}
+{% if device.specifications is defined and device.specifications%}
 ## Specifications
 
 {{ iterate_specifications(device) }}
@@ -11,20 +11,22 @@
 {% endblock %}
 
 {% block images %}
-{% if device.images is defined %}
+{% if device.images is defined and device.images %}
 ## Images
 
 {{ includes.iterate_images(device) }}
 {% endif %}
 {% endblock %}
 
-{% block vendor_specific %}{% endblock %}
-
 {% block credentials %}
+{% if device.credentials is defined and device.credentials %}
 ## Login Credentials
 
-{{ iterate_credentials(device) if device.credentials is defined }}
+{{ iterate_credentials(device) }}
+{% endif %}
 {% endblock %}
+
+{% block vendor_credentials %}{% endblock %}
 
 {% block connection_notifications %}
 {% if device.notices is defined %}
@@ -32,24 +34,10 @@
 {% endif %}
 {% endblock %}
 
-{% block content_00 %}{% endblock %}
-
-{% block content_01 %}{% endblock %}
-
-{% block content_02 %}{% endblock %}
-
-{% block content_03 %}{% endblock %}
-
-{% block content_04 %}{% endblock %}
-
-{% block content_05 %}{% endblock %}
-
-{% block content_06 %}{% endblock %}
-
-{% block content_07 %}{% endblock %}
-
-{% block content_08 %}{% endblock %}
-
-{% block content_09 %}{% endblock %}
-
-{% block content_10 %}{% endblock %}
+{% block content %}
+{% if device.content is defined %}
+{% for content in device.content %}
+{% include content %}
+{% endfor %}
+{% endif %}
+{% endblock %}
