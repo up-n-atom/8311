@@ -41,16 +41,6 @@ def define_env(env):
         return buffer
 
     @env.macro
-    def iterate_credentials_nested(onu):
-        buffer = ""
-        creds = onu.get('credentials')
-        for cred in creds:
-            type = cred.get('type')
-            cred_list = cred.get('credentials')
-            buffer += credentials(type, cred_list) + "\n    "
-        return buffer
-
-    @env.macro
     def admonition(notice):
         admon_templ = " {0} \"{1}\"\n    {2}"
         type = notice.get('type', 'info')
@@ -89,6 +79,8 @@ def define_env(env):
             if alias == None or alias.get('credentials') == None or not alias['credentials']:
                 return
             buffer += templ.format(alias['title'], iterate_credentials(alias))
+
         if len(buffer) > 0:
             buffer = '## Vendor Credentials\n\n' + buffer
+            
         return buffer

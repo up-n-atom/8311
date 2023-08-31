@@ -60,7 +60,7 @@ def create_file(device, type='gpon', other=None):
         id, vendor, title = get_device_info(device)
 
     template = device.get('template', "device.tmpl")
-    filename = onu_path_templ.format(type, vendor, id)
+    filename = onu_path_templ.format(type.replace('_', '').lower(), vendor.lower(), id.replace('_', '-'))
     write_file(filename, device_templ.format(template, type + "_onu", id))
 
     return { title: filename[5:] }
@@ -72,10 +72,17 @@ def process_devices_file(filename):
     nav = []
 
     if devices != None:
-        if "xgs_pon" in filename:
+        if 'xgs_pon' in filename:
             type = 'xgs_pon'
-        else:
+        elif 'gpon' in filename:
             type = 'gpon'
+        elif 'epon' in filename:
+            type = 'epon'
+        elif '10g_epon' in filename:
+            type = '10g_epon'
+        else:
+            return
+
         onu_list = iterate_device_list(devices.items())
         nav_items = generate_vendors_lists(devices.items())
 
@@ -92,12 +99,9 @@ def process_devices_file(filename):
         for key,value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
-    if 'gpon' in filename:
-        return { 'GPON': ['gpon/index.md', { 'ONT': sorted(nav, key=lambda d: list(d.keys())) }] }
-    elif 'xgs_pon' in filename:
-        return { 'XGS-PON': ['xgs_pon/index.md', { 'ONT': sorted(nav, key=lambda d: list(d.keys())) }] }
-    else:
-        return None
+        return { type.replace('_', '-').upper(): [type.replace('_', '').lower() + '/index.md', { 'ONT': sorted(nav, key=lambda d: list(d.keys())) }] }
+
+    return None
 
 def main():
     with open('mkdocs.yml', 'r') as mkdocs_file:
@@ -119,7 +123,7 @@ def main():
                             file_list.append(value)
         nav_list = []
 
-        for filename in [name for name in file_list if '_onu' in name]:
+        for filename in [name for name in file_list if '_onu' in name or '_olt' in name]:
             nav_list.append(process_devices_file(filename))
 
         nav_list = sorted(nav_list, key=lambda d: list(d.keys()))

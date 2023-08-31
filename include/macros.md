@@ -1,5 +1,5 @@
 {% macro image(text, url, align='center') -%}
-![Image of {{ text }}]({{ url }}){ align={{ align }} }
+![Image of {{ text }}]({{ "../../.." + url }}){ align={{ align }} }
 {%- endmacro %}
 
 {% macro iterate_images(onu) -%}

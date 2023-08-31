@@ -9,23 +9,6 @@ xss:
   odm: was_110
   title: XSS
 
-# ECI Networks
-en_xgsfpp_omac:
-  vendor: ECI Networks
-  odm: xg_99s
-  title: EN-XGSFPP-OMAC
-
-en_xgsfpp_omac_v2:
-  vendor: ECI Networks
-  odm: was_110
-  title: EN-XGSFPP-OMAC-V2
-
-# FS.com
-xg_99sxgs_onu_25_20ni:
-  vendor: FS
-  odm: xg_99s
-  title: XG-99SXGS-ONU-25-20NI
-
 # BFW
 wag_d20:
   vendor: "BFW"
@@ -47,7 +30,7 @@ wag_d20:
           username: "test"
           password: "default"
           privilege: 4
-  template: "xgs-pon/ont/wag_d20.tmpl"
+  template: "xgs-pon/ont/wag-d20.tmpl"
     
 was_110:
   vendor: "BFW"
@@ -71,11 +54,28 @@ was_110:
           password: "QpZm@4246#5753"
   images:
     - ['WAS-110', '/img/was-110i.png']
-  template: "xgs-pon/ont/was_110.tmpl"
+  template: "xgs-pon/ont/was-110.tmpl"
 
 # CIG
 xg_99s:
   vendor: "CIG"
   title: XG-99S
   aliases: ['xg_99sxgs_onu_25_20ni', 'en_xgsfpp_omac']
-  template: "xgs-pon/ont/xg_99s.tmpl"
+  template: "xgs-pon/ont/xg-99s.tmpl"
+
+# ECI Networks
+en_xgsfpp_omac:
+  vendor: ECI Networks
+  odm: xg_99s
+  title: EN-XGSFPP-OMAC
+
+en_xgsfpp_omac_v2:
+  vendor: ECI Networks
+  odm: was_110
+  title: EN-XGSFPP-OMAC-V2
+
+# FS.com
+xg_99sxgs_onu_25_20ni:
+  vendor: FS
+  odm: xg_99s
+  title: XG-99SXGS-ONU-25-20NI

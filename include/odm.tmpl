@@ -8,13 +8,6 @@
 {% endif %}
 {% endblock %}
 
-{% block vendor_credentials %}
-{% set result = generate_vendor_credentials(device, odm, onu_type) %}
-{% if result %}
-{{ result }}
-{% endif %}
-{% endblock %}
-
 {% block credentials %}
 {% if device.credentials is defined and device.credentials %}
 {% set onu = device %}
@@ -25,6 +18,13 @@
 ## Login Credentials
 
 {{ iterate_credentials(onu) }}
+{% endif %}
+{% endblock %}
+
+{% block vendor_credentials %}
+{% set result = generate_vendor_credentials(device, odm, onu_type) %}
+{% if result %}
+{{ result }}
 {% endif %}
 {% endblock %}
 
