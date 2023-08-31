@@ -1,29 +1,63 @@
+import yaml
 
 
 def define_env(env):
+    with open("mkdocs.yml", "r") as mkdocs_file:
+        mkdocs = yaml.safe_load(mkdocs_file)
+
+    filename = None
+    notices = None
+
+    if mkdocs != None:
+        file_list = []
+
+        tmp_list = [
+            item
+            for item in mkdocs["plugins"]
+            if isinstance(item, dict) and item.get("macros") != None
+        ]
+
+        for macros_dict in tmp_list:
+            for option, value_list in macros_dict["macros"].items():
+                if option == "include_yaml":
+                    for value in value_list:
+                        if isinstance(value, dict):
+                            for name, path in value.items():
+                                if name == "notices":
+                                    filename = path
+
+    if filename:
+        with open(filename, "r") as notices_file:
+            notices = yaml.safe_load(notices_file)
 
     @env.macro
     def credentials(type, cred_list):
         buffer_templ = ""
         table_templ = "\n    | {0} | {1} | {2}"
-        tab_templ = "=== \"{0}\"\n    | Username | Password | {1}\n    | ---- | ---- | {2}"
+        tab_templ = (
+            '=== "{0}"\n    | Username | Password | {1}\n    | ---- | ---- | {2}'
+        )
         priv = False
         for cred in cred_list:
-            username = cred.get('username')
-            password = cred.get('password')
-            privilege = cred.get('privilege')
-            if privilege != None: priv = True
+            username = cred.get("username")
+            password = cred.get("password")
+            privilege = cred.get("privilege")
+            if privilege != None:
+                priv = True
             buffer_templ += table_templ.format(username, password, privilege) + "{0}"
+
         if priv:
-            return tab_templ.format(type, "Privilege |", "---- |") + buffer_templ.format(" |")
+            return tab_templ.format(
+                type, "Privilege |", "---- |"
+            ) + buffer_templ.format(" |")
         else:
             return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
     def iterate_specifications(onu):
-        specifications = onu.get('specifications', None)
+        specifications = onu.get("specifications", None)
         if specifications != None:
-            div_templ = "<div class=\"headerless\" markdown=\"1\">\n{0}\n</div>"
+            div_templ = '<div class="headerless" markdown="1">\n{0}\n</div>'
             text = "| | |\n| ---- | ---- |"
             first = True
             for spec in specifications:
@@ -33,34 +67,65 @@ def define_env(env):
     @env.macro
     def iterate_credentials(onu):
         buffer = ""
-        creds = onu.get('credentials')
+        creds = onu.get("credentials")
         for cred in creds:
-            type = cred.get('type')
-            cred_list = cred.get('credentials')
+            type = cred.get("type")
+            cred_list = cred.get("credentials")
+            notices_list = cred.get("notices")
             buffer += credentials(type, cred_list)
+            if notices_list != None:
+                for name in notices_list:
+                    notice = notices.get(name)
+                    if notice != None:
+                        buffer += "\n" + admonition(notice, nesting=1)
+            buffer += "\n"
         return buffer
 
     @env.macro
-    def admonition(notice):
-        admon_templ = " {0} \"{1}\"\n    {2}"
-        type = notice.get('type', 'info')
-        title = notice.get('title', '')
-        text = notice.get('text', '')
-        expanding = notice.get('expanding', False)
-        expand = notice.get('expand', False)
+    def admonition(notice, nesting=0):
+        admon_templ = ' {0} "{1}"\n    ' + nesting * "    " + "{2}"
+        type = notice.get("type", "info")
+        title = notice.get("title", "")
+        text = notice.get("text", "")
+        expanding = notice.get("expanding", False)
+        expand = notice.get("expand", False)
+        text = text.replace("\n", "\n    " + nesting * "    ")
         if expanding:
             buffer = "???"
-            if expand: buffer += "?"
-            return buffer + admon_templ.format(type, title, text)
+            if expand:
+                buffer += "?"
+            return nesting * "    " + buffer + admon_templ.format(type, title, text)
         else:
-            return "!!!" + admon_templ.format(type, title, text)
+            return nesting * "    " + "!!!" + admon_templ.format(type, title, text)
 
     @env.macro
-    def iterate_notices(onu, notices):
-        names = onu.get('notices')
+    def iterate_notices(onu):
+        names = onu.get("notices")
         buffer = ""
         for name in names:
             notice = notices.get(name)
             if notice != None:
                 buffer += "\n" + admonition(notice)
+        return buffer
+
+    @env.macro
+    def generate_vendor_credentials(odm, onu_type):
+        templ = '=== "{0}"\n    {1}'
+        buffer = ""
+
+        for name in odm.get("aliases"):
+            if name == None:
+                break
+            alias = onu_type.get(name)
+            if (
+                alias == None
+                or alias.get("credentials") == None
+                or not alias["credentials"]
+            ):
+                return
+            buffer += templ.format(alias["title"], iterate_credentials(alias))
+
+        if buffer:
+            buffer = "## Vendor Credentials\n\n" + buffer
+
         return buffer

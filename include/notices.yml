@@ -1,11 +1,27 @@
 rx_los: 
-  type: 'warn'
+  type: 'warning'
   title: 'RX_LOS'
   text: "This module outputs an signal when no received fibre light is detected. Some equipment may disable the interface when this signal is active."
 
 outdated_algorithms:
   type: 'tip'
   title: 'Deprecated Encryption Algorithms'
-  text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n    ```sh\n        -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss\n    ```"
+  text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n```sh\n-oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss\n```"
   expanding: true
 
+password_slice:
+  type: 'warning'
+  title: 'Changing Passwords'
+  text: "The password length isn't restricted from within the web UI; Passwords longer than 16 characters are sliced."
+
+password_storage:
+  type: 'info'
+  title: "Password Storage"
+  text: "The default web UI password is stored in `/ptconf/param_ct.xml`. Modifications from the web UI are stored in '/ptconf/usrconfig_conf` and take precedence."
+  expanding: true
+  
+hardcoded_passwords:
+  type: 'info'
+  title: "Hardcoded Passwords"
+  text: "The `guest` and `test` user passwords are hardcoded in `/usr/bin/cli`."
+  expanding: true
