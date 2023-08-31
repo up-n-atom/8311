@@ -30,6 +30,7 @@ wag_d20:
           username: "test"
           password: "default"
           privilege: 4
+  notices: ['hardcoded_passwords']
   template: "xgs-pon/ont/wag-d20.tmpl"
     
 was_110:
@@ -54,6 +55,7 @@ was_110:
           password: "QpZm@4246#5753"
   images:
     - ['WAS-110', '/img/was-110i.png']
+  notices: ['password_slice', 'password_storage']
   template: "xgs-pon/ont/was-110.tmpl"
 
 # CIG

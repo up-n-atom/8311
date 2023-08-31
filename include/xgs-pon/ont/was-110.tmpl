@@ -1,2 +1,15 @@
 {% extends "odm.tmpl" %}
 {% set odm = onu_type.was_110 %}
+
+{% block value_added_resellers %}
+{% if device == odm %}
+## Value-Added Resellers
+
+| Company                                        | Product Number                                |
+| ---------------------------------------------- | --------------------------------------------- |
+| [Azores Networks](https://azoresnetworks.com/) | XSS[^1]                                       |
+| [E.C.I. Networks](https://ecin.ca/)            | EN-XGSFPP-OMAC-V2                             |
+
+[^1]: Azores Networks XSS formally WAS-110
+{% endif %}
+{% endblock %}

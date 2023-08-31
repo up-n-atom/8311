@@ -8,6 +8,19 @@
 {% endif %}
 {% endblock %}
 
+{% block images %}
+{% if (device.images is defined and device.images) %}
+{% set onu = device %}
+{% elif odm.images is defined and odm.images %}
+{% set onu = odm %}
+{% endif %}
+{% if onu is defined %}
+## Images
+
+{{ includes.iterate_images(onu) }}
+{% endif %}
+{% endblock %}
+
 {% block credentials %}
 {% if device.credentials is defined and device.credentials %}
 {% set onu = device %}
@@ -22,7 +35,7 @@
 {% endblock %}
 
 {% block vendor_credentials %}
-{% set result = generate_vendor_credentials(device, odm, onu_type) %}
+{% set result = generate_vendor_credentials(odm, onu_type) if device == odm %}
 {% if result %}
 {{ result }}
 {% endif %}
@@ -30,6 +43,9 @@
 
 {% block connection_notifications %}
 {{ iterate_notices(odm, notices) if odm.notices is defined }}
+{% endblock %}
+
+{% block value_added_resellers %}
 {% endblock %}
 
 {% block content %}

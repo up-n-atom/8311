@@ -91,7 +91,7 @@ sps_34_24t_hp_tdfo:
     - ['SSH Access', 'Yes']
     - ['SCP Access', 'Yes']
     - ['IP address', '192.168.1.10']
-  notices: ['rx_los', 'outdated_algorithms', ]
+  notices: ['rx_los', 'outdated_algorithms']
   content:
     - "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md"
     - "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md"
