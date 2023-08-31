@@ -1,4 +1,35 @@
+import yaml
+
+
 def define_env(env):
+    with open("mkdocs.yml", "r") as mkdocs_file:
+        mkdocs = yaml.safe_load(mkdocs_file)
+
+    filename = None
+    notices = None
+
+    if mkdocs != None:
+        file_list = []
+
+        tmp_list = [
+            item
+            for item in mkdocs["plugins"]
+            if isinstance(item, dict) and item.get("macros") != None
+        ]
+
+        for macros_dict in tmp_list:
+            for option, value_list in macros_dict["macros"].items():
+                if option == "include_yaml":
+                    for value in value_list:
+                        if isinstance(value, dict):
+                            for name, path in value.items():
+                                if name == "notices":
+                                    filename = path
+
+    if filename:
+        with open(filename, "r") as notices_file:
+            notices = yaml.safe_load(notices_file)
+
     @env.macro
     def credentials(type, cred_list):
         buffer_templ = ""
@@ -14,6 +45,7 @@ def define_env(env):
             if privilege != None:
                 priv = True
             buffer_templ += table_templ.format(username, password, privilege) + "{0}"
+
         if priv:
             return tab_templ.format(
                 type, "Privilege |", "---- |"
@@ -39,27 +71,35 @@ def define_env(env):
         for cred in creds:
             type = cred.get("type")
             cred_list = cred.get("credentials")
-            buffer += credentials(type, cred_list) + "\n"
+            notices_list = cred.get("notices")
+            buffer += credentials(type, cred_list)
+            if notices_list != None:
+                for name in notices_list:
+                    notice = notices.get(name)
+                    if notice != None:
+                        buffer += "\n" + admonition(notice, nesting=1)
+            buffer += "\n"
         return buffer
 
     @env.macro
-    def admonition(notice):
-        admon_templ = ' {0} "{1}"\n    {2}'
+    def admonition(notice, nesting=0):
+        admon_templ = ' {0} "{1}"\n    ' + nesting * "    " + "{2}"
         type = notice.get("type", "info")
         title = notice.get("title", "")
         text = notice.get("text", "")
         expanding = notice.get("expanding", False)
         expand = notice.get("expand", False)
+        text = text.replace("\n", "\n    " + nesting * "    ")
         if expanding:
             buffer = "???"
             if expand:
                 buffer += "?"
-            return buffer + admon_templ.format(type, title, text)
+            return nesting * "    " + buffer + admon_templ.format(type, title, text)
         else:
-            return "!!!" + admon_templ.format(type, title, text)
+            return nesting * "    " + "!!!" + admon_templ.format(type, title, text)
 
     @env.macro
-    def iterate_notices(onu, notices):
+    def iterate_notices(onu):
         names = onu.get("notices")
         buffer = ""
         for name in names:

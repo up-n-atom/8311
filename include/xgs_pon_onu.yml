@@ -47,6 +47,7 @@ was_110:
         -
           username: "user"
           password: "user1234"
+      notices: ['password_slice', 'password_storage']
     -
       type: "Telnet / SSH / UART"
       credentials:
@@ -55,7 +56,6 @@ was_110:
           password: "QpZm@4246#5753"
   images:
     - ['WAS-110', '/img/was-110i.png']
-  notices: ['password_slice', 'password_storage']
   template: "xgs-pon/ont/was-110.tmpl"
 
 # CIG

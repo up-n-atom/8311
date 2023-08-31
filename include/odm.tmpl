@@ -42,7 +42,7 @@
 {% endblock %}
 
 {% block connection_notifications %}
-{{ iterate_notices(odm, notices) if odm.notices is defined }}
+{{ iterate_notices(odm) if odm.notices is defined }}
 {% endblock %}
 
 {% block value_added_resellers %}

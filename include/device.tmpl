@@ -30,7 +30,7 @@
 
 {% block connection_notifications %}
 {% if device.notices is defined %}
-{{ iterate_notices(device, notices) }}
+{{ iterate_notices(device) }}
 {% endif %}
 {% endblock %}
 
