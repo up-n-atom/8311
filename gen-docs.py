@@ -60,7 +60,7 @@ def create_file(device, type='gpon', other=None):
         id, vendor, title = get_device_info(device)
 
     template = device.get('template', "device.tmpl")
-    filename = onu_path_templ.format(type.replace('_', '').lower(), vendor.lower(), id.replace('_', '-'))
+    filename = onu_path_templ.format(type.replace('_', '-').lower(), vendor.lower(), id.replace('_', '-'))
     write_file(filename, device_templ.format(template, type + "_onu", id))
 
     return { title: filename[5:] }
@@ -99,7 +99,7 @@ def process_devices_file(filename):
         for key,value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
-        return { type.replace('_', '-').upper(): [type.replace('_', '').lower() + '/index.md', { 'ONT': sorted(nav, key=lambda d: list(d.keys())) }] }
+        return { type.replace('_', '-').upper(): [type.replace('_', '-').lower() + '/index.md', { 'ONT': sorted(nav, key=lambda d: list(d.keys())) }] }
 
     return None
 
