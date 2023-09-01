@@ -1,9 +1,13 @@
 import yaml
-
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
 
 def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
-        mkdocs = yaml.safe_load(mkdocs_file)
+        mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
     filename = None
     notices = None
@@ -129,3 +133,25 @@ def define_env(env):
             buffer = "## Vendor Credentials\n\n" + buffer
 
         return buffer
+    
+    @env.macro
+    def calculate_onu(device, odm):
+        onu = {
+            "specifications": None,
+            "images": None,
+            "credentials": None
+        }
+        if device is not None:
+            if device.get("specifications") is not None:
+                onu['specifications'] = device["specifications"]
+            elif odm is not None and odm.get("specifications") is not None:
+                onu['specifications'] = odm["specifications"]
+            if device.get("images") is not None:
+                onu['images'] = device["images"]
+            elif odm is not None and odm.get("images") is not None:
+                onu['images'] = odm["images"]
+            if device.get("credentials") is not None:
+                onu['credentials'] = device["credentials"]
+            elif odm is not None and odm.get("credentials") is not None:
+                onu['credentials'] = odm["credentials"]
+        return onu

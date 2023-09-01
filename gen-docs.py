@@ -2,15 +2,14 @@
 
 import os
 import yaml
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
 
 onu_path_templ = "docs/{0}/ont/{1}/{2}.md"
 device_templ = '{{% extends "{0}" %}}\n{{% set onu_type = {1} %}}\n{{% set device = onu_type.{2} %}}'
-
-
-class NoAliasDumper(yaml.SafeDumper):
-    def ignore_aliases(self, data):
-        return True
-
 
 def generate_vendors_lists(device_list):
     list = {}
@@ -120,7 +119,7 @@ def process_devices_file(filename):
 
 def main():
     with open("mkdocs.yml", "r") as mkdocs_file:
-        mkdocs = yaml.safe_load(mkdocs_file)
+        mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
     if mkdocs != None:
         file_list = []
@@ -152,7 +151,7 @@ def main():
         mkdocs["nav"] = nav_list
 
         with open("mkdocs.yml", "w") as mkdocs_file:
-            yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=NoAliasDumper)
+            yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
 
     return
 
