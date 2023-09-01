@@ -3,10 +3,7 @@
 import os
 import yaml
 from yaml import load, dump
-try:
-    from yaml import CLoader as Loader, CDumper as Dumper
-except ImportError:
-    from yaml import Loader, Dumper
+from yaml import Loader, Dumper
 
 onu_path_templ = "docs/{0}/ont/{1}/{2}.md"
 device_templ = '{{% extends "{0}" %}}\n{{% set onu_type = {1} %}}\n{{% set device = onu_type.{2} %}}'
