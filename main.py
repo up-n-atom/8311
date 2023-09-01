@@ -1,9 +1,6 @@
 import yaml
 from yaml import load, dump
-try:
-    from yaml import CLoader as Loader, CDumper as Dumper
-except ImportError:
-    from yaml import Loader, Dumper
+from yaml import Loader, Dumper
 
 def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
