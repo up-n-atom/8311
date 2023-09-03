@@ -32,7 +32,11 @@ markdown_extensions:
     permalink: true
 - tables
 - pymdownx.details
-- pymdownx.superfences
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.tabbed:
     alternate_style: true
 nav: []
@@ -44,6 +48,7 @@ plugins:
     - gpon_onu: include/gpon_onu.yml
     - xgs_pon_onu: include/xgs_pon_onu.yml
     - notices: include/notices.yml
+    - vendors: include/vendors.yml
     on_error_fail: true
     on_undefined: strict
 repo_url: https://github.com/up-n-atom/8311

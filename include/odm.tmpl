@@ -1,36 +1,28 @@
 {% extends "device.tmpl" %}
 
+{% set onu = calculate_onu(device, odm) %}
+
 {% block specifications %}
-{% if odm.specifications is defined %}
+{% if onu.specifications %}
 ## Specifications
 
-{{ iterate_specifications(odm) }}
+{{ specifications_tables(onu) }}
 {% endif %}
 {% endblock %}
 
 {% block images %}
-{% if (device.images is defined and device.images) %}
-{% set onu = device %}
-{% elif odm.images is defined and odm.images %}
-{% set onu = odm %}
-{% endif %}
-{% if onu is defined %}
+{% if onu.images %}
 ## Images
 
 {{ includes.iterate_images(onu) }}
 {% endif %}
 {% endblock %}
 
-{% block credentials %}
-{% if device.credentials is defined and device.credentials %}
-{% set onu = device %}
-{% elif odm.credentials is defined and odm.credentials %}
-{% set onu = odm %}
-{% endif %}
-{% if onu is defined and onu.credentials %}
+{% block connections %}
+{% if onu.connections %}
 ## Login Credentials
 
-{{ iterate_credentials(onu) }}
+{{ connections_table(onu) }}
 {% endif %}
 {% endblock %}
 
@@ -41,16 +33,21 @@
 {% endif %}
 {% endblock %}
 
-{% block connection_notifications %}
-{{ iterate_notices(odm) if odm.notices is defined }}
+{% block notices %}
+{{ iterate_notices(onu) if onu.notices }}
 {% endblock %}
 
 {% block value_added_resellers %}
+{% if device == odm %}
+## Value-Added Resellers
+
+{{ resellers_table(odm) }}
+{% endif %}
 {% endblock %}
 
 {% block content %}
-{% if odm.content is defined %}
-{% for content in odm.content %}
+{% if onu.content %}
+{% for content in onu.content %}
 {% include content %}
 {% endfor %}
 {% endif %}

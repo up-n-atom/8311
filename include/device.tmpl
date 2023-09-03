@@ -3,10 +3,10 @@
 # {% block name %}{{ device.title if device.title is defined }}{% endblock %}
 
 {% block specifications %}
-{% if device.specifications is defined and device.specifications%}
+{% if device.specifications is defined and device.specifications %}
 ## Specifications
 
-{{ iterate_specifications(device) }}
+{{ specifications_tables(device) }}
 {% endif %}
 {% endblock %}
 
@@ -18,17 +18,17 @@
 {% endif %}
 {% endblock %}
 
-{% block credentials %}
-{% if device.credentials is defined and device.credentials %}
+{% block connections %}
+{% if device.connections is defined and device.connections %}
 ## Login Credentials
 
-{{ iterate_credentials(device) }}
+{{ connections_table(device) }}
 {% endif %}
 {% endblock %}
 
 {% block vendor_credentials %}{% endblock %}
 
-{% block connection_notifications %}
+{% block notices %}
 {% if device.notices is defined %}
 {{ iterate_notices(device) }}
 {% endif %}

@@ -8,14 +8,19 @@ try:
 except ImportError:
     from yaml import Loader, Dumper
 
+with open('include/vendors.yml', "r") as vendors_file:
+    vendors = yaml.safe_load(vendors_file)
+
 onu_path_templ = "docs/{0}/ont/{1}/{2}.md"
 device_templ = '{{% extends "{0}" %}}\n{{% set onu_type = {1} %}}\n{{% set device = onu_type.{2} %}}'
 
 def generate_vendors_lists(device_list):
     list = {}
     for id, device in device_list:
-        vendor = device.get("vendor")
-        list[vendor] = []
+        vendor_name = device.get("vendor")
+        
+        if vendors.get(vendor_name) != None:
+            list[vendors[vendor_name]["title"]] = []
     return list
 
 
@@ -65,6 +70,7 @@ def create_file(device, type="gpon", other=None):
         id, vendor, title = get_device_info(device)
 
     template = device.get("template", "device.tmpl")
+ 
     filename = onu_path_templ.format(
         type.replace("_", "-").lower(), vendor.lower(), id.replace("_", "-")
     )
@@ -97,12 +103,12 @@ def process_devices_file(filename):
         for _, onu in onu_list.items():
             if onu.get("odm") == None:
                 item = create_file(onu, type)
-                nav_items[onu["vendor"]].append(item)
+                nav_items[vendors[onu["vendor"]]["title"]].append(item)
 
             if onu.get("aliases") != None:
                 for alias in onu["aliases"]:
                     item = create_file(onu, type, onu_list[alias])
-                    nav_items[onu_list[alias]["vendor"]].append(item)
+                    nav_items[vendors[onu_list[alias]["vendor"]]["title"]].append(item)
 
         for key, value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})

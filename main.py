@@ -1,3 +1,4 @@
+from mkdocs_table_reader_plugin.readers import READERS
 import yaml
 from yaml import load, dump
 try:
@@ -9,12 +10,10 @@ def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
         mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
-    filename = None
+    file_list = []
     notices = None
 
     if mkdocs != None:
-        file_list = []
-
         tmp_list = [
             item
             for item in mkdocs["plugins"]
@@ -28,24 +27,63 @@ def define_env(env):
                         if isinstance(value, dict):
                             for name, path in value.items():
                                 if name == "notices":
-                                    filename = path
-
-    if filename:
-        with open(filename, "r") as notices_file:
-            notices = yaml.safe_load(notices_file)
+                                    with open(path, "r") as notices_file:
+                                        notices = yaml.safe_load(notices_file)
+                                elif name == "vendors":
+                                    with open(path, "r") as vendors_file:
+                                        vendors = yaml.safe_load(vendors_file)
+                                else:
+                                    file_list.append(path)
+                        elif isinstance(value, str):
+                            file_list.append(value)
+        
+#        for filename in [
+#            name for name in file_list if "_onu" in name or "_olt" in name
+#        ]:
+            
+    @env.macro
+    def read_csv(*args, **kwargs):
+        return READERS["read_csv"](*args, **kwargs)
+    
+    @env.macro
+    def read_table(*args, **kwargs):
+        return READERS["read_table"](*args, **kwargs)
+    
+    @env.macro
+    def read_fwf(*args, **kwargs):
+        return READERS["read_fwf"](*args, **kwargs)
+    
+    @env.macro
+    def read_excel(*args, **kwargs):
+        return READERS["read_excel"](*args, **kwargs)
+    
+    @env.macro
+    def read_yaml(*args, **kwargs):
+        return READERS["read_yaml"](*args, **kwargs)
+    
+    @env.macro
+    def read_json(*args, **kwargs):
+        return READERS["read_json"](*args, **kwargs)
+    
+    @env.macro
+    def read_raw(*args, **kwargs):
+        return READERS["read_raw"](*args, **kwargs)
 
     @env.macro
-    def credentials(type, cred_list):
+    def credentials_table(type, credentials):
+        if not credentials:
+            return None
+
         buffer_templ = ""
         table_templ = "\n    | {0} | {1} | {2}"
         tab_templ = (
             '=== "{0}"\n    | Username | Password | {1}\n    | ---- | ---- | {2}'
         )
         priv = False
-        for cred in cred_list:
-            username = cred.get("username")
-            password = cred.get("password")
-            privilege = cred.get("privilege")
+        for credential in credentials:
+            username = credential.get("username")
+            password = credential.get("password")
+            privilege = credential.get("privilege")
             if privilege != None:
                 priv = True
             buffer_templ += table_templ.format(username, password, privilege) + "{0}"
@@ -58,32 +96,75 @@ def define_env(env):
             return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
-    def iterate_specifications(onu):
+    def specifications_tables(onu):
         specifications = onu.get("specifications", None)
         if specifications != None:
+            buffer = ""
             div_templ = '<div class="headerless" markdown="1">\n{0}\n</div>'
-            text = "| | |\n| ---- | ---- |"
-            first = True
             for spec in specifications:
-                text += "\n| **" + spec[0] + "** | " + spec[1] + " |"
-            return div_templ.format(text)
+                if isinstance(spec, str):
+                    buffer += read_table(spec, sep = ':', escapechar='\\') + "\n\n"
+                elif isinstance(spec, dict):
+                    for key, value in spec.items():
+                        buffer += "### " + key + "\n"
+                        buffer += read_table(value, sep = ':', escapechar='\\') + "\n\n"
+            return div_templ.format(buffer)
+        
+    @env.macro
+    def resellers_table(odm):
+        resellers = odm.get("resellers", None)
+        if resellers != None:
+            url_templ = "[{0}]({1})"
+            row_templ = "\n| {0} | {1}{2} |"
+            table_templ = "| Company | Product Number |\n| ---- | ---- |{0}\n"
+
+            table_buffer = ""
+            notes_buffer = ""
+
+            for reseller in resellers:
+                if vendors.get(reseller["vendor"]) != None:
+                    url = ''
+                    title = ''
+                    pn = reseller["pn"].replace("_", "-").upper()
+                    for key, value in vendors[reseller["vendor"]].items():
+                        if key == "web":
+                            url = value
+                        elif key == "title":
+                            title = value
+                    if not title:
+                        title =  reseller["vendor"]
+
+                    if reseller.get("note_id") != None:
+                        note_id = "[^" + str(reseller["note_id"]) + "]"
+                        note = reseller["note"]
+                        notes_buffer += note_id + ": " + note + "\n"
+                    else:
+                        note_id = ""
+                    
+                    if url or url != "N/A":
+                        table_buffer += row_templ.format(url_templ.format(title, url), pn, note_id)
+                    else:
+                        table_buffer += row_templ.format(title, pn, note_id)
+                        
+            return table_templ.format(table_buffer) + "\n" + notes_buffer + "\n"
 
     @env.macro
-    def iterate_credentials(onu):
+    def connections_table(onu):
         buffer = ""
-        creds = onu.get("credentials")
-        for cred in creds:
-            type = cred.get("type")
-            cred_list = cred.get("credentials")
-            notices_list = cred.get("notices")
-            buffer += credentials(type, cred_list)
-            if notices_list != None:
-                for name in notices_list:
-                    notice = notices.get(name)
-                    if notice != None:
-                        buffer += "\n" + admonition(notice, nesting=1)
-            buffer += "\n"
-        return buffer
+        connections = onu.get("connections")
+        if connections:
+            for connection in connections:
+                type = connection.get("type")
+                credentials = connection.get("credentials")
+                notices_list = connection.get("notices")
+                buffer += credentials_table(type, credentials)
+                if notices_list != None:
+                    for name in notices_list:
+                        notice = notices.get(name)
+                        if notice != None:
+                            buffer += "\n" + admonition(notice, nesting=1)
+                buffer += "\n"
+            return buffer
 
     @env.macro
     def admonition(notice, nesting=0):
@@ -123,11 +204,11 @@ def define_env(env):
             alias = onu_type.get(name)
             if (
                 alias == None
-                or alias.get("credentials") == None
-                or not alias["credentials"]
+                or alias.get("connections") == None
+                or not alias["connections"]
             ):
                 return
-            buffer += templ.format(alias["title"], iterate_credentials(alias))
+            buffer += templ.format(alias["title"], connections_table(alias))
 
         if buffer:
             buffer = "## Vendor Credentials\n\n" + buffer
@@ -139,7 +220,9 @@ def define_env(env):
         onu = {
             "specifications": None,
             "images": None,
-            "credentials": None
+            "connections": None,
+            "notices": None,
+            "content": None
         }
         if device is not None:
             if device.get("specifications") is not None:
@@ -150,8 +233,16 @@ def define_env(env):
                 onu['images'] = device["images"]
             elif odm is not None and odm.get("images") is not None:
                 onu['images'] = odm["images"]
-            if device.get("credentials") is not None:
-                onu['credentials'] = device["credentials"]
-            elif odm is not None and odm.get("credentials") is not None:
-                onu['credentials'] = odm["credentials"]
+            if device.get("connections") is not None:
+                onu['connections'] = device["connections"]
+            elif odm is not None and odm.get("connections") is not None:
+                onu['connections'] = odm["connections"]
+            if device.get("notices") is not None:
+                onu['notices'] = device["notices"]
+            elif odm is not None and odm.get("notices") is not None:
+                onu['notices'] = odm["notices"]
+            if device.get("content") is not None:
+                onu['content'] = device["content"]
+            elif odm is not None and odm.get("content") is not None:
+                onu['content'] = odm["content"]
         return onu
