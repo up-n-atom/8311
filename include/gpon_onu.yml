@@ -1,6 +1,6 @@
-# Alcatel-Lucent / Nokia
+# Alcatel-Lucent
 g_010s_p:
-  vendor: Nokia
+  vendor: Alcatel-Lucent
   odm: sps_34_24t_hp_tdfo
   title: G-010S-P
   credentials:
@@ -13,6 +13,7 @@ g_010s_p:
   images:
     - ['G-010S-P', '/img/g-010s-p.png']
 
+# Nokia
 g_440g_a:
   vendor: Nokia
   title: G-440G-A
@@ -55,6 +56,8 @@ ma5671a:
         -
           username: "root"
           password: "admin123"
+  images:
+    - ['MA5671A', '/img/ma5671a.png']
 
 # ODI
 dfp_34x_2c2:

@@ -75,6 +75,8 @@ en_xgsfpp_omac_v2:
   vendor: ECI Networks
   odm: was_110
   title: EN-XGSFPP-OMAC-V2
+  images:
+    - ['EN-XGSFPP-OMAC-V2', '/img/en-xgsfpp-omac-v2.png']
 
 # FS.com
 xg_99sxgs_onu_25_20ni:
