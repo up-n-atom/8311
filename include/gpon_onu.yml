@@ -11,7 +11,8 @@ g_010s_p:
           username: "ONTUSER"
           password: "SUGAR2A041"
   images:
-    - ['G-010S-P', '/img/g-010s-p.png']
+    - ['G-010S-P Top', '/img/g-010s-p-1.png']
+    - ['G-010S-P Bottom', '/img/g-010s-p-2.png']
 
 # Nokia
 g_440g_a:
@@ -57,7 +58,8 @@ ma5671a:
           username: "root"
           password: "admin123"
   images:
-    - ['MA5671A', '/img/ma5671a.png']
+    - ['MA5671A Top', '/img/ma5671a.png']
+    - ['MA5671A Bottom', '/img/g-010s-p-2.png']
 
 # ODI
 dfp_34x_2c2:
