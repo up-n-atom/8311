@@ -9,6 +9,12 @@ outdated_algorithms:
   text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n```sh\n-oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss\n```"
   expanding: true
 
+outdated_algorithms2:
+  type: 'tip'
+  title: 'Deprecated Encryption Algorithms'
+  text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n```sh\n-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa\n```"
+  expanding: true
+
 password_slice:
   type: 'warning'
   title: 'Changing Passwords'

@@ -54,6 +54,7 @@ was_110:
         -
           username: "root"
           password: "QpZm@4246#5753"
+      notices: ['outdated_algorithms2']
   images:
     - ['WAS-110', '/img/was-110i.png']
   template: "xgs-pon/ont/was-110.tmpl"
