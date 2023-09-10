@@ -9,10 +9,10 @@ outdated_algorithms:
   text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n```sh\n-oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss\n```"
   expanding: true
 
-outdated_algorithms2:
+weak_algorithms:
   type: 'tip'
-  title: 'Deprecated Encryption Algorithms'
-  text: "Some firmware versions use outdated algorithms for SSH and SCP, in this case it may be necessary to use the following parameters:\n```sh\n-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa\n```"
+  title: 'Weak Encryption Algorithms'
+  text: "The default `dropbear` host key `/etc/dropbear/dropbear_rsa_host_key` RSA/SHA1 algorithm may be disabled by newer SSH clients (disabled at run-time since OpenSSH 8.8, released in 2021). In such cases, it may be necessary to use the following parameters:\n```sh\n-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa\n```"
   expanding: true
 
 password_slice:
@@ -23,7 +23,7 @@ password_slice:
 password_storage:
   type: 'info'
   title: "Password Storage"
-  text: "The default web UI password is stored in `/ptconf/param_ct.xml`. Modifications from the web UI are stored in '/ptconf/usrconfig_conf` and take precedence."
+  text: "The default web UI password is stored in `/ptconf/param_ct.xml`. Modifications from the web UI are stored in `/ptconf/usrconfig_conf` and take precedence."
   expanding: true
   
 hardcoded_passwords:
