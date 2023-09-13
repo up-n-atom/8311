@@ -85,3 +85,9 @@ xg_99sxgs_onu_25_20ni:
   vendor: FS
   odm: xg_99s
   title: XG-99SXGS-ONU-25-20NI
+
+# Fullwell
+fwxg_890sg:
+  vendor: Fullwell
+  odm: wag_d20
+  title: FWXG-890SG
