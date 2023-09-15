@@ -13,7 +13,7 @@ xss:
 wag_d20:
   vendor: bfw
   title: WAG-D20
-  aliases: ['x1z1e']
+  aliases: ['x1z1e', 'fwxg_890sg']
   connections:
   - type: "Telnet / UART"
     credentials:
@@ -33,6 +33,8 @@ wag_d20:
       pn: x1z1e
       note_id: 1
       note: Azores Networks X1Z1E, formerly WAG-D20
+    - vendor: fullwell
+      pn: fwxg_890sg
         
 was_110:
   vendor: bfw
@@ -50,6 +52,7 @@ was_110:
     credentials:
     - username: "root"
       password: "QpZm@4246#5753"
+    notices: ['weak_algorithms']
   images:
   - ['WAS-110', '/img/was-110i.png']
   template: "xgs-pon/ont/was-110.tmpl"
@@ -85,9 +88,18 @@ en_xgsfpp_omac_v2:
   vendor: eci
   odm: was_110
   title: EN-XGSFPP-OMAC-V2
+  images:
+  - ['EN-XGSFPP-OMAC-V2 Top', '/img/was-110i.png']
+  - ['EN-XGSFPP-OMAC-V2 Bottom', '/img/en-xgsfpp-omac-v2.png']
 
 # FS.com
 xgs_onu_25_20ni:
   vendor: fs
   odm: xg_99s
   title: XGS-ONU-25-20NI
+
+# Fullwell
+fwxg_890sg:
+  vendor: fullwell
+  odm: wag_d20
+  title: FWXG-890SG
