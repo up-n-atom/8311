@@ -51,4 +51,5 @@ plugins:
     - vendors: include/vendors.yml
     on_error_fail: true
     on_undefined: strict
+- glightbox
 repo_url: https://github.com/up-n-atom/8311
