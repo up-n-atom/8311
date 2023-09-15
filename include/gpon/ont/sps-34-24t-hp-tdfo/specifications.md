@@ -1,3 +1,4 @@
+            :
 **Chipset** : Lantiq PEB98035
 **CPU** : MIPS 34Kc interAptiv
 **CPU Clock** : 400MHz
