@@ -13,7 +13,7 @@ xss:
 wag_d20:
   vendor: "BFW"
   title: WAG-D20
-  aliases: ['x1z1e']
+  aliases: ['x1z1e', 'fwxg_890sg']
   credentials:
     -
       type: "Telnet / UART"
