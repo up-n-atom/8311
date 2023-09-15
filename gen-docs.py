@@ -19,8 +19,11 @@ def generate_vendors_lists(device_list):
     for id, device in device_list:
         vendor_name = device.get("vendor")
         
-        if vendors.get(vendor_name) != None:
-            list[vendors[vendor_name]["title"]] = []
+        if vendors.get(vendor_name):
+            if vendors[vendor_name].get("short_title"):
+                list[vendors[vendor_name]["short_title"]] = []
+            else:
+                list[vendors[vendor_name]["title"]] = []
     return list
 
 
@@ -108,7 +111,10 @@ def process_devices_file(filename):
             if onu.get("aliases") != None:
                 for alias in onu["aliases"]:
                     item = create_file(onu, type, onu_list[alias])
-                    nav_items[vendors[onu_list[alias]["vendor"]]["title"]].append(item)
+                    if vendors[onu_list[alias]["vendor"]].get("short_title"):
+                        nav_items[vendors[onu_list[alias]["vendor"]]["short_title"]].append(item)
+                    else:
+                        nav_items[vendors[onu_list[alias]["vendor"]]["title"]].append(item)
 
         for key, value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
