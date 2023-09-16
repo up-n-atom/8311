@@ -84,7 +84,7 @@ def define_env(env):
             username = credential.get("username")
             password = credential.get("password")
             privilege = credential.get("privilege")
-            if privilege != None:
+            if privilege:
                 priv = True
             buffer_templ += table_templ.format(username, password, privilege) + "{0}"
 
@@ -96,25 +96,40 @@ def define_env(env):
             return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
-    def specifications_tables(onu):
-        specifications = onu.get("specifications", None)
+    def specifications_tables(onu, div_class="headerless"):
+        specifications = onu.get("specifications")
         if not specifications:
             return
-        
+        div_templ = '<div class="{1}" markdown="1">\n{0}\n</div>'
+        templ = '=== "{0}"\n    {1}'
         buffer = ""
-        div_templ = '<div class="headerless" markdown="1">\n{0}\n</div>'
         for spec in specifications:
             if isinstance(spec, str):
-                buffer += read_table(spec, sep = ':', escapechar='\\') + "\n\n"
+                buffer += templ.format(" ", specifications_table(spec, ignore_heading=True, nesting=1))
             elif isinstance(spec, dict):
-                for key, value in spec.items():
-                    buffer += "### " + key + "\n"
-                    buffer += read_table(value, sep = ':', escapechar='\\') + "\n\n"
-        return div_templ.format(buffer)
+                for key,value in spec.items():
+                    buffer += templ.format(key, specifications_table(spec, ignore_heading=True, nesting=1))
+                    break
+
+        return div_templ.format(buffer, div_class)
+
+    def specifications_table(spec, ignore_heading=False, nesting=0):
+        if isinstance(spec, str):
+            text = read_table(spec, sep = ':', escapechar='\\')
+            buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+        elif isinstance(spec, dict):
+            for key, value in spec.items():
+                text = read_table(value, sep = ':', escapechar='\\')
+                if ignore_heading:
+                    buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+                else:
+                    buffer = "### " + key + "\n" + text + "\n\n"
+                break
+        return buffer
         
     @env.macro
     def resellers_table(odm):
-        resellers = odm.get("resellers", None)
+        resellers = odm.get("resellers")
         if not resellers:
             return
         
