@@ -2,7 +2,11 @@
 
 {% block name %}
 {% if device.title is defined and device.title %}
-# {{ device.title }}
+{% if vendors[device.vendor].short_title is defined %}
+# {{ vendors[device.vendor].short_title }}<br>{{ device.title }}
+{% else %}
+# {{ vendors[device.vendor].title }}<br>{{ device.title }}
+{% endif %}
 {% endif %}
 {% endblock %}
 
