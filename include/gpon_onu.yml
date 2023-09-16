@@ -74,7 +74,6 @@ sps_34_24t_hp_tdfo:
   vendor: sp
   title: SPS-34-24T-HP-TDFO
   aliases: ['g_010s_p', 'gpon_onu_34_20bi', 'ma5671a']
-  template: "gpon/ont/sps-34-24t-hp-tdfo.tmpl"
   specifications:
   - 'include/gpon/ont/sps-34-24t-hp-tdfo/specifications.md'
   notices: ['rx_los', 'outdated_algorithms']

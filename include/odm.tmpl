@@ -1,5 +1,11 @@
 {% extends "device.tmpl" %}
 
+{% if device.odm is defined %}
+{% set odm = onu_type[device.odm] %}
+{% else %}
+{% set odm = device %}
+{% endif %}
+
 {% set onu = calculate_onu(device, odm) %}
 
 {% block specifications %}
@@ -38,7 +44,7 @@
 {% endblock %}
 
 {% block value_added_resellers %}
-{% if device == odm %}
+{% if device == odm and odm.resellers is defined %}
 ## Value-Added Resellers
 
 {{ resellers_table(odm) }}

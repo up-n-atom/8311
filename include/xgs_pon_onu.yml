@@ -27,7 +27,6 @@ wag_d20:
       password: "default"
       privilege: 4
   notices: ['hardcoded_passwords']
-  template: "xgs-pon/ont/wag-d20.tmpl"
   resellers:
     - vendor: azores
       pn: x1z1e
@@ -55,7 +54,6 @@ was_110:
     notices: ['weak_algorithms']
   images:
   - ['WAS-110', '/img/was-110i.png']
-  template: "xgs-pon/ont/was-110.tmpl"
   resellers:
   - vendor: azores
     pn: xss
@@ -69,7 +67,6 @@ xg_99s:
   vendor: cig
   title: XG-99S
   aliases: ['xgs_onu_25_20ni', 'en_xgsfpp_omac']
-  template: "xgs-pon/ont/xg-99s.tmpl"
   resellers:
   - vendor: eci
     pn: en_xgsfpp_omac

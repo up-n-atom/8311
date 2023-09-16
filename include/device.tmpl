@@ -1,6 +1,10 @@
 {% import  'macros.md' as includes %}
 
-# {% block name %}{{ device.title if device.title is defined }}{% endblock %}
+{% block name %}
+{% if device.title is defined and device.title %}
+# {{ device.title }}
+{% endif %}
+{% endblock %}
 
 {% block images %}
 {% if device.images is defined and device.images %}
