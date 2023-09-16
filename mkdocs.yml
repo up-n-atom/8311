@@ -39,7 +39,12 @@ markdown_extensions:
       format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.tabbed:
     alternate_style: true
-nav: []
+nav:
+- Home: index.md
+- GPON:
+  - gpon/index.md
+- XGS-PON:
+  - xgs-pon/index.md
 plugins:
 - search
 - macros:

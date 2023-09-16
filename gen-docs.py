@@ -16,7 +16,7 @@ device_templ = '{{% extends "{0}" %}}\n{{% set onu_type = {1} %}}\n{{% set devic
 
 def generate_vendors_lists(device_list):
     list = {}
-    for id, device in device_list:
+    for _, device in device_list:
         vendor_name = device.get("vendor")
         
         if vendors.get(vendor_name):
@@ -44,10 +44,8 @@ def iterate_device_list(device_list):
 
         if odm:
             dev["odm"] = odm
-
         if aliases:
             dev["aliases"] = aliases
-        
         if template:
             dev["template"] = template
 
@@ -68,7 +66,7 @@ def write_file(filename, contents):
     return
 
 
-def create_file(device, type="gpon", other=None):
+def create_file(device, type={"system":"gpon", "device":"onu"}, other=None):
     odm = None
 
     if other:
@@ -82,15 +80,14 @@ def create_file(device, type="gpon", other=None):
         id, vendor, title = get_device_info(device)
         if device.get("aliases"):
             odm = device
-        if odm:
             template = device.get("template", "odm.tmpl")
         else:
             template = device.get("template", "device.tmpl")
  
     filename = onu_path_templ.format(
-        type.replace("_", "-").lower(), vendor.lower(), id.replace("_", "-")
+        type["system"].replace("_", "-").lower(), vendor.lower(), id.replace("_", "-")
     )
-    write_file(filename, device_templ.format(template, type + "_onu", id))
+    write_file(filename, device_templ.format(template, type["system"] + "_" + type["device"], id))
 
     return {title: filename[5:]}
 
@@ -100,16 +97,24 @@ def process_devices_file(filename):
         devices = yaml.safe_load(onu_file)
 
     nav = []
+    type = {}
 
-    if devices != None:
+    if devices:
         if "xgs_pon" in filename:
-            type = "xgs_pon"
+            type["system"] = "xgs_pon"
         elif "gpon" in filename:
-            type = "gpon"
+            type["system"] = "gpon"
         elif "epon" in filename:
-            type = "epon"
+            type["system"] = "epon"
         elif "10g_epon" in filename:
-            type = "10g_epon"
+            type["system"] = "10g_epon"
+        else:
+            return
+        
+        if "_onu" in filename:
+            type["device"] = "ont"
+        elif "_olt" in filename:
+            type["device"] = "olt"
         else:
             return
 
@@ -117,11 +122,11 @@ def process_devices_file(filename):
         nav_items = generate_vendors_lists(devices.items())
 
         for _, onu in onu_list.items():
-            if onu.get("odm") == None:
+            if not onu.get("odm"):
                 item = create_file(onu, type)
                 nav_items[vendors[onu["vendor"]]["title"]].append(item)
 
-            if onu.get("aliases") != None:
+            if onu.get("aliases"):
                 for alias in onu["aliases"]:
                     item = create_file(onu, type, onu_list[alias])
                     if vendors[onu_list[alias]["vendor"]].get("short_title"):
@@ -132,12 +137,10 @@ def process_devices_file(filename):
         for key, value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
-        return {
-            type.replace("_", "-").upper(): [
-                type.replace("_", "-").lower() + "/index.md",
-                {"ONT": sorted(nav, key=lambda d: list(d.keys()))},
-            ]
-        }
+        if type["device"] == "olt":
+            return (type["system"], {"OLT": sorted(nav, key=lambda d: list(d.keys()))})
+        elif type["device"] == "ont":
+            return (type["system"], {"ONT": sorted(nav, key=lambda d: list(d.keys()))})
 
     return None
 
@@ -146,13 +149,13 @@ def main():
     with open("mkdocs.yml", "r") as mkdocs_file:
         mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
-    if mkdocs != None:
+    if mkdocs:
         file_list = []
 
         tmp_list = [
             item
             for item in mkdocs["plugins"]
-            if isinstance(item, dict) and item.get("macros") != None
+            if isinstance(item, dict) and item.get("macros")
         ]
 
         for macros_dict in tmp_list:
@@ -171,9 +174,13 @@ def main():
         ]:
             nav_list.append(process_devices_file(filename))
 
-        nav_list = sorted(nav_list, key=lambda d: list(d.keys()))
-        nav_list.insert(0, {"Home": "index.md"})
-        mkdocs["nav"] = nav_list
+        nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
+
+        nav = mkdocs["nav"]
+        for type, tree in nav_list:
+            type_index = next((index for (index, d) in enumerate(nav) if d.get(type.replace("_", "-").upper()) != None), None)
+            if type_index:
+                nav[type_index][type.replace("_", "-").upper()].append(tree)
 
         with open("mkdocs.yml", "w") as mkdocs_file:
             yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
