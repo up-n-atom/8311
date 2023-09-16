@@ -2,19 +2,19 @@
 
 # {% block name %}{{ device.title if device.title is defined }}{% endblock %}
 
-{% block specifications %}
-{% if device.specifications is defined and device.specifications %}
-## Specifications
-
-{{ specifications_tables(device) }}
-{% endif %}
-{% endblock %}
-
 {% block images %}
 {% if device.images is defined and device.images %}
 ## Images
 
 {{ includes.iterate_images(device) }}
+{% endif %}
+{% endblock %}
+
+{% block specifications %}
+{% if device.specifications is defined and device.specifications %}
+## Specifications
+
+{{ specifications_tables(device) }}
 {% endif %}
 {% endblock %}
 

@@ -105,25 +105,23 @@ def define_env(env):
         buffer = ""
         for spec in specifications:
             if isinstance(spec, str):
-                buffer += templ.format(" ", specifications_table(spec, ignore_heading=True, nesting=1))
+                buffer += templ.format(" ", specifications_table(spec, nesting=1))
             elif isinstance(spec, dict):
-                for key,value in spec.items():
-                    buffer += templ.format(key, specifications_table(spec, ignore_heading=True, nesting=1))
+                for key, _ in spec.items():
+                    buffer += templ.format(key, specifications_table(spec, nesting=1))
                     break
 
         return div_templ.format(buffer, div_class)
-
-    def specifications_table(spec, ignore_heading=False, nesting=0):
+    
+    @env.macro
+    def specifications_table(spec, nesting=0):
         if isinstance(spec, str):
             text = read_table(spec, sep = ':', escapechar='\\')
             buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
         elif isinstance(spec, dict):
-            for key, value in spec.items():
+            for _, value in spec.items():
                 text = read_table(value, sep = ':', escapechar='\\')
-                if ignore_heading:
-                    buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
-                else:
-                    buffer = "### " + key + "\n" + text + "\n\n"
+                buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
                 break
         return buffer
         
