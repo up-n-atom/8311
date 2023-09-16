@@ -37,7 +37,7 @@
 {% block vendor_credentials %}{% endblock %}
 
 {% block notices %}
-{% if device.notices is defined %}
+{% if device.notices is defined and device.notices %}
 {{ iterate_notices(device) }}
 {% endif %}
 {% endblock %}
@@ -46,7 +46,7 @@
 {% endblock %}
 
 {% block content %}
-{% if device.content is defined %}
+{% if device.content is defined and device.content %}
 {% for content in device.content %}
 {% include content %}
 {% endfor %}

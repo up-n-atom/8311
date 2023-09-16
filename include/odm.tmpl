@@ -9,7 +9,7 @@
 {% set onu = calculate_onu(device, odm) %}
 
 {% block specifications %}
-{% if onu.specifications %}
+{% if onu.specifications is defined and onu.specifications %}
 ## Specifications
 
 {{ specifications_tables(onu) }}
@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block images %}
-{% if onu.images %}
+{% if onu.images is defined and onu.images %}
 ## Images
 
 {{ includes.iterate_images(onu) }}
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block connections %}
-{% if onu.connections %}
+{% if onu.connections is defined and onu.connections %}
 ## Login Credentials
 
 {{ connections_table(onu) }}
@@ -40,7 +40,9 @@
 {% endblock %}
 
 {% block notices %}
-{{ iterate_notices(onu) if onu.notices }}
+{% if onu.notices is defined and onu.notices %}
+{{ iterate_notices(onu) }}
+{% endif %}
 {% endblock %}
 
 {% block value_added_resellers %}
@@ -52,7 +54,7 @@
 {% endblock %}
 
 {% block content %}
-{% if onu.content %}
+{% if onu.content is defined and onu.content %}
 {% for content in onu.content %}
 {% include content %}
 {% endfor %}
