@@ -70,19 +70,22 @@ def write_file(filename, contents):
 
 def create_file(device, type="gpon", other=None):
     odm = None
-    
+
     if other:
         id, vendor, title = get_device_info(other)
         odm = other.get("odm")
+        if odm:
+            template = other.get("template", "odm.tmpl")
+        else:
+            template = other.get("template", "device.tmpl")
     else:
         id, vendor, title = get_device_info(device)
         if device.get("aliases"):
             odm = device
-
-    if odm:
-        template = device.get("template", "odm.tmpl")
-    else:
-        template = device.get("template", "device.tmpl")
+        if odm:
+            template = device.get("template", "odm.tmpl")
+        else:
+            template = device.get("template", "device.tmpl")
  
     filename = onu_path_templ.format(
         type.replace("_", "-").lower(), vendor.lower(), id.replace("_", "-")
