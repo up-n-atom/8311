@@ -42,11 +42,13 @@ def iterate_device_list(device_list):
         dev["vendor"] = vendor
         dev["title"] = title
 
-        if odm != None:
+        if odm:
             dev["odm"] = odm
 
-        if aliases != None and template != None:
+        if aliases:
             dev["aliases"] = aliases
+        
+        if template:
             dev["template"] = template
 
         list[id] = dev
