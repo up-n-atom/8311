@@ -138,9 +138,9 @@ def process_devices_file(filename):
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
         if type["device"] == "olt":
-            return (type["system"], {"OLT": sorted(nav, key=lambda d: list(d.keys()))})
+            return (type, {"OLT": sorted(nav, key=lambda d: list(d.keys()))})
         elif type["device"] == "ont":
-            return (type["system"], {"ONT": sorted(nav, key=lambda d: list(d.keys()))})
+            return (type, {"ONT": sorted(nav, key=lambda d: list(d.keys()))})
 
     return None
 
@@ -178,9 +178,14 @@ def main():
 
         nav = mkdocs["nav"]
         for type, tree in nav_list:
-            type_index = next((index for (index, d) in enumerate(nav) if d.get(type.replace("_", "-").upper()) != None), None)
+            type_index = next((index for (index, d) in enumerate(nav) if d.get(type["system"].replace("_", "-").upper()) != None), None)
             if type_index:
-                nav[type_index][type.replace("_", "-").upper()].append(tree)
+                nav_type = enumerate(nav[type_index][type["system"].replace("_", "-").upper()])
+                device_index = next((index for (index, d) in nav_type if isinstance(d, dict) and d.get(type["device"].upper()) != None), None)
+                if device_index:
+                    nav[type_index][type["system"].replace("_", "-").upper()][device_index] = tree
+                else:
+                    nav[type_index][type["system"].replace("_", "-").upper()].append(tree)
 
         with open("mkdocs.yml", "w") as mkdocs_file:
             yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
