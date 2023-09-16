@@ -24,5 +24,6 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-macros-plugin
       - run: pip install mkdocs-glightbox
+      - run: pip install mkdocs-table-reader-plugin
       - run: python3 gen-docs.py
       - run: mkdocs gh-deploy --remote-branch wiki --force
