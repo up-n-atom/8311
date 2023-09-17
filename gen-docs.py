@@ -72,7 +72,7 @@ def create_file(device, pon, other=None):
 
     if pon == None:
         return None
-    
+
     if other:
         id, vendor, title = get_device_info(other)
         odm = other.get("odm")
@@ -95,11 +95,10 @@ def create_file(device, pon, other=None):
         pon["device"],
     )
 
-    write_file(
-        filename, device_templ.format(template, pon["type"], id, pon["device"])
-    )
+    write_file(filename, device_templ.format(template, pon["type"], id, pon["device"]))
 
     return {title: filename[5:]}
+
 
 def get_pon(filename):
     pon = {}
@@ -120,6 +119,7 @@ def get_pon(filename):
     else:
         return None
     return pon
+
 
 def process_devices_file(filename, pon):
     with open(filename, "r") as onu_file:
@@ -163,6 +163,7 @@ def process_devices_file(filename, pon):
 
     return None
 
+
 def get_indicies(nav):
     home_index = next(
         (index for (index, d) in enumerate(nav) if d.get("Home") != None),
@@ -193,6 +194,7 @@ def get_indicies(nav):
         "XGS-PON": xgs_pon_index,
     }
 
+
 def nav_insert(nav, indexes, pon_type):
     if pon_type == "10G-EPON":
         nav.insert(indexes.get("Home") + 1, {"10G-EPON": ["10g-epon/index.md"]})
@@ -211,6 +213,7 @@ def nav_insert(nav, indexes, pon_type):
     elif pon_type == "XGS-PON":
         nav.append({"XGS-PON": ["xgs-pon/index.md"]})
     return nav
+
 
 def main():
     with open("mkdocs.yml", "r") as mkdocs_file:
@@ -242,9 +245,7 @@ def main():
 
         nav_list = []
 
-        for filename in [
-            name for name in file_list if get_pon(name) != None
-        ]:
+        for filename in [name for name in file_list if get_pon(name) != None]:
             nav_list.append(process_devices_file(filename, get_pon(filename)))
 
         nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
@@ -272,15 +273,26 @@ def main():
                 ),
                 None,
             )
+
             if device_index:
                 nav[pon_index][pon_type][device_index] = nav_tree
             else:
-                nav[pon_index][pon_type].append(nav_tree)
+                dicts = [
+                    item for item in nav[pon_index][pon_type] if isinstance(item, dict)
+                ]
+                strings = [
+                    item for item in nav[pon_index][pon_type] if isinstance(item, str)
+                ]
+                dicts.append(nav_tree)
+                nav[pon_index][pon_type] = strings + sorted(
+                    dicts, key=lambda d: list(d.keys())
+                )
 
         with open("mkdocs.yml", "w") as mkdocs_file:
             yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
 
     return
+
 
 if __name__ == "__main__":
     main()
