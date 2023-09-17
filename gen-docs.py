@@ -249,82 +249,78 @@ def main():
     with open("mkdocs.yml", "r") as mkdocs_file:
         mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
-    if mkdocs:
-        file_list = []
+    if not mkdocs:
+        return
 
-        macros_index = next(
+    file_list = []
+
+    macros_index = next(
+        (
+            index
+            for (index, d) in enumerate(mkdocs["plugins"])
+            if isinstance(d, dict) and d.get("macros") != None
+        ),
+        None,
+    )
+
+    if not macros_index:
+        return
+
+    for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
+        if option != "include_yaml":
+            continue
+
+        for value in value_list:
+            if isinstance(value, dict):
+                for _, path in value.items():
+                    file_list.append(path)
+
+            elif isinstance(value, str):
+                file_list.append(value)
+        break
+
+    nav_list = []
+
+    for filename in [name for name in file_list if get_pon(name) != None]:
+        nav_list.append(process_devices_file(filename, get_pon(filename)))
+
+    nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
+
+    nav = mkdocs["nav"]
+
+    indices = get_nav_indices(nav)
+
+    for pon, nav_tree in nav_list:
+        pon_type = pon["type"].replace("_", "-").upper()
+        pon_device = pon["device"].upper()
+        pon_index = indices.get(pon_type)
+
+        if pon_index == None:
+            nav = nav_insert(nav, indices, pon_type)
+            indices = get_nav_indices(nav)
+            pon_index = indices.get(pon_type)
+
+        device_index = next(
             (
                 index
-                for (index, d) in enumerate(mkdocs["plugins"])
-                if isinstance(d, dict) and d.get("macros") != None
+                for (index, d) in enumerate(nav[pon_index][pon_type])
+                if isinstance(d, dict) and d.get(pon_device) != None
             ),
             None,
         )
 
-        if not macros_index:
-            return None
+        if device_index:
+            nav[pon_index][pon_type][device_index] = nav_tree
+            continue
 
-        for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
-            if option != "include_yaml":
-                continue
+        dicts = [item for item in nav[pon_index][pon_type] if isinstance(item, dict)]
+        strings = [item for item in nav[pon_index][pon_type] if isinstance(item, str)]
 
-            for value in value_list:
-                if isinstance(value, dict):
-                    for _, path in value.items():
-                        file_list.append(path)
+        dicts.append(nav_tree)
+        nav[pon_index][pon_type] = strings + sorted(dicts, key=lambda d: list(d.keys()))
 
-                elif isinstance(value, str):
-                    file_list.append(value)
-            break
-
-        nav_list = []
-
-        for filename in [name for name in file_list if get_pon(name) != None]:
-            nav_list.append(process_devices_file(filename, get_pon(filename)))
-
-        nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
-
-        nav = mkdocs["nav"]
-
-        indices = get_nav_indices(nav)
-
-        for pon, nav_tree in nav_list:
-            pon_type = pon["type"].replace("_", "-").upper()
-            pon_device = pon["device"].upper()
-            pon_index = indices.get(pon_type)
-
-            if pon_index == None:
-                nav = nav_insert(nav, indices, pon_type)
-                indices = get_nav_indices(nav)
-                pon_index = indices.get(pon_type)
-
-            device_index = next(
-                (
-                    index
-                    for (index, d) in enumerate(nav[pon_index][pon_type])
-                    if isinstance(d, dict) and d.get(pon_device) != None
-                ),
-                None,
-            )
-
-            if device_index:
-                nav[pon_index][pon_type][device_index] = nav_tree
-                continue
-
-            dicts = [
-                item for item in nav[pon_index][pon_type] if isinstance(item, dict)
-            ]
-            strings = [
-                item for item in nav[pon_index][pon_type] if isinstance(item, str)
-            ]
-
-            dicts.append(nav_tree)
-            nav[pon_index][pon_type] = strings + sorted(
-                dicts, key=lambda d: list(d.keys())
-            )
-
-        with open("mkdocs.yml", "w") as mkdocs_file:
-            yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
+    with open("mkdocs.yml", "w") as mkdocs_file:
+        yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
 
     return
 
