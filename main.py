@@ -15,31 +15,38 @@ def define_env(env):
     file_list = []
     notices = None
 
-    if mkdocs:
-        macros_index = next(
-            (
-                index
-                for (index, d) in enumerate(mkdocs["plugins"])
-                if isinstance(d, dict) and d.get("macros") != None
-            ),
-            None,
-        )
+    if not mkdocs:
+        return
 
-        for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
-            if option == "include_yaml":
-                for value in value_list:
-                    if isinstance(value, dict):
-                        for name, path in value.items():
-                            if name == "notices":
-                                with open(path, "r") as notices_file:
-                                    notices = yaml.safe_load(notices_file)
-                            elif name == "vendors":
-                                with open(path, "r") as vendors_file:
-                                    vendors = yaml.safe_load(vendors_file)
-                            else:
-                                file_list.append(path)
-                    elif isinstance(value, str):
-                        file_list.append(value)
+    macros_index = next(
+        (
+            index
+            for (index, d) in enumerate(mkdocs["plugins"])
+            if isinstance(d, dict) and d.get("macros") != None
+        ),
+        None,
+    )
+
+    for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
+        if option != "include_yaml":
+            continue
+
+        for value in value_list:
+            if isinstance(value, dict):
+                for name, path in value.items():
+                    if name == "notices":
+                        with open(path, "r") as notices_file:
+                            notices = yaml.safe_load(notices_file)
+
+                    elif name == "vendors":
+                        with open(path, "r") as vendors_file:
+                            vendors = yaml.safe_load(vendors_file)
+                    else:
+                        file_list.append(path)
+
+            elif isinstance(value, str):
+                file_list.append(value)
+        break
 
     #        for filename in [
     #            name for name in file_list if "_onu" in name or "_olt" in name
@@ -78,18 +85,22 @@ def define_env(env):
         if not credentials:
             return None
 
-        buffer_templ = ""
         table_templ = "\n    | {0} | {1} | {2}"
         tab_templ = (
             '=== "{0}"\n    | Username | Password | {1}\n    | ---- | ---- | {2}'
         )
+
+        buffer_templ = ""
         priv = False
+
         for credential in credentials:
             username = credential.get("username")
             password = credential.get("password")
             privilege = credential.get("privilege")
+
             if privilege:
                 priv = True
+
             buffer_templ += table_templ.format(username, password, privilege) + "{0}"
 
         if priv:
@@ -102,14 +113,18 @@ def define_env(env):
     @env.macro
     def specifications_tables(onu, div_class="headerless"):
         specifications = onu.get("specifications")
+
         if not specifications:
             return
+
         div_templ = '<div class="{1}" markdown="1">\n{0}\n</div>'
         templ = '=== "{0}"\n    {1}'
         buffer = ""
+
         for spec in specifications:
             if isinstance(spec, str):
                 buffer += templ.format(" ", specifications_table(spec, nesting=1))
+
             elif isinstance(spec, dict):
                 for key, _ in spec.items():
                     buffer += templ.format(key, specifications_table(spec, nesting=1))
@@ -122,16 +137,19 @@ def define_env(env):
         if isinstance(spec, str):
             text = read_table(spec, sep=":", escapechar="\\")
             buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+
         elif isinstance(spec, dict):
             for _, value in spec.items():
                 text = read_table(value, sep=":", escapechar="\\")
                 buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
                 break
+
         return buffer
 
     @env.macro
     def resellers_table(odm):
         resellers = odm.get("resellers")
+
         if not resellers:
             return
 
@@ -145,14 +163,17 @@ def define_env(env):
         for reseller in resellers:
             if not vendors.get(reseller["vendor"]):
                 continue
+
             url = ""
             title = ""
             pn = reseller["pn"].replace("_", "-").upper()
+
             for key, value in vendors[reseller["vendor"]].items():
                 if key == "web":
                     url = value
                 elif key == "title":
                     title = value
+
             if not title:
                 title = reseller["vendor"]
 
@@ -175,21 +196,26 @@ def define_env(env):
     @env.macro
     def connections_table(onu):
         connections = onu.get("connections")
+
         if not connections:
             return
 
         buffer = ""
+
         for connection in connections:
             type = connection.get("type")
             credentials = connection.get("credentials")
             notices_list = connection.get("notices")
             buffer += credentials_table(type, credentials)
+
             if notices_list:
                 for name in notices_list:
                     notice = notices.get(name)
                     if notice:
                         buffer += "\n" + admonition(notice, nesting=1)
+
             buffer += "\n"
+
         return buffer
 
     @env.macro
@@ -201,6 +227,7 @@ def define_env(env):
         expanding = notice.get("expanding", False)
         expand = notice.get("expand", False)
         text = text.replace("\n", "\n    " + nesting * "    ")
+
         if expanding:
             buffer = "???"
             if expand:
@@ -213,10 +240,13 @@ def define_env(env):
     def iterate_notices(onu):
         names = onu.get("notices")
         buffer = ""
+
         for name in names:
             notice = notices.get(name)
+
             if notice != None:
                 buffer += "\n" + admonition(notice)
+
         return buffer
 
     @env.macro
@@ -227,13 +257,16 @@ def define_env(env):
         for name in odm.get("aliases"):
             if name == None:
                 break
+
             alias = onu_type.get(name)
+
             if (
                 alias == None
                 or alias.get("connections") == None
                 or not alias["connections"]
             ):
                 return
+
             buffer += templ.format(alias["title"], connections_table(alias))
 
         if buffer:
@@ -253,24 +286,30 @@ def define_env(env):
             "notices": None,
             "content": None,
         }
+
         if device.get("specifications") is not None:
             onu["specifications"] = device["specifications"]
         elif odm is not None and odm.get("specifications") is not None:
             onu["specifications"] = odm["specifications"]
+
         if device.get("images") is not None:
             onu["images"] = device["images"]
         elif odm is not None and odm.get("images") is not None:
             onu["images"] = odm["images"]
+
         if device.get("connections") is not None:
             onu["connections"] = device["connections"]
         elif odm is not None and odm.get("connections") is not None:
             onu["connections"] = odm["connections"]
+
         if device.get("notices") is not None:
             onu["notices"] = device["notices"]
         elif odm is not None and odm.get("notices") is not None:
             onu["notices"] = odm["notices"]
+
         if device.get("content") is not None:
             onu["content"] = device["content"]
         elif odm is not None and odm.get("content") is not None:
             onu["content"] = odm["content"]
+
         return onu
