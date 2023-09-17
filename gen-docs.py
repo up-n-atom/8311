@@ -3,27 +3,28 @@
 import os
 import yaml
 from yaml import load, dump
+
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
     from yaml import Loader, Dumper
 
-with open('include/vendors.yml', "r") as vendors_file:
+with open("include/vendors.yml", "r") as vendors_file:
     vendors = yaml.safe_load(vendors_file)
 
-onu_path_templ = "docs/{0}/ont/{1}/{2}.md"
-device_templ = '{{% extends "{0}" %}}\n{{% set onu_type = {1} %}}\n{{% set device = onu_type.{2} %}}'
+onu_path_templ = "docs/{0}/{3}/{1}/{2}.md"
+device_templ = '{{% extends "{0}" %}}\n{{% set {3}_type = {1}_{3} %}}\n{{% set device = {3}_type.{2} %}}'
+
 
 def generate_vendors_lists(device_list):
     list = {}
     for _, device in device_list:
-        vendor_name = device.get("vendor")
-        
-        if vendors.get(vendor_name):
-            if vendors[vendor_name].get("short_title"):
-                list[vendors[vendor_name]["short_title"]] = []
+        vendor = device.get("vendor")
+        if vendors.get(vendor):
+            if vendors[vendor].get("short_title"):
+                list[vendors[vendor]["short_title"]] = []
             else:
-                list[vendors[vendor_name]["title"]] = []
+                list[vendors[vendor]["title"]] = []
     return list
 
 
@@ -66,7 +67,7 @@ def write_file(filename, contents):
     return
 
 
-def create_file(device, type={"system":"gpon", "device":"onu"}, other=None):
+def create_file(device, type={"system": "gpon", "device": "onu"}, other=None):
     odm = None
 
     if other:
@@ -83,11 +84,17 @@ def create_file(device, type={"system":"gpon", "device":"onu"}, other=None):
             template = device.get("template", "odm.tmpl")
         else:
             template = device.get("template", "device.tmpl")
- 
+
     filename = onu_path_templ.format(
-        type["system"].replace("_", "-").lower(), vendor.lower(), id.replace("_", "-")
+        type["system"].replace("_", "-").lower(),
+        vendor.lower(),
+        id.replace("_", "-"),
+        type["device"],
     )
-    write_file(filename, device_templ.format(template, type["system"] + "_" + type["device"], id))
+
+    write_file(
+        filename, device_templ.format(template, type["system"], id, type["device"])
+    )
 
     return {title: filename[5:]}
 
@@ -110,7 +117,7 @@ def process_devices_file(filename):
             type["system"] = "10g_epon"
         else:
             return
-        
+
         if "_onu" in filename:
             type["device"] = "onu"
         elif "_olt" in filename:
@@ -123,24 +130,55 @@ def process_devices_file(filename):
 
         for _, onu in onu_list.items():
             if not onu.get("odm"):
+                vendor = vendors[onu["vendor"]]
                 item = create_file(onu, type)
-                nav_items[vendors[onu["vendor"]]["title"]].append(item)
+                if vendor.get("short_title"):
+                    nav_items[vendor["short_title"]].append(item)
+                else:
+                    nav_items[vendor["title"]].append(item)
 
             if onu.get("aliases"):
                 for alias in onu["aliases"]:
+                    vendor = vendors[onu_list[alias]["vendor"]]
                     item = create_file(onu, type, onu_list[alias])
-                    if vendors[onu_list[alias]["vendor"]].get("short_title"):
-                        nav_items[vendors[onu_list[alias]["vendor"]]["short_title"]].append(item)
+                    if vendor.get("short_title"):
+                        nav_items[vendor["short_title"]].append(item)
                     else:
-                        nav_items[vendors[onu_list[alias]["vendor"]]["title"]].append(item)
+                        nav_items[vendor["title"]].append(item)
 
         for key, value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
-        return (type, {type["device"].upper(): sorted(nav, key=lambda d: list(d.keys()))})
+        return (
+            type,
+            {type["device"].upper(): sorted(nav, key=lambda d: list(d.keys()))},
+        )
 
     return None
 
+def get_indicies(nav):
+    home_index = next(
+        (index for (index, d) in enumerate(nav) if d.get("Home") != None),
+        None,
+    )
+    teng_epon_index = next(
+        (index for (index, d) in enumerate(nav) if d.get("10G-EPON") != None),
+        None,
+    )
+    epon_index = next(
+        (index for (index, d) in enumerate(nav) if d.get("EPON") != None),
+        None,
+    )
+    gpon_index = next(
+        (index for (index, d) in enumerate(nav) if d.get("GPON") != None),
+        None,
+    )
+    xgs_pon_index = next(
+        (index for (index, d) in enumerate(nav) if d.get("XGS-PON") != None),
+        None,
+    )
+
+    return (home_index, teng_epon_index, epon_index, gpon_index, xgs_pon_index)
 
 def main():
     with open("mkdocs.yml", "r") as mkdocs_file:
@@ -149,21 +187,27 @@ def main():
     if mkdocs:
         file_list = []
 
-        tmp_list = [
-            item
-            for item in mkdocs["plugins"]
-            if isinstance(item, dict) and item.get("macros")
-        ]
+        macros_index = next(
+            (
+                index
+                for (index, d) in enumerate(mkdocs["plugins"])
+                if isinstance(d, dict) and d.get("macros") != None
+            ),
+            None,
+        )
 
-        for macros_dict in tmp_list:
-            for option, value_list in macros_dict["macros"].items():
-                if option == "include_yaml":
-                    for value in value_list:
-                        if isinstance(value, dict):
-                            for _, path in value.items():
-                                file_list.append(path)
-                        elif isinstance(value, str):
-                            file_list.append(value)
+        if not macros_index:
+            return None
+
+        for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
+            if option == "include_yaml":
+                for value in value_list:
+                    if isinstance(value, dict):
+                        for _, path in value.items():
+                            file_list.append(path)
+                    elif isinstance(value, str):
+                        file_list.append(value)
+
         nav_list = []
 
         for filename in [
@@ -174,21 +218,85 @@ def main():
         nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
 
         nav = mkdocs["nav"]
+
+        (
+            home_index,
+            teng_epon_index,
+            epon_index,
+            gpon_index,
+            xgs_pon_index,
+        ) = get_indicies(nav)
+
+        switcher = {
+            "Home": home_index,
+            "10G-EPON": teng_epon_index,
+            "EPON": epon_index,
+            "GPON": gpon_index,
+            "XGS-PON": xgs_pon_index,
+        }
+
         for type, tree in nav_list:
-            type_index = next((index for (index, d) in enumerate(nav) if d.get(type["system"].replace("_", "-").upper()) != None), None)
-            if type_index:
-                nav_type = enumerate(nav[type_index][type["system"].replace("_", "-").upper()])
-                device_index = next((index for (index, d) in nav_type if isinstance(d, dict) and d.get(type["device"].upper()) != None), None)
-                if device_index:
-                    nav[type_index][type["system"].replace("_", "-").upper()][device_index] = tree
-                else:
-                    nav[type_index][type["system"].replace("_", "-").upper()].append(tree)
+            type_system = type["system"].replace("_", "-").upper()
+            type_device = type["device"].upper()
+
+            type_index = switcher.get(type_system)
+
+            if type_index == None:
+                if type_system == "10G-EPON":
+                    teng_pon = {"10G-EPON": ["10g-epon/index.md"]}
+                    nav.insert(switcher.get("Home") + 1, teng_pon)
+                elif type_system == "EPON":
+                    epon = {"EPON": ["epon/index.md"]}
+                    if switcher.get("10G-EPON"):
+                        nav.insert(switcher.get("10G-EPON") + 1, epon)
+                    else:
+                        nav.insert(switcher.get("Home") + 1, epon)
+                elif type_system == "GPON":
+                    gpon = {"GPON": ["gpon/index.md"]}
+                    if switcher.get("XGS-PON"):
+                        nav.insert(switcher.get("XGS-PON"), gpon)
+                    else:
+                        nav.append(gpon)
+                elif type_system == "XGS-PON":
+                    xgs_pon = {"XGS-PON": ["xgs-pon/index.md"]}
+                    nav.append(xgs_pon)
+
+                (
+                    home_index,
+                    teng_epon_index,
+                    epon_index,
+                    gpon_index,
+                    xgs_pon_index,
+                ) = get_indicies(nav)
+
+                switcher = {
+                    "Home": home_index,
+                    "10G-EPON": teng_epon_index,
+                    "EPON": epon_index,
+                    "GPON": gpon_index,
+                    "XGS-PON": xgs_pon_index,
+                }
+
+            type_index = switcher.get(type_system)
+
+            nav_type = enumerate(nav[type_index][type_system])
+            device_index = next(
+                (
+                    index
+                    for (index, d) in nav_type
+                    if isinstance(d, dict) and d.get(type_device) != None
+                ),
+                None,
+            )
+            if device_index:
+                nav[type_index][type_system][device_index] = tree
+            else:
+                nav[type_index][type_system].append(tree)
 
         with open("mkdocs.yml", "w") as mkdocs_file:
             yaml.dump(mkdocs, mkdocs_file, sort_keys=False, Dumper=Dumper)
 
     return
-
 
 if __name__ == "__main__":
     main()

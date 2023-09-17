@@ -1,10 +1,12 @@
 from mkdocs_table_reader_plugin.readers import READERS
 import yaml
 from yaml import load, dump
+
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
     from yaml import Loader, Dumper
+
 
 def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
@@ -36,35 +38,35 @@ def define_env(env):
                                     file_list.append(path)
                         elif isinstance(value, str):
                             file_list.append(value)
-        
-#        for filename in [
-#            name for name in file_list if "_onu" in name or "_olt" in name
-#        ]:
-            
+
+    #        for filename in [
+    #            name for name in file_list if "_onu" in name or "_olt" in name
+    #        ]:
+
     @env.macro
     def read_csv(*args, **kwargs):
         return READERS["read_csv"](*args, **kwargs)
-    
+
     @env.macro
     def read_table(*args, **kwargs):
         return READERS["read_table"](*args, **kwargs)
-    
+
     @env.macro
     def read_fwf(*args, **kwargs):
         return READERS["read_fwf"](*args, **kwargs)
-    
+
     @env.macro
     def read_excel(*args, **kwargs):
         return READERS["read_excel"](*args, **kwargs)
-    
+
     @env.macro
     def read_yaml(*args, **kwargs):
         return READERS["read_yaml"](*args, **kwargs)
-    
+
     @env.macro
     def read_json(*args, **kwargs):
         return READERS["read_json"](*args, **kwargs)
-    
+
     @env.macro
     def read_raw(*args, **kwargs):
         return READERS["read_raw"](*args, **kwargs)
@@ -112,25 +114,25 @@ def define_env(env):
                     break
 
         return div_templ.format(buffer, div_class)
-    
+
     @env.macro
     def specifications_table(spec, nesting=0):
         if isinstance(spec, str):
-            text = read_table(spec, sep = ':', escapechar='\\')
+            text = read_table(spec, sep=":", escapechar="\\")
             buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
         elif isinstance(spec, dict):
             for _, value in spec.items():
-                text = read_table(value, sep = ':', escapechar='\\')
+                text = read_table(value, sep=":", escapechar="\\")
                 buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
                 break
         return buffer
-        
+
     @env.macro
     def resellers_table(odm):
         resellers = odm.get("resellers")
         if not resellers:
             return
-        
+
         url_templ = "[{0}]({1})"
         row_templ = "\n| {0} | {1}{2} |"
         table_templ = "| Company | Product Number |\n| ---- | ---- |{0}\n"
@@ -141,8 +143,8 @@ def define_env(env):
         for reseller in resellers:
             if not vendors.get(reseller["vendor"]):
                 continue
-            url = ''
-            title = ''
+            url = ""
+            title = ""
             pn = reseller["pn"].replace("_", "-").upper()
             for key, value in vendors[reseller["vendor"]].items():
                 if key == "web":
@@ -150,7 +152,7 @@ def define_env(env):
                 elif key == "title":
                     title = value
             if not title:
-                title =  reseller["vendor"]
+                title = reseller["vendor"]
 
             if reseller.get("note_id") != None:
                 note_id = "[^" + str(reseller["note_id"]) + "]"
@@ -158,12 +160,14 @@ def define_env(env):
                 notes_buffer += note_id + ": " + note + "\n"
             else:
                 note_id = ""
-                    
+
             if url or url != "N/A":
-                table_buffer += row_templ.format(url_templ.format(title, url), pn, note_id)
+                table_buffer += row_templ.format(
+                    url_templ.format(title, url), pn, note_id
+                )
             else:
                 table_buffer += row_templ.format(title, pn, note_id)
-                        
+
         return table_templ.format(table_buffer) + "\n" + notes_buffer + "\n"
 
     @env.macro
@@ -171,8 +175,8 @@ def define_env(env):
         connections = onu.get("connections")
         if not connections:
             return
-        
-        buffer = ""        
+
+        buffer = ""
         for connection in connections:
             type = connection.get("type")
             credentials = connection.get("credentials")
@@ -234,37 +238,37 @@ def define_env(env):
             buffer = "## Vendor Credentials\n\n" + buffer
 
         return buffer
-    
+
     @env.macro
     def calculate_onu(device, odm):
         if not device:
             return
-        
+
         onu = {
             "specifications": None,
             "images": None,
             "connections": None,
             "notices": None,
-            "content": None
+            "content": None,
         }
         if device.get("specifications") is not None:
-            onu['specifications'] = device["specifications"]
+            onu["specifications"] = device["specifications"]
         elif odm is not None and odm.get("specifications") is not None:
-            onu['specifications'] = odm["specifications"]
+            onu["specifications"] = odm["specifications"]
         if device.get("images") is not None:
-            onu['images'] = device["images"]
+            onu["images"] = device["images"]
         elif odm is not None and odm.get("images") is not None:
-            onu['images'] = odm["images"]
+            onu["images"] = odm["images"]
         if device.get("connections") is not None:
-            onu['connections'] = device["connections"]
+            onu["connections"] = device["connections"]
         elif odm is not None and odm.get("connections") is not None:
-            onu['connections'] = odm["connections"]
+            onu["connections"] = odm["connections"]
         if device.get("notices") is not None:
-            onu['notices'] = device["notices"]
+            onu["notices"] = device["notices"]
         elif odm is not None and odm.get("notices") is not None:
-            onu['notices'] = odm["notices"]
+            onu["notices"] = odm["notices"]
         if device.get("content") is not None:
-            onu['content'] = device["content"]
+            onu["content"] = device["content"]
         elif odm is not None and odm.get("content") is not None:
-            onu['content'] = odm["content"]
+            onu["content"] = odm["content"]
         return onu
