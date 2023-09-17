@@ -16,28 +16,30 @@ def define_env(env):
     notices = None
 
     if mkdocs:
-        tmp_list = [
-            item
-            for item in mkdocs["plugins"]
-            if isinstance(item, dict) and item.get("macros")
-        ]
+        macros_index = next(
+            (
+                index
+                for (index, d) in enumerate(mkdocs["plugins"])
+                if isinstance(d, dict) and d.get("macros") != None
+            ),
+            None,
+        )
 
-        for macros_dict in tmp_list:
-            for option, value_list in macros_dict["macros"].items():
-                if option == "include_yaml":
-                    for value in value_list:
-                        if isinstance(value, dict):
-                            for name, path in value.items():
-                                if name == "notices":
-                                    with open(path, "r") as notices_file:
-                                        notices = yaml.safe_load(notices_file)
-                                elif name == "vendors":
-                                    with open(path, "r") as vendors_file:
-                                        vendors = yaml.safe_load(vendors_file)
-                                else:
-                                    file_list.append(path)
-                        elif isinstance(value, str):
-                            file_list.append(value)
+        for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
+            if option == "include_yaml":
+                for value in value_list:
+                    if isinstance(value, dict):
+                        for name, path in value.items():
+                            if name == "notices":
+                                with open(path, "r") as notices_file:
+                                    notices = yaml.safe_load(notices_file)
+                            elif name == "vendors":
+                                with open(path, "r") as vendors_file:
+                                    vendors = yaml.safe_load(vendors_file)
+                            else:
+                                file_list.append(path)
+                    elif isinstance(value, str):
+                        file_list.append(value)
 
     #        for filename in [
     #            name for name in file_list if "_onu" in name or "_olt" in name
