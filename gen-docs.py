@@ -112,7 +112,7 @@ def process_devices_file(filename):
             return
         
         if "_onu" in filename:
-            type["device"] = "ont"
+            type["device"] = "onu"
         elif "_olt" in filename:
             type["device"] = "olt"
         else:
@@ -137,10 +137,7 @@ def process_devices_file(filename):
         for key, value in nav_items.items():
             nav.append({key: sorted(value, key=lambda d: list(d.keys()))})
 
-        if type["device"] == "olt":
-            return (type, {"OLT": sorted(nav, key=lambda d: list(d.keys()))})
-        elif type["device"] == "ont":
-            return (type, {"ONT": sorted(nav, key=lambda d: list(d.keys()))})
+        return (type, {type["device"].upper(): sorted(nav, key=lambda d: list(d.keys()))})
 
     return None
 
