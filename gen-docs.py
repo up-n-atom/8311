@@ -164,7 +164,7 @@ def process_devices_file(filename, pon):
     return None
 
 
-def get_indicies(nav):
+def get_nav_indices(nav):
     home_index = next(
         (index for (index, d) in enumerate(nav) if d.get("Home") != None),
         None,
@@ -195,19 +195,19 @@ def get_indicies(nav):
     }
 
 
-def nav_insert(nav, indexes, pon_type):
+def nav_insert(nav, indices, pon_type):
     if pon_type == "10G-EPON":
-        nav.insert(indexes.get("Home") + 1, {"10G-EPON": ["10g-epon/index.md"]})
+        nav.insert(indices.get("Home") + 1, {"10G-EPON": ["10g-epon/index.md"]})
     elif pon_type == "EPON":
         epon = {"EPON": ["epon/index.md"]}
-        if indexes.get("10G-EPON"):
-            nav.insert(indexes.get("10G-EPON") + 1, epon)
+        if indices.get("10G-EPON"):
+            nav.insert(indices.get("10G-EPON") + 1, epon)
         else:
-            nav.insert(indexes.get("Home") + 1, epon)
+            nav.insert(indices.get("Home") + 1, epon)
     elif pon_type == "GPON":
         gpon = {"GPON": ["gpon/index.md"]}
-        if indexes.get("XGS-PON"):
-            nav.insert(indexes.get("XGS-PON"), gpon)
+        if indices.get("XGS-PON"):
+            nav.insert(indices.get("XGS-PON"), gpon)
         else:
             nav.append(gpon)
     elif pon_type == "XGS-PON":
@@ -252,18 +252,18 @@ def main():
 
         nav = mkdocs["nav"]
 
-        indexes = get_indicies(nav)
+        indices = get_nav_indices(nav)
 
         for pon, nav_tree in nav_list:
             pon_type = pon["type"].replace("_", "-").upper()
             pon_device = pon["device"].upper()
 
-            pon_index = indexes.get(pon_type)
+            pon_index = indices.get(pon_type)
 
             if pon_index == None:
-                nav = nav_insert(nav, indexes, pon_type)
-                indexes = get_indicies(nav)
-                pon_index = indexes.get(pon_type)
+                nav = nav_insert(nav, indices, pon_type)
+                indices = get_nav_indices(nav)
+                pon_index = indices.get(pon_type)
 
             device_index = next(
                 (
