@@ -1,93 +1,102 @@
 # Azores Networks
 x1z1e:
-  vendor: Azores
+  vendor: azores
   odm: wag_d20
   title: X1Z1E
 
 xss:
-  vendor: Azores
+  vendor: azores
   odm: was_110
   title: XSS
 
 # BFW
 wag_d20:
-  vendor: "BFW"
+  vendor: bfw
   title: WAG-D20
   aliases: ['x1z1e', 'fwxg_890sg']
-  credentials:
-    -
-      type: "Telnet / UART"
-      credentials:
-        -
-          username: "admin"
-          password: "ADMIN123!@#"
-          privilege: 3
-        -
-          username: "guest"
-          password: "welcome"
-          privilege: 5
-        -
-          username: "test"
-          password: "default"
-          privilege: 4
+  connections:
+  - type: "Telnet / UART"
+    credentials:
+    - username: "admin"
+      password: "ADMIN123!@#"
+      privilege: 3
+    - username: "guest"
+      password: "welcome"
+      privilege: 5
+    - username: "test"
+      password: "default"
+      privilege: 4
   notices: ['hardcoded_passwords']
-  template: "xgs-pon/ont/wag-d20.tmpl"
-    
+  resellers:
+    - vendor: azores
+      pn: x1z1e
+      note_id: 1
+      note: Azores Networks X1Z1E, formerly WAG-D20
+    - vendor: fullwell
+      pn: fwxg_890sg
+        
 was_110:
-  vendor: "BFW"
+  vendor: bfw
   title: WAS-110
   aliases: ['xss', 'en_xgsfpp_omac_v2']
-  credentials:
-    -
-      type: "Web UI"
-      credentials:
-        -
-          username: "admin"
-          password: "QsCg@7249#5281"
-        -
-          username: "user"
-          password: "user1234"
-      notices: ['password_slice', 'password_storage']
-    -
-      type: "Telnet / SSH / UART"
-      credentials:
-        -
-          username: "root"
-          password: "QpZm@4246#5753"
-      notices: ['weak_algorithms']
+  connections:
+  - type: "Web UI"
+    credentials:
+    - username: "admin"
+      password: "QsCg@7249#5281"
+    - username: "user"
+      password: "user1234"
+    notices: ['password_slice', 'password_storage']
+  - type: "Telnet / SSH / UART"
+    credentials:
+    - username: "root"
+      password: "QpZm@4246#5753"
+    notices: ['weak_algorithms']
   images:
-    - ['WAS-110', '/img/was-110i.png']
-  template: "xgs-pon/ont/was-110.tmpl"
+  - ['WAS-110', '/img/was-110i.png']
+  resellers:
+  - vendor: azores
+    pn: xss
+    note_id: 1
+    note: Azores Networks XSS, formerly WAS-110
+  - vendor: eci
+    pn: en_xgsfpp_omac_v2
 
 # CIG
 xg_99s:
-  vendor: "CIG"
+  vendor: cig
   title: XG-99S
-  aliases: ['xg_99sxgs_onu_25_20ni', 'en_xgsfpp_omac']
-  template: "xgs-pon/ont/xg-99s.tmpl"
+  aliases: ['xgs_onu_25_20ni', 'en_xgsfpp_omac']
+  resellers:
+  - vendor: eci
+    pn: en_xgsfpp_omac
+    note_id: 1
+    note: E.C.I. Networks EN-XGSFPP-OMAC is EoL and superseded by the [EN-XGSFPP-OMAC V2](../eci/en-xgsfpp-omac-v2.md)
+  - vendor: fs
+    pn: xgs_onu_25_20ni
 
 # ECI Networks
 en_xgsfpp_omac:
-  vendor: ECI Networks
+  vendor: eci
   odm: xg_99s
   title: EN-XGSFPP-OMAC
 
 en_xgsfpp_omac_v2:
-  vendor: ECI Networks
+  vendor: eci
   odm: was_110
   title: EN-XGSFPP-OMAC-V2
   images:
-    - ['EN-XGSFPP-OMAC-V2 Top', '/img/was-110i.png']
-    - ['EN-XGSFPP-OMAC-V2 Bottom', '/img/en-xgsfpp-omac-v2.png']
+  - ['EN-XGSFPP-OMAC-V2 Top', '/img/was-110i.png']
+  - ['EN-XGSFPP-OMAC-V2 Bottom', '/img/en-xgsfpp-omac-v2.png']
 
 # FS.com
-xg_99sxgs_onu_25_20ni:
-  vendor: FS
+xgs_onu_25_20ni:
+  vendor: fs
   odm: xg_99s
-  title: XG-99SXGS-ONU-25-20NI
+  title: XGS-ONU-25-20NI
 
 # Fullwell
 fwxg_890sg:
-  vendor: Fullwell
+  vendor: fullwell
   odm: wag_d20
   title: FWXG-890SG

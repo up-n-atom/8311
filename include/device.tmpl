@@ -1,12 +1,12 @@
 {% import  'macros.md' as includes %}
 
-# {% block name %}{{ device.title if device.title is defined }}{% endblock %}
-
-{% block specifications %}
-{% if device.specifications is defined and device.specifications%}
-## Specifications
-
-{{ iterate_specifications(device) }}
+{% block name %}
+{% if device.title is defined and device.title %}
+{% if vendors[device.vendor].short_title is defined %}
+# {{ vendors[device.vendor].short_title }}<br>{{ device.title }}
+{% else %}
+# {{ vendors[device.vendor].title }}<br>{{ device.title }}
+{% endif %}
 {% endif %}
 {% endblock %}
 
@@ -18,18 +18,26 @@
 {% endif %}
 {% endblock %}
 
-{% block credentials %}
-{% if device.credentials is defined and device.credentials %}
+{% block specifications %}
+{% if device.specifications is defined and device.specifications %}
+## Specifications
+
+{{ specifications_tables(device) }}
+{% endif %}
+{% endblock %}
+
+{% block connections %}
+{% if device.connections is defined and device.connections %}
 ## Login Credentials
 
-{{ iterate_credentials(device) }}
+{{ connections_table(device) }}
 {% endif %}
 {% endblock %}
 
 {% block vendor_credentials %}{% endblock %}
 
-{% block connection_notifications %}
-{% if device.notices is defined %}
+{% block notices %}
+{% if device.notices is defined and device.notices %}
 {{ iterate_notices(device) }}
 {% endif %}
 {% endblock %}
@@ -38,7 +46,7 @@
 {% endblock %}
 
 {% block content %}
-{% if device.content is defined %}
+{% if device.content is defined and device.content %}
 {% for content in device.content %}
 {% include content %}
 {% endfor %}

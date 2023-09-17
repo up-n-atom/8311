@@ -1,103 +1,82 @@
 # Alcatel-Lucent
 g_010s_p:
-  vendor: Alcatel-Lucent
+  vendor: alu
   odm: sps_34_24t_hp_tdfo
   title: G-010S-P
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "ONTUSER"
-          password: "SUGAR2A041"
+  specifications:
+  - cpuinfo: 'include/gpon/onu/specifications/cpuinfo/g-010s-p.md'
+  - meminfo: 'include/gpon/onu/specifications/meminfo/g-010s-p.md'
+  connections:
+  - type: "SSH / SCP / UART"
+    credentials:
+    - username: "ONTUSER"
+      password: "SUGAR2A041"
   images:
-    - ['G-010S-P Top', '/img/g-010s-p-1.png']
-    - ['G-010S-P Bottom', '/img/g-010s-p-2.png']
+  - ['G-010S-P Top', '/img/g-010s-p-1.png']
+  - ['G-010S-P Bottom', '/img/g-010s-p-2.png']
 
 # Nokia
 g_440g_a:
-  vendor: Nokia
+  vendor: nokia
   title: G-440G-A
-  credentials:
-    -
-      type: "Web UI / Telnet"
-      credentials:
-        -
-          username: "adminadmin"
-          password: "ALC#FGU"
+  connections:
+  - type: "Web UI / Telnet"
+    credentials:
+    - username: "adminadmin"
+      password: "ALC#FGU"
   images:
-    - ['G-440G-A Top', '/img/g-440g-a-1.png']
-    - ['G-440G-A Back', '/img/g-440g-a-2.png']
-    - ['G-440G-A Front', '/img/g-440g-a-3.png']
+  - ['G-440G-A Top', '/img/g-440g-a-1.png']
+  - ['G-440G-A Back', '/img/g-440g-a-2.png']
+  - ['G-440G-A Front', '/img/g-440g-a-3.png']
 
 # FS.com
 gpon_onu_34_20bi:
-  vendor: FS
+  vendor: fs
   odm: sps_34_24t_hp_tdfo
   title: GPON-ONU-34-20BI
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "ONTUSER"
-          password: "7sp!lwUBz1"
+  connections:
+  - type: "SSH / SCP / UART"
+    credentials:
+    - username: "ONTUSER"
+      password: "7sp!lwUBz1"
   images:
-    - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']
+  - ['GPON-ONU-34-20BI', '/img/gpon-onu-34-20bi.png']
 
 # Huawei
 ma5671a:
-  vendor: Huawei
+  vendor: huawei
   odm: sps_34_24t_hp_tdfo
   title: MA5671A
-  credentials:
-    -
-      type: "SSH / SCP / UART"
-      credentials:
-        -
-          username: "root"
-          password: "admin123"
+  connections:
+  - type: "SSH / SCP / UART"
+    credentials:
+    - username: "root"
+      password: "admin123"
   images:
-    - ['MA5671A Top', '/img/ma5671a.png']
-    - ['MA5671A Bottom', '/img/g-010s-p-2.png']
+  - ['MA5671A Top', '/img/ma5671a.png']
+  - ['MA5671A Bottom', '/img/g-010s-p-2.png']
 
 # ODI
 dfp_34x_2c2:
-  vendor: ODI
+  vendor: odi
   title: DFP-34X-2C2
-  credentials:
-    -
-      type: "WEB / SSH / UART"
-      credentials:
-        -
-          username: "admin"
-          password: "admin"
+  connections:
+  - type: "WEB / SSH / UART"
+    credentials:
+    - username: "admin"
+      password: "admin"
   images:
-    - ['DFP-34X-2C2 Bottom', '/img/dfp-34x-2c2-1.png']
-    - ['DFP-34X-2C2 Top', '/img/dfp-34x-2c2-2.png']
+  - ['DFP-34X-2C2 Bottom', '/img/dfp-34x-2c2-1.png']
+  - ['DFP-34X-2C2 Top', '/img/dfp-34x-2c2-2.png']
 
 # Source Photonics
 sps_34_24t_hp_tdfo:
-  vendor: "Source Photonics"
+  vendor: sp
   title: SPS-34-24T-HP-TDFO
   aliases: ['g_010s_p', 'gpon_onu_34_20bi', 'ma5671a']
-  template: "gpon/ont/sps-34-24t-hp-tdfo.tmpl"
   specifications:
-    - ['Chipset', 'Lantiq PEB98035']
-    - ['CPU', 'MIPS 34Kc interAptiv']
-    - ['CPU Clock', '400MHz']
-    - ['Flash', '16 MB']
-    - ['RAM', '64 MB']
-    - ['HSGMII', 'Yes']
-    - ['Optics', 'SC/APC']
-    - ['Serial Access', 'SFP']
-    - ['Serial baud', '115200']
-    - ['Serial encoding', '8-N-1']
-    - ['SSH Access', 'Yes']
-    - ['SCP Access', 'Yes']
-    - ['IP address', '192.168.1.10']
+  - 'include/gpon/onu/sps-34-24t-hp-tdfo/specifications.md'
   notices: ['rx_los', 'outdated_algorithms']
   content:
-    - "gpon/ont/sps-34-24t-hp-tdfo/backup-firmware.md"
-    - "gpon/ont/sps-34-24t-hp-tdfo/flashing-firmware.md"
-    
+  - "gpon/onu/sps-34-24t-hp-tdfo/backup-firmware.md"
+  - "gpon/onu/sps-34-24t-hp-tdfo/flashing-firmware.md"
