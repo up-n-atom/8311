@@ -70,6 +70,9 @@ def write_file(filename, contents):
 def create_file(device, pon, other=None):
     odm = None
 
+    if pon == None:
+        return None
+    
     if other:
         id, vendor, title = get_device_info(other)
         odm = other.get("odm")
@@ -118,14 +121,13 @@ def get_pon(filename):
         return None
     return pon
 
-def process_devices_file(filename):
+def process_devices_file(filename, pon):
     with open(filename, "r") as onu_file:
         devices = yaml.safe_load(onu_file)
 
     nav = []
-    pon = get_pon(filename)
 
-    if devices:
+    if devices and pon != None:
         onu_list = iterate_device_list(devices.items())
         nav_items = generate_vendors_lists(devices.items())
 
@@ -133,6 +135,8 @@ def process_devices_file(filename):
             if not onu.get("odm"):
                 vendor = vendors[onu["vendor"]]
                 item = create_file(onu, pon)
+                if item == None:
+                    return None
                 if vendor.get("short_title"):
                     nav_items[vendor["short_title"]].append(item)
                 else:
@@ -142,6 +146,8 @@ def process_devices_file(filename):
                 for alias in onu["aliases"]:
                     vendor = vendors[onu_list[alias]["vendor"]]
                     item = create_file(onu, pon, onu_list[alias])
+                    if item == None:
+                        return None
                     if vendor.get("short_title"):
                         nav_items[vendor["short_title"]].append(item)
                     else:
@@ -187,22 +193,22 @@ def get_indicies(nav):
         "XGS-PON": xgs_pon_index,
     }
 
-def nav_insert(nav, indexes, system):
-    if system == "10G-EPON":
+def nav_insert(nav, indexes, pon_type):
+    if pon_type == "10G-EPON":
         nav.insert(indexes.get("Home") + 1, {"10G-EPON": ["10g-epon/index.md"]})
-    elif system == "EPON":
+    elif pon_type == "EPON":
         epon = {"EPON": ["epon/index.md"]}
         if indexes.get("10G-EPON"):
             nav.insert(indexes.get("10G-EPON") + 1, epon)
         else:
             nav.insert(indexes.get("Home") + 1, epon)
-    elif system == "GPON":
+    elif pon_type == "GPON":
         gpon = {"GPON": ["gpon/index.md"]}
         if indexes.get("XGS-PON"):
             nav.insert(indexes.get("XGS-PON"), gpon)
         else:
             nav.append(gpon)
-    elif system == "XGS-PON":
+    elif pon_type == "XGS-PON":
         nav.append({"XGS-PON": ["xgs-pon/index.md"]})
     return nav
 
@@ -237,9 +243,9 @@ def main():
         nav_list = []
 
         for filename in [
-            name for name in file_list if "_onu" in name or "_olt" in name
+            name for name in file_list if get_pon(name) != None
         ]:
-            nav_list.append(process_devices_file(filename))
+            nav_list.append(process_devices_file(filename, get_pon(filename)))
 
         nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
 
@@ -258,11 +264,10 @@ def main():
                 indexes = get_indicies(nav)
                 pon_index = indexes.get(pon_type)
 
-            nav_type = enumerate(nav[pon_index][pon_type])
             device_index = next(
                 (
                     index
-                    for (index, d) in nav_type
+                    for (index, d) in enumerate(nav[pon_index][pon_type])
                     if isinstance(d, dict) and d.get(pon_device) != None
                 ),
                 None,
