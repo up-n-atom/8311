@@ -334,7 +334,7 @@ def define_env(env):
 
         content_list = []
         content = {}
-        
+
         for group in content_group[group_key]:
             if isinstance(group, str):
                 content["uri"] = group
@@ -372,7 +372,3 @@ def define_env(env):
     @env.macro
     def nest(text, level=0):
         return text.replace("\n", "\n    " + level * "    ")
-
-    @env.macro
-    def string(string):
-        return str(string)
