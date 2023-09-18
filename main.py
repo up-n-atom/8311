@@ -135,12 +135,14 @@ def define_env(env):
     @env.macro
     def specifications_table(spec, nesting=0):
         if isinstance(spec, str):
-            text = read_table(spec, sep=":", escapechar="\\")
+            filename = "include/" + spec
+            text = read_table(filename, sep=":", escapechar="\\")
             buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
 
         elif isinstance(spec, dict):
             for _, value in spec.items():
-                text = read_table(value, sep=":", escapechar="\\")
+                filename = "include/" + value
+                text = read_table(filename, sep=":", escapechar="\\")
                 buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
                 break
 
@@ -313,3 +315,26 @@ def define_env(env):
             onu["content"] = odm["content"]
 
         return onu
+
+
+    @env.macro
+    def include_content(content_group):
+        if isinstance(content_group, str):
+            return {"heading": None, "sections": [content_group] }
+        
+        group_key = next((key for (key, _) in content_group.items() if key), None, )
+
+        if not group_key:
+            return None
+
+        list = []
+
+        for content in content_group[group_key]:
+            if isinstance(content, str):
+                list.append({"title": None, "uri": content})
+                
+            elif isinstance(content, dict):
+                for key, value in content.items():
+                    list.append({"title": key, "uri": value})
+            
+        return {"heading": group_key, "sections": list }

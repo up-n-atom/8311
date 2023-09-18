@@ -47,8 +47,8 @@
 
 {% block content %}
 {% if device.content is defined and device.content %}
-{% for content in device.content %}
-{% include content %}
+{% for content_group in device.content %}
+{{ includes.render_content_group(content_group) }}
 {% endfor %}
 {% endif %}
 {% endblock %}

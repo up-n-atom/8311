@@ -1,4 +1,3 @@
-## Backing Up Firmware
 
 Run the commands:
 
@@ -10,11 +9,11 @@ fw_printenv image0_is_valid
 fw_printenv image1_is_valid
 ```
 
-If image0_is_valid or image1_is_valid are set to 0, assume there is no firmware installed for that image or that it may not be in a consistent state.
+If `image0_is_valid` or `image1_is_valid` are set to `0`, assume there is no firmware installed for that image or that it may not be in a consistent state.
 
-### Image 0
+#### Image 0
 
-If the commited image is set to 0 run the following commands to create a backup of the firmware:
+If the commited image is set to `0` run the following commands to create a backup of the firmware:
 
 ```sh
 cd /tmp
@@ -39,18 +38,18 @@ scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/4_roofts_data.bin
 scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/5_image1.bin .
 ```
 
-If image1 is also valid and you would like to back it up, run the following commands:
+If `image 1` is also valid and you would like to back it up, run the following commands:
 
 ```sh
 fw_setenv committed_image 1
 reboot
 ```
 
-then follow the directions for image1 below.
+then follow the directions for `image 1` below.
 
-### Image 1
+#### Image 1
 
-If the commited image is set to 1 run the following commands to create a backup of the firmware:
+If the commited image is set to `1` run the following commands to create a backup of the firmware:
 
 ```sh
 cat /proc/mtd > mtd.txt
@@ -74,11 +73,11 @@ scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/4_rootfs.bin .
 scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/5_rootfs_data.bin .
 ```
 
-If image0 is also valid and you would like to back it up, run the following commands:
+If `image 0` is also valid and you would like to back it up, run the following commands:
 
 ```sh
 fw_setenv committed_image 0
 reboot
 ```
 
-then follow the directions for image0 above.
+then follow the directions for `image 0` above.

@@ -55,8 +55,8 @@
 
 {% block content %}
 {% if onu.content is defined and onu.content %}
-{% for content in onu.content %}
-{% include content %}
+{% for content_group in onu.content %}
+{{ includes.render_content_group(content_group) }}
 {% endfor %}
 {% endif %}
 {% endblock %}

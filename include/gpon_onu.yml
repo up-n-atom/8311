@@ -4,8 +4,8 @@ g_010s_p:
   odm: sps_34_24t_hp_tdfo
   title: G-010S-P
   specifications:
-  - cpuinfo: 'include/gpon/onu/specifications/cpuinfo/g-010s-p.md'
-  - meminfo: 'include/gpon/onu/specifications/meminfo/g-010s-p.md'
+  - cpuinfo: 'gpon/onu/specifications/cpuinfo/g-010s-p.md'
+  - meminfo: 'gpon/onu/specifications/meminfo/g-010s-p.md'
   connections:
   - type: "SSH / SCP / UART"
     credentials:
@@ -75,8 +75,9 @@ sps_34_24t_hp_tdfo:
   title: SPS-34-24T-HP-TDFO
   aliases: ['g_010s_p', 'gpon_onu_34_20bi', 'ma5671a']
   specifications:
-  - 'include/gpon/onu/sps-34-24t-hp-tdfo/specifications.md'
+  - 'gpon/onu/specifications/sps-34-24t-hp-tdfo.md'
   notices: ['rx_los', 'outdated_algorithms']
   content:
-  - "gpon/onu/sps-34-24t-hp-tdfo/backup-firmware.md"
-  - "gpon/onu/sps-34-24t-hp-tdfo/flashing-firmware.md"
+  - Firmware: 
+    - Backup Firmware: "gpon/onu/content/firmware/lantiq/backup-firmware.md"
+    - Flash Firmware: "gpon/onu/content/firmware/lantiq/flash-firmware.md"
