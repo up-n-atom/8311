@@ -1,7 +1,7 @@
 {% import  'macros.md' as includes %}
 
 {% block name %}
-{% if device.title is defined and device.title %}
+{% if device.title is defined and device.title is not none %}
 {% if vendors[device.vendor].short_title is defined %}
 # {{ vendors[device.vendor].short_title }}<br>{{ device.title }}
 {% else %}
@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block images %}
-{% if device.images is defined and device.images %}
+{% if device.images is defined and device.images is not none %}
 ## Images
 
 {{ includes.iterate_images(device) }}
@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block specifications %}
-{% if device.specifications is defined and device.specifications %}
+{% if device.specifications is defined and device.specifications is not none %}
 ## Specifications
 
 {{ specifications_tables(device) }}
@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block connections %}
-{% if device.connections is defined and device.connections %}
+{% if device.connections is defined and device.connections is not none %}
 ## Login Credentials
 
 {{ connections_table(device) }}
@@ -37,7 +37,7 @@
 {% block vendor_credentials %}{% endblock %}
 
 {% block notices %}
-{% if device.notices is defined and device.notices %}
+{% if device.notices is defined and device.notices is not none %}
 {{ iterate_notices(device) }}
 {% endif %}
 {% endblock %}
@@ -46,7 +46,7 @@
 {% endblock %}
 
 {% block content %}
-{% if device.content is defined and device.content %}
+{% if device.content is defined and device.content is not none %}
 {% for content_group in device.content %}
 {{ includes.render_content_group(content_group) }}
 {% endfor %}

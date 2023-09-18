@@ -78,6 +78,7 @@ sps_34_24t_hp_tdfo:
   - 'gpon/onu/specifications/sps-34-24t-hp-tdfo.md'
   notices: ['rx_los', 'outdated_algorithms']
   content:
-  - Firmware: 
-    - Backup Firmware: "gpon/onu/content/firmware/lantiq/backup-firmware.md"
-    - Flash Firmware: "gpon/onu/content/firmware/lantiq/flash-firmware.md"
+  - Firmware:
+    - tabbed:
+      - Backup Firmware: "gpon/onu/content/firmware/lantiq/backup-firmware.md"
+      - Flash Firmware: "gpon/onu/content/firmware/lantiq/flash-firmware.md"

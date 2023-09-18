@@ -1,4 +1,3 @@
-
 To flash these firmwares on your G-010S-P stick, you must first upload them via *SCP* to the stick's `/tmp` folder like so:
 
 ```sh
@@ -27,7 +26,7 @@ cat /proc/mtd | grep image
 if that says `image0`, you are on `image1`, and if that says `image1`, then you are on `image0`
 Depending on which firmware image you are on, only one of the following steps will work:
 
-#### Image 0 (Flashing Image 1)
+**Image 0 (Flashing Image 1)**
 
 ```sh
 mtd -e image1 write /tmp/firmware.img image1
@@ -37,7 +36,7 @@ fw_setenv target oem-generic
 fw_setenv committed_image 1
 ```
 
-#### Image 1 (Flashing Image 0)
+**Image 1 (Flashing Image 0)**
 
 ```sh
 mtd -e image0 write /tmp/firmware.img image0

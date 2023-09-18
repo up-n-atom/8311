@@ -1,6 +1,6 @@
 {% extends "device.tmpl" %}
 
-{% if device.odm is defined %}
+{% if device.odm is defined and device.odm is not none %}
 {% set odm = onu_type[device.odm] %}
 {% else %}
 {% set odm = device %}
@@ -9,7 +9,7 @@
 {% set onu = calculate_onu(device, odm) %}
 
 {% block specifications %}
-{% if onu.specifications is defined and onu.specifications %}
+{% if onu.specifications is defined and onu.specifications is not none %}
 ## Specifications
 
 {{ specifications_tables(onu) }}
@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block images %}
-{% if onu.images is defined and onu.images %}
+{% if onu.images is defined and onu.images is not none %}
 ## Images
 
 {{ includes.iterate_images(onu) }}
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block connections %}
-{% if onu.connections is defined and onu.connections %}
+{% if onu.connections is defined and onu.connections is not none %}
 ## Login Credentials
 
 {{ connections_table(onu) }}
@@ -34,19 +34,19 @@
 
 {% block vendor_credentials %}
 {% set result = generate_vendor_credentials(odm, onu_type) if device == odm %}
-{% if result %}
+{% if result is not none %}
 {{ result }}
 {% endif %}
 {% endblock %}
 
 {% block notices %}
-{% if onu.notices is defined and onu.notices %}
+{% if onu.notices is defined and onu.notices is not none %}
 {{ iterate_notices(onu) }}
 {% endif %}
 {% endblock %}
 
 {% block value_added_resellers %}
-{% if device == odm and odm.resellers is defined %}
+{% if device == odm and odm.resellers is defined and odm.resellers is not none %}
 ## Value-Added Resellers
 
 {{ resellers_table(odm) }}
@@ -54,7 +54,7 @@
 {% endblock %}
 
 {% block content %}
-{% if onu.content is defined and onu.content %}
+{% if onu.content is defined and onu.content is not none %}
 {% for content_group in onu.content %}
 {{ includes.render_content_group(content_group) }}
 {% endfor %}

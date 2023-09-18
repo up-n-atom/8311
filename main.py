@@ -12,6 +12,8 @@ def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
         mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
+    print = env.start_chatting("pon.wiki")
+
     file_list = []
     notices = None
 
@@ -137,13 +139,13 @@ def define_env(env):
         if isinstance(spec, str):
             filename = "include/" + spec
             text = read_table(filename, sep=":", escapechar="\\")
-            buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+            buffer = nest(text, level=nesting) + "\n\n"
 
         elif isinstance(spec, dict):
             for _, value in spec.items():
                 filename = "include/" + value
                 text = read_table(filename, sep=":", escapechar="\\")
-                buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+                buffer = nest(text, level=nesting) + "\n\n"
                 break
 
         return buffer
@@ -228,7 +230,7 @@ def define_env(env):
         text = notice.get("text", "")
         expanding = notice.get("expanding", False)
         expand = notice.get("expand", False)
-        text = text.replace("\n", "\n    " + nesting * "    ")
+        text = nest(text, level=nesting)
 
         if expanding:
             buffer = "???"
@@ -316,25 +318,61 @@ def define_env(env):
 
         return onu
 
-
     @env.macro
     def include_content(content_group):
         if isinstance(content_group, str):
-            return {"heading": None, "sections": [content_group] }
-        
-        group_key = next((key for (key, _) in content_group.items() if key), None, )
+            content = {"title": None, "uri": content_group, "tab": False}
+            return {"heading": None, "sections": [content]}
+
+        group_key = next(
+            (key for (key, _) in content_group.items() if key),
+            None,
+        )
 
         if not group_key:
             return None
 
-        list = []
+        content_list = []
+        content = {}
+        
+        for group in content_group[group_key]:
+            if isinstance(group, str):
+                content["uri"] = group
 
-        for content in content_group[group_key]:
-            if isinstance(content, str):
-                list.append({"title": None, "uri": content})
-                
-            elif isinstance(content, dict):
-                for key, value in content.items():
-                    list.append({"title": key, "uri": value})
-            
-        return {"heading": group_key, "sections": list }
+            elif isinstance(group, dict):
+                for key, value in group.items():
+                    if key == "tabbed":
+                        for obj in value:
+                            if not isinstance(obj, dict):
+                                continue
+
+                            content_sublist = []
+                            content = {}
+
+                            for title, uri in obj.items():
+                                content["title"] = title
+                                content["uri"] = uri
+                                content["tab"] = True
+                                content_sublist.append(content)
+                                content = {}
+
+                            content_list = content_list + content_sublist
+
+                    elif key == "tab":
+                        content["tab"] = value
+                    else:
+                        content["title"] = key
+                        content["uri"] = value
+
+            content_list.append(content)
+            content = {}
+
+        return {"heading": group_key, "sections": content_list}
+
+    @env.macro
+    def nest(text, level=0):
+        return text.replace("\n", "\n    " + level * "    ")
+
+    @env.macro
+    def string(string):
+        return str(string)

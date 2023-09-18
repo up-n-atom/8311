@@ -1,4 +1,3 @@
-
 Run the commands:
 
 ```sh
@@ -11,7 +10,7 @@ fw_printenv image1_is_valid
 
 If `image0_is_valid` or `image1_is_valid` are set to `0`, assume there is no firmware installed for that image or that it may not be in a consistent state.
 
-#### Image 0
+**Image 0**
 
 If the commited image is set to `0` run the following commands to create a backup of the firmware:
 
@@ -47,7 +46,7 @@ reboot
 
 then follow the directions for `image 1` below.
 
-#### Image 1
+**Image 1**
 
 If the commited image is set to `1` run the following commands to create a backup of the firmware:
 
