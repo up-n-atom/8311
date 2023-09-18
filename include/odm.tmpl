@@ -56,7 +56,7 @@
 {% block content %}
 {% if onu.content is defined and onu.content is not none %}
 {% for content_group in onu.content %}
-{{ includes.render_content_group(content_group) }}
+{{ includes.process_content_group(content_group) }}
 {% endfor %}
 {% endif %}
 {% endblock %}

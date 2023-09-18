@@ -48,7 +48,7 @@
 {% block content %}
 {% if device.content is defined and device.content is not none %}
 {% for content_group in device.content %}
-{{ includes.render_content_group(content_group) }}
+{{ includes.process_content_group(content_group) }}
 {% endfor %}
 {% endif %}
 {% endblock %}

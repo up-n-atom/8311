@@ -319,10 +319,13 @@ def define_env(env):
         return onu
 
     @env.macro
-    def include_content(content_group):
+    def handle_content_group(content_group):
         if isinstance(content_group, str):
             content = {"title": None, "uri": content_group, "tab": False}
             return {"heading": None, "sections": [content]}
+
+        if not isinstance(content_group, dict):
+            return None
 
         group_key = next(
             (key for (key, _) in content_group.items() if key),
@@ -332,16 +335,39 @@ def define_env(env):
         if not group_key:
             return None
 
+        if isinstance(content_group[group_key], str):
+            content = {"title": None, "uri": content_group[group_key], "tab": False}
+            return {"heading": group_key, "sections": [content]}
+        
+        if not isinstance(content_group[group_key], list):
+            return None
+
+        content_list = handle_content_list(content_group[group_key])
+
+        print({"heading": group_key, "sections": content_list})
+        return {"heading": group_key, "sections": content_list}
+
+    def handle_content_list(content_group):
         content_list = []
         content = {}
 
-        for group in content_group[group_key]:
+        for group in content_group:
             if isinstance(group, str):
                 content["uri"] = group
+                content_list.append(content)
+                content = {}
+
+            elif isinstance(group, list):
+                content_list += handle_content_list(group)
+                continue
 
             elif isinstance(group, dict):
                 for key, value in group.items():
-                    if key == "tabbed":
+                    if isinstance(value, list):
+                        if key != "tabbed":
+                            content_list.append({"heading": key, "sections": handle_content_list(value)})
+                            continue
+
                         for obj in value:
                             if not isinstance(obj, dict):
                                 continue
@@ -356,19 +382,26 @@ def define_env(env):
                                 content_sublist.append(content)
                                 content = {}
 
-                            content_list = content_list + content_sublist
+                            content_list += content_sublist
+                        continue
 
                     elif key == "tab":
                         content["tab"] = value
                     else:
                         content["title"] = key
                         content["uri"] = value
+                        content_list.append(content)
+                        content = {}
+            
+        return content_list
 
-            content_list.append(content)
-            content = {}
-
-        return {"heading": group_key, "sections": content_list}
 
     @env.macro
     def nest(text, level=0):
         return text.replace("\n", "\n    " + level * "    ")
+
+
+    @env.macro
+    def heading(level):
+        tmpl = "{0} "
+        return  tmpl.format(level * "#")

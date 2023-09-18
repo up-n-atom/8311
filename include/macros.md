@@ -11,14 +11,22 @@
 {% endif %}
 {%- endmacro %}
 
-{% macro render_content_group(content_group) -%}
-{% set group = include_content(content_group) %}
+{% macro process_content_group(content_group) -%}
+{% set group = handle_content_group(content_group) %}
 {% if group is defined and group is not none %}
-{{ "## " + group.heading if group.heading is defined and group.heading is not none }}
+{{ render_content_group(group) }}
+{% endif %}
+{%- endmacro %}
+
+{% macro render_content_group(group, heading_level=2) -%}
+{{ heading(heading_level) + group.heading if group.heading is defined and group.heading is not none }}
 {% if group.sections is defined %}
 {% for section in group.sections %}
+{% if section.heading is defined and section.sections is defined %}
+{{ render_content_group(section, heading_level+1) }}
+{% else %}
 {% if section.title is defined and section.title is not none %}
-{{ '=== "' + section.title + '"' if section.tab is defined and section.tab else "### " + section.title }}
+{{ '=== "' + section.title + '"' if section.tab is defined and section.tab else heading(heading_level+1) + section.title }}
 {% endif %}
 {% if section.uri is defined and section.uri is not none %}
 {% set output %}
@@ -26,7 +34,7 @@
 {% endset %}
 {{ nest(output) if section.tab is defined and section.tab else output }}
 {% endif %}
-{% endfor %}
 {% endif %}
+{% endfor %}
 {% endif %}
 {%- endmacro %}
