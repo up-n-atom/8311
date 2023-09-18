@@ -11,13 +11,6 @@
 {% endif %}
 {%- endmacro %}
 
-{% macro process_content_group(content_group) -%}
-{% set group = handle_content_group(content_group) %}
-{% if group is defined and group is not none %}
-{{ render_content_group(group) }}
-{% endif %}
-{%- endmacro %}
-
 {% macro render_content_group(group, heading_level=2) -%}
 {{ heading(heading_level) + group.heading if group.heading is defined and group.heading is not none }}
 {% if group.sections is defined %}

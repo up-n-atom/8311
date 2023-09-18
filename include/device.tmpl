@@ -48,7 +48,10 @@
 {% block content %}
 {% if device.content is defined and device.content is not none %}
 {% for content_group in device.content %}
-{{ includes.process_content_group(content_group) }}
+{% set group = process_content_group(content_group) %}
+{% if group is defined and group is not none %}
+{{ includes.render_content_group(group) }}
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endblock %}

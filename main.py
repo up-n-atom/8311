@@ -319,7 +319,7 @@ def define_env(env):
         return onu
 
     @env.macro
-    def handle_content_group(content_group):
+    def process_content_group(content_group):
         if isinstance(content_group, str):
             content = {"title": None, "uri": content_group, "tab": False}
             return {"heading": None, "sections": [content]}
