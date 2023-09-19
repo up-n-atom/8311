@@ -113,15 +113,18 @@ def define_env(env):
             return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
-    def specifications_tables(onu, div_class="headerless"):
+    def specifications_tables(onu, div_class="headerless", no_heading=False):
         specifications = onu.get("specifications")
 
         if not specifications:
             return
 
-        div_templ = '## Specifications\n<div class="{1}" markdown="1">\n{0}\n</div>'
+        div_templ = '<div class="{1}" markdown="1">\n{0}\n</div>'
         templ = '=== "{0}"\n    {1}'
         buffer = ""
+
+        if not no_heading:
+            div_templ = "## Specifications\n" + div_templ
 
         for spec in specifications:
             if isinstance(spec, str):

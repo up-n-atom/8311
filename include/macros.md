@@ -2,9 +2,11 @@
 ![Image of {{ text }}]({{ "../../.." + url }}){ align={{ align }} }
 {%- endmacro %}
 
-{% macro iterate_images(onu) -%}
+{% macro iterate_images(onu, no_heading=False) -%}
 {% if onu.images is defined %}
+{% if not no_heading %}
 ## Images
+{% endif %}
 {% for img in onu.images %}
 === "{{ img[0] }}"
     {{ image(img[0], img[1]) }}
