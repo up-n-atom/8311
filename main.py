@@ -274,7 +274,9 @@ def define_env(env):
             ):
                 return
 
-            buffer += templ.format(alias["title"], connections_table(alias, no_heading=True))
+            buffer += templ.format(
+                alias["title"], connections_table(alias, no_heading=True)
+            )
 
         if buffer:
             buffer = "## Vendor Credentials\n\n" + buffer
@@ -290,25 +292,25 @@ def define_env(env):
         if not isinstance(content_group, dict):
             return None
 
-        group_key = next(
+        key = next(
             (key for (key, _) in content_group.items() if key),
             None,
         )
 
-        if not group_key:
+        if not key:
             return None
 
-        if isinstance(content_group[group_key], str):
-            content = {"title": None, "uri": content_group[group_key], "tab": False}
-            return {"heading": group_key, "sections": [content]}
+        if isinstance(content_group[key], str):
+            content = {"title": None, "uri": content_group[key], "tab": False}
+            return {"heading": key, "sections": [content]}
 
-        if not isinstance(content_group[group_key], list):
+        if not isinstance(content_group[key], list):
             return None
 
-        content_list = handle_content_list(content_group[group_key])
+        content_list = handle_content_list(content_group[key])
 
-        print({"heading": group_key, "sections": content_list})
-        return {"heading": group_key, "sections": content_list}
+        print({"heading": key, "sections": content_list})
+        return {"heading": key, "sections": content_list}
 
     def handle_content_list(content_group):
         content_list = []
@@ -321,37 +323,44 @@ def define_env(env):
                 content = {}
 
             elif isinstance(group, dict):
-                for key, value in group.items():
-                    if isinstance(value, list):
-                        if key != "tabbed":
-                            content_list.append(
-                                {"heading": key, "sections": handle_content_list(value)}
-                            )
+                key = next(
+                    (key for (key, _) in group.items() if key),
+                    None,
+                )
+
+                if not key:
+                    return None
+
+                if isinstance(group[key], list):
+                    if key != "tabbed":
+                        content_list.append(
+                            {
+                                "heading": key,
+                                "sections": handle_content_list(group[key]),
+                            }
+                        )
+                        continue
+
+                    for obj in group[key]:
+                        if not isinstance(obj, dict):
                             continue
 
-                        for obj in value:
-                            if not isinstance(obj, dict):
-                                continue
+                        content_sublist = []
+                        content = {}
 
-                            content_sublist = []
+                        for title, uri in obj.items():
+                            content["title"] = title
+                            content["uri"] = uri
+                            content["tab"] = True
+                            content_sublist.append(content)
                             content = {}
 
-                            for title, uri in obj.items():
-                                content["title"] = title
-                                content["uri"] = uri
-                                content["tab"] = True
-                                content_sublist.append(content)
-                                content = {}
-
-                            content_list += content_sublist
-
-                    elif key == "tab":
-                        content["tab"] = value
-                    else:
-                        content["title"] = key
-                        content["uri"] = value
-                        content_list.append(content)
-                        content = {}
+                        content_list += content_sublist
+                else:
+                    content["title"] = key
+                    content["uri"] = group[key]
+                    content_list.append(content)
+                    content = {}
 
             elif isinstance(group, list):
                 continue
