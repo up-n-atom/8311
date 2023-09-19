@@ -190,25 +190,24 @@ def process_devices_file(filename, pon):
 
 
 def get_nav_indices(nav):
-    nav_enumeration = enumerate(nav)
     home_index = next(
-        (index for (index, d) in nav_enumeration if d.get("Home") != None),
+        (index for (index, d) in enumerate(nav) if d.get("Home") != None),
         None,
     )
     teng_epon_index = next(
-        (index for (index, d) in nav_enumeration if d.get("10G-EPON") != None),
+        (index for (index, d) in enumerate(nav) if d.get("10G-EPON") != None),
         None,
     )
     epon_index = next(
-        (index for (index, d) in nav_enumeration if d.get("EPON") != None),
+        (index for (index, d) in enumerate(nav) if d.get("EPON") != None),
         None,
     )
     gpon_index = next(
-        (index for (index, d) in nav_enumeration if d.get("GPON") != None),
+        (index for (index, d) in enumerate(nav) if d.get("GPON") != None),
         None,
     )
     xgs_pon_index = next(
-        (index for (index, d) in nav_enumeration if d.get("XGS-PON") != None),
+        (index for (index, d) in enumerate(nav) if d.get("XGS-PON") != None),
         None,
     )
 
