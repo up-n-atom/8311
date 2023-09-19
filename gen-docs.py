@@ -157,7 +157,8 @@ def process_devices_file(filename, pon):
         item = create_file(onu, pon)
 
         if item == None:
-            return None
+            print("Error creating file for " + pon + " device " + onu )
+            continue
 
         if vendor.get("short_title"):
             nav_items[vendor["short_title"]].append(item)
@@ -189,24 +190,25 @@ def process_devices_file(filename, pon):
 
 
 def get_nav_indices(nav):
+    nav_enumeration = enumerate(nav)
     home_index = next(
-        (index for (index, d) in enumerate(nav) if d.get("Home") != None),
+        (index for (index, d) in nav_enumeration if d.get("Home") != None),
         None,
     )
     teng_epon_index = next(
-        (index for (index, d) in enumerate(nav) if d.get("10G-EPON") != None),
+        (index for (index, d) in nav_enumeration if d.get("10G-EPON") != None),
         None,
     )
     epon_index = next(
-        (index for (index, d) in enumerate(nav) if d.get("EPON") != None),
+        (index for (index, d) in nav_enumeration if d.get("EPON") != None),
         None,
     )
     gpon_index = next(
-        (index for (index, d) in enumerate(nav) if d.get("GPON") != None),
+        (index for (index, d) in nav_enumeration if d.get("GPON") != None),
         None,
     )
     xgs_pon_index = next(
-        (index for (index, d) in enumerate(nav) if d.get("XGS-PON") != None),
+        (index for (index, d) in nav_enumeration if d.get("XGS-PON") != None),
         None,
     )
 
@@ -252,8 +254,6 @@ def main():
     if not mkdocs:
         return
 
-    file_list = []
-
     macros_index = next(
         (
             index
@@ -265,6 +265,8 @@ def main():
 
     if not macros_index:
         return
+    
+    file_list = []
 
     for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
         if option != "include_yaml":
@@ -279,18 +281,18 @@ def main():
                 file_list.append(value)
         break
 
-    nav_list = []
+    nav_groups = []
 
     for filename in [name for name in file_list if get_pon(name) != None]:
-        nav_list.append(process_devices_file(filename, get_pon(filename)))
+        nav_groups.append(process_devices_file(filename, get_pon(filename)))
 
-    nav_list = sorted(nav_list, key=lambda d: list(d[1].keys()))
+    nav_groups = sorted(nav_groups, key=lambda d: list(d[1].keys()))
 
     nav = mkdocs["nav"]
 
     indices = get_nav_indices(nav)
 
-    for pon, nav_tree in nav_list:
+    for pon, nav_group in nav_groups:
         pon_type = pon["type"].replace("_", "-").upper()
         pon_device = pon["device"].upper()
         pon_index = indices.get(pon_type)
@@ -310,13 +312,13 @@ def main():
         )
 
         if device_index:
-            nav[pon_index][pon_type][device_index] = nav_tree
+            nav[pon_index][pon_type][device_index] = nav_group
             continue
 
         dicts = [item for item in nav[pon_index][pon_type] if isinstance(item, dict)]
         strings = [item for item in nav[pon_index][pon_type] if isinstance(item, str)]
 
-        dicts.append(nav_tree)
+        dicts.append(nav_group)
         nav[pon_index][pon_type] = strings + sorted(dicts, key=lambda d: list(d.keys()))
 
     with open("mkdocs.yml", "w") as mkdocs_file:

@@ -12,6 +12,8 @@ def define_env(env):
     with open("mkdocs.yml", "r") as mkdocs_file:
         mkdocs = yaml.load(mkdocs_file, Loader=Loader)
 
+    print = env.start_chatting("pon.wiki")
+
     file_list = []
     notices = None
 
@@ -111,7 +113,7 @@ def define_env(env):
             return tab_templ.format(type, "", "") + buffer_templ.format("")
 
     @env.macro
-    def specifications_tables(onu, div_class="headerless"):
+    def specifications_tables(onu, div_class="headerless", no_heading=False):
         specifications = onu.get("specifications")
 
         if not specifications:
@@ -120,6 +122,9 @@ def define_env(env):
         div_templ = '<div class="{1}" markdown="1">\n{0}\n</div>'
         templ = '=== "{0}"\n    {1}'
         buffer = ""
+
+        if not no_heading:
+            div_templ = "## Specifications\n" + div_templ
 
         for spec in specifications:
             if isinstance(spec, str):
@@ -135,13 +140,15 @@ def define_env(env):
     @env.macro
     def specifications_table(spec, nesting=0):
         if isinstance(spec, str):
-            text = read_table(spec, sep=":", escapechar="\\")
-            buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+            filename = "include/" + spec
+            text = read_table(filename, sep=":", escapechar="\\")
+            buffer = nest(text, level=nesting) + "\n\n"
 
         elif isinstance(spec, dict):
             for _, value in spec.items():
-                text = read_table(value, sep=":", escapechar="\\")
-                buffer = text.replace("\n", "\n    " + nesting * "    ") + "\n\n"
+                filename = "include/" + value
+                text = read_table(filename, sep=":", escapechar="\\")
+                buffer = nest(text, level=nesting) + "\n\n"
                 break
 
         return buffer
@@ -194,13 +201,16 @@ def define_env(env):
         return table_templ.format(table_buffer) + "\n" + notes_buffer + "\n"
 
     @env.macro
-    def connections_table(onu):
+    def connections_table(onu, no_heading=False):
         connections = onu.get("connections")
 
         if not connections:
             return
 
         buffer = ""
+
+        if not no_heading:
+            buffer += "## Login Credentials\n"
 
         for connection in connections:
             type = connection.get("type")
@@ -226,7 +236,7 @@ def define_env(env):
         text = notice.get("text", "")
         expanding = notice.get("expanding", False)
         expand = notice.get("expand", False)
-        text = text.replace("\n", "\n    " + nesting * "    ")
+        text = nest(text, level=nesting)
 
         if expanding:
             buffer = "???"
@@ -267,7 +277,9 @@ def define_env(env):
             ):
                 return
 
-            buffer += templ.format(alias["title"], connections_table(alias))
+            buffer += templ.format(
+                alias["title"], connections_table(alias, no_heading=True)
+            )
 
         if buffer:
             buffer = "## Vendor Credentials\n\n" + buffer
@@ -275,41 +287,93 @@ def define_env(env):
         return buffer
 
     @env.macro
-    def calculate_onu(device, odm):
-        if not device:
-            return
+    def process_content_group(content_group):
+        if isinstance(content_group, str):
+            content = {"title": None, "uri": content_group, "tab": False}
+            return {"heading": None, "sections": [content]}
 
-        onu = {
-            "specifications": None,
-            "images": None,
-            "connections": None,
-            "notices": None,
-            "content": None,
-        }
+        if not isinstance(content_group, dict):
+            return None
 
-        if device.get("specifications") is not None:
-            onu["specifications"] = device["specifications"]
-        elif odm is not None and odm.get("specifications") is not None:
-            onu["specifications"] = odm["specifications"]
+        key = next(
+            (key for (key, _) in content_group.items() if key),
+            None,
+        )
 
-        if device.get("images") is not None:
-            onu["images"] = device["images"]
-        elif odm is not None and odm.get("images") is not None:
-            onu["images"] = odm["images"]
+        if not key:
+            return None
 
-        if device.get("connections") is not None:
-            onu["connections"] = device["connections"]
-        elif odm is not None and odm.get("connections") is not None:
-            onu["connections"] = odm["connections"]
+        if isinstance(content_group[key], str):
+            content = {"title": None, "uri": content_group[key], "tab": False}
+            return {"heading": key, "sections": [content]}
 
-        if device.get("notices") is not None:
-            onu["notices"] = device["notices"]
-        elif odm is not None and odm.get("notices") is not None:
-            onu["notices"] = odm["notices"]
+        if not isinstance(content_group[key], list):
+            return None
 
-        if device.get("content") is not None:
-            onu["content"] = device["content"]
-        elif odm is not None and odm.get("content") is not None:
-            onu["content"] = odm["content"]
+        content_list = handle_content_list(content_group[key])
 
-        return onu
+        print({"heading": key, "sections": content_list})
+        return {"heading": key, "sections": content_list}
+
+    def handle_content_list(content_group):
+        content_list = []
+        content = {}
+
+        for group in content_group:
+            if isinstance(group, str):
+                content["uri"] = group
+                content_list.append(content)
+                content = {}
+
+            elif isinstance(group, dict):
+                key = next(
+                    (key for (key, _) in group.items() if key),
+                    None,
+                )
+
+                if not key:
+                    return None
+
+                if isinstance(group[key], list):
+                    if key != "tabbed":
+                        content_list.append(
+                            {
+                                "heading": key,
+                                "sections": handle_content_list(group[key]),
+                            }
+                        )
+                        continue
+
+                    for obj in group[key]:
+                        if not isinstance(obj, dict):
+                            continue
+
+                        content_sublist = []
+                        content = {}
+
+                        for title, uri in obj.items():
+                            content["title"] = title
+                            content["uri"] = uri
+                            content["tab"] = True
+                            content_sublist.append(content)
+                            content = {}
+
+                        content_list += content_sublist
+                else:
+                    content["title"] = key
+                    content["uri"] = group[key]
+                    content_list.append(content)
+                    content = {}
+
+            elif isinstance(group, list):
+                continue
+
+        return content_list
+
+    @env.macro
+    def nest(text, level=0):
+        return text.replace("\n", "\n    " + level * "    ")
+
+    @env.macro
+    def heading(level):
+        return level * "#" + " "
