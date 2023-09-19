@@ -119,7 +119,7 @@ def define_env(env):
         if not specifications:
             return
 
-        div_templ = '<div class="{1}" markdown="1">\n{0}\n</div>'
+        div_templ = '## Specifications\n<div class="{1}" markdown="1">\n{0}\n</div>'
         templ = '=== "{0}"\n    {1}'
         buffer = ""
 
@@ -198,13 +198,16 @@ def define_env(env):
         return table_templ.format(table_buffer) + "\n" + notes_buffer + "\n"
 
     @env.macro
-    def connections_table(onu):
+    def connections_table(onu, no_heading=False):
         connections = onu.get("connections")
 
         if not connections:
             return
 
         buffer = ""
+
+        if not no_heading:
+            buffer += "## Login Credentials\n"
 
         for connection in connections:
             type = connection.get("type")
@@ -271,52 +274,12 @@ def define_env(env):
             ):
                 return
 
-            buffer += templ.format(alias["title"], connections_table(alias))
+            buffer += templ.format(alias["title"], connections_table(alias, no_heading=True))
 
         if buffer:
             buffer = "## Vendor Credentials\n\n" + buffer
 
         return buffer
-
-    @env.macro
-    def calculate_onu(device, odm):
-        if not device:
-            return
-
-        onu = {
-            "specifications": None,
-            "images": None,
-            "connections": None,
-            "notices": None,
-            "content": None,
-        }
-
-        if device.get("specifications") is not None:
-            onu["specifications"] = device["specifications"]
-        elif odm is not None and odm.get("specifications") is not None:
-            onu["specifications"] = odm["specifications"]
-
-        if device.get("images") is not None:
-            onu["images"] = device["images"]
-        elif odm is not None and odm.get("images") is not None:
-            onu["images"] = odm["images"]
-
-        if device.get("connections") is not None:
-            onu["connections"] = device["connections"]
-        elif odm is not None and odm.get("connections") is not None:
-            onu["connections"] = odm["connections"]
-
-        if device.get("notices") is not None:
-            onu["notices"] = device["notices"]
-        elif odm is not None and odm.get("notices") is not None:
-            onu["notices"] = odm["notices"]
-
-        if device.get("content") is not None:
-            onu["content"] = device["content"]
-        elif odm is not None and odm.get("content") is not None:
-            onu["content"] = odm["content"]
-
-        return onu
 
     @env.macro
     def process_content_group(content_group):
@@ -338,7 +301,7 @@ def define_env(env):
         if isinstance(content_group[group_key], str):
             content = {"title": None, "uri": content_group[group_key], "tab": False}
             return {"heading": group_key, "sections": [content]}
-        
+
         if not isinstance(content_group[group_key], list):
             return None
 
@@ -357,15 +320,13 @@ def define_env(env):
                 content_list.append(content)
                 content = {}
 
-            elif isinstance(group, list):
-                content_list += handle_content_list(group)
-                continue
-
             elif isinstance(group, dict):
                 for key, value in group.items():
                     if isinstance(value, list):
                         if key != "tabbed":
-                            content_list.append({"heading": key, "sections": handle_content_list(value)})
+                            content_list.append(
+                                {"heading": key, "sections": handle_content_list(value)}
+                            )
                             continue
 
                         for obj in value:
@@ -383,7 +344,6 @@ def define_env(env):
                                 content = {}
 
                             content_list += content_sublist
-                        continue
 
                     elif key == "tab":
                         content["tab"] = value
@@ -392,16 +352,16 @@ def define_env(env):
                         content["uri"] = value
                         content_list.append(content)
                         content = {}
-            
-        return content_list
 
+            elif isinstance(group, list):
+                continue
+
+        return content_list
 
     @env.macro
     def nest(text, level=0):
         return text.replace("\n", "\n    " + level * "    ")
 
-
     @env.macro
     def heading(level):
-        tmpl = "{0} "
-        return  tmpl.format(level * "#")
+        return level * "#" + " "

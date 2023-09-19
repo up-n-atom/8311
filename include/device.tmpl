@@ -12,24 +12,18 @@
 
 {% block images %}
 {% if device.images is defined and device.images is not none %}
-## Images
-
 {{ includes.iterate_images(device) }}
 {% endif %}
 {% endblock %}
 
 {% block specifications %}
 {% if device.specifications is defined and device.specifications is not none %}
-## Specifications
-
 {{ specifications_tables(device) }}
 {% endif %}
 {% endblock %}
 
 {% block connections %}
 {% if device.connections is defined and device.connections is not none %}
-## Login Credentials
-
 {{ connections_table(device) }}
 {% endif %}
 {% endblock %}

@@ -6,29 +6,27 @@
 {% set odm = device %}
 {% endif %}
 
-{% set onu = calculate_onu(device, odm) %}
-
 {% block specifications %}
-{% if onu.specifications is defined and onu.specifications is not none %}
-## Specifications
-
-{{ specifications_tables(onu) }}
+{% if device.specifications is not defined or device.specifications is none %}
+{{ specifications_tables(odm) if odm.specifications is defined and odm.specifications is not none }}
+{% else %}
+{{ super() }}
 {% endif %}
 {% endblock %}
 
 {% block images %}
-{% if onu.images is defined and onu.images is not none %}
-## Images
-
-{{ includes.iterate_images(onu) }}
+{% if device.images is not defined or device.images is none %}
+{{ includes.iterate_images(odm) if odm.images is defined and odm.images is not none }}
+{% else %}
+{{ super() }}
 {% endif %}
 {% endblock %}
 
 {% block connections %}
-{% if onu.connections is defined and onu.connections is not none %}
-## Login Credentials
-
-{{ connections_table(onu) }}
+{% if device.connections is not defined or device.connections is none %}
+{{ connections_table(odm) if odm.connections is defined and odm.connections is not none }}
+{% else %}
+{{ super() }}
 {% endif %}
 {% endblock %}
 
@@ -40,8 +38,10 @@
 {% endblock %}
 
 {% block notices %}
-{% if onu.notices is defined and onu.notices is not none %}
-{{ iterate_notices(onu) }}
+{% if device.notices is not defined or device.notices is none %}
+{{ iterate_notices(odm) if odm.notices is defined and odm.notices is not none }}
+{% else %}
+{{ super() }}
 {% endif %}
 {% endblock %}
 
@@ -54,12 +54,16 @@
 {% endblock %}
 
 {% block content %}
-{% if onu.content is defined and onu.content is not none %}
-{% for content_group in onu.content %}
+{% if device.content is not defined or device.content is none %}
+{% if odm.content is defined and odm.content is not none %}
+{% for content_group in odm.content %}
 {% set group = process_content_group(content_group) %}
 {% if group is defined and group is not none %}
 {{ includes.render_content_group(group) }}
 {% endif %}
 {% endfor %}
+{% endif %}
+{% else %}
+{{ super() }}
 {% endif %}
 {% endblock %}
