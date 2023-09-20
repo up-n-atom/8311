@@ -1,6 +1,8 @@
+{% set sshuser = get_sshuser(device) %}
+
 Run the commands:
 
-```sh
+```shell
 fw_printenv committed_image 
 fw_printenv image0_version
 fw_printenv image1_version 
@@ -14,7 +16,7 @@ If `image0_is_valid` or `image1_is_valid` are set to `0`, assume there is no fir
 
 If the commited image is set to `0` run the following commands to create a backup of the firmware:
 
-```sh
+```shell
 cd /tmp
 cat /proc/mtd > mtd.txt
 cat /dev/mtd0 > 0_uboot.bin
@@ -27,19 +29,19 @@ cat /dev/mtd5 > 5_image1.bin
 
 Once the backups are created, they can be copied from the ONU with the following commands:
 
-```sh
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/mtd.txt .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/0_uboot.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/1_uboot_env.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/2_linux.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/3_rootfs.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/4_roofts_data.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/5_image1.bin .
+```shell
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/mtd.txt .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/0_uboot.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/1_uboot_env.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/2_linux.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/3_rootfs.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/4_roofts_data.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/5_image1.bin .
 ```
 
 If `image 1` is also valid and you would like to back it up, run the following commands:
 
-```sh
+```shell
 fw_setenv committed_image 1
 reboot
 ```
@@ -50,7 +52,7 @@ then follow the directions for `image 1` below.
 
 If the commited image is set to `1` run the following commands to create a backup of the firmware:
 
-```sh
+```shell
 cat /proc/mtd > mtd.txt
 cat /dev/mtd0 > 0_uboot.bin
 cat /dev/mtd1 > 1_uboot_env.bin
@@ -62,19 +64,19 @@ cat /dev/mtd5 > 5_rootfs_data.bin
 
 Once the backups are created, they can be copied from the ONU with the following commands:
 
-```sh
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/mtd.txt .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/0_uboot.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/1_uboot_env.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/2_image0.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/3_linux.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/4_rootfs.bin .
-scp {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/5_rootfs_data.bin .
+```shell
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/mtd.txt .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/0_uboot.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/1_uboot_env.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/2_image0.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/3_linux.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/4_rootfs.bin .
+scp {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/5_rootfs_data.bin .
 ```
 
 If `image 0` is also valid and you would like to back it up, run the following commands:
 
-```sh
+```shell
 fw_setenv committed_image 0
 reboot
 ```

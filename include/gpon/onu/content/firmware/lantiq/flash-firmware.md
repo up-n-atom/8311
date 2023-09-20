@@ -1,25 +1,27 @@
+{% set sshuser = get_sshuser(device) %}
+
 To flash these firmwares on your G-010S-P stick, you must first upload them via *SCP* to the stick's `/tmp` folder like so:
 
-```sh
-scp firmware.img {{ ontuser ~ "@" if ontuser is defined }}192.168.1.10:/tmp/firmware.img
+```shell
+scp firmware.img {{ sshuser ~ "@" if sshuser is defined }}192.168.1.10:/tmp/firmware.img
 ```
 
 Then verify the `md5sum` of the file on the stick matches what you uploaded with
 
-```sh
+```shell
 md5sum /tmp/firmware.img`
 ```
 
 After that, determine if you are currently booted into `image0`, or `image1` on the stick, either with:
 
-```sh
+```shell
 fw_printenv committed_image
 ```
 
 if that's `0` then you are on `image0`, and if that's `1` then you are on `image1`
 Or, if you do:
 
-```sh
+```shell
 cat /proc/mtd | grep image
 ```
 
@@ -28,7 +30,7 @@ Depending on which firmware image you are on, only one of the following steps wi
 
 **Image 0 (Flashing Image 1)**
 
-```sh
+```shell
 mtd -e image1 write /tmp/firmware.img image1
 fw_setenv image1_version PUTVERSIONFROMNAMEOFIMGHERE
 fw_setenv image1_is_valid 1
@@ -38,7 +40,7 @@ fw_setenv committed_image 1
 
 **Image 1 (Flashing Image 0)**
 
-```sh
+```shell
 mtd -e image0 write /tmp/firmware.img image0
 fw_setenv image0_version PUTVERSIONFROMNAMEOFIMGHERE
 fw_setenv image0_is_valid 1
