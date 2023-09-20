@@ -377,11 +377,15 @@ def define_env(env):
     def heading(level):
         return level * "#" + " "
 
-
     @env.macro
     def get_sshuser(device):
         if device.get("connections"):
             for connection in device["connections"]:
-                if connection.get("type") and "SSH" in connection["type"]:
+                if (
+                    connection.get("type")
+                    and "SSH" in connection["type"]
+                    and connection.get("credentials")
+                    and len(connection["credentials"]) > 0
+                ):
                     return connection["credentials"][0]["username"]
         return None
