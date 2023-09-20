@@ -312,7 +312,6 @@ def define_env(env):
 
         content_list = handle_content_list(content_group[key])
 
-        print({"heading": key, "sections": content_list})
         return {"heading": key, "sections": content_list}
 
     def handle_content_list(content_group):
@@ -377,3 +376,12 @@ def define_env(env):
     @env.macro
     def heading(level):
         return level * "#" + " "
+
+
+    @env.macro
+    def get_sshuser(device):
+        if device.get("connections"):
+            for connection in device["connections"]:
+                if connection.get("type") and "SSH" in connection["type"]:
+                    return connection["credentials"][0]["username"]
+        return None
