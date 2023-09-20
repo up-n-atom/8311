@@ -6,67 +6,62 @@
 {%  else  %}{%  set odm = device  %}{%  endif  %}
 
 {%  block specifications  %}
-{%  if device.specifications is not defined
-    or device.specifications is none  %}
 {{  specifications_tables(odm)
-    if odm.specifications is defined
-    and odm.specifications is not none  }}
-{%  else  %}{{  super()  }}{%  endif  %}
+    if (device.specifications is not defined
+        or device.specifications is none)
+    and (odm.specifications is defined
+        and odm.specifications is not none)
+    else super()  }}
 {%  endblock  %}
 
 {%  block images  %}
-{%  if device.images is not defined
-    or device.images is none  %}
 {{  iterate_images(odm)
-    if odm.images is defined
-    and odm.images is not none  }}
-{%  else  %}{{  super()  }}{%  endif  %}
+    if (device.images is not defined
+        or device.images is none)
+    and (odm.images is defined
+        and odm.images is not none)
+    else super()  }}
 {%  endblock  %}
 
 {%  block connections  %}
-{%  if device.connections is not defined
-    or device.connections is none  %}
 {{  connections_table(odm)
-    if odm.connections is defined
-    and odm.connections is not none  }}
-{%  else  %}{{  super()  }}{%  endif  %}
+    if (device.connections is not defined
+        or device.connections is none)
+    and (odm.connections is defined
+        and odm.connections is not none)
+    else super()  }}
 {%  endblock  %}
 
 {%  block vendor_credentials  %}
 {%  set result = generate_vendor_credentials(odm, onu_type)
     if device == odm  %}
-{%  if result is not none  %}{{  result  }}{%  endif  %}
+{{  result if result is not none  }}
 {%  endblock  %}
 
 {%  block notices  %}
-{%  if device.notices is not defined
-    or device.notices is none  %}
 {{  iterate_notices(odm)
-    if odm.notices is defined
-    and odm.notices is not none  }}
-{%  else  %}{{  super()  }}{%  endif  %}
+    if (device.notices is not defined
+        or device.notices is none)
+    and (odm.notices is defined
+        and odm.notices is not none)
+    else super()  }}
 {%  endblock  %}
 
 {%  block value_added_resellers  %}
-{%  if device == odm and odm.resellers is defined
-    and odm.resellers is not none  %}
-## Value-Added Resellers
-
-{{  resellers_table(odm)  }}{%  endif  %}
+{{  resellers_table(odm)
+    if device == odm and odm.resellers is defined
+    and odm.resellers is not none  }}
 {%  endblock  %}
 
 {%  block content  %}
-{%  if device.content is not defined
-    or device.content is none  %}
-    {%  if odm.content is defined
-        and odm.content is not none  %}
-        {%  for content_group in odm.content  %}
-            {%  set group = process_content_group(content_group)  %}
-            {%  if group is defined
-                and group is not none  %}
-{{  render_content_group(group)  }}
-            {%  endif  %}
-        {%  endfor  %}
-    {%  endif  %}
-{%  else  %}{{  super()  }}{%  endif  %}
+{%  if (device.content is not defined
+        or device.content is none)
+    and (odm.content is defined
+        and odm.content is not none)  %}
+    {%  for content_group in odm.content  %}
+        {%  set group = process_content_group(content_group)  %}
+{{  render_content_group(group)
+    if group is defined
+    and group is not none  }}
+{%  endfor  %}{%  else  %}{{  super()  }}{%  endif  %}
 {%  endblock  %}

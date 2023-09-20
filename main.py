@@ -162,7 +162,7 @@ def define_env(env):
 
         url_templ = "[{0}]({1})"
         row_templ = "\n| {0} | {1}{2} |"
-        table_templ = "| Company | Product Number |\n| ---- | ---- |{0}\n"
+        table_templ = "## Value-Added Resellers\n| Company | Product Number |\n| ---- | ---- |{0}\n"
 
         table_buffer = ""
         notes_buffer = ""

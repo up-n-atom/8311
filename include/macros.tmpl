@@ -23,13 +23,12 @@
             and section.sections is defined  %}
 {{  render_content_group(section, heading_level+1)  }}
         {%  else  %}
-            {%  if section.title is defined
-                and section.title is not none  %}
 {{  '=== "' ~ section.title ~ '"'
-    if section.tab is defined
+    if (section.title is defined
+        and section.title is not none)
+    and section.tab is defined
     and section.tab
     else heading(heading_level+1) ~ section.title  }}
-            {%  endif  %}
             {%  if section.uri is defined
                 and section.uri is not none  %}
                 {%  set output  %}{%  include section.uri  %}{%  endset  %}
