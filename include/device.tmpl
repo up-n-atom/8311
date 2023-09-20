@@ -3,11 +3,15 @@
     with context  %}
 
 {%  block name  %}
-{%  if device.title is defined
-    and device.title is not none  %}
-{{  "# " ~ vendors[device.vendor].short_title
+{%  if (device.vendor is defined
+        and device.vendor is not none)
+    and (device.title is defined
+        and device.title is not none)  %}
+    {% set vendor = vendors[device.vendor] %}
+    {%  set tmpl =  "# {0}<br>{1}" %}
+{{  tmpl.format(vendor.short_title, device.title)
     if vendors[device.vendor].short_title is defined
-    else "# " ~ vendors[device.vendor].title  }}<br>{{  device.title  }}
+    else tmpl.format(vendor.title, device.title)  }}
 {%  endif  %}
 {%  endblock  %}
 
