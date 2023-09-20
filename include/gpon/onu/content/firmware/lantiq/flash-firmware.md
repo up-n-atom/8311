@@ -3,7 +3,7 @@
 To flash these firmwares on your G-010S-P stick, you must first upload them via *SCP* to the stick's `/tmp` folder like so:
 
 ```shell
-scp firmware.img {{ sshuser ~ "@" if sshuser is defined }}192.168.1.10:/tmp/firmware.img
+scp firmware.img {{ sshuser ~ "@" if sshuser is not none }}192.168.1.10:/tmp/firmware.img
 ```
 
 Then verify the `md5sum` of the file on the stick matches what you uploaded with
