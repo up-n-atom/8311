@@ -157,7 +157,7 @@ def process_devices_file(filename, pon):
         item = create_file(onu, pon)
 
         if item == None:
-            print("Error creating file for " + pon + " device " + onu )
+            print("Error creating file for " + pon + " device " + onu)
             continue
 
         if vendor.get("short_title"):
@@ -264,7 +264,7 @@ def main():
 
     if not macros_index:
         return
-    
+
     file_list = []
 
     for option, value_list in mkdocs["plugins"][macros_index]["macros"].items():
