@@ -1,53 +1,54 @@
-{% from 'macros.md'
-   import iterate_images, render_content_group
-   with context %}
+{%  from 'macros.tmpl'
+    import iterate_images, render_content_group
+    with context  %}
 
-{% block name %}
-{% if device.title is defined
-   and device.title is not none %}
-{% if vendors[device.vendor].short_title is defined %}
-# {{ vendors[device.vendor].short_title }}<br>{{ device.title }}
-{% else %}
-# {{ vendors[device.vendor].title }}<br>{{ device.title }}
-{% endif %}{% endif %}
-{% endblock %}
+{%  block name  %}
+{%  if device.title is defined
+    and device.title is not none  %}
+{{  "# " ~ vendors[device.vendor].short_title
+    if vendors[device.vendor].short_title is defined
+    else "# " ~ vendors[device.vendor].title  }}<br>{{  device.title  }}
+{%  endif  %}
+{%  endblock  %}
 
-{% block images %}
-{% if device.images is defined
-   and device.images is not none %}
-{{ iterate_images(device) }}{% endif %}
-{% endblock %}
+{%  block images  %}
+{%  if device.images is defined
+    and device.images is not none  %}
+{{  iterate_images(device)  }}{%  endif  %}
+{%  endblock  %}
 
-{% block specifications %}
-{% if device.specifications is defined
-   and device.specifications is not none %}
-{{ specifications_tables(device) }}{% endif %}
-{% endblock %}
+{%  block specifications  %}
+{%  if device.specifications is defined
+    and device.specifications is not none  %}
+{{  specifications_tables(device)  }}{%  endif  %}
+{%  endblock  %}
 
-{% block connections %}
-{% if device.connections is defined
-   and device.connections is not none %}
-{{ connections_table(device) }}{% endif %}
-{% endblock %}
+{%  block connections  %}
+{%  if device.connections is defined
+    and device.connections is not none  %}
+{{  connections_table(device)  }}{%  endif  %}
+{%  endblock  %}
 
-{% block vendor_credentials %}{% endblock %}
+{%  block vendor_credentials  %}{%  endblock  %}
 
-{% block notices %}
-{% if device.notices is defined
-   and device.notices is not none %}
-{{ iterate_notices(device) }}{% endif %}
-{% endblock %}
+{%  block notices  %}
+{%  if device.notices is defined
+    and device.notices is not none  %}
+{{  iterate_notices(device)  }}{%  endif  %}
+{%  endblock  %}
 
-{% block value_added_resellers %}
-{% endblock %}
+{%  block value_added_resellers  %}
+{%  endblock  %}
 
-{% block content %}
-{% if device.content is defined
-   and device.content is not none %}
-{% for content_group in device.content %}
-{% set group = process_content_group(content_group) %}
-{% if group is defined
-   and group is not none %}
-{{ render_content_group(group) }}
-{% endif %}{% endfor %}{% endif %}
-{% endblock %}
+{%  block content  %}
+{%  if device.content is defined
+    and device.content is not none  %}
+    {%  for content_group in device.content  %}
+        {%  set group = process_content_group(content_group)  %}
+        {%  if group is defined
+            and group is not none  %}
+{{  render_content_group(group)  }}
+        {%  endif  %}
+    {%  endfor  %}
+{%  endif  %}
+{%  endblock  %}
