@@ -7,6 +7,8 @@ theme:
   features:
     - announce.dismiss
   custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
 extra:
   generator: false
   social:
