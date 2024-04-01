@@ -1,4 +1,5 @@
-site_name: pon.wiki
+site_name: PON dot WIKI
+site_url: https://pon.wiki
 theme:
   name: material
   palette:
