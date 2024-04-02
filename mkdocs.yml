@@ -15,7 +15,12 @@ theme:
   custom_dir: overrides
   logo: assets/logo.svg
   favicon: assets/favicon.png
+plugins:
+  - blog
+      blog_dir: guides
 nav:
+  - Guides:
+    - guides/index.md
   - GPON:
     - gpon/index.md
   - XGS-PON:
