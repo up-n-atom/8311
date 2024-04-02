@@ -18,7 +18,8 @@ Due to these incompabilities and discovered bugs, a community firmware[^1] was c
 
 ## Host setup
 
-Plug the WAS-110 into a 10-gigabit compatible SFP+ host interface, such as a NIC or network switch.
+Plug the WAS-110 into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
+switch.
 
 ### Download firmware
 
@@ -216,8 +217,8 @@ SSH must be enabled from the web UI prior to running the shell commands.
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
 ```
-scp -O local-upgrade.tar root@192.168.11.1:/tmp/
-ssh root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
+scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
 ```
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
