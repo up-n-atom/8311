@@ -25,8 +25,7 @@ switcheroo, and the more comprehensive [XMO API client](#with-xmo-client).
 
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
-!!! info
-    Firmware version __1.7.11__ removed the helpful auto-detected mode output.
+!!! info "Firmware version __1.7.11__ removed the helpful auto-detected mode output."
 
 ![Home Hub 4000 Administrator login prompt](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_login.webp)
 
