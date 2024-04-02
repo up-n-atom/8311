@@ -16,7 +16,7 @@ theme:
   logo: assets/logo.svg
   favicon: assets/favicon.png
 plugins:
-  - blog
+  - blog:
       blog_dir: guides
 nav:
   - Guides:
