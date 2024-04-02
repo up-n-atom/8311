@@ -1,5 +1,9 @@
 site_name: PON dot WIKI
 site_url: https://pon.wiki
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 theme:
   name: material
   palette:
