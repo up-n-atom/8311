@@ -38,6 +38,7 @@ extra_css:
 plugins:
   - blog:
       blog_dir: guides
+      post_url_format: "{slug}"
   - search
 nav:
   - Guides:
