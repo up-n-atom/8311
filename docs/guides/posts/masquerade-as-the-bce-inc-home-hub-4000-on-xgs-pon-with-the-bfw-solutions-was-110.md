@@ -90,7 +90,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode
 ## Purchase a WAS-110
 
 The WAS-110 is available from select distributors and at a discounted rate with group buys on the 
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
+[8311 Discord community server](https://discord.com/servers/8311-886329492438671420){ target="_blank" }.
 
 ## Install community firmware
 
@@ -169,11 +169,12 @@ $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 1. :purple_circle: MAC address + 1, e.g. 
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
-!!! info
-    Additional details and variables are described at the original reposistory: 
-    <https://github.com/djGrrr/8311-was-110-firmware-builder>{ target="_blank" }
+!!! info "Additional details and variables are described at the original reposistory [^2]"
 
 <h4>Verify and reboot</h4>
+
+Prior to rebooting, verify that the 8311 environment variables are correct, and if not, proceed to correct them with
+the `fw_setenv` command as before.
 
 ``` console
 $ fw_printenv | grep ^8311
@@ -195,3 +196,4 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
   [label]: #home-hub-4000-label
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
+[^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
