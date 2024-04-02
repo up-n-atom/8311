@@ -23,6 +23,7 @@ theme:
     accent: blue
   features:
     - announce.dismiss
+    - content.tabs.link
     - navigation.expand
     - navigation.indexes
     - navigation.tabs
