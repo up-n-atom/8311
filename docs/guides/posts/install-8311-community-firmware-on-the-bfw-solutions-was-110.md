@@ -13,8 +13,11 @@ categories:
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
 
 Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
-vendor specific managed entities to VEIP to IEEE standards such as 802.1X and 802.1ad.
+vendor specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad].
 Due to these incompabilities and discovered bugs, a community firmware[^1] was curated to fix any impeding issues[^2]. 
+
+  [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
+  [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
 
 ## Host setup
 
