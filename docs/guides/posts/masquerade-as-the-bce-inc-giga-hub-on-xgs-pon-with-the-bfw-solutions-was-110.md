@@ -29,7 +29,7 @@ and the more comprehensive [XMO API client](#with-xmo-client).
 
 1. Within a web browser, navigate to
    <https://home/?c=advancedtools/wan>{ target="_blank" }
-   and if asked, input your Administrator password. (1)
+   and, if asked, input your Administrator password. (1)
    { .annotate }
 
     1. The default Administrator password is the S/N located on the back [label] of the Giga Hub.
@@ -108,7 +108,7 @@ identifiers are available on the back label of the Giga Hub.
 
 1. Within a web browser, navigate to 
    <http://192.168.11.1/cgi-bin/luci/admin/8311/config>{ target="_blank" } 
-   and if asked, input your <em>root</em> password.
+   and, if asked, input your <em>root</em> password.
 
 ![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
 
@@ -169,7 +169,7 @@ $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 
 <h4>Verify and reboot</h4>
 
-Prior to rebooting, verify that the 8311 environment variables are correct, and if not, proceed to correct them with
+Prior to rebooting, verify that the 8311 environment variables are correct. If not, proceed to correct them with
 the `fw_setenv` command as before.
 
 ``` console

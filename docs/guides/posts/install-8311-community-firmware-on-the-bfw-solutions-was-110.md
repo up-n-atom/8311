@@ -142,7 +142,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#admin/upgrade>{ target="_blank" }
-   and if asked, input the <em>admin</em> credentials. 
+   and, if asked, input the <em>admin</em> credentials. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
@@ -206,7 +206,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
 1. Within a web browser, navigate to <https://192.168.11.1/html/main.html#service/servicecontrol>{ target="_blank" }
-   and if asked, input the admin credentials. 
+   and, if asked, input the admin credentials. 
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
