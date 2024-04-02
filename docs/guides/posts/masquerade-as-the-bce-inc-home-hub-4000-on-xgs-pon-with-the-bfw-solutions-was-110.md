@@ -47,7 +47,7 @@ If your internet access doesn't drop out, you're subscribed on XGS-PON.
 
 The open-source XMO client[^1] has a prerequisite of Python 3.10 or newer.
 Python installation varies by Operating System and has been outlined by the tutors at 
-[Real Python](https://realpython.com/installing-python).
+[Real Python &mdash; Python 3 Installation & Setup Guide](https://realpython.com/installing-python).
 
 <h4>Install client</h4>
 
