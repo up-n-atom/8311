@@ -166,8 +166,8 @@ $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
 !!! info
-    For additional details and variables, visit 
-    <https://github.com/djGrrr/8311-was-110-firmware-builder>{ target="_blank" }. 
+    Additional details and variables are described at the original reposistory: 
+    <https://github.com/djGrrr/8311-was-110-firmware-builder>{ target="_blank" }
 
 <h4>Verify and reboot</h4>
 
