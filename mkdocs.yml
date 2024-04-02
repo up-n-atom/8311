@@ -37,7 +37,11 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - blog:
+      authors: false
       blog_dir: guides
+      post_excerpt: required
+      post_excerpt_max_authors: 0
+      post_excerpt_max_categories: 3
       post_url_format: "{slug}"
   - search
 nav:
