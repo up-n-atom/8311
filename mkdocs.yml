@@ -27,7 +27,6 @@ nav:
   - XGS-PON:
     - xgs-pon/index.md
 extra:
-  generator: false
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
