@@ -18,6 +18,7 @@ theme:
 plugins:
   - blog:
       blog_dir: guides
+  - search
 nav:
   - Guides:
     - guides/index.md
