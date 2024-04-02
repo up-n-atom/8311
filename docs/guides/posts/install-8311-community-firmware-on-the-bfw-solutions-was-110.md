@@ -31,12 +31,13 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-The basic firmware consists of a vanilla MaxLinear [OpenWrt](https://openwrt.org/){ target="_blank" } 19.07 fork,
-with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading.
+The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt](https://openwrt.org/){ target="_blank" } 19.07 fork,
+with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
+without the abismal BFW additions and abstractions as well as the backdoors.
 
 ### Extract download
 
-The basic firmware files are archived by [7-Zip](https://www.7-zip.org/){ target="_blank" } and can be extracted with:
+The firmware files are archived by [7-Zip](https://www.7-zip.org/){ target="_blank" } and can be extracted with:
 
 === "Windows"
 
@@ -46,8 +47,7 @@ The basic firmware files are archived by [7-Zip](https://www.7-zip.org/){ target
 
 === "macOS"
 
-    !!! note
-        The following commands assume [Homebrew](https://brew.sh){ target="_blank" } is installed.
+    !!! note "The following commands assume [Homebrew](https://brew.sh){ target="_blank" } is installed."
 
     ``` console
     $ brew install sevenzip
@@ -56,8 +56,7 @@ The basic firmware files are archived by [7-Zip](https://www.7-zip.org/){ target
 
 === "Linux"
 
-    !!! note
-        The following commands assume a Debian-based distribution.
+    !!! note "The following commands assume a Debian-based distribution."
 
     ``` console
     $ sudo apt-get install 7zip-full
@@ -93,8 +92,7 @@ assigned to the host interface.
 
 === "Linux"
 
-    !!! note
-        The following commands must be run as root `su -` or prepended with `sudo`.
+    !!! note "The following commands must be run as root `su -` or prepended with `sudo`."
 
     ``` console hl_lines="6"
     $ ip link show
@@ -116,7 +114,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 !!! warning
     Passwords have a maximum length of 16 characters which are not restricted by the web UI.
 
-??? tip "Exploit to disclose the default credentials"
+??? tip "Exploit to disclose the default web credentials"
     
     Navigate to <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
 
@@ -183,7 +181,7 @@ Patiently wait out the process, 4 to 5 minutes, until the web session becomes un
 
     !!! warning "The root password is not known at this time."
 
-    ??? tip "Exploit to temporarily change the root password"
+    ???+ tip "Exploit to temporarily change the root password"
         Temporarily change the root password to `root`.
 
         === "Windows"
