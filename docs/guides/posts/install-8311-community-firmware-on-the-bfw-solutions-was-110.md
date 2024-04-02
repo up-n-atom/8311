@@ -178,8 +178,7 @@ Patiently wait out the process, 4 to 5 minutes, until the web session becomes un
 
 === "v1.0.21"
 
-    !!! warning
-        The root password is not known at this time.
+    !!! warning "The root password is not known at this time."
 
     ??? tip "Exploit to temporarily change the root password"
         Temporarily change the root password to `root`.
