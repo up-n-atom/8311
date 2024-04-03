@@ -33,7 +33,7 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt](https://openwrt.org/){ target="_blank" } 19.07 fork,
 with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
-without the abismal BFW additions and abstractions as well as the backdoors.
+without the abysmal BFW additions and abstractions as well as the backdoors.
 
 ### Extract download
 
@@ -150,7 +150,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 2. At the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
    __Upgrade__.
 
-Patiently wait out the process, 4 to 5 minutes, until the web session becomes unresponsive.
+Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
 
 ??? tip "Run a continuous ping"
     To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
@@ -166,6 +166,9 @@ Patiently wait out the process, 4 to 5 minutes, until the web session becomes un
         ``` console
         $ ping 192.168.11.1
         ```
+
+Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
+us.
 
 ## Shell upgrade
 
@@ -220,6 +223,9 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
 scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
 ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
 ```
+
+Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
+us.
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
