@@ -129,10 +129,13 @@ identifiers are available on the back label of the Home Hub 4000.
     | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
     | Software Version A         | SGC8210154                        |                                 |
     | Software Version B         | SGC8210154                        |                                 |
-    | MIB File                   | /etc/mibs/prx300_1V_bell.ini      |                                 |
+    | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
 
 3. __Save__ changes and reboot from the __System__ menu.
+
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+operational status.
 
 ### from the shell
 
@@ -179,6 +182,9 @@ the `fw_setenv` command as before.
 $ fw_printenv | grep ^8311
 $ reboot
 ```
+
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+operational status.
 
 ## Home Hub 4000 software versions
 
