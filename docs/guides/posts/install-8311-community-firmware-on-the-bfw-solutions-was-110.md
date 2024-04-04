@@ -7,7 +7,9 @@ categories:
 
 # Install 8311 community firmware on the BFW Solutions WAS-110
 
+![WAS-110 community](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_firmware.webp)
 <!-- more -->
+<!-- nocont -->
 
 !!! note
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
@@ -33,7 +35,7 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt](https://openwrt.org/){ target="_blank" } 19.07 fork,
 with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
-without the abysmal BFW additions and abstractions as well as the backdoors.
+without the abysmal BFW additions and abstractions, as well as the backdoors.
 
 ### Extract download
 
