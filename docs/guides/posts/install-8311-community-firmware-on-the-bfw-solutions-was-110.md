@@ -15,8 +15,8 @@ categories:
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
 
 Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
-vendor specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad].
-Due to these incompabilities and discovered bugs, a community firmware[^1] was curated to fix any impeding issues[^2]. 
+vendor specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
+incompabilities and discovered bugs, a community firmware[^1] was curated to fix any impeding issues[^2]. 
 
   [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
   [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
@@ -33,13 +33,17 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt](https://openwrt.org/){ target="_blank" } 19.07 fork,
+The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt] 19.07 fork,
 with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
 without the abysmal BFW additions and abstractions, as well as the backdoors.
 
+  [OpenWrt]: https://openwrt.org/
+
 ### Extract download
 
-The firmware files are archived by [7-Zip](https://www.7-zip.org/){ target="_blank" } and can be extracted with:
+The firmware files are archived by [7-Zip] and can be extracted with:
+
+  [7-Zip]: https://www.7-zip.org/
 
 === "Windows"
 
@@ -49,7 +53,7 @@ The firmware files are archived by [7-Zip](https://www.7-zip.org/){ target="_bla
 
 === "macOS"
 
-    !!! note "The following commands assume [Homebrew](https://brew.sh){ target="_blank" } is installed."
+    !!! note "The following commands assume [Homebrew](https://brew.sh) is installed."
 
     ``` console
     $ brew install sevenzip
@@ -144,7 +148,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 
 
 1. Within a web browser, navigate to 
-   <https://192.168.11.1/html/main.html#admin/upgrade>{ target="_blank" }
+   <https://192.168.11.1/html/main.html#admin/upgrade>
    and, if asked, input the <em>admin</em> credentials. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
@@ -210,7 +214,8 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
-1. Within a web browser, navigate to <https://192.168.11.1/html/main.html#service/servicecontrol>{ target="_blank" }
+1. Within a web browser, navigate to 
+   <https://192.168.11.1/html/main.html#service/servicecontrol>
    and, if asked, input the admin credentials. 
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)

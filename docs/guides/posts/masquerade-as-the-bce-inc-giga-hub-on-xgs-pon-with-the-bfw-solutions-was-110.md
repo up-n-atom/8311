@@ -28,7 +28,7 @@ and the more comprehensive [XMO API client](#with-xmo-client).
 ![Giga Hub Administrator login prompt](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_login.webp)
 
 1. Within a web browser, navigate to
-   <https://home/?c=advancedtools/wan>{ target="_blank" }
+   <https://home/?c=advancedtools/wan>
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
@@ -85,7 +85,7 @@ xmo-remote-client --password=<password> get-wan-mode
 ## Purchase a WAS-110
 
 The WAS-110 is available from select distributors and at a discounted rate with group buys on the 
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420){ target="_blank" }.
+[8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 ## Install community firmware
 
@@ -107,7 +107,7 @@ identifiers are available on the back label of the Giga Hub.
 ![WAS-110 login](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
 
 1. Within a web browser, navigate to 
-   <http://192.168.11.1/cgi-bin/luci/admin/8311/config>{ target="_blank" } 
+   <http://192.168.11.1/cgi-bin/luci/admin/8311/config> 
    and, if asked, input your <em>root</em> password.
 
 ![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
