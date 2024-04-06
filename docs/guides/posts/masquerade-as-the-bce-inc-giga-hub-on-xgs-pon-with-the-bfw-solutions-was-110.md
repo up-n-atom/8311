@@ -13,7 +13,7 @@ categories:
 
 # Masquerade as the BCE Inc. Giga Hub on XGS-PON with the BFW Solutions WAS-110
 
-![Bypass family](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_giga_hub.webp)
+![Bypass family](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_giga_hub.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
@@ -99,7 +99,7 @@ outlined in the community firmware installation guide:
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
 identifiers are available on the back label of the Giga Hub.
 
-![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ id="giga-hub-label" }
+![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ class="nolightbox" id="giga-hub-label" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 <!--{ #with-luci data-toc-label="with web UI" }-->
