@@ -45,6 +45,11 @@ plugins:
       post_excerpt_max_authors: 0
       post_excerpt_max_categories: 3
       post_url_format: "{slug}"
+  - glightbox:
+      loop: false
+      skip_classes:
+        - nolightbox
+      zoomable: false
   - search
 nav:
   - Guides:

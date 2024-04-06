@@ -12,7 +12,7 @@ categories:
 
 # Bridge the BCE Inc. Giga Hub
 
-![Image title](bridge-the-bce-inc-giga-hub/bridge_giga_hub.webp)
+![Image title](bridge-the-bce-inc-giga-hub/bridge_giga_hub.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->

@@ -13,7 +13,7 @@ categories:
 
 # Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
 
-![Bypass family](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_home_hub_4000.webp)
+![Bypass family](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_home_hub_4000.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
@@ -103,7 +103,7 @@ outlined in the community firmware installation guide:
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
 identifiers are available on the back label of the Home Hub 4000.
 
-![Home Hub 4000 label](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_label.webp){ id="home-hub-4000-label" }
+![Home Hub 4000 label](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_label.webp){ class="nolightbox" id="home-hub-4000-label" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
