@@ -40,11 +40,11 @@ hooks:
 plugins:
   - blog:
       authors: false
-      blog_dir: guides
+      blog_dir: .
       post_excerpt: required
       post_excerpt_max_authors: 0
       post_excerpt_max_categories: 3
-      post_url_format: "{slug}"
+      post_url_format: "guides/{slug}"
   - glightbox:
       loop: false
       skip_classes:
@@ -53,13 +53,12 @@ plugins:
   - search
 nav:
   - Guides:
-    - guides/index.md
+    - index.md
   - GPON:
     - gpon/index.md
   - XGS-PON:
     - xgs-pon/index.md
 extra:
-  homepage: guides
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420

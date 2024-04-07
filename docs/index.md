@@ -1,4 +1,1 @@
----
-template: redirect.html
-location: guides/
----
+# Guides
