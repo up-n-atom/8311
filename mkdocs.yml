@@ -31,7 +31,7 @@ theme:
     - navigation.top
     - navigation.tracking
   custom_dir: overrides
-  logo: assets/logo.svg
+  logo: assets/images/logo.svg
   favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
