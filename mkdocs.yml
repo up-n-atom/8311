@@ -32,7 +32,7 @@ theme:
     - navigation.tracking
   custom_dir: overrides
   logo: assets/logo.svg
-  favicon: assets/favicon.png
+  favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
 hooks:
