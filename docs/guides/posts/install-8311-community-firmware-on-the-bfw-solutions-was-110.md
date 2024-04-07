@@ -3,6 +3,7 @@ date: 2024-03-21
 categories:
   - WAS-110
   - BFW Solutions
+  - XGS-PON
 ---
 
 # Install 8311 community firmware on the BFW Solutions WAS-110
@@ -11,7 +12,7 @@ categories:
 <!-- more -->
 <!-- nocont -->
 
-!!! note
+!!! note "Password changes"
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
 
 Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
@@ -53,7 +54,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === "macOS"
 
-    !!! note "The following commands assume [Homebrew](https://brew.sh) is installed."
+    !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
     ``` console
     $ brew install sevenzip
@@ -62,7 +63,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === "Linux"
 
-    !!! note "The following commands assume a Debian-based distribution."
+    !!! note "The following commands assume a Debian-based distribution"
 
     ``` console
     $ sudo apt-get install 7zip-full
@@ -98,7 +99,7 @@ assigned to the host interface.
 
 === "Linux"
 
-    !!! note "The following commands must be run as root `su -` or prepended with `sudo`."
+    !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
     ``` console hl_lines="6"
     $ ip link show
@@ -120,7 +121,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 !!! warning
     Passwords have a maximum length of 16 characters which are not restricted by the web UI.
 
-??? tip "Exploit to disclose the default web credentials"
+??? bug "Exploit to disclose the default web credentials"
     
     Navigate to <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
 
@@ -140,7 +141,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 
 ### Firmware upgrade
 
-!!! danger
+!!! danger "Proceed with caution!"
     The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself; a host device with serial
     breakout on SFP pins 2 (rx) and 7 (tx) will be required to recover.
 
@@ -176,7 +177,7 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
 us.
 
-## Shell upgrade
+## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
 ### Shell credentials
 
@@ -188,9 +189,9 @@ us.
 
 === "v1.0.21"
 
-    !!! warning "The root password is not known at this time."
+    !!! warning "The root password is not known at this time"
 
-    ???+ tip "Exploit to temporarily change the root password"
+    ???+ bug "Exploit to temporarily change the root password"
         Temporarily change the root password to `root`.
 
         === "Windows"
