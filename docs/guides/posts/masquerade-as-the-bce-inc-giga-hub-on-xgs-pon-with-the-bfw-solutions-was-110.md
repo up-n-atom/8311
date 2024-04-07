@@ -168,7 +168,7 @@ $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 1. :purple_circle: MAC address + 1, e.g. 
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
-!!! info "Additional details and variables are described at the original reposistory [^2]"
+!!! info "Additional details and variables are described at the original repository [^2]"
 
 <h4>Verify and reboot</h4>
 
