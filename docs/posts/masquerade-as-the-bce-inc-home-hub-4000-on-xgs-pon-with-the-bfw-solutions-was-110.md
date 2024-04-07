@@ -110,8 +110,12 @@ identifiers are available on the back label of the Home Hub 4000.
 ![WAS-110 login](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
 
 1. Within a web browser, navigate to 
-   <http://192.168.11.1/cgi-bin/luci/admin/8311/config> 
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/config> 
    and, if asked, input your <em>root</em> password.
+
+    ??? note "As of version 2.4.0 `https://` is supported and enabled by default"
+        All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
+        0 or false.
 
 ![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
 
