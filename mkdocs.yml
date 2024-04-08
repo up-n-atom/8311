@@ -58,6 +58,9 @@ nav:
     - gpon/index.md
   - XGS-PON:
     - xgs-pon/index.md
+    - ONT:
+      - BFW Solutions:
+        - xgs-pon/ont/bfw-solutions/was-110.md
 extra:
   social:
     - icon: fontawesome/brands/discord
