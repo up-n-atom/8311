@@ -109,7 +109,7 @@ identifiers are available on the back label of the Giga Hub.
    <https://192.168.11.1/cgi-bin/luci/admin/8311/config> 
    and, if asked, input your <em>root</em> password.
 
-    ??? note "As of version 2.4.0 `https://` is supported and enabled by default"
+    ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
 
