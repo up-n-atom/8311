@@ -1,2 +1,3 @@
 mkdocs-material >= 9.2.0
+mkdocs-material[imaging]
 mkdocs-glightbox
