@@ -51,7 +51,6 @@ plugins:
         - nolightbox
       zoomable: false
   - search
-  - social
 nav:
   - Guides:
     - index.md
