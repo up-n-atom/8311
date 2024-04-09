@@ -46,13 +46,13 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
   [7-Zip]: https://www.7-zip.org/
 
-=== "Windows"
+=== ":fontawesome-brands-windows: Windows"
 
     ``` doscon
     > 7z x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== "macOS"
+=== ":material-apple: macOS"
 
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -61,7 +61,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
     $ 7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== "Linux"
+=== ":material-linux: Linux"
 
     !!! note "The following commands assume a Debian-based distribution"
 
@@ -77,7 +77,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 The default IP of the WAS-110 listens at `192.168.11.1`; a static IP on the same `192.168.11.0/24` subnet must be
 assigned to the host interface.
 
-=== "Windows"
+=== ":fontawesome-brands-windows: Windows"
 
     !!! tip "Run Command Prompt as Administrator"
 
@@ -90,14 +90,14 @@ assigned to the host interface.
     > netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
-=== "macOS"
+=== ":material-apple: macOS"
 
     ``` console hl_lines="2"
     $ sudo networksetup -listallnetworkservices
     $ sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
-=== "Linux"
+=== ":material-linux: Linux"
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
@@ -162,13 +162,13 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 ??? tip "Run a continuous ping"
     To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
 
-    === "Windows"
+    === ":fontawesome-brands-windows: Windows"
 
         ``` doscon
         > ping -t 192.168.11.1
         ```
 
-    === "macOS / Linux"
+    === ":material-apple: macOS / :material-linux: Linux"
 
         ``` console
         $ ping 192.168.11.1
@@ -194,13 +194,13 @@ us.
     ???+ bug "Exploit to temporarily change the root password"
         Temporarily change the root password to `root`.
 
-        === "Windows"
+        === ":fontawesome-brands-windows: Windows"
 
             ``` doscon
             > curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
-        === "macOS / Linux"
+        === ":material-apple: macOS / :material-linux: Linux"
 
             ``` console
             $ curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
