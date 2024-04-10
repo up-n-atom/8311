@@ -31,8 +31,8 @@ theme:
     - navigation.top
     - navigation.tracking
   custom_dir: overrides
-  logo: assets/logo.svg
-  favicon: assets/favicon.png
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
 hooks:
@@ -40,11 +40,11 @@ hooks:
 plugins:
   - blog:
       authors: false
-      blog_dir: guides
+      blog_dir: .
       post_excerpt: required
       post_excerpt_max_authors: 0
       post_excerpt_max_categories: 3
-      post_url_format: "{slug}"
+      post_url_format: "guides/{slug}"
   - glightbox:
       loop: false
       skip_classes:
@@ -53,17 +53,19 @@ plugins:
   - search
 nav:
   - Guides:
-    - guides/index.md
+    - index.md
   - GPON:
     - gpon/index.md
   - XGS-PON:
     - xgs-pon/index.md
+    - ONT:
+      - BFW Solutions:
+        - xgs-pon/ont/bfw-solutions/was-110.md
 extra:
-  homepage: guides
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
   storyset: true
-copyright: Copyright &copy; 2024
+copyright: CC BY-NC-SA 4.0
 repo_url: https://github.com/up-n-atom/8311
 repo_name: up-n-atom/8311

@@ -1,46 +1,42 @@
 ---
-date: 2024-03-22
+date: 2024-03-23
 categories:
   - XGS-PON
-  - Home Hub 4000
+  - Giga Hub
   - WAS-110
   - Bell Canada
   - Bell Aliant
   - Bell MTS
   - Sagemcom
-  - FAST 5689
+  - FAST 5689E
 ---
 
-# Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the BCE Inc. Giga Hub on XGS-PON with the BFW Solutions WAS-110
 
-![Bypass family](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_home_hub_4000.webp){ class="nolightbox" }
+![Bypass family](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_giga_hub.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
 
 ## Determine if you're an XGS-PON subscriber
 
-There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN mode 
-switcheroo, and the more comprehensive [XMO API client](#with-xmo-client). 
+There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN page, 
+and the more comprehensive [XMO API client](#with-xmo-client). 
 
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
-!!! info "Firmware version __1.7.11__ removed the helpful auto-detected mode output."
-
-![Home Hub 4000 Administrator login prompt](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_login.webp)
+![Giga Hub Administrator login prompt](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_login.webp)
 
 1. Within a web browser, navigate to
    <https://home/?c=advancedtools/wan>
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is the S/N located on the back [label] of the Home Hub 4000.
+    1. The default Administrator password is the S/N located on the back [label] of the Giga Hub.
 
-![Home Hub 4000 WAN mode](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_wan_mode.webp)
+![Giga Hub WAN mode](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_wan_mode.webp)
 
-2. From the __WAN mode__ drop-down, switch from `AUTO` to `XGS-PON` and click __Save__.
-
-If your internet access doesn't drop out, you're subscribed on XGS-PON.
+2. From the __WAN__ page, verify the displayed __current mode__ is XGS-PON.
 
 ### with a XMO client
 
@@ -52,7 +48,7 @@ Python installation varies by Operating System and has been outlined by the tuto
 
 Open a terminal and install the open-source XMO client with:
 
-=== "Windows"
+=== ":fontawesome-brands-windows: Windows"
 
     ``` doscon hl_lines="5"
     > py --version
@@ -62,7 +58,7 @@ Open a terminal and install the open-source XMO client with:
     > pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
-=== "macOS / Linux"
+=== ":material-apple: macOS / :material-linux: Linux"
 
     ``` console hl_lines="5"
     $ python3 --version # (1)!
@@ -79,12 +75,12 @@ Open a terminal and install the open-source XMO client with:
 Finally, to determine if you're an XGS-PON subscriber, execute the following:
 
 ```
-xmo-remote-client --password=<password> -a MD5 get-wan-mode
+xmo-remote-client --password=<password> get-wan-mode
 ```
 
 !!! note
     Replace the `<password>` argument; the default Administrator password is the S/N located on the back [label] of the 
-    Home Hub 4000.
+    Giga Hub.
 
 ## Purchase a WAS-110
 
@@ -101,17 +97,21 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available on the back label of the Home Hub 4000.
+identifiers are available on the back label of the Giga Hub.
 
-![Home Hub 4000 label](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_label.webp){ class="nolightbox" id="home-hub-4000-label" }
+![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ class="nolightbox" id="giga-hub-label" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
 ![WAS-110 login](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
 
 1. Within a web browser, navigate to 
-   <http://192.168.11.1/cgi-bin/luci/admin/8311/config> 
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/config> 
    and, if asked, input your <em>root</em> password.
+
+    ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
+        All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
+        0 or false.
 
 ![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
 
@@ -119,16 +119,16 @@ identifiers are available on the back label of the Home Hub 4000.
 
     !!! reminder 
         <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
-        provisioned values on the back [label] of the Home Hub 4000.
+        provisioned values on the back [label] of the Giga Hub.
 
     | Parameter                  | Value                             | Remarks                         |
     | -------------------------- | --------------------------------- | ------------------------------- |
     | PON Serial Number (ONT ID) | SMBS03831122                      | :blue_circle:                   |
-    | Equipment ID               | 5689                              |                                 |
-    | Hardware Version           | Fast5689Bell                      |                                 |
+    | Equipment ID               | 5690                              |                                 |
+    | Hardware Version           | Fast5689EBell                     |                                 |
     | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-    | Software Version A         | SGC8210154                        |                                 |
-    | Software Version B         | SGC8210154                        |                                 |
+    | Software Version A         | SGC8400058                        |                                 |
+    | Software Version B         | SGC8400058                        |                                 |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
 
@@ -153,25 +153,25 @@ ssh root@192.168.11.1
 
 !!! reminder 
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
-    :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Home Hub 4000.
+    :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Giga Hub.
 
 ``` console hl_lines="2-4 8-9"
 $ fw_setenv mib_file
 $ fw_setenv 8311_device_sn DM2222357163453
 $ fw_setenv 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
 $ fw_setenv 8311_gpon_sn SMBS03831122
-$ fw_setenv 8311_equipment_id 5689
-$ fw_setenv 8311_hw_ver Fast5689Bell
+$ fw_setenv 8311_equipment_id 5690
+$ fw_setenv 8311_hw_ver Fast5689EBell
 $ fw_setenv 8311_cp_hw_ver_sync 1
-$ fw_setenv 8311_sw_verA SGC8210154
-$ fw_setenv 8311_sw_verB SGC8210154
+$ fw_setenv 8311_sw_verA SGC8400058
+$ fw_setenv 8311_sw_verB SGC8400058
 $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
 1. :purple_circle: MAC address + 1, e.g. 
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
-!!! info "Additional details and variables are described at the original reposistory [^2]"
+!!! info "Additional details and variables are described at the original repository [^2]"
 
 <h4>Verify and reboot</h4>
 
@@ -186,19 +186,22 @@ $ reboot
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
 operational status.
 
-## Home Hub 4000 software versions
+## Giga Hub software versions
 
 ```
-xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
+xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
 ```
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
-| 1.7.11           | SGC8210154                |
-| 1.7.8.1          | SGC8210140                |
-| 1.7.2            | SGC821011A                |
+| 2.9              | SGC8400058                |
+| 1.19.6           | SGC83000DC                |
+| 1.19.5.4         | SGC83000D0                |
+| 1.19.5.1         | SGC83000C8                |
+| 1.16.5           | SGC830007C                |
+| 1.16.3           | SGC830006E                |
 
-  [label]: #home-hub-4000-label
+  [label]: #giga-hub-label
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

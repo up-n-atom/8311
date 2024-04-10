@@ -3,6 +3,7 @@ date: 2024-03-21
 categories:
   - WAS-110
   - BFW Solutions
+  - XGS-PON
 ---
 
 # Install 8311 community firmware on the BFW Solutions WAS-110
@@ -11,7 +12,7 @@ categories:
 <!-- more -->
 <!-- nocont -->
 
-!!! note
+!!! note "Password changes"
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
 
 Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
@@ -45,24 +46,24 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
   [7-Zip]: https://www.7-zip.org/
 
-=== "Windows"
+=== ":fontawesome-brands-windows: Windows"
 
     ``` doscon
     > 7z x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== "macOS"
+=== ":material-apple: macOS"
 
-    !!! note "The following commands assume [Homebrew](https://brew.sh) is installed."
+    !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
     ``` console
     $ brew install sevenzip
     $ 7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== "Linux"
+=== ":material-linux: Linux"
 
-    !!! note "The following commands assume a Debian-based distribution."
+    !!! note "The following commands assume a Debian-based distribution"
 
     ``` console
     $ sudo apt-get install 7zip-full
@@ -76,7 +77,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 The default IP of the WAS-110 listens at `192.168.11.1`; a static IP on the same `192.168.11.0/24` subnet must be
 assigned to the host interface.
 
-=== "Windows"
+=== ":fontawesome-brands-windows: Windows"
 
     !!! tip "Run Command Prompt as Administrator"
 
@@ -89,16 +90,16 @@ assigned to the host interface.
     > netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
-=== "macOS"
+=== ":material-apple: macOS"
 
     ``` console hl_lines="2"
     $ sudo networksetup -listallnetworkservices
     $ sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
-=== "Linux"
+=== ":material-linux: Linux"
 
-    !!! note "The following commands must be run as root `su -` or prepended with `sudo`."
+    !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
     ``` console hl_lines="6"
     $ ip link show
@@ -120,7 +121,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 !!! warning
     Passwords have a maximum length of 16 characters which are not restricted by the web UI.
 
-??? tip "Exploit to disclose the default web credentials"
+??? bug "Exploit to disclose the default web credentials"
     
     Navigate to <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
 
@@ -140,7 +141,7 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 
 ### Firmware upgrade
 
-!!! danger
+!!! danger "Proceed with caution!"
     The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself; a host device with serial
     breakout on SFP pins 2 (rx) and 7 (tx) will be required to recover.
 
@@ -161,13 +162,13 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 ??? tip "Run a continuous ping"
     To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
 
-    === "Windows"
+    === ":fontawesome-brands-windows: Windows"
 
         ``` doscon
         > ping -t 192.168.11.1
         ```
 
-    === "macOS / Linux"
+    === ":material-apple: macOS / :material-linux: Linux"
 
         ``` console
         $ ping 192.168.11.1
@@ -176,7 +177,7 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
 us.
 
-## Shell upgrade
+## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
 ### Shell credentials
 
@@ -188,18 +189,18 @@ us.
 
 === "v1.0.21"
 
-    !!! warning "The root password is not known at this time."
+    !!! warning "The root password is not known at this time"
 
-    ???+ tip "Exploit to temporarily change the root password"
+    ???+ bug "Exploit to temporarily change the root password"
         Temporarily change the root password to `root`.
 
-        === "Windows"
+        === ":fontawesome-brands-windows: Windows"
 
             ``` doscon
             > curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
-        === "macOS / Linux"
+        === ":material-apple: macOS / :material-linux: Linux"
 
             ``` console
             $ curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
