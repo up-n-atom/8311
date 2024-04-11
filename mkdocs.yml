@@ -24,6 +24,7 @@ theme:
   features:
     - announce.dismiss
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     - navigation.expand
     - navigation.indexes

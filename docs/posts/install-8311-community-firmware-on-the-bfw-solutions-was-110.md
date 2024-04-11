@@ -48,26 +48,26 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === ":fontawesome-brands-windows: Windows"
 
-    ``` doscon
-    > 7z x WAS-110_8311_firmware_mod_<version>_basic.7z
+    ``` sh
+    7z x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":material-apple: macOS"
 
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
-    ``` console
-    $ brew install sevenzip
-    $ 7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
+    ``` sh
+    brew install sevenzip
+    7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":material-linux: Linux"
 
     !!! note "The following commands assume a Debian-based distribution"
 
-    ``` console
-    $ sudo apt-get install 7zip-full
-    $ 7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
+    ``` sh
+    sudo apt-get install 7zip-full
+    7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
     ```
 
     1. Replace `<version>` with the downloaded version.
@@ -85,30 +85,30 @@ assigned to the host interface.
         2. In the Run dialog box, type `cmd` into the input field and then press
            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>. 
 
-    ``` doscon hl_lines="2"
-    > netsh interface ip show config
-    > netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+    ``` sh hl_lines="2"
+    netsh interface ip show config
+    netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
 === ":material-apple: macOS"
 
-    ``` console hl_lines="2"
-    $ sudo networksetup -listallnetworkservices
-    $ sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
+    ``` sh hl_lines="2"
+    sudo networksetup -listallnetworkservices
+    sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
 === ":material-linux: Linux"
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
-    ``` console hl_lines="6"
-    $ ip link show
-    $ ethtool <interface>
-    $ ip address show
-    $ ip address flush dev <interface>
-    $ ip route flush dev <interface>
-    $ ip address add 192.168.11.2/24 dev <interface>
-    $ ip address show dev <interface>
+    ``` sh hl_lines="6"
+    ip link show
+    ethtool <interface>
+    ip address show
+    ip address flush dev <interface>
+    ip route flush dev <interface>
+    ip address add 192.168.11.2/24 dev <interface>
+    ip address show dev <interface>
     ```
 
 ## Web UI upgrade <small>recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
@@ -165,14 +165,14 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 
     === ":fontawesome-brands-windows: Windows"
 
-        ``` doscon
-        > ping -t 192.168.11.1
+        ``` sh
+        ping -t 192.168.11.1
         ```
 
     === ":material-apple: macOS / :material-linux: Linux"
 
-        ``` console
-        $ ping 192.168.11.1
+        ``` sh
+        ping 192.168.11.1
         ```
 
 Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
@@ -197,14 +197,14 @@ us.
 
         === ":fontawesome-brands-windows: Windows"
 
-            ``` doscon
-            > curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+            ``` sh
+            curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
         === ":material-apple: macOS / :material-linux: Linux"
 
-            ``` console
-            $ curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+            ``` sh
+            curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
 ### Local upgrade
@@ -231,14 +231,14 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
 
 === ":fontawesome-brands-windows: Windows"
 
-    ```
+    ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
     ```
 
 === ":material-apple: macOS / :material-linux: Linux"
 
-    ```
+    ``` sh
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
     ```

@@ -50,22 +50,22 @@ Open a terminal and install the open-source XMO client with:
 
 === ":fontawesome-brands-windows: Windows"
 
-    ``` doscon hl_lines="5"
-    > py --version
-    > py -m venv venv
-    > venv\Scripts\activate
-    > py -m pip install --upgrade pip 
-    > pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
+    ``` sh hl_lines="5"
+    py --version
+    py -m venv venv
+    venv\Scripts\activate
+    py -m pip install --upgrade pip 
+    pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
 === ":material-apple: macOS / :material-linux: Linux"
 
-    ``` console hl_lines="5"
-    $ python3 --version # (1)!
-    $ python3 -m venv .venv
-    $ . .venv/bin/activate
-    $ python3 -m pip install --upgrade pip
-    $ pip3 install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
+    ``` sh hl_lines="5"
+    python3 --version # (1)!
+    python3 -m venv .venv
+    . .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    pip3 install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
     1. Verify the installed Python version is >= __3.10__
@@ -74,7 +74,7 @@ Open a terminal and install the open-source XMO client with:
 
 Finally, to determine if you're an XGS-PON subscriber, execute the following:
 
-```
+``` sh
 xmo-remote-client --password=<password> get-wan-mode
 ```
 
@@ -141,7 +141,7 @@ operational status.
 
 <h4>Login over SSH</h4>
 
-```
+``` sh
 ssh root@192.168.11.1
 ```
 
@@ -155,17 +155,17 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Giga Hub.
 
-``` console hl_lines="2-4 8-9"
-$ fw_setenv mib_file
-$ fw_setenv 8311_device_sn DM2222357163453
-$ fw_setenv 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-$ fw_setenv 8311_gpon_sn SMBS03831122
-$ fw_setenv 8311_equipment_id 5690
-$ fw_setenv 8311_hw_ver Fast5689EBell
-$ fw_setenv 8311_cp_hw_ver_sync 1
-$ fw_setenv 8311_sw_verA SGC8400058
-$ fw_setenv 8311_sw_verB SGC8400058
-$ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
+``` sh hl_lines="2-4 8-9"
+fw_setenv mib_file
+fw_setenv 8311_device_sn DM2222357163453
+fw_setenv 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
+fw_setenv 8311_gpon_sn SMBS03831122
+fw_setenv 8311_equipment_id 5690
+fw_setenv 8311_hw_ver Fast5689EBell
+fw_setenv 8311_cp_hw_ver_sync 1
+fw_setenv 8311_sw_verA SGC8400058
+fw_setenv 8311_sw_verB SGC8400058
+fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
 1. :purple_circle: MAC address + 1, e.g. 
@@ -178,9 +178,9 @@ $ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
 the `fw_setenv` command as before.
 
-``` console
-$ fw_printenv | grep ^8311
-$ reboot
+``` sh
+fw_printenv | grep ^8311
+reboot
 ```
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
@@ -188,7 +188,7 @@ operational status.
 
 ## Giga Hub software versions
 
-```
+``` sh
 xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
 ```
 
