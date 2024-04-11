@@ -137,10 +137,8 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and mod
 
     === ":fontawesome-brands-windows: Windows"
 
-        !!! info "curl is available for download at <https://curl.se/windows/>"
-
         ``` sh
-        curl -o "%temp%\param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        dir %Temp% && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
         ```
 
     === ":material-apple: macOS"
@@ -149,16 +147,16 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and mod
 
         ``` sh
         brew install curl
-        curl -o "/tmp/param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
         ```
 
     === ":material-linux: Linux"
 
-        !!! note "The following commands assume a Debian-based distribution"
+        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
 
         ``` sh
         sudo apt-get install curl
-        curl -o "/tmp/param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
         ```
 
 === "&lt;= v1.0.20"
@@ -232,8 +230,6 @@ us.
 
         === ":fontawesome-brands-windows: Windows"
 
-            !!! info "curl is available for download at <https://curl.se/windows/>"
-
             ``` sh
             curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
@@ -249,7 +245,7 @@ us.
 
         === ":material-linux: Linux"
 
-            !!! note "The following commands assume a Debian-based distribution"
+            !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
 
             ``` sh
             sudo apt-get install curl
