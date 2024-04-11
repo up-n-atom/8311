@@ -88,7 +88,13 @@ assigned to the host interface.
     ``` sh hl_lines="2"
     netsh interface ip show config
     netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+    netsh interface ipv4 set interface "<interface name>" mtu=1500
     ```
+
+    ??? info "For the shameless mouse clickers..."
+        If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
+
+        <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
 
 === ":material-apple: macOS"
 
