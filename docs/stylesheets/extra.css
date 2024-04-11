@@ -9,3 +9,8 @@
     font-size:inherit;
   }
 }
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+}
