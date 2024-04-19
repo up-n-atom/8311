@@ -15,9 +15,9 @@ categories:
 !!! note "Password changes"
     As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
 
-Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
-vendor specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
-incompabilities and discovered bugs, a community firmware[^1] was curated to fix any impeding issues[^2]. 
+Out of the box, the WAS-110 is not fully compatible with varying ISP OLT configurations, with issues ranging from 
+vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
+incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2]. 
 
   [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
   [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
@@ -34,9 +34,9 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt] 19.07 fork,
-with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
-without the abysmal BFW additions and abstractions, as well as the backdoors.
+The <ins>basic</ins> firmware comprises of a vanilla MaxLinear [OpenWrt] 19.07 fork,
+integrated with the aforementioned fixes and a customized luci web interfaces for hassle-free masquerading. It also
+does without the abysmal BFW additions and abstractions, as well as the backdoors.
 
   [OpenWrt]: https://openwrt.org/
 
@@ -74,8 +74,8 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 ### Set a static IP
 
-The default IP of the WAS-110 listens at `192.168.11.1`; a static IP on the same `192.168.11.0/24` subnet must be
-assigned to the host interface.
+The default IP address of the WAS-110 is `192.168.11.1`. To connect successfully, a static IP address must be assigned
+to the host interface on the same `192.168.11.0/24` subnet.
 
 === ":fontawesome-brands-windows: Windows"
 
@@ -176,8 +176,8 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and mod
 ### Firmware upgrade
 
 !!! danger "Proceed with caution!"
-    The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself; a host device with serial
-    breakout on SFP pins 2 (rx) and 7 (tx) will be required to recover.
+    The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
+    with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
@@ -208,8 +208,8 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
         ping 192.168.11.1
         ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
-us.
+Once rebooted, begin to enjoy the fruits of the 8311 community. It's not at all possible without the help and support
+of every one of us.
 
 ## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
@@ -264,7 +264,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the admin credentials. 
+   and, if asked, input the <em>admin</em> credentials. 
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
@@ -288,8 +288,8 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
     ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
-us.
+Once rebooted, begin to enjoy the fruits of the 8311 community. It's not at all possible without the help and support
+of every one of us.
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
