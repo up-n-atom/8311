@@ -75,7 +75,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 ### Set a static IP
 
 The default IP address of the WAS-110 is `192.168.11.1`. To connect successfully, a static IP address must be assigned
-to the host interface on the same `192.168.11.0/24` subnet (1).
+to the host interface on the same `192.168.11.0/24` subnet. (1)
 { .annotate }
 
 1.  E.g. `192.168.11.2` which is the default ping IP address.
@@ -211,7 +211,7 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
         ping 192.168.11.1
         ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community. It's not at all possible without the help and support
+Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
 of every one of us.
 
 ## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
@@ -291,7 +291,7 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
     ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community. It's not at all possible without the help and support
+Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
 of every one of us.
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
