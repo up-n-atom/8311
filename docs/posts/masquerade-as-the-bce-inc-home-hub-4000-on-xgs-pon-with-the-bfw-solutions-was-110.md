@@ -151,25 +151,21 @@ ssh root@192.168.11.1
 
 <h4>Configure 8311 U-Boot environment</h4>
 
-??? warning "Each of the following commands <ins>must</ins> be run twice consecutively!" 
-    The WAS-110 functions as an A/B System; each U-Boot environment variable change swaps between the two (2) 
-    environment partitions.
-
 !!! reminder 
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Home Hub 4000.
 
 ``` sh hl_lines="2-4 8-9"
-fw_setenv mib_file
-fw_setenv 8311_device_sn DM2222357163453
-fw_setenv 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-fw_setenv 8311_gpon_sn SMBS03831122
-fw_setenv 8311_equipment_id 5689
-fw_setenv 8311_hw_ver Fast5689Bell
-fw_setenv 8311_cp_hw_ver_sync 1
-fw_setenv 8311_sw_verA SGC8210154
-fw_setenv 8311_sw_verB SGC8210154
-fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
+fwenv_set mib_file
+fwenv_set 8311_device_sn DM2222357163453
+fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
+fwenv_set 8311_gpon_sn SMBS03831122
+fwenv_set 8311_equipment_id 5689
+fwenv_set 8311_hw_ver Fast5689Bell
+fwenv_set 8311_cp_hw_ver_sync 1
+fwenv_set 8311_sw_verA SGC8210154
+fwenv_set 8311_sw_verB SGC8210154
+fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
 1. :purple_circle: MAC address + 1, e.g. 
