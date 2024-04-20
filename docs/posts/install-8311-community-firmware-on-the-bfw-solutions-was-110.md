@@ -121,7 +121,7 @@ to the host interface on the same `192.168.11.0/24` subnet.
 
 ### Web credentials
 
-The default web credentials can be found in `/ptrom/ptconf/param_ct.xml` and modifications from the web UI are stored in
+The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifications from the web UI are stored in
 `/ptrom/ptconf/usrconfig_conf` as base64 encoded strings.
 
 !!! warning
