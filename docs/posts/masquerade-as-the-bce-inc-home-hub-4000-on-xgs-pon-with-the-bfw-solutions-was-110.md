@@ -101,7 +101,7 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available on the back label of the Home Hub 4000, color-coordinated in the following depiction.
+identifiers are available on the back label of the Home Hub 4000, color-coordinated in the following depiction:
 
 ![Home Hub 4000 label](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_label.webp){ class="nolightbox" id="home-hub-4000-label" }
 

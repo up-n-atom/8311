@@ -97,7 +97,7 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available on the back label of the Giga Hub, color-coordinated in the following depiction.
+identifiers are available on the back label of the Giga Hub, color-coordinated in the following depiction:
 
 ![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ class="nolightbox" id="giga-hub-label" }
 
