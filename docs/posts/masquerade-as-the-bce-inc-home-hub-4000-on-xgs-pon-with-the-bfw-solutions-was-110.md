@@ -192,7 +192,7 @@ operational status.
 
 ## Home Hub 4000 software versions
 
-The software version can be used as a verification parameter by the OLT, therefore is it important to keep up-to-date
+The software version can be used as a verification parameter by the OLT. Therefore, it is important to keep up-to-date
 with the latest listing.
 
 | Firmware Version | External Firmware Version |
