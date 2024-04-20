@@ -178,7 +178,7 @@ fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 <h4>Verify and reboot</h4>
 
 Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fw_setenv` command as before.
+the `fwenv_set` command as before.
 
 ``` sh
 fw_printenv | grep ^8311
