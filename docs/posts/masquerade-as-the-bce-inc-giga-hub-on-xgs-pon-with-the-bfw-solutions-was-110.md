@@ -168,6 +168,8 @@ fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
 !!! info "Additional details and variables are described at the original repository [^2]"
+    `fwenv_set` is a helper script that executes `fw_setenv` twice consecutively. The WAS-110 functions as an A/B
+    system, requiring the U-Boot environment variables to be set twice, once for each environment.
 
 <h4>Verify and reboot</h4>
 
