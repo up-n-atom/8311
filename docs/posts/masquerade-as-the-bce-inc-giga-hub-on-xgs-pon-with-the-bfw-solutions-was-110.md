@@ -89,7 +89,7 @@ The WAS-110 is available from select distributors and at a discounted rate with 
 
 ## Install community firmware
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is absolutely necessary; follow the steps 
+As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps 
 outlined in the community firmware installation guide:
 
 [Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
@@ -97,7 +97,7 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available on the back label of the Giga Hub.
+identifiers are available on the back label of the Giga Hub, color-coordinated in the following depiction.
 
 ![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ class="nolightbox" id="giga-hub-label" }
 
@@ -134,7 +134,7 @@ identifiers are available on the back label of the Giga Hub.
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
 ### from the shell
@@ -183,14 +183,13 @@ fw_printenv | grep ^8311
 reboot
 ```
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
 ## Giga Hub software versions
 
-``` sh
-xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
-```
+The software version can be used as a verification parameter by the OLT, therefore is it important to keep up-to-date
+with the latest listing.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
@@ -201,7 +200,21 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 | 1.16.5           | SGC830007C                |
 | 1.16.3           | SGC830006E                |
 
+
+Please help us by contributing new versions via the
+[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
+or submitting a 
+[Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
+
+The following command extracts the external firmware version used by OMCI managed entity 7 and requires the 
+[XMO client] described earlier in this guide.
+
+``` sh
+xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
+```
+
   [label]: #giga-hub-label
+  [XMO client]: #with-a-xmo-client
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
