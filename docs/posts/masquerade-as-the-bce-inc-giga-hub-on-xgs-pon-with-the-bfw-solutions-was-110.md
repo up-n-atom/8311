@@ -127,8 +127,8 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
     | Equipment ID               | 5690                              |                                 |
     | Hardware Version           | Fast5689EBell                     |                                 |
     | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-    | Software Version A         | SGC8400058                        |                                 |
-    | Software Version B         | SGC8400058                        |                                 |
+    | Software Version A         | SGC8400058                        | [Version listing]               |
+    | Software Version B         | SGC8400058                        | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
 
@@ -214,6 +214,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 ```
 
   [label]: #giga-hub-label
+  [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>

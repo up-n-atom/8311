@@ -131,8 +131,8 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
     | Equipment ID               | 5689                              |                                 |
     | Hardware Version           | Fast5689Bell                      |                                 |
     | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-    | Software Version A         | SGC8210154                        |                                 |
-    | Software Version B         | SGC8210154                        |                                 |
+    | Software Version A         | SGC8210154                        | [Version listing]               |
+    | Software Version B         | SGC8210154                        | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
 
@@ -214,6 +214,7 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
 ```
 
   [label]: #home-hub-4000-label
+  [Version listing]: #home-hub-4000-software-versions
   [XMO client]: #with-a-xmo-client
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
