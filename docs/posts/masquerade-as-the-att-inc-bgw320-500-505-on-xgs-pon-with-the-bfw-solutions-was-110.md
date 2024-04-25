@@ -18,12 +18,23 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions
 
 ## Determine if you're an XGS-PON subscriber
 
+There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [Web UI](#with-web-ui) Fiber 
+Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
+
+### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
+
 ![BGW320-500/505 Fiber status](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_fiber_status.webp)
 
 1. Within a web browser, navigate to
    <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
 If the wave length matches <em>1270 nm</em>, you're subscribed on XGS-PON.
+
+### with the transceiver
+
+First, identify the color of the bale clasp. If the clasp is orange, continue by carefully pulling out the 
+transceiver by engaging the bale clasp and latch. If the label on the transceiver contains the text XGS-PON or 
+1270 TX, you're subscribed on XGS-PON.
 
 ## Purchase a WAS-110
 
