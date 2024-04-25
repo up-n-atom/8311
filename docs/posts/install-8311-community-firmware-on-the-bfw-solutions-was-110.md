@@ -27,6 +27,13 @@ incompatibilities and discovered bugs, a community firmware[^1] has been curated
 Plug the WAS-110 into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
 switch.
 
+!!! warning "Catch 22"
+    The WAS-110 running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
+    inactive. Some host interfaces will enter a power-saving state, making the WAS-110 inaccessible.
+
+    Plugging in the SC/APC fiber cable prior to cloning the serial number can trigger a rogue ONT at the OLT and 
+    subsequently blacklist the port requiring a service call.
+
 ### Download firmware
 
 The community firmware comes in two (2) variants: *basic* and *bfw*; for the purposes of this guide, we'll focus on
