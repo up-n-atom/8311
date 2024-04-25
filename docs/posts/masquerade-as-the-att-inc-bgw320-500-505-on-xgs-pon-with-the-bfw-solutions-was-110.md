@@ -80,7 +80,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
+        <ins>Replace</ins> the :blue_circle: __ONT ID__ and :purple_circle: __MAC address__ with the 
         provisioned values on the bottom [label] of the BGW320-500/505.
 
     === "BGW320-500"
@@ -124,7 +124,7 @@ ssh root@192.168.11.1
 
 !!! reminder 
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
-    :blue_circle: __PON serial number__ with the provisioned values on the bottom [label] of the BGW320-500/505.
+    :blue_circle: __ONT ID__ with the provisioned values on the bottom [label] of the BGW320-500/505.
 
 === "BGW320-500"
 
