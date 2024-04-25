@@ -28,7 +28,7 @@ switch.
     The WAS-110 running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
     inactive. Some host interfaces will enter a power-saving state, making the WAS-110 inaccessible.
 
-    Plugging in the SC/APC fiber cable prior to cloning the serial number can trigger a rogue ONT at the OLT.
+    Plugging in the SC/APC fiber cable prior to cloning the serial number can trigger a rogue ONT alarm.
 
 ### Download firmware
 
