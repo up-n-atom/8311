@@ -148,8 +148,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_device_sn N93VA0MF003208
     fwenv_set 8311_iphost_mac 08:9B:B9:27:89:B2 # (1)!
     fwenv_set 8311_gpon_sn NOKA03831122
-    fwenv_set 8311_equipment_id iONT320500G
-    fwenv_set 8311_hw_ver BGW320-500_2.1
+    fwenv_set 8311_equipment_id iONT320505G
+    fwenv_set 8311_hw_ver BGW320-505_2.2
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA BGW320_3.21.4
     fwenv_set 8311_sw_verB BGW320_3.21.4
