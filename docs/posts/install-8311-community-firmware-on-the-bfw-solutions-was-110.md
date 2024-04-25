@@ -182,6 +182,8 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
     The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
     with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
 
+    Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
+
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
 
