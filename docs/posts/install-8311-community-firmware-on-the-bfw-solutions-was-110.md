@@ -231,7 +231,7 @@ of every one of us.
     | root     | M533%27#32n682 |
 
 
-???+ bug "Exploit to temporarily change the root password"
+??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
 
     === ":fontawesome-brands-windows: Windows"
