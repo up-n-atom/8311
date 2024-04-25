@@ -43,8 +43,9 @@ The WAS-110 is available from select distributors and at a discounted rate with 
 
 ## Install community firmware
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps 
-outlined in the community firmware installation guide:
+Although, not strictly necessary for AT&T, the community firmware is highly recommended for masquerading with the 
+WAS-110 and used for the remainder of this guide. To install the community firmware, follow the steps outlined in the 
+community firmware installation guide:
 
 [Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
 
