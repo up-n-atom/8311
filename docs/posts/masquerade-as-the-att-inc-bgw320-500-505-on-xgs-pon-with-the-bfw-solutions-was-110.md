@@ -18,8 +18,8 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions
 
 ## Determine if you're an XGS-PON subscriber
 
-!!! info "2Gbps or higher packages"
-    If you're subscribed to 2 GIG speed or a similar 2Gbps or higher package, skip past to [Purchase a WAS-110].
+!!! info "2Gbps or higher tiers"
+    If you're subscribed to 2 GIG speed or a similar 2Gbps or higher tier, skip past to [Purchase a WAS-110].
 
 There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [Web UI](#with-web-ui) Fiber 
 Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
