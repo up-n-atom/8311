@@ -20,6 +20,9 @@ categories:
 
 ## Determine if you're an XGS-PON subscriber
 
+!!! info "3Gbps or higher packages"
+    If you're subscribed to Gigabit Fibe 3.0 or a similar 3Gbps or higher package, skip past to [Purchase a WAS-110].
+
 There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN page, 
 and the more comprehensive [XMO API client](#with-xmo-client). 
 
@@ -213,6 +216,7 @@ The following command extracts the external firmware version used by OMCI manage
 xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
 ```
 
+  [Purchase a WAS-110]: #purchase-a-was-110
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client
