@@ -36,7 +36,7 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
 The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
-includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. Unlike the *bfw* 
+includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. And unlike the *bfw* 
 variant, it does not include the abysmal BFW patches and cruft.
 
   [OpenWrt]: https://openwrt.org/
