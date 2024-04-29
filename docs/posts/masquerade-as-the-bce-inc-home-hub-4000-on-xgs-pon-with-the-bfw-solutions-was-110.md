@@ -136,7 +136,7 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
     | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
     | Software Version A         | SGC8210154                   |              | [Version listing]               |
     | Software Version B         | SGC8210154                   |              | [Version listing]               |
-    | MIB File                   | /etc/mibs/prx300_1V_bell.ini |              | VEIP and more                   |
+    | MIB File                   | /etc/mibs/prx300_1V_bell.ini | :check_mark: | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: MAC address + 1 |
 
 3. __Save__ changes and reboot from the __System__ menu.
