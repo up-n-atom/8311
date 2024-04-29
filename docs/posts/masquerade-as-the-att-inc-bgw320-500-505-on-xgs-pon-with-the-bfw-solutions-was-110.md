@@ -89,27 +89,27 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-500"
 
-        | Parameter                  | Value                             | Remarks                         |
-        | -------------------------- | --------------------------------- | ------------------------------- |
-        | PON Serial Number (ONT ID) | HUMA04831122                      | :blue_circle:                   |
-        | Equipment ID               | iONT320500G                       |                                 |
-        | Hardware Version           | BGW320-500-2.1                    |                                 |
-        | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-        | Software Version A         | BGW320_3.21.4                     |                                 |
-        | Software Version B         | BGW320_3.21.4                     |                                 |
-        | IP Host MAC Address        | E8:B2:FE:FE:FE:71                 | :purple_circle: MAC address + 1 |
+        | Parameter                  | Value             | Mandatory    | Remarks         |
+        | -------------------------- | ----------------- | ------------ | --------------- |
+        | PON Serial Number (ONT ID) | HUMA04831122      | :check_mark: | :blue_circle:   |
+        | Equipment ID               | iONT320500G       |              |                 |
+        | Hardware Version           | BGW320-500-2.1    |              |                 |
+        | Sync Circuit Pack Version  | :check_mark:      |              |                 |
+        | Software Version A         | BGW320_3.21.4     |              |                 |
+        | Software Version B         | BGW320_3.21.4     |              |                 |
+        | IP Host MAC Address        | E8:B2:FE:FE:FE:70 |              | :purple_circle: |
 
     === "BGW320-505"
 
-        | Parameter                  | Value                             | Remarks                         |
-        | -------------------------- | --------------------------------- | ------------------------------- |
-        | PON Serial Number (ONT ID) | NOKA04831122                      | :blue_circle:                   |
-        | Equipment ID               | iONT320505G                       |                                 |
-        | Hardware Version           | BGW320-505-2.2                    |                                 |
-        | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-        | Software Version A         | BGW320_3.21.4                     |                                 |
-        | Software Version B         | BGW320_3.21.4                     |                                 |
-        | IP Host MAC Address        | 08:9B:B9:27:89:B2                 | :purple_circle: MAC address + 1 |
+        | Parameter                  | Value             | Mandatory    | Remarks         |
+        | -------------------------- | ----------------- | ------------ | --------------- |
+        | PON Serial Number (ONT ID) | NOKA04831122      | :check_mark: |:blue_circle:    |
+        | Equipment ID               | iONT320505G       |              |                 |
+        | Hardware Version           | BGW320-505-2.2    |              |                 |
+        | Sync Circuit Pack Version  | :check_mark:      |              |                 |
+        | Software Version A         | BGW320_3.21.4     |              |                 |
+        | Software Version B         | BGW320_3.21.4     |              |                 |
+        | IP Host MAC Address        | 08:9B:B9:27:89:B1 |              | :purple_circle: |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -134,7 +134,7 @@ ssh root@192.168.11.1
 
     ``` sh hl_lines="3"
     fwenv_set 8311_device_sn D93LA0D0D0D211
-    fwenv_set 8311_iphost_mac E8:B2:FE:FE:FE:71 # (1)!
+    fwenv_set 8311_iphost_mac E8:B2:FE:FE:FE:70
     fwenv_set 8311_gpon_sn HUMA03831122
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
@@ -143,14 +143,11 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verB BGW320_3.21.4
     ```
     
-    1. :purple_circle: MAC address + 1, e.g. 
-       `E8:B2:FE:FE:FE:70` becomes `E8:B2:FE:FE:FE:71`
-
 === "BGW320-505"
 
     ``` sh hl_lines="3"
     fwenv_set 8311_device_sn N93VA0MF003208
-    fwenv_set 8311_iphost_mac 08:9B:B9:27:89:B2 # (1)!
+    fwenv_set 8311_iphost_mac 08:9B:B9:27:89:B1
     fwenv_set 8311_gpon_sn NOKA03831122
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
@@ -159,9 +156,6 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verB BGW320_3.21.4
     ```
     
-    1. :purple_circle: MAC address + 1, e.g. 
-       `08:9B:B9:27:89:B1` becomes `08:9B:B9:27:89:B2`
-
 !!! info "Additional details and variables are described at the original repository [^2]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
