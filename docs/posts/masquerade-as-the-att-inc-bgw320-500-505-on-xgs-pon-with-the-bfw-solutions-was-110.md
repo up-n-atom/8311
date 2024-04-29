@@ -93,7 +93,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | -------------------------- | ----------------- | ------------ | --------------- |
         | PON Serial Number (ONT ID) | HUMA04831122      | :check_mark: | :blue_circle:   |
         | Equipment ID               | iONT320500G       |              |                 |
-        | Hardware Version           | BGW320-500-2.1    |              |                 |
+        | Hardware Version           | BGW320-500_2.1    |              |                 |
         | Sync Circuit Pack Version  | :check_mark:      |              |                 |
         | Software Version A         | BGW320_3.21.4     |              |                 |
         | Software Version B         | BGW320_3.21.4     |              |                 |
@@ -105,7 +105,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | -------------------------- | ----------------- | ------------ | --------------- |
         | PON Serial Number (ONT ID) | NOKA04831122      | :check_mark: |:blue_circle:    |
         | Equipment ID               | iONT320505G       |              |                 |
-        | Hardware Version           | BGW320-505-2.2    |              |                 |
+        | Hardware Version           | BGW320-505_2.2    |              |                 |
         | Sync Circuit Pack Version  | :check_mark:      |              |                 |
         | Software Version A         | BGW320_3.21.4     |              |                 |
         | Software Version B         | BGW320_3.21.4     |              |                 |
