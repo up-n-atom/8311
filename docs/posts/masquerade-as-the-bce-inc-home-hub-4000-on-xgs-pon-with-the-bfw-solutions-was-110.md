@@ -128,16 +128,16 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
         <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
         provisioned values on the back [label] of the Home Hub 4000.
 
-    | Parameter                  | Value                             | Remarks                         |
-    | -------------------------- | --------------------------------- | ------------------------------- |
-    | PON Serial Number (ONT ID) | SMBS03831122                      | :blue_circle:                   |
-    | Equipment ID               | 5689                              |                                 |
-    | Hardware Version           | Fast5689Bell                      |                                 |
-    | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-    | Software Version A         | SGC8210154                        | [Version listing]               |
-    | Software Version B         | SGC8210154                        | [Version listing]               |
-    | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
-    | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
+    | Parameter                  | Value                        | Mandatory    | Remarks                         |
+    | -------------------------- | ---------------------------- | ------------ |-------------------------------- |
+    | PON Serial Number (ONT ID) | SMBS03831122                 | :check_mark: | :blue_circle:                   |
+    | Equipment ID               | 5689                         |              |                                 |
+    | Hardware Version           | Fast5689Bell                 |              |                                 |
+    | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
+    | Software Version A         | SGC8210154                   |              | [Version listing]               |
+    | Software Version B         | SGC8210154                   |              | [Version listing]               |
+    | MIB File                   | /etc/mibs/prx300_1V_bell.ini |              | VEIP and more                   |
+    | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: MAC address + 1 |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -158,7 +158,7 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Home Hub 4000.
 
-``` sh hl_lines="2-4 8-9"
+``` sh hl_lines="4"
 fwenv_set mib_file
 fwenv_set 8311_device_sn DM2222357163453
 fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
