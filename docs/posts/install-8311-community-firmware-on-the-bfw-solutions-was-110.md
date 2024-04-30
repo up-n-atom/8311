@@ -77,7 +77,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 ### Set a static IP
 
 The default IP address of the WAS-110 is `192.168.11.1`. To connect successfully, a static IP address must be assigned
-to the host interface on the same `192.168.11.0/24` subnet. (1)
+to the host interface on the same `192.168.11.0/24` subnet[^3]. (1)
 { .annotate }
 
 1.  E.g. `192.168.11.2` which is the default ping IP address.
@@ -305,3 +305,4 @@ of every one of us.
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
 
       <https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/mods/>
+[^3]: <https://en.wikipedia.org/wiki/Internet_Protocol_version_4#First_and_last_subnet_addresses>
