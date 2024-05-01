@@ -20,6 +20,9 @@ categories:
 
 ## Determine if you're an XGS-PON subscriber
 
+!!! info "3Gbps or higher packages"
+    If you're subscribed to Gigabit Fibe 3.0 or a similar 3Gbps or higher package, skip past to [Purchase a WAS-110].
+
 There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN page, 
 and the more comprehensive [XMO API client](#with-xmo-client). 
 
@@ -50,22 +53,22 @@ Open a terminal and install the open-source XMO client with:
 
 === ":fontawesome-brands-windows: Windows"
 
-    ``` doscon hl_lines="5"
-    > py --version
-    > py -m venv venv
-    > venv\Scripts\activate
-    > py -m pip install --upgrade pip 
-    > pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
+    ``` sh hl_lines="5"
+    py --version
+    py -m venv venv
+    venv\Scripts\activate
+    py -m pip install --upgrade pip 
+    pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
 === ":material-apple: macOS / :material-linux: Linux"
 
-    ``` console hl_lines="5"
-    $ python3 --version # (1)!
-    $ python3 -m venv .venv
-    $ . .venv/bin/activate
-    $ python3 -m pip install --upgrade pip
-    $ pip3 install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
+    ``` sh hl_lines="5"
+    python3 --version # (1)!
+    python3 -m venv .venv
+    . .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    pip3 install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
     1. Verify the installed Python version is >= __3.10__
@@ -74,7 +77,7 @@ Open a terminal and install the open-source XMO client with:
 
 Finally, to determine if you're an XGS-PON subscriber, execute the following:
 
-```
+``` sh
 xmo-remote-client --password=<password> get-wan-mode
 ```
 
@@ -89,7 +92,7 @@ The WAS-110 is available from select distributors and at a discounted rate with 
 
 ## Install community firmware
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is absolutely necessary; follow the steps 
+As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps 
 outlined in the community firmware installation guide:
 
 [Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
@@ -97,7 +100,7 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available on the back label of the Giga Hub.
+identifiers are available on the back label of the Giga Hub, color-coordinated in the following depiction:
 
 ![Giga Hub label](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_label.webp){ class="nolightbox" id="giga-hub-label" }
 
@@ -121,76 +124,75 @@ identifiers are available on the back label of the Giga Hub.
         <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
         provisioned values on the back [label] of the Giga Hub.
 
-    | Parameter                  | Value                             | Remarks                         |
-    | -------------------------- | --------------------------------- | ------------------------------- |
-    | PON Serial Number (ONT ID) | SMBS03831122                      | :blue_circle:                   |
-    | Equipment ID               | 5690                              |                                 |
-    | Hardware Version           | Fast5689EBell                     |                                 |
-    | Sync Circuit Pack Version  | :heavy_check_mark:                |                                 |
-    | Software Version A         | SGC8400058                        |                                 |
-    | Software Version B         | SGC8400058                        |                                 |
-    | MIB File                   | /etc/mibs/prx300_1V_bell.ini      | VEIP and more                   |
-    | IP Host MAC Address        | 40:65:A3:FF:A7:B1                 | :purple_circle: MAC address + 1 |
+    | Parameter                  | Value                        | Mandatory    | Remarks                         |
+    | -------------------------- | ---------------------------- | ------------ | ------------------------------- |
+    | PON Serial Number (ONT ID) | SMBS03831122                 | :check_mark: | :blue_circle:                   |
+    | Equipment ID               | 5690                         |              |                                 |
+    | Hardware Version           | Fast5689EBell                |              |                                 |
+    | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
+    | Software Version A         | SGC8400058                   |              | [Version listing]               |
+    | Software Version B         | SGC8400058                   |              | [Version listing]               |
+    | MIB File                   | /etc/mibs/prx300_1V_bell.ini | :check_mark: | VEIP and more                   |
+    | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: MAC address + 1 |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
 ### from the shell
 
 <h4>Login over SSH</h4>
 
-```
+``` sh
 ssh root@192.168.11.1
 ```
 
 <h4>Configure 8311 U-Boot environment</h4>
 
-??? warning "Each of the following commands <ins>must</ins> be run twice consecutively!" 
-    The WAS-110 functions as an A/B System; each U-Boot environment variable change swaps between the two (2) 
-    environment partitions.
-
 !!! reminder 
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Giga Hub.
 
-``` console hl_lines="2-4 8-9"
-$ fw_setenv mib_file
-$ fw_setenv 8311_device_sn DM2222357163453
-$ fw_setenv 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-$ fw_setenv 8311_gpon_sn SMBS03831122
-$ fw_setenv 8311_equipment_id 5690
-$ fw_setenv 8311_hw_ver Fast5689EBell
-$ fw_setenv 8311_cp_hw_ver_sync 1
-$ fw_setenv 8311_sw_verA SGC8400058
-$ fw_setenv 8311_sw_verB SGC8400058
-$ fw_setenv 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
+``` sh hl_lines="1 4 10"
+fwenv_set mib_file
+fwenv_set 8311_device_sn DM2222357163453
+fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
+fwenv_set 8311_gpon_sn SMBS03831122
+fwenv_set 8311_equipment_id 5690
+fwenv_set 8311_hw_ver Fast5689EBell
+fwenv_set 8311_cp_hw_ver_sync 1
+fwenv_set 8311_sw_verA SGC8400058
+fwenv_set 8311_sw_verB SGC8400058
+fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
 1. :purple_circle: MAC address + 1, e.g. 
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
 
 !!! info "Additional details and variables are described at the original repository [^2]"
+    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+
+    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each 
+    environment.
 
 <h4>Verify and reboot</h4>
 
 Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fw_setenv` command as before.
+the `fwenv_set` command as before.
 
-``` console
-$ fw_printenv | grep ^8311
-$ reboot
+``` sh
+fw_printenv | grep ^8311
+reboot
 ```
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and should immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
 ## Giga Hub software versions
 
-```
-xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
-```
+The software version can be used as a verification parameter by the OLT. Therefore, it is important to keep up-to-date
+with the latest listing.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
@@ -201,7 +203,23 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 | 1.16.5           | SGC830007C                |
 | 1.16.3           | SGC830006E                |
 
+
+Please help us by contributing new versions via the
+[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
+or submitting a 
+[Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
+
+The following command extracts the external firmware version used by OMCI managed entity 7 and requires the 
+[XMO client] described earlier in this guide.
+
+``` sh
+xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
+```
+
+  [Purchase a WAS-110]: #purchase-a-was-110
   [label]: #giga-hub-label
+  [Version listing]: #giga-hub-software-versions
+  [XMO client]: #with-a-xmo-client
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
