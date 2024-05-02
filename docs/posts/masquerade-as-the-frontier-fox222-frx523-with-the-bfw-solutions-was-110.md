@@ -39,7 +39,7 @@ identifiers are available on the bottom label of the FOX222/FRX523, color-coordi
 
 === "FRX523"
 
-    ![FRX523 label](masquerade-as-the-frontier-fox222-fRx523-with-the-bfw-solutions-was-110/frx523_label.webp){ class="nolightbox" }
+    ![FRX523 label](masquerade-as-the-frontier-fox222-frx523-with-the-bfw-solutions-was-110/frx523_label.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
