@@ -89,27 +89,29 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-500"
 
-        | Parameter                  | Value             | Mandatory    | Remarks         |
-        | -------------------------- | ----------------- | ------------ | --------------- |
-        | PON Serial Number (ONT ID) | HUMA04831122      | :check_mark: | :blue_circle:   |
-        | Equipment ID               | iONT320500G       |              |                 |
-        | Hardware Version           | BGW320-500_2.1    |              |                 |
-        | Sync Circuit Pack Version  | :check_mark:      |              |                 |
-        | Software Version A         | BGW320_3.21.4     |              |                 |
-        | Software Version B         | BGW320_3.21.4     |              |                 |
-        | IP Host MAC Address        | E8:B2:FE:FE:FE:70 |              | :purple_circle: |
+        | Parameter                  | Value                   | Mandatory    | Remarks         |
+        | -------------------------- | -----------------       | ------------ | --------------- |
+        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle:   |
+        | Equipment ID               | iONT320500G             |              |                 |
+        | Hardware Version           | BGW320-500_2.1          |              |                 |
+        | Sync Circuit Pack Version  | :check_mark:            |              |                 |
+        | Software Version A         | BGW320_3.21.4           |              |                 |
+        | Software Version B         | BGW320_3.21.4           |              |                 |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | Default value   |
+        | IP Host MAC Address        | E8:B2:FE:FE:FE:70       |              | :purple_circle: |
 
     === "BGW320-505"
 
-        | Parameter                  | Value             | Mandatory    | Remarks         |
-        | -------------------------- | ----------------- | ------------ | --------------- |
-        | PON Serial Number (ONT ID) | NOKA04831122      | :check_mark: |:blue_circle:    |
-        | Equipment ID               | iONT320505G       |              |                 |
-        | Hardware Version           | BGW320-505_2.2    |              |                 |
-        | Sync Circuit Pack Version  | :check_mark:      |              |                 |
-        | Software Version A         | BGW320_3.21.4     |              |                 |
-        | Software Version B         | BGW320_3.21.4     |              |                 |
-        | IP Host MAC Address        | 08:9B:B9:27:89:B1 |              | :purple_circle: |
+        | Parameter                  | Value                   | Mandatory    | Remarks         |
+        | -------------------------- | -----------------       | ------------ | --------------- |
+        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle:    |
+        | Equipment ID               | iONT320505G             |              |                 |
+        | Hardware Version           | BGW320-505_2.2          |              |                 |
+        | Sync Circuit Pack Version  | :check_mark:            |              |                 |
+        | Software Version A         | BGW320_3.21.4           |              |                 |
+        | Software Version B         | BGW320_3.21.4           |              |                 |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | Default value   |
+        | IP Host MAC Address        | 08:9B:B9:27:89:B1       |              | :purple_circle: |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -156,7 +158,7 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verB BGW320_3.21.4
     ```
     
-!!! info "Additional details and variables are described at the original repository [^2]"
+!!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
     The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each 
@@ -178,5 +180,4 @@ operational status.
   [Purchase a WAS-110]: #purchase-a-was-110
   [label]: #bgw320-500-505-label
 
-[^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
-[^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
+[^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
