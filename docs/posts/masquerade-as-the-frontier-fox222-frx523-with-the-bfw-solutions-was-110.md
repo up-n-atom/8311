@@ -73,7 +73,7 @@ identifiers are available on the bottom label of the FOX222/FRX523, color-coordi
         | Software Version B         | R4.4.08.030             |              | [Version listing] |
         | Registration ID (HEX)      | 44454641554c54          | :check_mark: |                   |
         | MIB File                   | /etc/mibs/prx300_1U.ini |              | VEIP and more     |
-        | Pon Slot                   |   10                    |              |                   |
+        | Pon Slot                   |   10                    | :check_mark: |                   |
 
     === "FRX523"
 
@@ -87,7 +87,7 @@ identifiers are available on the bottom label of the FOX222/FRX523, color-coordi
         | Software Version B         | R4.4.13.051             |              | [Version listing] |
         | Registration ID (HEX)      | 44454641554c54          | :check_mark: |                   |
         | MIB File                   | /etc/mibs/prx300_1U.ini |              | VEIP and more     |
-        | Pon Slot                   | 10                      |              |                   |
+        | Pon Slot                   | 10                      | :check_mark: |                   |
 
 3.  **Save** changes and reboot from the **System** menu.
 
@@ -109,7 +109,7 @@ ssh root@192.168.11.1
 
 === "FOX222"
 
-    ```sh
+    ```sh hl_lines="2 8 9"
     fw_setenv mib_file
     fw_setenv 8311_gpon_sn FTRO0A0A803A
     fw_setenv 8311_equipment_id FOX222
@@ -124,7 +124,7 @@ ssh root@192.168.11.1
 
 === "FRX523"
 
-    ```sh
+    ```sh hl_lines="2 8 9"
     fw_setenv mib_file
     fw_setenv 8311_gpon_sn FTRO27900CD6
     fw_setenv 8311_equipment_id FRX523
