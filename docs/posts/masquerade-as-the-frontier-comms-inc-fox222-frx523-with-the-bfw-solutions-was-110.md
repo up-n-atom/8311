@@ -8,7 +8,7 @@ categories:
   - FRX523
   - CIG
   - XG-99M
-slug: masquerade-as-the-frontier-fox222-frx523-with-the-bfw-solutions-was-110
+slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110
 ---
 
 # Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the BFW Solutions WAS-110
@@ -37,11 +37,11 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
 
 === "FOX222"
 
-    ![FOX222 label](masquerade-as-the-frontier-fox222-frx523-with-the-bfw-solutions-was-110/fox222_label.webp){ class="nolightbox" }
+    ![FOX222 label](masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110/fox222_label.webp){ class="nolightbox" }
 
 === "FRX523"
 
-    ![FRX523 label](masquerade-as-the-frontier-fox222-frx523-with-the-bfw-solutions-was-110/frx523_label.webp){ class="nolightbox" }
+    ![FRX523 label](masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110/frx523_label.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
@@ -55,7 +55,7 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
 
-![WAS-110 8311 configuration](masquerade-as-the-frontier-fox222-frx523-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
+![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
