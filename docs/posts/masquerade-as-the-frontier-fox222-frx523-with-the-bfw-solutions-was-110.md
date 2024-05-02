@@ -163,23 +163,23 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 
 ## Software versions
 
-The software version can be used as a verification parameter by the OLT. Therefore, it is important to keep up-to-date
-with the latest listing.
+The software version is used as a provisioning attribute by the OLT and must be kept up-to-date with the latest
+version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state. 
 
 === "FOX222"
 
-     | External Firmware Version |
-     | ------------------------- |
-     | R4.4.08.030 last known    |
-     | R4.4.08.025               |
+    | Software Version |
+    | ---------------- |
+    | R4.4.08.030      |
+    | R4.4.08.025      |
 
 === "FRX523"
 
-    | External Firmware Version |
-    | ------------------------- |
-    | R4.4.13.057 last known    |
-    | R4.4.13.051               |
-    | R4.4.13.041               |
+    | Software Version |
+    | ---------------- |
+    | R4.4.13.057      |
+    | R4.4.13.051      |
+    | R4.4.13.041      |
 
 Please help us by contributing new versions via the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
