@@ -76,11 +76,8 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 ### Set a static IP
 
-The default IP address of the WAS-110 is `192.168.11.1`. To connect successfully, a static IP address must be assigned
-to the host interface on the same `192.168.11.0/24` subnet[^3]. (1)
-{ .annotate }
-
-1.  E.g. `192.168.11.2` which is the default ping IP address.
+The default IP address of the WAS-110 is `192.168.11.1/24`. To connect successfully, a static IP address must be assigned
+to the host interface, such as `192.168.11.2/24`[^3].
 
 === ":fontawesome-brands-windows: Windows"
 
