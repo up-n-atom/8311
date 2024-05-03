@@ -7,6 +7,7 @@ categories:
   - WAS-110
   - Frontier
   - CIG
+  - XG-99RG2
   - XG-99M
 slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110
 ---
