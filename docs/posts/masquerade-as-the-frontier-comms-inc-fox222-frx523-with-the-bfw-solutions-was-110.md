@@ -117,14 +117,14 @@ ssh root@192.168.11.1
 === "FOX222"
 
     ``` sh
-    fw_setenv 8311_gpon_sn FTRO0A0A803A
-    fw_setenv 8311_equipment_id FOX222
-    fw_setenv 8311_hw_ver FOX222
-    fw_setenv 8311_cp_hw_ver_sync 1
-    fw_setenv 8311_sw_verA R4.4.08.030 # (1)!
-    fw_setenv 8311_sw_verB R4.4.08.030
-    fw_setenv 8311_pon_slot 10
-    fw_setenv 8311_reg_id_hex 44454641554c54
+    fwenv_set 8311_gpon_sn FTRO0A0A803A
+    fwenv_set 8311_equipment_id FOX222
+    fwenv_set 8311_hw_ver FOX222
+    fwenv_set 8311_cp_hw_ver_sync 1
+    fwenv_set 8311_sw_verA R4.4.08.030 # (1)!
+    fwenv_set 8311_sw_verB R4.4.08.030
+    fwenv_set 8311_pon_slot 10
+    fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
@@ -132,14 +132,14 @@ ssh root@192.168.11.1
 === "FRX523"
 
     ``` sh
-    fw_setenv 8311_gpon_sn FTRO27900CD6
-    fw_setenv 8311_equipment_id FRX523
-    fw_setenv 8311_hw_ver FRX523
-    fw_setenv 8311_cp_hw_ver_sync 1
-    fw_setenv 8311_sw_verA R4.4.13.057 # (1)!
-    fw_setenv 8311_sw_verB R4.4.13.057
-    fw_setenv 8311_pon_slot 10
-    fw_setenv 8311_reg_id_hex 44454641554c54
+    fwenv_set 8311_gpon_sn FTRO27900CD6
+    fwenv_set 8311_equipment_id FRX523
+    fwenv_set 8311_hw_ver FRX523
+    fwenv_set 8311_cp_hw_ver_sync 1
+    fwenv_set 8311_sw_verA R4.4.13.057 # (1)!
+    fwenv_set 8311_sw_verB R4.4.13.057
+    fwenv_set 8311_pon_slot 10
+    fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
