@@ -1,11 +1,11 @@
 ---
 date: 2024-05-02
 categories:
-  - Frontier
-  - WAS-110
   - XGS-PON
   - FOX222
   - FRX523
+  - WAS-110
+  - Frontier
   - CIG
   - XG-99M
 slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110
