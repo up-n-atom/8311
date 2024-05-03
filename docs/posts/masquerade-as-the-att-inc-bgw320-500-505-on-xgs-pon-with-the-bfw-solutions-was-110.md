@@ -89,7 +89,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-500"
 
-        | Parameter                  | Value                   | Mandatory    | Remarks         |
+        | Attribute                  | Value                   | Mandatory    | Remarks         |
         | -------------------------- | -----------------       | ------------ | --------------- |
         | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle:   |
         | Equipment ID               | iONT320500G             |              |                 |
@@ -102,7 +102,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-505"
 
-        | Parameter                  | Value                   | Mandatory    | Remarks         |
+        | Attribute                  | Value                   | Mandatory    | Remarks         |
         | -------------------------- | -----------------       | ------------ | --------------- |
         | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle:    |
         | Equipment ID               | iONT320505G             |              |                 |

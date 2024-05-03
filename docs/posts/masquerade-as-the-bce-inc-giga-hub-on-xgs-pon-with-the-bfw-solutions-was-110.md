@@ -124,7 +124,7 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
         <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
         provisioned values on the back [label] of the Giga Hub.
 
-    | Parameter                  | Value                        | Mandatory    | Remarks                         |
+    | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ | ------------------------------- |
     | PON Serial Number (ONT ID) | SMBS03831122                 | :check_mark: | :blue_circle:                   |
     | Equipment ID               | 5690                         |              |                                 |
@@ -191,7 +191,7 @@ operational status.
 
 ## Giga Hub software versions
 
-The software version can be used as a verification parameter by the OLT. Therefore, it is important to keep up-to-date
+The software version can be used as a provisioning attribute by the OLT. Therefore, it is important to keep up-to-date
 with the latest listing.
 
 | Firmware Version | External Firmware Version |

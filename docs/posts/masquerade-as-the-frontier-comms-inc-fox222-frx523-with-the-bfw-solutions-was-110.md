@@ -63,11 +63,11 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned values on the bottom [label] 
         of the FOX222 or FRX523.
 
-    !!! note "All parameters are mandatory!"
+    !!! info "All attributes below are mandatory to achieve O5 operation state"
 
     === "FOX222"
 
-        | Parameter                  | Value                   | Remarks           |
+        | Attribute                  | Value                   | Remarks           |
         | -------------------------- | ----------------------- | ----------------- |
         | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle:     |
         | Equipment ID               | FOX222                  |                   |
@@ -75,13 +75,13 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         | Sync Circuit Pack Version  | :check_mark:            |                   |
         | Software Version A         | R4.4.08.030             | [Version listing] |
         | Software Version B         | R4.4.08.030             | [Version listing] |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT`         |
+        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex  |
         | MIB File                   | /etc/mibs/prx300_1U.ini | Default value     |
         | Pon Slot                   | 10                      |                   |
 
     === "FRX523"
 
-        | Parameter                  | Value                   | Remarks           |
+        | Attribute                  | Value                   | Remarks           |
         | -------------------------- | ----------------------- | ----------------- |
         | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:     |
         | Equipment ID               | FRX523                  |                   |
@@ -89,7 +89,7 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         | Sync Circuit Pack Version  | :check_mark:            |                   |
         | Software Version A         | R4.4.13.057             | [Version listing] |
         | Software Version B         | R4.4.13.057             | [Version listing] |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT`         |
+        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex  |
         | MIB File                   | /etc/mibs/prx300_1U.ini | Default value     |
         | Pon Slot                   | 10                      |                   |
 
@@ -111,7 +111,7 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned values on the bottom [label] of 
     the FOX222 or FRX523.
 
-!!! note "All parameters are mandatory!"
+!!! info "All attributes below are mandatory to achieve O5 operation state"
 
 === "FOX222"
 
