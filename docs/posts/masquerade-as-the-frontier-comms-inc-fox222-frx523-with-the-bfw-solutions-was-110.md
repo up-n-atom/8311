@@ -61,8 +61,8 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned values on the bottom [label] 
-        of the FOX222 or FRX523.
+        <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned value on the bottom [label] of 
+        the FOX222 or FRX523.
 
     !!! info "All attributes below are mandatory to achieve O5 operation state"
 
@@ -109,8 +109,8 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder
-    <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned values on the bottom [label] of 
-    the FOX222 or FRX523.
+    <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned value on the bottom [label] of the 
+    FOX222 or FRX523.
 
 !!! info "All attributes below are mandatory to achieve O5 operation state"
 
