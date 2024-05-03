@@ -64,7 +64,7 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned value on the bottom [label] of 
         the FOX222 or FRX523.
 
-    !!! info "All attributes below are mandatory to achieve O5 operation state"
+    !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
 
     === "FOX222"
 
@@ -112,7 +112,7 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned value on the bottom [label] of the 
     FOX222 or FRX523.
 
-!!! info "All attributes below are mandatory to achieve O5 operation state"
+!!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
 
 === "FOX222"
 
@@ -165,7 +165,7 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 ## Software versions
 
 The software version is used as a provisioning attribute by the OLT and must be kept up-to-date with the latest
-version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state. 
+version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state until corrected.
 
 === "FOX222"
 
