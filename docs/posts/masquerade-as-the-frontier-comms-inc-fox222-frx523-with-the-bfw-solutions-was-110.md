@@ -187,6 +187,32 @@ Please help us by contributing new versions via the
 or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
+??? info "Serial access"
+    The version can be extracted by means of the internal TTL UART header and a 3.3V USB to TTL UART adapter.
+
+    <h4>Serial pinout</h4>
+
+    | Pin | IO |
+    | --- | -- |
+    | 2   | Rx |
+    | 4   | Tx |
+
+    <h4>Serial setup</h4>
+
+    |           | Value |
+    | --------- | ----- |
+    | Speed     | 15200 |
+    | Parity    | None  |
+    | Data-bits | 8     |
+    | Stop-bits | 1     |
+
+    <h4>Shell commands</h4>
+
+    ``` sh
+    enable
+    ontver
+    ```
+
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
 
