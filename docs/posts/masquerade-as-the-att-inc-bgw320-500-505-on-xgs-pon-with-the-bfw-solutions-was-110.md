@@ -89,29 +89,29 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-500"
 
-        | Attribute                  | Value                   | Mandatory    | Remarks         |
-        | -------------------------- | -----------------       | ------------ | --------------- |
-        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle:   |
-        | Equipment ID               | iONT320500G             |              |                 |
-        | Hardware Version           | BGW320-500_2.1          |              |                 |
-        | Sync Circuit Pack Version  | :check_mark:            |              |                 |
-        | Software Version A         | BGW320_3.21.4           |              |                 |
-        | Software Version B         | BGW320_3.21.4           |              |                 |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | Default value   |
-        | IP Host MAC Address        | E8:B2:FE:FE:FE:70       |              | :purple_circle: |
+        | Attribute                  | Value                   | Mandatory    | Remarks                 |
+        | -------------------------- | -----------------       | ------------ | ----------------------- |
+        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle:           |
+        | Equipment ID               | iONT320500G             |              |                         |
+        | Hardware Version           | BGW320-500_2.1          |              |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |              |                         |
+        | Software Version A         | BGW320_3.21.4           |              |                         |
+        | Software Version B         | BGW320_3.21.4           |              |                         |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
+        | IP Host MAC Address        | E8:B2:FE:FE:FE:70       |              | :purple_circle:         |
 
     === "BGW320-505"
 
-        | Attribute                  | Value                   | Mandatory    | Remarks         |
-        | -------------------------- | -----------------       | ------------ | --------------- |
-        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle:    |
-        | Equipment ID               | iONT320505G             |              |                 |
-        | Hardware Version           | BGW320-505_2.2          |              |                 |
-        | Sync Circuit Pack Version  | :check_mark:            |              |                 |
-        | Software Version A         | BGW320_3.21.4           |              |                 |
-        | Software Version B         | BGW320_3.21.4           |              |                 |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | Default value   |
-        | IP Host MAC Address        | 08:9B:B9:27:89:B1       |              | :purple_circle: |
+        | Attribute                  | Value                   | Mandatory    | Remarks                 |
+        | -------------------------- | -----------------       | ------------ | ----------------------- |
+        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle:            |
+        | Equipment ID               | iONT320505G             |              |                         |
+        | Hardware Version           | BGW320-505_2.2          |              |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |              |                         |
+        | Software Version A         | BGW320_3.21.4           |              |                         |
+        | Software Version B         | BGW320_3.21.4           |              |                         |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
+        | IP Host MAC Address        | 08:9B:B9:27:89:B1       |              | :purple_circle:         |
 
 3. __Save__ changes and reboot from the __System__ menu.
 

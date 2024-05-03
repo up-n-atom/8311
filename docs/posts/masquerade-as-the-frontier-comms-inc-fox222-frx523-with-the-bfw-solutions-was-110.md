@@ -67,31 +67,31 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
 
     === "FOX222"
 
-        | Attribute                  | Value                   | Remarks           |
-        | -------------------------- | ----------------------- | ----------------- |
-        | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle:     |
-        | Equipment ID               | FOX222                  |                   |
-        | Hardware Version           | FOX222                  |                   |
-        | Sync Circuit Pack Version  | :check_mark:            |                   |
-        | Software Version A         | R4.4.08.030             | [Version listing] |
-        | Software Version B         | R4.4.08.030             | [Version listing] |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex  |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | Default value     |
-        | Pon Slot                   | 10                      |                   |
+        | Attribute                  | Value                   | Remarks                 |
+        | -------------------------- | ----------------------- | ----------------------- |
+        | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle:           |
+        | Equipment ID               | FOX222                  |                         |
+        | Hardware Version           | FOX222                  |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |                         |
+        | Software Version A         | R4.4.08.030             | [Version listing]       |
+        | Software Version B         | R4.4.08.030             | [Version listing]       |
+        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
+        | Pon Slot                   | 10                      |                         |
 
     === "FRX523"
 
-        | Attribute                  | Value                   | Remarks           |
-        | -------------------------- | ----------------------- | ----------------- |
-        | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:     |
-        | Equipment ID               | FRX523                  |                   |
-        | Hardware Version           | FRX523                  |                   |
-        | Sync Circuit Pack Version  | :check_mark:            |                   |
-        | Software Version A         | R4.4.13.057             | [Version listing] |
-        | Software Version B         | R4.4.13.057             | [Version listing] |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex  |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | Default value     |
-        | Pon Slot                   | 10                      |                   |
+        | Attribute                  | Value                   | Remarks                 |
+        | -------------------------- | ----------------------- | ----------------------  |
+        | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:           |
+        | Equipment ID               | FRX523                  |                         |
+        | Hardware Version           | FRX523                  |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |                         |
+        | Software Version A         | R4.4.13.057             | [Version listing]       |
+        | Software Version B         | R4.4.13.057             | [Version listing]       |
+        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
+        | Pon Slot                   | 10                      |                         |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
