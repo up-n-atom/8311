@@ -166,13 +166,14 @@ fwenv_set 8311_gpon_sn SMBS03831122
 fwenv_set 8311_equipment_id 5689
 fwenv_set 8311_hw_ver Fast5689Bell
 fwenv_set 8311_cp_hw_ver_sync 1
-fwenv_set 8311_sw_verA SGC8210154
+fwenv_set 8311_sw_verA SGC8210154 # (2)!
 fwenv_set 8311_sw_verB SGC8210154
 fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
 1. :purple_circle: MAC address + 1, e.g. 
    `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
+2. [Version listing]
 
 !!! info "Additional details and variables are described at the original repository [^2]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.

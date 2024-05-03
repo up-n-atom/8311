@@ -116,32 +116,32 @@ ssh root@192.168.11.1
 === "FOX222"
 
     ``` sh
-    fw_setenv mib_file
     fw_setenv 8311_gpon_sn FTRO0A0A803A
     fw_setenv 8311_equipment_id FOX222
     fw_setenv 8311_hw_ver FOX222
     fw_setenv 8311_cp_hw_ver_sync 1
-    fw_setenv 8311_sw_verA R4.4.08.030
+    fw_setenv 8311_sw_verA R4.4.08.030 # (1)!
     fw_setenv 8311_sw_verB R4.4.08.030
     fw_setenv 8311_pon_slot 10
     fw_setenv 8311_reg_id_hex 44454641554c54
-    fw_setenv 8311_mib_file /etc/mibs/prx300_1U.ini
     ```
+
+    1. [Version listing]
 
 === "FRX523"
 
     ``` sh
-    fw_setenv mib_file
     fw_setenv 8311_gpon_sn FTRO27900CD6
     fw_setenv 8311_equipment_id FRX523
     fw_setenv 8311_hw_ver FRX523
     fw_setenv 8311_cp_hw_ver_sync 1
-    fw_setenv 8311_sw_verA R4.4.13.057
+    fw_setenv 8311_sw_verA R4.4.13.057 # (1)!
     fw_setenv 8311_sw_verB R4.4.13.057
     fw_setenv 8311_pon_slot 10
     fw_setenv 8311_reg_id_hex 44454641554c54
-    fw_setenv 8311_mib_file /etc/mibs/prx300_1U.ini
     ```
+
+    1. [Version listing]
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
@@ -186,7 +186,6 @@ Please help us by contributing new versions via the
 or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
-  [Purchase a WAS-110]: #purchase-a-was-110
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
 
