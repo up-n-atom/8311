@@ -1,15 +1,14 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-light.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/logo-dark.svg">
-    <img src="./assets/logo-light.svg" width="241.89" height="241.89" alt="8311 Pon Wiki logo">
-  </picture>
-    <br>
-    <h3 align="center">8311 PON Wiki</h3>
-    <h4 align="center">A community assisted by pros and enthusiasts with a common goal of bypassing the ISP CPE using commodity hardware.</h4>
+  <img src="https://github.com/up-n-atom/8311/assets/234549/bbdd825a-cd81-438f-83ae-b0facbc5bfc6" width="256" height="256" alt="PON dot Wiki logo">
 </p>
 
-We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards, while empowering SOHO operators by kicking the ISP CPE to the curb. Our [website](https://pon.wiki) contains guides for masquerading PON CPE, and more PON related content!
+<h3 align="center">PON dot Wiki</h3>
+
+A community assisted by professionals and enthusiasts with a common goal of bypassing the ISP CPE using commodity hardware.
+
+We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards, while empowering SOHO operators by kicking the ISP CPE to the curb.
+
+The [wiki](https://pon.wiki) contains guides for masquerading the ISP CPE and/or ONT, and more PON-related content!
 
 ## Get in touch
 
