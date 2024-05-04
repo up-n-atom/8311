@@ -8,7 +8,8 @@ categories:
   - AT&T
   - Nokia
   - Humax
-slug: masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110
+description: Masquerade as the AT&T Inc. BGW320-500/505 on XGS-PON with the BFW Solutions WAS-110
+slug: masquesite_keywordsrade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110
 ---
 
 # Masquerade as the AT&T Inc. BGW320-500/505 on XGS-PON with the BFW Solutions WAS-110

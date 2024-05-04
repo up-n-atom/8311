@@ -9,6 +9,7 @@ categories:
   - Bell MTS
   - Sagemcom
   - FAST 5689E
+description: Masquerade as the BCE Inc. Giga Hub on XGS-PON with the BFW Solutions WAS-110
 ---
 
 # Masquerade as the BCE Inc. Giga Hub on XGS-PON with the BFW Solutions WAS-110

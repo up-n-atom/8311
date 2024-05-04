@@ -4,6 +4,7 @@ categories:
   - WAS-110
   - BFW Solutions
   - XGS-PON
+description: Install 8311 community firmware on the BFW Solutions WAS-110
 ---
 
 # Install 8311 community firmware on the BFW Solutions WAS-110

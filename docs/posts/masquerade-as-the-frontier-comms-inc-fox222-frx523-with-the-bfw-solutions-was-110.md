@@ -9,6 +9,7 @@ categories:
   - CIG
   - XG-99RG2
   - XG-99M
+description: Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the BFW Solutions WAS-110
 slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110
 ---
 

@@ -8,6 +8,7 @@ categories:
   - Bell MTS
   - Sagemcom
   - FAST 5689E
+description: Bridge the BCE Inc. Giga Hub
 ---
 
 # Bridge the BCE Inc. Giga Hub

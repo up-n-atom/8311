@@ -1,5 +1,8 @@
 site_name: PON dot WIKI
 site_url: https://pon.wiki
+site_description: >-
+  We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards while 
+  empowering SOHO operators by kicking the ISP CPE to the curb
 markdown_extensions:
   - admonition
   - attr_list
