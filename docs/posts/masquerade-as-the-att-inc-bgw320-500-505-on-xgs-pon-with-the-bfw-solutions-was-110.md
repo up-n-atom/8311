@@ -133,6 +133,8 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __ONT ID__ with the provisioned values on the bottom [label] of the BGW320-500/505.
 
+!!! note "Highlighted lines are mandatory"
+
 === "BGW320-500"
 
     ``` sh hl_lines="3"

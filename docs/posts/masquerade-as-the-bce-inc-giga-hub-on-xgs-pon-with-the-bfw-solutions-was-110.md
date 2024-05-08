@@ -155,6 +155,8 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
     :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Giga Hub.
 
+!!! note "Highlighted lines are mandatory"
+
 ``` sh hl_lines="1 4 10"
 fwenv_set mib_file
 fwenv_set 8311_device_sn DM2222357163453
