@@ -130,15 +130,14 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder 
-    <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
-    :blue_circle: __ONT ID__ with the provisioned values on the bottom [label] of the BGW320-500/505.
+    <ins>Replace</ins> the :blue_circle: __ONT ID__ and :purple_circle: __MAC address__ with the 
+    provisioned values on the bottom [label] of the BGW320-500/505.
 
 !!! note "Highlighted lines are mandatory"
 
 === "BGW320-500"
 
-    ``` sh hl_lines="3"
-    fwenv_set 8311_device_sn D93LA0D0D0D211
+    ``` sh hl_lines="2"
     fwenv_set 8311_iphost_mac E8:B2:FE:FE:FE:70
     fwenv_set 8311_gpon_sn HUMA03831122
     fwenv_set 8311_equipment_id iONT320500G
@@ -150,8 +149,7 @@ ssh root@192.168.11.1
     
 === "BGW320-505"
 
-    ``` sh hl_lines="3"
-    fwenv_set 8311_device_sn N93VA0MF003208
+    ``` sh hl_lines="2"
     fwenv_set 8311_iphost_mac 08:9B:B9:27:89:B1
     fwenv_set 8311_gpon_sn NOKA03831122
     fwenv_set 8311_equipment_id iONT320505G

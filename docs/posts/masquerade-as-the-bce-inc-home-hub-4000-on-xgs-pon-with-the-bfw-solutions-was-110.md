@@ -156,14 +156,13 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder 
-    <ins>Replace</ins> the :orange_circle: __Device serial number__, :purple_circle: __MAC address__, and 
-    :blue_circle: __PON serial number__ with the provisioned values on the back [label] of the Home Hub 4000.
+    <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
+    provisioned values on the back [label] of the Home Hub 4000.
 
 !!! note "Highlighted lines are mandatory"
 
-``` sh hl_lines="1 4 10"
+``` sh hl_lines="1 3 9"
 fwenv_set mib_file
-fwenv_set 8311_device_sn DM2222357163453
 fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
 fwenv_set 8311_gpon_sn SMBS03831122
 fwenv_set 8311_equipment_id 5689
