@@ -69,7 +69,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
     !!! note "The following commands assume a Debian-based distribution"
 
     ``` sh
-    sudo apt-get install 7zip-full
+    sudo apt-get install p7zip-full
     7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
     ```
 
