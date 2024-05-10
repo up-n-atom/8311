@@ -42,7 +42,7 @@ transceiver by engaging the bale clasp and latch. If the label on the transceive
 
 ## Purchase a WAS-110
 
-The WAS-110 is available from select distributors and at a discounted rate with group buys on the 
+The [WAS-110] is available from select distributors and at a discounted rate with group buys on the 
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 ## Install community firmware
@@ -179,6 +179,7 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 operational status.
 
   [Purchase a WAS-110]: #purchase-a-was-110
+  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
   [label]: #bgw320-500-505-label
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

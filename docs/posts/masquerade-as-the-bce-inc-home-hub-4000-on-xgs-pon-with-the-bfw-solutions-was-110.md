@@ -92,7 +92,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode
 
 ## Purchase a WAS-110
 
-The WAS-110 is available from select distributors and at a discounted rate with group buys on the 
+The [WAS-110] is available from select distributors and at a discounted rate with group buys on the 
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 ## Install community firmware
@@ -220,6 +220,7 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
 ```
 
   [Purchase a WAS-110]: #purchase-a-was-110
+  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
   [label]: #home-hub-4000-label
   [Version listing]: #home-hub-4000-software-versions
   [XMO client]: #with-a-xmo-client

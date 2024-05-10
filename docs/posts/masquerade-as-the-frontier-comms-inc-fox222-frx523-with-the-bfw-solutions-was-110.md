@@ -22,7 +22,7 @@ slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-
 
 ## Purchase a WAS-110
 
-The WAS-110 is available from select distributors and at a discounted rate with group buys on the
+The [WAS-110] is available from select distributors and at a discounted rate with group buys on the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 ## Install community firmware
@@ -216,6 +216,7 @@ or submitting a
     ontver
     ```
 
+  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
 

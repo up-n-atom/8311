@@ -88,7 +88,7 @@ xmo-remote-client --password=<password> get-wan-mode
 
 ## Purchase a WAS-110
 
-The WAS-110 is available from select distributors and at a discounted rate with group buys on the 
+The [WAS-110] is available from select distributors and at a discounted rate with group buys on the 
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 ## Install community firmware
@@ -220,6 +220,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 ```
 
   [Purchase a WAS-110]: #purchase-a-was-110
+  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client
