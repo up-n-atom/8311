@@ -18,6 +18,11 @@ description: Bridge the BCE Inc. Giga Hub
 <!-- more -->
 <!-- nocont -->
 
+!!! warning "Bell MTS and Aliant users..."
+    Enabling bridge mode will produce an error code[^1]. Follow the [Disable bridge mode] steps below.
+
+      [Disable bridge mode]: #disable-bridge-mode
+
 The Giga Hub's bridge mode operates as a pseudo-bridge or rather in IP/PPPoE passthrough mode. It can be enabled or
 disabled either remotely by a support technician, or by pressing and holding a secret button combination outlined in this guide.
 
@@ -50,3 +55,5 @@ When enabling bridge mode, the Giga Hub performs the following XMO actions:
 ## Disable bridge mode
 
 Hold the __Reset__ and either the __Up__ or __Down__ arrow buttons simultaneously for 7 seconds.
+
+[^1]: <https://support.bell.ca/internet/connection-help/troubleshooting_error_codes_with_my_home_hub_modem>
