@@ -66,7 +66,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === ":material-linux: Linux"
 
-    !!! note "The following commands assume a Debian-based distribution"
+    !!! note "The following commands assume Debian or derivatives[^3]"
 
     ``` sh
     sudo apt-get install p7zip-full
@@ -78,7 +78,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 ### Set a static IP
 
 The default IP address of the WAS-110 is `192.168.11.1/24`. To connect successfully, a static IP address must be assigned
-to the host interface, such as `192.168.11.2/24`[^3].
+to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":fontawesome-brands-windows: Windows"
 
@@ -155,7 +155,7 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
 
     === ":material-linux: Linux"
 
-        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+        !!! note "The following commands assume Debian or derivatives[^3]"
 
         ``` sh
         sudo apt-get install curl
@@ -253,7 +253,7 @@ of every one of us.
 
     === ":material-linux: Linux"
 
-        !!! note "The following commands assume a Debian-based distribution, such as [Ubuntu](https://ubuntu.com/)"
+        !!! note "The following commands assume Debian or derivatives[^3]"
 
         ``` sh
         sudo apt-get install curl
@@ -303,4 +303,5 @@ of every one of us.
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
 
       <https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/mods/>
-[^3]: <https://en.wikipedia.org/wiki/Internet_Protocol_version_4#First_and_last_subnet_addresses>
+[^3]: <https://www.debian.org/derivatives/>
+[^4]: <https://en.wikipedia.org/wiki/Internet_Protocol_version_4#First_and_last_subnet_addresses>

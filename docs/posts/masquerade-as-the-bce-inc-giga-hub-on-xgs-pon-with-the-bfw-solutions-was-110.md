@@ -21,8 +21,8 @@ description: Masquerade as the BCE Inc. Giga Hub on XGS-PON with the BFW Solutio
 
 ## Determine if you're an XGS-PON subscriber
 
-!!! info "3Gbps or higher packages"
-    If you're subscribed to Gigabit Fibe 3.0 or a similar 3Gbps or higher package, skip past to [Purchase a WAS-110].
+!!! info "3 Gbps or higher packages"
+    If you're subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase a WAS-110].
 
 There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN page, 
 and the more comprehensive [XMO API client](#with-xmo-client). 
@@ -151,11 +151,9 @@ ssh root@192.168.11.1
 
 <h4>Configure 8311 U-Boot environment</h4>
 
-!!! reminder 
+!!! reminder "Highlighted lines are <ins>mandatory</ins>"
     <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
     provisioned values on the back [label] of the Giga Hub.
-
-!!! note "Highlighted lines are mandatory"
 
 ``` sh hl_lines="1 3 9"
 fwenv_set mib_file

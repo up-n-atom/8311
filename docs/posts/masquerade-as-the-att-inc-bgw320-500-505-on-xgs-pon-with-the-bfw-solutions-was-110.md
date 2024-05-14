@@ -21,8 +21,8 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions
 
 ## Determine if you're an XGS-PON subscriber
 
-!!! info "2Gbps or higher tiers"
-    If you're subscribed to 2 GIG speed or a similar 2Gbps or higher tier, skip past to [Purchase a WAS-110].
+!!! info "2 Gbps or higher tiers"
+    If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to [Purchase a WAS-110].
 
 There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [web UI](#with-web-ui) Fiber 
 Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
@@ -131,11 +131,9 @@ ssh root@192.168.11.1
 
 <h4>Configure 8311 U-Boot environment</h4>
 
-!!! reminder 
+!!! reminder "Highlighted lines are <ins>mandatory</ins>"
     <ins>Replace</ins> the :blue_circle: __ONT ID__ and :purple_circle: __MAC address__ with the 
     provisioned values on the bottom [label] of the BGW320-500/505.
-
-!!! note "Highlighted lines are mandatory"
 
 === "BGW320-500"
 
