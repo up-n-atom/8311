@@ -18,7 +18,7 @@ description: Bridge the BCE Inc. Giga Hub
 <!-- more -->
 <!-- nocont -->
 
-!!! warning "Bell MTS and Aliant users..."
+!!! warning "Bell MTS and Aliant subscribers..."
     Enabling bridge mode will produce an error code[^1]. Follow the [disable bridge mode] steps below to revert back to
     router mode.
 

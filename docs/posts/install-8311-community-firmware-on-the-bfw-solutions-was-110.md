@@ -120,7 +120,7 @@ to the host interface, such as `192.168.11.2/24`[^4].
     ip address show dev <interface>
     ```
 
-## Web UI upgrade <small>recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
+## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 ### Web credentials
 
