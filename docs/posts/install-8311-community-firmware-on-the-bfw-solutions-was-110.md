@@ -272,7 +272,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the <em>admin</em> credentials. 
+   and, if asked, input the <em>admin</em> credentials from the [web credentials](#web-credentials) listing.
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
