@@ -66,7 +66,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 === ":material-linux: Linux"
 
-    !!! note "The following commands assume Debian or derivatives[^3]"
+    !!! note "The following commands assume [Debian] or derivatives[^3]"
 
     ``` sh
     sudo apt-get install p7zip-full
@@ -155,7 +155,7 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
 
     === ":material-linux: Linux"
 
-        !!! note "The following commands assume Debian or derivatives[^3]"
+        !!! note "The following commands assume [Debian] or derivatives[^3]"
 
         ``` sh
         sudo apt-get install curl
@@ -253,7 +253,7 @@ of every one of us.
 
     === ":material-linux: Linux"
 
-        !!! note "The following commands assume Debian or derivatives[^3]"
+        !!! note "The following commands assume [Debian] or derivatives[^3]"
 
         ``` sh
         sudo apt-get install curl
@@ -298,6 +298,8 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
 
 Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
 of every one of us.
+
+  [Debian]: https://www.debian.org/
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
