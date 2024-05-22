@@ -196,8 +196,8 @@ operational status.
 
 ## Home Hub 4000 software versions
 
-The software version can be used as a provisioning attribute by the OLT. Therefore, it is important to keep up-to-date
-with the latest listing.
+The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for 
+the Home Hubi 4000, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
@@ -225,3 +225,4 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
+[^3]: <https://en.wikipedia.org/wiki/TR-069>
