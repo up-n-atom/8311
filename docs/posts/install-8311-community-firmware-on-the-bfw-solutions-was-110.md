@@ -228,7 +228,7 @@ of every one of us.
 
 === "v1.0.21"
 
-    The <ins>root</ins> password is unknown at this time, use the suggested exploit below to gain root privileges.
+    The <ins>root</ins> password is undisclosed at this time, use the suggested exploit below to gain root privileges.
 
 ??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
