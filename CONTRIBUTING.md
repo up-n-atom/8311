@@ -9,12 +9,22 @@ _Pull Requests, issues, and other contributions are appreciated and encouraged!_
 
 ## Docs Website
 
-The website's content aims to remain clean and professional. It aids the community with their pon-related needs and helps potential sponsors understand what we are all about!
+The website's content aims to be clean and professional. It aids the community with their pon-related needs and 
+helps potential sponsors understand what we are all about!
 
-To create guides or contribute to existing ones, the markdown files are found within the [posts directory](./docs/guides/posts)
+To contribute to existing guides and/or create new ones, the markdown files can be found within the 
+[posts directory](./docs/guides/posts).
 
-Screenshots are created using [Epiphany](https://apps.gnome.org/Epiphany/) at 1920x1080p resolution. With [cwebp](https://developers.google.com/speed/webp/docs/cwebp) they are converted to 60% resolution e.g. `cwebp -q 60 screenshot.jpg -o screenshot.webp`. The artwork is created in [Inkscape](https://inkscape.org/) and mixed with assets from [@storyset](https://www.freepik.com/author/stories) on Freepik. When it's finished, the artwork is exported as 1280x960p resolution.
+Screenshots are created in [Epiphany](https://apps.gnome.org/Epiphany/) at a 1920x1080p resolution and converted to 
+webp with [cwebp](https://developers.google.com/speed/webp/docs/cwebp) using 60% resolution e.g. 
+`cwebp -q 60 screenshot.jpg -o screenshot.webp`.
+
+The artwork is created in [Inkscape](https://inkscape.org/) and mixed with assets from 
+[@storyset](https://www.freepik.com/author/stories) on Freepik. When finished, the artwork is exported at a 1280x960p 
+resolution and converted to webp with the same utility and options as the screenshots.
 
 ## Issues
 
-Issues about errors with the website such as with the content, are welcome. They can also potentially be used for feature requests but especially for general questions, the [Pon Wiki Discord](https://discord.pon.wiki) is a better place for those.
+Issues can be reported here on github or our [community discord server](https://discord.pon.wiki). Pull requests are 
+especially welcome.
+
