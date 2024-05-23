@@ -176,7 +176,7 @@ Furthermore, to force the link speed on the WAS-110 itself, execute the followin
 
     <h4>Linux shell <small>temporary</small></h4>
 
-    !!! warning "The following command <ins>ONLY</ins> sets the link speed temporarily until the next power cycle"
+    !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
     
     ``` sh
     ethtool -s eth0_0 speed <speed> #(1)!
@@ -188,7 +188,7 @@ Furthermore, to force the link speed on the WAS-110 itself, execute the followin
 
     <h4>Linux shell <small>temporary</small></h4>
 
-    !!! warning "The following command <ins>ONLY</ins> sets the link speed temporarily until the next power cycle"
+    !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
     
     ``` sh
     ethtool -s eth0_0 speed <speed> #(1)!
