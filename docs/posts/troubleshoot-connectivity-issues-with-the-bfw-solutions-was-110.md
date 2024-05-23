@@ -174,19 +174,27 @@ Furthermore, to force the link speed on the WAS-110 itself, execute the followin
            | speed 2500  |
            | speed 10000 |
 
+    <h4>Linux shell <small>temporary</small></h4>
+
+    !!! warning "The following command <ins>ONLY</ins> sets the link speed temporarily until the next power cycle"
+    
+    ``` sh
+    ethtool -s eth0_0 speed <speed> #(1)!
+    ```
+
+    1. <ins>Replace</ins> the &lt;speed&gt; parameter to either 1000, 2500, or 10000
+
 === "Azores firmware"
 
-    <!-- intentionally blank -->
+    <h4>Linux shell <small>temporary</small></h4>
 
-<h4>Linux shell <small>temporary</small></h4>
+    !!! warning "The following command <ins>ONLY</ins> sets the link speed temporarily until the next power cycle"
+    
+    ``` sh
+    ethtool -s eth0_0 speed <speed> #(1)!
+    ```
 
-!!! warning "The following command <ins>ONLY</ins> sets the link speed temporarily until the next power cycle"
-
-``` sh
-ethtool -s eth0_0 speed <speed> #(1)!
-```
-
-1. <ins>Replace</ins> the &lt;speed&gt; parameter to either 1000, 2500, or 10000
+    1. <ins>Replace</ins> the &lt;speed&gt; parameter to either 1000, 2500, or 10000
 
 ### Tx fault
 
@@ -292,6 +300,10 @@ inaccessible.
     env save
     env save
     ```
+
+=== "Azores firmware"
+
+    Not available
 
 [^1]: [SFF-8472](https://members.snia.org/document/dl/25916)
 [^2]: <https://en.wikipedia.org/wiki/TR-069>
