@@ -100,7 +100,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
     SFP VENDOR PN:	ENXGSFPPOMACV2
     -->
 
-And as with a Linux host, the <abbr title="Digital Diagnostic Monitor Interface">DDMI</abbr>[^1] is available locally,
+And as with a Linux host, the DDMI[^1] is available locally,
 where both __Laser output power__ and __Receiver signal average optical power__ can be evaluated.
 
 ``` sh
@@ -119,16 +119,14 @@ ethtool -m pon0
 - O6 POPUP state
 - O7 Emergancy stop state
 
-A common term tossed around is <q>fake</q> O5, which is a misnomer that occurs when
-<abbr title="Physical Layer Operation Administration and Maintenance">PLOAM</abbr> message activation succeeds,
+A common term tossed around is <q>fake</q> O5, which is a misnomer that occurs when PLOAM message activation succeeds,
 including Serial Number and/or Registration ID authentication. However, the failure is further along in the
-registration chain, such as <abbr title="ONU Management and Control Interface">OMCI</abbr>. It pertains to invalid
-managed entity attributes with common associations to device integrity, such as hardware and/or software versioning.
+registration chain, such as OMCI. It pertains to invalid managed entity attributes with common associations to device
+integrity, such as hardware and/or software versioning.
 
 #### PLOAM status
 
-To view the current <abbr title="Physical Layer Operation Administration and Maintenance">PLOAM</abbr> status,
-execute one of the following procedures:
+To view the current PLOAM status, execute one of the following procedures:
 
 === "8311 firmware"
 
@@ -176,8 +174,7 @@ Additionally, it is possible to identify the connected OLT by executing the foll
 omci_pipe.sh meg 131 0
 ```
 
-Typically, OLT operators enforce versioning compliance when software management is not handled over
-<abbr title="CPE WAN Management Protocol">CWMP</abbr>[^2].
+Typically, OLT operators enforce versioning compliance when software management is not handled over CWMP[^2].
 
 ## LAN troubleshooting
 
@@ -355,6 +352,12 @@ host controller and implementation, the interface may enter a power saving state
 1. Replace spf`X` with the port name/number.
 
   [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/
+
+*[CWMP]: CPE WAN Management Protocol
+*[DDMI]: Digital Diagnostic Monitor Interface
+*[OLT]: Optical Line Terminal
+*[OMCI]: ONU Management and Control Interface
+*[PLOAM]: Physical Layer Operation Administration and Maintenance
 
 [^1]: [SFF-8472](https://members.snia.org/document/dl/25916)
 [^2]: <https://en.wikipedia.org/wiki/TR-069>

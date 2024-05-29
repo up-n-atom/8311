@@ -182,4 +182,7 @@ operational status.
   [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
   [label]: #bgw320-500-505-label
 
+*[PPTP]: Point-to-Point Tunneling Protocol
+*[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
+
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

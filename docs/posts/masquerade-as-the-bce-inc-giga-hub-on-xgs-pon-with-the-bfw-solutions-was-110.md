@@ -223,6 +223,11 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client
 
+*[CWMP]: CPE WAN Management Protocol
+*[OLT]: Optical Line Terminal
+*[VEIP]: Virtual Ethernet Interface Point
+*[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
+
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^3]: <https://en.wikipedia.org/wiki/TR-069>
