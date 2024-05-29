@@ -14,16 +14,35 @@ description: Troubleshoot connectivity issues with the BFW Solutions WAS-110
 <!-- more -->
 <!-- nocont -->
 
-The MaxLinear SDK includes an extensive suite of debugging tools that come pre-installed in the WAS-110 firmwares. 
-These tools can be run either from the shell console or have been tied into the web UIs.
+The MaxLinear SDK includes an extensive suite of debugging tools that come pre-bundled with the [WAS-110] firmware(s).
+These tools can be run either from the shell console or have been tied into the web UI.
 
 ## PON troubleshooting
 
-### Optical Power
+### Digital Diagnostic Monitor Interface
 
-The WAS-110 supports the Digital Diagnostic Monitor Interface (DDMI)[^1] to provide pseudo-real-time access to its
-operating parameters via a host interface, e.g., from a Linux host via `ethtool -m <interface>`, or through its Web UI 
-or shell console.
+The [WAS-110] supports the Digital Diagnostic Monitor Interface (DDMI)[^1] to provide pseudo-real-time access to its
+operating parameters via a host interface. Although simplistic, this interface is suitable for monitoring power and
+temperature behaviours, which are the first tells of troubles.
+
+For more details on accessing this interface, please search your hosts' documentation for 
+*Digital Diagnostic Monitoring (DDM)* or *Digital Optical Monitoring (DOM)*.
+
+#### Linux host
+
+``` sh
+ethtool -m <interface>
+```
+
+#### MikroTik RouterOS
+
+``` sh
+/interface ethernet monitor sfpX #(1)!
+```
+
+1. Replace sfp`X` with the port name/number.
+
+### Optical Power
 
 #### Optical specifications
 
@@ -34,33 +53,35 @@ or shell console.
 
 #### Optical status
 
-To determine if the WAS-110 is operating within specification, execute one of the following procedures:
+To determine if the [WAS-110] optics are operating within specification, execute one of the following procedures:
 
 === "8311 firmware"
 
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
     
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_optical_status.webp)
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
     2. From the __PON Status__ page, select the __Optical Status__ tab.
+    3. Evaluate __Transmit power__ and __Receive power__ are within [spec](#optical-specification).
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
-    ```sh
-    ethtool -m pon0
+    ``` sh
+    pontop -b -g 'Optical Interface Status'
     ```
 
 === "Azores firmware"
 
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
 
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
 
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin* password.
     2. From the __Status__ tab, select the __PON__ page.
+    3. Evaluate __Tx Power(dBm)__ and __Rx Power(dBm)__ are within [spec](#optical-specification).
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
     ``` sh
     i2c_cmd show optical
@@ -79,6 +100,13 @@ To determine if the WAS-110 is operating within specification, execute one of th
     SFP VENDOR PN:	ENXGSFPPOMACV2
     -->
 
+And as with a Linux host, the <abbr title="Digital Diagnostic Monitor Interface">DDMI</abbr>[^1] is available locally,
+where both __Laser output power__ and __Receiver signal average optical power__ can be evaluated.
+
+``` sh
+ethtool -m pon0
+```
+
 ### Fake O5
 
 #### Activation states
@@ -91,26 +119,27 @@ To determine if the WAS-110 is operating within specification, execute one of th
 - O6 POPUP state
 - O7 Emergancy stop state
 
-A common term tossed around is <q>fake</q> O5, which is a misnomer that occurs when PLOAM message activation succeeds, including Serial Number
-and/or Registration ID authentication. However, the failure is further along in the registration chain, such as OMCI. It 
-pertains to invalid managed entity attributes with common associations to device integrity, such as hardware and/or
-software versioning.
+A common term tossed around is <q>fake</q> O5, which is a misnomer that occurs when
+<abbr title="Physical Layer Operation Administration and Maintenance">PLOAM</abbr> message activation succeeds,
+including Serial Number and/or Registration ID authentication. However, the failure is further along in the
+registration chain, such as <abbr title="ONU Management and Control Interface">OMCI</abbr>. It pertains to invalid
+managed entity attributes with common associations to device integrity, such as hardware and/or software versioning.
 
 #### PLOAM status
 
-The PLOAM status can be obtained from either the Web UI and Linux shell, regardless of firmware. To view the current 
-PLOAM status, execute one of the following procedures:
+To view the current <abbr title="Physical Layer Operation Administration and Maintenance">PLOAM</abbr> status,
+execute one of the following procedures:
 
 === "8311 firmware"
 
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
     
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_pon_status.webp)
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
     2. From the __PON Status__ page, select the __Status__ tab.
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
     ``` sh
     pontop -b -g s
@@ -118,14 +147,14 @@ PLOAM status, execute one of the following procedures:
 
 === "Azores firmware"
 
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
 
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
 
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin* password.
     2. From the __Status__ tab, select the __PON__ page.
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
     ``` sh
     pontop -b -g s
@@ -147,20 +176,21 @@ Additionally, it is possible to identify the connected OLT by executing the foll
 omci_pipe.sh meg 131 0
 ```
 
-Typically, OLT operators enforce versioning compliance when software management is not handled over CWMP[^2].
+Typically, OLT operators enforce versioning compliance when software management is not handled over
+<abbr title="CPE WAN Management Protocol">CWMP</abbr>[^2].
 
 ## LAN troubleshooting
 
 ### Link Speed
 
-The WAS-110 will attempt to auto-negotiate with the host controller and, more often than not, fallback to 1 Gbps. 
+The [WAS-110] will attempt to auto-negotiate with the host controller and, more often than not, fallback to 1 Gbps. 
 To prevent this behaviour, forcefully set the speed of the host interface to 10 Gbps.
 
-Furthermore, to force the link speed on the WAS-110 itself, execute the following `ethtool`[^3] procedures.
+Furthermore, to force the link speed on the [WAS-110] itself, execute the following `ethtool`[^3] procedures.
 
 === "8311 firmware"
 
-    <h4>Web UI <small>permanent</small></h4>
+    <h5>from the Web UI <small>permanent</small></h5>
 
     ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
 
@@ -174,7 +204,7 @@ Furthermore, to force the link speed on the WAS-110 itself, execute the followin
            | speed 2500  |
            | speed 10000 |
 
-    <h4>Linux shell <small>temporary</small></h4>
+    <h5>from the Linux shell <small>temporary</small></h5>
 
     !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
     
@@ -186,7 +216,15 @@ Furthermore, to force the link speed on the WAS-110 itself, execute the followin
 
 === "Azores firmware"
 
-    <h4>Linux shell <small>temporary</small></h4>
+    <h5>from the Web UI <small>permanent</small></h5>
+
+    ![WAS-110 Negotiation Speed](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_speed.webp)
+
+    1. Navigate to <https://192.168.11.1/html/main.html#service/setlanfixspeed>, and, if asked, input your *admin*
+       password.
+    2. From the __Negotiation Speed__ page, select __OnDemand__ and __10G__ link speed, and click __Save__.
+
+    <h5>from the Linux shell <small>temporary</small></h5>
 
     !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
     
@@ -207,7 +245,7 @@ host hardware and cause the link state to flap continuously.
 
 === "8311 firmware"
     
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
 
     ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
 
@@ -215,7 +253,7 @@ host hardware and cause the link state to flap continuously.
     2. From the __8311 Configuration__ page, select the __Device__ tab.
     3. From the __Device__ tab, uncheck the __Serial console__ checkbox.
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
     To disable the serial console from the Linux shell, execute the following commands:
 
@@ -223,7 +261,7 @@ host hardware and cause the link state to flap continuously.
     fwenv_set 8311_console_en
     ```
 
-    <h4>U-Boot shell</h4>
+    <h5>from the U-Boot shell</h5>
 
     To disable the serial console from the U-Boot shell, execute the following commands:
 
@@ -251,13 +289,13 @@ UART output can be further controlled by two (2) U-Boot environment variables: `
 
 !!! warning "<ins>DO NOT</ins> execute the following commands unless you understand the repercussions"
 
-<h4>Linux shell</h4>
+<h5>from the Linux shell</h5>
 
 ``` sh
 fwenv_set uart_select off
 ```
 
-<h4>U-Boot shell</h4>
+<h5>from the U-Boot shell</h5>
 
 ``` sh
 setenv uart_select off
@@ -267,15 +305,14 @@ env save
 
 ### Rx loss
 
-The SFP Rx loss pin[^5] (8) is asserted when the SC/APC fiber cable isn't plugged in and/or active. Depending on the 
-host interface, some standards compliant implementations will enter a power saving state, making the WAS-110 
-inaccessible.
+The SFP Rx loss pin[^5] (8) is asserted when the SC/APC fiber cable isn't plugged in and/or inactive. Depending on the
+host controller and implementation, the interface may enter a power saving state, making the [WAS-110] inaccessible.
 
 === "8311 firmware"
 
     !!! info "Rx loss is deasserted by default as of version 2.3.0"
 
-    <h4>Web UI</h4>
+    <h5>from the Web UI</h5>
 
     ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
 
@@ -283,7 +320,7 @@ inaccessible.
     2. From the __8311 Configuration__ page, select the __Device__ tab.
     3. From the __Device__ tab, uncheck the __RX Loss of Signal__ checkbox.
 
-    <h4>Linux shell</h4>
+    <h5>from the Linux shell</h5>
 
     To disable Rx loss from the Linux shell, execute the following commands:
 
@@ -291,7 +328,7 @@ inaccessible.
     fwenv_set 8311_rx_los
     ```
 
-    <h4>U-Boot shell</h4>
+    <h5>from the U-Boot shell</h5>
 
     To disable Rx loss from the U-Boot shell, execute the following commands:
 
@@ -303,7 +340,21 @@ inaccessible.
 
 === "Azores firmware"
 
-    Not available
+    Unfortunately, Rx loss can't be disabled.
+
+#### Host solutions
+
+##### MikroTik RouterOS
+
+!!! info "Requires RouterOS 7.15+"
+
+``` sh
+/interface ethernet set sfpX sfp-ignore-rx-los=yes #(1)!
+```
+
+1. Replace spf`X` with the port name/number.
+
+  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/
 
 [^1]: [SFF-8472](https://members.snia.org/document/dl/25916)
 [^2]: <https://en.wikipedia.org/wiki/TR-069>
