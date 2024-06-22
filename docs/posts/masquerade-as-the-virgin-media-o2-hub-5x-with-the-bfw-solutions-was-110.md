@@ -123,7 +123,7 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 ## Hub 5x software versions
 
 The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for
-the Giga Hub, which uses CWMP[^2]. However, it is recommended to keep somewhat up-to-date with the following listing.
+the Hub 5x, which uses CWMP[^2]. However, it is recommended to keep somewhat up-to-date with the following listing.
 
 | Software Version |
 | ---------------- |
