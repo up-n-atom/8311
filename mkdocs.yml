@@ -50,6 +50,7 @@ plugins:
       post_excerpt_max_authors: 0
       post_excerpt_max_categories: 3
       post_url_format: "guides/{slug}"
+      pagination_per_page: 5
   - glightbox:
       loop: false
       skip_classes:
