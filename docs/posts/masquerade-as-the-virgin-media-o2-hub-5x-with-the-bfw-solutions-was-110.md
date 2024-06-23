@@ -1,6 +1,5 @@
 ---
-draft: true
-date: 2024-06-21
+date: 2024-06-23
 categories:
   - XGS-PON
   - Hub 5x
@@ -17,13 +16,13 @@ description: Masquerade as the Virgin Media O2 Hub 5x with the BFW Solutions WAS
 <!-- more -->
 <!-- nocont -->
 
-## Purchase a WAS-110 and LC/APC to SC/APC adapter
+## Purchase a WAS-110 and LC/APC to SC/APC adapter or cable
 
 The [WAS-110] is available from select distributors and at a discounted rate with group buys on the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
-The Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] with the LC/APC provisioned cable
-and can be purchased on <https://www.amazon.co.uk/>.
+A Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] with the provisioned LC/APC
+cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchased at <https://www.amazon.co.uk/>.
 
 ## Install community firmware
 
@@ -38,6 +37,8 @@ To successfully masquerade on XGS-PON, the original ONT serial number is mandato
 identifiers are available on the bottom label of the Hub 5x, color-coordinated in the following depiction:
 
 <div id="hub-5x-label"></div>
+
+![Hub 5x label](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/hub_5x_label.webp){ class="nolightbox" id="hub-5x-label" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
@@ -61,14 +62,14 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
     | -------------------------- | ----------------------------- | ------------ | ----------------------- |
-    | PON Serial Number (ONT ID) | SMBS11228311                  | :check_mark: | :blue_circle:           |
+    | PON Serial Number (ONT ID) | SMBS13E78311                  | :check_mark: | :blue_circle:           |
     | Equipment ID               | F5685LGB                      |              |                         |
     | Hardware Version           | 1.2.1b                        |              |                         |
     | Sync Circuit Pack Version  | :check_mark:                  |              |                         |
     | Software Version A         | 3.7.4-2306.5                  |              | [Version listing]       |
     | Software Version B         | 3.7.4-2306.5                  |              | [Version listing]       |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
-    | IP Host MAC Address        | C4:EB:43:00:00:01             |              |                         |
+    | IP Host MAC Address        | C4:EB:43:00:00:01             |              | :purple_circle:         |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -91,7 +92,7 @@ ssh root@192.168.11.1
 ``` sh hl_lines="1 3 9"
 fwenv_set mib_file
 fwenv_set 8311_iphost_mac C4:EB:43:00:00:01
-fwenv_set 8311_gpon_sn SMBS11228311
+fwenv_set 8311_gpon_sn SMBS13E78311
 fwenv_set 8311_equipment_id F5685LGB
 fwenv_set 8311_hw_ver 1.2.1b
 fwenv_set 8311_cp_hw_ver_sync 1
