@@ -49,7 +49,7 @@ ethtool -m <interface>
 |          | Min. | Max. | Unit |
 | -------- | ---- | ---- | ---- |
 | Tx Power | 4    | 9    | dBm  |
-| Rx Power | -8   | -29  | dBm  |
+| Rx Power | -29  | -8   | dBm  |
 
 #### Optical status
 
