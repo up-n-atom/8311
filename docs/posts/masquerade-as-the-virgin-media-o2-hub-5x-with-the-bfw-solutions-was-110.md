@@ -24,6 +24,8 @@ The [WAS-110] is available from select distributors and at a discounted rate wit
 A Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] with the provisioned LC/APC
 cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchased at <https://www.amazon.co.uk/>.
 
+!!! warning "APC and UPC connectors are not equal nor compatible[^1]"
+
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
@@ -103,7 +105,7 @@ fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini
 
 1. [Version listing]
 
-!!! info "Additional details and variables are described at the original repository [^1]"
+!!! info "Additional details and variables are described at the original repository [^2]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
     The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
@@ -124,7 +126,7 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 ## Hub 5x software versions
 
 The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for
-the Hub 5x, which uses CWMP[^2]. However, it is recommended to keep somewhat up-to-date with the following listing.
+the Hub 5x, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing.
 
 | Software Version |
 | ---------------- |
@@ -144,5 +146,6 @@ or submitting a
 *[VEIP]: Virtual Ethernet Interface Point
 *[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
 
-[^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
-[^2]: <https://en.wikipedia.org/wiki/TR-069>
+[^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
+[^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
+[^3]: <https://en.wikipedia.org/wiki/TR-069>
