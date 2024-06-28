@@ -120,6 +120,13 @@ to the host interface, such as `192.168.11.2/24`[^4].
     ip address show dev <interface>
     ```
 
+=== ":simple-ubiquiti: Ubiquiti"
+
+    ``` sh
+    ip addr add dev eth9 local 192.168.11.2/24
+    iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
+    ```
+
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 ### Web credentials
