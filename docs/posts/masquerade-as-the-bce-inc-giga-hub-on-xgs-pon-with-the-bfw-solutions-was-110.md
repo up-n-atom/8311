@@ -52,7 +52,7 @@ Python installation varies by Operating System and has been outlined by the tuto
 
 Open a terminal and install the open-source XMO client with:
 
-=== ":fontawesome-brands-windows: Windows"
+=== ":simple-windows: Windows"
 
     ``` sh hl_lines="5"
     py --version
@@ -62,7 +62,7 @@ Open a terminal and install the open-source XMO client with:
     pip install https://github.com/up-n-atom/sagemcom-modem-scripts/releases/download/v0.0.4/xmo_remote_client-0.0.4-py3-none-any.whl
     ```
 
-=== ":material-apple: macOS / :material-linux: Linux"
+=== ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh hl_lines="5"
     python3 --version # (1)!

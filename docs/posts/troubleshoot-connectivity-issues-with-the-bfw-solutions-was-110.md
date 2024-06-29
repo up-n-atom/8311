@@ -28,13 +28,13 @@ temperature behaviours, which are the first tells of troubles.
 For more details on accessing this interface, please search your hosts' documentation for 
 *Digital Diagnostic Monitoring (DDM)* or *Digital Optical Monitoring (DOM)*.
 
-#### Linux host
+#### :simple-linux: Linux host { #linux-host data-toc-label="Linux host" }
 
 ``` sh
 ethtool -m <interface>
 ```
 
-#### MikroTik RouterOS
+#### :simple-mikrotik: MikroTik RouterOS { #mikrotik-routeros-ddmi data-toc-label="MikroTik RouterOS" }
 
 ``` sh
 /interface ethernet monitor sfpX #(1)!
@@ -341,7 +341,7 @@ host controller and implementation, the interface may enter a power saving state
 
 #### Host solutions
 
-##### MikroTik RouterOS
+#### :simple-mikrotik: MikroTik RouterOS { #mikrotik-routeros-rxlos data-toc-label="MikroTik RouterOS" }
 
 !!! info "Requires RouterOS 7.15+"
 
