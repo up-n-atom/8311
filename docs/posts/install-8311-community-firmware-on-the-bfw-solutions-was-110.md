@@ -128,8 +128,7 @@ to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":simple-ubiquiti: Ubiquiti"
 
-    !!! tip "Replace `<interface>` with the SFP+ interface name"
-        `eth9` for the UDM-SE
+    !!! tip "Replace `<interface>` with the SFP+ interface name e.g. `eth9` for the UDM-SE"
 
     ``` sh
     ip addr add dev <interface> local 192.168.11.2/24
