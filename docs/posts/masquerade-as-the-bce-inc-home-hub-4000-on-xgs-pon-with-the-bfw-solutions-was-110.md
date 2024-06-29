@@ -197,7 +197,8 @@ operational status.
 ## Home Hub 4000 software versions
 
 The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for 
-the Home Hub 4000, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing.
+the Home Hub 4000, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following
+listing, but it is not strictly necessary.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
