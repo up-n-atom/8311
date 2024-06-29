@@ -341,7 +341,7 @@ host controller and implementation, the interface may enter a power saving state
 
 #### Host solutions
 
-#### :simple-mikrotik: MikroTik RouterOS { #mikrotik-routeros-rxlos data-toc-label="MikroTik RouterOS" }
+##### :simple-mikrotik: MikroTik RouterOS { #mikrotik-routeros-rxlos data-toc-label="MikroTik RouterOS" }
 
 !!! info "Requires RouterOS 7.15+"
 
