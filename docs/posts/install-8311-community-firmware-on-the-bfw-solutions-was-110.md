@@ -49,13 +49,13 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
   [7-Zip]: https://www.7-zip.org/
 
-=== ":fontawesome-brands-windows: Windows"
+=== ":simple-windows: Windows"
 
     ``` sh
     7z x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== ":material-apple: macOS"
+=== ":simple-apple: macOS"
 
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -64,7 +64,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
     7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
-=== ":material-linux: Linux"
+=== ":simple-linux: Linux"
 
     !!! note "The following commands assume [Debian] or derivatives[^3]"
 
@@ -80,7 +80,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 The default IP address of the WAS-110 is `192.168.11.1/24`. To connect successfully, a static IP address must be assigned
 to the host interface, such as `192.168.11.2/24`[^4].
 
-=== ":fontawesome-brands-windows: Windows"
+=== ":simple-windows: Windows"
 
     !!! tip "Run Command Prompt as Administrator"
 
@@ -99,14 +99,14 @@ to the host interface, such as `192.168.11.2/24`[^4].
 
         <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
 
-=== ":material-apple: macOS"
+=== ":simple-apple: macOS"
 
     ``` sh hl_lines="2"
     sudo networksetup -listallnetworkservices
     sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
-=== ":material-linux: Linux"
+=== ":simple-linux: Linux"
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
@@ -144,13 +144,13 @@ to the host interface, such as `192.168.11.2/24`[^4].
 ??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
 
-    === ":fontawesome-brands-windows: Windows"
+    === ":simple-windows: Windows"
 
         ``` sh
         curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
         ```
 
-    === ":material-apple: macOS"
+    === ":simple-apple: macOS"
 
         !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -159,7 +159,7 @@ to the host interface, such as `192.168.11.2/24`[^4].
         curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
         ```
 
-    === ":material-linux: Linux"
+    === ":simple-linux: Linux"
 
         !!! note "The following commands assume [Debian] or derivatives[^3]"
 
@@ -180,13 +180,13 @@ mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootf
 
 ### Backup to host
 
-=== ":fontawesome-brands-windows: Windows"
+=== ":simple-windows: Windows"
 
     ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
     ```
 
-=== ":material-apple: macOS / :material-linux: Linux"
+=== ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
@@ -210,13 +210,13 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
 
     Alternatively, run the following command to download `param_ct.xml` to a temporary directory.
 
-    === ":fontawesome-brands-windows: Windows"
+    === ":simple-windows: Windows"
 
         ``` sh
         dir %Temp% && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
         ```
 
-    === ":material-apple: macOS"
+    === ":simple-apple: macOS"
 
         !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -225,7 +225,7 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
         cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
         ```
 
-    === ":material-linux: Linux"
+    === ":simple-linux: Linux"
 
         !!! note "The following commands assume [Debian] or derivatives[^3]"
 
@@ -273,13 +273,13 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 ??? tip "Run a continuous ping"
     To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
 
-    === ":fontawesome-brands-windows: Windows"
+    === ":simple-windows: Windows"
 
         ``` sh
         ping -t 192.168.11.1
         ```
 
-    === ":material-apple: macOS / :material-linux: Linux"
+    === ":simple-apple: macOS / :simple-linux: Linux"
 
         ``` sh
         ping 192.168.11.1
@@ -305,13 +305,13 @@ of every one of us.
 ??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
 
-    === ":fontawesome-brands-windows: Windows"
+    === ":simple-windows: Windows"
 
         ``` sh
         curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
         ```
 
-    === ":material-apple: macOS"
+    === ":simple-apple: macOS"
 
         !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -320,7 +320,7 @@ of every one of us.
         curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
         ```
 
-    === ":material-linux: Linux"
+    === ":simple-linux: Linux"
 
         !!! note "The following commands assume [Debian] or derivatives[^3]"
 
@@ -351,14 +351,14 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-=== ":fontawesome-brands-windows: Windows"
+=== ":simple-windows: Windows"
 
     ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
     ```
 
-=== ":material-apple: macOS / :material-linux: Linux"
+=== ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
