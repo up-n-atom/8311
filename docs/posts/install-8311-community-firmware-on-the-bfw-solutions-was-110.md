@@ -109,8 +109,8 @@ to the host interface, such as `192.168.11.2/24`[^4].
     ??? info "For the shameless mouse clickers..."
         If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
 
-        <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
-        <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
+        * <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
+        * <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
 
 === ":simple-linux: Linux"
 
