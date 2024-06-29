@@ -106,6 +106,12 @@ to the host interface, such as `192.168.11.2/24`[^4].
     sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
 
+    ??? info "For the shameless mouse clickers..."
+        If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
+
+        <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
+        <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
+
 === ":simple-linux: Linux"
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
@@ -122,7 +128,7 @@ to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":simple-ubiquiti: Ubiquiti"
 
-    !!! tip "Replace <interface> with the SFP+ interface name"
+    !!! tip "Replace `<interface>` with the SFP+ interface name"
         `eth9` for the UDM-SE
 
     ``` sh
