@@ -163,7 +163,7 @@ To view the current PLOAM status, execute one of the following procedures:
 #### OMCI clarification
 
 To help identify fake O5, execute the following command and if the response is empty, the operational state is 
-<em>"fake"</em> as the OLT did not respond with the dot1q configuration.
+<em>"fake"</em> as the OLT did not respond with the dot1q[^6] configuration.
 
 
 ``` sh
@@ -235,7 +235,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
 
 ### Tx fault
 
-The SFP tx fault pin[^4] (2) is muxed with UART tx. If the serial UART is enabled, tx fault may be asserted by the 
+The SFP tx fault pin[^4] (2) is multiplexed with UART tx. If the serial UART is enabled, tx fault may be asserted by the 
 host hardware and cause the link state to flap continuously.
 
 #### Serial console
@@ -284,7 +284,7 @@ host hardware and cause the link state to flap continuously.
 
 #### Boot console & early printk { #boot-console data-toc-label="Boot console" }
 
-UART output can be further controlled by two (2) U-Boot environment variables: `uart_select` and `uart_select_preboot`.
+UART tx can be further controlled by two (2) U-Boot environment variables: `uart_select` and `uart_select_preboot`.
 
 !!! warning "<ins>DO NOT</ins> execute the following commands unless you understand the repercussions"
 
@@ -304,7 +304,7 @@ env save
 
 ### Rx loss
 
-The SFP Rx loss pin[^5] (8) is asserted when the SC/APC fiber cable isn't plugged in and/or inactive. Depending on the
+The SFP rx loss pin[^5] (8) is asserted when the SC/APC fiber cable isn't plugged in and/or inactive. Depending on the
 host controller and implementation, the interface may enter a power saving state, making the [WAS-110] inaccessible.
 
 === "8311 firmware"
@@ -321,7 +321,7 @@ host controller and implementation, the interface may enter a power saving state
 
     <h5>from the Linux shell</h5>
 
-    To disable Rx loss from the Linux shell, execute the following commands:
+    To disable rx loss from the Linux shell, execute the following commands:
 
     ```
     fwenv_set 8311_rx_los
@@ -329,7 +329,7 @@ host controller and implementation, the interface may enter a power saving state
 
     <h5>from the U-Boot shell</h5>
 
-    To disable Rx loss from the U-Boot shell, execute the following commands:
+    To disable rx loss from the U-Boot shell, execute the following commands:
 
     ``` sh
     env delete 8311_rx_los
@@ -339,7 +339,7 @@ host controller and implementation, the interface may enter a power saving state
 
 === "Azores firmware"
 
-    Unfortunately, Rx loss can't be disabled.
+    Unfortunately, rx loss can't be disabled.
 
 #### Host solutions
 
@@ -366,3 +366,4 @@ host controller and implementation, the interface may enter a power saving state
 [^3]: <https://www.linux.org/docs/man8/ethtool.html>
 [^4]: <https://en.wikipedia.org/wiki/Small_Form-factor_Pluggable#Signals>
 [^5]: [SFF-8419](https://members.snia.org/document/dl/25880)
+[^6]: <https://en.wikipedia.org/wiki/IEEE_802.1Q>
