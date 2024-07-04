@@ -142,11 +142,6 @@ or submitting a
   [label]: #hub-5x-label
   [Version listing]: #hub-5x-software-versions
 
-*[CWMP]: CPE WAN Management Protocol
-*[OLT]: Optical Line Terminal
-*[VEIP]: Virtual Ethernet Interface Point
-*[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
-
 [^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^3]: <https://en.wikipedia.org/wiki/TR-069>

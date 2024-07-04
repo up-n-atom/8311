@@ -168,8 +168,4 @@ or submitting a
   [label]: #nh20a-nh20t-label
   [Version listing]: #software-versions
 
-*[OLT]: Optical Line Terminal
-*[PPTP]: Point-to-Point Tunneling Protocol
-*[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
-
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

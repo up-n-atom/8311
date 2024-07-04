@@ -378,10 +378,6 @@ of every one of us.
 
   [Debian]: https://www.debian.org/
 
-*[ISP]: Internet Service Provider
-*[OLT]: Optical Line Terminal
-*[VEIP]: Virtual Ethernet Interface Point
-
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
 

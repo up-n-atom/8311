@@ -151,10 +151,5 @@ or submitting a
   [label]: #livebox-7-label
   [Version listing]: #livebox-7-software-versions
 
-*[CWMP]: CPE WAN Management Protocol
-*[OLT]: Optical Line Terminal
-*[PPTP]: Point-to-Point Tunneling Protocol
-*[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
-
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://en.wikipedia.org/wiki/TR-069>

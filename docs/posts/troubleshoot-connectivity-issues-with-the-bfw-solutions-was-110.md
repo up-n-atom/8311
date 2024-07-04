@@ -355,12 +355,6 @@ host controller and implementation, the interface may enter a power saving state
 
   [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/
 
-*[CWMP]: CPE WAN Management Protocol
-*[DDMI]: Digital Diagnostic Monitor Interface
-*[OLT]: Optical Line Terminal
-*[OMCI]: ONU Management and Control Interface
-*[PLOAM]: Physical Layer Operation Administration and Maintenance
-
 [^1]: [SFF-8472](https://members.snia.org/document/dl/25916)
 [^2]: <https://en.wikipedia.org/wiki/TR-069>
 [^3]: <https://www.linux.org/docs/man8/ethtool.html>
