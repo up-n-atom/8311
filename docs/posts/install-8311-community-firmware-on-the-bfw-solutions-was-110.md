@@ -49,7 +49,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
   [7-Zip]: https://www.7-zip.org/
 
-=== ":simple-windows: Windows"
+=== ":material-microsoft: Windows"
 
     ``` sh
     7z x WAS-110_8311_firmware_mod_<version>_basic.7z
@@ -80,7 +80,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 The default IP address of the WAS-110 is `192.168.11.1/24`. To connect successfully, a static IP address must be assigned
 to the host interface, such as `192.168.11.2/24`[^4].
 
-=== ":simple-windows: Windows"
+=== ":material-microsoft: Windows"
 
     !!! tip "Run Command Prompt as Administrator"
 
@@ -152,7 +152,7 @@ to the host interface, such as `192.168.11.2/24`[^4].
 ??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
 
-    === ":simple-windows: Windows"
+    === ":material-microsoft: Windows"
 
         ``` sh
         curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
@@ -188,7 +188,7 @@ mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootf
 
 ### Backup to host
 
-=== ":simple-windows: Windows"
+=== ":material-microsoft: Windows"
 
     ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
@@ -218,7 +218,7 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
 
     Alternatively, run the following command to download `param_ct.xml` to a temporary directory.
 
-    === ":simple-windows: Windows"
+    === ":material-microsoft: Windows"
 
         ``` sh
         dir %Temp% && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
@@ -281,7 +281,7 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 ??? tip "Run a continuous ping"
     To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
 
-    === ":simple-windows: Windows"
+    === ":material-microsoft: Windows"
 
         ``` sh
         ping -t 192.168.11.1
@@ -313,7 +313,7 @@ of every one of us.
 ??? bug "Exploit to temporarily change the root password"
     Run the following command to temporarily change the root password to `root`.
 
-    === ":simple-windows: Windows"
+    === ":material-microsoft: Windows"
 
         ``` sh
         curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
@@ -359,7 +359,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-=== ":simple-windows: Windows"
+=== ":material-microsoft: Windows"
 
     ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/

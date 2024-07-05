@@ -56,7 +56,7 @@ Python installation varies by Operating System and has been outlined by the tuto
 
 Open a terminal and install the open-source XMO client with:
 
-=== ":simple-windows: Windows"
+=== ":material-microsoft: Windows"
 
     ``` sh hl_lines="5"
     py --version
