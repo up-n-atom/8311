@@ -45,14 +45,19 @@ variant, it does not include the abysmal BFW patches and cruft.
 
 ### Extract download
 
-The firmware files are archived by [7-Zip] and can be extracted with:
+The firmware upgrade files: `local-upgrade.img` used by the [web UI upgrade] and `local-upgrade.tar` used by the
+[shell upgrade] method(s) are compressed inside a single [7-Zip] archive.
 
+  [Web UI upgrade]: #web-ui-upgrade
+  [shell upgrade]: #shell-upgrade
   [7-Zip]: https://www.7-zip.org/
+
+To extract the archive, execute the following command(s):
 
 === ":material-microsoft: Windows"
 
     ``` sh
-    7z x WAS-110_8311_firmware_mod_<version>_basic.7z
+    7z e -i!local-upgrade.* WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":simple-apple: macOS"
@@ -61,7 +66,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
     ``` sh
     brew install sevenzip
-    7zz x WAS-110_8311_firmware_mod_<version>_basic.7z
+    7zz e '-i!local-upgrade.*' WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":simple-linux: Linux"
@@ -70,7 +75,7 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
     ``` sh
     sudo apt-get install p7zip-full
-    7z x WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
+    7z e '-i!local-upgrade.*' WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
     ```
 
     1. Replace `<version>` with the downloaded version.
@@ -181,7 +186,7 @@ mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootf
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
-2. At the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
+2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
    __Upgrade__.
 
 Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
@@ -224,8 +229,9 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 ### Upgrade firmware
 
-Run the following commands from the host terminal to upgrade to the 8311 community firmware. Input the <em>root</em>
-[shell credentials] when asked.
+Run the following commands from the host terminal to upgrade to the 8311 community firmware.
+
+Input the <em>root</em>[shell credentials] when asked.
 
 === ":material-microsoft: Windows"
 
