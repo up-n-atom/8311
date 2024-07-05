@@ -147,7 +147,7 @@ or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #livebox-7-label
   [Version listing]: #livebox-7-software-versions
 

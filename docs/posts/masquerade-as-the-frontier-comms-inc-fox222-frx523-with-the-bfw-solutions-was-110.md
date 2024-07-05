@@ -216,7 +216,7 @@ or submitting a
     ontver
     ```
 
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
 

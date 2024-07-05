@@ -219,7 +219,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 ```
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client

@@ -164,7 +164,7 @@ Please help us by contributing new versions via the
 or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #nh20a-nh20t-label
   [Version listing]: #software-versions
 

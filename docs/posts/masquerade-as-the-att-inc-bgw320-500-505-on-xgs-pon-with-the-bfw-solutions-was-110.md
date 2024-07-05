@@ -179,7 +179,7 @@ Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immed
 operational status.
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #bgw320-500-505-label
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

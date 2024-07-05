@@ -219,7 +219,7 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
 ```
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #home-hub-4000-label
   [Version listing]: #home-hub-4000-software-versions
   [XMO client]: #with-a-xmo-client
