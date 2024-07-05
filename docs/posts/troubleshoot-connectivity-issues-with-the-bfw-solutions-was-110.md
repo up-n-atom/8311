@@ -79,7 +79,8 @@ To determine if the [WAS-110] optics are operating within specification, execute
 
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
 
-    1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin* password.
+    1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
+       [web credentials].
     2. From the __Status__ tab, select the __PON__ page.
     3. Evaluate __Tx Power(dBm)__ and __Rx Power(dBm)__ are within [spec](#optical-specification).
 
@@ -151,7 +152,8 @@ To view the current PLOAM status, execute one of the following procedures:
 
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
 
-    1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin* password.
+    1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
+       [web credentials].
     2. From the __Status__ tab, select the __PON__ page.
 
     <h5>from the Linux shell</h5>
@@ -220,7 +222,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
     ![WAS-110 Negotiation Speed](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_speed.webp)
 
     1. Navigate to <https://192.168.11.1/html/main.html#service/setlanfixspeed>, and, if asked, input your *admin*
-       password.
+       [web credentials].
     2. From the __Negotiation Speed__ page, select __OnDemand__ and __10G__ link speed, and click __Save__.
 
     <h5>from the Linux shell <small>temporary</small></h5>
@@ -353,7 +355,10 @@ host controller and implementation, the interface may enter a power saving state
 
 1. Replace spf`X` with the port name/number.
 
-  [WAS-110]: /xgs-pon/ont/bfw-solutions/was-110/
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+  [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
+
 
 [^1]: [SFF-8472](https://members.snia.org/document/dl/25916)
 [^2]: <https://en.wikipedia.org/wiki/TR-069>
