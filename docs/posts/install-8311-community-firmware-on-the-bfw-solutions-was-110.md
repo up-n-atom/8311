@@ -13,7 +13,7 @@ description: Install 8311 community firmware on the BFW Solutions WAS-110
 <!-- more -->
 <!-- nocont -->
 
-Out of the box, the [] is not fully compatible with varying ISP OLT configurations, with issues ranging from 
+Out of the box, the [WAS-110] is not fully compatible with varying ISP OLT configurations, with issues ranging from 
 vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
 incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2]. 
 
