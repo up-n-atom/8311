@@ -57,7 +57,7 @@ To extract the archive, execute the following command(s):
 === ":material-microsoft: Windows"
 
     ``` sh
-    7z e -i!local-upgrade.* WAS-110_8311_firmware_mod_<version>_basic.7z
+    7z e "-i!local-upgrade.*" WAS-110_8311_firmware_mod_<version>_basic.7z
     ```
 
 === ":simple-apple: macOS"
