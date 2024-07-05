@@ -231,7 +231,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-Input the <em>root</em>[shell credentials] when asked.
+Input the <em>root</em> [shell credentials] when asked.
 
 === ":material-microsoft: Windows"
 
