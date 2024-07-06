@@ -45,10 +45,17 @@ variant, it does not include the abysmal BFW patches and cruft.
 
 ### Extract download
 
-The firmware upgrade files: `local-upgrade.img` used by the [web UI upgrade] and `local-upgrade.tar` used by the
-[shell upgrade] method(s) are compressed inside a single [7-Zip] archive.
+The community firmware upgrade comes bundled as a [7-Zip] archive and includes:
 
-  [Web UI upgrade]: #web-ui-upgrade
+`local-upgrade.img`
+
+:   Used with the Azores [web upgrade] mechanism.
+
+`local-upgrade.tar`
+
+:   Used with the universal [shell upgrade] sequence.
+
+  [web upgrade]: #web-ui-upgrade
   [shell upgrade]: #shell-upgrade
   [7-Zip]: https://www.7-zip.org/
 
