@@ -49,11 +49,11 @@ The community firmware upgrade comes bundled as a [7-Zip] archive and includes:
 
 `local-upgrade.img`
 
-:   Used with the Azores [web upgrade] mechanism.
+:   Used with the Azores [web upgrade] utility.
 
 `local-upgrade.tar`
 
-:   Used with the universal [shell upgrade] sequence.
+:   Used with the universal [shell upgrade] command sequence.
 
   [web upgrade]: #web-ui-upgrade
   [shell upgrade]: #shell-upgrade
@@ -149,19 +149,19 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
-1. Login over SSH using the <em>root</em> [shell credentials].
+1. Login to the [WAS-110] remote shell over SSH using the <em>root</em> [shell credentials].
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
     ```
 
-2. Execute the following command sequence from the [WAS-110] shell to dump the volumes into its local temp directory.
+2. Execute the following command sequence from the [WAS-110] remote shell to dump its volumes into the temp directory.
 
     ``` sh
     mkdir -p /tmp/fw; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootfsB; do VOL=$(ubinfo /dev/ubi0 -N "$part" | grep "Volume ID" | awk '{print $3}'); [ -n "$VOL" ] && { DEV="/dev/ubi0_$VOL"; OUT="/tmp/fw/ubi0_$VOL-$part.img"; echo "Dumping $part ($DEV) to: $OUT"; dd if="$DEV" of="$OUT"; }; done; exit
     ```
 
-3. Execute the following command from the host PC shell to back-up the dumped volumes.
+3. Execute the following command from the host PC terminal to back-up the dumped volumes locally.
 
     === ":material-microsoft: Windows"
 
