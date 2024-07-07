@@ -172,7 +172,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     === ":simple-apple: macOS / :simple-linux: Linux"
 
         ``` sh
-        scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+        scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa 'root@192.168.11.1:/tmp/fw/ubi*' ./
         ```
 
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
