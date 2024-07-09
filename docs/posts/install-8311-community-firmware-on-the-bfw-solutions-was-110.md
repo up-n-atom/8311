@@ -126,6 +126,10 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":simple-linux: Linux"
 
+    !!! note "The following commands set the IP address <ins>temporarily</ins> until the next power cycle"
+        For persistence check your OS documentation, such as
+        [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
+
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
     ``` sh hl_lines="6"
@@ -140,9 +144,11 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":simple-ubiquiti: Ubiquiti"
 
+    !!! note "The following command sets the IP address <ins>temporarily</ins> until the next power cycle"
+
     !!! tip "Replace `<interface>` with the SFP+ interface name e.g. `eth9` for the UDM-SE"
 
-    ``` sh
+    ``` sh hl_lines="1"
     ip addr add dev <interface> local 192.168.11.2/24
     iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
     ```
