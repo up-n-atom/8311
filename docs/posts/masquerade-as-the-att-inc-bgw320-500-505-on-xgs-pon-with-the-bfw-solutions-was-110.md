@@ -87,7 +87,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the :blue_circle: __ONT ID__ and :purple_circle: __MAC address__ with the 
+        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and :purple_circle: optional __MAC address__ with the 
         provisioned values on the bottom [label] of the BGW320-500/505.
 
     === "BGW320-500"
@@ -121,6 +121,8 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
+!!! tip Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time.
+
 ### from the shell
 
 <h4>Login over SSH</h4>
@@ -132,7 +134,7 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the :blue_circle: __ONT ID__ and :purple_circle: __MAC address__ with the 
+    <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and optional :purple_circle: __MAC address__ with the 
     provisioned values on the bottom [label] of the BGW320-500/505.
 
 === "BGW320-500"
@@ -177,6 +179,8 @@ reboot
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
+
+!!! tip Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time.
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
