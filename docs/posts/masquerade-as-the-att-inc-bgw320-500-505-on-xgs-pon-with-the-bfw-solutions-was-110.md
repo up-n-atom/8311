@@ -87,7 +87,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and :purple_circle: optional __MAC address__ with the 
+        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and optional :purple_circle: __MAC address__ with the 
         provisioned values on the bottom [label] of the BGW320-500/505.
 
     === "BGW320-500"

@@ -59,8 +59,8 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
-        provisioned values on the bottom [label] of the Hub 5x.
+        <ins>Replace</ins> the mandatory :blue_circle: __PON serial number__ and optional :purple_circle:
+        __MAC address__ with the provisioned values on the bottom [label] of the Hub 5x.
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
     | -------------------------- | ----------------------------- | ------------ | ----------------------- |
@@ -88,7 +88,7 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the :blue_circle: __PON serial number__ and :purple_circle: __MAC address__ with the 
+    <ins>Replace</ins> the mandatory :blue_circle: __PON serial number__ and optional :purple_circle: __MAC address__ with the 
     provisioned values on the bottom [label] of the Hub 5x.
 
 ``` sh hl_lines="1 3 9"
