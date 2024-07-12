@@ -220,7 +220,7 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
 Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
 of every one of us.
 
-## Shell upgrade <small>safer</small> { #shell-upgrade data-toc-label="Shell upgrade" }
+## Shell upgrade <small>recommended</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
 The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in comparison to the built-in web UI.
 
