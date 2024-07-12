@@ -121,7 +121,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
-!!! tip Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time.
+!!! tip "Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time."
 
 ### from the shell
 
@@ -180,7 +180,7 @@ reboot
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
-!!! tip Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time.
+!!! tip "Clone the BGW320-500/505 MAC address on the DHCP WAN interface to avoid the 20 minute lease time."
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
