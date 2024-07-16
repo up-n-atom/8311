@@ -155,7 +155,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
-1. Login to the [WAS-110] remote shell over SSH using the <em>root</em> [shell credentials].
+1. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials].
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
@@ -193,7 +193,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the <em>admin</em> [web credentials]. 
+   and, if asked, input the *admin* [web credentials]. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
@@ -217,8 +217,8 @@ Patiently wait out the process, 4 to 5 minutes, or until the web session becomes
         ping 192.168.11.1
         ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
-of every one of us.
+Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+[supplementary upgrade].
 
 ## Shell upgrade <small>recommended</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
@@ -232,7 +232,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the <em>admin</em> [web credentials].
+   and, if asked, input the *admin* [web credentials].
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
@@ -242,7 +242,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-Input the <em>root</em> [shell credentials] when asked.
+Input the *root* [shell credentials] when asked.
 
 === ":material-microsoft: Windows"
 
@@ -258,13 +258,73 @@ Input the <em>root</em> [shell credentials] when asked.
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
     ```
 
-Once rebooted, begin to enjoy the fruits of the 8311 community. It is not at all possible without the help and support
-of every one of us.
+Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+[supplementary upgrade].
+
+## Supplementary upgrades
+
+### A/B architecture
+
+``` mermaid
+block-beta
+    block:BOOT
+        columns 1
+        mtd0("<b>uboot</b>\n/dev/mtd0")
+        mtd1("<b>ubootconfigA</b>\n/dev/mtd1")
+        mtd2("<b>ubootconfigB</b>\n/dev/mtd2")
+    end
+    block:UBI("/dev/ubi0")
+        columns 2
+        block A
+            columns 1
+            mtd9("<b>kernelA</b>\n/dev/mtd9")
+            mtd10("<b>bootcoreA</b>\n/dev/mtd10")
+            mtd11("<b>rootfsA</b>\n/dev/mtd11")
+        end
+        block B
+            columns 1
+            mtd12("<b>kernelB</b>\n/dev/mtd12")
+            mtd13("<b>bootcoreB</b>\n/dev/mtd13")
+            mtd14("<b>rootfsB</b>\n/dev/mtd14")
+        end
+        block:PERSIST:2
+            columns 1
+            mtd15("<b>ptconf</b>\n/dev/mtd15")
+            mtd16("<b>rootsfs_data</b>\n/dev/mtd16")
+        end
+    end
+    classDef transparentBlock fill:transparent,stroke:transparent;
+    classDef boldTitle fill:transparent,stroke:transparent,font-weight:bold;
+    class BOOT,PERSIST transparentBlock
+    class A,B boldTitle
+```
+
+The [WAS-110] uses an A/B architecture, which means there are two adjacent firmware images: an active image
+(the currently running and firmware) and an inactive image. Either image can be selected as active, and upon upgrade,
+the inactive image will be overwritten and become the newly active image after reboot, i.e. committed image.
+
+Furthermore, the OLT has the capability to select the active firmware image, upgrade the inactive image, and reboot
+the ONT. It is therefore recommended to install the community firmware on both A and B slots.
+
+### Web UI upgrade <small>safe</small> { #8311-web-ui-upgrade data-toc-label="Web UI upgrade" }
+
+!!! note "The 8311 community firmware uses the same <ins>safe</ins> [shell upgrade] logic throughout."
+    If you're more comfortable with the CLI, continue to use the [shell upgrade] method.
+
+![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
+
+1. Within a web browser, navigate to 
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/firmware>
+   and, if asked, input your *root* password.
+
+2. From the __Firmware__ page, browse for `local-upgrade.tar` from the extracted download, and click __Upload__.
 
   [Debian]: https://www.debian.org/
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
   [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
+  [supplementary upgrade]: #supplementary-upgrades
+  [shell upgrade]: #shell-upgrade
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
