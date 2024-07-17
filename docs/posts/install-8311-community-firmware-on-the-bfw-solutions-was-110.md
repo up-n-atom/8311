@@ -310,8 +310,9 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
 ### Web UI upgrade <small>safe</small> { #8311-web-ui-upgrade data-toc-label="Web UI upgrade" }
 
-!!! info "The 8311 community firmware re-uses the <ins>safe</ins> [shell upgrade] logic throughout."
-    Those who prefer the CLI may continue to use the [shell upgrade] method.
+!!! info "Safety first and foremost"
+    The 8311 community firmware re-uses the <ins>safe</ins> [shell upgrade] logic throughout. Those who prefer the CLI
+    may continue to use the [shell upgrade] method.
 
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 
@@ -326,7 +327,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
   [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
   [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
   [supplementary upgrade]: #supplementary-upgrades
-  [shell upgrade]: #shell-upgrade
+  [shell upgrade]: #upgrade-firmware
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
