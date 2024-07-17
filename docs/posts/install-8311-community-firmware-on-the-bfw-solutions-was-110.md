@@ -184,8 +184,8 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 !!! danger "Proceed with caution!"
-    The [WAS-110] firmware upgrade utility on occasion has been known to soft-brick itself. To recover, a host device 
-    with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
+    The Azores firmware upgrade utility on occasion is known to soft-brick itself. To recover, a host device with
+    serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
 
     Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
 
@@ -196,6 +196,8 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
    and, if asked, input the *admin* [web credentials]. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
+
+!!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
 
 2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
    __Upgrade__.
@@ -308,8 +310,8 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
 ### Web UI upgrade <small>safe</small> { #8311-web-ui-upgrade data-toc-label="Web UI upgrade" }
 
-!!! note "The 8311 community firmware uses the same <ins>safe</ins> [shell upgrade] logic throughout."
-    If you're more comfortable with the CLI, continue to use the [shell upgrade] method.
+!!! info "The 8311 community firmware re-uses the <ins>safe</ins> [shell upgrade] logic throughout."
+    Those who prefer the CLI may continue to use the [shell upgrade] method.
 
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 
