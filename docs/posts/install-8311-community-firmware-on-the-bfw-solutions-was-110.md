@@ -310,9 +310,9 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
 ### Web UI upgrade <small>safe</small> { #8311-web-ui-upgrade data-toc-label="Web UI upgrade" }
 
-!!! info "Safety first and foremost"
-    The 8311 community firmware re-uses the <ins>safe</ins> [shell upgrade] logic throughout. Those who prefer the CLI
-    may continue to use the [shell upgrade] method.
+!!! info "Integrity first and foremost"
+    The 8311 community firmware re-uses the <ins>safe</ins> shell upgrade logic throughout. Those who prefer the CLI
+    may continue to use the [shell upgrade] method going forward.
 
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 

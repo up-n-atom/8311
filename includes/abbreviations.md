@@ -1,3 +1,4 @@
+*[CLI]: Command Line Interface
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
