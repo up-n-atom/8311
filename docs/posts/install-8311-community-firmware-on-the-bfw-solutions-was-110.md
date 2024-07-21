@@ -36,6 +36,20 @@ the recommended <ins>basic</ins> firmware, which can be downloaded at:
 
 <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
+As an example, the following command downloads the *basic* firmware into the current users download directory.
+
+=== ":material-microsoft: Windows"
+
+    ``` sh
+    curl --output-dir %UserProfile%\Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.4.0/WAS-110_8311_firmware_mod_2.4.0_basic.7z
+    ```
+
+=== ":simple-apple: macOS / :simple-linux: Linux"
+
+    ``` sh
+    curl --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.4.0/WAS-110_8311_firmware_mod_2.4.0_basic.7z
+    ```
+
 The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
 includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. And unlike the *bfw* 
 variant, it does not include the abysmal BFW patches and cruft.
@@ -59,12 +73,14 @@ The community firmware upgrade comes bundled as a [7-Zip] archive and includes:
   [shell upgrade]: #shell-upgrade
   [7-Zip]: https://www.7-zip.org/
 
-To extract the archive, execute the following command(s):
+To extract the archive to a temporary directory, execute the following command(s):
+
+!!! info "Replace `<version>` with the downloaded version."
 
 === ":material-microsoft: Windows"
 
     ``` sh
-    7z e "-i!local-upgrade.*" WAS-110_8311_firmware_mod_<version>_basic.7z
+    7z e "-i!local-upgrade.*" %UserProfile%\Downloads\WAS-110_8311_firmware_mod_<version>_basic.7z -o%Temp%
     ```
 
 === ":simple-apple: macOS"
@@ -73,7 +89,7 @@ To extract the archive, execute the following command(s):
 
     ``` sh
     brew install sevenzip
-    7zz e '-i!local-upgrade.*' WAS-110_8311_firmware_mod_<version>_basic.7z
+    7zz e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp
     ```
 
 === ":simple-linux: Linux"
@@ -82,10 +98,8 @@ To extract the archive, execute the following command(s):
 
     ``` sh
     sudo apt-get install p7zip-full
-    7z e '-i!local-upgrade.*' WAS-110_8311_firmware_mod_<version>_basic.7z #(1)!
+    7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp #(1)!
     ```
-
-    1. Replace `<version>` with the downloaded version.
 
 ### Set a static IP
 
@@ -112,6 +126,8 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
         <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
 
 === ":simple-apple: macOS"
+
+    !!! tip "Replace `<service>` with the SFP+ interface name e.g. `eth9` for the UDM-SE"
 
     ``` sh hl_lines="2"
     sudo networksetup -listallnetworkservices
@@ -249,14 +265,14 @@ Input the *root* [shell credentials] when asked.
 === ":material-microsoft: Windows"
 
     ``` sh
-    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
     ```
 
 === ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh
-    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa local-upgrade.tar root@192.168.11.1:/tmp/
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa /tmp/local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
     ```
 
