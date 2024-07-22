@@ -127,7 +127,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 === ":simple-apple: macOS"
 
-    !!! tip "Replace `<service>` with the SFP+ interface name.
+    !!! tip "Replace `<service>` with the SFP+ interface name."
 
     ``` sh hl_lines="2"
     sudo networksetup -listallnetworkservices
