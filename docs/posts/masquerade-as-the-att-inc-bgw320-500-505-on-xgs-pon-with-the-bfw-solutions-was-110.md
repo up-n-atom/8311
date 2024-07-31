@@ -182,7 +182,7 @@ operational status.
 
 !!! tip "Clone the BGW320-500/505 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
-## BGW320-500/505 software versions
+## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
 The OLT can utilize the software version as a provisioning attribute, as seen in a few deployments. It is recommended
 to stay updated with the version upgrades of the BGW320-500/505.
