@@ -98,8 +98,8 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Equipment ID               | iONT320500G             |              |                         |
         | Hardware Version           | BGW320-500_2.1          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
-        | Software Version A         | BGW320_3.21.4           |              |                         |
-        | Software Version B         | BGW320_3.21.4           |              |                         |
+        | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
+        | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
         | IP Host MAC Address        | E8:B2:FE:FE:FE:70       |              | :purple_circle:         |
 
@@ -145,8 +145,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA BGW320_3.21.4
-    fwenv_set 8311_sw_verB BGW320_3.21.4
+    fwenv_set 8311_sw_verA BGW320_4.27.7
+    fwenv_set 8311_sw_verB BGW320_4.27.7
     ```
     
 === "BGW320-505"
@@ -157,8 +157,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA BGW320_3.21.4
-    fwenv_set 8311_sw_verB BGW320_3.21.4
+    fwenv_set 8311_sw_verA BGW320_4.27.7
+    fwenv_set 8311_sw_verB BGW320_4.27.7
     ```
     
 !!! info "Additional details and variables are described at the original repository [^1]"
@@ -182,8 +182,18 @@ operational status.
 
 !!! tip "Clone the BGW320-500/505 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
+## BGW320-500/505 software versions
+
+The OLT can utilize the software version as a provisioning attribute, as seen in a few deployments. It is recommended
+to stay updated with the version upgrades of the BGW320-500/505.
+
+The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
+<http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following patterned string with the
+version number: `BGW32_X.XX.X`
+
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #bgw320-500-505-label
+  [Version listing]: #bgw320-500-505-software-versions
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
