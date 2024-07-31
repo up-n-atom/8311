@@ -111,8 +111,8 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Equipment ID               | iONT320505G             |              |                         |
         | Hardware Version           | BGW320-505_2.2          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
-        | Software Version A         | BGW320_3.21.4           |              |                         |
-        | Software Version B         | BGW320_3.21.4           |              |                         |
+        | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
+        | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
         | IP Host MAC Address        | 08:9B:B9:27:89:B1       |              | :purple_circle:         |
 
