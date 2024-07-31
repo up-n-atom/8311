@@ -189,7 +189,7 @@ to stay updated with the version upgrades of the BGW320-500/505.
 
 The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
 <http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following patterned string with the
-version number: `BGW32_X.XX.X`
+version number: `BGW320_X.XX.X`
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
