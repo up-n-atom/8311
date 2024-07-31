@@ -18,3 +18,7 @@
 .md-typeset details:not([open]) {
   box-shadow: var(--md-shadow-z1);
 }
+
+.md-typeset pre > code {
+  max-height: var(--md-codeblock-height, 25rem);
+}
