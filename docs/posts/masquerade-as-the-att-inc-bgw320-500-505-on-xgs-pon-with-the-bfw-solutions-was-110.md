@@ -191,6 +191,8 @@ The software version can be acquired by reconnecting the BGW320-500/505 and navi
 <http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following patterned string with the
 version number: `BGW320_X.XX.X`
 
+![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_update.webp)
+
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #bgw320-500-505-label
