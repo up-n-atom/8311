@@ -77,6 +77,8 @@ nav:
     - ONT:
       - BFW Solutions:
         - xgs-pon/ont/bfw-solutions/was-110.md
+      - Potron Technology:
+        - X-ONU-SFPP: xgs-pon/ont/potron-technology/x-onu-sfpp.md
 extra:
   social:
     - icon: fontawesome/brands/discord
