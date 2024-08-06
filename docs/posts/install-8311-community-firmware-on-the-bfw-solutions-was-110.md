@@ -246,7 +246,7 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
     The Azores firmware upgrade utility on occasion is known to soft-brick itself. To recover, a host device with
     serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
 
-    Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
+    Alternatively, jump to the <ins>safer</ins> [shell upgrade](#shell-upgrade) within this guide.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
