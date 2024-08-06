@@ -171,19 +171,21 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
-1. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ target="_blank" }.
+1. [Enable SSH] from the web UI by following the steps outlined below in the shell upgrade section.
+
+2. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ target="_blank" }.
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
     ```
 
-2. Execute the following command sequence from the [WAS-110] remote shell to dump its volumes into the temp directory.
+3. Execute the following command sequence from the [WAS-110] remote shell to dump its volumes into the temp directory.
 
     ``` sh
     mkdir -p /tmp/fw; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootfsB; do VOL=$(ubinfo /dev/ubi0 -N "$part" | grep "Volume ID" | awk '{print $3}'); [ -n "$VOL" ] && { DEV="/dev/ubi0_$VOL"; OUT="/tmp/fw/ubi0_$VOL-$part.img"; echo "Dumping $part ($DEV) to: $OUT"; dd if="$DEV" of="$OUT"; }; done; exit
     ```
 
-3. Execute the following command from the host PC terminal to back-up the dumped volumes to your local user directory.
+4. Execute the following command from the host PC terminal to back-up the dumped volumes to your local user directory.
 
     === ":material-microsoft: Windows"
 
@@ -344,6 +346,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
   [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
   [supplementary upgrade]: #supplementary-upgrades
   [shell upgrade]: #upgrade-firmware
+  [Enable SSH]: #enable-ssh
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
