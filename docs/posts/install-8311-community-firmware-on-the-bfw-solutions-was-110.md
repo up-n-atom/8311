@@ -171,7 +171,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
-1. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials].
+1. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ target="_blank" }.
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
@@ -209,7 +209,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the *admin* [web credentials]. 
+   and, if asked, input the *admin* [web credentials]{ target="_blank" }. 
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
@@ -250,7 +250,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to 
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the *admin* [web credentials].
+   and, if asked, input the *admin* [web credentials]{ target="_blank" }.
 
 ![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_services.webp)
 
@@ -260,7 +260,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-Input the *root* [shell credentials] when asked.
+Input the *root* [shell credentials]{ target="_blank" } when asked.
 
 === ":material-microsoft: Windows"
 
