@@ -199,47 +199,6 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
         cd ~/; scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa 'root@192.168.11.1:/tmp/fw/ubi*' ./
         ```
 
-## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
-
-!!! danger "Proceed with caution!"
-    The Azores firmware upgrade utility on occasion is known to soft-brick itself. To recover, a host device with
-    serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
-
-    Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
-
-![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
-
-1. Within a web browser, navigate to 
-   <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the *admin* [web credentials]{ target="_blank" }. 
-
-![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
-
-!!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
-
-2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
-   __Upgrade__.
-
-Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
-
-??? tip "Run a continuous ping"
-    To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
-
-    === ":material-microsoft: Windows"
-
-        ``` sh
-        ping -t 192.168.11.1
-        ```
-
-    === ":simple-apple: macOS / :simple-linux: Linux"
-
-        ``` sh
-        ping 192.168.11.1
-        ```
-
-Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
-[supplementary upgrade].
-
 ## Shell upgrade <small>recommended</small> { #shell-upgrade data-toc-label="Shell upgrade" }
 
 The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in comparison to the built-in web UI.
@@ -277,6 +236,47 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa /tmp/local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
     ```
+
+Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+[supplementary upgrade].
+
+## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
+
+!!! danger "Proceed with caution!"
+    The Azores firmware upgrade utility on occasion is known to soft-brick itself. To recover, a host device with
+    serial breakout on SFP pins 2 (rx) and 7 (tx) will be required.
+
+    Alternatively, jump past to the <ins>safer</ins> [shell upgrade](#shell-upgrade) method later in this guide.
+
+![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
+
+1. Within a web browser, navigate to 
+   <https://192.168.11.1/html/main.html#admin/upgrade>
+   and, if asked, input the *admin* [web credentials]{ target="_blank" }. 
+
+![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
+
+!!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
+
+2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
+   __Upgrade__.
+
+Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
+
+??? tip "Run a continuous ping"
+    To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
+
+    === ":material-microsoft: Windows"
+
+        ``` sh
+        ping -t 192.168.11.1
+        ```
+
+    === ":simple-apple: macOS / :simple-linux: Linux"
+
+        ``` sh
+        ping 192.168.11.1
+        ```
 
 Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
 [supplementary upgrade].
