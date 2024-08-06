@@ -240,6 +240,32 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
 Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
 [supplementary upgrade].
 
+!!! note "New SSH host keys will be generated"
+    Don't be alarmed when attempting to connect over SSH into the newly installed firmware and the following warning is
+    presented:
+
+    ```
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the ECDSA key sent by the remote host is
+    SHA256:Y3WzWezEYQi5374JfEa4KMm2nqfkj7raMyZIi6TS+X4.
+    Please contact your system administrator.
+    Add correct host key in /home/8311/.ssh/known_hosts to get rid of this message.
+    Offending ECDSA key in /home/8311/.ssh/known_hosts:1
+    Host key for 192.168.11.1 has changed and you have requested strict checking.
+    Host key verification failed.
+    ```
+
+    Simply delete the old host ID by running the following command and retry:
+
+    ```
+    ssh-keygen -R 192.168.11.1
+    ```
+
 ## Web UI upgrade <small>not recommended</small> { #web-ui-upgrade data-toc-label="Web UI upgrade" }
 
 !!! danger "Proceed with caution!"
