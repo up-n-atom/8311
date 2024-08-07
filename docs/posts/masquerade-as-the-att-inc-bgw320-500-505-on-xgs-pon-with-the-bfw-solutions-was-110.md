@@ -184,14 +184,14 @@ operational status.
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
-The OLT can utilize the software version as a provisioning attribute, as seen in a few deployments. It is recommended
-to stay updated with the version upgrades of the BGW320-500/505.
+The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
+software upgrades of the BGW320-500/505 if the WAS-110 reports a fake O5 state.
 
 ![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_update.webp)
 
 The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
-<http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following patterned string with the
-version number: `BGW320_X.XX.X`
+<http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following string pattern with the
+version number: `BGW320_X.XX.X`.
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
