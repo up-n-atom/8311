@@ -101,6 +101,10 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ### from the shell
 
 <h4>Login over SSH</h4>
@@ -165,6 +169,10 @@ reboot
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ## Software versions
 
 The software version is used as a provisioning attribute by the OLT and must be kept up-to-date with the latest
@@ -219,5 +227,6 @@ or submitting a
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
+  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

@@ -87,6 +87,10 @@ depiction:
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ### from the shell
 
 <h4>Login over SSH</h4>
@@ -131,6 +135,10 @@ reboot
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ## Livebox 7 software versions
 
 The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for 
@@ -150,6 +158,7 @@ or submitting a
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #livebox-7-label
   [Version listing]: #livebox-7-software-versions
+  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://en.wikipedia.org/wiki/TR-069>
