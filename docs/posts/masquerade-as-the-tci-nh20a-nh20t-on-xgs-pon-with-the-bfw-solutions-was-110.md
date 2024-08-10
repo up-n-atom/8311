@@ -16,6 +16,20 @@ slug: masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-11
 <!-- more -->
 <!-- nocont -->
 
+## Determine if you're an XGS-PON subscriber
+
+### with the web UI
+
+![NH20A/T login](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_login.webp)
+
+1. Within a web browser, navigate to <https://192.168.1.254> and, if asked, input the *admin* password.
+
+![NH20A/T index](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp)
+
+2. From the index page, verify the broadband bandwidth and wavelength.
+
+If the bandwidth is `10000/10000` and/or wavelength is `1270/1577` you're subscribed on XGS-PON.
+
 ## Purchase a WAS-110
 
 The [WAS-110] is available from select distributors and at a discounted rate with group buys on the
@@ -30,10 +44,13 @@ outlined in the community firmware installation guide:
 
 ## WAS-110 masquerade setup
 
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the front label of the NH20A or NH20T, color-coordinated in the following depiction:
+To successfully masquerade on XGS-PON, the original XGSPON serial number is mandatory. It, along with other key
+identifiers are available on the front label of the NH20A or NH20T under the cover, color-coordinated in the following
+depiction:
 
 <div id="nh20a-nh20t-label"></div>
+
+![NH20A/T label](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
