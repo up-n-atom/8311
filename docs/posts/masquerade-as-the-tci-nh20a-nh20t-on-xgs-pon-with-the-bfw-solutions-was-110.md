@@ -5,6 +5,9 @@ categories:
   - NH20A
   - NH20T
   - WAS-110
+  - Nokia
+  - Technicolor
+  - Vantiva
   - Telus
 description: Masquerade as the Telus Communications Inc. NH20A or NH20T on XGS-PON with the BFW Solutions WAS-110
 slug: masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110
