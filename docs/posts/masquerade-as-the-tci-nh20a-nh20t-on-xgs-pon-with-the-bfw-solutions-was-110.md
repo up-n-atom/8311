@@ -1,6 +1,5 @@
 ---
-draft: true
-date: 2024-06-21
+date: 2024-08-09
 categories:
   - XGS-PON
   - NH20A
@@ -22,7 +21,11 @@ slug: masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-11
 
 ![NH20A/T login](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_login.webp)
 
-1. Within a web browser, navigate to <https://192.168.1.254> and, if asked, input the *admin* password.
+1. Within a web browser, navigate to <https://192.168.1.254> and, if asked, input the *admin* password. (1)
+   { .annotate }
+
+    1. The default admin password is located on the front [label] of the NH20A/T.
+
 
 ![NH20A/T index](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp)
 
@@ -50,7 +53,7 @@ depiction:
 
 <div id="nh20a-nh20t-label"></div>
 
-![NH20A/T label](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp){ class="nolightbox" }
+![NH20A/T label](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_label.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
