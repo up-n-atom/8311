@@ -38,7 +38,7 @@ switcheroo and the more comprehensive [XMO API client](#with-xmo-client).
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is the S/N located on the back [label] of the Home Hub 4000.
+    1. The default Administrator password is located on the back [label] of the Home Hub 4000.
 
 ![Home Hub 4000 WAN mode](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_wan_mode.webp)
 

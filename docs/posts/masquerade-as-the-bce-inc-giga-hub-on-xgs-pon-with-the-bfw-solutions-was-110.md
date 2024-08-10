@@ -36,7 +36,7 @@ and the more comprehensive [XMO API client](#with-xmo-client).
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is the S/N located on the back [label] of the Giga Hub.
+    1. The default Administrator password is located on the back [label] of the Giga Hub.
 
 ![Giga Hub WAN mode](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_wan_mode.webp)
 
