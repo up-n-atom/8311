@@ -58,7 +58,7 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
+    !!! reminder "Reminder"
         <ins>Replace</ins> the mandatory :blue_circle: __PON serial number__ and optional :purple_circle:
         __MAC address__ with the provisioned values on the bottom [label] of the Hub 5x.
 
