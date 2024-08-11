@@ -39,8 +39,6 @@ outlined in the community firmware installation guide:
 
 ## WAS-110 masquerade setup
 
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory.
-
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
 ![WAS-110 login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/was_110_luci_login.webp)
