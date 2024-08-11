@@ -77,6 +77,10 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ### from the shell
 
 <h4>Login over SSH</h4>
@@ -123,6 +127,10 @@ reboot
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
+For troubleshooting, please read:
+
+[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
 ## Hub 5x software versions
 
 The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for
@@ -141,6 +149,7 @@ or submitting a
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #hub-5x-label
   [Version listing]: #hub-5x-software-versions
+  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
 
 [^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
