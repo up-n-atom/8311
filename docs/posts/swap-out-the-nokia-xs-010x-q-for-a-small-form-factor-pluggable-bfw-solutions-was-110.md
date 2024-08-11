@@ -12,6 +12,8 @@ description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable BFW 
 
 # Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable BFW Solutions WAS-110
 
+!!! warning "This is strictly for the form-factor as they're both SFU ONTs"
+
 <!-- more -->
 <!-- nocont -->
 
