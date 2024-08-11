@@ -79,6 +79,7 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         | Sync Circuit Pack Version  | :check_mark:            |                         |
         | Software Version A         | R4.4.08.030             | [Version listing]       |
         | Software Version B         | R4.4.08.030             | [Version listing]       |
+        | Firmware Version Match     | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+    |
         | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
         | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
         | Pon Slot                   | 10                      |                         |
@@ -93,6 +94,7 @@ identifiers are available on the bottom label of the FOX222 or FRX523, color-coo
         | Sync Circuit Pack Version  | :check_mark:            |                         |
         | Software Version A         | R4.4.13.057             | [Version listing]       |
         | Software Version B         | R4.4.13.057             | [Version listing]       |
+        | Firmware Version Match     | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+    |
         | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
         | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
         | Pon Slot                   | 10                      |                         |
@@ -129,12 +131,14 @@ ssh root@192.168.11.1
     fwenv_set 8311_hw_ver FOX222
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA R4.4.08.030 # (1)!
-    fwenv_set 8311_sw_verB R4.4.08.030
+    fwenv_set 8311_sw_verB R4.4.08.030 
+    fwenv_set 8311_fw_match_b64 'XihSXGQrKD86XC5cZCspezN9KSQ=' # (2)!
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
+    2. Execute `echo -n '^(R\d+(?:\.\d+){3})$' | base64` to encode the match pattern
 
 === "FRX523"
 
@@ -145,11 +149,13 @@ ssh root@192.168.11.1
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA R4.4.13.057 # (1)!
     fwenv_set 8311_sw_verB R4.4.13.057
+    fwenv_set 8311_fw_match_b64 'XihSXGQrKD86XC5cZCspezN9KSQ=' # (2)!
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
+    2. Execute `echo -n '^(R\d+(?:\.\d+){3})$' | base64` to encode the match pattern
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
@@ -174,6 +180,12 @@ For troubleshooting, please read:
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
 ## Software versions
+
+!!! info "Automatic software version updater built-in community firmware version(s) 2.5.0+"
+    Firmware upgrades sent over OMCI will be compared against the Firmware Version Match pattern and automatically
+    update the Software Version A/B attributes if there is a match.
+
+    Firmware images are stored in `/tmp/firmware.img` if further analysis is required.
 
 The software version is used as a provisioning attribute by the OLT and must be kept up-to-date with the latest
 version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state until corrected.
