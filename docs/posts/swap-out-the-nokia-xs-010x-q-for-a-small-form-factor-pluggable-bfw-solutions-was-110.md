@@ -105,11 +105,9 @@ fwenv_set 8311_hw_ver 3FE49331AAAB01
 fwenv_set 8311_cp_hw_ver_sync 1
 fwenv_set 8311_sw_verA 3FE49337AOCK10
 fwenv_set 8311_sw_verB 3FE49337AOCK80
-fwenv_set 8311_fw_match_b64 'XigzRkU0OTMzXGRbQS1aXU9DS1xkezJ9KSQ=' # (1)!
+fwenv_set -b 8311_fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
 fwenv_set 8311_pon_slot 10
 ```
-
-1. `echo -n '^(3FE4933\d[A-Z]OCK\d{2})$' | base64` 
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.

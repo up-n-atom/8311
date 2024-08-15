@@ -132,13 +132,12 @@ ssh root@192.168.11.1
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA R4.4.08.030 # (1)!
     fwenv_set 8311_sw_verB R4.4.08.030 
-    fwenv_set 8311_fw_match_b64 'XihSXGQrKD86XC5cZCspezN9KSQ=' # (2)!
+    fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
-    2. Execute `echo -n '^(R\d+(?:\.\d+){3})$' | base64` to encode the match pattern
 
 === "FRX523"
 
@@ -149,13 +148,12 @@ ssh root@192.168.11.1
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA R4.4.13.057 # (1)!
     fwenv_set 8311_sw_verB R4.4.13.057
-    fwenv_set 8311_fw_match_b64 'XihSXGQrKD86XC5cZCspezN9KSQ=' # (2)!
+    fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
     1. [Version listing]
-    2. Execute `echo -n '^(R\d+(?:\.\d+){3})$' | base64` to encode the match pattern
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
