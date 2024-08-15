@@ -87,8 +87,8 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the 
-        provisioned values on the bottom [label] of the BGW320-500/505.
+        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the provisioned value on the bottom [label] of
+        the BGW320-500/505.
 
     === "BGW320-500"
 
@@ -136,8 +136,8 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and optional :purple_circle: __MAC address__ with the 
-    provisioned values on the bottom [label] of the BGW320-500/505.
+    <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the provisioned value on the bottom [label] of the
+    BGW320-500/505.
 
 === "BGW320-500"
 
