@@ -87,7 +87,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ and optional :purple_circle: __MAC address__ with the 
+        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the 
         provisioned values on the bottom [label] of the BGW320-500/505.
 
     === "BGW320-500"
@@ -101,7 +101,6 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
         | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
-        | IP Host MAC Address        | E8:B2:FE:FE:FE:70       |              | :purple_circle:         |
 
     === "BGW320-505"
 
@@ -114,7 +113,6 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
         | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
-        | IP Host MAC Address        | 08:9B:B9:27:89:B1       |              | :purple_circle:         |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -125,7 +123,7 @@ For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
-!!! tip "Clone the BGW320-500/505 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
+!!! tip "Clone the BGW320-500/505 :purple_circle: MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
 ### from the shell
 
@@ -143,8 +141,7 @@ ssh root@192.168.11.1
 
 === "BGW320-500"
 
-    ``` sh hl_lines="2"
-    fwenv_set 8311_iphost_mac E8:B2:FE:FE:FE:70
+    ``` sh hl_lines="1"
     fwenv_set 8311_gpon_sn HUMA03831122
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
@@ -155,8 +152,7 @@ ssh root@192.168.11.1
     
 === "BGW320-505"
 
-    ``` sh hl_lines="2"
-    fwenv_set 8311_iphost_mac 08:9B:B9:27:89:B1
+    ``` sh hl_lines="1"
     fwenv_set 8311_gpon_sn NOKA03831122
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
@@ -188,7 +184,7 @@ For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
-!!! tip "Clone the BGW320-500/505 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
+!!! tip "Clone the BGW320-500/505 :purple_circle: MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
