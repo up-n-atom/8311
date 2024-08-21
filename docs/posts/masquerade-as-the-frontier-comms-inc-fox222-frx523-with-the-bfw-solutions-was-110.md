@@ -15,6 +15,8 @@ slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-
 
 # Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the BFW Solutions WAS-110
 
+!!! warning "This is strictly for the form-factor as they're both SFU ONTs"
+
 ![Bypass family](masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110/bypass_fox222_frx523.webp){ class="nolightbox" }
 
 <!-- more -->
