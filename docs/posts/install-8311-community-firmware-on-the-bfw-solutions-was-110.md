@@ -41,13 +41,13 @@ As an example, the following command downloads the *basic* firmware into the cur
 === ":material-microsoft: Windows"
 
     ``` sh
-    curl --output-dir %UserProfile%\Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.5.0/WAS-110_8311_firmware_mod_2.5.0_basic.7z
+    curl --output-dir %UserProfile%\Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.1/WAS-110_8311_firmware_mod_v2.6.1_basic.exe
     ```
 
 === ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh
-    curl --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.5.0/WAS-110_8311_firmware_mod_2.5.0_basic.7z
+    curl --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.1/WAS-110_8311_firmware_mod_v2.6.1_basic.7z
     ```
 
 The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
@@ -59,7 +59,8 @@ variant, it does not include the abysmal BFW patches and cruft.
 
 ### Extract download
 
-The community firmware upgrade comes bundled as a [7-Zip] archive and includes:
+The community firmware upgrade comes bundled as a self-extracting executable (:material-microsoft: Windows only) or a
+[7-Zip] archive and includes:
 
 `local-upgrade.img`
 
@@ -79,9 +80,17 @@ To extract the archive to a temporary directory, execute the following command(s
 
 === ":material-microsoft: Windows"
 
+    #### Self-extracting Executable
+
+    Double-click on the exe file in [Windows File Explorer]. 
+
+    #### 7-zip
+
     ``` sh
     7z e "-i!local-upgrade.*" %UserProfile%\Downloads\WAS-110_8311_firmware_mod_<version>_basic.7z -o%Temp%
     ```
+
+      [Windows File Explorer]: https://en.wikipedia.org/wiki/File_Explorer
 
 === ":simple-apple: macOS"
 
