@@ -87,7 +87,7 @@ To extract the archive to a temporary directory, execute the following command(s
     #### 7-zip
 
     ``` sh
-    7z e "-i!local-upgrade.*" %UserProfile%\Downloads\WAS-110_8311_firmware_mod_<version>_basic.7z -o%Temp%
+    7z e "-i!local-upgrade.*" %UserProfile%\Downloads\WAS-110_8311_firmware_mod_<version>_basic.7z -o%Temp%\8311
     ```
 
       [Windows File Explorer]: https://en.wikipedia.org/wiki/File_Explorer
@@ -235,7 +235,7 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
 === ":material-microsoft: Windows"
 
     ``` sh
-    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\local-upgrade.tar root@192.168.11.1:/tmp/
+    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
     ```
 
