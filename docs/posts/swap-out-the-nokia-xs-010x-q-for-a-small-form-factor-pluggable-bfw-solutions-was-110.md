@@ -47,7 +47,7 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 
 <div id="xs-010x-q-label"></div>
 
-![XS-010X-Q label](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label.webp)
+![XS-010X-Q label](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
