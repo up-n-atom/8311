@@ -43,6 +43,12 @@ outlined in the community firmware installation guide:
 
 ## WAS-110 masquerade setup
 
+Additionally, mandatory identifiers are available on the back label of the XS-010X-Q, such as ONT P/N, ICS, and CLEI.
+
+<div id="xs-010x-q-label"></div>
+
+![XS-010X-Q label](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label.webp)
+
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
 ![WAS-110 login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/was_110_luci_login.webp)
