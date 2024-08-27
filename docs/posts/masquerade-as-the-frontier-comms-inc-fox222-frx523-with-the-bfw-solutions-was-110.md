@@ -35,7 +35,7 @@ outlined in the community firmware installation guide:
 ## WAS-110 masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the bottom label of the FOX222 or FRX523, color-coordinated in the following depiction:
+identifiers are available on the back label of the FOX222 or FRX523, color-coordinated in the following depiction:
 
 <div id="fox222-frx523-label"></div>
 
