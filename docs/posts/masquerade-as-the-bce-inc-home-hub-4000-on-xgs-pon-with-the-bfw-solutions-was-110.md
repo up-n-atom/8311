@@ -109,6 +109,11 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
 ![Home Hub 4000 label](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_label.webp){ class="nolightbox" id="home-hub-4000-label" }
 
+!!! note
+     The label has the __LAN MAC address__, whereas you will want to configure
+     the WAS-110 with the :purple_circle: __WAN MAC Address__, which is the LAN
+     address + 1, i.e. in this case  `40:65:A3:FF:A7:B0` would become `40:65:A3:FF:A7:B1`.
+
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
 ![WAS-110 login](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
@@ -127,7 +132,7 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
     !!! reminder 
         <ins>Replace</ins> the :blue_circle: mandatory __PON serial number__ and optional :purple_circle:
-        __MAC address__ with the provisioned values on the back [label] of the Home Hub 4000.
+        __WAN MAC address__ with the provisioned values on the back [label] of the Home Hub 4000.
 
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ |-------------------------------- |
@@ -138,7 +143,7 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
     | Software Version A         | SGC8210154                   |              | [Version listing]               |
     | Software Version B         | SGC8210154                   |              | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini | :check_mark: | VEIP and more                   |
-    | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: MAC address + 1 |
+    | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: WAN MAC address / LAN MAC address + 1 |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -160,8 +165,9 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __PON serial number__ and optional :purple_circle: __MAC address__
-    with the provisioned values on the back [label] of the Home Hub 4000.
+    <ins>Replace</ins> the mandatory :blue_circle: __PON serial number__ and
+    optional :purple_circle: __WAN MAC address__
+    with the provisioned values from the back [label] of the Home Hub 4000.
 
 ``` sh hl_lines="1 3 9"
 fwenv_set mib_file
@@ -175,8 +181,9 @@ fwenv_set 8311_sw_verB SGC8210154
 fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
 ```
 
-1. :purple_circle: MAC address + 1, e.g. 
-   `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
+1. :purple_circle: WAN MAC address/LAN MAC address + 1, e.g. `40:65:A3:FF:A7:B0`
+   that was on the label becomes `40:65:A3:FF:A7:B1`
+
 2. [Version listing]
 
 !!! info "Additional details and variables are described at the original repository [^2]"
