@@ -77,34 +77,34 @@ depiction:
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned value on the bottom [label] of 
+        <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the provisioned value on the bottom [label] of 
         the NH20A or NH20T.
 
     !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
 
     === "NH20A"
 
-        | Attribute                  | Value                         | Remarks                 |
-        | -------------------------- | ----------------------------- | ----------------------- |
-        | PON Serial Number (ONT ID) | ARCB11228311                  | :blue_circle:           |
-        | Equipment ID               | NH20A                         |                         |
-        | Hardware Version           | PRV650AB-S-TS                 |                         |
-        | Sync Circuit Pack Version  | :check_mark:                  |                         |
-        | Software Version A         | 3FEARCB1001505                | [Version listing]       |
-        | Software Version B         | 3FEARCB1001505                | [Version listing]       |
-        | MIB File                   | /etc/mibs/prx300_1U_telus.ini | PPTP                    |
+        | Attribute                  | Value                         | Remarks                  |
+        | -------------------------- | ----------------------------- | ------------------------ |
+        | PON Serial Number (ONT ID) | ARCB11228311                  | :blue_circle: XGSPON S/N |
+        | Equipment ID               | NH20A                         |                          |
+        | Hardware Version           | PRV650AB-S-TS                 |                          |
+        | Sync Circuit Pack Version  | :check_mark:                  |                          |
+        | Software Version A         | 3FEARCB1001505                | [Version listing]        |
+        | Software Version B         | 3FEARCB1001505                | [Version listing]        |
+        | MIB File                   | /etc/mibs/prx300_1U_telus.ini | PPTP                     |
 
     === "NH20T"
 
-        | Attribute                  | Value                         | Remarks                 |
-        | -------------------------- | ----------------------------- | ----------------------- |
-        | PON Serial Number (ONT ID) | TMBB11228311                  | :blue_circle:           |
-        | Equipment ID               | NH20A                         |                         |
-        | Hardware Version           | GCNT-K                        |                         |
-        | Sync Circuit Pack Version  | :check_mark:                  |                         |
-        | Software Version A         | 3FEARCB1001505                | [Version listing]       |
-        | Software Version B         | 3FEARCB1001505                | [Version listing]       |
-        | MIB File                   | /etc/mibs/prx300_1U_telus.ini | PPTP                    |
+        | Attribute                  | Value                         | Remarks                  |
+        | -------------------------- | ----------------------------- | ------------------------ |
+        | PON Serial Number (ONT ID) | TMBB11228311                  | :blue_circle: XGSPON S/N |
+        | Equipment ID               | NH20A                         |                          |
+        | Hardware Version           | GCNT-K                        |                          |
+        | Sync Circuit Pack Version  | :check_mark:                  |                          |
+        | Software Version A         | 3FEARCB1001505                | [Version listing]        |
+        | Software Version B         | 3FEARCB1001505                | [Version listing]        |
+        | MIB File                   | /etc/mibs/prx300_1U_telus.ini | PPTP                     |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -125,7 +125,7 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder
-    <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned value on the bottom [label] of the 
+    <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom [label] of the 
     NH20A or NH20T.
 
 !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
@@ -134,31 +134,33 @@ ssh root@192.168.11.1
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn ARCB11228311
+    fwenv_set 8311_gpon_sn ARCB11228311 # (1)!
     fwenv_set 8311_equipment_id NH20A
     fwenv_set 8311_hw_ver PRV650AB-S-TS
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA 3FEARCB1001505 # (1)!
+    fwenv_set 8311_sw_verA 3FEARCB1001505 # (2)!
     fwenv_set 8311_sw_verB 3FEARCB1001505
     fwenv_set 8311_mib_file /etc/mibs/prx300_1U_telus.ini
     ```
 
-    1. [Version listing]
+    1. :blue_circle: XGSPON S/N
+    2. [Version listing]
 
 === "NH20T"
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn TMBB11228311
+    fwenv_set 8311_gpon_sn TMBB11228311 # (1)!
     fwenv_set 8311_equipment_id NH20T
     fwenv_set 8311_hw_ver GCNT-K
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA 3FEARCB1001505 # (1)!
+    fwenv_set 8311_sw_verA 3FEARCB1001505 # (2)!
     fwenv_set 8311_sw_verB 3FEARCB1001505
     fwenv_set 8311_mib_file /etc/mibs/prx300_1U_telus.ini
     ```
 
-    1. [Version listing]
+    1. :blue_circle: XGSPON S/N
+    2. [Version listing]
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.

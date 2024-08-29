@@ -64,7 +64,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        <ins>Replace</ins> the :blue_circle: **PON serial number** with the provisioned value on the bottom [label] of 
+        <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the provisioned value on the bottom [label] of 
         the FOX222 or FRX523.
 
     !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
@@ -73,7 +73,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                  | Value                   | Remarks                 |
         | -------------------------- | ----------------------- | ----------------------- |
-        | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle:           |
+        | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle: S/N       |
         | Equipment ID               | FOX222                  |                         |
         | Hardware Version           | FOX222                  |                         |
         | Sync Circuit Pack Version  | :check_mark:            |                         |
@@ -88,7 +88,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                  | Value                   | Remarks                 |
         | -------------------------- | ----------------------- | ----------------------  |
-        | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:           |
+        | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:  S/N      |
         | Equipment ID               | FRX523                  |                         |
         | Hardware Version           | FRX523                  |                         |
         | Sync Circuit Pack Version  | :check_mark:            |                         |
@@ -118,7 +118,7 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder
-    <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned value on the bottom [label] of the 
+    <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom [label] of the 
     FOX222 or FRX523.
 
 !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
@@ -126,34 +126,36 @@ ssh root@192.168.11.1
 === "FOX222"
 
     ``` sh
-    fwenv_set 8311_gpon_sn FTRO0A0A803A
+    fwenv_set 8311_gpon_sn FTRO0A0A803A # (1)!
     fwenv_set 8311_equipment_id FOX222
     fwenv_set 8311_hw_ver FOX222
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA R4.4.08.030 # (1)!
+    fwenv_set 8311_sw_verA R4.4.08.030 # (2)!
     fwenv_set 8311_sw_verB R4.4.08.030 
     fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
-    1. [Version listing]
+    1. :blue_circle: S/N
+    2. [Version listing]
 
 === "FRX523"
 
     ``` sh
-    fwenv_set 8311_gpon_sn FTRO27900CD6
+    fwenv_set 8311_gpon_sn FTRO27900CD6 # (1)!
     fwenv_set 8311_equipment_id FRX523
     fwenv_set 8311_hw_ver FRX523
     fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA R4.4.13.057 # (1)!
+    fwenv_set 8311_sw_verA R4.4.13.057 # (2)!
     fwenv_set 8311_sw_verB R4.4.13.057
     fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
 
-    1. [Version listing]
+    1. :blue_circle: S/N
+    2. [Version listing]
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.

@@ -87,14 +87,14 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder 
-        <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the provisioned value on the bottom [label] of
-        the BGW320-500/505.
+        <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ with the provisioned value on the bottom
+        [label] of the BGW320-500/505.
 
     === "BGW320-500"
 
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle:           |
+        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle: ONT ID    |
         | Equipment ID               | iONT320500G             |              |                         |
         | Hardware Version           | BGW320-500_2.1          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
@@ -106,7 +106,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle:            |
+        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle: ONT ID     |
         | Equipment ID               | iONT320505G             |              |                         |
         | Hardware Version           | BGW320-505_2.2          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
@@ -136,13 +136,13 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __ONT ID__ with the provisioned value on the bottom [label] of the
-    BGW320-500/505.
+    <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
+    [label] of the BGW320-500/505.
 
 === "BGW320-500"
 
     ``` sh hl_lines="1"
-    fwenv_set 8311_gpon_sn HUMA03831122
+    fwenv_set 8311_gpon_sn HUMA03831122 # (1)!
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
     fwenv_set 8311_cp_hw_ver_sync 1
@@ -153,7 +153,7 @@ ssh root@192.168.11.1
 === "BGW320-505"
 
     ``` sh hl_lines="1"
-    fwenv_set 8311_gpon_sn NOKA03831122
+    fwenv_set 8311_gpon_sn NOKA03831122 # (1)!
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
     fwenv_set 8311_cp_hw_ver_sync 1
@@ -184,7 +184,7 @@ For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
-!!! tip "Clone the BGW320-500/505 :purple_circle: MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
+!!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 

@@ -66,22 +66,22 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
-        <ins>Replace</ins> the __serial number__, __MAC address__, __registration ID__, and __software versions__ with
-        the provisioned values.
+        <ins>Replace</ins> the __PON Serial Number__, __IP Host MAC address__, __Registration ID__, and
+        __Software Version A/B__ with the provisioned values.
 
     | Attribute                  | Value                         | Remarks                                    |
     | -------------------------- | ----------------------------- | ------------------------------------------ |
-    | PON Serial Number (ONT ID) | ALCLFC1D37D3                  |                                            |
+    | PON Serial Number (ONT ID) | ALCLFC1D37D3                  | Serial number                              |
     | Equipment ID               | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
-    | Hardware Version           | 3FE49331AAAB01                | ONT Product No. + ICS                      |
+    | Hardware Version           | 3FE49331AAAB01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version  | :check_mark:                  |                                            |
-    | Software Version A         | 3FE49337AOCK10                |                                            |
-    | Software Version B         | 3FE49337AOCK80                |                                            |
+    | Software Version A         | 3FE49337AOCK10                | Active software version                    |
+    | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
     | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
     | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
     | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
     | PON Slot                   | 10                            |                                            |
-    | IP Host MAC Address        | FC:B2:D6:18:47:40             |                                            |
+    | IP Host MAC Address        | FC:B2:D6:18:47:40             | MAC ID                                     |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -102,20 +102,25 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
-    <ins>Replace</ins> the __serial number__, __MAC address__, __registration ID__, and __software versions__ with
+    <ins>Replace</ins> the __8311_gpon_sn__, __8311_iphost_mac__, and __8311_sw_verA/B__ with
     the provisioned values.
 
 ``` sh
-fwenv_set 8311_iphost_mac FC:B2:D6:18:47:40
-fwenv_set 8311_gpon_sn ALCLFC1D37D3
-fwenv_set 8311_equipment_id BVMGY10BRAXS010XQ
-fwenv_set 8311_hw_ver 3FE49331AAAB01
+fwenv_set 8311_iphost_mac FC:B2:D6:18:47:40 # (1)!
+fwenv_set 8311_gpon_sn ALCLFC1D37D3 # (2)!
+fwenv_set 8311_equipment_id BVMGY10BRAXS010XQ # (3)!
+fwenv_set 8311_hw_ver 3FE49331AAAB01 # (4)!
 fwenv_set 8311_cp_hw_ver_sync 1
 fwenv_set 8311_sw_verA 3FE49337AOCK10
 fwenv_set 8311_sw_verB 3FE49337AOCK80
 fwenv_set -b 8311_fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
 fwenv_set 8311_pon_slot 10
 ```
+
+1. MAC ID
+2. Serial number or S/N
+3. CLEI + Mnemonic
+4. ONT P/N + ICS
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
