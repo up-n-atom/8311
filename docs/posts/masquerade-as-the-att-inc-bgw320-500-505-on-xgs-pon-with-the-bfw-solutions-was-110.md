@@ -150,6 +150,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verB BGW320_4.27.7
     ```
     
+    1. :blue_circle: ONT ID
+    
 === "BGW320-505"
 
     ``` sh hl_lines="1"
@@ -161,6 +163,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verB BGW320_4.27.7
     ```
     
+    1. :blue_circle: ONT ID
+
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
