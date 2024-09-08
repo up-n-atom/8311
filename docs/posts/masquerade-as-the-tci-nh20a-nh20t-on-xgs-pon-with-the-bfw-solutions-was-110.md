@@ -99,7 +99,7 @@ depiction:
         | Attribute                  | Value                         | Remarks                  |
         | -------------------------- | ----------------------------- | ------------------------ |
         | PON Serial Number (ONT ID) | TMBB11228311                  | :blue_circle: XGSPON S/N |
-        | Equipment ID               | NH20A                         |                          |
+        | Equipment ID               | NH20T                         |                          |
         | Hardware Version           | GCNT-K                        |                          |
         | Sync Circuit Pack Version  | :check_mark:                  |                          |
         | Software Version A         | 3FEARCB1001505                | [Version listing]        |
