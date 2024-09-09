@@ -24,8 +24,8 @@ description: Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW So
 !!! info "3 Gbps or higher packages"
     If you're subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase a WAS-110].
 
-There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-web-ui) WAN mode 
-switcheroo and the more comprehensive [XMO API client](#with-xmo-client). 
+There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-the-web-ui) WAN mode 
+switcheroo and the more comprehensive [XMO API client](#with-a-xmo-client). 
 
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 

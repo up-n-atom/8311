@@ -66,7 +66,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
     2. From the __PON Status__ page, select the __Optical Status__ tab.
-    3. Evaluate __Transmit power__ and __Receive power__ are within [spec](#optical-specification).
+    3. Evaluate __Transmit power__ and __Receive power__ are within [spec](#optical-specifications).
 
     <h5>from the Linux shell</h5>
 
@@ -83,7 +83,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
        [web credentials].
     2. From the __Status__ tab, select the __PON__ page.
-    3. Evaluate __Tx Power(dBm)__ and __Rx Power(dBm)__ are within [spec](#optical-specification).
+    3. Evaluate __Tx Power(dBm)__ and __Rx Power(dBm)__ are within [spec](#optical-specifications).
 
     <h5>from the Linux shell</h5>
 
