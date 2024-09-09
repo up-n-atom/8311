@@ -10,10 +10,13 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.mark
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
@@ -24,6 +27,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tilde
   - sane_lists
   - tables
   - toc:
