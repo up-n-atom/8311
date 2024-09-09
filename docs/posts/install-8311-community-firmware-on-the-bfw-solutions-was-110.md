@@ -119,9 +119,9 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
     !!! tip "Run Command Prompt as Administrator"
 
-        1. Press <kbd>Win</kbd> + <kbd>R</kbd>
+        1. Press ++win+r++
         2. In the Run dialog box, type `cmd` into the input field and then press
-           <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>. 
+           ++ctrl+shift+enter++. 
 
     ``` sh hl_lines="2"
     netsh interface ip show config
