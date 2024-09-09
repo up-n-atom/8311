@@ -76,9 +76,11 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 ## Value-Added Resellers
 
-| Company                                             | Product Number    | E-commerce   |
-| --------------------------------------------------- | ----------------- | ------------ |
-| [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |              |
+| Company                                             | Product Number    | E-commerce            |
+| --------------------------------------------------- | ----------------- | --------------------- |
+| [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          | [Alibaba]             |
+
+  [Alibaba]: https://quanjingtong.en.alibaba.com/index.html
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
