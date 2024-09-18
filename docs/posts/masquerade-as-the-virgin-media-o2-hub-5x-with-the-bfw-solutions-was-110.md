@@ -54,7 +54,7 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
 
-![WAS-110 8311 configuration](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
+![WAS-110 8311 configuration PON](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
@@ -73,7 +73,13 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
     | IP Host MAC Address        | C4:EB:43:00:00:01             |              | :purple_circle: MAC     |
 
-3. __Save__ changes and reboot from the __System__ menu.
+![WAS-110 8311 configuration ISP Fixes](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/was_110_luci_config_fixes.webp)
+
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
+
+    !!! note "Tag your __WAN__ interface and/or anything in-between the WAS-110 with VLAN 100"
+
+4. __Save__ changes and reboot from the __System__ menu.
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
