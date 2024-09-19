@@ -79,8 +79,6 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
     !!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 
-Clone the BGW320-500/505 🟣 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
-
 4. __Save__ changes and reboot from the __System__ menu.
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
