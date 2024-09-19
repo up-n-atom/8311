@@ -367,6 +367,10 @@ the ONT. It is therefore recommended to install the community firmware on both A
     The 8311 community firmware re-uses the <ins>safe</ins> shell upgrade logic throughout. Those who prefer the CLI
     may continue to use the [shell upgrade] method going forward.
 
+    Furthermore, the 8311 community firmware includes an up-to-date `dropbear` build, which does not require the use
+    of weak algorithms when using an SSH client, i.e. `-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa`
+    can be removed.
+
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 
 1. Within a web browser, navigate to 
