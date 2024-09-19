@@ -77,7 +77,9 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    !!! note "Tag your __WAN__ interface and/or anything in-between the WAS-110 with VLAN 100"
+    !!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
+
+Clone the BGW320-500/505 🟣 MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
 4. __Save__ changes and reboot from the __System__ menu.
 
@@ -111,6 +113,7 @@ fwenv_set 8311_cp_hw_ver_sync 1
 fwenv_set 8311_sw_verA 3.7.4-2306.5 # (3)!
 fwenv_set 8311_sw_verB 3.7.4-2306.5
 fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini
+fwenv_set 8311_fix_vlans 0
 ```
 
 1. :purple_circle: MAC
@@ -134,6 +137,8 @@ reboot
 ```
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
+
+!!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 
 For troubleshooting, please read:
 
