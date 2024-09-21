@@ -94,6 +94,8 @@ To extract the archive to a temporary directory, execute the following command(s
 
 === ":simple-apple: macOS"
 
+    !!! bug "macOS Archive Utility mangles the extracted local-upgrade.tar"
+
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
     ``` sh
