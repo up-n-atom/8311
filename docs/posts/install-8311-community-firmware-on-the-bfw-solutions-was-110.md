@@ -94,7 +94,7 @@ To extract the archive to a temporary directory, execute the following command(s
 
 === ":simple-apple: macOS"
 
-    !!! bug "macOS Archive Utility mangles the extracted local-upgrade.tar"
+    !!! bug "macOS Archive Utility mangles the extracted `local-upgrade.tar`"
 
     !!! note "The following commands assume [Homebrew](https://brew.sh) is installed"
 
@@ -141,9 +141,11 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     !!! tip "Replace `<service>` with the SFP+ interface name."
 
     ``` sh hl_lines="2"
-    sudo networksetup -listallnetworkservices
+    sudo networksetup -listallnetworkservices # (1)!
     sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
     ```
+
+    1. Replace `<service>` in the next command with a network service from the output.
 
     ??? info "For the shameless mouse clickers..."
         If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
