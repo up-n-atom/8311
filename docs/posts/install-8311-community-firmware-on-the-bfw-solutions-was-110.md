@@ -41,13 +41,13 @@ As an example, the following command downloads the *basic* firmware into the cur
 === ":material-microsoft: Windows"
 
     ``` sh
-    curl --output-dir %UserProfile%\Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.1/WAS-110_8311_firmware_mod_v2.6.1_basic.exe
+    curl -L --output-dir %UserProfile%\Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.5/WAS-110_8311_firmware_mod_v2.6.5_basic.exe
     ```
 
 === ":simple-apple: macOS / :simple-linux: Linux"
 
     ``` sh
-    curl --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.1/WAS-110_8311_firmware_mod_v2.6.1_basic.7z
+    curl -L --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.5/WAS-110_8311_firmware_mod_v2.6.5_basic.7z
     ```
 
 The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
