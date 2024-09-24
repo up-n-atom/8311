@@ -125,6 +125,13 @@ For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
+!!! note "Do not be alarmed..."
+    If you receive an e-mail and/or text informing you to:
+
+    > Check your AT&T Fiber equipment since you might be offline currently.
+
+    The BGW-500/505 sends telemetry data to *better* the customer experience.
+
 ### from the shell
 
 <h4>Login over SSH</h4>
@@ -189,6 +196,13 @@ operational status.
 For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
+!!! note "Do not be alarmed..."
+    If you receive an e-mail and/or text informing you to:
+
+    > Check your AT&T Fiber equipment since you might be offline currently.
+
+    The BGW-500/505 sends telemetry data to *better* the customer experience.
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
