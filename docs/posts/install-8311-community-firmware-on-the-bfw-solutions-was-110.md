@@ -376,7 +376,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
     `-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa`
 
-    can be removed from the command.
+    can be removed from future command usage.
 
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 
