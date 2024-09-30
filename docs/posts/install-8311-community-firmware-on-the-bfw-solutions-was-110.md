@@ -203,7 +203,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     === ":material-microsoft: Windows"
 
         ``` sh
-        cd /D %UserProfile% & scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+        cd /D %UserProfile%; scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
         ```
 
     === ":simple-apple: macOS / :simple-linux: Linux"
