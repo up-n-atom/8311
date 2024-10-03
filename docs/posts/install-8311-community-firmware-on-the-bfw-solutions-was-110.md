@@ -13,9 +13,9 @@ description: Install 8311 community firmware on the BFW Solutions WAS-110
 <!-- more -->
 <!-- nocont -->
 
-Out of the box, the [WAS-110] is not fully compatible with varying ISP OLT configurations, with issues ranging from 
-vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these 
-incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2]. 
+Out of the box, the [WAS-110] is not fully compatible with varying ISP OLT configurations, with issues ranging from
+vendor-specific managed entities to VEIP to IEEE standards such as [802.1X] and [802.1ad]. Due to these
+incompatibilities and discovered bugs, a community firmware[^1] has been curated to fix any impeding issues[^2].
 
   [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
   [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
@@ -26,7 +26,7 @@ Plug the [WAS-110] into a 10-gigabit compatible SFP+ host interface, such as a N
 switch.
 
 !!! note "Rx loss"
-    The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or 
+    The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or
     inactive. Some host interfaces will enter a power-saving state, making the [WAS-110] inaccessible.
 
 ### Download firmware
@@ -50,8 +50,8 @@ As an example, the following command downloads the *basic* firmware into the cur
     curl -L --output-dir ~/Downloads -O https://github.com/djGrrr/8311-was-110-firmware-builder/releases/download/v2.6.5/WAS-110_8311_firmware_mod_v2.6.5_basic.7z
     ```
 
-The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it 
-includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. And unlike the *bfw* 
+The *basic* firmware is based on a vanilla MaxLinear [OpenWrt] 19.07 build from [Potrontec]. Additionally, it
+includes customized luci web interfaces for hassle-free masquerading and the aforementioned fixes. And unlike the *bfw*
 variant, it does not include the abysmal BFW patches and cruft.
 
   [OpenWrt]: https://openwrt.org/
@@ -82,7 +82,7 @@ To extract the archive to a temporary directory, execute the following command(s
 
     #### Self-extracting Executable
 
-    Double-click on the exe file in [Windows File Explorer]. 
+    Double-click on the exe file in [Windows File Explorer].
 
     #### 7-zip
 
@@ -123,7 +123,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 
         1. Press ++win+r++
         2. In the Run dialog box, type `cmd` into the input field and then press
-           ++ctrl+shift+enter++. 
+           ++ctrl+shift+enter++.
 
     ``` sh hl_lines="2"
     netsh interface ip show config
@@ -189,7 +189,7 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
 2. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ target="_blank" }.
 
     ``` sh
-    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1
     ```
 
 3. Execute the following command sequence from the [WAS-110] remote shell to dump its volumes into the temp directory.
@@ -222,7 +222,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
-1. Within a web browser, navigate to 
+1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#service/servicecontrol>
    and, if asked, input the *admin* [web credentials]{ target="_blank" }.
 
@@ -289,15 +289,15 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
 
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_login.webp)
 
-1. Within a web browser, navigate to 
+1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the *admin* [web credentials]{ target="_blank" }. 
+   and, if asked, input the *admin* [web credentials]{ target="_blank" }.
 
 ![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_upgrade.webp)
 
 !!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
 
-2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click 
+2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click
    __Upgrade__.
 
 Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
@@ -380,7 +380,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
 
-1. Within a web browser, navigate to 
+1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/firmware>
    and, if asked, input your *root* password.
 

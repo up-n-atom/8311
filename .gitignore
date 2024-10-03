@@ -10,3 +10,6 @@
 *.sln
 *.sw?
 .settings
+
+# rendered html is ignored
+site
