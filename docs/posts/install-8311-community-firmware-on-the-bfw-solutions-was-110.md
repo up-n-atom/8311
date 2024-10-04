@@ -112,7 +112,7 @@ To extract the archive to a temporary directory, execute the following command(s
     7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp #(1)!
     ```
 
-### Make WAS-110 routable
+### Set a static route
 
 The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, you must have
 a route to this IP.
@@ -123,11 +123,11 @@ a route to this IP.
 
     1. Set the SFP port as the WAN interface. This is under **Network**, **Settings**, **Internet**.
 
-    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan.webp)
+    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
 
     2. Create a static route pointing at the WAN interface. This is under **Network**, **Settings**, **Routing**, **Static Routes**
 
-    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_route.webp)
+    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
 
 You should now be able to access the WAS-110 at `192.168.11.1`.
 
