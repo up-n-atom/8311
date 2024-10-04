@@ -121,10 +121,12 @@ a route to this IP.
 
     !!! note "The following instructions were written for a UDM Pro, but might be useful on any Ubiquity device with a WAN SFP port"
 
-    1. Set the SFP port as the WAN interface
+    1. Set the SFP port as the WAN interface. This is under **Network**, **Settings**, **Internet**.
+
     ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan.webp)
 
-    2. Create a static route pointing at the WAN interface
+    2. Create a static route pointing at the WAN interface. This is under **Network**, **Settings**, **Routing**, **Static Routes**
+
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_route.webp)
 
 You should now be able to access the WAS-110 at `192.168.11.1`.
