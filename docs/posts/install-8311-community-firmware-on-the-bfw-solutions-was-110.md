@@ -190,7 +190,6 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     ip address show dev <interface>
     ```
 
-
 === ":simple-ubiquiti: Ubiquiti"
 
     !!! note "The following command sets the IP address <ins>temporarily</ins> until the next power cycle"
@@ -201,7 +200,6 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     ip addr add dev <interface> local 192.168.11.2/24
     iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
     ```
-
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
