@@ -112,6 +112,23 @@ To extract the archive to a temporary directory, execute the following command(s
     7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp #(1)!
     ```
 
+### Make WAS-110 routable
+
+The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, you must have
+a route to this IP.
+
+=== ":simple-ubiquiti: Ubiquiti"
+
+    !!! note "The following instructions were written for a UDM Pro, but might be useful on any Ubiquity device with a WAN SFP port"
+
+    1. Set the SFP port as the WAN interface
+    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan.webp)
+
+    2. Create a static route pointing at the WAN interface
+    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_route.webp)
+
+You should now be able to access the WAS-110 at `192.168.11.1`.
+
 ### Set a static IP
 
 The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, a static IP address must be
@@ -169,17 +186,6 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     ip route flush dev <interface>
     ip address add 192.168.11.2/24 dev <interface>
     ip address show dev <interface>
-    ```
-
-=== ":simple-ubiquiti: Ubiquiti"
-
-    !!! note "The following command sets the IP address <ins>temporarily</ins> until the next power cycle"
-
-    !!! tip "Replace `<interface>` with the SFP+ interface name e.g. `eth9` for the UDM-SE"
-
-    ``` sh hl_lines="1"
-    ip addr add dev <interface> local 192.168.11.2/24
-    iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
     ```
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
