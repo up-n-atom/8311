@@ -210,6 +210,8 @@ listing, but it is not strictly necessary.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
+| 2.13             | SGC84000AE                |
+| ?                | SGC8400090                |
 | 1.7.11           | SGC8210154                |
 | 1.7.8.1          | SGC8210140                |
 | 1.7.2            | SGC821011A                |
