@@ -1,0 +1,24 @@
+@-moz-document url-prefix() {
+  .md-typeset kbd {
+    display:unset;
+    vertical-align:unset;
+  }
+  
+  .md-typeset .admonition,
+  .md-typeset details {
+    font-size:inherit;
+  }
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+}
+
+.md-typeset details:not([open]) {
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-typeset pre > code {
+  max-height: var(--md-codeblock-height, 25rem);
+}
