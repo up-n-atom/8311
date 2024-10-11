@@ -136,7 +136,11 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini | :check_mark: | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: @MAC + 1        |
 
-3. __Save__ changes and reboot from the __System__ menu.
+![WAS-110 8311 configuration ISP Fixes](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config_fixes.webp)
+
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
+
+4. __Save__ changes and reboot from the __System__ menu.
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
@@ -159,7 +163,7 @@ ssh root@192.168.11.1
     <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle:
     __8311_iphost_mac__ with the provisioned values on the back [label] of the Giga Hub.
 
-``` sh hl_lines="1 3 9"
+``` sh hl_lines="1 3 9 10"
 fwenv_set mib_file
 fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
 fwenv_set 8311_gpon_sn SMBS03831122 # (2)!
@@ -169,6 +173,7 @@ fwenv_set 8311_cp_hw_ver_sync 1
 fwenv_set 8311_sw_verA SGC8400058 # (3)!
 fwenv_set 8311_sw_verB SGC8400058
 fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
+fwenv_set 8311_fix_vlans 1
 ```
 
 1. :purple_circle: @MAC + 1, e.g. `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`

@@ -114,7 +114,11 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
 
-3. __Save__ changes and reboot from the __System__ menu.
+![WAS-110 8311 configuration ISP Fixes](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config_fixes.webp)
+
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
+
+4. __Save__ changes and reboot from the __System__ menu.
 
 Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
 operational status.
@@ -148,26 +152,28 @@ ssh root@192.168.11.1
 
 === "BGW320-500"
 
-    ``` sh hl_lines="1"
+    ``` sh hl_lines="1 7"
     fwenv_set 8311_gpon_sn HUMA03831122 # (1)!
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA BGW320_4.27.7
     fwenv_set 8311_sw_verB BGW320_4.27.7
+    fwenv_set 8311_fix_vlans 1
     ```
     
     1. :blue_circle: ONT ID
     
 === "BGW320-505"
 
-    ``` sh hl_lines="1"
+    ``` sh hl_lines="1 7"
     fwenv_set 8311_gpon_sn NOKA03831122 # (1)!
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
     fwenv_set 8311_cp_hw_ver_sync 1
     fwenv_set 8311_sw_verA BGW320_4.27.7
     fwenv_set 8311_sw_verB BGW320_4.27.7
+    fwenv_set 8311_fix_vlans 1
     ```
     
     1. :blue_circle: ONT ID
