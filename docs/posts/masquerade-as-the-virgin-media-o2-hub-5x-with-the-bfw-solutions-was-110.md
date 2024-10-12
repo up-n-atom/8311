@@ -64,7 +64,7 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
     | -------------------------- | ----------------------------- | ------------ | ----------------------- |
-    | PON Serial Number (ONT ID) | SMBS13E78311                  | :check_mark: | :blue_circle: PON S/N   |
+    | PON Serial Number (ONT ID) | SMBS&hellip;                  | :check_mark: | :blue_circle: PON S/N   |
     | Equipment ID               | F5685LGB                      |              |                         |
     | Hardware Version           | 1.2.1b                        |              |                         |
     | Sync Circuit Pack Version  | :check_mark:                  |              |                         |
@@ -104,7 +104,7 @@ ssh root@192.168.11.1
 ``` sh hl_lines="1 3 9"
 fwenv_set mib_file
 fwenv_set 8311_iphost_mac C4:EB:43:00:00:01 # (1)!
-fwenv_set 8311_gpon_sn SMBS13E78311 # (2)!
+fwenv_set 8311_gpon_sn SMBS... # (2)!
 fwenv_set 8311_equipment_id F5685LGB
 fwenv_set 8311_hw_ver 1.2.1b
 fwenv_set 8311_cp_hw_ver_sync 1

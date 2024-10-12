@@ -127,7 +127,7 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
 
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ | ------------------------------- |
-    | PON Serial Number (ONT ID) | SMBS03831122                 | :check_mark: | :blue_circle: ONT S/N           |
+    | PON Serial Number (ONT ID) | SMBS&hellip;                 | :check_mark: | :blue_circle: ONT S/N           |
     | Equipment ID               | 5690                         |              |                                 |
     | Hardware Version           | Fast5689EBell                |              |                                 |
     | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
@@ -166,7 +166,7 @@ ssh root@192.168.11.1
 ``` sh hl_lines="1 3 9 10"
 fwenv_set mib_file
 fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-fwenv_set 8311_gpon_sn SMBS03831122 # (2)!
+fwenv_set 8311_gpon_sn SMBS... # (2)!
 fwenv_set 8311_equipment_id 5690
 fwenv_set 8311_hw_ver Fast5689EBell
 fwenv_set 8311_cp_hw_ver_sync 1

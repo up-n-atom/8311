@@ -71,7 +71,7 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 
     | Attribute                  | Value                         | Remarks                                    |
     | -------------------------- | ----------------------------- | ------------------------------------------ |
-    | PON Serial Number (ONT ID) | ALCLFC1D37D3                  | Serial number                              |
+    | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
     | Equipment ID               | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
     | Hardware Version           | 3FE49331AAAB01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version  | :check_mark:                  |                                            |
@@ -107,7 +107,7 @@ ssh root@192.168.11.1
 
 ``` sh
 fwenv_set 8311_iphost_mac FC:B2:D6:18:47:40 # (1)!
-fwenv_set 8311_gpon_sn ALCLFC1D37D3 # (2)!
+fwenv_set 8311_gpon_sn ALCL... # (2)!
 fwenv_set 8311_equipment_id BVMGY10BRAXS010XQ # (3)!
 fwenv_set 8311_hw_ver 3FE49331AAAB01 # (4)!
 fwenv_set 8311_cp_hw_ver_sync 1

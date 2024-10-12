@@ -94,7 +94,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | HUMA04831122            | :check_mark: | :blue_circle: ONT ID    |
+        | PON Serial Number (ONT ID) | HUMA&hellip;            | :check_mark: | :blue_circle: ONT ID    |
         | Equipment ID               | iONT320500G             |              |                         |
         | Hardware Version           | BGW320-500_2.1          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
@@ -106,7 +106,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | NOKA04831122            | :check_mark: |:blue_circle: ONT ID     |
+        | PON Serial Number (ONT ID) | NOKA&hellip;            | :check_mark: |:blue_circle: ONT ID     |
         | Equipment ID               | iONT320505G             |              |                         |
         | Hardware Version           | BGW320-505_2.2          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
@@ -153,7 +153,7 @@ ssh root@192.168.11.1
 === "BGW320-500"
 
     ``` sh hl_lines="1 7"
-    fwenv_set 8311_gpon_sn HUMA03831122 # (1)!
+    fwenv_set 8311_gpon_sn HUMA... # (1)!
     fwenv_set 8311_equipment_id iONT320500G
     fwenv_set 8311_hw_ver BGW320-500_2.1
     fwenv_set 8311_cp_hw_ver_sync 1
@@ -167,7 +167,7 @@ ssh root@192.168.11.1
 === "BGW320-505"
 
     ``` sh hl_lines="1 7"
-    fwenv_set 8311_gpon_sn NOKA03831122 # (1)!
+    fwenv_set 8311_gpon_sn NOKA... # (1)!
     fwenv_set 8311_equipment_id iONT320505G
     fwenv_set 8311_hw_ver BGW320-505_2.2
     fwenv_set 8311_cp_hw_ver_sync 1
