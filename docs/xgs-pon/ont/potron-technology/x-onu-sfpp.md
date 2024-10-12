@@ -68,6 +68,36 @@ flowchart LR
 --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/bootlog"
 ```
 
+### procfs [^3]
+
+=== "/proc/cmdline"
+
+
+    ```
+    --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/procfs_cmdline"
+    ```
+
+=== "/proc/cpuinfo"
+
+
+    ```
+    --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/procfs_cpuinfo"
+    ```
+
+=== "/proc/meminfo"
+
+
+    ```
+    --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/procfs_meminfo"
+    ```
+
+=== "/proc/mtd"
+
+
+    ```
+    --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/procfs_mtd"
+    ```
+
 ## Default Credentials
 
 ### Bootloader
@@ -84,3 +114,4 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
+[^3]: <https://en.wikipedia.org/wiki/Procfs>
