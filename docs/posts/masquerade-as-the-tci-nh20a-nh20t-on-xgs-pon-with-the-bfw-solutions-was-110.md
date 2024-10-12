@@ -86,7 +86,7 @@ depiction:
 
         | Attribute                  | Value                         | Remarks                  |
         | -------------------------- | ----------------------------- | ------------------------ |
-        | PON Serial Number (ONT ID) | ARCB11228311                  | :blue_circle: XGSPON S/N |
+        | PON Serial Number (ONT ID) | ARCB&hellip;                  | :blue_circle: XGSPON S/N |
         | Equipment ID               | NH20A                         |                          |
         | Hardware Version           | PRV650AB-S-TS                 |                          |
         | Sync Circuit Pack Version  | :check_mark:                  |                          |
@@ -98,7 +98,7 @@ depiction:
 
         | Attribute                  | Value                         | Remarks                  |
         | -------------------------- | ----------------------------- | ------------------------ |
-        | PON Serial Number (ONT ID) | TMBB11228311                  | :blue_circle: XGSPON S/N |
+        | PON Serial Number (ONT ID) | TMBB&hellip;                  | :blue_circle: XGSPON S/N |
         | Equipment ID               | NH20T                         |                          |
         | Hardware Version           | GCNT-K                        |                          |
         | Sync Circuit Pack Version  | :check_mark:                  |                          |
@@ -134,7 +134,7 @@ ssh root@192.168.11.1
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn ARCB11228311 # (1)!
+    fwenv_set 8311_gpon_sn ARCB... # (1)!
     fwenv_set 8311_equipment_id NH20A
     fwenv_set 8311_hw_ver PRV650AB-S-TS
     fwenv_set 8311_cp_hw_ver_sync 1
@@ -150,7 +150,7 @@ ssh root@192.168.11.1
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn TMBB11228311 # (1)!
+    fwenv_set 8311_gpon_sn TMBB... # (1)!
     fwenv_set 8311_equipment_id NH20T
     fwenv_set 8311_hw_ver GCNT-K
     fwenv_set 8311_cp_hw_ver_sync 1

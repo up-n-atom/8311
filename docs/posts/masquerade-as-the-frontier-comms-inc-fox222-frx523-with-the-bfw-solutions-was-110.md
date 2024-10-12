@@ -73,7 +73,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                  | Value                   | Remarks                 |
         | -------------------------- | ----------------------- | ----------------------- |
-        | PON Serial Number (ONT ID) | FTRO0A0A803A            | :blue_circle: S/N       |
+        | PON Serial Number (ONT ID) | FTRO&hellip;            | :blue_circle: S/N       |
         | Equipment ID               | FOX222                  |                         |
         | Hardware Version           | FOX222                  |                         |
         | Sync Circuit Pack Version  | :check_mark:            |                         |
@@ -88,7 +88,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                  | Value                   | Remarks                 |
         | -------------------------- | ----------------------- | ----------------------  |
-        | PON Serial Number (ONT ID) | FTRO27900CD6            | :blue_circle:  S/N      |
+        | PON Serial Number (ONT ID) | FTRO&hellip;            | :blue_circle:  S/N      |
         | Equipment ID               | FRX523                  |                         |
         | Hardware Version           | FRX523                  |                         |
         | Sync Circuit Pack Version  | :check_mark:            |                         |
@@ -126,7 +126,7 @@ ssh root@192.168.11.1
 === "FOX222"
 
     ``` sh
-    fwenv_set 8311_gpon_sn FTRO0A0A803A # (1)!
+    fwenv_set 8311_gpon_sn FTRO... # (1)!
     fwenv_set 8311_equipment_id FOX222
     fwenv_set 8311_hw_ver FOX222
     fwenv_set 8311_cp_hw_ver_sync 1
@@ -143,7 +143,7 @@ ssh root@192.168.11.1
 === "FRX523"
 
     ``` sh
-    fwenv_set 8311_gpon_sn FTRO27900CD6 # (1)!
+    fwenv_set 8311_gpon_sn FTRO... # (1)!
     fwenv_set 8311_equipment_id FRX523
     fwenv_set 8311_hw_ver FRX523
     fwenv_set 8311_cp_hw_ver_sync 1
