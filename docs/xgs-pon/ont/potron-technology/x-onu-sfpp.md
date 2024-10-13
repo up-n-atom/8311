@@ -2,7 +2,7 @@
 
 |             |                                    |                                 |
 | ----------: | ---------------------------------- | ------------------------------- |
-| **SoC**     | PRX300 @ 400 MHz - MIPS interAptiv | [Architecture](#architecture)   |
+| **SoC**     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture](#architecture)   |
 | **NAND**    | 128 MB *(1 Gbit)*                  | WN25N01GV                       |
 | **RAM**     | 1 GB                               |                                 |
 | **BOSA**    | SC/UPC                             |                                 |
