@@ -1,5 +1,15 @@
 # X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
+|             |                                    |                         |
+| ----------: | ---------------------------------- | ----------------------- |
+| **SoC**     | PRX300 @ 400 MHz - MIPS interAptiv |                         |
+| **NAND**    | 128 MB *(1 Gbit)*                  | WN25N01GV               |
+| **RAM**     | 1 GB                               |                         |
+| **BOSA**    | SC/UPC                             |                         |
+| **IP**      | 192.168.1.1                        |                         |
+| **HTTP(S)** | :x:                                |                         |
+| **SSH**     | :check_mark:                       | User: `root` Password:  |
+
 ## Architecture
 
 ### MaxLinear PRX126 [^2]

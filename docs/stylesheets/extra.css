@@ -22,3 +22,25 @@
 .md-typeset pre > code {
   max-height: var(--md-codeblock-height, 25rem);
 }
+
+.md-typeset__table {
+  width: 100%;
+}
+
+.md-typeset__table table:not([class]) {
+  display: table
+}
+
+.md-typeset__table table:has(th:empty) {
+  border-top: none;
+}
+
+.md-typeset__table thead:has(th:empty) {
+  display: none;
+}
+
+/*.md-typeset__table th:empty {
+  display: none;
+  border: none;
+}*/
+
