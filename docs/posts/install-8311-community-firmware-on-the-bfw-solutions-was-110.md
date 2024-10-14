@@ -20,14 +20,7 @@ incompatibilities and discovered bugs, a community firmware[^1] has been curated
   [802.1X]: https://en.wikipedia.org/wiki/IEEE_802.1X
   [802.1ad]: https://en.wikipedia.org/wiki/IEEE_802.1ad
 
-## Host setup
-
-Plug the [WAS-110] into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
-switch.
-
-!!! note "Rx loss"
-    The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or
-    inactive. Some host interfaces will enter a power-saving state, making the [WAS-110] inaccessible.
+## Firmware Preparation
 
 ### Download firmware
 
@@ -112,29 +105,23 @@ To extract the archive to a temporary directory, execute the following command(s
     7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp #(1)!
     ```
 
-### Set a static route
+## Network setup
 
-The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, you must have
-a route to this IP.
+Plug the [WAS-110] into a 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network
+switch.
 
-=== ":simple-ubiquiti: Ubiquiti"
+!!! note "Rx loss"
+    The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or
+    inactive. Some host interfaces will enter a power-saving state, making the [WAS-110] inaccessible.
 
-    !!! note "The following instructions were written for a UDM Pro, but might be useful on any Ubiquity device with a WAN SFP port"
+The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, choose one (1) of the following
+configurations based on your network setup:
 
-    1. Set the SFP port as the WAN interface. This is under **Network**, **Settings**, **Internet**.
+* [Static IP](#static-ip)
+* [Static Route](#static-route)
+* [Source NAT](#source-nat)
 
-    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
-
-    2. Create a static route pointing at the WAN interface. This is under **Network**, **Settings**, **Routing**, **Static Routes**
-
-    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
-
-You should now be able to access the WAS-110 at `192.168.11.1`.
-
-### Set a static IP
-
-The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, a static IP address must be
-assigned to the host interface, such as `192.168.11.2/24`[^4].
+### Static IP
 
 === ":material-microsoft: Windows"
 
@@ -190,16 +177,46 @@ assigned to the host interface, such as `192.168.11.2/24`[^4].
     ip address show dev <interface>
     ```
 
-=== ":simple-ubiquiti: Ubiquiti"
+### Static route
 
-    !!! note "The following command sets the IP address <ins>temporarily</ins> until the next power cycle"
+=== ":simple-ubiquiti: UniFi Dream Machine"
 
-    !!! tip "Replace `<interface>` with the SFP+ interface name e.g. `eth9` for the UDM-SE"
+    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
 
-    ``` sh hl_lines="1"
-    ip addr add dev <interface> local 192.168.11.2/24
-    iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
-    ```
+    1. Set the SFP port as the WAN interface. This is under **Network** > **Settings** > **Internet**.
+
+    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
+
+    2. Create a static route pointing at the WAN interface. This is under **Network** > **Settings** > **Routing** > **Static Routes**
+
+### Source NAT
+
+=== ":simple-pfsense: pfSense"
+
+    **To-do**
+
+=== ":simple-opnsense: OPNsense"
+
+    **To-do**
+
+=== ":simple-ubiquiti: UniFi Dream Machine"
+
+    1. Enable SSH
+    
+           <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
+
+    2. Connect and execute the following two (2) commands from the secure shell:
+
+        !!! note "The following commands are <ins>temporarily</ins> until the next power cycle"
+
+        !!! tip "Port numbers are zero (0) based indexed. Replace `<interface>` with the SFP+ interface name e.g. `eth9` for Port 10"
+
+        ``` sh hl_lines="1"
+        ip addr add dev <interface> local 192.168.11.2/24;
+        iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
+        ```
+
+You should now be able to access the [WAS-110] at `192.168.11.1`.
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
