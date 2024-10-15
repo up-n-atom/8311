@@ -132,9 +132,17 @@ configurations based on your network setup:
            ++ctrl+shift+enter++.
 
     ``` sh hl_lines="2"
-    netsh interface ip show config
+    netsh interface ip show config # (1)!
     netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
     netsh interface ipv4 set interface "<interface name>" mtu=1500
+    ```
+
+    1. Replace `<interface name>` in the next commands with a interface name from the output.
+
+    Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
+
+    ``` sh
+    netsh interface ipv4 set address name="<interface name>" dhcp
     ```
 
     ??? info "For the shameless mouse clickers..."
@@ -152,6 +160,12 @@ configurations based on your network setup:
     ```
 
     1. Replace `<service>` in the next command with a network service from the output.
+
+    Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
+
+    ``` sh
+    sudo networksetup -setdhcp
+    ```
 
     ??? info "For the shameless mouse clickers..."
         If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
