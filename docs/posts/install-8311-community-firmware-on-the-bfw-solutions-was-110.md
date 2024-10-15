@@ -121,142 +121,140 @@ configurations based on your network setup:
 * [Static Route](#static-route)
 * [Source NAT](#source-nat)
 
-### Static IP
-
-=== ":material-microsoft: Windows"
-
-    !!! tip "Run Command Prompt as Administrator"
-
-        1. Press ++win+r++
-        2. In the Run dialog box, type `cmd` into the input field and then press
-           ++ctrl+shift+enter++.
-
-    ``` sh hl_lines="2"
-    netsh interface ip show config # (1)!
-    netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
-    netsh interface ipv4 set interface "<interface name>" mtu=1500
-    ```
-
-    1. Replace `<interface name>` in the next commands with a interface name from the output.
-
-    Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
-
-    ``` sh
-    netsh interface ipv4 set address name="<interface name>" dhcp
-    ```
-
-    ??? info "For the shameless mouse clickers..."
-        If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
-
-        <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
-
-=== ":simple-apple: macOS"
-
-    !!! tip "Replace `<service>` with the SFP+ interface name."
-
-    ``` sh hl_lines="2"
-    sudo networksetup -listallnetworkservices # (1)!
-    sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
-    ```
-
-    1. Replace `<service>` in the next command with a network service from the output.
-
-    Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
-
-    ``` sh
-    sudo networksetup -setdhcp <service>
-    ```
-
-    ??? info "For the shameless mouse clickers..."
-        If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
-
-        * <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
-        * <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
-
-=== ":simple-linux: Linux"
-
-    !!! note "The following commands set the IP address <ins>temporarily</ins> until the next power cycle"
-        For persistence check your OS documentation, such as
-        [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
-
-    !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
-
-    ``` sh hl_lines="6"
-    ip link show
-    ethtool <interface>
-    ip address show
-    ip address flush dev <interface>
-    ip route flush dev <interface>
-    ip address add 192.168.11.2/24 dev <interface>
-    ip address show dev <interface>
-    ```
-
-### Static route
-
-=== ":simple-ubiquiti: UniFi Dream Machine"
-
-    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
-
-    1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
-
-    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
-
-    2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
-
-### Source NAT
-
-=== ":simple-pfsense: pfSense"
-
-    **To-do**
-
-=== ":simple-opnsense: OPNsense"
-
-    **To-do**
-
-=== ":simple-ubiquiti: UniFi Dream Machine"
-
-    1. Enable SSH by navigating to **OS Settings > Console Settings > Advanced**.
+=== "Static IP"
     
-        <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
+    === ":material-microsoft: Windows"
 
-    2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
+        !!! tip "Run Command Prompt as Administrator"
 
-    3. Connect and execute the following command from the secure shell:
+            1. Press ++win+r++
+            2. In the Run dialog box, type `cmd` into the input field and then press
+               ++ctrl+shift+enter++.
 
-        !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
+        ``` sh hl_lines="2"
+        netsh interface ip show config # (1)!
+        netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+        netsh interface ipv4 set interface "<interface name>" mtu=1500
+        ```
 
-        !!! warning "The command is <ins>temporarily</ins>, until the next power cycle"
+        1. Replace `<interface name>` in the next commands with a interface name from the output.
 
-            ``` sh
-            ip addr add dev eth9 local 192.168.11.2/24
-            ```
+        Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
 
-            For persistence, please consider installing
-            [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
+        ``` sh
+        netsh interface ipv4 set address name="<interface name>" dhcp
+        ```
 
-    4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking
-       **Create Entry**.
+        ??? info "For the shameless mouse clickers..."
+            If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
 
-        |                           |                                                                            |
-        | ------------------------- | -------------------------------------------------------------------------- |
-        | **Type**                  | Source                                                                     |
-        | **Name**                  | WAS-110                                                                    |
-        | **Protocol**              | All                                                                        |
-        | **Interface**             | Primary (WAN1)                                                             |
-        | **Translated IP Address** | IPv4 Address / Subnet<br/>192.168.11.2                                     |
-        | **Translated Port**       | :material-checkbox-blank-outline:                                          |
-        | **Source**                | :material-checkbox-blank-outline:                                          |
-        | **Destination**           | :material-checkbox-marked-outline: IPv4Address / Subnet <br/> 192.168.11.1 |
-        | **Destination Port**      | :material-checkbox-blank-outline:                                          |
-        | **Advanced**              | Manual                                                                     |
-        | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
-        | **Exclude**               | :material-checkbox-blank-outline:                                          |
+            <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
+
+    === ":simple-apple: macOS"
+
+        !!! tip "Replace `<service>` with the SFP+ interface name."
+
+        ``` sh hl_lines="2"
+        sudo networksetup -listallnetworkservices # (1)!
+        sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
+        ```
+
+        1. Replace `<service>` in the next command with a network service from the output.
+
+        Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
+
+        ``` sh
+        sudo networksetup -setdhcp <service>
+        ```
+
+        ??? info "For the shameless mouse clickers..."
+            If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
+
+            * <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
+            * <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
+
+    === ":simple-linux: Linux"
+
+        !!! note "The following commands set the IP address <ins>temporarily</ins> until the next power cycle"
+            For persistence check your OS documentation, such as
+            [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
+
+        !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
+
+        ``` sh hl_lines="6"
+        ip link show
+        ethtool <interface>
+        ip address show
+        ip address flush dev <interface>
+        ip route flush dev <interface>
+        ip address add 192.168.11.2/24 dev <interface>
+        ip address show dev <interface>
+        ```
+
+=== "Static Route"
+
+    === ":simple-ubiquiti: UniFi Dream Machine"
+
+        ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
+
+        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+
+        ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
+
+        2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+
+=== "Source NAT"
+
+    === ":simple-pfsense: pfSense"
+
+        **To-do**
+
+    === ":simple-opnsense: OPNsense"
+
+        **To-do**
+
+    === ":simple-ubiquiti: UniFi Dream Machine"
+
+        1. Enable SSH by navigating to **OS Settings > Console Settings > Advanced**.
+    
+            <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
+
+        2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
+
+        3. Connect and execute the following command from the secure shell:
+
+            !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
+
+            !!! warning "The command is <ins>temporarily</ins>, until the next power cycle"
+
+                ``` sh
+                ip addr add dev eth9 local 192.168.11.2/24
+                ```
+
+                For persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
+
+        4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking **Create Entry**.
+
+            |                           |                                                                            |
+            | ------------------------- | -------------------------------------------------------------------------- |
+            | **Type**                  | Source                                                                     |
+            | **Name**                  | WAS-110                                                                    |
+            | **Protocol**              | All                                                                        |
+            | **Interface**             | Primary (WAN1)                                                             |
+            | **Translated IP Address** | IPv4 Address / Subnet<br/>192.168.11.2                                     |
+            | **Translated Port**       | :material-checkbox-blank-outline:                                          |
+            | **Source**                | :material-checkbox-blank-outline:                                          |
+            | **Destination**           | :material-checkbox-marked-outline: IPv4Address / Subnet <br/> 192.168.11.1 |
+            | **Destination Port**      | :material-checkbox-blank-outline:                                          |
+            | **Advanced**              | Manual                                                                     |
+            | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
+            | **Exclude**               | :material-checkbox-blank-outline:                                          |
  
-        !!! note "Prior to Network 8.3.32, the Source NAT rule could ^^ONLY^^ be applied using the shell"
+            !!! note "Prior to Network 8.3.32, the Source NAT rule could ^^ONLY^^ be applied using the shell"
 
-            ``` sh
-            iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2
-            ```
+                ``` sh
+                iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2
+                ```
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
 
