@@ -215,9 +215,9 @@ configurations based on your network setup:
 
 === ":simple-ubiquiti: UniFi Dream Machine"
 
-    1. Enable SSH by navigating to **Network > Settings > System > Advanced**.
+    1. Enable SSH by navigating to **OS Settings > Console Settings > Advanced**.
     
-           <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
+        <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
 
     2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
 
@@ -225,11 +225,14 @@ configurations based on your network setup:
 
         !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
-        !!! note "The following command is <ins>temporarily</ins> until the next power cycle"
+        !!! warning "The command is <ins>temporarily</ins>, until the next power cycle"
 
             ``` sh
             ip addr add dev eth9 local 192.168.11.2/24
             ```
+
+            For persistence, please consider installing
+            [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
 
     4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking
        **Create Entry**.
@@ -248,8 +251,8 @@ configurations based on your network setup:
         | **Advanced**              | Manual                                                                     |
         | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
         | **Exclude**               | :material-checkbox-blank-outline:                                          |
-
-        !!! note "Prior to Network app 8.3.32 the Source NAT rule could ONLY be applied using the shell"
+ 
+        !!! note "Prior to Network 8.3.32, the Source NAT rule could ^^ONLY^^ be applied using the shell"
 
             ``` sh
             iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2
