@@ -2,16 +2,19 @@
 
 ## Specifications
 
-|             |                                    |                                 |
-| ----------: | ---------------------------------- | ------------------------------- |
-| **SoC**     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture](#architecture)   |
-| **NAND**    | 128 MB *(1 Gbit)*                  | WN25N01GV                       |
-| **RAM**     | 1 GB                               |                                 |
-| **BOSA**    | SC/UPC                             |                                 |
-| **IP**      | 192.168.1.1                        |                                 |
-| **HTTP(S)** | :x:                                |                                 |
-| **SSH**     | :check_mark:                       | [Shell credentials]             |
+|             |                                    |                     |
+| ----------: | ---------------------------------- | ------------------- |
+| **SoC**     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture]      |
+| **NAND**    | 128 MB *(1 Gbit)*                  | [WN25N01GV]         |
+| **RAM**     | 1 GB                               |                     |
+| **BOSA**    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm | [M02181]            |
+| **IP**      | 192.168.1.1                        |                     |
+| **HTTP(S)** | :x:                                |                     |
+| **SSH**     | :check_mark:                       | [Shell credentials] |
 
+ [Architecture]: #architecture
+ [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV 
+ [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
 
 ## Architecture
