@@ -183,11 +183,11 @@ configurations based on your network setup:
 
     ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
 
-    1. Set the SFP port as the WAN interface. This is under **Network** > **Settings** > **Internet**.
+    1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
 
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
 
-    2. Create a static route pointing at the WAN interface. This is under **Network** > **Settings** > **Routing** > **Static Routes**
+    2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
 
 ### Source NAT
 
@@ -201,20 +201,43 @@ configurations based on your network setup:
 
 === ":simple-ubiquiti: UniFi Dream Machine"
 
-    1. Enable SSH
+    1. Enable SSH by navigating to **Network > Settings > System > Advanced**.
     
            <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
 
-    2. Connect and execute the following two (2) commands from the secure shell:
+    2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
 
-        !!! note "The following commands are <ins>temporarily</ins> until the next power cycle"
+    3. Connect and execute the following command from the secure shell:
 
-        !!! tip "Port numbers are zero (0) based indexed. Replace `<interface>` with the SFP+ interface name e.g. `eth9` for Port 10"
+        !!! tip "Port numbers are zero (0) based indexed, e.g. `eth9` for Port 10"
 
-        ``` sh hl_lines="1"
-        ip addr add dev <interface> local 192.168.11.2/24;
-        iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
-        ```
+        !!! note "The following command is <ins>temporarily</ins> until the next power cycle"
+
+            ``` sh
+            ip addr add dev eth9 local 192.168.11.2/24
+            ```
+
+    4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**.
+
+        |                           |                                                                            |
+        | ------------------------- | -------------------------------------------------------------------------- |
+        | **Name**                  | WAS-110                                                                    |
+        | **Protocol**              | All                                                                        |
+        | **Interface**             | Primary (WAN1)                                                             |
+        | **Translated IP Address** | IPv4 Address / Subnet<br/>192.168.11.2                                     |
+        | **Translated Port**       | :material-checkbox-blank-outline:                                          |
+        | **Source**                | :material-checkbox-blank-outline:                                          |
+        | **Destination**           | :material-checkbox-marked-outline: IPv4Address / Subnet <br/> 192.168.11.1 |
+        | **Destination Port**      | :material-checkbox-blank-outline:                                          |
+        | **Advanced**              | Manual                                                                     |
+        | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
+        | **Exclude**               | :material-checkbox-blank-outline:                                          |
+
+        !!! note "Prior to Network app 8.4 the Source NAT rule could ONLY be applied using the shell"
+
+            ``` sh
+            iptables -t nat -A POSTROUTING -o <interface> -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
+            ```
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
 
