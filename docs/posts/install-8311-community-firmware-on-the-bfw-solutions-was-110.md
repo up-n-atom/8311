@@ -209,7 +209,7 @@ configurations based on your network setup:
 
     3. Connect and execute the following command from the secure shell:
 
-        !!! tip "Port numbers are zero (0) based indexed, e.g. `eth9` for Port 10"
+        !!! tip "Port numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
         !!! note "The following command is <ins>temporarily</ins> until the next power cycle"
 
