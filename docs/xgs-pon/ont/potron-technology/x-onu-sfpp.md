@@ -10,7 +10,9 @@
 | **BOSA**    | SC/UPC                             |                                 |
 | **IP**      | 192.168.1.1                        |                                 |
 | **HTTP(S)** | :x:                                |                                 |
-| **SSH**     | :check_mark:                       | User: `root` Password:          |
+| **SSH**     | :check_mark:                       | [Shell credentials]             |
+
+ [Shell credentials]: #shell-credentials
 
 ## Architecture
 
@@ -111,6 +113,12 @@ flowchart LR
     ```
 
 ## Default Credentials
+
+### Shell credentials
+
+| Username | Password |
+| -------- | -------- |
+| root     |          |
 
 ### Bootloader
 
