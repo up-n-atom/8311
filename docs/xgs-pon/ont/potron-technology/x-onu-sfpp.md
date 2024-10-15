@@ -1,5 +1,7 @@
 # X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
+## Specifications
+
 |             |                                    |                                 |
 | ----------: | ---------------------------------- | ------------------------------- |
 | **SoC**     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture](#architecture)   |
