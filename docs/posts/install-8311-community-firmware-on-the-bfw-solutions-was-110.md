@@ -231,10 +231,12 @@ configurations based on your network setup:
             ip addr add dev eth9 local 192.168.11.2/24
             ```
 
-    4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**.
+    4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking
+       **Create Entry**.
 
         |                           |                                                                            |
         | ------------------------- | -------------------------------------------------------------------------- |
+        | **Type**                  | Source                                                                     |
         | **Name**                  | WAS-110                                                                    |
         | **Protocol**              | All                                                                        |
         | **Interface**             | Primary (WAN1)                                                             |
