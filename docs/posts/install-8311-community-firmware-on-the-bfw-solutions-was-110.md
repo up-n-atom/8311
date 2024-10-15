@@ -249,10 +249,10 @@ configurations based on your network setup:
         | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
         | **Exclude**               | :material-checkbox-blank-outline:                                          |
 
-        !!! note "Prior to Network app 8.4 the Source NAT rule could ONLY be applied using the shell"
+        !!! note "Prior to Network app 8.3.32 the Source NAT rule could ONLY be applied using the shell"
 
             ``` sh
-            iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
+            iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2
             ```
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
