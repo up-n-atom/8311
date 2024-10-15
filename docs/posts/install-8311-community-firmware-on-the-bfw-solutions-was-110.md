@@ -164,7 +164,7 @@ configurations based on your network setup:
     Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
 
     ``` sh
-    sudo networksetup -setdhcp
+    sudo networksetup -setdhcp <service>
     ```
 
     ??? info "For the shameless mouse clickers..."
