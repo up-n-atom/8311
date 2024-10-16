@@ -205,11 +205,54 @@ configurations based on your network setup:
 
 === "Source NAT"
 
-    === ":simple-pfsense: pfSense"
-
-        **To-do**
-
     === ":simple-opnsense: OPNsense"
+
+        ![OPNsense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_virtual_ip.webp)
+
+        1. Add a virtual IP to the WAN interface by navigating to **Interfaces > Virtual IPs > Settings**, clicking
+           :material-plus-thick:, applying the settings below, clicking **Save**, and clicking **Apply**.
+
+            |                                  |                                   |
+            | -------------------------------- | --------------------------------- |
+            | **Mode**                         | IP Alias                          |
+            | **Interface**                    | WAN                               |
+            | **Network / Address**            | 192.168.11.2/24                   |
+            | **Deny service binding**         | :material-checkbox-blank-outline: |
+            | **VHID Group**                   |                                   |
+            | **Description**                  | WAS-110 Management                |
+
+        ![OPNsense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_firewall_alias.webp)
+
+        2. Add a firewall alias by navigating to **Firewall > Aliases**, clicking :material-plus-thick:, applying the
+           settings below, clicking **Save**, and clicking **Apply**.
+
+            |                                  |                                    |
+            | -------------------------------- | ---------------------------------- |
+            | **Enabled**                      | :material-checkbox-marked-outline: |
+            | **Name**                         | was_110                            |
+            | **Type**                         | Host(s)                            |
+            | **Categories**                   |                                    |
+            | **Content**                      | 192.168.11.1                       |
+            | **Statistics**                   | :material-checkbox-blank-outline:  |
+            | **Description**                  | WAS-110                            |
+
+        ![OPNsense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat.webp)
+
+        3. Switch to Hybrid outbound NAT by navigating to **Firewall > Outbound > NAT**, selecting
+           **Hybrid outbound NAT rule generation**, clicking **Save**, and clicking **Apply changes**.
+
+        ![OPNsense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat_rule.webp)
+
+        4. Add a manual outbound NAT rule, click :material-plus-thick: in the **Manual rules** table, apply the
+           settings below, click **Save**, and click **Apply changes**.
+
+            |                                   |                                              |
+            | --------------------------------- | -------------------------------------------- |
+            | **Source address**                | LAN net                                      |
+            | **Destination address**           | was_110                                      |
+            | **Translation / target**          | 192.168.11.2 (WAS-110 Management)            |
+
+    === ":simple-pfsense: pfSense"
 
         **To-do**
 
