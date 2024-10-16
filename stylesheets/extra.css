@@ -1,0 +1,46 @@
+@-moz-document url-prefix() {
+  .md-typeset kbd {
+    display:unset;
+    vertical-align:unset;
+  }
+  
+  .md-typeset .admonition,
+  .md-typeset details {
+    font-size:inherit;
+  }
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+}
+
+.md-typeset details:not([open]) {
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-typeset pre > code {
+  max-height: var(--md-codeblock-height, 25rem);
+}
+
+.md-typeset__table {
+  width: 100%;
+}
+
+.md-typeset__table table:not([class]) {
+  display: table
+}
+
+.md-typeset__table table:has(th:empty) {
+  border-top: none;
+}
+
+.md-typeset__table thead:has(th:empty) {
+  display: none;
+}
+
+/*.md-typeset__table th:empty {
+  display: none;
+  border: none;
+}*/
+
