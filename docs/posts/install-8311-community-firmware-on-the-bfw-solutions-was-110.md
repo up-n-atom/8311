@@ -311,7 +311,7 @@ configurations based on your network setup:
 
         2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
 
-        3. Connect and execute the following command from the secure shell:
+        3. Connect and execute the following command from a SSH session:
 
             !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
