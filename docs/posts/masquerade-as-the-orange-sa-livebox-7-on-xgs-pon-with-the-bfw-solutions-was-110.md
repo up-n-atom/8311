@@ -106,12 +106,12 @@ ssh root@192.168.11.1
     the Livebox 7.
 
 ``` sh hl_lines="1 3"
-fwenv_set 8311_gpon_sn SMBS03831122
-fwenv_set 8311_equipment_id SagemcomFast5694OFR
-fwenv_set 8311_hw_ver SMBSXLB7400
-fwenv_set 8311_cp_hw_ver_sync 1
-fwenv_set 8311_sw_verA SAHEOFR010117 # (1)!
-fwenv_set 8311_sw_verB SAHEOFR010117
+fwenv_set -8 gpon_sn SMBS03831122
+fwenv_set -8 equipment_id SagemcomFast5694OFR
+fwenv_set -8 hw_ver SMBSXLB7400
+fwenv_set -8 cp_hw_ver_sync 1
+fwenv_set -8 sw_verA SAHEOFR010117 # (1)!
+fwenv_set -8 sw_verB SAHEOFR010117
 ```
 
 1. [Version listing]

@@ -134,13 +134,13 @@ ssh root@192.168.11.1
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn ARCB... # (1)!
-    fwenv_set 8311_equipment_id NH20A
-    fwenv_set 8311_hw_ver PRV650AB-S-TS
-    fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA 3FEARCB1001505 # (2)!
-    fwenv_set 8311_sw_verB 3FEARCB1001505
-    fwenv_set 8311_mib_file /etc/mibs/prx300_1U_telus.ini
+    fwenv_set -8 gpon_sn ARCB... # (1)!
+    fwenv_set -8 equipment_id NH20A
+    fwenv_set -8 hw_ver PRV650AB-S-TS
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA 3FEARCB1001505 # (2)!
+    fwenv_set -8 sw_verB 3FEARCB1001505
+    fwenv_set -8 mib_file /etc/mibs/prx300_1U_telus.ini
     ```
 
     1. :blue_circle: XGSPON S/N
@@ -150,13 +150,13 @@ ssh root@192.168.11.1
 
     ``` sh
     fwenv_set mib_file
-    fwenv_set 8311_gpon_sn TMBB... # (1)!
-    fwenv_set 8311_equipment_id NH20T
-    fwenv_set 8311_hw_ver GCNT-K
-    fwenv_set 8311_cp_hw_ver_sync 1
-    fwenv_set 8311_sw_verA 3FEARCB1001505 # (2)!
-    fwenv_set 8311_sw_verB 3FEARCB1001505
-    fwenv_set 8311_mib_file /etc/mibs/prx300_1U_telus.ini
+    fwenv_set -8 gpon_sn TMBB... # (1)!
+    fwenv_set -8 equipment_id NH20T
+    fwenv_set -8 hw_ver GCNT-K
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA 3FEARCB1001505 # (2)!
+    fwenv_set -8 sw_verB 3FEARCB1001505
+    fwenv_set -8 mib_file /etc/mibs/prx300_1U_telus.ini
     ```
 
     1. :blue_circle: XGSPON S/N

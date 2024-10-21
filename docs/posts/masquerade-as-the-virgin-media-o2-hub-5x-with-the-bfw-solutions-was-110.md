@@ -103,15 +103,15 @@ ssh root@192.168.11.1
 
 ``` sh hl_lines="1 3 9"
 fwenv_set mib_file
-fwenv_set 8311_iphost_mac C4:EB:43:00:00:01 # (1)!
-fwenv_set 8311_gpon_sn SMBS... # (2)!
-fwenv_set 8311_equipment_id F5685LGB
-fwenv_set 8311_hw_ver 1.2.1b
-fwenv_set 8311_cp_hw_ver_sync 1
-fwenv_set 8311_sw_verA 3.7.4-2306.5 # (3)!
-fwenv_set 8311_sw_verB 3.7.4-2306.5
-fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini
-fwenv_set 8311_fix_vlans 0
+fwenv_set -8 iphost_mac C4:EB:43:00:00:01 # (1)!
+fwenv_set -8 gpon_sn SMBS... # (2)!
+fwenv_set -8 equipment_id F5685LGB
+fwenv_set -8 hw_ver 1.2.1b
+fwenv_set -8 cp_hw_ver_sync 1
+fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
+fwenv_set -8 sw_verB 3.7.4-2306.5
+fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
+fwenv_set -8 fix_vlans 0
 ```
 
 1. :purple_circle: MAC

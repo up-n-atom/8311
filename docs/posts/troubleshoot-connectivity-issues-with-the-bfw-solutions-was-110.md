@@ -260,7 +260,7 @@ host hardware and cause the link state to flap continuously.
     To disable the serial console from the Linux shell, execute the following commands:
 
     ``` sh
-    fwenv_set 8311_console_en
+    fwenv_set -8 console_en
     ```
 
     <h5>from the U-Boot shell</h5>
@@ -341,7 +341,7 @@ host controller and implementation, the interface may enter a power saving state
     To disable rx loss from the Linux shell, execute the following commands:
 
     ```
-    fwenv_set 8311_rx_los
+    fwenv_set -8 rx_los
     ```
 
     <h5>from the U-Boot shell</h5>

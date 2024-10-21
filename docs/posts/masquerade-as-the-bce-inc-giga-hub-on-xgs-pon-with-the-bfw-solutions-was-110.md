@@ -165,15 +165,15 @@ ssh root@192.168.11.1
 
 ``` sh hl_lines="1 3 9 10"
 fwenv_set mib_file
-fwenv_set 8311_iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-fwenv_set 8311_gpon_sn SMBS... # (2)!
-fwenv_set 8311_equipment_id 5690
-fwenv_set 8311_hw_ver Fast5689EBell
-fwenv_set 8311_cp_hw_ver_sync 1
-fwenv_set 8311_sw_verA SGC8400058 # (3)!
-fwenv_set 8311_sw_verB SGC8400058
-fwenv_set 8311_mib_file /etc/mibs/prx300_1V_bell.ini 
-fwenv_set 8311_fix_vlans 1
+fwenv_set -8 iphost_mac 40:65:A3:FF:A7:B1 # (1)!
+fwenv_set -8 gpon_sn SMBS... # (2)!
+fwenv_set -8 equipment_id 5690
+fwenv_set -8 hw_ver Fast5689EBell
+fwenv_set -8 cp_hw_ver_sync 1
+fwenv_set -8 sw_verA SGC8400058 # (3)!
+fwenv_set -8 sw_verB SGC8400058
+fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini 
+fwenv_set -8 fix_vlans 1
 ```
 
 1. :purple_circle: @MAC + 1, e.g. `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`

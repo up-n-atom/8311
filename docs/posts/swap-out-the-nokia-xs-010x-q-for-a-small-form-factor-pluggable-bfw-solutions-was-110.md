@@ -106,15 +106,15 @@ ssh root@192.168.11.1
     the provisioned values.
 
 ``` sh
-fwenv_set 8311_iphost_mac FC:B2:D6:18:47:40 # (1)!
-fwenv_set 8311_gpon_sn ALCL... # (2)!
-fwenv_set 8311_equipment_id BVMGY10BRAXS010XQ # (3)!
-fwenv_set 8311_hw_ver 3FE49331AAAB01 # (4)!
-fwenv_set 8311_cp_hw_ver_sync 1
-fwenv_set 8311_sw_verA 3FE49337AOCK10
-fwenv_set 8311_sw_verB 3FE49337AOCK80
-fwenv_set -b 8311_fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
-fwenv_set 8311_pon_slot 10
+fwenv_set -8 iphost_mac FC:B2:D6:18:47:40 # (1)!
+fwenv_set -8 gpon_sn ALCL... # (2)!
+fwenv_set -8 equipment_id BVMGY10BRAXS010XQ # (3)!
+fwenv_set -8 hw_ver 3FE49331AAAB01 # (4)!
+fwenv_set -8 cp_hw_ver_sync 1
+fwenv_set -8 sw_verA 3FE49337AOCK10
+fwenv_set -8 sw_verB 3FE49337AOCK80
+fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+fwenv_set -8 pon_slot 10
 ```
 
 1. MAC ID
