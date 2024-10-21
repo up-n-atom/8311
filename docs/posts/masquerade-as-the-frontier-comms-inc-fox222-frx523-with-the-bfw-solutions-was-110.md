@@ -71,33 +71,37 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
     === "FOX222"
 
-        | Attribute                  | Value                   | Remarks                 |
-        | -------------------------- | ----------------------- | ----------------------- |
-        | PON Serial Number (ONT ID) | FTRO&hellip;            | :blue_circle: S/N       |
-        | Equipment ID               | FOX222                  |                         |
-        | Hardware Version           | FOX222                  |                         |
-        | Sync Circuit Pack Version  | :check_mark:            |                         |
-        | Software Version A         | R4.4.08.030             | [Version listing]       |
-        | Software Version B         | R4.4.08.030             | [Version listing]       |
-        | Firmware Version Match     | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+    |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
-        | Pon Slot                   | 10                      |                         |
+        | Attribute                        | Value                   | Remarks                         |
+        | -------------------------------- | ----------------------- | ------------------------------- |
+        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle: S/N               |
+        | Equipment ID                     | FOX222                  |                                 |
+        | Hardware Version                 | FOX222                  |                                 |
+        | Sync Circuit Pack Version        | :check_mark:            |                                 |
+        | Software Version A               | R4.4.08.030             | [Version listing]               |
+        | Software Version B               | R4.4.08.030             | [Version listing]               |
+        | Firmware Version Match           | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+            |
+        | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
+        | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
+        | Registration ID (HEX)            | 44454641554c54          | `DEFAULT` in hex                |
+        | MIB File                         | /etc/mibs/prx300_1U.ini | PPTP i.e. default value         |
+        | Pon Slot                         | 10                      |                                 |
 
     === "FRX523"
 
-        | Attribute                  | Value                   | Remarks                 |
-        | -------------------------- | ----------------------- | ----------------------  |
-        | PON Serial Number (ONT ID) | FTRO&hellip;            | :blue_circle:  S/N      |
-        | Equipment ID               | FRX523                  |                         |
-        | Hardware Version           | FRX523                  |                         |
-        | Sync Circuit Pack Version  | :check_mark:            |                         |
-        | Software Version A         | R4.4.13.057             | [Version listing]       |
-        | Software Version B         | R4.4.13.057             | [Version listing]       |
-        | Firmware Version Match     | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+    |
-        | Registration ID (HEX)      | 44454641554c54          | `DEFAULT` in hex        |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
-        | Pon Slot                   | 10                      |                         |
+        | Attribute                        | Value                   | Remarks                         |
+        | -------------------------------- | ----------------------- | ------------------------------- |
+        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle:  S/N              |
+        | Equipment ID                     | FRX523                  |                                 |
+        | Hardware Version                 | FRX523                  |                                 |
+        | Sync Circuit Pack Version        | :check_mark:            |                                 |
+        | Software Version A               | R4.4.13.057             | [Version listing]               |
+        | Software Version B               | R4.4.13.057             | [Version listing]               |
+        | Firmware Version Match           | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+            |
+        | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
+        | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
+        | Registration ID (HEX)            | 44454641554c54          | `DEFAULT` in hex                |
+        | MIB File                         | /etc/mibs/prx300_1U.ini | PPTP i.e. default value         |
+        | Pon Slot                         | 10                      |                                 |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -133,6 +137,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verA R4.4.08.030 # (2)!
     fwenv_set 8311_sw_verB R4.4.08.030 
     fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
+    fwenv_set 8311_override_active A
+    fwenv_set 8311_override_commit A
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
@@ -150,6 +156,8 @@ ssh root@192.168.11.1
     fwenv_set 8311_sw_verA R4.4.13.057 # (2)!
     fwenv_set 8311_sw_verB R4.4.13.057
     fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
+    fwenv_set 8311_override_active A
+    fwenv_set 8311_override_commit A
     fwenv_set 8311_pon_slot 10
     fwenv_set 8311_reg_id_hex 44454641554c54
     ```
