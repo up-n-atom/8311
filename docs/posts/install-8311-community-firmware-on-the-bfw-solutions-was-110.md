@@ -14,10 +14,11 @@ description: Install 8311 community firmware on the BFW Solutions WAS-110
 <!-- nocont -->
 
 ??? tip "Group buy participants..."
-    Unless otherwise stated, your [WAS-110] should have arrived pre-installed with the 8311 community firmware.
+    Just a reminder that your [WAS-110] should have come pre-flashed with the 8311 community firmware unless otherwise
+    indicated.
 
-    Please, disregard the Azores [shell upgrade] and [web UI upgrade](#web-ui-upgrade) sections outlined below.
-    To upgrade your [WAS-110] to a *newer* community release, use the instructions outlined in the
+    Please ignore the Azores [shell upgrade] and [web UI upgrade](#web-ui-upgrade) sections mentioned below. To update
+    your [WAS-110] to a *newer* 8311 community firmware release, refer to the instructions in the
     [supplementary upgrade] section.
 
 Out of the box, the [WAS-110] is not fully compatible with varying ISP OLT configurations, with issues ranging from
