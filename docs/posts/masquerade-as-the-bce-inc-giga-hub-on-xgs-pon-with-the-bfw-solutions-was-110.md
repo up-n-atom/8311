@@ -186,6 +186,8 @@ fwenv_set -8 fix_vlans 1
     The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each 
     environment.
 
+    The `-8` option prefixes the U-Boot environment variable with `8311_`.
+
 <h4>Verify and reboot</h4>
 
 Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
