@@ -323,13 +323,13 @@ configurations based on your network setup:
 
             !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
-            !!! warning "The command is <ins>temporarily</ins>, until the next power cycle"
+            !!! warning "The command is <ins>temporarily</ins>, until the next power cycle or web UI change"
 
                 ``` sh
                 ip addr add dev eth9 local 192.168.11.2/24
                 ```
 
-                For persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
+                For boot persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
 
         4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking **Create Entry**.
 
