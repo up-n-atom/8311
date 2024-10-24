@@ -376,6 +376,22 @@ You should now be able to access the [WAS-110] at `192.168.11.1`.
 
     === ":material-microsoft: Windows"
 
+        ??? note "Windows 10 and prior versions..."
+            The `scp` command may require the `-O` option parameter to use the legacy SCP protocol.
+
+            If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/)
+            instead *(Remember to choose the SCP file protocol)*.
+
+            Also, an alternative to the `ssh` command is [Putty](https://putty.org/).
+
+        **Command Prompt**
+
+        ``` sh
+        cd /D %UserProfile% & scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+        ```
+
+        **Powershell / Windows Terminal**
+
         ``` sh
         cd /D %UserProfile%; scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
         ```
@@ -411,6 +427,14 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
 Input the *root* [shell credentials]{ target="_blank" } when asked.
 
 === ":material-microsoft: Windows"
+
+    ??? note "Windows 10 and prior versions..."
+        The `scp` command may require the `-O` option parameter to use the legacy SCP protocol.
+
+        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/)
+        instead *(Remember to choose the SCP file protocol)*.
+
+        Also, an alternative to the `ssh` command is [Putty](https://putty.org/).
 
     ``` sh
     scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
