@@ -1,5 +1,7 @@
 *[AP]: Access Point
 *[APC]: Angled Physical Contact
+*[BOSA]: Bidirectional Optical Sub-Assemblies
+*[CLEI]: Common Language Information Services
 *[CLI]: Command Line Interface
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
@@ -10,6 +12,7 @@
 *[ISP]: Internet Service Provider
 *[LAN]: Local Area Network
 *[MAC]: Medium Access Control
+*[MIB]: Management Information Base
 *[NAT]: Network Address Translation
 *[OLT]: Optical Line Terminal
 *[ONT]: Optical Network Terminal
@@ -22,6 +25,7 @@
 *[SoC]: System on a Chip
 *[SSH]: Secure SHell
 *[UART]: Universal Asynchronous Receiver/Transmitter
+*[UI]: User Interface
 *[UPC]: Ultra Physical Contact
 *[VEIP]: Virtual Ethernet Interface Point
 *[WAN]: Wide Area Network
