@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectElement.onchange = (event) => {
       const category = event.target.value;
       if (category && category !== '#') {
-        window.location.href = location.origin + '/category/' + category;
+        window.location.href = `${location.origin}/category/${category}`;
       }
     };
   } catch (e) {}
