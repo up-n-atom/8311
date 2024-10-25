@@ -376,24 +376,24 @@ You should now be able to access the [WAS-110] at `192.168.11.1`.
 
     === ":material-microsoft: Windows"
 
-        ??? note "Windows 10 and prior versions..."
-            The `scp` command may require the `-O` option parameter to use the legacy SCP protocol.
+        ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
+            The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
+            If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
+            prior to 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
-            If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/)
-            instead *(Remember to choose the SCP file protocol)*.
-
-            Also, an alternative to the `ssh` command is [Putty](https://putty.org/).
+            If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
+            *(Remember to choose the SCP file protocol)*.
 
         **Command Prompt**
 
         ``` sh
-        cd /D %UserProfile% & scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+        cd /D %UserProfile% & scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
         ```
 
         **Powershell / Windows Terminal**
 
         ``` sh
-        cd /D %UserProfile%; scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
+        cd /D %UserProfile%; scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1:/tmp/fw/ubi* .
         ```
 
     === ":simple-apple: macOS / :simple-linux: Linux"
@@ -428,16 +428,18 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
 
 === ":material-microsoft: Windows"
 
-    ??? note "Windows 10 and prior versions..."
-        The `scp` command may require the `-O` option parameter to use the legacy SCP protocol.
+    ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
+        The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
+        If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
+        prior to 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
-        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/)
-        instead *(Remember to choose the SCP file protocol)*.
+        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
+        *(Remember to choose the SCP file protocol)*.
 
         Also, an alternative to the `ssh` command is [Putty](https://putty.org/).
 
     ``` sh
-    scp -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
     ```
 
