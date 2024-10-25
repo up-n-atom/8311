@@ -381,8 +381,14 @@ You should now be able to access the [WAS-110] at `192.168.11.1`.
             If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
             before 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
+            ``` sh
+            systeminfo
+            ssh -V # (1)!
+            ```
+
+            1. OpenSSH version info
+
             If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
-            *(Remember to choose the SCP file protocol)*.
 
         **Command Prompt**
 
@@ -433,10 +439,15 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
         If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
         before 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
-        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
-        *(Remember to choose the SCP file protocol)*.
+        ``` sh
+        ssh -V # (1)!
+        ```
 
-        Also, an alternative to the `ssh` command is [Putty](https://putty.org/).
+        1. OpenSSH version info
+
+        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
+
+        Also, a popular GUI alternative to the `ssh` command is [Putty](https://putty.org/).
 
     ``` sh
     scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
