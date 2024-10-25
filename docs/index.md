@@ -1,7 +1,7 @@
 # Guides
 
 <div class="pon-ispnav">
-  <select isp> 
+  <select isp autocomplete="off"> 
     <option value="">Select an ISP...</option>
     <option value="att">AT&T</option>
     <option value="bell-aliant">Bell Aliant</option>
