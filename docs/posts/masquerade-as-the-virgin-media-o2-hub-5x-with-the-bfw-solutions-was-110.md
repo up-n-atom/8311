@@ -18,11 +18,13 @@ description: Masquerade as the Virgin Media O2 Hub 5x with the BFW Solutions WAS
 
 ## Purchase a WAS-110 and LC/APC to SC/APC adapter or cable
 
-The [WAS-110] is available from select distributors and at a discounted rate with group buys on the
+The [WAS-110] is available from select [resellers] and at a discounted rate with group buys on the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
 A Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] with the provisioned LC/APC
 cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchased at <https://www.amazon.co.uk/>.
+
+ [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
 !!! warning "APC and UPC connectors are not equal nor compatible[^1]"
 
