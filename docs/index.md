@@ -1,6 +1,4 @@
-# Guides
-
-<div style="padding: 0 0 1.25em 0">
+<div style="float: right">
   <select isp autocomplete="off" class="md-button button-arrow"> 
     <option value="#">Select an ISP...</option>
     <option value="att">AT&T</option>
@@ -13,3 +11,4 @@
   </select>
 </div>
 
+# Guides
