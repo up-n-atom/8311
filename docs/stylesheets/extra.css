@@ -39,6 +39,10 @@
   display: none;
 }
 
+.pon-ispnav {
+  padding: 0 0 1.25em 0;
+}
+
 /*.md-typeset__table th:empty {
   display: none;
   border: none;

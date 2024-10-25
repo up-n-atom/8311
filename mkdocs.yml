@@ -55,6 +55,8 @@ theme:
   favicon: assets/images/favicon.png
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/isp.js
 hooks:
   - hooks/external_links_md_extension.py
 plugins:
