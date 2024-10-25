@@ -35,13 +35,19 @@ outlined in the community firmware installation guide:
 
 ![XS-010X-Q login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_login.webp)
 
-1. Within a web browser, navigate to <https://192.168.100.1> and, if asked, input the *admin* password `1234`.
+!!! warning "Power off and remove fiber before continuing"
 
-2. From the __ONT install__ page, click on __More info__ button.
+1. Power on the XS-010X-Q with an Ethernet cable plugged between the host PC.
+
+2. Setup a static **IP address** `192.168.100.2` and **Netmask** `255.255.255.0` on the host PC.
+
+3. Within a web browser, navigate to <https://192.168.100.1> and, if asked, input the *admin* password `1234`.
+
+4. From the __ONT install__ page, click on __More info__ button.
 
 ![XS-010X-Q info](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_info.webp)
 
-3. Copy all the attributes for entry later in the guide.
+5. Copy all the attributes for entry later in the guide.
 
 ## WAS-110 masquerade setup
 
