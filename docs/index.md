@@ -2,7 +2,7 @@
 
 <div class="pon-ispnav">
   <select isp autocomplete="off"> 
-    <option value="">Select an ISP...</option>
+    <option value="#">Select an ISP...</option>
     <option value="att">AT&T</option>
     <option value="bell-aliant">Bell Aliant</option>
     <option value="bell-canada">Bell Canada</option>
