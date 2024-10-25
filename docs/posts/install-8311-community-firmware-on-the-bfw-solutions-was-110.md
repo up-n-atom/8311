@@ -379,7 +379,7 @@ You should now be able to access the [WAS-110] at `192.168.11.1`.
         ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
             The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
             If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
-            prior to 8.9.0.0, please remove `-O` from the `scp` command parameters.
+            before 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
             If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
             *(Remember to choose the SCP file protocol)*.
@@ -431,7 +431,7 @@ Input the *root* [shell credentials]{ target="_blank" } when asked.
     ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
         The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
         If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
-        prior to 8.9.0.0, please remove `-O` from the `scp` command parameters.
+        before 8.9.0.0, please remove `-O` from the `scp` command parameters.
 
         If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
         *(Remember to choose the SCP file protocol)*.
