@@ -1,9 +1,9 @@
-# :simple-discord: Discord
+# 8311 Discord Server
 
 The 8311 community is spearheaded by professionals and enthusiasts with a common goal of bypassing the ISP CPE
 using commodity hardware.
 
-## The name
+## Namesake
 
 8311 is [leetspeak] for BELL of [Alexander Graham Bell] fame and the telecommunications network he founded and what
 were to become the [Baby Bells], including that of [Bell Canada].
@@ -13,7 +13,7 @@ were to become the [Baby Bells], including that of [Bell Canada].
   [Baby Bells]: https://en.wikipedia.org/wiki/Regional_Bell_Operating_Company#Baby-Bell
   [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada
 
-## Server rules
+## Rules
 
 The [8311 community server] abides by [Discord's Terms of Service] and [Discord's Community Guidelines].
 
@@ -31,11 +31,11 @@ Additionally, the following rules have been put in place to keep this server civ
 7. DO NOT publish personal information of any member past or present
 8. DO NOT direct message members without prior permission in a public channel
 
-## Quick-start guide
+## Quick start
 
 Join the [8311 community server] and start your bypass with 8 easy steps...
 
-1. Read and abide to the __[#rules](#server-rules)__ of this community server
+1. Read and abide to the __[#rules](#rules)__ of this community server
 2. Choose one or many ISP(s) in __#Channels & Roles__, if you haven't already
 3. [Mute the server, including suppressing everyone/here](https://support.discord.com/hc/en-us/articles/215253258-Notifications-Settings-101#h_3d6f7848-f80f-49d5-aaab-5dba23d2c3f8).
    We run group buys with notifications, you've been warned!!
@@ -51,12 +51,33 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 
 Group buys are run semi-frequently and will be announced by an event notification.
 
-To participate in an upcoming group buy, you must first unlock the ^^Bazaar^^ in __#Channels & Roles__.
+To participate in an upcoming group buy, you must first unlock the *Bazaar* in the __#Channels & Roles__ channel.
 
-Once unlocked, you'll gain access to the __#buy-n-sell__ forum where the group buy purchase thread exists,
+Once unlocked, you will gain access to the __#buy-n-sell__ forum, where the group buy purchase thread exists,
 as well as the __#groupbuy-discussions__ channel.
 
-If you don't see a group buy event being hosted, it either means a group buy is closed but hasn't concluded
-(ie. majority shipments haven't been received) or temporary unavailable.
+If you don't see any active group buy events, it *may* mean that a group buy is currently closed but has not yet concluded
+(e.g. the majority of shipments have not been received) or that it is temporarily unavailable.
 
-Please be patient as this is a volunteered process.
+Please be patient, as this is a volunteer-driven process.
+
+## Giveaways
+
+Giveaways are occasionally organized through the generosity of our community and its members.
+
+To participate in a giveaway, you must first be an active member and unlock the *Bazaar* in the __#Channels & Roles__
+channel.
+
+Once unlocked, you will gain access to the __#giveaways__ channel, where you can enter *any* active giveaways
+for your region and qualify for entry.
+
+If you'd like to host a giveaway, please contact an admin or email: sponsor at pon.wiki to arrange the details.
+
+### Historical giveaways
+
+| Host             | Prize                              | Winner         |
+| ---------------- | ---------------------------------- | -------------- |
+| **brdchjbcf**    | Ubiquiti UDM SE                    | jahanson       |
+| **brdchjbcf**    | Ubiquiti UXG Pro                   | Tea-Rex        |
+| **up-n-atom**    | YuLinca 6 Port 2.5G Managed Switch | Iris           |
+| **shandoosheri** | FS.com GPON-ONU-34-2OBI            | Ben            |
