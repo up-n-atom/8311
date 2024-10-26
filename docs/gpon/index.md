@@ -14,19 +14,19 @@
 
     ---
 
-    Gigabit-capable Passive Optical Networks (G-PON): Physical Media Dependent (PMD) layer specification
+    Gigabit-capable Passive Optical Networks (GPON): Physical Media Dependent (PMD) layer specification
 
 -   __[G.984.3]__
 
     ---
 
-    Gigabit-capable passive optical networks (G-PON): Transmission convergence layer specification
+    Gigabit-capable passive optical networks (GPON): Transmission convergence layer specification
 
 -   __[G.984.4]__
 
     ---
 
-    Gigabit-capable passive optical networks (G-PON): ONT management and control interface specification
+    Gigabit-capable passive optical networks (GPON): ONT management and control interface specification
 
 -   __[G.988]__
 
