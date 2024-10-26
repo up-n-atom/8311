@@ -1,6 +1,19 @@
 # :simple-discord: Discord
 
-## Server Rules
+The 8311 community is spearheaded by professionals and enthusiasts with a common goal of bypassing the ISP CPE
+using commodity hardware.
+
+## The name
+
+8311 is [leetspeak] for BELL of [Alexander Graham Bell] fame and the telecommunications network he founded and what
+were to become the [Baby Bells], including that of [Bell Canada].
+
+  [leetspeak]: https://en.wikipedia.org/wiki/Leet
+  [Alexander Graham Bell]: https://en.wikipedia.org/wiki/Alexander_Graham_Bell
+  [Baby Bells]: https://en.wikipedia.org/wiki/Regional_Bell_Operating_Company#Baby-Bell
+  [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada
+
+## Server rules
 
 The [8311 community server] abides by [Discord's Terms of Service] and [Discord's Community Guidelines].
 
@@ -18,7 +31,7 @@ Additionally, the following rules have been put in place to keep this server civ
 7. DO NOT publish personal information of any member past or present
 8. DO NOT direct message members without prior permission in a public channel
 
-## Quick Start Guide
+## Quick-start guide
 
 Join the [8311 community server] and start your bypass with 8 easy steps...
 
@@ -34,7 +47,7 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 
   [8311 community server]: https://discord.pon.wiki/
 
-## Group Buys
+## Group buys
 
 Group buys are run semi-frequently and will be announced by an event notification.
 
