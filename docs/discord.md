@@ -56,7 +56,7 @@ To participate in an upcoming group buy, you must first unlock the *Bazaar* in t
 Once unlocked, you will gain access to the __#buy-n-sell__ forum, where the group buy purchase thread exists,
 as well as the __#groupbuy-discussions__ channel.
 
-If you don't see any active group buy events, it *may* mean that a group buy is currently closed but has not yet concluded
+If you do not see any active group buy events, it *may* mean that a group buy is currently closed but has not yet concluded
 (e.g. the majority of shipments have not been received) or that it is temporarily unavailable.
 
 Please be patient, as this is a volunteer-driven process.
@@ -75,9 +75,9 @@ If you'd like to host a giveaway, please contact an admin or email: sponsor at p
 
 ### Historical giveaways
 
-| Host             | Prize                              | Winner         |
-| ---------------- | ---------------------------------- | -------------- |
-| **brdchjbcf**    | Ubiquiti UDM SE                    | jahanson       |
-| **brdchjbcf**    | Ubiquiti UXG Pro                   | Tea-Rex        |
-| **up-n-atom**    | YuLinca 6 Port 2.5G Managed Switch | Iris           |
-| **shandoosheri** | FS.com GPON-ONU-34-2OBI            | Ben            |
+| Host         | Prize                              | Winner         |
+| ------------ | ---------------------------------- | -------------- |
+| brdchjbcf    | Ubiquiti UDM SE                    | jahanson       |
+| brdchjbcf    | Ubiquiti UXG Pro                   | Tea-Rex        |
+| up-n-atom    | YuLinca 6 Port 2.5G Managed Switch | Iris           |
+| shandoosheri | FS.com GPON-ONU-34-2OBI            | Ben            |
