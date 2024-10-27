@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # 8311 Discord Server
 
 The 8311 community is spearheaded by professionals and enthusiasts with a common goal of bypassing the ISP CPE
