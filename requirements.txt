@@ -1,2 +1,3 @@
 mkdocs-material >= 9.5.28
 mkdocs-glightbox
+mkdocs-table-reader-plugin

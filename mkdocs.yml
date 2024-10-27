@@ -74,6 +74,7 @@ plugins:
         - nolightbox
       zoomable: false
   - search
+  - table-reader
 watch:
   - includes
 nav:

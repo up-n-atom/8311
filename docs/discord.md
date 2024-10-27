@@ -75,9 +75,4 @@ If you'd like to host a giveaway, please contact an admin or email: sponsor at p
 
 ### Historical giveaways
 
-| Host         | Prize                              | Winner         |
-| ------------ | ---------------------------------- | -------------- |
-| brdchjbcf    | Ubiquiti UDM SE                    | jahanson       |
-| brdchjbcf    | Ubiquiti UXG Pro                   | Tea-Rex        |
-| up-n-atom    | YuLinca 6 Port 2.5G Managed Switch | Iris           |
-| shandoosheri | FS.com GPON-ONU-34-2OBI            | Ben            |
+{{ read_csv('giveaways.csv') }}
