@@ -1,5 +1,7 @@
 # X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
+![X-ONU-SFPP](x-onu-sfpp/x-onu-sfpp.webp)
+
 ## Specifications
 
 |             |                                    |                     |
