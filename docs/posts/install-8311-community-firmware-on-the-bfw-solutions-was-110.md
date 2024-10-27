@@ -183,7 +183,7 @@ configurations based on your network setup:
 
     === ":simple-linux: Linux"
 
-        !!! note "The following commands set the IP address <ins>temporarily</ins> until the next power cycle"
+        !!! note "The following commands set the IP address but will not persist after a power cycle"
             For persistence check your OS documentation, such as
             [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
 
@@ -323,7 +323,7 @@ configurations based on your network setup:
 
             !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
-            !!! warning "The command is <ins>temporarily</ins>, until the next power cycle or web UI change"
+            !!! warning "This command will not persist with the next power cycle or web UI change"
 
                 ``` sh
                 ip addr add dev eth9 local 192.168.11.2/24
