@@ -32,7 +32,7 @@ Additionally, the following rules have been put in place to keep the server civi
 3. NO hate speech (racism, sexism, etc.)
 4. NO ^^explicit^^ or ^^violent^^ material
 5. NO ^^spam^^ (incl. CAPS, pings)
-6. NO ^^solicitation^^ and/or advertising
+6. NO ^^solicitation^^ and/or advertising *(outside __#self-promo__)*
 7. DO NOT publish personal information of any member past or present
 8. DO NOT direct message members without prior permission in a public channel
 
@@ -75,7 +75,7 @@ To participate in a giveaway, you must first be an active member and unlock the 
 channel.
 
 Once unlocked, you will gain access to the __#giveaways__ channel, where you can enter *any* active giveaways
-for your region and qualify for entry.
+if you qualify for entry.
 
 If you'd like to host a giveaway, please contact an admin or email: sponsor at pon.wiki to arrange the details.
 
