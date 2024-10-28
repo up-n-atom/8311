@@ -91,8 +91,8 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
-operational status.
+After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
+operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
 
 For troubleshooting, please read:
 
@@ -141,8 +141,8 @@ fw_printenv | grep ^8311
 reboot
 ```
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
-operational status.
+After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
+operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
 
 For troubleshooting, please read:
 
@@ -163,6 +163,11 @@ Please help us by contributing new versions via the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
 or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
+
+## Routing guides
+
+* [OPNsense - Orange France FTTH IPv4 & IPv6](https://docs.opnsense.org/manual/how-tos/orange_fr_fttp.html)
+* [Orange bypass on Debian](https://akhamar.github.io/orange-bypass-debian/)
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
