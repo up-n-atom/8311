@@ -151,7 +151,7 @@ For troubleshooting, please read:
 ## Livebox 7 software versions
 
 The software version ^^can^^ be utilized as a provisioning attribute by the OLT, but this is not the case for
-the Livebox 7, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing.
+the Livebox 7, which uses CWMP[^2]. However, it is recommended to keep somewhat up-to-date with the following listing.
 
 | Software Version 0 | Software Version 1 |
 | ------------------ | ------------------ |
