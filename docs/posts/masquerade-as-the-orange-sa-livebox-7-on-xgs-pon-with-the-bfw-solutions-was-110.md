@@ -1,6 +1,5 @@
 ---
-draft: true
-date: 2025-06-21
+date: 2025-10-28
 categories:
   - XGS-PON
   - Livebox 7
@@ -22,44 +21,50 @@ slug: masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-wa
 !!! info "5 Gbps or higher packages"
     If you're subscribed to Livebox Max Fibre or a similar 5 Gbps or higher package, skip past to [Purchase a WAS-110].
 
-### with the web UI
-
 1. Within a web browser, navigate to
    <https://livebox/>
-   and, if asked, input your Administrator password. (1)
+   and, if asked, input your Administrator password. (1) and click the __Connect__ button.
    { .annotate }
 
     1. The default Administrator password is the first 12 digits of the WiFi key located on the bottom [label] of the
        Livebox 7.
 
-2. ...
+2. From the configuration interface, click the cog (:material-cog:) icon at the bottom of the page for
+   __Advanced Parameters__ or move forward twice using the right arrow.
+
+3. From the __Advanced Parameters__ page, click the __System Information__ card.
+
+4. From the __System Information__ page, click the __ONT__ tab.
+
+6. From the __ONT__ tab, verify the __Max Bit Rate Supported__ is ***10000Mbps*** for XGS-PON.
+
+    !!! tip "Take note of the Serial Number and ONT Software Versions for the WAS-110 configuration"
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers] and at a discounted rate with group buys on the 
+The [WAS-110] is available from select [resellers] and at a discounted rate with group buys on the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
 ## Install community firmware
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps 
+As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
 outlined in the community firmware installation guide:
 
 [Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
 
 ## WAS-110 masquerade setup
 
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
-identifiers are available from the web UI or the bottom label of the Livebox 7, color-coordinated in the following
-depiction:
+To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
+identifiers are available from the web UI or the bottom label of the Livebox 7.
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
 ![WAS-110 login](masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
 
-1. Within a web browser, navigate to 
-   <https://192.168.11.1/cgi-bin/luci/admin/8311/config> 
+1. Within a web browser, navigate to
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
    and, if asked, input your <em>root</em> password.
 
     ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
@@ -70,9 +75,9 @@ depiction:
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-    !!! reminder 
-        <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned values on the bottom [label]
-        of the Livebox 7.
+    !!! reminder
+        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
+        from the Livebox 7 web UI.
 
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ |-------------------------------- |
@@ -86,7 +91,7 @@ depiction:
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
 operational status.
 
 For troubleshooting, please read:
@@ -104,8 +109,8 @@ ssh root@192.168.11.1
 <h4>Configure 8311 U-Boot environment</h4>
 
 !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the :blue_circle: __PON serial number__ with the provisioned values on the bottom [label] of
-    the Livebox 7.
+    ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
+    from the Livebox 7 web UI.
 
 ``` sh hl_lines="1 3"
 fwenv_set -8 gpon_sn SMBS03831122
@@ -113,7 +118,7 @@ fwenv_set -8 equipment_id SagemcomFast5694OFR
 fwenv_set -8 hw_ver SMBSXLB7400
 fwenv_set -8 cp_hw_ver_sync 1
 fwenv_set -8 sw_verA SAHEOFR010117 # (1)!
-fwenv_set -8 sw_verB SAHEOFR010117
+fwenv_set -8 sw_verB SAHEOFR919117
 ```
 
 1. [Version listing]
@@ -121,7 +126,7 @@ fwenv_set -8 sw_verB SAHEOFR010117
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each 
+    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
     environment.
 
     The `-8` option prefixes the U-Boot environment variable with `8311_`.
@@ -136,7 +141,7 @@ fw_printenv | grep ^8311
 reboot
 ```
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
 operational status.
 
 For troubleshooting, please read:
@@ -145,13 +150,14 @@ For troubleshooting, please read:
 
 ## Livebox 7 software versions
 
-The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for 
+The software version ^^can^^ be utilized as a provisioning attribute by the OLT, but this is not the case for
 the Livebox 7, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing.
 
-| Software Version |
-| ---------------- |
-| SAHEOFR010117    |
-| SAHEOFR010112    |
+| Software Version 0 | Software Version 1 |
+| ------------------ | ------------------ |
+| SAHEOFR010117      | SAHEOFR919117      |
+| SAHEOFR010113      | SAHEOFR070101      |
+| SAHEOFR010112      |                    |
 
 Please help us by contributing new versions via the
 [8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
