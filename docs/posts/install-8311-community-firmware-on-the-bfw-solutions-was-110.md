@@ -130,8 +130,13 @@ configurations based on your network setup:
 * [Source NAT](#source-nat)
 
 === "Static IP"
-    
+
     === ":material-microsoft: Windows"
+
+        !!! info "For the shameless mouse clickers..."
+            If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
+
+            <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
 
         !!! tip "Run Command Prompt as Administrator"
 
@@ -139,47 +144,55 @@ configurations based on your network setup:
             2. In the Run dialog box, type `cmd` into the input field and then press
                ++ctrl+shift+enter++.
 
-        ``` sh hl_lines="2"
-        netsh interface ip show config # (1)!
-        netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
-        netsh interface ipv4 set interface "<interface name>" mtu=1500
-        ```
 
-        1. Replace `<interface name>` in the next commands with a interface name from the output.
+        1. Retrieve the host __Interface Name__ the WAS-110 is connected to.
 
-        Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
+            ``` sh
+            netsh interface ip show config
+            ```
 
-        ``` sh
-        netsh interface ipv4 set address name="<interface name>" dhcp
-        ```
+        2. Assign a `192.168.11.2` static IP address to the host interface, replacing `<interface name>` in the
+           following commands with the value retrieved from step 1.
 
-        ??? info "For the shameless mouse clickers..."
-            If you are more comfortable with the Windows GUI, follow the <ins>manual</ins> steps outlined by Microsoft at:
+            ``` sh
+            netsh interface ipv4 set address name="<interface name>" static 192.168.11.2 255.255.255.0 192.168.11.1
+            netsh interface ipv4 set interface "<interface name>" mtu=1500
+            ```
 
-            <https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace>
+            !!! tip "Execute the following command to restore DHCP, *only* if the static IP was temporary for setup."
+
+                ``` sh
+                netsh interface ipv4 set address name="<interface name>" dhcp
+                ```
 
     === ":simple-apple: macOS"
 
-        !!! tip "Replace `<service>` with the SFP+ interface name."
-
-        ``` sh hl_lines="2"
-        sudo networksetup -listallnetworkservices # (1)!
-        sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
-        ```
-
-        1. Replace `<service>` in the next command with a network service from the output.
-
-        Execute the following command to restore DHCP, *only* if the static IP was temporary for setup.
-
-        ``` sh
-        sudo networksetup -setdhcp <service>
-        ```
-
-        ??? info "For the shameless mouse clickers..."
+        !!! info "For the shameless mouse clickers..."
             If you are more comfortable with the macOS GUI, follow the <ins>manual</ins> steps outlined by Apple at:
 
             * <https://support.apple.com/en-ca/guide/mac-help/mchlp2718/mac>
             * <https://support.apple.com/en-ca/guide/mac-help/mh14129/mac>
+
+        1. Launch __Terminal App__.
+
+        2. Retrieve the __Network Service__ the WAS-110 is connected to.
+
+            ``` sh
+            sudo networksetup -listallnetworkservices
+            ```
+
+        3. Assign a `192.168.11.2` static IP address to the host network, replacing `<service>` in the
+           following commands with the value retrieved from step 2.
+
+            ``` sh
+            sudo networksetup -setmanual <service> 192.168.11.2 255.255.255.0 192.168.11.1
+            ```
+
+            !!! tip "Execute the following command to restore DHCP, *only* if the static IP was temporary for setup."
+
+                ``` sh
+                sudo networksetup -setdhcp <service>
+                ```
 
     === ":simple-linux: Linux"
 
