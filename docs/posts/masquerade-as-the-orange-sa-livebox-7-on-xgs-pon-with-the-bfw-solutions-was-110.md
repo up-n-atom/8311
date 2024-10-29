@@ -1,5 +1,5 @@
 ---
-date: 2025-10-28
+date: 2024-10-28
 categories:
   - XGS-PON
   - Livebox 7
