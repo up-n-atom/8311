@@ -40,8 +40,7 @@ If the bandwidth is `10000/10000` and/or wavelength is `1270/1577`, you're subsc
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers] and at a discounted rate with group buys on the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
+The [WAS-110] is available from select [resellers].
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 

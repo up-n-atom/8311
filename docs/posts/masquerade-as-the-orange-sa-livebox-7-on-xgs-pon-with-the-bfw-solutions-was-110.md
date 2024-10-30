@@ -42,8 +42,7 @@ slug: masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-wa
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers] and at a discounted rate with group buys on the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420).
+The [WAS-110] is available from select [resellers].
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
