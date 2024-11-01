@@ -47,7 +47,7 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 4. Invite your friends and family <https://discord.pon.wiki/>
 5. Drop a Hello! in __#chit-chat__
 6. Unlock the *Bazaar* in __#Channels & Roles__ and join in any available [group buys](#group-buys) and/or
-   [#giveaways](#giveaways)
+   [giveaways](#giveaways)
 7. Check __#Browse Channels__ for additional categories and/or channels that may pique your interest
 8. Add <https://pon.wiki/> to your browser favourites
 
