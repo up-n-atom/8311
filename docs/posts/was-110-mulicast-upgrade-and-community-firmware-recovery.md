@@ -23,7 +23,7 @@ description: WAS-110 Multicast Upgrade and Recovery
 
     1. Press ++escape++ on boot to get into the [U-Boot] shell
 
-    2. Delete the environment variable
+    2. Delete the `8311_root_pwhash` environment variable
 
            ```sh
            env delete 8311_root_pwhash
@@ -136,9 +136,6 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 #### Download
 
-!!! info "For use in conjunction with the 8311 community firmware"
-    <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
-
 === ":simple-linux: Linux"
 
     ``` sh
@@ -151,6 +148,11 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
     ```sh
     curl.exe https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
     ```
+
+The [upgrade script](#upgrade-script) works with the `multicast_update.img` and `multicast_reset.img` files from the
+8311 community firmware archive, which you can download at:
+
+<https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
 #### Requirements
 
