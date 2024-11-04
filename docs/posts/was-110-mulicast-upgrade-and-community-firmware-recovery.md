@@ -21,7 +21,7 @@ description: WAS-110 Multicast Upgrade and Recovery
     consider purchasing a [SFP Media Buddy](https://whinis.com/sfp-buddy/) and deleting the `8311_root_pwhash`
     environment variable over serial USB within the [U-Boot] shell.
 
-!!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with [reset](#reset) steps..."
+!!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with the [reset](#reset) steps..."
 
 The [WAS-110] from the Azores factory includes a handy multicast upgrade utility baked into its U-boot bootloader,
 including models from the following resellers:
