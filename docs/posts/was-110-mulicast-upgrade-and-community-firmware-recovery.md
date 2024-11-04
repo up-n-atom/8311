@@ -262,7 +262,6 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
 ### Usage
 
 !!! warning "Without serial access, you'll be running blind"
-    It's advisable to increase the wait time
 
 #### Upgrade
 
