@@ -64,7 +64,7 @@ An ordered bit-map of the blocks received is updated from the sequence number al
 can be sent and received non-sequentially.
 
 Once all the blocks have been received the upgrade will commence from the final image stored at the hardcoded offset
-`0x82000000`, otherwise set in the [U-Boot] environment variable `loadaddr` with the following command sequence:
+`0x82000000` ([U-Boot] environment variable `loadaddr`) with the following command sequence:
 
 ``` sh
 nand erase.part system_sw; run ubi_init; run switchbankA && upgrade 0x82000000 0x<size>
@@ -235,6 +235,11 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
             ``` sh
             env print ethaddr
             ```
+
+**Python 3.x**
+
+:   Python installation varies by Operating System and has been outlined by the tutors at
+    [Real Python &mdash; Python 3 Installation & Setup Guide](https://realpython.com/installing-python).
 
 ### Usage
 
