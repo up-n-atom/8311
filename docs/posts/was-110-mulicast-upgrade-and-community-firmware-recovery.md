@@ -16,6 +16,8 @@ description: WAS-110 Multicast Upgrade and Recovery
 <!-- more -->
 <!-- nocont -->
 
+!!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with [reset](#reset) steps..."
+
 The [WAS-110] from the Azores factory includes a handy multicast upgrade utility baked into its U-boot bootloader,
 including models from the following resellers:
 
@@ -28,20 +30,17 @@ including models from the following resellers:
 The upgrade sequence is tied into the boot delay loop and therefore will not trigger if the [U-Boot] environment variable
 `bootdelay` is less than or equal to zero (0); The default value is three (3).
 
-<div class="grid" markdown>
-  <div>
-    <h5>OpenWrt</h5>
+=== "OpenWrt"
+
     ``` sh
     fw_printenv bootdelay
     ```
-  </div>
-  <div>
-    <h5>U-Boot</h5>
+
+=== "U-Boot"
+
     ``` sh
     env print bootdelay
     ```
-  </div>
-</div>
 
 The upgrade sequence will wait 5 seconds for the first magic UDP packet on port `13456`. Each packet must include the
 following header:
@@ -70,7 +69,7 @@ ubi remove rootfs_data && ubi create rootfs_data 0x2000000
 
 ## Image format
 
-!!! note "The 8311 community firmware includes the multicast images, skip past to [Upgrade Script](#upgrade-script)"
+!!! note "The 8311 community firmware archives include the multicast images, skip past to [Upgrade Script](#upgrade-script) to get started!"
 
 The multicast image is a concatenated binary blob of the following uImage files: `kernel.bin`, `bootcore.bin`, and
 `rootfs.img`.
@@ -112,41 +111,45 @@ chmod +x multicast_upgrader.py
 
 **10G SFP+ port**
 
-:   !!! info
-        The [WAS-110] SFP+ side is forced to **10GBASE-KR**[^1] in [U-Boot] as can be observed from the environment variable
-        `lan1-xpcs-mode`.
+:    A 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network switch with its port
+     settings forced to 10Gbps. If using a switch, it's important to disable STP on the port(s).
 
-        <h5>OpenWrt</h5>
+    ??? info
+        The ethernet side of the [WAS-110] is forced to **10GBASE-KR**[^1] in [U-Boot] as can be observed from the
+        environment variable `lan1-xpcs-mode`; It won't fallback to 1G.
 
-        ``` sh
-        fw_printenv lan1-xpcs-mode
-        ```
+        === "OpenWrt"
 
-        <h5>U-Boot</h5>
+            ``` sh
+            fw_printenv lan1-xpcs-mode
+            ```
 
-        ``` sh
-        env print lan1-xpcs-mode
-        ```
+        === "U-Boot"
+
+            ``` sh
+            env print lan1-xpcs-mode
+            ```
 
 **Static IP address `192.168.1.2/24`**
 
 :        ip address add 192.168.1.2/24 dev <interface>
 
-    !!! info
-        The default [WAS-110] IP address in [U-Boot] is `192.168.1.1` and can be retrieved from the environment variable
+    ??? info
+        The default [WAS-110] [U-Boot] IP address is `192.168.1.1` and can be retrieved from the environment variable
         `ipaddr`.
 
-        <h5>OpenWrt</h5>
+        === "OpenWrt"
 
-        ``` sh
-        fw_printenv ipaddr
+            ``` sh
+            fw_printenv ipaddr
 
-        ```
-        <h5>U-Boot</h5>
+            ```
 
-        ``` sh
-        env print ipaddr
-        ```
+        === "U-Boot"
+
+            ``` sh
+            env print ipaddr
+            ```
 
 **Static ARP entry**
 
@@ -158,21 +161,21 @@ chmod +x multicast_upgrader.py
 
         arp -s 192.168.1.1 01:E0:92:00:01:40
 
-    !!! info
-        The default [WAS-110] MAC address in [U-Boot] is `00:E0:92:00:01:40` and can be retrieved from the environment variable
-        `ethaddr`.
+    ??? info
+        The default [WAS-110] [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
+        variable `ethaddr`.
 
-        <h5>OpenWrt</h5>
+        === "OpenWrt"
 
-        ``` sh
-        fw_printenv ethaddr
-        ```
+            ``` sh
+            fw_printenv ethaddr
+            ```
 
-        <h5>U-Boot</h5>
+        === "U-Boot"
 
-        ``` sh
-        env print ethaddr
-        ```
+            ``` sh
+            env print ethaddr
+            ```
 
 ### Usage
 
@@ -206,7 +209,9 @@ chmod +x multicast_upgrader.py
 
 #### Reset
 
-!!! tip "Previous settings will be backed up and stored in `/ptconf`."
+!!! note "Previous settings will be backed up and stored in `/ptconf`."
+    It may be advisable to reflash afterwards with a regular image as your settings may accidentally be restored back
+    to their defaults if the backup file isn't present or removed.
 
 1. Remove the [WAS-110]
 
@@ -234,4 +239,4 @@ chmod +x multicast_upgrader.py
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [U-Boot]: https://www.u-boot.org/
 
-[^1]: https://en.wikipedia.org/wiki/10_Gigabit_Ethernet#10GBASE-KR
+[^1]: <https://en.wikipedia.org/wiki/10_Gigabit_Ethernet#10GBASE-KR>
