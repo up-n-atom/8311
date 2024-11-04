@@ -25,17 +25,17 @@ description: WAS-110 Multicast Upgrade and Recovery
 
     2. Delete the environment variable
 
-       ```sh
-       env delete 8311_root_pwhash
-       env save
-       env save
-       ```
+           ```sh
+           env delete 8311_root_pwhash
+           env save
+           env save
+           ```
 
     3. Continue to boot into OpenWrt
 
-       ```sh
-       bootm
-       ```
+           ```sh
+           bootm
+           ```
 
 !!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with the [reset](#reset) steps..."
 
