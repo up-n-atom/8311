@@ -70,7 +70,7 @@ ubi remove rootfs_data && ubi create rootfs_data 0x2000000
 
 ## Image format
 
-!!! note "The 8311 community firmware includes the multicast images, skip past to [Upgrade Script](/#upgrade-script)"
+!!! note "The 8311 community firmware includes the multicast images, skip past to [Upgrade Script](#upgrade-script)"
 
 The multicast image is a concatenated binary blob of the following uImage files: `kernel.bin`, `bootcore.bin`, and
 `rootfs.img`.
