@@ -118,17 +118,17 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 !!! info "For use in conjunction with the 8311 community firmware"
     <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-=== ":material-microsoft: Windows"
-
-    ```sh
-    curl.exe https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
-    ```
-
 === ":simple-linux: Linux"
 
     ``` sh
     curl https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
     chmod +x multicast_upgrader.py
+    ```
+
+=== ":material-microsoft: Windows"
+
+    ```sh
+    curl.exe https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
     ```
 
 #### Requirements
@@ -156,16 +156,16 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 **Static IP address `192.168.1.2/24`**
 
-:   === ":material-microsoft: Windows"
-
-        ```sh
-        netsh interface ipv4 set address name="<interface name>" static 192.168.1.2 255.255.255.0 192.168.1.1
-        ```
-
-    === ":simple-linux: Linux"
+:   === ":simple-linux: Linux"
 
         ```sh
         ip address add 192.168.1.2/24 dev <interface>
+        ```
+
+    === ":material-microsoft: Windows"
+
+        ```sh
+        netsh interface ipv4 set address name="<interface name>" static 192.168.1.2 255.255.255.0 192.168.1.1
         ```
 
     ??? info
@@ -189,30 +189,30 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 :   **Unicast** (1 to 1)
 
-    === ":material-microsoft: Windows"
-
-        ```sh
-        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 00:E0:92:00:01:40
-        ```
-
     === ":simple-linux: Linux"
 
         ```sh
         arp -s 192.168.1.1 00:E0:92:00:01:40
         ```
 
-    **Multicast**
-
     === ":material-microsoft: Windows"
 
         ```sh
-        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 01:E0:92:00:01:40
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 00:E0:92:00:01:40
         ```
+
+    **Multicast**
 
     === ":simple-linux: Linux"
 
         ```sh
         arp -s 192.168.1.1 01:E0:92:00:01:40
+        ```
+
+    === ":material-microsoft: Windows"
+
+        ```sh
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 01:E0:92:00:01:40
         ```
 
     ??? info
@@ -242,16 +242,16 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 2. Run the `multicast_upgrader.py` script
 
-    === ":material-microsoft: Windows"
-
-        ```
-        python3.exe multicast_upgrader.py --path=multicast_upgrade.img
-        ```
-
     === ":simple-linux: Linux"
 
         ```
         ./multicast_upgrader.py --path=multicast_upgrade.img
+        ```
+
+    === ":material-microsoft: Windows"
+
+        ```
+        python3.exe multicast_upgrader.py --path=multicast_upgrade.img
         ```
 
 3. Insert the [WAS-110]
@@ -279,16 +279,16 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 2. Run the `multicast_upgrader.py` script
 
-    === ":material-microsoft: Windows"
-
-        ```
-        python3.exe multicast_upgrader.py --path=multicast_reset.img
-        ```
-
     === ":simple-linux: Linux"
 
         ```
         ./multicast_upgrader.py --path=multicast_reset.img
+        ```
+
+    === ":material-microsoft: Windows"
+
+        ```
+        python3.exe multicast_upgrader.py --path=multicast_reset.img
         ```
 
 3. Insert the [WAS-110]
