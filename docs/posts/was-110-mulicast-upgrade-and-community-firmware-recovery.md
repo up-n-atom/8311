@@ -16,6 +16,11 @@ description: WAS-110 Multicast Upgrade and Recovery
 <!-- more -->
 <!-- nocont -->
 
+!!! warning "This guide is rated ^^ADVANCED^^"
+    If you're trying to recovery from a forgotten *root* password and lack the required networking skills, please
+    consider purchasing a [SFP Media Buddy](https://whinis.com/sfp-buddy/) and deleting the `8311_root_pwhash`
+    environment variable over serial UART within the [U-Boot] shell.
+
 !!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with [reset](#reset) steps..."
 
 The [WAS-110] from the Azores factory includes a handy multicast upgrade utility baked into its U-boot bootloader,
