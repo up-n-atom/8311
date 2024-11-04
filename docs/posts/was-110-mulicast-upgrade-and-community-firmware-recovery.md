@@ -74,6 +74,18 @@ ubi remove rootfs_data && ubi create rootfs_data 0x2000000
 The multicast image is a concatenated binary blob of the following uImage files: `kernel.bin`, `bootcore.bin`, and
 `rootfs.img`.
 
+### Install packages
+
+``` sh
+sudo apt-get -y install u-boot-tools squashfs-tools 7zip
+```
+
+### Blobs
+
+The following blobs can be obtained from the 8311 community firmware archive or personal backups after following the
+[dump & backup firmware](../install-8311-community-firmware-on-the-bfw-solutions-was-110/#dump-and-backup-firmware)
+guide.
+
 **kernel.bin**
 
 :       dumpimage -T kernel kernel.bin -o zImage
@@ -90,6 +102,10 @@ The multicast image is a concatenated binary blob of the following uImage files:
 :       unsquashfs -d rootfs rootfs.img
         mksquashfs
         mkimage -A MIPS -O Linux -T filesystem -C none -n "<version>" -d rootfs.squashfs rootfs.bin
+
+``` sh
+cat kernel.bin bootcore.bin rootfs.bin > multicast.img
+```
 
 ## Upgrade Script
 
