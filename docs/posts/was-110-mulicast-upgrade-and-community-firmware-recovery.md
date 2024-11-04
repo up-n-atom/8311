@@ -74,7 +74,7 @@ ubi remove rootfs_data && ubi create rootfs_data 0x2000000
 The multicast image is a concatenated binary blob of the following uImage files: `kernel.bin`, `bootcore.bin`, and
 `rootfs.img`.
 
-### Install packages
+### Install packages <small>Debian Linux</small> { #install-packages data-toc-label="Install packages" }
 
 ``` sh
 sudo apt-get -y install u-boot-tools squashfs-tools 7zip
@@ -118,10 +118,18 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 !!! info "For use in conjunction with the 8311 community firmware"
     <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>
 
-``` sh
-curl https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
-chmod +x multicast_upgrader.py
-```
+=== ":material-microsoft: Windows"
+
+    ```sh
+    curl.exe https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
+    ```
+
+=== ":simple-linux: Linux"
+
+    ``` sh
+    curl https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
+    chmod +x multicast_upgrader.py
+    ```
 
 #### Requirements
 
@@ -148,7 +156,17 @@ chmod +x multicast_upgrader.py
 
 **Static IP address `192.168.1.2/24`**
 
-:        ip address add 192.168.1.2/24 dev <interface>
+:   === ":material-microsoft: Windows"
+
+        ```sh
+        netsh interface ipv4 set address name="<interface name>" static 192.168.1.2 255.255.255.0 192.168.1.1
+        ```
+
+    === ":simple-linux: Linux"
+
+        ```sh
+        ip address add 192.168.1.2/24 dev <interface>
+        ```
 
     ??? info
         The default [WAS-110] [U-Boot] IP address is `192.168.1.1` and can be retrieved from the environment variable
@@ -171,11 +189,31 @@ chmod +x multicast_upgrader.py
 
 :   **Unicast** (1 to 1)
 
+    === ":material-microsoft: Windows"
+
+        ```sh
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 00:E0:92:00:01:40
+        ```
+
+    === ":simple-linux: Linux"
+
+        ```sh
         arp -s 192.168.1.1 00:E0:92:00:01:40
+        ```
 
     **Multicast**
 
+    === ":material-microsoft: Windows"
+
+        ```sh
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 01:E0:92:00:01:40
+        ```
+
+    === ":simple-linux: Linux"
+
+        ```sh
         arp -s 192.168.1.1 01:E0:92:00:01:40
+        ```
 
     ??? info
         The default [WAS-110] [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
@@ -204,9 +242,17 @@ chmod +x multicast_upgrader.py
 
 2. Run the `multicast_upgrader.py` script
 
-       ```
-       ./multicast_upgrader.py --path=multicast_upgrade.img
-       ```
+    === ":material-microsoft: Windows"
+
+        ```
+        python3.exe multicast_upgrader.py --path=multicast_upgrade.img
+        ```
+
+    === ":simple-linux: Linux"
+
+        ```
+        ./multicast_upgrader.py --path=multicast_upgrade.img
+        ```
 
 3. Insert the [WAS-110]
 
@@ -233,9 +279,17 @@ chmod +x multicast_upgrader.py
 
 2. Run the `multicast_upgrader.py` script
 
-       ```
-       ./multicast_upgrader.py --path=multicast_reset.img
-       ```
+    === ":material-microsoft: Windows"
+
+        ```
+        python3.exe multicast_upgrader.py --path=multicast_reset.img
+        ```
+
+    === ":simple-linux: Linux"
+
+        ```
+        ./multicast_upgrader.py --path=multicast_reset.img
+        ```
 
 3. Insert the [WAS-110]
 
