@@ -300,8 +300,8 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
 #### Reset
 
 !!! note "Previous settings will be backed up and stored in `/ptconf`."
-    It may be advisable to reflash afterwards with a regular image as your settings may accidentally be restored back
-    to their defaults if the backup file isn't present or removed.
+    It is advisable to reflash with a regular image afterward, as your settings may be unintentionally restored to
+    their defaults if the backup file is not present or has been removed.
 
 1. Remove the [WAS-110]
 
