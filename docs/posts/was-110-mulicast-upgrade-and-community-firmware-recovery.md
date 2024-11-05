@@ -178,6 +178,24 @@ __10G SFP+ port__
             env print lan1-xpcs-mode
             ```
 
+        If you are flashing with a 2.5G port (like a switch or a SFP Media Buddy) you must force the SFP+ side to use
+        __2P5G_SGMII_MODE__.
+
+        === "OpenWrt"
+
+            ``` sh
+            fwenv_set lan1-xpcs-mode 2P5G_SGMII_MODE
+            ```
+
+        === "U-Boot"
+
+            ``` sh
+            env set lan1-xpcs-mode 2P5G_SGMII_MODE
+            env save
+            env save
+            ```
+
+
 __Static IP address `192.168.1.2/24`__
 
 :   === ":simple-linux: Linux"
@@ -190,21 +208,6 @@ __Static IP address `192.168.1.2/24`__
 
         ```sh
         netsh interface ipv4 set address name="<interface name>" static 192.168.1.2 255.255.255.0 192.168.1.1
-        ```
-        
-        If you are flashing with a 2.5G port (like a switch or a SFP Media Buddy) you must force the SFP+ side to use **2P5G_SGMII_MODE**.
-        <h5>OpenWrt</h5>
-
-        ``` sh
-        fw_setenv lan1-xpcs-mode 2P5G_SGMII_MODE
-        ```
-
-        <h5>U-Boot</h5>
-
-        ``` sh
-        env set lan1-xpcs-mode 2P5G_SGMII_MODE
-        env save
-        env save
         ```
 
     ??? info
