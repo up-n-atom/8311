@@ -255,7 +255,7 @@ __Static ARP entry__
     === ":material-microsoft: Windows"
 
         ```sh
-        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 00:E0:92:00:01:40
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 "00-E0-92-00-01-40"
         ```
 
     __Multicast__
@@ -269,7 +269,7 @@ __Static ARP entry__
     === ":material-microsoft: Windows"
 
         ```sh
-        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 01:E0:92:00:01:40
+        netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 "01-E0-92-00-01-40"
         ```
 
     ??? info
