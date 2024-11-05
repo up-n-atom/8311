@@ -16,12 +16,12 @@ description: WAS-110 Multicast Upgrade and Recovery
 <!-- more -->
 <!-- nocont -->
 
-!!! warning "This guide is rated ^^ADVANCED^^"
-    If you're trying to recovery from a forgotten *root* password and lack the required networking skills, please
-    consider purchasing a [SFP Media Buddy](https://whinis.com/sfp-buddy/) and deleting the `8311_root_pwhash`
-    environment variable over serial USB within the [U-Boot] shell.
+!!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with the [reset](#reset) steps..."
+    If you lack the required networking skills to proceed with this guide, please consider purchasing a
+    [SFP Media Buddy](https://whinis.com/sfp-buddy/) and deleting the `8311_root_pwhash` environment variable over
+    serial USB within the [U-Boot] shell.
 
-    1. Press ++escape++ on boot to get into the [U-Boot] shell
+    1. Press ++escape++ on boot to enter the [U-Boot] shell
 
     2. Delete the `8311_root_pwhash` environment variable
 
@@ -36,8 +36,6 @@ description: WAS-110 Multicast Upgrade and Recovery
            ```sh
            bootm
            ```
-
-!!! tip "Forgot the *root* password to a [WAS-110] running the 8311 community firmware? Follow along with the [reset](#reset) steps..."
 
 The [WAS-110] from the Azores factory includes a handy multicast upgrade utility baked into its U-boot bootloader,
 including models from the following resellers:
@@ -90,7 +88,7 @@ ubi remove rootfs_data && ubi create rootfs_data 0x2000000
 
 ## Image format
 
-!!! note "The 8311 community firmware archives include the multicast images, skip past to [Upgrade Script](#upgrade-script) to get started!"
+!!! note "The 8311 community firmware archives include the multicast images, skip past to the [Upgrade Script](#upgrade-script) to get started!"
 
 The multicast image is a concatenated binary blob of the following uImage files: `kernel.bin`, `bootcore.bin`, and
 `rootfs.img`.
@@ -130,6 +128,9 @@ cat kernel.bin bootcore.bin rootfs.bin > multicast.img
 
 ## Upgrade Script
 
+Python installation varies by Operating System and has been outlined by the tutors at
+[Real Python &mdash; Python 3 Installation & Setup Guide](https://realpython.com/installing-python).
+
 <script src="https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56.js"></script>
 
 ### Host setup
@@ -156,10 +157,10 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
 
 #### Requirements
 
-**10G SFP+ port**
+__10G SFP+ port__
 
 :    A 10-gigabit compatible SFP+ host interface, such as a NIC, media converter, and/or network switch with its port
-     settings forced to 10Gbps. If using a switch, it's important to disable STP on the port(s).
+     settings __forced__ to 10Gbps. If using a switch, it's important to disable STP on the port(s).
 
     ??? info
         The ethernet side of the [WAS-110] is forced to **10GBASE-KR**[^1] in [U-Boot] as can be observed from the
@@ -177,7 +178,7 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
             env print lan1-xpcs-mode
             ```
 
-**Static IP address `192.168.1.2/24`**
+__Static IP address `192.168.1.2/24`__
 
 :   === ":simple-linux: Linux"
 
@@ -208,9 +209,9 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
             env print ipaddr
             ```
 
-**Static ARP entry**
+__Static ARP entry__
 
-:   **Unicast** (1 to 1)
+:   __Unicast__ (1 to 1)
 
     === ":simple-linux: Linux"
 
@@ -224,7 +225,7 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
         netsh interface ipv4 add neighbors "<interface name>" 192.168.1.1 00:E0:92:00:01:40
         ```
 
-    **Multicast**
+    __Multicast__
 
     === ":simple-linux: Linux"
 
@@ -254,14 +255,9 @@ The [upgrade script](#upgrade-script) works with the `multicast_update.img` and 
             env print ethaddr
             ```
 
-**Python 3.x**
-
-:   Python installation varies by Operating System and has been outlined by the tutors at
-    [Real Python &mdash; Python 3 Installation & Setup Guide](https://realpython.com/installing-python).
-
 ### Usage
 
-!!! warning "Without serial access, you'll be running blind"
+!!! warning "Without serial access, you'll be running blind. Proceed with caution and take more time between the steps"
 
 #### Upgrade
 
