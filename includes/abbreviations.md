@@ -14,6 +14,7 @@
 *[MAC]: Medium Access Control
 *[MIB]: Management Information Base
 *[NAT]: Network Address Translation
+*[NIC]: Network Interface Card
 *[OLT]: Optical Line Terminal
 *[ONT]: Optical Network Terminal
 *[OMCI]: ONU Management and Control Interface
@@ -21,12 +22,16 @@
 *[PON]: Passive Optical Network
 *[PPTP]: Point-to-Point Tunneling Protocol
 *[RAM]: Random Access Memory
+*[RX]: Receive
 *[SC]: Subscriber Connector
+*[SFP]: Small Form-factor Pluggable
 *[SoC]: System on a Chip
 *[SSH]: Secure SHell
+*[TX]: Transmit
 *[UART]: Universal Asynchronous Receiver/Transmitter
 *[UI]: User Interface
 *[UPC]: Ultra Physical Contact
+*[USB]: Universal Serial Bus
 *[VEIP]: Virtual Ethernet Interface Point
 *[WAN]: Wide Area Network
 *[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
