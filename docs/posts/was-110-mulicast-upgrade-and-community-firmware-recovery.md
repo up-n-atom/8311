@@ -105,18 +105,18 @@ The following blobs can be obtained from the 8311 community firmware archive or 
 [dump & backup firmware](../install-8311-community-firmware-on-the-bfw-solutions-was-110/#dump-and-backup-firmware)
 guide.
 
-**kernel.bin**
+__kernel.bin__
 
 :       dumpimage -T kernel kernel.bin -o zImage
         7z e -so zImage > vmlinux
         mkimage -A MIPS -O Linux -T kernel -a 0xa0020000 -C lzma -e 0xa0020000 -n "PON_1.18.1" -d zImage kernel.bin
 
-**bootcore.bin**
+__bootcore.bin__
 
 :       dumpimage -T kernel bootcore.bin -o u-boot.bin
         mkimage -A MIPS -O Linux -T kernel -a 0x88000000 -C none -e 0x88000000 -n "MIPS 4Kec Bootcore" -d u-boot.bin bootcore.bin
 
-**rootfs.img**
+__rootfs.img__
 
 :       unsquashfs -d rootfs rootfs.img
         mksquashfs
@@ -163,7 +163,7 @@ __10G SFP+ port__
      settings __forced__ to 10Gbps. If using a switch, it's important to disable STP on the port(s).
 
     ??? info
-        The ethernet side of the [WAS-110] is forced to **10GBASE-KR**[^1] in [U-Boot] as can be observed from the
+        The ethernet side of the [WAS-110] is forced to __10GBASE-KR__[^1] in [U-Boot] as can be observed from the
         environment variable `lan1-xpcs-mode`; It won't fallback to 1G.
 
         === "OpenWrt"
