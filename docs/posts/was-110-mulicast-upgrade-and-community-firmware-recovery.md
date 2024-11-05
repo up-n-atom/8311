@@ -4,10 +4,10 @@ categories:
   - XGS-PON
   - BFW Solutions
   - WAS-110
-description: WAS-110 Multicast Upgrade and Recovery
+description: WAS-110 multicast upgrade and recovery
 ---
 
-# WAS-110 Multicast Upgrade and Community Firmware Recovery
+# WAS-110 multicast upgrade and community firmware recovery
 
 <!-- !!! question "Forgot your root password?" -->
 
@@ -64,6 +64,7 @@ The upgrade sequence is tied into the boot delay loop and therefore will not tri
 The upgrade sequence will wait 5 seconds for the first magic UDP packet on port `13456`. Each packet must include the
 following header:
 
+<!-- 
 ``` mermaid
 packet-beta
 title Multicast Upgrade Packet Header (st_upg_hdr)
@@ -72,6 +73,20 @@ title Multicast Upgrade Packet Header (st_upg_hdr)
 64-95: "Unknown (4 bytes, must not be 0)"
 96-127: "Image Size (img_sz: 4 bytes)"
 128-287: "bfw-HGW\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0 (20 byte string)"
+```
+-->
+
+``` mermaid
+block-beta
+  block
+    columns 1
+    ui_sn["Sequence number (4 bytes, starts at 1)"]
+    blk_sz["Block size (4 bytes)"]
+    unk["Unknown (4 bytes, must not be 0)"]
+    img_sz["Image size (4 bytes)"]
+    magic["bfw-HGW\0\0\0\0\0\0\0\0\0\0\0\0\0 (20 byte string)"]
+    data["Data block (Block size)"]
+  end
 ```
 
 An ordered bit-map of the blocks received is updated from the sequence number along with the image size as the packets
