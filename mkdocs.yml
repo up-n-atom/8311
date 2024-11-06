@@ -91,6 +91,7 @@ nav:
         - X-ONU-SFPP: xgs-pon/ont/potron-technology/x-onu-sfpp.md
   - Discord:
     - discord/index.md
+    - Quick start: discord/quick-start.md
     - Group buys: discord/group-buys.md
     - Giveaways: discord/giveaways.md
 extra:

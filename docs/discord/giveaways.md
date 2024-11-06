@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Giveaways
 
 Giveaways are occasionally organized through the generosity of our community and its members.
