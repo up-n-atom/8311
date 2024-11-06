@@ -17,6 +17,7 @@ were to become the [Baby Bells], including that of [Bell Canada].
 
 The [8311 community server] abides by [Discord's Terms of Service] and [Discord's Community Guidelines].
 
+  [8311 community server]: https://discord.pon.wiki/
   [Discord's Terms of Service]: https://discord.com/terms
   [Discord's Community Guidelines]: https://discord.com/guidelines
 
