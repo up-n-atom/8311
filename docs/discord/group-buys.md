@@ -1,4 +1,4 @@
-# Group Buys
+# Group buys
 
 Group buys are run semi-frequently and will be announced by an event notification.
 
