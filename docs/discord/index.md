@@ -30,3 +30,26 @@ Additionally, the following rules have been put in place to keep the server civi
 6. NO ^^solicitation^^ and/or advertising *(excluding __#self-promo__)*
 7. DO NOT publish personal information of any member past or present
 8. DO NOT direct message members without prior permission in a public channel
+
+## Bazaar
+
+Unlock the power of the bazaar and participate in the fun!
+
+<div class="grid cards" markdown>
+
+-   [Group buys]
+
+    ---
+
+    Save BIG and support the community with volunteer run group buys
+
+-   [Giveaways]
+
+    ---
+
+    Win amazing prizes hosted by the generosity of community members
+
+</div>
+
+  [Group buys]: group-buys.md
+  [Giveaways]: giveaways.md
