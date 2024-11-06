@@ -18,7 +18,7 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 7. Check __#Browse Channels__ for additional categories and/or channels that may pique your interest
 8. Add <https://pon.wiki/> to your browser favourites
 
-  [rules]: index.md#rules
+  [#rules]: index.md#rules
   [group buys]: group-buys.md
   [giveaways]: giveaways.md
   [8311 community server]: https://discord.pon.wiki/
