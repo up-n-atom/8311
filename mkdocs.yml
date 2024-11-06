@@ -89,7 +89,10 @@ nav:
         - xgs-pon/ont/bfw-solutions/was-110.md
       - Potron Technology:
         - X-ONU-SFPP: xgs-pon/ont/potron-technology/x-onu-sfpp.md
-  - Discord: discord.md
+  - Discord:
+    - discord/index.md
+    - Group Buys: discord/group-buys.md
+    - Giveaways: discord/giveaways.md
 extra:
   social:
     - icon: fontawesome/brands/discord

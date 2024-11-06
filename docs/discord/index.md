@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # 8311 Discord Server
 
 The 8311 community is spearheaded by professionals and enthusiasts with a common goal of bypassing the ISP CPE
@@ -52,33 +47,3 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 8. Add <https://pon.wiki/> to your browser favourites
 
   [8311 community server]: https://discord.pon.wiki/
-
-## Group buys
-
-Group buys are run semi-frequently and will be announced by an event notification.
-
-To participate in an upcoming group buy, you must first unlock the *Bazaar* in the __#Channels & Roles__ channel.
-
-Once unlocked, you will gain access to the __#buy-n-sell__ forum, where the group buy purchase thread exists,
-as well as the __#groupbuy-discussions__ channel.
-
-If you do not see any active group buy events, it *may* mean that a group buy is currently closed but has not yet concluded
-(e.g. the majority of shipments have not been received) or that it is temporarily unavailable.
-
-Please be patient, as this is a volunteer-driven process.
-
-## Giveaways
-
-Giveaways are occasionally organized through the generosity of our community and its members.
-
-To participate in a giveaway, you must first be an active member and unlock the *Bazaar* in the __#Channels & Roles__
-channel.
-
-Once unlocked, you will gain access to the __#giveaways__ channel, where you can enter *any* active giveaways
-if you qualify for entry.
-
-If you'd like to host a giveaway, please contact an admin or email: sponsor at pon.wiki to arrange the details.
-
-### Historical giveaways
-
-{{ read_csv('giveaways.csv') }}
