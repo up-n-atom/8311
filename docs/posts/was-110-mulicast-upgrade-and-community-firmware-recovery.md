@@ -296,7 +296,7 @@ __Static ARP entry__
 
 1. Remove the [WAS-110]
 
-2. Run the `multicast_upgrader.py` script
+2. Run the `multicast_upgrader.py` [script]
 
     === ":simple-linux: Linux"
 
@@ -314,7 +314,7 @@ __Static ARP entry__
 
 4. Wait several minutes (3-5)
 
-5. Press ++ctrl+x++ to end the `multicast_upgrader.py` script
+5. Press ++ctrl+x++ to end the `multicast_upgrader.py` [script]
 
 6. Reseat the [WAS-110]
 
@@ -333,7 +333,7 @@ __Static ARP entry__
 
 1. Remove the [WAS-110]
 
-2. Run the `multicast_upgrader.py` script
+2. Run the `multicast_upgrader.py` [script]
 
     === ":simple-linux: Linux"
 
@@ -351,7 +351,7 @@ __Static ARP entry__
 
 4. Wait several minutes (3-5)
 
-5. Press ++ctrl+x++ to end the `multicast_upgrader.py` script
+5. Press ++ctrl+x++ to end the `multicast_upgrader.py` [script]
 
 6. Reseat the [WAS-110]
 
@@ -362,6 +362,7 @@ __Static ARP entry__
         ping 192.168.11.1
         ```
 
+  [script]: #upgrade-script
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [U-Boot]: https://www.u-boot.org/
 
