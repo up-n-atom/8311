@@ -6,13 +6,14 @@
 
 |             |                                    |                     |
 | ----------: | ---------------------------------- | ------------------- |
-| **SoC**     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture]      |
-| **NAND**    | 128 MB *(1 Gbit)*                  | [WN25N01GV]         |
-| **RAM**     | 1 GB                               |                     |
-| **BOSA**    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm | [M02181]            |
-| **IP**      | 192.168.1.1                        |                     |
-| **HTTP(S)** | :x:                                |                     |
-| **SSH**     | :check_mark:                       | [Shell credentials] |
+| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture] [^4] |
+| __NAND__    | 128 MB *(1 Gbit)*                  | [WN25N01GV]         |
+| __RAM__     | 1 GB                               |                     |
+| __BOSA__    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm | [M02181]            |
+| __EEPROM__  | :check_mark:                       | [M02181]            |
+| __IP__      | 192.168.1.1                        |                     |
+| __HTTP(S)__ | :x:                                |                     |
+| __SSH__     | :check_mark:                       | [Shell credentials] |
 
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV 
@@ -139,3 +140,4 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
 [^3]: <https://en.wikipedia.org/wiki/Procfs>
+[^4]: <https://boxmatrix.info/wiki/Property:Falcon>
