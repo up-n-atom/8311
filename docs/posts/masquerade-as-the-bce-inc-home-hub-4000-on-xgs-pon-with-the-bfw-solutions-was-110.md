@@ -3,16 +3,20 @@ date: 2024-03-22
 categories:
   - XGS-PON
   - Home Hub 4000
+  - Vincent
   - WAS-110
   - Bell Canada
   - Bell Aliant
   - Bell MTS
+  - Virgin Plus
   - Sagemcom
   - FAST 5689
 description: Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
 ---
 
 # Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
+
+!!! info "Including the rebadged Virgin Plus Vincent"
 
 ![Bypass family](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_home_hub_4000.webp){ class="nolightbox" }
 
