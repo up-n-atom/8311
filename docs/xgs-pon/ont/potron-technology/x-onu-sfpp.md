@@ -4,16 +4,16 @@
 
 ## Specifications
 
-|             |                                    |                     |
-| ----------: | ---------------------------------- | ------------------- |
-| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv | [Architecture] [^4] |
-| __NAND__    | 128 MB *(1 Gbit)*                  | [WN25N01GV]         |
-| __RAM__     | 1 GB                               |                     |
-| __BOSA__    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm | [M02181]            |
-| __EEPROM__  | :check_mark:                       | [M02181]            |
-| __IP__      | 192.168.1.1                        |                     |
-| __HTTP(S)__ | :x:                                |                     |
-| __SSH__     | :check_mark:                       | [Shell credentials] |
+|             |                                         |                     |
+| ----------: | --------------------------------------- | ------------------- |
+| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc | [Architecture] [^4] |
+| __NAND__    | 128 MB *(1 Gbit)*                       | [WN25N01GV]         |
+| __RAM__     | 1 GB                                    |                     |
+| __BOSA__    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
+| __EEPROM__  | :check_mark:                            | [M02181]            |
+| __IP__      | 192.168.1.1                             |                     |
+| __HTTP(S)__ | :x:                                     |                     |
+| __SSH__     | :check_mark:                            | [Shell credentials] |
 
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV 
@@ -135,7 +135,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | Company                                             | Product Number    | E-commerce            |
 | --------------------------------------------------- | ----------------- | --------------------- |
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |                       |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://vi.aliexpress.com/item/1005007857234577.html) |
+| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) |
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
