@@ -154,8 +154,9 @@ the Livebox 7, which uses CWMP[^2]. However, it is recommended to keep somewhat 
 
 | Software Version 0 | Software Version 1 |
 | ------------------ | ------------------ |
-| SAHEOFR010117      | SAHEOFR919117      |
-| SAHEOFR010113      | SAHEOFR070101      |
+| SAHEOFR070202      | SAHEOFR919117      |
+| SAHEOFR010117      | SAHEOFR070101      |
+| SAHEOFR010113      |                    |
 | SAHEOFR010112      |                    |
 
 Please help us by contributing new versions via the
