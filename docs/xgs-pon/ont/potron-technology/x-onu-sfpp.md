@@ -137,6 +137,8 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |                       |
 | [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) |
 
+<small>^*^ Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
+
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
 [^3]: <https://en.wikipedia.org/wiki/Procfs>
