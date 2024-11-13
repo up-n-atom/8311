@@ -74,3 +74,15 @@
   overflow-y: visible;
 }
 
+input {
+  padding: 0.7720588235em 1.1764705882em
+}
+
+input[type=text] {
+  border-bottom: 1px solid var(--md-default-fg-color--light) !important;
+}
+
+input[type=submit] {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
