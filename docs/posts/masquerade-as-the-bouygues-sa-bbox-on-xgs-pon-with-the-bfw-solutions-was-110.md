@@ -13,6 +13,8 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 # Masquerade as the Bouygues S.A BBox on XGS-PON with the BFW Solutions WAS-110
 
+![Bypass baguette](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bbox.webp){ class="nolightbox" }
+
 <!-- more -->
 <!-- nocont -->
 
