@@ -11,7 +11,7 @@ description: Masquerade as the Bouygues S.A. BBox on XGS-PON with the BFW Soluti
 slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110
 ---
 
-# Masquerade as the Bouygues S.A BBox on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the Bouygues S.A Bbox on XGS-PON with the BFW Solutions WAS-110
 
 ![Bypass baguette](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bbox.webp){ class="nolightbox" }
 
@@ -20,9 +20,11 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 ## Determine if you're an XGS-PON subscriber
 
-!!! info "debit+ option"
-    At the time of writing this to get XGS-PON from Bouygues you must have ***debit+*** option activated on your line
-    and should have received the Bbox Ultym and an XGS-PON SFP+ transciever.
+!!! info "[Debit+] option"
+    To subscribe to XGS-PON, you must enable and/or purchase the [Debit+] option, which is necessary to receive the
+    Bbox Ultym along with an XGS-PON SFP+ transceiver.
+
+    [Debit+]: https://www.assistance.bouyguestelecom.fr/s/article/option-debit-plus
 
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
@@ -59,6 +61,8 @@ The registration ID is composed of a seventy-two (72) octets from the fifteen (1
 ``` sh
 00000XXXXXXXXXXXXXXX1111111111111111111111111111111111111111111111111111
 ```
+
+The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
