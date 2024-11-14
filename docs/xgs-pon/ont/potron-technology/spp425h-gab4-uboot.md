@@ -50,10 +50,19 @@ serial USB such as the [SFP Media Buddy].
  [SFP Media Buddy]: https://whinis.com/sfp-buddy/
 
 !!! note
-    The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ respectively to abort auto boot.
+    The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ respectively to abort auto boot and are
+    highly unlikely to get triggered by a pulled up Rate Select 0 pin (7).
 
-!!! tip
+!!! tip "SFP Media Buddy or other serial breakout hardware"
     If the boot process is interrupted, you can continue it along by issuing the `boot` command over serial (hardware pending).
+
+!!! tip "MikroTik RouterOS"
+    MikroTik RouterOS by default sets the Rate Select 0 pin high by default.
+    Interfaces > Ethernet > SFP > Rate Select > low
+
+     ``` sh
+     /interface ethernet sfp-rate-select low
+     ```
 
 1. Download the latest 8311 community release <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>.
 
