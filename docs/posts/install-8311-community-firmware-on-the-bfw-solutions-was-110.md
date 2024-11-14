@@ -298,7 +298,7 @@ configurations based on your network setup:
             | **Name**                         | was_110                            |
             | **Description**                  | WAS-110                            |
             | **Type**                         | Host(s)                            |
-            
+
             | Host(s)                          | &nbsp;                             |
             | -------------------------------- | ---------------------------------- |
             | **IP or FQDN**                   | 192.168.11.1                       |
@@ -327,7 +327,7 @@ configurations based on your network setup:
     === ":simple-ubiquiti: UniFi Dream Machine"
 
         1. Enable SSH by navigating to **OS Settings > Console Settings > Advanced**.
-    
+
             <https://help.ui.com/hc/en-us/articles/204909374-UniFi-Connect-with-Debug-Tools-SSH>
 
         2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
@@ -360,7 +360,7 @@ configurations based on your network setup:
             | **Advanced**              | Manual                                                                     |
             | **Remote Logging**        | :material-checkbox-blank-outline:                                          |
             | **Exclude**               | :material-checkbox-blank-outline:                                          |
- 
+
             !!! note "Prior to Network 8.3.32, the Source NAT rule could ^^ONLY^^ be applied using the shell"
 
                 ``` sh
