@@ -49,6 +49,8 @@ serial USB such as the [SFP Media Buddy].
 
  [SFP Media Buddy]: https://whinis.com/sfp-buddy/
 
+The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ respectively to abort auto boot.
+
 !!! tip
     If the boot process is interrupted, you can continue it along by issuing the `boot` command over serial (hardware pending).
 
