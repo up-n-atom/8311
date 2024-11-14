@@ -85,7 +85,7 @@ serial USB such as the [SFP Media Buddy].
     head -c 216400 /dev/mtd0 | sha256sum
     ```
 
-6. Verify the integrity the newly written bootloader `e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d`.
+6. Verify the integrity of the newly flashed bootloader `e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d`.
 
     ``` sh
     head -c 216400 /dev/mtd0 | sha256sum
