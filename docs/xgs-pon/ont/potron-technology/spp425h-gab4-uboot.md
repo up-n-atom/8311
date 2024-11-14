@@ -54,14 +54,14 @@ serial USB such as the [SFP Media Buddy].
     highly unlikely to get triggered by a pulled up Rate Select 0 pin (7).
 
 !!! tip "SFP Media Buddy or other serial breakout hardware"
-    If the boot process is interrupted, you can continue it along by issuing the `boot` command over serial (hardware pending).
+    If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial (hardware pending).
 
 !!! tip "MikroTik RouterOS"
     MikroTik RouterOS sets the Rate Select 0 pin high by default.
-    Interfaces > Ethernet > SFP > Rate Select > low
+    Interfaces > Ethernet > SFP > Rate Select > high
 
      ``` sh
-     /interface ethernet sfp-rate-select low
+     /interface ethernet sfp-rate-select high
      ```
 
 1. Download the latest 8311 community release <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>.
