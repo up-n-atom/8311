@@ -86,3 +86,10 @@ input[type=submit] {
   background-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
 }
+
+.test-warning::before {
+  background-color: #ff9100;
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+          mask-image: var(--md-admonition-icon--warning);
+}
+
