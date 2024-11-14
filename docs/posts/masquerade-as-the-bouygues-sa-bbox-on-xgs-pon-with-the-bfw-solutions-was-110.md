@@ -170,6 +170,8 @@ reboot
 After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
 operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
 
+!!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
+
 For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
