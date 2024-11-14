@@ -78,7 +78,7 @@ input {
   padding: 0.7720588235em 1.1764705882em
 }
 
-input[type=text] {
+input[type=text]:not(.md-search__input) {
   border-bottom: 1px solid var(--md-default-fg-color--light) !important;
 }
 
