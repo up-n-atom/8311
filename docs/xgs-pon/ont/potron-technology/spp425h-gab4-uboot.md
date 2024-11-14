@@ -50,7 +50,7 @@ serial USB such as the [SFP Media Buddy].
  [SFP Media Buddy]: https://whinis.com/sfp-buddy/
 
 !!! tip
-    If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial (hardware pending).
+    If the boot process is interrupted, you can continue it along by issuing the `boot` command over serial (hardware pending).
 
 1. Download the latest 8311 community release <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>.
 
