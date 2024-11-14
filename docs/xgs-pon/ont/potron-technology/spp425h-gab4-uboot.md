@@ -51,7 +51,7 @@ serial USB such as the [SFP Media Buddy].
 
 !!! note
     The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ respectively to abort auto boot and are
-    highly unlikely to get triggered by a pulled up Rate Select 0 pin (7).
+    highly unlikely to get triggered by a pulled-down Rate Select 0 pin (7).
 
 !!! tip "SFP Media Buddy or other serial breakout hardware"
     If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial (hardware pending).
