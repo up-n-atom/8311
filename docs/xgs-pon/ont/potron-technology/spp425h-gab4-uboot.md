@@ -9,7 +9,7 @@ hide:
 ## Problem <small>Bugged U-boot</small> { #problem data-toc-label="Problem" } 
 
 The SPP425H-GAB4 comes pre-flashed with a bugged U-boot that may trigger the U-boot shell rather than continue the boot
-process into Linux when plugged into various host hardware, such as the Ubiquiti UDM-SE.
+process into OpenWrt when plugged into various host hardware, such as the Ubiquiti UDM-SE.
 
 !!! bug "Take notice of the ^^Hit any key to stop autoboot^^"
 
@@ -74,7 +74,7 @@ serial USB such as the [SFP Media Buddy].
 
         [WAS-110 multicast upgrade and community firmware recovery](../../../posts/was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
-2. Extract the bootloader from `whole-image.img` using Linux or WSL and verify it's integrity, i.e. `uboot-azores.bin: OK`.
+2. Extract the bootloader from `whole-image.img` using Linux, macOS or WSL and verify it's integrity, i.e. `uboot-azores.bin: OK`.
 
     ``` sh
     dd if=whole-image.img of=uboot-azores.bin conv=notrunc bs=1 count=216400
@@ -87,7 +87,7 @@ serial USB such as the [SFP Media Buddy].
     scp uboot-azores.bin root@192.168.11.1:/tmp/
     ```
 
-4. SSH into the SPP425H-GAB4 and re-verify the transferred `/tmp/uboot-azores.bin`.
+4. SSH into the SPP425H-GAB4 and verify the integrity of the transferred `/tmp/uboot-azores.bin`.
 
     ``` sh
     ssh root@192.168.11.1
