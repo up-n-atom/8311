@@ -50,11 +50,13 @@ serial USB such as the [SFP Media Buddy].
  [SFP Media Buddy]: https://whinis.com/sfp-buddy/
 
 !!! note
-    The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ respectively to abort auto boot and are
-    highly unlikely to get triggered by a pulled-down Rate Select 0 pin (7).
+    The OEM bootloaders from Azores and Potron use ++escape++ and ++enter++ (or [password]) respectively to abort
+    auto-boot and are highly unlikely to get triggered by a pulled-down Rate Select 0 pin (7).
+
+ [password]: x-onu-sfpp.md#bootloader
 
 !!! tip "SFP Media Buddy or other serial breakout hardware"
-    If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial (hardware pending).
+    If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial.
 
 !!! tip "MikroTik RouterOS"
     MikroTik RouterOS sets the Rate Select 0 pin high by default. If it was changed to low, try to revert back to default.
@@ -65,6 +67,12 @@ serial USB such as the [SFP Media Buddy].
      ```
 
 1. Download the latest 8311 community release <https://github.com/djGrrr/8311-was-110-firmware-builder/releases/latest>.
+
+    !!! note
+        The 8311 community firmware includes the Azores bootloader with the preboot multicast upgrade feature as
+        described in the guide:
+
+        [WAS-110 multicast upgrade and community firmware recovery](../../../posts/was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
 2. Extract the bootloader from `whole-image.img` using Linux or WSL and verify it's integrity, i.e. `uboot-azores.bin: OK`.
 
