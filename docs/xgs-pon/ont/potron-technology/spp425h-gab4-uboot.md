@@ -57,7 +57,7 @@ serial USB such as the [SFP Media Buddy].
     If the boot process is interrupted, you can continue it along by issuing the `run bootcmd` command over serial (hardware pending).
 
 !!! tip "MikroTik RouterOS"
-    MikroTik RouterOS sets the Rate Select 0 pin high by default.
+    MikroTik RouterOS sets the Rate Select 0 pin high by default. If it was changed to low, try to revert back to default.
     Interfaces > Ethernet > SFP > Rate Select > high
 
      ``` sh
