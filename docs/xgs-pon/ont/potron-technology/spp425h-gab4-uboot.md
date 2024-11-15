@@ -9,7 +9,7 @@ hide:
 ## Problem <small>Bugged U-boot</small> { #problem data-toc-label="Problem" } 
 
 The SPP425H-GAB4 comes pre-flashed with a bugged U-boot that may trigger the U-boot shell rather than continue the boot
-process into Linux when plugged into various host hardware.
+process into Linux when plugged into various host hardware, such as the Ubiquiti UDM-SE.
 
 !!! bug "Take notice of the ^^Hit any key to stop autoboot^^"
 
