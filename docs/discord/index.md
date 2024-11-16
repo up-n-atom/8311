@@ -69,18 +69,18 @@ Unlock the power of the bazaar and participate in the fun!
 
 :   Moderators
 
-:purple_circle: __LSO__ (Large Send Offload)
+:yellow_circle: __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
+
+:   General Member
+
+:flamingo: __PON:material-star:__
+
+:   Documentation Contributor
+
+:purple_heart: __LSO__ (Large Send Offload)
 
 :   Server Boosters
 
 :mega: __Broadcast Packet__
 
 :   Social Media Personalities
-
-:flamingo: __PON:material-star:__
-
-:   Documentation Contributor
-
-:yellow_circle: __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
-
-:   General Member
