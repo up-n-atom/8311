@@ -71,11 +71,11 @@ Unlock the power of the bazaar and participate in the fun!
 
 :yellow_circle: __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
 
-:   General Member
+:   General Members
 
 :flamingo: __PON:material-star:__
 
-:   Documentation Contributor
+:   Documentation Contributors
 
 :purple_heart: __LSO__ (Large Send Offload)
 
