@@ -34,7 +34,7 @@ description: WAS-110 multicast upgrade and recovery
     3. Continue to boot into OpenWrt
 
            ```sh
-           bootm
+           run bootcmd
            ```
 
 The [WAS-110] from the Azores factory includes a handy multicast upgrade utility baked into its U-boot bootloader,
