@@ -13,6 +13,8 @@ slug: masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-wa
 
 # Masquerade as the Orange S.A. Livebox 7 on XGS-PON with the BFW Solutions WAS-110
 
+![Bypass baguette](masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_livebox7.webp){ class="nolightbox" }
+
 <!-- more -->
 <!-- nocont -->
 
