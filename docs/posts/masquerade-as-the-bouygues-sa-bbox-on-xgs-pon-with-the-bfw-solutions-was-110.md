@@ -33,7 +33,7 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 ![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
 
-2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
 
@@ -54,7 +54,7 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 ![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
 
-2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
 
@@ -87,7 +87,7 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 ![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
 
-2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Model__ section inside the __Bbox__ panel on the right-hand side.
 
