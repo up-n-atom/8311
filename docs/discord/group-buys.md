@@ -25,7 +25,7 @@ Please be patient, as this is a volunteer-driven process.
 xychart-beta
     x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov]
     y-axis "Unit Sales" 0 --> 290
-    bar [62, 140, 0, 0, 120, 0, 0, 290, 0, 0, 0]
+    bar [62, 140, 0, 0, 120, 0, 0, 290, 0, 0, 290]
 ```
 
 ``` mermaid
