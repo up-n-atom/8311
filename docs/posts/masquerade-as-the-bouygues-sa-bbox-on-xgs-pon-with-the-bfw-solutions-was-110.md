@@ -31,11 +31,15 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
 
-2. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+
+3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
 
 ![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
-3. From the __Fiber__ page, verify that the __PON Mode__ is XGS-PON.
+4. From the __Fiber__ page, verify that the __PON Mode__ is XGS-PON.
 
     !!! tip "Take note of the Serial Number beginning with *SMBS* and Software Versions for the WAS-110 configuration"
 
@@ -48,11 +52,15 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
 
-2. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+
+3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
 
 ![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
-3. From the __Fiber__ page, copy the __Serial Number__ beginning with `SMBS`.
+4. From the __Fiber__ page, copy the __Serial Number__ beginning with `SMBS`.
 
 ### PLOAM registration ID
 
@@ -77,11 +85,15 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
 
-2. From the __Administration__ page, click on the __Model__ section inside the __Bbox__ panel on the right-hand side.
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+2. From the __Main__ page, click on the __Administration interface__ to revert to the old interface.
+
+3. From the __Administration__ page, click on the __Model__ section inside the __Bbox__ panel on the right-hand side.
 
 ![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp)
 
-3. From the __Bbox__ page, copy the __IMEI__ number.
+4. From the __Bbox__ page, copy the __IMEI__ number.
 
 ## Purchase a WAS-110
 
