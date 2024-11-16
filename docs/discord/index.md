@@ -54,3 +54,33 @@ Unlock the power of the bazaar and participate in the fun!
 
   [Group buys]: group-buys.md
   [Giveaways]: giveaways.md
+
+## Roles
+
+:green_circle: __LRO__ (Large Receive Offload)
+
+:   Administrators
+
+:red_circle: __Super Jumbo__ (Ethernet frames with payload > 9000 bytes)
+
+:   Super Moderators
+
+:orange_circle: __Jumbo__ (Ethernet frames with payload > 1500 bytes)
+
+:   Moderators
+
+:purple_circle: __LSO__ (Large Send Offload)
+
+:   Server Boosters
+
+:mega: __Broadcast Packet__
+
+:   Social Media Personalities
+
+:flamingo: __PON:material-star:__
+
+:   Documentation Contributor
+
+:yellow_circle: __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
+
+:   General Member
