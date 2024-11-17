@@ -60,7 +60,7 @@ flowchart LR
 
     | Username | Password       |
     | -------- | -------------- |
-    | ONTUSER  | QpZm@4246#5753 |
+    | ONTUSER  | SUGAR2A041     |
 
 === "Huawei MA5671A"
 
