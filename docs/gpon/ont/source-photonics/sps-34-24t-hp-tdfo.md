@@ -52,6 +52,44 @@ flowchart LR
     class Z,Y,X CLEAR
 ```
 
+## System Information
+
+### Boot log
+
+```
+--8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/bootlog"
+```
+
+### procfs
+
+=== "/proc/cmdline"
+
+
+    ```
+    --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_cmdline"
+    ```
+
+=== "/proc/cpuinfo"
+
+
+    ```
+    --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_cpuinfo"
+    ```
+
+=== "/proc/meminfo"
+
+
+    ```
+    --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_meminfo"
+    ```
+
+=== "/proc/mtd"
+
+
+    ```
+    --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_mtd"
+    ```
+
 ## Default Credentials
 
 ### Shell credentials
