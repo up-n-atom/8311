@@ -82,6 +82,9 @@ nav:
     - index.md
   - GPON:
     - gpon/index.md
+    - ONT:
+      - Source Photonics:
+        - gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
   - XGS-PON:
     - xgs-pon/index.md
     - ONT:
