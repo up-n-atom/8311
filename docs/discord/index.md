@@ -61,11 +61,11 @@ Unlock the power of the bazaar and participate in the fun!
 
 :   Administrators
 
-:red_circle: __Super Jumbo__ (Ethernet frames with payload > 9000 bytes)
+:red_circle: __Super Jumbo__ (Ethernet frames with a payload > 9000 bytes)
 
 :   Super Moderators
 
-:orange_circle: __Jumbo__ (Ethernet frames with payload > 1500 bytes)
+:orange_circle: __Jumbo__ (Ethernet frames with a payload > 1500 bytes)
 
 :   Moderators
 
