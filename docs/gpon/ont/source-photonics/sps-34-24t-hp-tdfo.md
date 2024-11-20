@@ -13,7 +13,7 @@
 | __EEPROM__  | :check_mark: G-010S-P :x: MA5671A / GPON-ONU-34-20BI           | 24LC02B              |
 | __UART__    | Rx: pin 7 / Tx: pin 2 - 115200-8-1-N                           |                      |
 | __IP__      | 192.168.1.10                                                   |                      |
-| __HTTP(S)__ | :x: *Must be enabled*                                          |                      |
+| __HTTP(S)__ | :check_mark: G-010S-P                                          |                      |
 | __SSH__     | :check_mark:                                                   | [Shell Credentials]  |
 
  [Shell credentials]: #shell-credentials
