@@ -7,7 +7,7 @@
 |             |                                                                |                      |
 | ----------: | --------------------------------------------------------       | -------------------- |
 | __SoC__     | Lantiq FALC ON-S PEB 38035 ET @ 400 MHz - MIPS interAptiv 34Kc |                      |
-| __NOR__     | 16 MB *(128 Mbit)*                                             | S25FL128S            |
+| __NOR__     | 16 MB *(128 Mbit)*                                             | S25FL128P            |
 | __RAM__     | 64 MB                                                          |                      |
 | __BOSA__    | SC/APC - Tx: 1490 nm / Rx: 1310 nm                             |                      |
 | __EEPROM__  | :check_mark: G-010S-P :x: MA5671A / GPON-ONU-34-20BI           | 24LC02B              |
