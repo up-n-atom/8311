@@ -137,8 +137,8 @@ Alternate between images zero (0) and one (1).
     Switch from image one (1) to zero (0).
 
     ``` sh
-    env print committed_image
-    env print image0_is_valid # (1)!
+    env print committed_image # (1)!
+    env print image0_is_valid # (2)!
     env set committed_image 0
     env set committed_image 0
     ```
