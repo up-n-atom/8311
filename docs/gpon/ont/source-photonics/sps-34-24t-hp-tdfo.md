@@ -92,6 +92,8 @@ flowchart LR
 
 ### Switch banks
 
+!!! warning "Verify image(s) are valid before committing"
+
 Alternate between images zero (0) and one (1).
 
 === "OpenWrt shell"
@@ -105,8 +107,8 @@ Alternate between images zero (0) and one (1).
     fw_setenv committed_image 1
     ```
 
-    1. Verify the committed image is 0.
-    2. Verify image 1 is valid prior to committing.
+    1. Verify the committed image is zero (0).
+    2. Verify image one (1) is valid prior to committing.
 
     Switch from image one (1) to zero (0).
 
@@ -117,8 +119,8 @@ Alternate between images zero (0) and one (1).
     fw_setenv committed_image 0
     ```
 
-    1. Verify the committed image is 1.
-    2. Verify image 0 is valid prior to committing.
+    1. Verify the committed image is one (1).
+    2. Verify image zero (0) is valid prior to committing.
 
 === "U-Boot shell"
 
@@ -131,8 +133,8 @@ Alternate between images zero (0) and one (1).
     env set committed_image 1
     ```
 
-    1. Verify the committed image is 0.
-    2. Verify image 1 is valid prior to committing.
+    1. Verify the committed image is zero (0).
+    2. Verify image one (1) is valid prior to committing.
 
     Switch from image one (1) to zero (0).
 
@@ -143,8 +145,8 @@ Alternate between images zero (0) and one (1).
     env set committed_image 0
     ```
 
-    1. Verify the committed image is 1.
-    2. Verify image 0 is valid prior to committing.
+    1. Verify the committed image is one (1).
+    2. Verify image zero (0) is valid prior to committing.
 
 
 ## Default Credentials
