@@ -153,6 +153,25 @@ Alternate between images zero (0) and one (1).
 
 ### Shell credentials
 
+???- info "OpenSSH/SSL: unsupported algorithms and changes since 8.8 and beyond"
+
+    ``` sh
+    ssh -V
+    openssl version
+    ```
+
+    <https://www.openssh.com/releasenotes.html>
+
+    __Red Hat/CentOS/Fedora/Rocky Linux__
+
+    ``` sh
+    sudo update-crypto-policies --set LEGACY
+    ```
+
+    ``` sh
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 -oRequiredRSASize=512 <username>@192.168.1.10
+    ```
+
 === "Alcatel-Lucent G-010S-P"
 
     | Username | Password       |

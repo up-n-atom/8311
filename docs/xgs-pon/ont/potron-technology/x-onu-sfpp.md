@@ -122,6 +122,25 @@ flowchart LR
 
 ### Shell credentials
 
+???- info "OpenSSH/SSL: unsupported algorithms and changes since 8.8 and beyond"
+
+    ``` sh
+    ssh -V
+    openssl version
+    ```
+
+    <https://www.openssh.com/releasenotes.html>
+
+    __Red Hat/CentOS/Fedora/Rocky Linux__
+
+    ``` sh
+    sudo update-crypto-policies --set LEGACY
+    ```
+
+    ``` sh
+    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.1.1
+    ```
+
 | Username | Password |
 | -------- | -------- |
 | root     |          |
