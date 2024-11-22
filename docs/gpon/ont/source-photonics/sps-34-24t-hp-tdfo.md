@@ -90,7 +90,7 @@ flowchart LR
     --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_mtd"
     ```
 
-### Switch banks
+### Switch image(s)
 
 !!! warning "Verify image(s) are valid before committing"
 
