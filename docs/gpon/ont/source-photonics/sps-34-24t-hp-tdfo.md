@@ -90,6 +90,63 @@ flowchart LR
     --8<-- "docs/gpon/ont/source-photonics/sps-34-24t-hp-tdfo/procfs_mtd"
     ```
 
+### Switch banks
+
+Alternate between images zero (0) and one (1).
+
+=== "OpenWrt shell"
+
+    Switch from image zero (0) to one (1).
+
+    ``` sh
+    fw_printenv committed_image # (1)!
+    fw_printenv image1_is_valid # (2)!
+    fw_setenv committed_image 1
+    fw_setenv committed_image 1
+    ```
+
+    1. Verify the committed image is 0.
+    2. Verify image 1 is valid prior to committing.
+
+    Switch from image one (1) to zero (0).
+
+    ``` sh
+    fw_printenv committed_image # (1)!
+    fw_printenv image0_is_valid # (2)!
+    fw_setenv committed_image 0
+    fw_setenv committed_image 0
+    ```
+
+    1. Verify the committed image is 1.
+    2. Verify image 0 is valid prior to committing.
+
+=== "U-Boot shell"
+
+    Switch from image zero (0) to one (1).
+
+    ``` sh
+    env print committed_image # (1)!
+    env print image1_is_valid # (2)!
+    env set committed_image 1
+    env set committed_image 1
+    ```
+
+    1. Verify the committed image is 0.
+    2. Verify image 1 is valid prior to committing.
+
+    Switch from image one (1) to zero (0).
+
+    ``` sh
+    env print committed_image
+    env print image0_is_valid # (1)!
+    env set committed_image 0
+    env set committed_image 0
+    ```
+
+    1. Verify the committed image is 1.
+    2. Verify image 0 is valid prior to committing.
+
+
 ## Default Credentials
 
 ### Shell credentials
