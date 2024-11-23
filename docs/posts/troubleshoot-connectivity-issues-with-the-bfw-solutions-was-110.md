@@ -135,7 +135,7 @@ To view the current PLOAM status, execute one of the following procedures:
 === "8311 firmware"
 
     <h5>from the Web UI</h5>
-    
+
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_pon_status.webp)
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
@@ -165,9 +165,26 @@ To view the current PLOAM status, execute one of the following procedures:
 
 #### OMCI clarification
 
-To help identify fake O5, execute the following command and if the response is empty, the operational state is 
-<em>"fake"</em> as the OLT did not respond with the dot1q[^6] configuration.
+To help identify fake O5, execute the following command procedures and if the response is empty, the operational state is
+*"fake"* as the OLT did not respond with the dot1q[^6] configuration.
 
+=== "8311 firmware"
+
+    !!! note "As of version 2.7.2 the extended VLAN table(s) can now be dumped in a human readable format"
+
+    <h5>from the Web UI</h5>
+
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root password.
+    2. From the __VLAN Tables__ page, if the __textarea__ is blank, the ONT configuration has not satisfied the OLT.
+
+    <h5>from the Linux shell</h5>
+
+    ``` sh
+    8311-extvlan-decode.sh -t
+    ```
+=== "Azores firmware"
+
+    <h5>from the Linux shell</h5>
 
 ``` sh
 omci_pipe.sh md | grep -E '^\|\s+(84|171)\s\|'
@@ -209,7 +226,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
     <h5>from the Linux shell <small>temporary</small></h5>
 
     !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
-    
+
     ``` sh
     ethtool -s eth0_0 speed <speed> #(1)!
     ```
@@ -229,7 +246,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
     <h5>from the Linux shell <small>temporary</small></h5>
 
     !!! warning "The following command sets the link speed <ins>temporarily</ins> until the next power cycle"
-    
+
     ``` sh
     ethtool -s eth0_0 speed <speed> #(1)!
     ```
@@ -238,7 +255,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
 
 ### Tx fault
 
-The SFP tx fault pin[^4] (2) is multiplexed with UART tx. If the serial UART is enabled, tx fault may be asserted by the 
+The SFP tx fault pin[^4] (2) is multiplexed with UART tx. If the serial UART is enabled, tx fault may be asserted by the
 host hardware and cause the link state to flap continuously.
 
 #### Serial console
@@ -246,7 +263,7 @@ host hardware and cause the link state to flap continuously.
 !!! note "By default, serial UART is enabled during boot-up until Linux init, where it is disabled"
 
 === "8311 firmware"
-    
+
     <h5>from the Web UI</h5>
 
     ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
