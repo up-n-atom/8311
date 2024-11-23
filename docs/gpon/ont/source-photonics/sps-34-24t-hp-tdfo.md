@@ -153,7 +153,7 @@ Alternate between images zero (0) and one (1).
 
 ### Shell credentials
 
-???- info "OpenSSH/SSL: unsupported algorithms and changes since 8.8 and beyond"
+???- info "OpenSSH/SSL: unsupported algorithms and changes since 8.8 and newer"
 
     ``` sh
     ssh -V
