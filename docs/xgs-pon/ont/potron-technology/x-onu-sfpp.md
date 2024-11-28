@@ -154,9 +154,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | Company                                             | Product Number    | E-commerce            | Firmware |
 | --------------------------------------------------- | ----------------- | --------------------- | -------- |
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |                       |          |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [~~AliExpress~~](https://www.aliexpress.com/item/1005007856556526.html) :warning: | __:warning: Potentially flashed with an experimental U-boot (MAY NOT work in various host hardware)__ [FIX!!!] |
-
-[FIX!!!]: spp425h-gab4-uboot.md
+| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | |
 
 * <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
 
