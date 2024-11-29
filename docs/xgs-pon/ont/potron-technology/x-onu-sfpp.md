@@ -122,6 +122,60 @@ flowchart LR
     --8<-- "docs/xgs-pon/ont/potron-technology/x-onu-sfpp/procfs_mtd"
     ```
 
+## EEPROM
+
+The Digital Diagnostic Monitor Interface (DDMI)[^5] is handled by the MACOM [M02181] laser driver over an I2C bus
+`/dev/i2c-0`.
+
+There are several interfaces and utilities that provide read and/or write access to the EEPROM(s).
+
+### Read
+
+#### A0 (0x50)
+
+``` sh
+hexdump -Cv /sys/class/pon_mbox/pon_mbox0/device/eeprom50
+```
+
+``` sh
+ethtool -m pon0 raw on | head -c 256 | hexdump -Cv
+```
+
+``` sh
+i2cdump -fy 0 0x50
+```
+
+``` sh
+i2cget -fy 0 0x50 0x0
+```
+
+#### A2 (0x51)
+
+``` sh
+hexdump -Cv /sys/class/pon_mbox/pon_mbox0/device/eeprom51
+```
+
+``` sh
+ethtool -m pon0 raw on | tail -c 256 | hexdump -Cv
+```
+
+``` sh
+i2cdump -fy 0 0x51
+```
+
+``` sh
+i2cget -fy 0 0x51 0x0
+```
+
+### Write
+
+The EEPROM is write protected. The A2 (0x51) User EEPROM section from 128 (0x80) to 247 (0xF7) can be unlocked using
+the password `68646762` by writing it to A2 (0x51) at offset `0x7B`.
+
+``` sh
+i2cset -fy 0 0x51 0x7B 0x68 0x64 0x67 0x62 i
+```
+
 ## Default Credentials
 
 ### Shell credentials
@@ -168,3 +222,4 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
 [^3]: <https://en.wikipedia.org/wiki/Procfs>
 [^4]: <https://boxmatrix.info/wiki/Property:Falcon>
+[^5]: [SFF-8472](https://members.snia.org/document/dl/25916)
