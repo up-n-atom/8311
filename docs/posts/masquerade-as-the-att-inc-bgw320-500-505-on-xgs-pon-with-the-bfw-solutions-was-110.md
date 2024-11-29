@@ -87,7 +87,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-    !!! reminder 
+    !!! reminder
         <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ with the provisioned value on the bottom
         [label] of the BGW320-500/505.
 
@@ -115,7 +115,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
         | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
 
-![WAS-110 8311 configuration ISP Fixes](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
 
