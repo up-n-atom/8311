@@ -83,8 +83,8 @@ xmo-remote-client --password=<password> get-wan-mode
 ```
 
 !!! note
-    Replace the `<password>` argument; the default Administrator password is the S/N located on the back [label] of the 
-    Giga Hub.
+    Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the
+    back [label] of the Giga Hub.
 
 ## Purchase a WAS-110
 

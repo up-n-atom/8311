@@ -4,13 +4,13 @@
 
 <h3 align="center">PON dot Wiki</h3>
 
-A community assisted by professionals and enthusiasts with a common goal of bypassing the ISP CPE using commodity 
+A community assisted by professionals and enthusiasts with a common goal of bypassing the ISP CPE using commodity
 hardware.
 
-We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards, while empowering 
+We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards, while empowering
 SOHO operators by kicking the ISP CPE to the curb.
 
-The [wiki](https://pon.wiki) contains guides for masquerading the ISP CPE and/or ONT for greener pastures, and 
+The [wiki](https://pon.wiki) contains guides for masquerading the ISP CPE and/or ONT for greener pastures, and
 inevitably PON-related content!
 
 ## Get in touch

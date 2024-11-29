@@ -1,5 +1,5 @@
 <div style="float: right">
-  <select isp autocomplete="off" class="md-button button-arrow"> 
+  <select isp autocomplete="off" class="md-button button-arrow">
     <option value="#">Select an ISP...</option>
     <option value="att">AT&T</option>
     <option value="bell-aliant">Bell Aliant</option>

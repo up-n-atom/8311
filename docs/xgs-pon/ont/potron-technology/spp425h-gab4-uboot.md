@@ -4,12 +4,12 @@ hide:
   - toc
 ---
 
-# SPP425H-GAB4
+# Issue 1
 
-## Problem <small>Bugged U-boot</small> { #problem data-toc-label="Problem" } 
+## Problem <small>Bugged U-boot</small> { #problem data-toc-label="Problem" }
 
-Early SPP425H-GAB4 units *may* have had an experimental U-boot pre-flashed that may trigger the U-boot shell rather than
-continue on with the boot process into OpenWrt when plugged into various host hardware, such as the Ubiquiti UDM-SE.
+An experimental U-boot pre-flashed that may trigger the U-boot shell rather than continue on with the boot process into
+OpenWrt when plugged into various host hardware, such as the Ubiquiti UDM-SE.
 
 !!! bug "Take notice of the ^^Hit any key to stop autoboot^^"
 

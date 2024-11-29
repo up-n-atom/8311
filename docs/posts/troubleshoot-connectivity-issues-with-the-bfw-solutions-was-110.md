@@ -25,7 +25,7 @@ The [WAS-110] supports the Digital Diagnostic Monitor Interface (DDMI)[^1] to pr
 operating parameters via a host interface. Although simplistic, this interface is suitable for monitoring power and
 temperature behaviours, which are the first tells of troubles.
 
-For more details on accessing this interface, please search your hosts' documentation for 
+For more details on accessing this interface, please search your hosts' documentation for
 *Digital Diagnostic Monitoring (DDM)* or *Digital Optical Monitoring (DOM)*.
 
 #### Host access
@@ -61,7 +61,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
 === "8311 firmware"
 
     <h5>from the Web UI</h5>
-    
+
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_optical_status.webp)
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
@@ -202,7 +202,7 @@ Typically, OLT operators enforce versioning compliance when software management 
 
 ### Link Speed
 
-The [WAS-110] will attempt to auto-negotiate with the host controller and, more often than not, fallback to 1 Gbps. 
+The [WAS-110] will attempt to auto-negotiate with the host controller and, more often than not, fallback to 1 Gbps.
 To prevent this behaviour, forcefully set the speed of the host interface to 10 Gbps.
 
 Furthermore, to force the link speed on the [WAS-110] itself, execute the following `ethtool`[^3] procedures.
@@ -326,7 +326,7 @@ env save
 
 !!! info "To recover, a host device with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required."
 
-1. Spam ++escape++ in the serial terminal while plugging in the WAS-110  
+1. Spam ++escape++ in the serial terminal while plugging in the WAS-110
 2. Press ++enter++
 3. Type `mw.b 0xB6180121 0xd8` followed by ++enter++
 4. Delete the `uart_select_preboot` environment variable

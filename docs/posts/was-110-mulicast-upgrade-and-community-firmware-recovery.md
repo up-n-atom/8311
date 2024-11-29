@@ -64,7 +64,7 @@ The upgrade sequence is tied into the boot delay loop and therefore will not tri
 The upgrade sequence will wait 5 seconds for the first magic UDP packet on port `13456`. Each packet must include the
 following header:
 
-<!-- 
+<!--
 ``` mermaid
 packet-beta
 title Multicast Upgrade Packet Header (st_upg_hdr)
