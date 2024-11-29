@@ -114,7 +114,7 @@ ethtool -m pon0
 !!! failure "Failure test"
 
     1. Unplug the fiber cable.
-    2. Check the [optical status](#optical-status), if the transmit (Tx) and receive (Rx) power (dBm) does not report
+    2. Check the [optical status](#optical-status), if the transmit (Tx) and receive (Rx) power (dBm) do not report
        __No signal__, the optics have failed.
 
 ### Fake O5
