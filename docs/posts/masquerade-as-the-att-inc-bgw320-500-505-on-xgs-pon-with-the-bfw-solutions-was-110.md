@@ -24,8 +24,8 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions
 !!! info "2 Gbps or higher tiers"
     If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to [Purchase a WAS-110].
 
-There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [web UI](#with-the-web-ui) Fiber 
-Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
+There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [web UI](#with-the-web-ui)
+Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
 
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
@@ -38,8 +38,8 @@ If the wave length matches <em>1270 nm</em>, you're subscribed on XGS-PON.
 
 ### with the transceiver
 
-First, identify the color of the bale clasp. If the clasp is orange, continue by carefully pulling out the 
-transceiver by engaging the bale clasp and latch. If the label on the transceiver contains the text XGS-PON or 
+First, identify the color of the bale clasp. If the clasp is orange, continue by carefully pulling out the
+transceiver by engaging the bale clasp and latch. If the label on the transceiver contains the text XGS-PON or
 1270 TX, you're subscribed on XGS-PON.
 
 ## Purchase a WAS-110
@@ -50,15 +50,15 @@ The [WAS-110] is available from select [resellers].
 
 ## Install community firmware
 
-Although, not strictly necessary for AT&T, the community firmware is highly recommended for masquerading with the 
-WAS-110 and used for the remainder of this guide. To install the community firmware, follow the steps outlined in the 
+Although, not strictly necessary for AT&T, the community firmware is highly recommended for masquerading with the
+WAS-110 and used for the remainder of this guide. To install the community firmware, follow the steps outlined in the
 community firmware installation guide:
 
 [Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
 
 ## WAS-110 masquerade setup
 
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key 
+To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
 identifiers are available on the bottom label of the BGW320-500/505, color-coordinated in the following depiction:
 
 <div id="bgw320-500-505-label"></div>
@@ -73,17 +73,17 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
-![WAS-110 login](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp)
 
-1. Within a web browser, navigate to 
-   <https://192.168.11.1/cgi-bin/luci/admin/8311/config> 
+1. Within a web browser, navigate to
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
    and, if asked, input your <em>root</em> password.
 
     ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
 
-![WAS-110 8311 configuration](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
@@ -121,8 +121,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 4. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
-operational status.
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
 !!! tip "Clone the BGW320-500/505 :purple_circle: MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
@@ -162,9 +161,9 @@ ssh root@192.168.11.1
     fwenv_set -8 sw_verB BGW320_4.27.7
     fwenv_set -8 fix_vlans 1
     ```
-    
+
     1. :blue_circle: ONT ID
-    
+
 === "BGW320-505"
 
     ``` sh hl_lines="1 7"
@@ -176,13 +175,13 @@ ssh root@192.168.11.1
     fwenv_set -8 sw_verB BGW320_4.27.7
     fwenv_set -8 fix_vlans 1
     ```
-    
+
     1. :blue_circle: ONT ID
 
 !!! info "Additional details and variables are described at the original repository [^1]"
     `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each 
+    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
     environment.
 
     The `-8` option prefixes the U-Boot environment variable with `8311_`.
@@ -197,8 +196,7 @@ fw_printenv | grep ^8311
 reboot
 ```
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 
-operational status.
+Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
 
 !!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 

@@ -112,7 +112,7 @@ outlined in the community firmware installation guide:
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
-![WAS-110 login](masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp)
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
@@ -122,7 +122,7 @@ outlined in the community firmware installation guide:
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
 
-![WAS-110 8311 configuration](masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
@@ -137,7 +137,7 @@ outlined in the community firmware installation guide:
     [PON serial number]: #pon-serial-number
     [PLOAM registration ID]: #ploam-registration-id
 
-![WAS-110 8311 configuration ISP Fixes](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
