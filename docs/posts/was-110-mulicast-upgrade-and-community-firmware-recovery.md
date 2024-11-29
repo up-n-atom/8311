@@ -117,7 +117,7 @@ sudo apt-get -y install u-boot-tools squashfs-tools 7zip
 ### Blobs
 
 The following blobs can be obtained from the 8311 community firmware archive or personal backups after following the
-[dump & backup firmware](../install-8311-community-firmware-on-the-bfw-solutions-was-110/#dump-and-backup-firmware)
+[dump & backup firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110.md#dump-and-backup-firmware)
 guide.
 
 __kernel.bin__

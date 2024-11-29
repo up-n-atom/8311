@@ -1,4 +1,8 @@
-# X-ONU-SFPP (SFP+ XGSPON ONU Stick)
+---
+title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
+---
+
+# X-ONU-SFPP (SFP+ XGSPON ONU Stick) [^1]
 
 ![X-ONU-SFPP](x-onu-sfpp/x-onu-sfpp.webp)
 
@@ -16,7 +20,7 @@
 | __SSH__     | :check_mark:                            | [Shell credentials] |
 
  [Architecture]: #architecture
- [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV 
+ [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV
  [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
 

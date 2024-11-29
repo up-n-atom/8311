@@ -28,7 +28,7 @@ slug: masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-wa
    and, if asked, input your Administrator password. (1) and click the __Connect__ button.
    { .annotate }
 
-    1. The default Administrator password is the first 12 digits of the WiFi key located on the bottom [label] of the
+    1. The default Administrator password is the first 12 digits of the WiFi key located on the bottom label of the
        Livebox 7.
 
 2. From the configuration interface, click the cog (:material-cog:) icon at the bottom of the page for
@@ -173,7 +173,6 @@ or submitting a
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
-  [label]: #livebox-7-label
   [Version listing]: #livebox-7-software-versions
   [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
 

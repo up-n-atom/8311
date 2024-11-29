@@ -595,7 +595,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
     The 8311 community firmware re-uses the <ins>safe</ins> shell upgrade logic throughout. Those who prefer the CLI
     may continue to use the [shell upgrade] method going forward.
 
-    Furthermore, the 8311 community firmware includes an up-to-date `dropbear`[^5] build, which does not require the use
+    Furthermore, the 8311 community firmware includes an up-to-date `dropbear`[^4] build, which does not require the use
     of weak algorithms when using an SSH client, i.e.
 
     `-oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa`
@@ -623,5 +623,4 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
       <https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/mods/>
 [^3]: <https://www.debian.org/derivatives/>
-[^4]: <https://en.wikipedia.org/wiki/Internet_Protocol_version_4#First_and_last_subnet_addresses>
-[^5]: <https://en.wikipedia.org/wiki/Dropbear_(software)>
+[^4]: <https://en.wikipedia.org/wiki/Dropbear_(software)>
