@@ -151,10 +151,10 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 ## Value-Added Resellers
 
-| Company                                             | Product Number    | E-commerce            | Firmware |
-| --------------------------------------------------- | ----------------- | --------------------- | -------- |
-| [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |                       |          |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | |
+| Company                                             | Product Number    | E-commerce            | Firmware      |
+| --------------------------------------------------- | ----------------- | --------------------- | ------------- |
+| [Full Vision Com-Tech](https://fullvisiontech.com/) | FV-NS10S          |                       | PTXG (Potron) |
+| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | PTXG (Potron) or 8311 |
 
 * <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
 
