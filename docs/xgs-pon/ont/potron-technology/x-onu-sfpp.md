@@ -8,16 +8,16 @@ title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
 ## Specifications
 
-|             |                                         |                     |
-| ----------: | --------------------------------------- | ------------------- |
-| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc | [Architecture] [^4] |
-| __NAND__    | 128 MB *(1 Gbit)*                       | [WN25N01GV]         |
-| __RAM__     | 1 GB                                    |                     |
-| __BOSA__    | SC/UPC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
-| __EEPROM__  | :check_mark:                            | [M02181]            |
-| __IP__      | 192.168.1.1                             |                     |
-| __HTTP(S)__ | :x:                                     |                     |
-| __SSH__     | :check_mark:                            | [Shell credentials] |
+|             |                                                     |                     |
+| ----------: | --------------------------------------------------- | ------------------- |
+| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc             | [Architecture] [^4] |
+| __NAND__    | 128 MB *(1 Gbit)*                                   | [WN25N01GV]         |
+| __RAM__     | 1 GB                                                |                     |
+| __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
+| __EEPROM__  | :check_mark:                                        | [M02181]            |
+| __IP__      | 192.168.1.1                                         |                     |
+| __HTTP(S)__ | :x:                                                 |                     |
+| __SSH__     | :check_mark:                                        | [Shell credentials] |
 
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV
