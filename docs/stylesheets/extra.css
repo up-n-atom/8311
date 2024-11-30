@@ -103,16 +103,22 @@ input[type=submit] {
 }
 
 .swiper-pagination-bullet {
-  width: 1rem;
-  height: 1rem;
-  text-align: center;
-  line-height: 1rem;
-  color: #000;
-  /*opacity: 1;*/
   background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  color: var(--md-typeset-color);
+  height: 1.5rem;
+  line-height: 1rem;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  width: auto;
+}
+
+.swiper-pagination-bullet:before {
+  content: 'step ';
 }
 
 .swiper-pagination-bullet-active {
-  color: var(--md-primary-bg-color);
   background: var(--md-primary-fg-color);
+  box-shadow: var(--md-shadow-z1);
+  color: var(--md-primary-bg-color);
 }

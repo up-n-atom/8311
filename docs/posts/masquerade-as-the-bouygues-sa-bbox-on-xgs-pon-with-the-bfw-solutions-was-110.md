@@ -28,8 +28,6 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 <div class="swiper" markdown>
 
-<div class="swiper-wrapper" markdown>
-
 <div class="swiper-slide" markdown>
 
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
@@ -47,12 +45,6 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 ![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
 </div>
-
-</div>
-
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
 
 </div>
 
@@ -73,8 +65,6 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 <div class="swiper" markdown>
 
-<div class="swiper-wrapper" markdown>
-
 <div class="swiper-slide" markdown>
 
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
@@ -92,12 +82,6 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 ![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
 </div>
-
-</div>
-
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
 
 </div>
 
@@ -131,8 +115,6 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 <div class="swiper" markdown>
 
-<div class="swiper-wrapper" markdown>
-
 <div class="swiper-slide" markdown>
 
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
@@ -150,12 +132,6 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 ![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp)
 
 </div>
-
-</div>
-
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
 
 </div>
 
@@ -187,8 +163,6 @@ outlined in the community firmware installation guide:
 
 <div class="swiper" markdown>
 
-<div class="swiper-wrapper" markdown>
-
 <div class="swiper-slide" markdown>
 
 ![WAS-110 login](shared-assets/was_110_luci_login.webp)
@@ -206,12 +180,6 @@ outlined in the community firmware installation guide:
 ![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
 
 </div>
-
-</div>
-
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
 
 </div>
 
