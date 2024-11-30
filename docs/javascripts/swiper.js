@@ -12,7 +12,7 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
   on: {
-    afterInit: function(swiper) {
+    afterInit: function (swiper) {
       let stepsElement = this.el.nextElementSibling;
       while (!(stepsElement instanceof HTMLOListElement)) {
         stepsElement = stepsElement.nextElementSibling || stepsElement.nextSibling;
