@@ -32,7 +32,21 @@ outlined in the community firmware installation guide:
 
 ## Extract attributes from the XS-010X-Q
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![XS-010X-Q login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_login.webp)
+
+</div>
+
+<div class="swiper-slide" step="5" markdown>
+
+![XS-010X-Q info](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_info.webp)
+
+</div>
+
+</div>
 
 !!! warning "Power off and remove fiber before continuing"
 
@@ -43,8 +57,6 @@ outlined in the community firmware installation guide:
 3. Within a web browser, navigate to <https://192.168.100.1> and, if asked, input the *admin* password `1234`.
 
 4. From the __ONT install__ page, click on __More info__ button.
-
-![XS-010X-Q info](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_info.webp)
 
 5. Copy all the attributes for entry later in the guide.
 
@@ -58,7 +70,21 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![WAS-110 login](shared-assets/was_110_luci_login.webp)
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+
+</div>
+
+</div>
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
@@ -67,8 +93,6 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
     ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
         0 or false.
-
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 

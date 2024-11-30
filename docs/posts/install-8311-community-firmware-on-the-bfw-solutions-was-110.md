@@ -216,11 +216,23 @@ configurations based on your network setup:
 
     === ":simple-ubiquiti: UniFi Dream Machine"
 
+        <div class="swiper" markdown>
+
+        <div class="swiper-slide" markdown>
+
         ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
 
-        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+        </div>
+
+        <div class="swiper-slide" markdown>
 
         ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
+
+        </div>
+
+        </div>
+
+        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
 
         2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
 
@@ -429,13 +441,25 @@ The extracted `local-upgrade.tar` includes a <ins>safer</ins> upgrade script in 
 
 SSH must be enabled from the web UI prior to running the shell commands.
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp)
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_services.webp)
+
+</div>
+
+</div>
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#service/servicecontrol>
    and, if asked, input the *admin* [web credentials]{ target="_blank" }.
-
-![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_services.webp)
 
 2. From the __Service Control__ page, check the __SSH__ checkbox and click __Save__.
 
@@ -511,15 +535,27 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
 
     Alternatively, jump to the <ins>safer</ins> [shell upgrade](#shell-upgrade) within this guide.
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp)
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_upgrade.webp)
+
+</div>
+
+</div>
+
+!!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#admin/upgrade>
    and, if asked, input the *admin* [web credentials]{ target="_blank" }.
-
-![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_upgrade.webp)
-
-!!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
 
 2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click
    __Upgrade__.
