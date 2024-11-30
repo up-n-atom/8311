@@ -106,9 +106,10 @@ input[type=submit] {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.2rem;
   color: var(--md-typeset-color);
-  height: 1.5rem;
-  line-height: 1rem;
-  padding: 0.25rem 0.5rem;
+  font-size: 0.64rem;
+  height: 1.2rem;
+  line-height: 0.8rem;
+  padding: 0.2rem 0.4rem;
   text-align: center;
   width: auto;
 }
