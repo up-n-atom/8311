@@ -1,4 +1,18 @@
 {% extends "base.html" %}
+
+{% block styles %}
+  {{ super() }}
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  {{ super() }}
+{% endblock %}
+
 {% block announce %}
   Join the 8311 community on 
   <a href="https://discord.com/servers/8311-886329492438671420" target="_blank" rel="noopener">

@@ -26,18 +26,42 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
     [Debit+]: https://www.assistance.bouyguestelecom.fr/s/article/option-debit-plus
 
+<div class="swiper" markdown>
+
+<div class="swiper-wrapper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
 
-1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
-   Administrator password and click the __Connect__ button.
+</div>
+
+<div class="swiper-slide" markdown>
 
 ![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+</div>
+
+<div class="swiper-slide" step="4" markdown>
+
+![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+</div>
+
+1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
+   Administrator password and click the __Connect__ button. {: step="1" }
 
 2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
-
-![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
 4. From the __Fiber__ page, verify that the __PON Mode__ is XGS-PON.
 
@@ -47,18 +71,42 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 ### PON serial number
 
+<div class="swiper" markdown>
+
+<div class="swiper-wrapper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+</div>
+
+<div class="swiper-slide" step="4" markdown>
+
+![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+</div>
 
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
 
-![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
-
 2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
-
-![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
 
 4. From the __Fiber__ page, copy the __Serial Number__ beginning with `SMBS`.
 
@@ -80,18 +128,43 @@ The registration ID is composed of a seventy-two (72) octets from the fifteen (1
 
 The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
+
+<div class="swiper" markdown>
+
+<div class="swiper-wrapper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+
+</div>
+
+<div class="swiper-slide" step="4" markdown>
+
+![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp)
+
+</div>
+
+</div>
+
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+</div>
 
 1. Within a web browser, navigate to <https://mabbox.bytel.fr/> or <https://192.168.1.254> and, if asked, input your
    Administrator password and click the __Connect__ button.
 
-![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
-
 2. From the __Main__ page, click on the __:material-cog: Administration interface__ to revert to the old interface.
 
 3. From the __Administration__ page, click on the __Model__ section inside the __Bbox__ panel on the right-hand side.
-
-![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp)
 
 4. From the __Bbox__ page, copy the __IMEI__ number.
 

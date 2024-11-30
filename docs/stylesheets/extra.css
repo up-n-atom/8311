@@ -93,3 +93,26 @@ input[type=submit] {
           mask-image: var(--md-admonition-icon--warning);
 }
 
+.swiper {
+  height: auto;
+  max-width: 100%;
+}
+
+.swiper-horizontal {
+  padding: 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  color: #000;
+  /*opacity: 1;*/
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: var(--md-primary-bg-color);
+  background: var(--md-primary-fg-color);
+}
