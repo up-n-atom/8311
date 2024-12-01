@@ -210,60 +210,50 @@ outlined in the community firmware installation guide:
 
 4. __Save__ changes and reboot from the __System__ menu.
 
-After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5.1
-operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
+1. Login over secure shell (SSH).
 
-``` sh
-ssh root@192.168.11.1
-```
+    ``` sh
+    ssh root@192.168.11.1
+    ```
 
-<h4>Configure 8311 U-Boot environment</h4>
+2. Configure the 8311 U-Boot environment.
 
-!!! info "All attributes below are mandatory to achieve O5 operation state"
+    !!! info "All attributes below are mandatory to achieve O5 operation state"
 
-``` sh
-fwenv_set -8 gpon_sn SMBS... # (1)!
-fwenv_set -8 reg_id_hex 00000... # (2)!
-fwenv_set -8 fix_vlans 0
-```
+    ``` sh
+    fwenv_set -8 gpon_sn SMBS... # (1)!
+    fwenv_set -8 reg_id_hex 00000... # (2)!
+    fwenv_set -8 fix_vlans 0
+    ```
 
-1. [PON serial number]
-2. [PLOAM registration ID]
+    1. [PON serial number]
+    2. [PLOAM registration ID]
 
-!!! info "Additional details and variables are described at the original repository [^1]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+    !!! info "Additional details and variables are described at the original repository [^1]"
+        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
+        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
+        environment.
 
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
+        The `-8` option prefixes the U-Boot environment variable with `8311_`.
 
-<h4>Verify and reboot</h4>
+3. Verify the 8311 U-boot environment and reboot.
 
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-``` sh
-fw_printenv | grep ^8311
-reboot
-```
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
+    ```
 
 After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
-operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
-
-!!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
-
-For troubleshooting, please read:
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
+!!! note "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
+
+Finally, continue with your bypass by consulting the [routing guide(s)](#routing-guides).
 
 ## Routing guides
 
