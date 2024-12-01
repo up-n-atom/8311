@@ -206,8 +206,6 @@ outlined in the community firmware installation guide:
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    !!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
-
 4. __Save__ changes and reboot from the __System__ menu.
 
 ### from the shell
@@ -246,7 +244,7 @@ outlined in the community firmware installation guide:
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
 operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]

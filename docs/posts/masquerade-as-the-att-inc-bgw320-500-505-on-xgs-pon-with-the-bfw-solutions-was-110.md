@@ -137,88 +137,70 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 4. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-!!! tip "Clone the BGW320-500/505 :purple_circle: MAC address on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
-!!! note "Do not be alarmed..."
-    If you receive an e-mail and/or text informing you to:
-
-    > Check your AT&T Fiber equipment since you might be offline currently.
-
-    The BGW-500/505 sends telemetry data to *better* the customer experience.
-
 ### from the shell
 
-<h4>Login over SSH</h4>
 
-``` sh
-ssh root@192.168.11.1
-```
+1. Login over secure shell (SSH).
 
-<h4>Configure 8311 U-Boot environment</h4>
-
-!!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
-    [label] of the BGW320-500/505.
-
-=== "BGW320-500"
-
-    ``` sh hl_lines="1 7"
-    fwenv_set -8 gpon_sn HUMA... # (1)!
-    fwenv_set -8 equipment_id iONT320500G
-    fwenv_set -8 hw_ver BGW320-500_2.1
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA BGW320_4.27.7
-    fwenv_set -8 sw_verB BGW320_4.27.7
-    fwenv_set -8 fix_vlans 1
+    ``` sh
+    ssh root@192.168.11.1
     ```
 
-    1. :blue_circle: ONT ID
+2. Configure the 8311 U-Boot environment.
 
-=== "BGW320-505"
+    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
+        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
+        [label] of the BGW320-500/505.
 
-    ``` sh hl_lines="1 7"
-    fwenv_set -8 gpon_sn NOKA... # (1)!
-    fwenv_set -8 equipment_id iONT320505G
-    fwenv_set -8 hw_ver BGW320-505_2.2
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA BGW320_4.27.7
-    fwenv_set -8 sw_verB BGW320_4.27.7
-    fwenv_set -8 fix_vlans 1
+    === "BGW320-500"
+
+        ``` sh hl_lines="1 7"
+        fwenv_set -8 gpon_sn HUMA... # (1)!
+        fwenv_set -8 equipment_id iONT320500G
+        fwenv_set -8 hw_ver BGW320-500_2.1
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA BGW320_4.27.7
+        fwenv_set -8 sw_verB BGW320_4.27.7
+        fwenv_set -8 fix_vlans 1
+        ```
+
+        1. :blue_circle: ONT ID
+
+    === "BGW320-505"
+
+        ``` sh hl_lines="1 7"
+        fwenv_set -8 gpon_sn NOKA... # (1)!
+        fwenv_set -8 equipment_id iONT320505G
+        fwenv_set -8 hw_ver BGW320-505_2.2
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA BGW320_4.27.7
+        fwenv_set -8 sw_verB BGW320_4.27.7
+        fwenv_set -8 fix_vlans 1
+        ```
+
+        1. :blue_circle: ONT ID
+
+    !!! info "Additional details and variables are described at the original repository [^1]"
+        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+
+        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
+        environment.
+
+        The `-8` option prefixes the U-Boot environment variable with `8311_`.
+
+3. Verify the 8311 U-boot environment and reboot.
+
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
     ```
 
-    1. :blue_circle: ONT ID
-
-!!! info "Additional details and variables are described at the original repository [^1]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
-
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
-
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
-
-<h4>Verify and reboot</h4>
-
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-``` sh
-fw_printenv | grep ^8311
-reboot
-```
-
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-!!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
+!!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
 !!! note "Do not be alarmed..."
     If you receive an e-mail and/or text informing you to:

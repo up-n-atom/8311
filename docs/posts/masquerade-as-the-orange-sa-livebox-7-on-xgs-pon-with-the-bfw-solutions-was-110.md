@@ -104,62 +104,51 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
-operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
+1. Login over secure shell (SSH).
 
-``` sh
-ssh root@192.168.11.1
-```
+    ``` sh
+    ssh root@192.168.11.1
+    ```
+2. Configure the 8311 U-Boot environment.
 
-<h4>Configure 8311 U-Boot environment</h4>
+    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
+        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
+        from the Livebox 7 web UI.
 
-!!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
-    from the Livebox 7 web UI.
+    ``` sh hl_lines="1 3"
+    fwenv_set -8 gpon_sn SMBS03831122
+    fwenv_set -8 equipment_id SagemcomFast5694OFR
+    fwenv_set -8 hw_ver SMBSXLB7400
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA SAHEOFR010117 # (1)!
+    fwenv_set -8 sw_verB SAHEOFR919117
+    ```
 
-``` sh hl_lines="1 3"
-fwenv_set -8 gpon_sn SMBS03831122
-fwenv_set -8 equipment_id SagemcomFast5694OFR
-fwenv_set -8 hw_ver SMBSXLB7400
-fwenv_set -8 cp_hw_ver_sync 1
-fwenv_set -8 sw_verA SAHEOFR010117 # (1)!
-fwenv_set -8 sw_verB SAHEOFR919117
-```
+    1. [Version listing]
 
-1. [Version listing]
+    !!! info "Additional details and variables are described at the original repository [^1]"
+        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-!!! info "Additional details and variables are described at the original repository [^1]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
+        environment.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
+        The `-8` option prefixes the U-Boot environment variable with `8311_`.
 
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
+3. Verify the 8311 U-boot environment and reboot.
 
-<h4>Verify and reboot</h4>
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
+    ```
 
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-``` sh
-fw_printenv | grep ^8311
-reboot
-```
-
-After rebooting, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5
-operational status. Continue with your bypass setup by consulting the [routing guide(s)](#routing-guides).
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
+Finally, continue with your bypass by consulting the [routing guide(s)](#routing-guides).
 
 ## Livebox 7 software versions
 

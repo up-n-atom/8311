@@ -118,87 +118,69 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
-
-```sh
-ssh root@192.168.11.1
-```
-
-<h4>Configure 8311 U-Boot environment</h4>
-
-!!! reminder
-    <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom [label] of the
-    FOX222 or FRX523.
-
-!!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
-
-=== "FOX222"
+1. Login over secure shell (SSH).
 
     ``` sh
-    fwenv_set -8 gpon_sn FTRO... # (1)!
-    fwenv_set -8 equipment_id FOX222
-    fwenv_set -8 hw_ver FOX222
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA R4.4.08.030 # (2)!
-    fwenv_set -8 sw_verB R4.4.08.030
-    fwenv_set -8 -b fw_match '^(R\d+(?:\.\d+){3})$'
-    fwenv_set -8 override_active A
-    fwenv_set -8 override_commit A
-    fwenv_set -8 pon_slot 10
-    fwenv_set -8 reg_id_hex 44454641554c54
+    ssh root@192.168.11.1
     ```
 
-    1. :blue_circle: S/N
-    2. [Version listing]
+2. Configure the 8311 U-Boot environment.
 
-=== "FRX523"
+    !!! reminder
+        <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom [label] of the
+        FOX222 or FRX523.
+
+    !!! info "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
+
+    === "FOX222"
+
+        ``` sh
+        fwenv_set -8 gpon_sn FTRO... # (1)!
+        fwenv_set -8 equipment_id FOX222
+        fwenv_set -8 hw_ver FOX222
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA R4.4.08.030 # (2)!
+        fwenv_set -8 sw_verB R4.4.08.030
+        fwenv_set -8 -b fw_match '^(R\d+(?:\.\d+){3})$'
+        fwenv_set -8 override_active A
+        fwenv_set -8 override_commit A
+        fwenv_set -8 pon_slot 10
+        fwenv_set -8 reg_id_hex 44454641554c54
+        ```
+
+        1. :blue_circle: S/N
+        2. [Version listing]
+
+    === "FRX523"
+
+        ``` sh
+        fwenv_set -8 gpon_sn FTRO... # (1)!
+        fwenv_set -8 equipment_id FRX523
+        fwenv_set -8 hw_ver FRX523
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA R4.4.13.057 # (2)!
+        fwenv_set -8 sw_verB R4.4.13.057
+        fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
+        fwenv_set -8 override_active A
+        fwenv_set -8 override_commit A
+        fwenv_set -8 pon_slot 10
+        fwenv_set -8 reg_id_hex 44454641554c54
+        ```
+
+        1. :blue_circle: S/N
+        2. [Version listing]
+
+3. Verify the 8311 U-boot environment and reboot.
 
     ``` sh
-    fwenv_set -8 gpon_sn FTRO... # (1)!
-    fwenv_set -8 equipment_id FRX523
-    fwenv_set -8 hw_ver FRX523
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA R4.4.13.057 # (2)!
-    fwenv_set -8 sw_verB R4.4.13.057
-    fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
-    fwenv_set -8 override_active A
-    fwenv_set -8 override_commit A
-    fwenv_set -8 pon_slot 10
-    fwenv_set -8 reg_id_hex 44454641554c54
+    fw_printenv | grep ^8311
+    reboot
     ```
 
-    1. :blue_circle: S/N
-    2. [Version listing]
-
-!!! info "Additional details and variables are described at the original repository [^1]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
-
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
-
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
-
-<h4>Verify and reboot</h4>
-
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-```sh
-fw_printenv | grep ^8311
-reboot
-```
-
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 

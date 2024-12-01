@@ -98,68 +98,58 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 4. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
+1. Login over secure shell (SSH).
 
-```sh
-ssh root@192.168.11.1
-```
+    ``` sh
+    ssh root@192.168.11.1
+    ```
 
-<h4>Configure 8311 U-Boot environment</h4>
+2. Configure the 8311 U-Boot environment.
 
-!!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle: __8311_iphost_mac__
-    with the provisioned values on the bottom [label] of the Hub 5x.
+    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
+        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle: __8311_iphost_mac__
+        with the provisioned values on the bottom [label] of the Hub 5x.
 
-``` sh hl_lines="1 3 9"
-fwenv_set mib_file
-fwenv_set -8 iphost_mac C4:EB:43:00:00:01 # (1)!
-fwenv_set -8 gpon_sn SMBS... # (2)!
-fwenv_set -8 equipment_id F5685LGB
-fwenv_set -8 hw_ver 1.2.1b
-fwenv_set -8 cp_hw_ver_sync 1
-fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
-fwenv_set -8 sw_verB 3.7.4-2306.5
-fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
-fwenv_set -8 fix_vlans 0
-```
+    ``` sh hl_lines="1 3 9"
+    fwenv_set mib_file
+    fwenv_set -8 iphost_mac C4:EB:43:00:00:01 # (1)!
+    fwenv_set -8 gpon_sn SMBS... # (2)!
+    fwenv_set -8 equipment_id F5685LGB
+    fwenv_set -8 hw_ver 1.2.1b
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
+    fwenv_set -8 sw_verB 3.7.4-2306.5
+    fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
+    fwenv_set -8 fix_vlans 0
+    ```
 
-1. :purple_circle: MAC
-2. :blue_circle: PON S/N
-3. [Version listing]
+    1. :purple_circle: MAC
+    2. :blue_circle: PON S/N
+    3. [Version listing]
 
-!!! info "Additional details and variables are described at the original repository [^2]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+    !!! info "Additional details and variables are described at the original repository [^2]"
+        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
+        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
+        environment.
 
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
+        The `-8` option prefixes the U-Boot environment variable with `8311_`.
 
-<h4>Verify and reboot</h4>
+3. Verify the 8311 U-boot environment and reboot.
 
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
+    ```
 
-```sh
-fw_printenv | grep ^8311
-reboot
-```
-
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-!!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+
+!!! note "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 
 ## Hub 5x software versions
 

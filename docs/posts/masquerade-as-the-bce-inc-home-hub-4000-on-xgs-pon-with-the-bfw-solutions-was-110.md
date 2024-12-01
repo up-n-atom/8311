@@ -179,64 +179,46 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
 4. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
+1. Login over secure shell (SSH).
 
-``` sh
-ssh root@192.168.11.1
-```
+    ``` sh
+    ssh root@192.168.11.1
+    ```
 
-<h4>Configure 8311 U-Boot environment</h4>
+2. Configure the 8311 U-Boot environment.
 
-!!! reminder "Highlighted lines are <ins>mandatory</ins>"
-    <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle:
-    __8311_iphost_mac__ with the provisioned values on the back [label] of the Home Hub 4000.
+    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
+        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle:
+        __8311_iphost_mac__ with the provisioned values on the back [label] of the Home Hub 4000.
 
-``` sh hl_lines="1 3 9 10"
-fwenv_set mib_file
-fwenv_set -8 iphost_mac 40:65:A3:FF:A7:B1 # (1)!
-fwenv_set -8 gpon_sn SMBS... # (2)!
-fwenv_set -8 equipment_id 5689
-fwenv_set -8 hw_ver Fast5689Bell
-fwenv_set -8 cp_hw_ver_sync 1
-fwenv_set -8 sw_verA SGC8210154 # (3)!
-fwenv_set -8 sw_verB SGC8210154
-fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
-fwenv_set -8 fix_vlans 1
-```
+    ``` sh hl_lines="1 3 9 10"
+    fwenv_set mib_file
+    fwenv_set -8 iphost_mac 40:65:A3:FF:A7:B1 # (1)!
+    fwenv_set -8 gpon_sn SMBS... # (2)!
+    fwenv_set -8 equipment_id 5689
+    fwenv_set -8 hw_ver Fast5689Bell
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA SGC8210154 # (3)!
+    fwenv_set -8 sw_verB SGC8210154
+    fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
+    fwenv_set -8 fix_vlans 1
+    ```
 
-1. :purple_circle: @MAC + 1, e.g. `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
-2. :blue_circle: ONT S/N
-2. [Version listing]
+    1. :purple_circle: @MAC + 1, e.g. `40:65:A3:FF:A7:B0` becomes `40:65:A3:FF:A7:B1`
+    2. :blue_circle: ONT S/N
+    2. [Version listing]
 
-!!! info "Additional details and variables are described at the original repository [^2]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+3. Verify the 8311 U-boot environment and reboot.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
+    ```
 
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
-
-<h4>Verify and reboot</h4>
-
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-``` sh
-fw_printenv | grep ^8311
-reboot
-```
-
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 

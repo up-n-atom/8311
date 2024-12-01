@@ -116,64 +116,53 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 
 3. __Save__ changes and reboot from the __System__ menu.
 
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
-
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
-
 ### from the shell
 
-<h4>Login over SSH</h4>
+1. Login over secure shell (SSH).
 
-```sh
-ssh root@192.168.11.1
-```
+    ``` sh
+    ssh root@192.168.11.1
+    ```
+2. Configure the 8311 U-Boot environment.
 
-<h4>Configure 8311 U-Boot environment</h4>
+    !!! reminder "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
+        <ins>Replace</ins> the __8311_gpon_sn__, __8311_iphost_mac__, and __8311_sw_verA/B__ with
+        the provisioned values.
 
-!!! reminder "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
-    <ins>Replace</ins> the __8311_gpon_sn__, __8311_iphost_mac__, and __8311_sw_verA/B__ with
-    the provisioned values.
+    ``` sh
+    fwenv_set -8 iphost_mac FC:B2:D6:18:47:40 # (1)!
+    fwenv_set -8 gpon_sn ALCL... # (2)!
+    fwenv_set -8 equipment_id BVMGY10BRAXS010XQ # (3)!
+    fwenv_set -8 hw_ver 3FE49331AAAB01 # (4)!
+    fwenv_set -8 cp_hw_ver_sync 1
+    fwenv_set -8 sw_verA 3FE49337AOCK10
+    fwenv_set -8 sw_verB 3FE49337AOCK80
+    fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+    fwenv_set -8 pon_slot 10
+    ```
 
-``` sh
-fwenv_set -8 iphost_mac FC:B2:D6:18:47:40 # (1)!
-fwenv_set -8 gpon_sn ALCL... # (2)!
-fwenv_set -8 equipment_id BVMGY10BRAXS010XQ # (3)!
-fwenv_set -8 hw_ver 3FE49331AAAB01 # (4)!
-fwenv_set -8 cp_hw_ver_sync 1
-fwenv_set -8 sw_verA 3FE49337AOCK10
-fwenv_set -8 sw_verB 3FE49337AOCK80
-fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
-fwenv_set -8 pon_slot 10
-```
+    1. MAC ID
+    2. Serial number or S/N
+    3. CLEI + Mnemonic
+    4. ONT P/N + ICS
 
-1. MAC ID
-2. Serial number or S/N
-3. CLEI + Mnemonic
-4. ONT P/N + ICS
+    !!! info "Additional details and variables are described at the original repository [^1]"
+        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
 
-!!! info "Additional details and variables are described at the original repository [^1]"
-    `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
+        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
+        environment.
 
-    The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-    environment.
+        The `-8` option prefixes the U-Boot environment variable with `8311_`.
 
-    The `-8` option prefixes the U-Boot environment variable with `8311_`.
+3. Verify the 8311 U-boot environment and reboot.
 
-<h4>Verify and reboot</h4>
+    ``` sh
+    fw_printenv | grep ^8311
+    reboot
+    ```
 
-Prior to rebooting, verify that the 8311 environment variables are set correctly. If not, proceed to correct them with
-the `fwenv_set` command as before.
-
-```sh
-fw_printenv | grep ^8311
-reboot
-```
-
-Once rebooted, the SC/APC cable can safely be plugged into the WAS-110 and immediately receive O5 operational status.
-
-For troubleshooting, please read:
+After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
+operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
