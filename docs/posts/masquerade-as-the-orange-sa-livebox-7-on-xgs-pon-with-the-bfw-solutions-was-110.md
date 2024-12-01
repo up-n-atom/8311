@@ -111,6 +111,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
     ``` sh
     ssh root@192.168.11.1
     ```
+
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"

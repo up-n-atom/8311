@@ -123,6 +123,7 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
     ``` sh
     ssh root@192.168.11.1
     ```
+
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "All attributes below are <ins>mandatory</ins> to achieve O5 operation state"
