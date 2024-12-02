@@ -100,7 +100,7 @@ The registration ID is composed of a seventy-two (72) octets from the fifteen (1
 0's and suffixed with fifty-two (52) 1's.
 
 <div>
-  <form onsubmit="document.querySelector('#__code_0 > code').innerHTML = '0'.repeat(5) + escapeHTML(event.target.elements['imei'].value) + '1'.repeat(52)">
+  <form onsubmit="document.querySelector('#__code_0 > code').innerHTML = '0'.repeat(5) + escapeHTML(event.target.elements['imei'].value) + '1'.repeat(52); event.preventDefault(); location.assign(`${location.origin}${location.pathname}#ploam-registration-id`)">
     <input type="text" id="imei" placeholder="IMEI" pattern="^[0-9A-Fa-f]{15}$"/>
     <input type="submit" value="Submit" />
   </form>
