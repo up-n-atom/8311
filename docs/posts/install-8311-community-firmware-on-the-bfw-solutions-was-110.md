@@ -110,7 +110,7 @@ To extract the archive to a temporary directory, execute the following command(s
 
     ``` sh
     sudo apt-get install p7zip-full
-    7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp #(1)!
+    7z e '-i!local-upgrade.*' ~/Downloads/WAS-110_8311_firmware_mod_<version>_basic.7z -o/tmp
     ```
 
 ## Network setup
