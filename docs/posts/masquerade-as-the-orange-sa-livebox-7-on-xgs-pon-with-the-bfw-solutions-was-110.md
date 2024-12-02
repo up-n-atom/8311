@@ -89,7 +89,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
+        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Versions__ with the providioned values
         from the Livebox 7 web UI.
 
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
@@ -115,10 +115,10 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Verseions__ with the providioned values
+        ^^Replace^^ the mandatory __PON serial number__ and optional __Software Versions__ with the providioned values
         from the Livebox 7 web UI.
 
-    ``` sh hl_lines="1 3"
+    ``` sh hl_lines="1"
     fwenv_set -8 gpon_sn SMBS...
     fwenv_set -8 equipment_id SagemcomFast5694OFR
     fwenv_set -8 hw_ver SMBSXLB7400
