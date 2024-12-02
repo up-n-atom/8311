@@ -111,11 +111,11 @@ where both __Laser output power__ and __Receiver signal average optical power__ 
 ethtool -m pon0
 ```
 
-!!! failure "Failure test"
+!!! failure "Optic fault test"
 
     1. Unplug the fiber cable.
     2. Check the [optical status](#optical-status), if the transmit (Tx) and receive (Rx) power (dBm) do not report
-       __No signal__, the optics have failed.
+       __No signal__ or __-40dBm__, the optics have failed.
 
 ### Fake O5
 

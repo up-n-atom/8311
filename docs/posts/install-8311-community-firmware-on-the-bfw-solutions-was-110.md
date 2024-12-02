@@ -381,6 +381,15 @@ configurations based on your network setup:
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
 
+## Test optics
+
+Before any installation, it's highly recommended to do a simple optics [fault test] on the [WAS-110]. If the signal(s)
+are abnormal, contact the seller immediately to start the RMA process. If you're uncertain, please double-check on the
+[8311 Discord].
+
+[fault test]: https://pon.wiki/guides/troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/#optical-status
+[8311 Discord]: https://discord.pon.wiki/
+
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
 1. [Enable SSH] from the web UI by following the steps outlined below in the shell upgrade section.
