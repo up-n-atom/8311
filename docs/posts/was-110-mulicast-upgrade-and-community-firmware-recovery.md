@@ -226,7 +226,7 @@ __Static IP address `192.168.1.2/24`__
         ```
 
     ??? info
-        The default [WAS-110] [U-Boot] IP address is `192.168.1.1` and can be retrieved from the environment variable
+        The default [WAS-110]  [U-Boot] IP address is `192.168.1.1` and can be retrieved from the environment variable
         `ipaddr`.
 
         === "OpenWrt"
@@ -273,7 +273,7 @@ __Static ARP entry__
         ```
 
     ??? info
-        The default [WAS-110]. [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
+        The default [WAS-110]  [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
         variable `ethaddr`.
 
         === "OpenWrt"
