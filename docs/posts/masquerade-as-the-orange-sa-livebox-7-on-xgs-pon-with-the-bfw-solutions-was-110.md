@@ -94,7 +94,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ |-------------------------------- |
-    | PON Serial Number (ONT ID) | SMBS03831122                 | :check_mark: | :blue_circle:                   |
+    | PON Serial Number (ONT ID) | SMBS0...                     | :check_mark: | :blue_circle:                   |
     | Equipment ID               | SagemcomFast5694OFR          |              |                                 |
     | Hardware Version           | SMBSXLB7400                  | :check_mark: |                                 |
     | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
@@ -119,7 +119,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
         from the Livebox 7 web UI.
 
     ``` sh hl_lines="1 3"
-    fwenv_set -8 gpon_sn SMBS03831122
+    fwenv_set -8 gpon_sn SMBS...
     fwenv_set -8 equipment_id SagemcomFast5694OFR
     fwenv_set -8 hw_ver SMBSXLB7400
     fwenv_set -8 cp_hw_ver_sync 1
