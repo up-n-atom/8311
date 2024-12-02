@@ -152,7 +152,7 @@ Python installation varies by Operating System and has been outlined by the tuto
 
 #### Download
 
-=== ":simple-linux: Linux"
+=== ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
     ``` sh
     curl https://gist.github.com/djGrrr/802c5652d3610d3e0a63243fe1119c56/raw/3d9feef42107232e0ef7f2a4c469a00e915a16d3/multicast_upgrader.py
@@ -213,7 +213,7 @@ __10G SFP+ port__
 
 __Static IP address `192.168.1.2/24`__
 
-:   === ":simple-linux: Linux"
+:   === ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
         ```sh
         ip address add 192.168.1.2/24 dev <interface>
@@ -246,7 +246,7 @@ __Static ARP entry__
 
 :   __Unicast__ (1 to 1)
 
-    === ":simple-linux: Linux"
+    === ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
         ```sh
         arp -s 192.168.1.1 00:E0:92:00:01:40
@@ -260,7 +260,7 @@ __Static ARP entry__
 
     __Multicast__
 
-    === ":simple-linux: Linux"
+    === ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
         ```sh
         arp -s 192.168.1.1 01:E0:92:00:01:40
@@ -273,7 +273,7 @@ __Static ARP entry__
         ```
 
     ??? info
-        The default [WAS-110] [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
+        The default [WAS-110]. [U-Boot] MAC address is `00:E0:92:00:01:40` and can be retrieved from the environment
         variable `ethaddr`.
 
         === "OpenWrt"
@@ -298,7 +298,7 @@ __Static ARP entry__
 
 2. Run the `multicast_upgrader.py` [script]
 
-    === ":simple-linux: Linux"
+    === ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
         ```
         ./multicast_upgrader.py --path=multicast_upgrade.img
@@ -335,7 +335,7 @@ __Static ARP entry__
 
 2. Run the `multicast_upgrader.py` [script]
 
-    === ":simple-linux: Linux"
+    === ":simple-linux: Linux / :simple-freebsd: FreeBSD / :simple-apple: macOS"
 
         ```
         ./multicast_upgrader.py --path=multicast_reset.img
