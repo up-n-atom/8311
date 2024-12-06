@@ -128,6 +128,10 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
+??? info "As of version 2.4.0 `https://` is supported and enabled by default"
+    All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
+    0 or false.
+
 <div class="swiper" markdown>
 
 <div class="swiper-slide" markdown>
@@ -153,10 +157,6 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
    and, if asked, input your <em>root</em> password.
-
-    ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
-        All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
-        0 or false.
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
