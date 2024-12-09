@@ -99,6 +99,23 @@ nav:
     - Group buys: discord/group-buys.md
     - Giveaways: discord/giveaways.md
 extra:
+  analytics:
+    provider: google
+    property: G-YLNP9LG92G
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/up-n-atom/8311/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">feedback form</a>.
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/servers/8311-886329492438671420
