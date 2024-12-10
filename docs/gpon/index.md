@@ -1,3 +1,8 @@
+---
+hide:
+  - feedback
+---
+
 # Gigabit Passive Optical Network
 
 ## ITU-T Standards

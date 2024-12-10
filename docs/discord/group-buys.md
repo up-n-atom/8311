@@ -1,6 +1,7 @@
 ---
 hide:
   - toc
+  - feedback
 ---
 
 # Group buys

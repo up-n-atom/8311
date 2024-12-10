@@ -1,3 +1,8 @@
+---
+hide:
+  - feedback
+---
+
 # 10-Gigabit Symmetrical Passive Optical Network
 
 ## ITU-T Standards
