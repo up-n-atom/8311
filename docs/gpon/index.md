@@ -39,6 +39,10 @@ hide:
 
     ONU management and control interface (OMCI) specification
 
+    ---
+
+    <small>__The most relevent for those attempting to setup a bypass with compatible hardware__</small>
+
 </div>
 
   [G.984.1]: https://www.itu.int/rec/T-REC-G.984.1/en
