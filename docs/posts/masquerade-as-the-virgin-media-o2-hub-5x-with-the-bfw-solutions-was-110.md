@@ -111,18 +111,18 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
     ``` sh hl_lines="1 2 8 9"
     fwenv_set mib_file
-    fwenv_set -8 gpon_sn SMBS... # (2)!
+    fwenv_set -8 gpon_sn SMBS... # (1)!
     fwenv_set -8 equipment_id F5685LGB
     fwenv_set -8 hw_ver 1.2.1b
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
+    fwenv_set -8 sw_verA 3.7.4-2306.5 # (2)!
     fwenv_set -8 sw_verB 3.7.4-2306.5
     fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
     fwenv_set -8 fix_vlans 0
     ```
 
-    2. :blue_circle: PON S/N
-    3. [Version listing]
+    1. :blue_circle: PON S/N
+    2. [Version listing]
 
     !!! info "Additional details and variables are described at the original repository [^2]"
         `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
