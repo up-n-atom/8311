@@ -15,7 +15,7 @@ helps potential sponsors understand what we are all about!
 To contribute to existing guides and/or create new ones, the markdown files can be found within the
 [posts directory](./docs/guides/posts).
 
-Full page screenshots aid users with navigation and are the desired. To take a screenshot follow the guides for
+Full page screenshots aid users with navigation and are the desired. To take a screenshot, follow the guides for
 your browser of choice:
 
 * FireFox:
@@ -27,7 +27,7 @@ your browser of choice:
 * Safari:
   https://www.idownloadblog.com/2021/04/08/capture-full-page-screenshots-safari-firefox-chrome-mac/
 
-Furthermore to save bandwidth and increase load times, screenshots should be converted to the webp format with
+Furthermore, to save bandwidth and increase load times, screenshots should be converted to the webp format with
 [cwebp](https://developers.google.com/speed/webp/docs/cwebp) using 60% resolution e.g.
 `cwebp -q 60 screenshot.jpg/png -o screenshot.webp`.
 
