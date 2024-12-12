@@ -78,8 +78,8 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder "Reminder"
-        <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ and optional :purple_circle:
-        __IP Host MAC address__ with the provisioned values on the bottom [label] of the Hub 5x.
+        <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ with the provisioned value on the bottom
+        [label] of the Hub 5x.
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
     | -------------------------- | ----------------------------- | ------------ | ----------------------- |
@@ -90,11 +90,8 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
     | Software Version A         | 3.7.4-2306.5                  |              | [Version listing]       |
     | Software Version B         | 3.7.4-2306.5                  |              | [Version listing]       |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
-    | IP Host MAC Address        | C4:EB:43:00:00:01             |              | :purple_circle: MAC     |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
-
-    !!! info "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 
 4. __Save__ changes and reboot from the __System__ menu.
 
@@ -109,12 +106,11 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle: __8311_iphost_mac__
-        with the provisioned values on the bottom [label] of the Hub 5x.
+        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
+        [label] of the Hub 5x.
 
-    ``` sh hl_lines="1 3 9"
+    ``` sh hl_lines="1 2 8 9"
     fwenv_set mib_file
-    fwenv_set -8 iphost_mac C4:EB:43:00:00:01 # (1)!
     fwenv_set -8 gpon_sn SMBS... # (2)!
     fwenv_set -8 equipment_id F5685LGB
     fwenv_set -8 hw_ver 1.2.1b
@@ -125,7 +121,6 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
     fwenv_set -8 fix_vlans 0
     ```
 
-    1. :purple_circle: MAC
     2. :blue_circle: PON S/N
     3. [Version listing]
 
@@ -149,7 +144,7 @@ operational status. For troubleshooting, please read:
 
 [Troubleshoot connectivity issues with the BFW Solutions WAS-110]
 
-!!! note "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
+!!! note "Clone the Hub 5x :purple_circle: MAC address on the router's DHCP WAN interface and tag it and anything in-between the WAS-110 with VLAN 100"
 
 ## Hub 5x software versions
 
