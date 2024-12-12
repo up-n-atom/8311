@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/up-n-atom/8311/assets/234549/bbdd825a-cd81-438f-83ae-b0facbc5bfc6" width="256" height="256" alt="PON dot Wiki logo">
+  <img src="https://github.com/user-attachments/assets/52599ca9-cf18-44b7-b325-b78e4f40bce1" width="256" height="256" alt="PON dot Wiki logo">
 </p>
 
 <h3 align="center">PON dot Wiki</h3>
