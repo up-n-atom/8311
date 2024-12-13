@@ -62,7 +62,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_optical_status.webp)
+    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_optical_status.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
     2. From the __PON Status__ page, select the __Optical Status__ tab.
@@ -78,7 +78,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
+    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
        [web credentials].
@@ -142,7 +142,7 @@ To view the current PLOAM status, execute one of the following procedures:
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_pon_status.webp)
+    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_pon_status.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
     2. From the __PON Status__ page, select the __Status__ tab.
@@ -157,7 +157,7 @@ To view the current PLOAM status, execute one of the following procedures:
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp)
+    ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_pon.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
        [web credentials].
@@ -217,7 +217,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
 
     <h5>from the Web UI <small>permanent</small></h5>
 
-    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
+    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/config> and, if asked, input your *root* password.
     2. From the __8311 Configuration__ page, select the __Device__ tab.
@@ -243,7 +243,7 @@ Furthermore, to force the link speed on the [WAS-110] itself, execute the follow
 
     <h5>from the Web UI <small>permanent</small></h5>
 
-    ![WAS-110 Negotiation Speed](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_speed.webp)
+    ![WAS-110 Negotiation Speed](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_azores_speed.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/html/main.html#service/setlanfixspeed>, and, if asked, input your *admin*
        [web credentials].
@@ -272,7 +272,7 @@ host hardware and cause the link state to flap continuously.
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
+    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/config> and, if asked, input your *root* password.
     2. From the __8311 Configuration__ page, select the __Device__ tab.
@@ -353,7 +353,7 @@ host controller and implementation, the interface may enter a power saving state
 
     <h5>from the Web UI</h5>
 
-    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp)
+    ![WAS-110 device tab](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_device.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/config> and, if asked, input your *root* password.
     2. From the __8311 Configuration__ page, select the __Device__ tab.

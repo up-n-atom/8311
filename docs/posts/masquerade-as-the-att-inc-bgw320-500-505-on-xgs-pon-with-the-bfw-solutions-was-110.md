@@ -29,7 +29,7 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
-![BGW320-500/505 Fiber status](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_fiber_status.webp)
+![BGW320-500/505 Fiber status](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_fiber_status.webp){ loading=lazy }
 
 1. Within a web browser, navigate to
    <http://192.168.1.254/cgi-bin/fiberstat.ha>
@@ -81,19 +81,19 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
 
 </div>
 
@@ -214,7 +214,7 @@ operational status. For troubleshooting, please read:
 The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
 software upgrades of the BGW320-500/505 if the WAS-110 reports a fake O5 state.
 
-![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_update.webp)
+![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_update.webp){ loading=lazy }
 
 The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
 <http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following string pattern with the

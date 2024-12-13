@@ -28,13 +28,13 @@ slug: masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-11
 
 <div class="swiper-slide" markdown>
 
-![NH20A/T login](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_login.webp)
+![NH20A/T login](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![NH20A/T index](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp)
+![NH20A/T index](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/nh20a_nh20t_index.webp){ loading=lazy }
 
 </div>
 
@@ -82,13 +82,13 @@ depiction:
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 

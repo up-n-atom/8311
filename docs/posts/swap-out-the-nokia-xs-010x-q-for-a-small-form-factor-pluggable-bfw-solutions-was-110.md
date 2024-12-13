@@ -36,13 +36,13 @@ outlined in the community firmware installation guide:
 
 <div class="swiper-slide" markdown>
 
-![XS-010X-Q login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_login.webp)
+![XS-010X-Q login](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" step="5" markdown>
 
-![XS-010X-Q info](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_info.webp)
+![XS-010X-Q info](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_info.webp){ loading=lazy }
 
 </div>
 
@@ -78,13 +78,13 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 

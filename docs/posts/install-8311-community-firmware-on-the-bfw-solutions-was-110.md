@@ -220,13 +220,13 @@ configurations based on your network setup:
 
         <div class="swiper-slide" markdown>
 
-        ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp)
+        ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp){ loading=lazy }
 
         </div>
 
         <div class="swiper-slide" markdown>
 
-        ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp)
+        ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
 
         </div>
 
@@ -240,7 +240,7 @@ configurations based on your network setup:
 
     === ":simple-opnsense: OPNsense"
 
-        ![OPNsense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_virtual_ip.webp)
+        ![OPNsense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_virtual_ip.webp){ loading=lazy }
 
         1. Add a virtual IP to the WAN interface by navigating to **Interfaces > Virtual IPs > Settings**, clicking
            :material-plus-thick:, applying the settings below, clicking **Save**, and clicking **Apply**.
@@ -254,7 +254,7 @@ configurations based on your network setup:
             | **VHID Group**                   |                                   |
             | **Description**                  | WAS-110 Management                |
 
-        ![OPNsense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_firewall_alias.webp)
+        ![OPNsense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_firewall_alias.webp){ loading=lazy }
 
         2. Add a firewall alias by navigating to **Firewall > Aliases**, clicking :material-plus-thick:, applying the
            settings below, clicking **Save**, and clicking **Apply**.
@@ -269,12 +269,12 @@ configurations based on your network setup:
             | **Statistics**                   | :material-checkbox-blank-outline:  |
             | **Description**                  | WAS-110                            |
 
-        ![OPNsense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat.webp)
+        ![OPNsense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat.webp){ loading=lazy }
 
         3. Switch to Hybrid outbound NAT by navigating to **Firewall > Outbound > NAT**, selecting
            **Hybrid outbound NAT rule generation**, clicking **Save**, and clicking **Apply changes**.
 
-        ![OPNsense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat_rule.webp)
+        ![OPNsense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/opnsense_outbound_nat_rule.webp){ loading=lazy }
 
         4. Add a manual outbound NAT rule, click :material-plus-thick: in the **Manual rules** table, apply the
            settings below, click **Save**, and click **Apply changes**.
@@ -288,7 +288,7 @@ configurations based on your network setup:
 
     === ":simple-pfsense: pfSense"
 
-        ![pfSense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_virtual_ip.webp)
+        ![pfSense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_virtual_ip.webp){ loading=lazy }
 
         1. Add a virtual IP to the WAN interface by navigating to **Firewall > Virtual IPs**, clicking
            :material-plus-thick: **Add**, applying the settings below, clicking **Save**, and clicking **Apply Changes**.
@@ -300,7 +300,7 @@ configurations based on your network setup:
             | **Address(es)**                  | 192.168.11.2/24                   |
             | **Description**                  | WAS-110 Management                |
 
-        ![pfSense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_alias.webp)
+        ![pfSense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_alias.webp){ loading=lazy }
 
         2. Add a firewall alias by navigating to **Firewall > Aliases > IP**, clicking :material-plus-thick: **Add**,
            applying the settings below, clicking **Save**, and clicking **Apply Changes**.
@@ -315,12 +315,12 @@ configurations based on your network setup:
             | -------------------------------- | ---------------------------------- |
             | **IP or FQDN**                   | 192.168.11.1                       |
 
-        ![pfSense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound.webp)
+        ![pfSense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound.webp){ loading=lazy }
 
         3. Switch to Hybrid outbound NAT by navigating to **Firewall > NAT > Outbound**, selecting
            **Hybrid Outbound NAT rule generation**, clicking **Save**, and clicking **Apply Changes**.
 
-        ![pfSense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound_rule.webp)
+        ![pfSense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound_rule.webp){ loading=lazy }
 
         4. Add a manual outbound NAT rule, click :material-arrow-up: **Add** in the **Mappings** table, apply the
            settings below, click **Save**, and click **Apply Changes**.
@@ -454,13 +454,13 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp)
+![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_services.webp)
+![WAS-110 services](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_services.webp){ loading=lazy }
 
 </div>
 
@@ -548,13 +548,13 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp)
+![WAS-110 login](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_upgrade.webp)
+![WAS-110 firmware upgrade](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_azores_upgrade.webp){ loading=lazy }
 
 </div>
 
@@ -647,7 +647,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
     can be removed from future command usage.
 
-![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp)
+![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp){ loading=lazy }
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/firmware>

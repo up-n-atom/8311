@@ -53,19 +53,19 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
 
 </div>
 

@@ -39,13 +39,13 @@ switcheroo and the more comprehensive [XMO API client](#with-a-xmo-client).
 
 <div class="swiper-slide" markdown>
 
-![Home Hub 4000 Administrator login prompt](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_login.webp)
+![Home Hub 4000 Administrator login prompt](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![Home Hub 4000 WAN mode](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_wan_mode.webp)
+![Home Hub 4000 WAN mode](masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/home_hub_4000_wan_mode.webp){ loading=lazy }
 
 </div>
 
@@ -136,19 +136,19 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
 
 </div>
 

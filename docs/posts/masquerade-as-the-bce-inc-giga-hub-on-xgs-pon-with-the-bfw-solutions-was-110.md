@@ -33,13 +33,13 @@ and the more comprehensive [XMO API client](#with-a-xmo-client).
 
 <div class="swiper-slide" markdown>
 
-![Giga Hub Administrator login prompt](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_login.webp)
+![Giga Hub Administrator login prompt](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![Giga Hub WAN mode](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_wan_mode.webp)
+![Giga Hub WAN mode](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/giga_hub_wan_mode.webp){ loading=lazy }
 
 </div>
 
@@ -128,19 +128,19 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
 
 </div>
 

@@ -30,19 +30,19 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 <div class="swiper-slide" markdown>
 
-![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
+![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" step="4" markdown>
 
-![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
+![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp){ loading=lazy }
 
 </div>
 
@@ -67,19 +67,19 @@ slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-1
 
 <div class="swiper-slide" markdown>
 
-![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
+![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" step="4" markdown>
 
-![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp)
+![Bbox Fiber](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_fiber.webp){ loading=lazy }
 
 </div>
 
@@ -117,19 +117,19 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 <div class="swiper-slide" markdown>
 
-![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp)
+![Bbox Login](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp)
+![Bbox Main](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_main.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" step="4" markdown>
 
-![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp)
+![Bbox](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bbox_bbox.webp){ loading=lazy }
 
 </div>
 
@@ -169,19 +169,19 @@ outlined in the community firmware installation guide:
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp)
+![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp)
+![WAS-110 8311 configuration](shared-assets/was_110_luci_config.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp)
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
 
 </div>
 
