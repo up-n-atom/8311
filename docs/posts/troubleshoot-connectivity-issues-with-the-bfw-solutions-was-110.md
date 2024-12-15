@@ -328,19 +328,21 @@ env save
 env save
 ```
 
-<h5>Pre-boot UART Recovery</h5>
+???+ info "To recover, a host device with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required."
 
-!!! info "To recover, a host device with serial breakout on SFP pins 2 (rx) and 7 (tx) will be required."
+    1. Spam ++escape++ in the serial terminal while plugging in the WAS-110
 
-1. Spam ++escape++ in the serial terminal while plugging in the WAS-110
-2. Press ++enter++
-3. Type `mw.b 0xB6180121 0xd8` followed by ++enter++
-4. Delete the `uart_select_preboot` environment variable
-    ``` sh
-    env set uart_select_preboot
-    env save
-    env save
-    ```
+    2. Press ++enter++
+
+    3. Type `mw.b 0xB6180121 0xd8` followed by ++enter++
+
+    4. Delete the `uart_select_preboot` environment variable
+
+        ``` sh
+        env set uart_select_preboot
+        env save
+        env save
+        ```
 
 ### Rx loss
 

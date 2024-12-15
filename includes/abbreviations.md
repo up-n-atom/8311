@@ -27,6 +27,7 @@
 *[SFP]: Small Form-factor Pluggable
 *[SoC]: System on a Chip
 *[SSH]: Secure SHell
+*[STP]: Spanning Tree Protocol
 *[TX]: Transmit
 *[UART]: Universal Asynchronous Receiver/Transmitter
 *[UI]: User Interface
