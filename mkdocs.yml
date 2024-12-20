@@ -99,7 +99,7 @@ nav:
     - Group buys: discord/group-buys.md
     - Giveaways: discord/giveaways.md
   - On the Web:
-    - in-the-media.md
+    - on-the-web.md
 extra:
   analytics:
     provider: google
