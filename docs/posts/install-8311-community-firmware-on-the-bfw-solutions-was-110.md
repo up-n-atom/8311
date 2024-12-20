@@ -344,19 +344,7 @@ configurations based on your network setup:
 
         2. Set the **Primary (WAN1)** interface to `Port 10 (SFP+)` by navigating to **Network > Settings > Internet**.
 
-        3. Connect and execute the following command from a SSH session:
-
-            !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
-
-            !!! warning "This command will not persist with the next power cycle or web UI change"
-
-                ``` sh
-                ip addr add dev eth9 local 192.168.11.2/24
-                ```
-
-                For boot persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
-
-        4. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking **Create Entry**.
+        3. Create a Source NAT rule by navigating to **Network > Settings > Routing > NAT**, followed by clicking **Create Entry**.
 
             |                           |                                                                            |
             | ------------------------- | -------------------------------------------------------------------------- |
@@ -378,6 +366,19 @@ configurations based on your network setup:
                 ``` sh
                 iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2
                 ```
+
+        4. Connect and execute the following command from a SSH session:
+
+            !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
+
+            !!! warning "This command will not persist with the next power cycle or web UI change"
+
+                ``` sh
+                ip addr add dev eth9 local 192.168.11.2/24
+                ```
+
+                For boot persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
+
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
 
