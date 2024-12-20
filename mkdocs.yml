@@ -98,6 +98,8 @@ nav:
     - Quick start: discord/quick-start.md
     - Group buys: discord/group-buys.md
     - Giveaways: discord/giveaways.md
+  - On the Web:
+    - in-the-media.md
 extra:
   analytics:
     provider: google
