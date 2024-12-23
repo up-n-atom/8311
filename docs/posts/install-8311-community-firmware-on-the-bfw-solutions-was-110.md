@@ -288,7 +288,7 @@ configurations based on your network setup:
 
     === ":simple-pfsense: pfSense"
 
-        === "DHCP"
+        === "DHCP WAN"
 
              ![pfSense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_virtual_ip.webp){ loading=lazy }
 
@@ -338,7 +338,7 @@ configurations based on your network setup:
                 | --------------------------------- | -------------------------------------------- |
                 | **Address**                       | 192.168.11.2 (WAS-110 Management)            |
 
-        === "PPPoE"
+        === "PPPoE WAN"
 
              Follow the __Accessing a CPE/Modem from Inside the Firewall__ guide from the pfSense documentation:
 
