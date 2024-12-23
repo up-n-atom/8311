@@ -214,6 +214,8 @@ configurations based on your network setup:
 
 === "Static Route"
 
+    !!! note "Requires 8311 community firmware v2.7.2+"
+
     === ":simple-ubiquiti: UniFi Dream Machine"
 
         <div class="swiper" markdown>
