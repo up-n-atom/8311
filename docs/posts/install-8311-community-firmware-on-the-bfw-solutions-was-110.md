@@ -340,7 +340,7 @@ configurations based on your network setup:
 
         === "PPPoE"
 
-             Follow the following guide from the pfSense documentation:
+             Follow the __Accessing a CPE/Modem from Inside the Firewall__ guide from the pfSense documentation:
 
              <https://docs.netgate.com/pfsense/en/latest/recipes/modem-access.html>
 
