@@ -288,53 +288,61 @@ configurations based on your network setup:
 
     === ":simple-pfsense: pfSense"
 
-        ![pfSense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_virtual_ip.webp){ loading=lazy }
+        === "DHCP"
 
-        1. Add a virtual IP to the WAN interface by navigating to **Firewall > Virtual IPs**, clicking
-           :material-plus-thick: **Add**, applying the settings below, clicking **Save**, and clicking **Apply Changes**.
+             ![pfSense Virtual IP](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_virtual_ip.webp){ loading=lazy }
 
-            |                                  |                                   |
-            | -------------------------------- | --------------------------------- |
-            | **Type**                         | IP Alias                          |
-            | **Interface**                    | WAN                               |
-            | **Address(es)**                  | 192.168.11.2/24                   |
-            | **Description**                  | WAS-110 Management                |
+             1. Add a virtual IP to the WAN interface by navigating to **Firewall > Virtual IPs**, clicking
+                :material-plus-thick: **Add**, applying the settings below, clicking **Save**, and clicking **Apply Changes**.
 
-        ![pfSense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_alias.webp){ loading=lazy }
+                |                                  |                                   |
+                | -------------------------------- | --------------------------------- |
+                | **Type**                         | IP Alias                          |
+                | **Interface**                    | WAN                               |
+                | **Address(es)**                  | 192.168.11.2/24                   |
+                | **Description**                  | WAS-110 Management                |
 
-        2. Add a firewall alias by navigating to **Firewall > Aliases > IP**, clicking :material-plus-thick: **Add**,
-           applying the settings below, clicking **Save**, and clicking **Apply Changes**.
+            ![pfSense Firewall Alias](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_alias.webp){ loading=lazy }
 
-            | Properties                       | &nbsp;                             |
-            | -------------------------------- | ---------------------------------- |
-            | **Name**                         | was_110                            |
-            | **Description**                  | WAS-110                            |
-            | **Type**                         | Host(s)                            |
+            2. Add a firewall alias by navigating to **Firewall > Aliases > IP**, clicking :material-plus-thick: **Add**,
+               applying the settings below, clicking **Save**, and clicking **Apply Changes**.
 
-            | Host(s)                          | &nbsp;                             |
-            | -------------------------------- | ---------------------------------- |
-            | **IP or FQDN**                   | 192.168.11.1                       |
+                | Properties                       | &nbsp;                             |
+                | -------------------------------- | ---------------------------------- |
+                | **Name**                         | was_110                            |
+                | **Description**                  | WAS-110                            |
+                | **Type**                         | Host(s)                            |
 
-        ![pfSense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound.webp){ loading=lazy }
+                | Host(s)                          | &nbsp;                             |
+                | -------------------------------- | ---------------------------------- |
+                | **IP or FQDN**                   | 192.168.11.1                       |
 
-        3. Switch to Hybrid outbound NAT by navigating to **Firewall > NAT > Outbound**, selecting
-           **Hybrid Outbound NAT rule generation**, clicking **Save**, and clicking **Apply Changes**.
+            ![pfSense Outbound NAT](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound.webp){ loading=lazy }
 
-        ![pfSense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound_rule.webp){ loading=lazy }
+            3. Switch to Hybrid outbound NAT by navigating to **Firewall > NAT > Outbound**, selecting
+               **Hybrid Outbound NAT rule generation**, clicking **Save**, and clicking **Apply Changes**.
 
-        4. Add a manual outbound NAT rule, click :material-arrow-up: **Add** in the **Mappings** table, apply the
-           settings below, click **Save**, and click **Apply Changes**.
+            ![pfSense Outbound NAT Rule](install-8311-community-firmware-on-the-bfw-solutions-was-110/pfsense_firewall_nat_outbound_rule.webp){ loading=lazy }
 
-            | Edit Advanced Outbound NAT Entry  | &nbsp;                                       |
-            | --------------------------------- | -------------------------------------------- |
-            | **Interface**                     | WAN                                          |
-            | **Source**                        | LAN subnets                                  |
-            | **Destination**                   | Network or Alias - was_110 / 32              |
+            4. Add a manual outbound NAT rule, click :material-arrow-up: **Add** in the **Mappings** table, apply the
+               settings below, click **Save**, and click **Apply Changes**.
+
+                | Edit Advanced Outbound NAT Entry  | &nbsp;                                       |
+                | --------------------------------- | -------------------------------------------- |
+                | **Interface**                     | WAN                                          |
+                | **Source**                        | LAN subnets                                  |
+                | **Destination**                   | Network or Alias - was_110 / 32              |
 
 
-            | Translation                       | &nbsp;                                       |
-            | --------------------------------- | -------------------------------------------- |
-            | **Address**                       | 192.168.11.2 (WAS-110 Management)            |
+                | Translation                       | &nbsp;                                       |
+                | --------------------------------- | -------------------------------------------- |
+                | **Address**                       | 192.168.11.2 (WAS-110 Management)            |
+
+        === "PPPoE"
+
+             Follow the following guide from the pfSense documentation:
+
+             <https://docs.netgate.com/pfsense/en/latest/recipes/modem-access.html>
 
     === ":simple-ubiquiti: UniFi Dream Machine"
 

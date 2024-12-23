@@ -20,6 +20,8 @@
 *[OMCI]: ONU Management and Control Interface
 *[PLOAM]: Physical Layer Operation Administration and Maintenance
 *[PON]: Passive Optical Network
+*[PPP]: Point-to-Point Protocol
+*[PPPoE]: Point-to-Point Protocol over Ethernet
 *[PPTP]: Point-to-Point Tunneling Protocol
 *[RAM]: Random Access Memory
 *[RX]: Receive
