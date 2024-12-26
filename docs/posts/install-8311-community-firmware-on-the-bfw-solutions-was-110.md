@@ -411,13 +411,15 @@ are abnormal, contact the seller immediately to start the RMA process. If you're
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1
     ```
 
-3. Execute the following command sequence from the [WAS-110] remote shell to dump its volumes into the temp directory.
+3. Execute the following command sequence from the [WAS-110] remote shell to dump the [WAS-110]'s volumes into its
+   temporary directory and exit from the remote shell.
 
     ``` sh
     mkdir -p /tmp/fw; for part in kernelA bootcoreA rootfsA kernelB bootcoreB rootfsB; do VOL=$(ubinfo /dev/ubi0 -N "$part" | grep "Volume ID" | awk '{print $3}'); [ -n "$VOL" ] && { DEV="/dev/ubi0_$VOL"; OUT="/tmp/fw/ubi0_$VOL-$part.img"; echo "Dumping $part ($DEV) to: $OUT"; dd if="$DEV" of="$OUT"; }; done; exit
     ```
 
-4. Execute the following command from the host PC terminal to back-up the dumped volumes to your local user directory.
+4. Execute the following command from the host PC terminal (not the [WAS-110] remote shell) to back-up the dumped
+   volumes to your local user directory.
 
     === ":material-microsoft: Windows"
 
