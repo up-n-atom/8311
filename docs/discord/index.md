@@ -33,9 +33,9 @@ Additionally, the following rules have been put in place to keep the server civi
 3. NO hate speech (racism, sexism, etc.)
 4. NO ^^explicit^^ or ^^violent^^ material
 5. NO ^^spam^^ (incl. CAPS, pings)
-6. NO ^^solicitation^^ and/or advertising *(excluding __#self-promo__)*
-7. DO NOT publish personal information of any member past or present
-8. DO NOT direct message members without prior permission in a public channel
+6. NO ^^solicitation^^ and/or ^^advertising^^ *(excluding __#self-promo__)*
+7. DO NOT disclose, publish, or sell personal information of any member past or present
+8. DO NOT direct message members without prior permission or discussion in a public channel
 
 ## Bazaar
 
@@ -47,13 +47,13 @@ Unlock the power of the bazaar and participate in the fun!
 
     ---
 
-    Save BIG and support the community with volunteer run group buys
+    Save BIG and support the community through volunteer run group buys
 
 -   [Giveaways]
 
     ---
 
-    Win amazing prizes hosted by the generosity of community members
+    Win amazing prizes hosted by the generosity of community members and/or sponsors
 
 </div>
 
