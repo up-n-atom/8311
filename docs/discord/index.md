@@ -78,7 +78,7 @@ __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
 
 :   General Members
 
-__PON:material-star:__
+__PON:material-star:__ (Passive Optical Network superstars)
 
 :   Documentation Contributors
 
