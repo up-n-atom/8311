@@ -80,7 +80,7 @@ __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
 
 __PON:material-star:__ (Passive Optical Network wiki superstars)
 
-:   Documentation and Code Contributors
+:   [Documentation] and [Code] Contributors
 
 __LSO__ (Large Send Offload)
 
@@ -89,3 +89,6 @@ __LSO__ (Large Send Offload)
 __Broadcast Packet__
 
 :   [Social Media Personalities](../on-the-web.md)
+
+  [Documentation]: https://github.com/up-n-atom/8311
+  [Code]: https://github.com/djGrrr/8311-was-110-firmware-builder
