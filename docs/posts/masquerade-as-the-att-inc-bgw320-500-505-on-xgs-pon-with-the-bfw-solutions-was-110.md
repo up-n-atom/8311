@@ -30,7 +30,7 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
 
-!!! info "Since the 6x series firmware, the web UI may report 0 (zero) for the Wave Length. Jump past to [with the transciever](#with-the-transceiver) check."
+!!! info "Since the 6x series firmware, the web UI may report 0 (zero) for the Wave Length. Jump past to [with the transciever](#with-the-transceiver) check to help determine if you're an XGS-PON subscriber."
 
 ![BGW320-500/505 Fiber status](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_fiber_status.webp){ loading=lazy }
 
@@ -41,7 +41,7 @@ If the wave length matches <em>1270 nm</em>, you're subscribed on XGS-PON.
 
 ### with the transceiver
 
-First, identify the color of the bale clasp. If the clasp is orange, continue by carefully pulling out the
+First, identify the color of the bale clasp. If the clasp is orange/red, continue by carefully pulling out the
 transceiver by engaging the bale clasp and latch. If the label on the transceiver contains the text XGS-PON or
 1270 TX, you're subscribed on XGS-PON.
 
