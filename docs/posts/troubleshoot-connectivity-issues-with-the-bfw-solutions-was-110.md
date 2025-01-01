@@ -49,10 +49,10 @@ ethtool -m <interface>
 
 #### Optical specifications
 
-|          | Min. | Max. | Unit |
-| -------- | ---- | ---- | ---- |
-| Tx Power | 4    | 9    | dBm  |
-| Rx Power | -29  | -8   | dBm  |
+| &nbsp;   | Min. | Max. | Unit | WAS-110 Error |
+| -------- | ---- | ---- | ---- | ------------- |
+| Tx Power | 4    | 9    | dBm  | +/- 2         |
+| Rx Power | -29  | -8   | dBm  | +/- 3         |
 
 #### Optical status
 
