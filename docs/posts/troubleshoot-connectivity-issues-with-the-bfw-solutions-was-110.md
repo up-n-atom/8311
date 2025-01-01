@@ -113,9 +113,18 @@ ethtool -m pon0
 
 !!! failure "Optic fault test"
 
+    <h5>Test 1</h5>
+
     1. Unplug the fiber cable.
     2. Check the [optical status](#optical-status), if the transmit (Tx) and receive (Rx) power (dBm) do not report
        __No signal__ or __-40dBm__ or __-inf__, the optics are miscalibrated or faulty.
+
+    <h5>Test 2</h5>
+
+    1. Plug-in the fiber cable.
+    2. Check the [optical status](#optical-status), if the transmit (Tx) and receive (Rx) power (dBm) report
+       __No signal__, you're likely subscribed to GPON (1490nm downstream and 1310nm upstream) which isn't a compatible
+       wavelength for the [WAS-110].
 
 ### Fake O5
 
