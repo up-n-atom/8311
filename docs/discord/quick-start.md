@@ -6,7 +6,7 @@ hide:
 
 # Quick Start
 
-!!! question "New to Discord? check out their [Getting Started](https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started) guide"
+!!! question "New to Discord? check out their [Getting Started](https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started) guidei..."
 
 Join the [8311 community server] and start your bypass with 8 easy steps...
 
