@@ -92,3 +92,21 @@ __Broadcast Packet__
 
   [Documentation]: https://github.com/up-n-atom/8311
   [Code]: https://github.com/djGrrr/8311-was-110-firmware-builder
+
+## History
+
+In October 2018, a group of curious Canadian software developers established what would eventually become 8311 on the
+now-defunct <https://www.dslreports.com> Bell Canada sub-forum due to their policies regarding reverse engineering and
+hackers.
+
+  [hackers]: https://en.wikipedia.org/wiki/Hacker
+
+Initially set up as a Slack workspace named "BELLY-UP," the focus of discussion and development revolved around the
+cat-and-mouse game of rooting the Home Hub 3000 and Home Hub 4000, CPEs provided by Bell Canada and manufactured by
+Sagemcom, as well as development and support for 2.5Gbps network hardware built around the Broadcom WarpCore and
+Marvell ARMADA IPs to support the use of SFP+ GPON ONTs, inclusive to the Alcatel-Lucent G-010S-P, Huawei MA5671A,
+and Nokia G-010S-A.
+
+As broad interest in the Broadcom WarpCore patches grew, the limitations of Slack's free tier became apparent.
+Therefore, in September 2021, "BELLY-UP" moved to Discord as the 8311 community server to serve a broader worldwide
+audience and XGS-PON transition.
