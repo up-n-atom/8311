@@ -100,7 +100,7 @@ now-defunct <https://www.dslreports.com> Bell Canada sub-forum.
 
 Due to DSLR policies regarding reverse engineering and hackers, a [Slack] workspace named *"BELLY-UP"* was created with the
 focus of discussion and development revolved around the cat-and-mouse game of rooting the Home Hub 3000 and
-Home Hub 4000, CPEs provided by [Bell Canada] and manufactured by Sagemcom, as well as development and support for
+Home Hub 4000, CPEs provided by [Bell Canada] and manufactured by [Sagemcom], as well as development and support for
 2.5Gbps network hardware built around the [Broadcom] WarpCore and [Marvell] ARMADA IPs to support the use of SFP+ GPON
 ONTs, inclusive to the [Huawei] [MA5671A], [Alcatel-Lucent] [G-010S-P] and [Nokia] G-010S-A of [Bell Labs].
 
