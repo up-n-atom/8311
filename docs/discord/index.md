@@ -96,7 +96,7 @@ __Broadcast Packet__
 ## History
 
 In October 2018, a group of curious Canadian software developers established what would eventually become 8311 on the
-now-defunct <https://www.dslreports.com> Bell Canada sub-forum.
+now-defunct <https://www.dslreports.com> [Bell Canada] sub-forum.
 
 Due to DSLR policies regarding reverse engineering and hackers, a [Slack] workspace named *"BELLY-UP"* was created with the
 focus of discussion and development revolved around the cat-and-mouse game of rooting the Home Hub 3000 and
