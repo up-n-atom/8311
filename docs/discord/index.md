@@ -100,12 +100,22 @@ now-defunct <https://www.dslreports.com> Bell Canada sub-forum.
 
 Due to DSLR policies regarding reverse engineering and hackers, a Slack workspace named "BELLY-UP" was created with the
 focus of discussion and development revolved around the cat-and-mouse game of rooting the Home Hub 3000 and
-Home Hub 4000, CPEs provided by Bell Canada and manufactured by Sagemcom, as well as development and support for
-2.5Gbps network hardware built around the Broadcom WarpCore and Marvell ARMADA IPs to support the use of SFP+ GPON
-ONTs, inclusive to the Alcatel-Lucent G-010S-P, Huawei MA5671A, and Nokia G-010S-A.
+Home Hub 4000, CPEs provided by [Bell Canada] and manufactured by Sagemcom, as well as development and support for
+2.5Gbps network hardware built around the [Broadcom] WarpCore and [Marvell] ARMADA IPs to support the use of SFP+ GPON
+ONTs, inclusive to the [Huawei] [MA5671A], [Alcatel-Lucent] [G-010S-P] and [Nokia] G-010S-A of [Bell Labs].
 
-As broad interest in the Broadcom WarpCore patches grew, the limitations of Slack's free tier became apparent.
+As broad interest in the [Broadcom] WarpCore patches grew, the limitations of Slack's free tier became apparent.
 Therefore, in September 2021, "BELLY-UP" moved to Discord as the 8311 community server to serve a broader worldwide
 audience and GPON to XGS-PON transition.
 
   [hackers]: https://en.wikipedia.org/wiki/Hacker
+  [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada
+  [Sagemcom]: https://fr.wikipedia.org/wiki/Sagemcom
+  [Broadcom]: https://en.wikipedia.org/wiki/Broadcom
+  [Marvell]: https://en.wikipedia.org/wiki/Marvell_Technology
+  [Huawei]: https://en.wikipedia.org/wiki/Huawei
+  [Alcatel-Lucent]: https://en.wikipedia.org/wiki/Alcatel-Lucent
+  [Nokia]: https://en.wikipedia.org/wiki/Nokia
+  [Bell Labs]: https://en.wikipedia.org/wiki/Bell_Labs
+  [G-010S-P]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
+  [MA5671A]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
