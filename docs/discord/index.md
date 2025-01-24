@@ -118,6 +118,6 @@ audience and GPON to XGS-PON transition.
   [Nokia]: https://en.wikipedia.org/wiki/Nokia
   [Bell Labs]: https://en.wikipedia.org/wiki/Bell_Labs
   [G-010S-P]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
-  [MA5671A]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.mdo
+  [MA5671A]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
   [Slack]: https://en.wikipedia.org/wiki/Slack_Technologies
   [Discord]: https://en.wikipedia.org/wiki/Discord
