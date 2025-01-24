@@ -106,6 +106,6 @@ ONTs, inclusive to the Alcatel-Lucent G-010S-P, Huawei MA5671A, and Nokia G-010S
 
 As broad interest in the Broadcom WarpCore patches grew, the limitations of Slack's free tier became apparent.
 Therefore, in September 2021, "BELLY-UP" moved to Discord as the 8311 community server to serve a broader worldwide
-audience and XGS-PON transition.
+audience and GPON to XGS-PON transition.
 
   [hackers]: https://en.wikipedia.org/wiki/Hacker
