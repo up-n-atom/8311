@@ -9,8 +9,6 @@ description: Troubleshoot connectivity issues with the BFW Solutions WAS-110
 
 # Troubleshoot connectivity issues with the BFW Solutions WAS-110
 
-![WAS-110 troubleshooting](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_troubleshoot.webp){ class="nolightbox" }
-
 <!-- more -->
 <!-- nocont -->
 
