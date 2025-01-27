@@ -3,6 +3,7 @@
 *[BOSA]: Bidirectional Optical Sub-Assemblies
 *[CLEI]: Common Language Information Services
 *[CLI]: Command Line Interface
+*[CPE]: Computer Premise Equipment
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
