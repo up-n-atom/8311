@@ -12,11 +12,8 @@
 
 .md-typeset .admonition,
 .md-typeset details {
-  border-width: 0;
-}
-
-.md-typeset details:not([open]) {
-  box-shadow: var(--md-shadow-z1);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .md-typeset pre > code {
