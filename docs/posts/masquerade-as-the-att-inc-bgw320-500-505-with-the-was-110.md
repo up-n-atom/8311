@@ -201,7 +201,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
 operational status. For troubleshooting, please read:
 
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+[Troubleshoot connectivity issues with the WAS-110]
 
 !!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
@@ -227,6 +227,6 @@ version number: `BGW320_X.XX.X`.
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #bgw320-500-505-label
   [Version listing]: #bgw320-500-505-software-versions
-  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

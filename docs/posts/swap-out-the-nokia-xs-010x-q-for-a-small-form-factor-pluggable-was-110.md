@@ -165,9 +165,9 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
 After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
 operational status. For troubleshooting, please read:
 
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+[Troubleshoot connectivity issues with the WAS-110]
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
-  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

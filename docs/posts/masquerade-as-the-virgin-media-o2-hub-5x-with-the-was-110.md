@@ -142,7 +142,7 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
 operational status. For troubleshooting, please read:
 
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+[Troubleshoot connectivity issues with the WAS-110]
 
 !!! note "Clone the Hub 5x :purple_circle: MAC address on the router's DHCP WAN interface and tag it and anything in-between the WAS-110 with VLAN 100"
 
@@ -164,7 +164,7 @@ or submitting a
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
   [label]: #hub-5x-label
   [Version listing]: #hub-5x-software-versions
-  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

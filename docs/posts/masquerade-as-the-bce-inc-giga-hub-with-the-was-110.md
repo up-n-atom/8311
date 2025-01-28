@@ -212,7 +212,7 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
 After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
 operational status. For troubleshooting, please read:
 
-[Troubleshoot connectivity issues with the BFW Solutions WAS-110]
+[Troubleshoot connectivity issues with the WAS-110]
 
 ## Giga Hub software versions
 
@@ -247,7 +247,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client
-  [Troubleshoot connectivity issues with the BFW Solutions WAS-110]: troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110.md
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

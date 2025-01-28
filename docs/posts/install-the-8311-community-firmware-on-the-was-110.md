@@ -398,7 +398,7 @@ Before any installation, it's highly recommended to do a simple optics [fault te
 are abnormal, contact the seller immediately to start the RMA process. If you're uncertain, please double-check on the
 [8311 Discord].
 
-[fault test]: https://pon.wiki/guides/troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/#optical-status
+[fault test]: troubleshoot-connectivity-issues-with-the-was-110.md#optical-status
 [8311 Discord]: https://discord.pon.wiki/
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
