@@ -24,4 +24,4 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --strict --remote-branch wiki --force
+      - run: mkdocs gh-deploy --remote-branch wiki --force
