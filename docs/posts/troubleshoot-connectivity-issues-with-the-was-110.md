@@ -4,10 +4,10 @@ categories:
   - WAS-110
   - BFW Solutions
   - XGS-PON
-description: Troubleshoot connectivity issues with the BFW Solutions WAS-110
+description: Troubleshoot connectivity issues with the WAS-110
 ---
 
-# Troubleshoot connectivity issues with the BFW Solutions WAS-110
+# Troubleshoot connectivity issues with the WAS-110
 
 <!-- more -->
 <!-- nocont -->
