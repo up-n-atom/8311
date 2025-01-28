@@ -57,7 +57,7 @@ Although, not strictly necessary for AT&T, the community firmware is highly reco
 WAS-110 and used for the remainder of this guide. To install the community firmware, follow the steps outlined in the
 community firmware installation guide:
 
-[Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
+[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
 
 ## WAS-110 masquerade setup
 

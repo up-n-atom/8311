@@ -32,7 +32,7 @@ cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchas
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
 outlined in the community firmware installation guide:
 
-[Install 8311 community firmware on the BFW Solutions WAS-110](install-8311-community-firmware-on-the-bfw-solutions-was-110.md)
+[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
 
 ## WAS-110 masquerade setup
 
