@@ -21,4 +21,4 @@ Our main source for communication is our [Discord Community Server](https://disc
 
 Have anything to add to the PON Wiki? Checkout our [contributing guidelines](./CONTRIBUTING.md).
 
-_Please keep in mind that this project falls under the [Creative Commons license](./LICENSE)_
+_Please keep in mind that this project falls under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](./LICENSE)_
