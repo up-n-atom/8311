@@ -11,10 +11,10 @@ categories:
   - Virgin Plus
   - Sagemcom
   - FAST 5689
-description: Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
+description: Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110
 ---
 
-# Masquerade as the BCE Inc. Home Hub 4000 on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110
 
 !!! info "Including the rebadged Virgin Plus Vincent"
 

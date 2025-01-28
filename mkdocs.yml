@@ -77,6 +77,7 @@ plugins:
   - redirects:
       redirect_maps:
         guides/install-8311-community-firmware-on-the-bfw-solutions-was-110/index.html: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/
+        guides/masquerade-as-the-bce-inc-home-hub-4000-on-xgs-pon-with-the-bfw-solutions-was-110/index.html: https://pon.wiki/guides/masquerade-as-the-bce-inc-home-hub-4000-with-the-was-110/
   - search
   - table-reader
 watch:
