@@ -7,11 +7,11 @@ categories:
   - Bouygues S.A.
   - Sagemcom
   - FAST 5688b
-description: Masquerade as the Bouygues S.A. BBox on XGS-PON with the BFW Solutions WAS-110
-slug: masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110
+description: Masquerade as the Bouygues S.A. BBox with the WAS-110
+slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
 ---
 
-# Masquerade as the Bouygues S.A Bbox on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the Bouygues S.A Bbox with the WAS-110
 
 ![Bypass baguette](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bbox.webp){ class="nolightbox" }
 
