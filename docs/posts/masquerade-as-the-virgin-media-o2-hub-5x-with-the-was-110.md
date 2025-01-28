@@ -8,10 +8,10 @@ categories:
   - Sagemcom
   - FAST 5685
   - F5685LGB-VMB
-description: Masquerade as the Virgin Media O2 Hub 5x with the BFW Solutions WAS-110
+description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110
 ---
 
-# Masquerade as the Virgin Media O2 Hub 5x with the BFW Solutions WAS-110
+# Masquerade as the Virgin Media O2 Hub 5x with the WAS-110
 
 <!-- more -->
 <!-- nocont -->
