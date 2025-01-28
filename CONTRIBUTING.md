@@ -31,9 +31,10 @@ Furthermore, to save bandwidth and increase load times, screenshots should be co
 [cwebp](https://developers.google.com/speed/webp/docs/cwebp) using 60% resolution e.g.
 `cwebp -q 60 screenshot.jpg/png -o screenshot.webp`.
 
-The artwork is created in [Inkscape](https://inkscape.org/) and mixed with assets from
-[@storyset](https://www.freepik.com/author/stories) on Freepik. When finished, the artwork is exported at a 1280x960p
-resolution and converted to webp with the same utility and options as the screenshots.
+All artwork is created using free software, including but not limited to [Inkscape](https://inkscape.org/),
+[GIMP](https://www.gimp.org/), and [KRITA](https://krita.org/). When complete, it is exported at a 1280x960p
+resolution and converted into the webp raster graphics file format with the same utility and options as the
+screenshots mentioned above.
 
 ## Issues
 
