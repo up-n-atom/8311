@@ -7,11 +7,11 @@ categories:
   - Orange S.A.
   - Sagemcom
   - FAST 5694
-description: Masquerade as the Orange S.A. Livebox 7 on XGS-PON with the BFW Solutions WAS-110
-slug: masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110
+description: Masquerade as the Orange S.A. Livebox 7 with the WAS-110
+slug: masquerade-as-the-orange-sa-livebox-7-with-the-was-110
 ---
 
-# Masquerade as the Orange S.A. Livebox 7 on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the Orange S.A. Livebox 7 with the WAS-110
 
 ![Bypass baguette](masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_livebox7.webp){ class="nolightbox" }
 
