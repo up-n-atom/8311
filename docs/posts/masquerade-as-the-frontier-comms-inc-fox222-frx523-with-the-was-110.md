@@ -9,11 +9,11 @@ categories:
   - CIG
   - XG-99RG2
   - XG-99M
-description: Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the BFW Solutions WAS-110
-slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110
+description: Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the WAS-110
+slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-was-110
 ---
 
-# Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the BFW Solutions WAS-110
+# Masquerade as the Frontier Communications Inc. FOX222 or FRX523 with the WAS-110
 
 ![Bypass family](masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-bfw-solutions-was-110/bypass_fox222_frx523.webp){ class="nolightbox" }
 
