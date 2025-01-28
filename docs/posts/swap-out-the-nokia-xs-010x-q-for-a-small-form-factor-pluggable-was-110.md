@@ -5,10 +5,10 @@ categories:
   - XS-010X-Q
   - WAS-110
   - NOKIA
-description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable BFW Solutions WAS-110
+description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110
 ---
 
-# Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable BFW Solutions WAS-110
+# Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110
 
 !!! warning "This is strictly for the form-factor as they're both SFU ONTs"
 

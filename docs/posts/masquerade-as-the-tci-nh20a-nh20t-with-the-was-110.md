@@ -9,11 +9,11 @@ categories:
   - Technicolor
   - Vantiva
   - Telus
-description: Masquerade as the Telus Communications Inc. NH20A or NH20T on XGS-PON with the BFW Solutions WAS-110
-slug: masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110
+description: Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110
+slug: masquerade-as-the-tci-nh20a-nh20t-with-the-was-110
 ---
 
-# Masquerade as the Telus Communications Inc. NH20A or NH20T on XGS-PON with the BFW Solutions WAS-110
+# Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110
 
 ![Bypass family](masquerade-as-the-tci-nh20a-nh20t-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_nh20a_nh20t.webp){ class="nolightbox" }
 
