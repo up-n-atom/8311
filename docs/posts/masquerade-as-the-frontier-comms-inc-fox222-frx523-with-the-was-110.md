@@ -22,16 +22,16 @@ slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-was-110
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers].
+The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide:
+outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
 
-[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
 
 ## WAS-110 masquerade setup
 
@@ -179,10 +179,16 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
-operational status. For troubleshooting, please read:
+After rebooting the WAS-110, safely remove the SC/APC cable from either the FOX222 or FRX523 and connect it to the
+WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
+For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
+the [8311 Discord community server].
 
-[Troubleshoot connectivity issues with the  WAS-110]
+  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+
+!!! note "The WAS-110 may reboot after a FOX222 or FRX523 firmware upgrade is pushed over OMCI"
+    The software version will also automatically update and keep in sync to maintain its OLT status.
 
 ## Software versions
 
@@ -241,9 +247,8 @@ or submitting a
     ontver
     ```
 
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
-  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

@@ -100,16 +100,16 @@ xmo-remote-client --password=<password> get-wan-mode
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers].
+The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide:
+outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
 
-[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
 
 ## WAS-110 masquerade setup
 
@@ -169,7 +169,7 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
 
-4. __Save__ changes and reboot from the __System__ menu.
+4. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
 
@@ -209,10 +209,13 @@ identifiers are available on the back label of the Giga Hub, color-coordinated i
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
-operational status. For troubleshooting, please read:
+After rebooting the WAS-110, safely remove the SC/APC cable from the Giga Hub and connect it to the
+WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
+For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
+the [8311 Discord community server].
 
-[Troubleshoot connectivity issues with the WAS-110]
+  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 ## Giga Hub software versions
 
@@ -245,11 +248,9 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 ```
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
-  [XMO client]: #with-a-xmo-client
-  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

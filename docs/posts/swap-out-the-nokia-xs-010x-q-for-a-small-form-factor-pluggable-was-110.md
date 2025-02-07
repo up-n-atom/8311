@@ -26,9 +26,9 @@ The [WAS-110] is available from select [resellers].
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide:
+outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
 
-[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
 
 ## Extract attributes from the XS-010X-Q
 
@@ -162,12 +162,14 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
-operational status. For troubleshooting, please read:
+After rebooting the WAS-110, safely remove the SC/APC cable from the XS-010X-Q and connect it to the
+WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
+For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
+the [8311 Discord community server].
 
-[Troubleshoot connectivity issues with the WAS-110]
-
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
+  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

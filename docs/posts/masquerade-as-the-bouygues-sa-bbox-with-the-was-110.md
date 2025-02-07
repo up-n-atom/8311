@@ -146,16 +146,16 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers].
+The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide:
+outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
 
-[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
 
 ## WAS-110 masquerade setup
 
@@ -244,10 +244,13 @@ outlined in the community firmware installation guide:
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
-operational status. For troubleshooting, please read:
+After rebooting the WAS-110, safely remove the SC/APC cable from the Bbox and connect it to the
+WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
+For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
+the [8311 Discord community server].
 
-[Troubleshoot connectivity issues with the WAS-110]
+  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 !!! note "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 
@@ -258,7 +261,6 @@ Finally, continue with your bypass by consulting the [routing guide(s)](#routing
 * [LaFibre - Bouygues Telecom Remplacer la Bbox par un routeur](https://lafibre.info/remplacer-bbox/)
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
-  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

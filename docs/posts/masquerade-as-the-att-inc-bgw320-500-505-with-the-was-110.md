@@ -47,7 +47,7 @@ transceiver by engaging the bale clasp and latch. If the label on the transceive
 
 ## Purchase a WAS-110
 
-The [WAS-110] is available from select [resellers].
+The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
@@ -55,9 +55,9 @@ The [WAS-110] is available from select [resellers].
 
 Although, not strictly necessary for AT&T, the community firmware is highly recommended for masquerading with the
 WAS-110 and used for the remainder of this guide. To install the community firmware, follow the steps outlined in the
-community firmware installation guide:
+community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
 
-[Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
 
 ## WAS-110 masquerade setup
 
@@ -198,10 +198,13 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
     reboot
     ```
 
-After rebooting, the SC/APC cable can safely be plugged into the [WAS-110] and immediately receive O5
-operational status. For troubleshooting, please read:
+After rebooting the WAS-110, safely remove the SC/APC cable from the BGW320-500/505 and connect it to the
+WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
+For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
+the [8311 Discord community server].
 
-[Troubleshoot connectivity issues with the WAS-110]
+  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 !!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 
@@ -224,7 +227,7 @@ The software version can be acquired by reconnecting the BGW320-500/505 and navi
 version number: `BGW320_X.XX.X`.
 
   [Purchase a WAS-110]: #purchase-a-was-110
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [label]: #bgw320-500-505-label
   [Version listing]: #bgw320-500-505-software-versions
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
