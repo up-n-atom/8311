@@ -4,8 +4,6 @@ categories:
   - Bridge Mode
   - Giga Hub
   - Bell Canada
-  - Bell Aliant
-  - Bell MTS
   - Sagemcom
   - FAST 5689E
 description: Bridge the BCE Inc. Giga Hub
