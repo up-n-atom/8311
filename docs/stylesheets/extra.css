@@ -164,7 +164,7 @@ iframe {
   background-color: var(--md-default-fg-color--light);
   left: 50%;
   top: 50%;
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease;
   transform: translate(-50%, -50%);
 }
 
@@ -178,7 +178,7 @@ iframe {
 }
 
 .pon-pm-icon.pon-pm-icon--active::before {
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease;
 }
 
 /*.pon-pm-icon:hover::before,*/
