@@ -205,6 +205,7 @@ the [8311 Discord community server].
 
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 !!! tip "Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
 

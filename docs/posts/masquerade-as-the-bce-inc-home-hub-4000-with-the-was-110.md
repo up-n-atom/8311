@@ -237,9 +237,7 @@ listing, but it is not strictly necessary.
 | 1.7.8.1          | SGC8210140                |
 | 1.7.2            | SGC821011A                |
 
-Please help us by contributing new versions via the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
-or submitting a
+Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
 The following command extracts the external firmware version used by OMCI managed entity 7 and requires the
@@ -254,6 +252,7 @@ xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/Softw
   [label]: #home-hub-4000-label
   [Version listing]: #home-hub-4000-software-versions
   [XMO client]: #with-a-xmo-client
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

@@ -169,7 +169,7 @@ the [8311 Discord community server].
 
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
-
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

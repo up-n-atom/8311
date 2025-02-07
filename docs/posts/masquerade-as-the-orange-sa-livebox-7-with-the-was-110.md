@@ -166,9 +166,7 @@ the Livebox 7, which uses CWMP[^2]. However, it is recommended to keep somewhat 
 | SAHEOFR010113      |                    |
 | SAHEOFR010112      |                    |
 
-Please help us by contributing new versions via the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
-or submitting a
+Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
 ## Routing guides
@@ -179,6 +177,7 @@ or submitting a
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [Version listing]: #livebox-7-software-versions
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://en.wikipedia.org/wiki/TR-069>

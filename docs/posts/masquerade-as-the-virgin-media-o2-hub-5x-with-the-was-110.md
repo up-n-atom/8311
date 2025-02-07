@@ -159,14 +159,13 @@ it is not strictly necessary.
 | ---------------- |
 | 3.7.4-2306.5     |
 
-Please help us by contributing new versions via the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
-or submitting a
+Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [label]: #hub-5x-label
   [Version listing]: #hub-5x-software-versions
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
 [^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

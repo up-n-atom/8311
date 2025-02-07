@@ -251,6 +251,7 @@ the [8311 Discord community server].
 
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 !!! note "Tag the router's DHCP WAN interface and/or anything in-between the WAS-110 with VLAN 100"
 

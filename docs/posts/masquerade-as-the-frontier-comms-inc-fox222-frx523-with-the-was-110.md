@@ -188,13 +188,14 @@ the [8311 Discord community server].
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 !!! note "The WAS-110 may reboot after a FOX222 or FRX523 firmware upgrade is pushed over OMCI"
-    The software version will also automatically update and keep in sync to maintain its OLT status.
+    The [software version](#software-versions) will also automatically update and keep in sync to maintain its OLT
+    status.
 
 ## Software versions
 
-!!! info "Automatic software version updater built-in community firmware version(s) 2.5.0+"
-    Firmware upgrades sent over OMCI will be compared against the Firmware Version Match pattern and automatically
-    update the Software Version A/B attributes if there is a match.
+!!! info "Automatic software version updates since 8311 community firmware version(s) 2.5.0+"
+    Firmware upgrades sent over OMCI will be compared against the __Firmware Version Match__ pattern and automatically
+    update the __Software Version A/B__ attributes if there is a match.
 
     Firmware images are stored in `/tmp/firmware.img` if further analysis is required.
 
@@ -216,9 +217,7 @@ version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state u
     | R4.4.13.051      |
     | R4.4.13.041      |
 
-Please help us by contributing new versions via the
-[8311 Discord community server](https://discord.com/servers/8311-886329492438671420)
-or submitting a
+Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
 ??? info "Serial access"
@@ -250,5 +249,6 @@ or submitting a
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [label]: #fox222-frx523-label
   [Version listing]: #software-versions
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
