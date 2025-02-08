@@ -32,3 +32,4 @@ worldwide audience.
   [Nokia]: https://en.wikipedia.org/wiki/Nokia
   [Bell Labs]: https://en.wikipedia.org/wiki/Bell_Labs
   [Discord]: https://en.wikipedia.org/wiki/Discord
+  [8311 community server]: https://discord.com/servers/8311-886329492438671420
