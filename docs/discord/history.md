@@ -7,7 +7,7 @@ hide:
 # History
 
 In October 2018, a group of curious Canadian software developers established what would eventually become 8311 on the
-now-defunct <https://www.dslreports.com> [Bell Canada] sub-forum.
+now-defunct [DSLReports]  [Bell Canada] sub-forum.
 
 Due to DSLR policies regarding reverse engineering and [hackers], a [Slack] workspace named *"BELLY-UP"* was created with
 the focus of discussion and development revolved around the cat-and-mouse game of rooting the Home Hub 3000 and
@@ -19,6 +19,7 @@ As interest in the [Broadcom] WarpCore patches grew, the limitations of Slack's 
 Therefore, in September 2021, *"BELLY-UP"* moved to [Discord] as the [8311 community server] to serve a broader
 worldwide audience.
 
+  [DSLReports]: https://web.archive.org/web/20250000000000*/https://www.dslreports.com
   [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada
   [hackers]: https://en.wikipedia.org/wiki/Hacker
   [Slack]: https://en.wikipedia.org/wiki/Slack_Technologies
