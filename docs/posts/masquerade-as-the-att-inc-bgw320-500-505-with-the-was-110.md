@@ -117,7 +117,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
         | PON Serial Number (ONT ID) | HUMA&hellip;            | :check_mark: | :blue_circle: ONT ID    |
-        | Equipment ID               | iONT320500G             |              |                         |
+        | Equipment ID               | iONT320500X             |              |                         |
         | Hardware Version           | BGW320-500_2.1          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
         | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
@@ -129,7 +129,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
         | Attribute                  | Value                   | Mandatory    | Remarks                 |
         | -------------------------- | -----------------       | ------------ | ----------------------- |
         | PON Serial Number (ONT ID) | NOKA&hellip;            | :check_mark: |:blue_circle: ONT ID     |
-        | Equipment ID               | iONT320505G             |              |                         |
+        | Equipment ID               | iONT320505X             |              |                         |
         | Hardware Version           | BGW320-505_2.2          |              |                         |
         | Sync Circuit Pack Version  | :check_mark:            |              |                         |
         | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
@@ -159,7 +159,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
         ``` sh hl_lines="1 7"
         fwenv_set -8 gpon_sn HUMA... # (1)!
-        fwenv_set -8 equipment_id iONT320500G
+        fwenv_set -8 equipment_id iONT320500X
         fwenv_set -8 hw_ver BGW320-500_2.1
         fwenv_set -8 cp_hw_ver_sync 1
         fwenv_set -8 sw_verA BGW320_4.27.7
@@ -173,7 +173,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
         ``` sh hl_lines="1 7"
         fwenv_set -8 gpon_sn NOKA... # (1)!
-        fwenv_set -8 equipment_id iONT320505G
+        fwenv_set -8 equipment_id iONT320505X
         fwenv_set -8 hw_ver BGW320-505_2.2
         fwenv_set -8 cp_hw_ver_sync 1
         fwenv_set -8 sw_verA BGW320_4.27.7
