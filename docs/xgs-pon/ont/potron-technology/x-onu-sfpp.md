@@ -209,14 +209,16 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 ## Value-Added Resellers
 
-| Company                                             | Product Number    | E-commerce            | Firmware      |
-| --------------------------------------------------- | ----------------- | --------------------- | ------------- |
-| [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]        |                       | PTXG (Potron) |
+| Company                                             | Product Number    | E-commerce             | Firmware      |
+| --------------------------------------------------- | ----------------- | ---------------------- | ------------- |
+| [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]        |                        | PTXG (Potron) |
 | [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4      | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | PTXG (Potron) or 8311 |
+| [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]       | :globe_with_meridians: | 8311          |
 
 * <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
 
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
+  [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
