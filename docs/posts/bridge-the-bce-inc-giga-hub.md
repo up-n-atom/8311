@@ -11,6 +11,8 @@ description: Bridge the BCE Inc. Giga Hub
 
 # Bridge the BCE Inc. Giga Hub
 
+!!! bug "End user bridge mode enablement was removed in firmware version 2.13"
+
 ![Image title](bridge-the-bce-inc-giga-hub/bridge_giga_hub.webp){ class="nolightbox" }
 
 <!-- more -->
