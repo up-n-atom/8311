@@ -4,6 +4,8 @@ hide:
   - feedback
 ---
 
+![Timeline](../assets/images/history.webp){ loading=lazy class="nolightbox" }
+
 # History
 
 In October 2018, a group of curious Canadian software developers established what would eventually become 8311 on the
