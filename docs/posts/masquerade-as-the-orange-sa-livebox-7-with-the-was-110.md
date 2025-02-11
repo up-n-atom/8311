@@ -102,7 +102,9 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
     | Software Version B         | SAHEOFR919117                |              | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1U.ini      | :check_mark: | PPTP i.e. default value         |
 
-3. __Save__ changes and reboot from the __System__ menu.
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
+
+4. __Save__ changes and reboot from the __System__ menu.
 
 ### from the shell
 
@@ -125,6 +127,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
     fwenv_set -8 cp_hw_ver_sync 1
     fwenv_set -8 sw_verA SAHEOFR010117 # (1)!
     fwenv_set -8 sw_verB SAHEOFR919117
+    fwenv_set -8 fix_vlans 0
     ```
 
     1. [Version listing]

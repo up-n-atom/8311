@@ -4,8 +4,6 @@ hide:
   - feedback
 ---
 
-![Timeline](../assets/images/history.webp){ loading=lazy class="nolightbox" }
-
 # History
 
 In October 2018, a group of curious Canadian software developers established what would eventually become 8311 on the
@@ -36,3 +34,5 @@ worldwide audience.
   [Bell Labs]: https://en.wikipedia.org/wiki/Bell_Labs
   [Discord]: https://en.wikipedia.org/wiki/Discord
   [8311 community server]: https://discord.com/servers/8311-886329492438671420
+
+![Timeline](../assets/images/history.webp){ loading=lazy class="nolightbox" }
