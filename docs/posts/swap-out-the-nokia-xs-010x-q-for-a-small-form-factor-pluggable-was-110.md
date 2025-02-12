@@ -62,11 +62,18 @@ outlined in the community firmware installation guide: [Install the 8311 communi
 
 ## WAS-110 masquerade setup
 
-Additionally, mandatory identifiers are available on the back label of the XS-010X-Q, such as ONT P/N, ICS, and CLEI.
+Additionally, mandatory identifiers are available on the back label of the XS-010X-Q, such as ONT P/N, ICS, and CLEI if
+present.
 
 <div id="xs-010x-q-label"></div>
 
-![XS-010X-Q label](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label.webp){ class="nolightbox" }
+=== "Without CLEI"
+
+    ![XS-010X-Q label](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label.webp){ class="nolightbox" }
+
+=== "With CLEI"
+
+    ![XS-010X-Q label w/ CLEI](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/xs010xq_label_clei.webp){ class="nolightbox" }
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
@@ -100,19 +107,37 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
         <ins>Replace</ins> the __PON Serial Number__, __IP Host MAC address__, __Registration ID__, and
         __Software Version A/B__ with the provisioned values.
 
-    | Attribute                  | Value                         | Remarks                                    |
-    | -------------------------- | ----------------------------- | ------------------------------------------ |
-    | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
-    | Equipment ID               | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
-    | Hardware Version           | 3FE49331AAAB01                | ONT P/N. + ICS                             |
-    | Sync Circuit Pack Version  | :check_mark:                  |                                            |
-    | Software Version A         | 3FE49337AOCK10                | Active software version                    |
-    | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
-    | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
-    | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
-    | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
-    | PON Slot                   | 10                            |                                            |
-    | IP Host MAC Address        | FC:B2:D6:18:47:40             | MAC ID                                     |
+    === "Without CLEI"
+
+        | Attribute                  | Value                         | Remarks                                    |
+        | -------------------------- | ----------------------------- | ------------------------------------------ |
+        | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
+        | Equipment ID               | \_\_\_\_\_\_\_\_\_XS-010X-Q\__| Model                                      |
+        | Hardware Version           | 3FE49331BDAA01                | ONT P/N. + ICS                             |
+        | Sync Circuit Pack Version  | :check_mark:                  |                                            |
+        | Software Version A         | 3FE49337BOCK17                | Active software version                    |
+        | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
+        | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
+        | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
+        | PON Slot                   | 10                            |                                            |
+        | IP Host MAC Address        | 7C:9f:07:4F:98:08             | MAC ID                                     |
+
+    === "With CLEI"
+
+        | Attribute                  | Value                         | Remarks                                    |
+        | -------------------------- | ----------------------------- | ------------------------------------------ |
+        | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
+        | Equipment ID               | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
+        | Hardware Version           | 3FE49331AAAB01                | ONT P/N. + ICS                             |
+        | Sync Circuit Pack Version  | :check_mark:                  |                                            |
+        | Software Version A         | 3FE49337AOCK10                | Active software version                    |
+        | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
+        | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
+        | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
+        | PON Slot                   | 10                            |                                            |
+        | IP Host MAC Address        | FC:B2:D6:18:47:40             | MAC ID                                     |
 
 3. __Save__ changes and reboot from the __System__ menu.
 
@@ -130,22 +155,43 @@ Additionally, mandatory identifiers are available on the back label of the XS-01
         <ins>Replace</ins> the __8311_gpon_sn__, __8311_iphost_mac__, and __8311_sw_verA/B__ with
         the provisioned values.
 
-    ``` sh
-    fwenv_set -8 iphost_mac FC:B2:D6:18:47:40 # (1)!
-    fwenv_set -8 gpon_sn ALCL... # (2)!
-    fwenv_set -8 equipment_id BVMGY10BRAXS010XQ # (3)!
-    fwenv_set -8 hw_ver 3FE49331AAAB01 # (4)!
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3FE49337AOCK10
-    fwenv_set -8 sw_verB 3FE49337AOCK80
-    fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
-    fwenv_set -8 pon_slot 10
-    ```
+    === "Without CLEI"
 
-    1. MAC ID
-    2. Serial number or S/N
-    3. CLEI + Mnemonic
-    4. ONT P/N + ICS
+        ``` sh
+        fwenv_set -8 iphost_mac 7C:9f:07:4F:98:08 # (1)!
+        fwenv_set -8 gpon_sn ALCL... # (2)!
+        fwenv_set -8 equipment_id _________XS-010X-Q__ # (3)!
+        fwenv_set -8 hw_ver 3FE49331BDAA01 # (4)!
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA 3FE49337BOCK17
+        fwenv_set -8 sw_verB 3FE49337AOCK80
+        fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+        fwenv_set -8 pon_slot 10
+        ```
+
+        1. MAC ID
+        2. Serial number or S/N
+        3. Model
+        4. ONT P/N + ICS
+
+    === "With CLEI"
+
+        ``` sh
+        fwenv_set -8 iphost_mac FC:B2:D6:18:47:40 # (1)!
+        fwenv_set -8 gpon_sn ALCL... # (2)!
+        fwenv_set -8 equipment_id BVMGY10BRAXS010XQ # (3)!
+        fwenv_set -8 hw_ver 3FE49331AAAB01 # (4)!
+        fwenv_set -8 cp_hw_ver_sync 1
+        fwenv_set -8 sw_verA 3FE49337AOCK10
+        fwenv_set -8 sw_verB 3FE49337AOCK80
+        fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+        fwenv_set -8 pon_slot 10
+        ```
+
+        1. MAC ID
+        2. Serial number or S/N
+        3. CLEI + Mnemonic
+        4. ONT P/N + ICS
 
     !!! info "Additional details and variables are described at the original repository [^1]"
         `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
