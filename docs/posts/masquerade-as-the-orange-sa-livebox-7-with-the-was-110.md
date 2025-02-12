@@ -97,7 +97,7 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
     | PON Serial Number (ONT ID) | SMBS0...                     | :check_mark: | :blue_circle:                   |
     | Equipment ID               | SagemcomFast5694OFR          |              |                                 |
     | Hardware Version           | SMBSXLB7400                  | :check_mark: |                                 |
-    | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
+    | Sync Circuit Pack Version  | :check_mark:                 | :check_mark: |                                 |
     | Software Version A         | SAHEOFR010117                |              | [Version listing]               |
     | Software Version B         | SAHEOFR919117                |              | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1U.ini      | :check_mark: | PPTP i.e. default value         |
