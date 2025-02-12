@@ -36,7 +36,7 @@ worldwide audience.
   [Discord]: https://en.wikipedia.org/wiki/Discord
   [8311 community server]: https://discord.com/servers/8311-886329492438671420
 
-# Why Discord?
+## Why Discord?
 
 Simple. Discord is built on the foundation of community. We wanted a platform where youth congregate and comingle as
 our goal is subconsciously to teach networking independence. Since the chat dialog is mainly supportive, it is
