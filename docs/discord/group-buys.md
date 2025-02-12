@@ -32,7 +32,7 @@ xychart-beta
 ``` mermaid
 xychart-beta
     x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov]
-    y-axis "Pricei (USD)" 135 --> 165
+    y-axis "Price (USD)" 135 --> 165
     line [165, 160, 160, 160, 160, 160, 160, 155, 155, 155, 160]
 ```
 
