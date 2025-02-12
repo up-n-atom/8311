@@ -8,6 +8,7 @@
     <option value="bouygues-sa">Bouygues S.A</option>
     <option value="frontier">Frontier</option>
     <option value="orange-sa">Orange S.A.</option>
+    <option value="orange-polska-sa">Orange Polska S.A.</option>
     <option value="telus">Telus</option>
     <option value="virgin-media">Virgin Media O2</option>
   </select>
