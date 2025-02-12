@@ -25,7 +25,7 @@ slug: masquerade-as-the-orange-sa-livebox-7-with-the-was-110
 
 1. Within a web browser, navigate to
    <https://livebox/>
-   and, if asked, input your Administrator password. (1) and click the __Connect__ button.
+   and, if asked, input your Administrator password (1) and click the __Connect__ button.
    { .annotate }
 
     1. The default Administrator password is the first 12 digits of the WiFi key located on the bottom label of the
