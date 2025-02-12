@@ -38,10 +38,10 @@ worldwide audience.
 
 ## Why Discord?
 
-Simple. Discord is built on the foundation of community. We wanted a platform where youth congregate and comingle as
-our goal is subconsciously to teach networking independence. Since the chat dialog is mainly supportive, it is
-imperative to impart a fun vibe and dissolve extraneous tensions, as humor and wisdom often go hand in hand. And since
-gaming today is tied online, where better to create a computer networking community?
+Simple. Discord is built on the foundation of community. We wanted a platform where generations congregate and comingle
+as our goal is subconsciously to teach networking independence to all ages. Since the chat dialog is mainly supportive,
+it is imperative to impart a fun vibe and dissolve extraneous tensions, as humor and wisdom often go hand in hand. And
+since gaming today is tied online, where better to create a computer networking community?
 
 P.S. Next time you rage quit because your in-game ping is high, pop-in and shout-out!
 
