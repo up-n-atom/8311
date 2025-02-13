@@ -30,13 +30,13 @@ slug: masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110
 
 <div class="swiper-slide" step="3" markdown>
 
-![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
+![Funbox 10 Advanced Parameters](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
 
 </div>
 
 <div class="swiper-slide" step="5" markdown>
 
-![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_system_info.webp){ loading=lazy }
+![Funbox 10 System Information](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_system_info.webp){ loading=lazy }
 
 </div>
 
@@ -200,7 +200,7 @@ Please help us by contributing new versions via the [8311 Discord community serv
 
 <div class="swiper-slide" step="3" markdown>
 
-![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
+![Funbox 10 Advanced Parameters](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
 
 </div>
 
