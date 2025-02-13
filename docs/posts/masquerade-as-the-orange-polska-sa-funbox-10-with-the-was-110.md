@@ -20,14 +20,36 @@ slug: masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110
 
 ## Determine if you're an XGS-PON subscriber
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
+![Funbox 10 Login](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_login.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" step="3" markdown>
+
+![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" step="5" markdown>
+
+![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_system_info.webp){ loading=lazy }
+
+</div>
+
+</div>
+
 1. Within a web browser, navigate to
    <https://funbox/> or <https://192.168.1.1/>
    and, if asked, input your Administrator password and click the __Connect__ button.
 
 2. From the configuration interface, click the cog (:material-cog:) icon at the bottom of the page for
-   __Advanced Settings__ or move forward twice using the right arrow.
+   __Advanced Parameters__ or move forward twice using the right arrow.
 
-3. From the __Advanced Settings__ page, click the __System Information__ card.
+3. From the __Advanced Parameters__ page, click the __System Information__ card.
 
 4. From the __System Information__ page, click the __ONT__ tab.
 
@@ -168,14 +190,36 @@ Please help us by contributing new versions via the [8311 Discord community serv
 
 ### PPPoE Credentials
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
+![Funbox 10 Login](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_login.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" step="3" markdown>
+
+![Funbox 10 Advanced Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_advanced_settings.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" step="4" markdown>
+
+![Funbox 10 Internet Connection Settings](masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110/funbox_10_internet_conn_settings.webp){ loading=lazy }
+
+</div>
+
+</div>
+
 1. Within a web browser, navigate to
    <https://funbox/> or <https://192.168.1.1/>
    and, if asked, input your Administrator password and click the __Connect__ button.
 
 2. From the configuration interface, click the cog (:material-cog:) icon at the bottom of the page for
-   __Advanced Settings__ or move forward twice using the right arrow.
+   __Advanced Parameters__ or move forward twice using the right arrow.
 
-3. From the __Advanced Settings__ page, click the __Internet Connection__ card.
+3. From the __Advanced Parameters__ page, click the __Internet Connection__ card.
 
 4. From the __Internet Connection__ page, click on the __Settings__ tab.
 
