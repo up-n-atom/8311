@@ -17,10 +17,10 @@ const swiper = new Swiper('.swiper', {
         stepsElement = stepsElement.nextElementSibling || stepsElement.nextSibling;
       }
 
-      this.slides.map((el, i) => el.hasAttribute('step') ? el.getAttribute('step') - 1 : i).forEach(function (index) {
+      this.slides.map((el, i) => el.hasAttribute('step') ? el.getAttribute('step') - 1 : i).forEach(function (index, slide) {
         if (index < stepsElement.children.length && stepsElement.children[index] instanceof HTMLLIElement) {
           ['click', 'mouseover'].forEach(function (e) {
-            stepsElement.children[index].addEventListener(e, () => swiper.slideTo(index));
+            stepsElement.children[index].addEventListener(e, () => swiper.slideTo(slide));
           });
         }
       });
