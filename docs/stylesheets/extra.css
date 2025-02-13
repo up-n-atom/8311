@@ -178,7 +178,7 @@ iframe {
 }
 
 .pon-pm-icon.pon-pm-icon--active::before {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 /*.pon-pm-icon:hover::before,*/

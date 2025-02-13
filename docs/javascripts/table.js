@@ -72,13 +72,15 @@ class SassyTables {
     addToggleControl(table, hiddenRows) {
         const toggleControl = this.createToggleControl();
 
-        toggleControl.addEventListener('transitionend', (event) => {
+        toggleControl.addEventListener('transitionend', (e) => {
+          e.preventDefault;
             hiddenRows.forEach(row => {
-                row.style.display = event.target.classList.contains('pon-pm-icon--active') ? '' : 'none';
+                row.style.display = e.target.classList.contains('pon-pm-icon--active') ? '' : 'none';
             });
         });
 
-        toggleControl.addEventListener('click', () => {
+        toggleControl.addEventListener('click', (e) => {
+            e.preventDefault;
             toggleControl.classList.toggle('pon-pm-icon--active');
         });
 
