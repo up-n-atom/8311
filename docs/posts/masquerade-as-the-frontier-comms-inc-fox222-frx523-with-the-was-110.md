@@ -92,7 +92,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         | Sync Circuit Pack Version        | :check_mark:            |                                 |
         | Software Version A               | R4.4.08.030             | [Version listing]               |
         | Software Version B               | R4.4.08.030             | [Version listing]               |
-        | Firmware Version Match           | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+            |
+        | Firmware Version Match           | ^(R\d+(?:\\.\d+){3})$   | Community FW v2.5.0+            |
         | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
         | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
         | Registration ID (HEX)            | 44454641554c54          | `DEFAULT` in hex                |
@@ -109,7 +109,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         | Sync Circuit Pack Version        | :check_mark:            |                                 |
         | Software Version A               | R4.4.13.057             | [Version listing]               |
         | Software Version B               | R4.4.13.057             | [Version listing]               |
-        | Firmware Version Match           | ^(R\d+(?:\.\d+){3})$    | Community FW v2.5.0+            |
+        | Firmware Version Match           | ^(R\d+(?:\\.\d+){3})$   | Community FW v2.5.0+            |
         | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
         | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
         | Registration ID (HEX)            | 44454641554c54          | `DEFAULT` in hex                |
