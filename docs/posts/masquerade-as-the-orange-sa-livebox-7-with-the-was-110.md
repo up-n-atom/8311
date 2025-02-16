@@ -80,6 +80,12 @@ identifiers are available from the web UI or the bottom label of the Livebox 7.
 
 </div>
 
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+
+</div>
+
 </div>
 
 1. Within a web browser, navigate to

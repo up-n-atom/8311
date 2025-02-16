@@ -95,6 +95,12 @@ present.
 
 </div>
 
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+
+</div>
+
 </div>
 
 1. Within a web browser, navigate to
@@ -139,7 +145,11 @@ present.
         | PON Slot                   | 10                            |                                            |
         | IP Host MAC Address        | FC:B2:D6:18:47:40             | MAC ID                                     |
 
-3. __Save__ changes and reboot from the __System__ menu.
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
+
+4. __Save__ changes and reboot from the __System__ menu.
+
+### from the shell
 
 ### from the shell
 
@@ -167,6 +177,7 @@ present.
         fwenv_set -8 sw_verB 3FE49337AOCK80
         fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
         fwenv_set -8 pon_slot 10
+        fwenv_set -8 fix_vlans 0
         ```
 
         1. MAC ID
@@ -186,6 +197,7 @@ present.
         fwenv_set -8 sw_verB 3FE49337AOCK80
         fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
         fwenv_set -8 pon_slot 10
+        fwenv_set -8 fix_vlans 0
         ```
 
         1. MAC ID
