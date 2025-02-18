@@ -112,6 +112,21 @@ The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
 
+!!! tip "Beyond budget?"
+    An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
+    XS-010X-Q ONT, an SFU.
+
+    * [Acanac](https://acanac.com/)
+    * [Distributel](https://www.distributel.ca/)
+    * [EBOX](https://www.ebox.ca/)
+    * [Oricom](https://www.oricom.ca/)
+    * [Primus](https://primus.ca/)
+
+    If budget is no longer a concern later on, and an SFP is appealing, check out the XS-010X-Q
+    guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
+
+## Install community firmware
+
 ## Install community firmware
 
 As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
