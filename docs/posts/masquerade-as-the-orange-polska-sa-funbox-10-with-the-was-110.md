@@ -59,6 +59,10 @@ slug: masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110
 
 ## Purchase a WAS-110
 
+!!! note
+    The WAS-110 is __NOT__ a substitute for a layer 7 router; It is an ONT, and its __ONLY__ function is to convert
+    Ethernet to PON over fiber medium. Additional hardware and software are required to access the Internet.
+
 The [WAS-110] is available from select [resellers] worldwide.
 
  [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
