@@ -19,8 +19,8 @@ description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110
 ## Purchase a WAS-110 and LC/APC to SC/APC adapter or cable
 
 !!! note
-    The WAS-110 is __NOT__ a substitute for a layer 7 router; It is an ONT, and its __ONLY__ function is to convert
-    Ethernet to PON over fiber medium. Additional hardware and software are required to access the Internet.
+    The [WAS-110] is __NOT__ a substitute for a layer 7 router; It is an *ONT*, and its __ONLY__ function is to convert
+    *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access the Internet.
 
 The [WAS-110] is available from select [resellers] worldwide.
 
