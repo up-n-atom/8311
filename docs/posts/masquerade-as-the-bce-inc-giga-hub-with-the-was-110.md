@@ -242,7 +242,7 @@ but it is not strictly necessary.
 
 | Firmware Version | External Firmware Version |
 | ---------------- | ------------------------- |
-| 2.13             | SGC83000E8                |
+| 2.13             | SGC84000AE                |
 | 2.11             | SGC8400078                |
 | 2.9              | SGC8400058                |
 | 1.19.6           | SGC83000DC                |
