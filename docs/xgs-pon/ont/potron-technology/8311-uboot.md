@@ -4,11 +4,11 @@ hide:
   - toc
 ---
 
-# Issue 1
+# Dev Issue 1
 
 ## Problem <small>Bugged U-boot</small> { #problem data-toc-label="Problem" }
 
-An experimental U-boot pre-flashed that may trigger the U-boot shell rather than continue on with the boot process into
+An experimental 8311 U-boot may trigger the U-boot shell rather than continue on with the boot process into
 OpenWrt when plugged into various host hardware, such as the Ubiquiti UDM-SE.
 
 !!! bug "Take notice of the ^^Hit any key to stop autoboot^^"
@@ -81,34 +81,45 @@ serial USB such as the [SFP Media Buddy].
     echo 'e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d uboot-azores.bin' | sha256sum -c
     ```
 
-3. Transfer the extracted `uboot-azores.bin` to the now booted SPP425H-GAB4.
+3. Transfer the extracted `uboot-azores.bin` onto the ONT.
 
     ``` sh
-    scp uboot-azores.bin root@192.168.11.1:/tmp/
+    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa uboot-azores.bin root@192.168.11.1:/tmp/
     ```
 
-4. SSH into the SPP425H-GAB4 and verify the integrity of the transferred `/tmp/uboot-azores.bin`.
+4. Download [nand-utils_2.1.1-1_mips_24kc.ipk](https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/packages/common/nand-utils_2.1.1-1_mips_24kc.ipk)
+   from the 8311-was-110-firmware-builder repository[^1].
+
+5. Transfer the extracted `nand-utils` onto the ONT.
+
+    ``` sh
+    tar -xOzf nand-utils_2.1.1-1_mips_24kc.ipk ./data.tar.gz | ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar -xzf - -C /tmp/'
+    ```
+
+6. SSH into the ONT and verify the integrity of the transferred `/tmp/uboot-azores.bin`.
 
     ``` sh
     ssh root@192.168.11.1
     echo 'e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d  /tmp/uboot-azores.bin' | sha256sum -c
     ```
 
-5. Erase and flash the `/tmp/uboot-azores.bin` bootloader into `/dev/mtd0`.
+7. Erase and flash the `/tmp/uboot-azores.bin` bootloader into `/dev/mtd0`.
 
     ``` sh
-    flash_erase /dev/mtd0 0 0
-    nandwrite /dev/mtd0 -p /tmp/uboot-azores.bin
+    /tmp/usr/sbin/flash_erase /dev/mtd0 0 0
+    /tmp/usr/sbin/nandwrite /dev/mtd0 -p /tmp/uboot-azores.bin
     ```
 
-6. Verify the integrity of the newly flashed bootloader `e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d`.
+8. Verify the integrity of the newly flashed bootloader `e757517fb8152c0e7b4db57f9cbef0576e2ff76dd45eea76596eddbaeb9e7b8d`.
 
     ``` sh
     head -c 216400 /dev/mtd0 | sha256sum
     ```
 
-7. __DO NOT__ continue to reboot unless the checksums match!!!
+9. __DO NOT__ continue to reboot unless the checksums match!!!
 
     ``` sh
     reboot
     ```
+
+[^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
