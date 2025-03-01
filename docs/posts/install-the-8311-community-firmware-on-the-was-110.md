@@ -356,13 +356,12 @@ configurations based on your network setup:
 
             !!! tip "Interface numbers are zero (0) indexed, e.g. `eth9` for Port 10"
 
+            ``` sh
+            ip addr add dev eth9 local 192.168.11.2/24
+            iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
+            ```
+
             !!! warning "These commands will not persist with the next power cycle or web UI change"
-
-                ``` sh
-                ip addr add dev eth9 local 192.168.11.2/24
-                iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.0/24 -j SNAT --to 192.168.11.2
-                ```
-
                 For boot persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
