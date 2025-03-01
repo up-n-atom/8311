@@ -136,7 +136,7 @@ we take no responsibility or liability for the listed resellers.
 
 ## Install the 8311 community firmware
 
-As a prerequisite to masquerading the Home Hub 3000, the 8311 community firmware is necessary because of the VEIP
+As a prerequisite to masquerading the Home Hub 4000, the 8311 community firmware is necessary because of the VEIP
 requirement.
 
 === "WAS-110"
@@ -153,7 +153,8 @@ requirement.
 
 === "X-ONU-SFPP"
 
-    The X-ONU-SFPP requires a two step process and is more prone to failure and bricking.
+    The X-ONU-SFPP 8311 community firmware installation requires a two-step process and is more prone to failure and
+    bricking.
 
     !!! warning "This process is not thoroughly documented and can lead to a bricked device"
 
@@ -164,7 +165,8 @@ requirement.
 
     <h4>Step 2: Multicast upgrade</h4>
 
-    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    guide to install the 8311 community firmware.
 
 ## Masquerade setup
 
