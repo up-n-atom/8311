@@ -107,7 +107,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode
     Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the
     back [label] of the Home Hub 4000.
 
-## Purchase a [WAS-110] or [X-ONU-SFPP]
+## Purchase a WAS-110 or X-ONU-SFPP
 
 The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To streamline the process, some resellers
 are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
