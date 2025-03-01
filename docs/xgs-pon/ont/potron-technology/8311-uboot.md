@@ -90,7 +90,7 @@ serial USB such as the [SFP Media Buddy].
 4. Download [nand-utils_2.1.1-1_mips_24kc.ipk](https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/packages/common/nand-utils_2.1.1-1_mips_24kc.ipk)
    from the 8311-was-110-firmware-builder repository[^1].
 
-5. Transfer the extracted `nand-utils` onto the ONT.
+5. Transfer and extract `nand-utils_2.1.1-1_mips_24kc.ipk` onto the ONT.
 
     ``` sh
     tar -xOzf nand-utils_2.1.1-1_mips_24kc.ipk ./data.tar.gz | ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar -xzf - -C /tmp/'
