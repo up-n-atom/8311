@@ -105,6 +105,8 @@ serial USB such as the [SFP Media Buddy].
 
 7. Erase and flash the `/tmp/uboot-azores.bin` bootloader into `/dev/mtd0`.
 
+    !!! warning "Proceeding with the following commands can lead to a bricked device if things go awry"
+
     ``` sh
     /tmp/usr/sbin/flash_erase /dev/mtd0 0 0
     /tmp/usr/sbin/nandwrite /dev/mtd0 -p /tmp/uboot-azores.bin
