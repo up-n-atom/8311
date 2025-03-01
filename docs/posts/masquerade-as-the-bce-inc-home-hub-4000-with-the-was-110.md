@@ -142,7 +142,7 @@ requirement.
 
 === "WAS-110"
 
-    There are two methods to install the 8311 community firmware, outlined in the following guides:
+    There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
 
     __Method 1: <small>recommended</small></h4>__
 
@@ -154,7 +154,7 @@ requirement.
 
 === "X-ONU-SFPP"
 
-    The X-ONU-SFPP 8311 community firmware installation requires a two-step process and is more prone to failure and
+    The [X-ONU-SFPP] 8311 community firmware installation requires a two-step process and is more prone to failure and
     bricking.
 
     !!! warning "This process is not thoroughly documented and can lead to a bricked device"
