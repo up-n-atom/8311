@@ -113,8 +113,9 @@ The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To
 are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
 we take no responsibility or liability for the listed resellers.
 
-* [WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
-* [X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
+[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
+
+[X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
 
 !!! question "Is the [WAS-110] or [X-ONU-SFPP] a router?"
     The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
@@ -143,13 +144,13 @@ requirement.
 
     There are two methods to install the 8311 community firmware, outlined in the following guides:
 
-    <h4>Method 1: <small>recommended</small></h4>
+    __Method 1: <small>recommended</small></h4>__
 
-    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
 
-    <h4>Method 2:</h4>
+    __Method 2:__
 
-    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
 === "X-ONU-SFPP"
 
@@ -158,15 +159,15 @@ requirement.
 
     !!! warning "This process is not thoroughly documented and can lead to a bricked device"
 
-    <h4>Step 1: Install the Azores bootloader</h4>
+    __Step 1: Install the Azores bootloader__
 
-    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
-    on how to install the Azores bootloader.
+    :    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
+         on how to install the Azores bootloader.
 
-    <h4>Step 2: Multicast upgrade</h4>
+    __Step 2: Multicast upgrade__
 
-    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
-    guide to install the 8311 community firmware.
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+         guide to install the 8311 community firmware.
 
 ## Masquerade setup
 
