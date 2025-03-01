@@ -143,11 +143,11 @@ requirement.
 
     There are two methods to install the 8311 community firmware, outlined in the following guides:
 
-    #### Method 1: <small>recommended</small> { #method-one data-toc-label="Method 1"}
+    <h4>Method 1: <small>recommended</small></h4>
 
     [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
 
-    #### Method 2: { #method-two data-toc-label="Method 2"}
+    <h4>Method 2:</h4>
 
     [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
@@ -157,12 +157,12 @@ requirement.
 
     !!! warning "This process is not thoroughly documented and can lead to a bricked device"
 
-    #### Step 1: Install the Azores bootloader
+    <h4>Step 1: Install the Azores bootloader</h4>
 
     Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
     on how to install the Azores bootloader.
 
-    #### Step 2: Multicast upgrade
+    <h4>Step 2: Multicast upgrade</h4>
 
     [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
