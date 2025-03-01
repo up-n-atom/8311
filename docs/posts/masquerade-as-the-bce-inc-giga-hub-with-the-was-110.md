@@ -9,10 +9,11 @@ categories:
   - Bell MTS
   - Sagemcom
   - FAST 5689E
-description: Masquerade as the BCE Inc. Giga Hub with the WAS-110
+description: Masquerade as the BCE Inc. Giga Hub with the WAS-110 or X-ONU-SFPP
+slug: masquerade-as-the-bce-inc-giga-hub-with-the-was-110
 ---
 
-# Masquerade as the BCE Inc. Giga Hub with the WAS-110
+# Masquerade as the BCE Inc. Giga Hub with the WAS-110 or X-ONU-SFPP
 
 ![Bypass family](masquerade-as-the-bce-inc-giga-hub-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_giga_hub.webp){ class="nolightbox" }
 
@@ -98,15 +99,20 @@ xmo-remote-client --password=<password> get-wan-mode
     Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the
     back [label] of the Giga Hub.
 
-## Purchase a WAS-110
+## Purchase a WAS-110 or X-ONU-SFPP
 
-!!! note
-    The [WAS-110] is __NOT__ a substitute for a layer 7 router; It is an *ONT*, and its __ONLY__ function is to convert
-    *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access the Internet.
+The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To streamline the process, some resellers
+are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
+we take no responsibility or liability for the listed resellers.
 
-The [WAS-110] is available from select [resellers] worldwide.
+[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
 
- [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+[X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
+
+!!! question "Is the [WAS-110] or [X-ONU-SFPP] a router?"
+    The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
+    function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
+    the Internet.
 
 !!! tip "Beyond budget?"
     An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
@@ -121,14 +127,41 @@ The [WAS-110] is available from select [resellers] worldwide.
     If budget is no longer a concern later on, and an SFP is appealing, check out the XS-010X-Q
     guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
 
-## Install community firmware
+## Install the 8311 community firmware
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
+As a prerequisite to masquerading the Giga Hub, the 8311 community firmware is necessary because of the VEIP
+requirement.
 
-  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
+=== "WAS-110"
 
-## WAS-110 masquerade setup
+    There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
+
+    __Method 1: <small>recommended</small></h4>__
+
+    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+
+    __Method 2:__
+
+    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+
+=== "X-ONU-SFPP"
+
+    The [X-ONU-SFPP] 8311 community firmware installation requires a two-step process and is more prone to failure and
+    bricking.
+
+    !!! warning "This process is not thoroughly documented and can lead to a bricked device"
+
+    __Step 1: Install the Azores bootloader__
+
+    :    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
+         on how to install the Azores bootloader.
+
+    __Step 2: Multicast upgrade__
+
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+         guide to install the 8311 community firmware.
+
+## Masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
 identifiers are available on the back label of the Giga Hub, color-coordinated in the following depiction:
@@ -264,6 +297,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
