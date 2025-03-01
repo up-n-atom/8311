@@ -149,7 +149,7 @@ requirement.
 
     <h4>Method 2:</h4>
 
-    [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
+    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
 === "X-ONU-SFPP"
 
@@ -164,7 +164,7 @@ requirement.
 
     <h4>Step 2: Multicast upgrade</h4>
 
-    [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
+    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
 ## Masquerade setup
 
