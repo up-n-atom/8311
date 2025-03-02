@@ -15,8 +15,8 @@ title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 | __RAM__     | 1 GB                                                |                     |
 | __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
 | __EEPROM__  | :check_mark:                                        | [M02181]            |
-| __IP__      | 192.168.1.1                                         |                     |
-| __HTTP(S)__ | :x:                                                 |                     |
+| __IP__      | 192.168.1.1                                         | PTXG Firmware       |
+| __HTTP(S)__ | :x:                                                 | PTXG Firmware       |
 | __SSH__     | :check_mark:                                        | [Shell credentials] |
 
  [Architecture]: #architecture
@@ -40,7 +40,7 @@ flowchart LR
     B --> A
     subgraph SOC
         C("SERDES
-        /CDR")
+        CDR")
         subgraph MAC
             D("10G(E)PON
             PCS&MAC/
