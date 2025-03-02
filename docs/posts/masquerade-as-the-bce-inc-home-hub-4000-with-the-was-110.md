@@ -137,7 +137,7 @@ we take no responsibility or liability for the listed resellers.
 
 ## Install the 8311 community firmware
 
-As a prerequisite to masquerading the Home Hub 4000, the 8311 community firmware is necessary because of the VEIP
+As a prerequisite to masquerading as the Home Hub 4000, the 8311 community firmware is necessary because of the VEIP
 requirement.
 
 === "WAS-110"

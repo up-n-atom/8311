@@ -5,10 +5,11 @@ categories:
   - XS-010X-Q
   - WAS-110
   - NOKIA
-description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110
+description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
+slug: swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110
 ---
 
-# Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110
+# Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
 
 !!! abstract "This is strictly for the form-factor as they're both SFU ONTs"
 
@@ -17,18 +18,53 @@ description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-
 <!-- more -->
 <!-- nocont -->
 
-## Purchase a WAS-110
+## Purchase a WAS-110 or X-ONU-SFPP
 
-The [WAS-110] is available from select [resellers].
+The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To streamline the process, some resellers
+are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
+we take no responsibility or liability for the listed resellers.
 
- [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
 
-## Install community firmware
+[X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
+!!! question "Is the WAS-110 or X-ONU-SFPP a router?"
+    The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
+    function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
+    the Internet.
 
-  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
+## Install the 8311 community firmware
+
+As a prerequisite to masquerading as the XS-010X-Q, the 8311 community firmware is recommended and required for the
+remainder of this guide.
+
+=== "WAS-110"
+
+    There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
+
+    __Method 1: <small>recommended</small></h4>__
+
+    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+
+    __Method 2:__
+
+    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+
+=== "X-ONU-SFPP"
+
+    The [X-ONU-SFPP] 8311 community firmware installation requires a two-step process and is more prone to failure and
+    bricking.
+
+    !!! warning "This process is not thoroughly documented and can lead to a bricked device"
+
+    __Step 1: Install the Azores bootloader__
+
+    :    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
+         on how to install the Azores bootloader.
+
+    __Step 2: Multicast upgrade__
+
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
 
 ## Extract attributes from the XS-010X-Q
 
@@ -60,7 +96,7 @@ outlined in the community firmware installation guide: [Install the 8311 communi
 
 5. Copy all the attributes for entry later in the guide.
 
-## WAS-110 masquerade setup
+## Masquerade setup
 
 Additionally, mandatory identifiers are available on the back label of the XS-010X-Q, such as ONT P/N, ICS, and CLEI if
 present.
@@ -200,7 +236,7 @@ present.
         fwenv_set -8 fix_vlans 0
         ```
 
-        1. MAC ID
+        . MAC ID
         2. Serial number or S/N
         3. CLEI + Mnemonic
         4. ONT P/N + ICS
@@ -229,5 +265,6 @@ the [8311 Discord community server].
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

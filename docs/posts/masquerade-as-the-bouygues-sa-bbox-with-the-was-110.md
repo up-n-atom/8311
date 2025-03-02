@@ -7,11 +7,11 @@ categories:
   - Bouygues S.A.
   - Sagemcom
   - FAST 5688b
-description: Masquerade as the Bouygues S.A. BBox with the WAS-110
+description: Masquerade as the Bouygues S.A. BBox with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
 ---
 
-# Masquerade as the Bouygues S.A Bbox with the WAS-110
+# Masquerade as the Bouygues S.A Bbox with the WAS-110 or X-ONU-SFPP
 
 ![Bypass baguette](masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bbox.webp){ class="nolightbox" }
 
@@ -144,24 +144,55 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 4. From the __Bbox__ page, copy the __IMEI__ number.
 
-## Purchase a WAS-110
+## Purchase a WAS-110 or X-ONU-SFPP
 
-!!! note
-    The [WAS-110] is __NOT__ a substitute for a layer 7 router; It is an *ONT*, and its __ONLY__ function is to convert
-    *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access the Internet.
+The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To streamline the process, some resellers
+are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
+we take no responsibility or liability for the listed resellers.
 
-The [WAS-110] is available from select [resellers] worldwide.
+[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
 
- [resellers]: https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/#value-added-resellers
+[X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
 
-## Install community firmware
+!!! question "Is the WAS-110 or X-ONU-SFPP a router?"
+    The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
+    function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
+    the Internet.
 
-As a prerequisite to masquerading with the WAS-110, the community firmware is necessary; follow the steps
-outlined in the community firmware installation guide: [Install the 8311 community firmware on the WAS-110].
+## Install the 8311 community firmware
 
-  [Install the 8311 community firmware on the WAS-110]: install-the-8311-community-firmware-on-the-was-110.md
+As a prerequisite to masquerading as the Bbox, the 8311 community firmware is recommended and required for the remainder
+of this guide.
 
-## WAS-110 masquerade setup
+=== "WAS-110"
+
+    There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
+
+    __Method 1: <small>recommended</small></h4>__
+
+    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+
+    __Method 2:__
+
+    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+
+=== "X-ONU-SFPP"
+
+    The [X-ONU-SFPP] 8311 community firmware installation requires a two-step process and is more prone to failure and
+    bricking.
+
+    !!! warning "This process is not thoroughly documented and can lead to a bricked device"
+
+    __Step 1: Install the Azores bootloader__
+
+    :    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
+         on how to install the Azores bootloader.
+
+    __Step 2: Multicast upgrade__
+
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+
+## Masquerade setup
 
 ### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
 
@@ -267,5 +298,6 @@ Finally, continue with your bypass by consulting the [routing guide(s)](#routing
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
