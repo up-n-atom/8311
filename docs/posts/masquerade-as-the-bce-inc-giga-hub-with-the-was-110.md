@@ -125,7 +125,7 @@ we take no responsibility or liability for the listed resellers.
     * [Primus](https://primus.ca/)
 
     If budget is no longer a concern later on, and an SFP is appealing, check out the XS-010X-Q
-    guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
+    guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
 
 ## Install the 8311 community firmware
 
