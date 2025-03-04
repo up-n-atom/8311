@@ -177,7 +177,7 @@ present.
     reboot
     ```
 
-After rebooting the WAS-110, safely remove the SC/APC cable from the XS-010X-Q and connect it to the
+After rebooting the WAS-110, safely remove the SC/APC cable from the XS-250X-A and connect it to the
 WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
 For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
 the [8311 Discord community server].
