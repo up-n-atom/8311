@@ -4,7 +4,9 @@ categories:
   - XGS-PON
   - XS-010X-Q
   - WAS-110
-  - NOKIA
+  - Nokia
+  - Bell ICG
+  - Rogers
 description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
 slug: swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110
 ---

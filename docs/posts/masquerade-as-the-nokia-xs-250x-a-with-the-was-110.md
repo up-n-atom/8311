@@ -4,7 +4,7 @@ categories:
   - XGS-PON
   - XS-250X-A
   - WAS-110
-  - NOKIA
+  - Nokia
   - X-ONU-SFPP
   - Telus
 description: Masquerade as the Nokia XS-250X-A with the WAS-110 or X-ONU-SFPP
