@@ -14,6 +14,8 @@ slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
 
 # Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 
+![Bypass Hub 5x](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/bypass_hub_5x.webp){ class="nolightbox" }
+
 <!-- more -->
 <!-- nocont -->
 
