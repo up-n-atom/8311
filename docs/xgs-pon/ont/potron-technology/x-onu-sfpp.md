@@ -6,6 +6,14 @@ title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
 ![X-ONU-SFPP](x-onu-sfpp/x-onu-sfpp.webp)
 
+
+!!! warning "Caution: Hot surface"
+    It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,
+    over time they may decrease the product lifespan.
+
+    The 8311 community has produced many active cooling designs to improve overall temperatures.
+    Join the [Discord](https://discord.pon.wiki) for additional tips.
+
 ## Specifications
 
 |             |                                                     |                     |
