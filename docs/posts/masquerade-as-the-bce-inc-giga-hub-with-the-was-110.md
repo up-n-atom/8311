@@ -130,7 +130,7 @@ we take no responsibility or liability for the listed resellers.
 ## Install the 8311 community firmware
 
 As a prerequisite to masquerading as the Giga Hub, the 8311 community firmware is necessary because of the VEIP
-requirement.
+requirement. If you purchased a pre-flashed WAS-110 or XS-010X-Q, skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
 

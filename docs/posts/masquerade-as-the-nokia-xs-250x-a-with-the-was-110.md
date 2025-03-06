@@ -36,7 +36,7 @@ we take no responsibility or liability for the listed resellers.
 ## Install the 8311 community firmware
 
 As a prerequisite to masquerading as the XS-010X-Q, the 8311 community firmware is recommended and required for the
-remainder of this guide.
+remainder of this guide. If you purchased a pre-flashed WAS-110 or XS-010X-Q, skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
 
