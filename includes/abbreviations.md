@@ -7,6 +7,7 @@
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
+*[HGU]: Home Gateway Unit
 *[HTTP]: Hypertext Transfer Protocol
 *[IEEE]: Institute of Electrical and Electronics Engineers
 *[IP]: Internet Protocol
@@ -28,6 +29,7 @@
 *[RX]: Receive
 *[SC]: Subscriber Connector
 *[SFP]: Small Form-factor Pluggable
+*[SFU]: Single Family Unit
 *[SoC]: System on a Chip
 *[SSH]: Secure SHell
 *[STP]: Spanning Tree Protocol
