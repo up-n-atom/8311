@@ -211,7 +211,7 @@ the [8311 Discord community server].
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
-Finally, continue with your bypass by consulting the [routing guide(s)](#routing-guides) below.
+Finally, continue with your bypass by consulting the [routing tips](#routing-tips) below.
 
 ## Funbox 10 software versions
 
@@ -227,7 +227,7 @@ the Funbox 10, which uses CWMP[^2]. However, it is recommended to keep somewhat 
 Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
-## Routing guides
+## Routing tips
 
 ### PPPoE Credentials
 
