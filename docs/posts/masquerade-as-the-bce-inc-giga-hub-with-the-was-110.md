@@ -300,6 +300,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
+  [XMO client]: #with-a-xmo-client
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/up-n-atom/sagemcom-modem-scripts>
