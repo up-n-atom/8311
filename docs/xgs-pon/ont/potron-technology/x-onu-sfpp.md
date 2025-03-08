@@ -20,7 +20,7 @@ title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 | ----------: | --------------------------------------------------- | ------------------- |
 | __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc             | [Architecture] [^4] |
 | __NAND__    | 128 MB *(1 Gbit)*                                   | [WN25N01GV]         |
-| __RAM__     | 1 GB                                                |                     |
+| __RAM__     | 1 GB                                                | [MT52L256M32D1PF]   |
 | __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
 | __EEPROM__  | :check_mark:                                        | [M02181]            |
 | __UART__    | UART 	Rx: pin 7 / Tx: pin 2 - 115200-8-1-N          |                     |
@@ -30,6 +30,7 @@ title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV
+ [MT52L256M32D1PF]: https://www.micron.com/products/memory/dram-components/lpddr/part-catalog/part-detail/mt52l256m32d1pf-107-wt-b
  [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
 
