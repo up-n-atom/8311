@@ -39,5 +39,6 @@
 *[UPC]: Ultra Physical Contact
 *[USB]: Universal Serial Bus
 *[VEIP]: Virtual Ethernet Interface Point
+*[VLAN]: Virtual Local Area Network
 *[WAN]: Wide Area Network
 *[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
