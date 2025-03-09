@@ -50,6 +50,7 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
+    - navigation.path
   custom_dir: overrides
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.png
