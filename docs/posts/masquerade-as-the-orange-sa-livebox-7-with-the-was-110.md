@@ -21,7 +21,7 @@ slug: masquerade-as-the-orange-sa-livebox-7-with-the-was-110
 ## Determine if you're an XGS-PON subscriber
 
 !!! info "5 Gbps or higher packages"
-    If you're subscribed to Livebox Max Fibre or a similar 5 Gbps or higher package, skip past to [Purchase a WAS-110].
+    If you're subscribed to Livebox Max Fibre or a similar 5 Gbps or higher package, skip past to [Purchase a WAS-110 or X-ONU-SFPP].
 
 1. Within a web browser, navigate to
    <https://livebox/>
@@ -218,7 +218,7 @@ Please help us by contributing new versions via the [8311 Discord community serv
 * [OPNsense - Orange France FTTH IPv4 & IPv6](https://docs.opnsense.org/manual/how-tos/orange_fr_fttp.html)
 * [Orange bypass on Debian](https://akhamar.github.io/orange-bypass-debian/)
 
-  [Purchase a WAS-110]: #purchase-a-was-110
+  [Purchase a WAS-110 or X-ONU-SFPP]: #purchase-a-was-110-or-x-onu-sfpp
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [Version listing]: #livebox-7-software-versions

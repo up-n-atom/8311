@@ -23,7 +23,7 @@ slug: masquerade-as-the-bce-inc-giga-hub-with-the-was-110
 ## Determine if you're an XGS-PON subscriber
 
 !!! info "3 Gbps or higher packages"
-    If you're subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase a WAS-110].
+    If you're subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase a WAS-110 or X-ONU-SFPP].
 
 There are two (2) methods to determine if you're an XGS-PON subscriber: the simpler [Web UI](#with-the-web-ui) WAN page,
 and the more comprehensive [XMO API client](#with-a-xmo-client).
@@ -295,7 +295,7 @@ The following command extracts the external firmware version used by OMCI manage
 xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
 ```
 
-  [Purchase a WAS-110]: #purchase-a-was-110
+  [Purchase a WAS-110 or X-ONU-SFPP]: #purchase-a-was-110-or-x-onu-sfpp
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [label]: #giga-hub-label
