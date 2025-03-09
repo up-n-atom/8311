@@ -9,8 +9,13 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.repository.fork == false
     steps:
       - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -23,5 +28,9 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - run: apt-get install pngquant
+      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --remote-branch wiki --force
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
