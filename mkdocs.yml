@@ -9,6 +9,11 @@ markdown_extensions:
   - attr_list
   - def_list
   - footnotes
+  - material.extensions.preview:
+      configurations:
+        - targets:
+          include: 
+
   - md_in_html
   - pymdownx.caret
   - pymdownx.details
