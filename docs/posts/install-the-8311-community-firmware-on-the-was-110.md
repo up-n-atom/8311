@@ -456,7 +456,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the *admin* [web credentials]{ target="_blank" }.
+   and, if asked, input the *admin* [web credentials]{ data-preview target="_blank" }.
 
 2. From the __Service Control__ page, check the __SSH__ checkbox and click __Save__.
 
@@ -552,7 +552,7 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the *admin* [web credentials]{ target="_blank" }.
+   and, if asked, input the *admin* [web credentials]{ data-preview target="_blank" }.
 
 2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click
    __Upgrade__.
