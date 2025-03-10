@@ -380,7 +380,7 @@ are abnormal, contact the seller immediately to start the RMA process. If you're
 
 1. [Enable SSH] from the web UI by following the steps outlined below in the shell upgrade section.
 
-2. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ target="_blank" }.
+2. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ data-preview target="_blank" }.
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1
@@ -464,7 +464,7 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-Input the *root* [shell credentials]{ target="_blank" } when asked.
+Input the *root* [shell credentials]{ data-preview target="_blank" } when asked.
 
 === ":material-microsoft: Windows"
 

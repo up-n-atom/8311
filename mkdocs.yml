@@ -47,6 +47,9 @@ theme:
     - content.tabs.link
     - navigation.expand
     - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.tabs
     - navigation.top
     - navigation.tracking
