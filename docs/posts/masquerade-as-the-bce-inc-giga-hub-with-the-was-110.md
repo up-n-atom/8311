@@ -116,7 +116,7 @@ we take no responsibility or liability for the listed resellers.
 
 !!! tip "Beyond budget?"
     An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
-    XS-010X-Q ONT, an SFU.
+    [XS-010X-Q] ONT, an SFU.
 
     * [Acanac](https://acanac.com/)
     * [Distributel](https://www.distributel.ca/)
@@ -124,13 +124,13 @@ we take no responsibility or liability for the listed resellers.
     * [Oricom](https://www.oricom.ca/)
     * [Primus](https://primus.ca/)
 
-    If budget is no longer a concern later on, and an SFP is appealing, check out the XS-010X-Q
+    If budget is no longer a concern later on, and an SFP is appealing, check out the [XS-010X-Q]
     guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
 
 ## Install the 8311 community firmware
 
 As a prerequisite to masquerading as the Giga Hub, the 8311 community firmware is necessary because of the VEIP
-requirement. If you purchased a pre-flashed WAS-110 or XS-010X-Q, skip past to the [masquerade setup](#masquerade-setup).
+requirement. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
 
@@ -298,6 +298,7 @@ xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVers
   [Purchase a WAS-110 or X-ONU-SFPP]: #purchase-a-was-110-or-x-onu-sfpp
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
+  [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
   [label]: #giga-hub-label
   [Version listing]: #giga-hub-software-versions
   [XMO client]: #with-a-xmo-client

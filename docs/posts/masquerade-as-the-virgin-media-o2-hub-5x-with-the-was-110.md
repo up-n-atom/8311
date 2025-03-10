@@ -43,7 +43,7 @@ provisioned LC/APC cable, or a Male LC/APC to Male SC/APC patch cable, both of w
 ## Install the 8311 community firmware
 
 As a prerequisite to masquerading as the Hub 5x, the 8311 community firmware is necessary because of the VEIP
-requirement. If you purchased a pre-flashed WAS-110 or XS-010X-Q, skip past to the [masquerade setup](#masquerade-setup).
+requirement. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
 

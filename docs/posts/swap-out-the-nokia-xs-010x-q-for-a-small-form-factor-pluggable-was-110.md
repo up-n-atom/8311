@@ -37,8 +37,8 @@ we take no responsibility or liability for the listed resellers.
 
 ## Install the 8311 community firmware
 
-As a prerequisite to masquerading as the XS-010X-Q, the 8311 community firmware is recommended and required for the
-remainder of this guide. If you purchased a pre-flashed WAS-110 or XS-010X-Q, skip past to the [masquerade setup](#masquerade-setup).
+As a prerequisite to masquerading as the [XS-010X-Q], the 8311 community firmware is recommended and required for the
+remainder of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
 
@@ -88,7 +88,7 @@ remainder of this guide. If you purchased a pre-flashed WAS-110 or XS-010X-Q, sk
 
 !!! warning "Power off and remove fiber before continuing"
 
-1. Power on the XS-010X-Q with an Ethernet cable plugged between the host PC.
+1. Power on the [XS-010X-Q] with an Ethernet cable plugged between the host PC.
 
 2. Setup a static **IP address** `192.168.100.2` and **Netmask** `255.255.255.0` on the host PC.
 
@@ -100,7 +100,7 @@ remainder of this guide. If you purchased a pre-flashed WAS-110 or XS-010X-Q, sk
 
 ## Masquerade setup
 
-Additionally, mandatory identifiers are available on the back label of the XS-010X-Q, such as ONT P/N, ICS, and CLEI if
+Additionally, mandatory identifiers are available on the back label of the [XS-010X-Q], such as ONT P/N, ICS, and CLEI if
 present.
 
 <div id="xs-010x-q-label"></div>
@@ -258,7 +258,7 @@ present.
     reboot
     ```
 
-After rebooting the WAS-110, safely remove the SC/APC cable from the XS-010X-Q and connect it to the
+After rebooting the WAS-110, safely remove the SC/APC cable from the [XS-010X-Q] and connect it to the
 WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
 For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
 the [8311 Discord community server].
@@ -268,5 +268,6 @@ the [8311 Discord community server].
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
+  [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
