@@ -14,6 +14,8 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110
 
 # Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110
 
+!!! warning "This guide is incompatible with the Vantiva BGW620-700. Unplug your WAS-110 and don't be a nuisance on the PON."
+
 ![Bypass family](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bgw320.webp){ class="nolightbox" }
 
 <!-- more -->
@@ -113,32 +115,31 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ with the provisioned value on the bottom
-        [label] of the BGW320-500/505.
+        All attributes are the mandatory.
 
     === "BGW320-500"
 
-        | Attribute                  | Value                   | Mandatory    | Remarks                 |
-        | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | HUMA&hellip;            | :check_mark: | :blue_circle: ONT ID    |
-        | Equipment ID               | iONT320500X             |              |                         |
-        | Hardware Version           | BGW320-500_2.1          |              |                         |
-        | Sync Circuit Pack Version  | :check_mark:            |              |                         |
-        | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
-        | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
+        | Attribute                  | Value                   | Remarks                 |
+        | -------------------------- | -----------------       | ----------------------- |
+        | PON Serial Number (ONT ID) | HUMA&hellip;            | :blue_circle: ONT ID    |
+        | Equipment ID               | iONT320500X             |                         |
+        | Hardware Version           | BGW320-500_2.1          |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |                         |
+        | Software Version A         | BGW320_4.27.7           | [Version listing]       |
+        | Software Version B         | BGW320_4.27.7           | [Version listing]       |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
 
     === "BGW320-505"
 
-        | Attribute                  | Value                   | Mandatory    | Remarks                 |
-        | -------------------------- | -----------------       | ------------ | ----------------------- |
-        | PON Serial Number (ONT ID) | NOKA&hellip;            | :check_mark: |:blue_circle: ONT ID     |
-        | Equipment ID               | iONT320505X             |              |                         |
-        | Hardware Version           | BGW320-505_2.2          |              |                         |
-        | Sync Circuit Pack Version  | :check_mark:            |              |                         |
-        | Software Version A         | BGW320_4.27.7           |              | [Version listing]       |
-        | Software Version B         | BGW320_4.27.7           |              | [Version listing]       |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | :check_mark: | PPTP i.e. default value |
+        | Attribute                  | Value                   | Remarks                 |
+        | -------------------------- | -----------------       | ----------------------- |
+        | PON Serial Number (ONT ID) | NOKA&hellip;            |:blue_circle: ONT ID     |
+        | Equipment ID               | iONT320505X             |                         |
+        | Hardware Version           | BGW320-505_2.2          |                         |
+        | Sync Circuit Pack Version  | :check_mark:            |                         |
+        | Software Version A         | BGW320_4.27.7           | [Version listing]       |
+        | Software Version B         | BGW320_4.27.7           | [Version listing]       |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
 
