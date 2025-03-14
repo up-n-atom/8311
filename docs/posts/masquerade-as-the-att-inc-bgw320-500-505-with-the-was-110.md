@@ -114,8 +114,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-    !!! reminder
-        All attributes are the mandatory.
+    !!! info "All attributes below are <ins>mandatory</ins>"
 
     === "BGW320-500"
 
@@ -156,13 +155,11 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
 2. Configure the 8311 U-Boot environment.
 
-    !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
-        [label] of the BGW320-500/505.
+    !!! info "All attributes below are <ins>mandatory</ins>"
 
     === "BGW320-500"
 
-        ``` sh hl_lines="1 7"
+        ``` sh
         fwenv_set -8 gpon_sn HUMA... # (1)!
         fwenv_set -8 equipment_id iONT320500X
         fwenv_set -8 hw_ver BGW320-500_2.1
@@ -176,7 +173,7 @@ identifiers are available on the bottom label of the BGW320-500/505, color-coord
 
     === "BGW320-505"
 
-        ``` sh hl_lines="1 7"
+        ``` sh
         fwenv_set -8 gpon_sn NOKA... # (1)!
         fwenv_set -8 equipment_id iONT320505X
         fwenv_set -8 hw_ver BGW320-505_2.2
