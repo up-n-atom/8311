@@ -109,7 +109,7 @@ we take no responsibility or liability for the listed resellers.
 
 [X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
 
-!!! question "Is the [WAS-110] or X-ONU-SFPP a router?"
+!!! question "Is the WAS-110 or X-ONU-SFPP a router?"
     The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
     function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
     the Internet.

@@ -7,6 +7,7 @@
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
+*[EEPROM]: Electrically Erasable Programmable Read-Only Memory
 *[HGU]: Home Gateway Unit
 *[HTTP]: Hypertext Transfer Protocol
 *[IEEE]: Institute of Electrical and Electronics Engineers

@@ -16,8 +16,8 @@ title: XS-010X-Q (3FE48118AC) / CIG XG-99YF
 | __BOSA__    | SC/APC - Tx: 1270 nm / Rx: 1577 nm                  | [M02181]             |
 | __EEPROM__  | :check_mark:                                        | [M02181]             |
 | __UART__    | TTL - 115200-8-1-N                                  |                      |
-| __IP__      | 192.168.100.1                                       |                      |
-| __HTTP(S)__ | :check_mark:                                        | [Web credentials]    |
+| __IP__      | [192.168.100.1](http://192.168.100.1/)              |                      |
+| __HTTP__    | :check_mark:                                        | [Web credentials]    |
 | __Telnet__  | :check_mark:                                        | [Telnet credentials] |
 
  [CA8271A]: https://www.cortina-access.com/index.php/products/single-family-unit-sfu-xpon-onu
