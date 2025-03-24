@@ -122,7 +122,7 @@ we take no responsibility or liability for the listed resellers.
     function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
     the Internet.
 
-!!! tip "Beyond budget? Ontario and Quebec ONLY"
+!!! tip "Beyond budget? *Ontario and Quebec ONLY*"
     An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
     [XS-010X-Q] ONT, an SFU.
 
