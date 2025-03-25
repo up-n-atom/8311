@@ -36,6 +36,7 @@ Additionally, the following rules have been put in place to keep the server civi
 6. NO ^^solicitation^^ and/or ^^advertising^^ *(excluding __#self-promo__)*
 7. DO NOT disclose, publish, or sell personal information of any member past or present
 8. DO NOT direct message members without prior permission or discussion in a public channel
+9. DO NOT discuss ANY forms of theft of service OR fraud
 
 ## Bazaar
 
