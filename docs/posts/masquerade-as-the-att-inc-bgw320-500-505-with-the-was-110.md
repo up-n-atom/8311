@@ -8,6 +8,7 @@ categories:
   - AT&T
   - Nokia
   - Humax
+  - Sonic
 description: Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110
 slug: masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110
 ---
