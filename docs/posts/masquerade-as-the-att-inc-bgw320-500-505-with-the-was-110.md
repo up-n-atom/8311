@@ -15,8 +15,6 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110
 
 # Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110
 
-!!! warning "This guide is incompatible with the Vantiva BGW620-700. Unplug your WAS-110 and don't be a nuisance on the PON."
-
 ![Bypass family](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bgw320.webp){ class="nolightbox" }
 
 <!-- more -->
