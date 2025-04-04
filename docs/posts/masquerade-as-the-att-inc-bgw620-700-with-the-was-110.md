@@ -158,7 +158,7 @@ the [8311 Discord community server].
 
     The BGW-500/505 sends telemetry data to *better* the customer experience.
 
-## BGW620-700 software versions
+## Software versions
 
 The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
 software upgrades of the BGW620-700 if the WAS-110 reports a fake O5 state.
@@ -170,13 +170,13 @@ version number: `BGW620_X.XX.X`.
 | Software Version |
 | ---------------- |
 | 5.31.9           |
-| &nbsp;           |
+| &hellip;         |
 | 5.31.1           |
 | 5.30.9           |
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
-  [Version listing]: #bgw620-700-software-versions
+  [Version listing]: #software-versions
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
