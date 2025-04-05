@@ -41,8 +41,8 @@ The [WAS-110] from the Azores factory includes a handy multicast upgrade utility
 including models from the following resellers:
 
 * Azores Networks XSS
-* E.C.I. Networks EN-XGSFPP-OMAC-V2
-* FiberMall XGSPON-ONU-STICK
+* E.C.I. Networks EN-XGSFPP-OMAC-V2 <small>*Incompatible with the EN-XGSFPP-OMAC*</small>
+* FiberMall XGSPON-ONU-STICK <small>*Incompatible with the XGSPON-ONU-STICK-V8*</small>
 
 ## Upgrade Sequence
 
