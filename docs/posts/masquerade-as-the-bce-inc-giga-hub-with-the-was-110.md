@@ -20,6 +20,10 @@ slug: masquerade-as-the-bce-inc-giga-hub-with-the-was-110
 <!-- more -->
 <!-- nocont -->
 
+!!! warning "New Installations"
+     Keep the Giga Hub in active service for roughly a week or two until fully provisioned and the installation ticket
+     has been closed.
+
 ## Determine if you're an XGS-PON subscriber
 
 !!! info "3 Gbps or higher packages"
