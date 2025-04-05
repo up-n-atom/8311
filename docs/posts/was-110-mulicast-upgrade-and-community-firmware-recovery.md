@@ -42,7 +42,7 @@ including models from the following resellers:
 
 * Azores Networks XSS
 * E.C.I. Networks EN-XGSFPP-OMAC-V2 <small>*Incompatible with the EN-XGSFPP-OMAC*</small>
-* FiberMall XGSPON-ONU-STICK <small>*Incompatible with the XGSPON-ONU-STICK-V8*</small>
+* FiberMall XGSPON-ONU-STICK <small>*Incompatible with the XGSPON-ONU-STICK-V8 Potron Bootloader*</small>
 
 ## Upgrade Sequence
 
