@@ -219,7 +219,7 @@ the [8311 Discord community server].
 
     > Check your AT&T Fiber equipment since you might be offline currently.
 
-    The BGW-500/505 sends telemetry data to *better* the customer experience.
+    The BGW320-500/505 sends telemetry data to *better* the customer experience.
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
