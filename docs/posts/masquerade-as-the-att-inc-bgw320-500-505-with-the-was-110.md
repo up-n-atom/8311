@@ -20,6 +20,10 @@ slug: masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110
 <!-- more -->
 <!-- nocont -->
 
+!!! warning "New Installations"
+    Keep the BGW320-500 or BGW320-505 in active service for roughly a week or two until fully provisioned and the
+    installation ticket has been closed.
+
 ## Determine if you're an XGS-PON subscriber
 
 !!! info "2 Gbps or higher tiers"
