@@ -160,7 +160,7 @@ the [8311 Discord community server].
 
     > Check your AT&T Fiber equipment since you might be offline currently.
 
-    The BGW-500/505 sends telemetry data to *better* the customer experience.
+    The BGW620-700 sends telemetry data to *better* the customer experience.
 
 ## Software versions
 
@@ -174,9 +174,19 @@ version number: `BGW620_X.XX.X`.
 | Software Version |
 | ---------------- |
 | 5.31.9           |
-| &hellip;         |
+| 5.31.8           |
+| 5.31.7           |
+| 5.31.6           |
+| 5.31.5           |
+| 5.31.4           |
+| 5.31.3           |
+| 5.31.2           |
 | 5.31.1           |
 | 5.30.9           |
+| 5.30.8           |
+| 5.30.7           |
+| 5.30.6           |
+| 5.30.5           |
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
