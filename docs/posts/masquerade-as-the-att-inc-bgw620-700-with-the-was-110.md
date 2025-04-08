@@ -171,22 +171,7 @@ The software version can be acquired by reconnecting the BGW620-700 and navigati
 <http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following string pattern with the
 version number: `BGW620_X.XX.X`.
 
-| Software Version |
-| ---------------- |
-| 5.31.9           |
-| 5.31.8           |
-| 5.31.7           |
-| 5.31.6           |
-| 5.31.5           |
-| 5.31.4           |
-| 5.31.3           |
-| 5.31.2           |
-| 5.31.1           |
-| 5.30.9           |
-| 5.30.8           |
-| 5.30.7           |
-| 5.30.6           |
-| 5.30.5           |
+{{ read_csv('docs/posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110/versions.csv') }}
 
   [Purchase a WAS-110]: #purchase-a-was-110
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
