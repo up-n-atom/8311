@@ -6,7 +6,7 @@ hide:
 
 # Stickers
 
-Our stickers are a symbolic mix of pop and geek culture that invite the user to express themselves with humour.
+Our stickers are a quirky mix of pop and geek culture that invite the user to express themselves with a bit of humour.
 Right click to Save Image As...
 
 <div class="grid" markdown>
