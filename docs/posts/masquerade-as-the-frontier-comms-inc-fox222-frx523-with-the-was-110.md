@@ -111,8 +111,8 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         | Equipment ID                     | FRX523                  |                                 |
         | Hardware Version                 | FRX523                  |                                 |
         | Sync Circuit Pack Version        | :check_mark:            |                                 |
-        | Software Version A               | R4.4.13.057             | [Version listing]               |
-        | Software Version B               | R4.4.13.057             | [Version listing]               |
+        | Software Version A               | R4.4.13.061             | [Version listing]               |
+        | Software Version B               | R4.4.13.061             | [Version listing]               |
         | Firmware Version Match           | ^(R\d+(?:\\.\d+){3})$   | Community FW v2.5.0+            |
         | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
         | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
@@ -164,8 +164,8 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         fwenv_set -8 equipment_id FRX523
         fwenv_set -8 hw_ver FRX523
         fwenv_set -8 cp_hw_ver_sync 1
-        fwenv_set -8 sw_verA R4.4.13.057 # (2)!
-        fwenv_set -8 sw_verB R4.4.13.057
+        fwenv_set -8 sw_verA R4.4.13.061 # (2)!
+        fwenv_set -8 sw_verB R4.4.13.061
         fwenv_set -b 8311_fw_match '^(R\d+(?:\.\d+){3})$'
         fwenv_set -8 override_active A
         fwenv_set -8 override_commit A
@@ -217,6 +217,7 @@ version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state u
 
     | Software Version |
     | ---------------- |
+    | R4.4.13.061      |
     | R4.4.13.057      |
     | R4.4.13.051      |
     | R4.4.13.041      |
