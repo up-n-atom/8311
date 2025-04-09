@@ -1,5 +1,9 @@
 ---
 title: XS-010X-Q (3FE48118AC) / CIG XG-99YF
+tags:
+  - XS-010X-Q
+  - XG-99YF
+  - 3FE48118AC
 ---
 
 # XS-010X-Q (3FE48118AC) / CIG XG-99YF

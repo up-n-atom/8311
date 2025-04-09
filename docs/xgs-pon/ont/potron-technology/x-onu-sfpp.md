@@ -1,6 +1,7 @@
 ---
 title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
 tags:
+  - X-ONU-SFPP
   - XGSPON-ONU-STICK-V8
   - FV-NS10S
   - SPP425H-GAB4
