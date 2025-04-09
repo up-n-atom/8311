@@ -1,11 +1,15 @@
 ---
 title: X-ONU-SFPP (SFP+ XGSPON ONU Stick)
+tags:
+  - XGSPON-ONU-STICK-V8
+  - FV-NS10S
+  - SPP425H-GAB4
+  - LL-XS1025
 ---
 
 # X-ONU-SFPP (SFP+ XGSPON ONU Stick) [^1]
 
 ![X-ONU-SFPP](x-onu-sfpp/x-onu-sfpp.webp)
-
 
 !!! warning "Caution: Hot surface"
     It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,

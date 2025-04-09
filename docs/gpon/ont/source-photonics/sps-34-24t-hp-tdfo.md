@@ -1,3 +1,11 @@
+---
+title: SPS-34-24T-HP-TDFO
+tags:
+  - G-010S-P
+  - MA5671A
+  - GPON-ONU-34-20BI
+---
+
 # SPS-34-24T-HP-TDFO
 
 ![G-010S-P](sps-34-24t-hp-tdfo/g-010s-p.webp)
