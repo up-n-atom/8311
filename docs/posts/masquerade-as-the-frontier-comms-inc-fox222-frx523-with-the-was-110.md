@@ -217,6 +217,7 @@ version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state u
 
     | Software Version |
     | ---------------- |
+    | R4.4.13.064      |
     | R4.4.13.061      |
     | R4.4.13.057      |
     | R4.4.13.051      |
