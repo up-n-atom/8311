@@ -228,7 +228,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | --------------------------------------------------- | --------------------- | ---------------------- | ------------- |
 | [FiberMall](https://www.fibermall.com/)             | [XGSPON-ONU-STICK-V8] | :globe_with_meridians: | 8311          |
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]            |                        | PTXG (Potron) |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | PTXG (Potron) or 8311 |
+| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | 8311 or PTXG (Potron) |
 | [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]           | :globe_with_meridians: | 8311 fork (community branding removed) |
 | [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | :star: [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 or PTXG (Potron) |
 
