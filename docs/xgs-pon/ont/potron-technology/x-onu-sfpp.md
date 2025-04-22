@@ -35,7 +35,7 @@ tags:
 
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV
- [[RS256M32LD3D1LMZ]]: https://www.lcsc.com/datasheet/lcsc_datasheet_2411220107_Rayson-RS256M32LD3D1LMZ-125BT_C2840152.pdf
+ [RS256M32LD3D1LMZ]: https://www.lcsc.com/datasheet/lcsc_datasheet_2411220107_Rayson-RS256M32LD3D1LMZ-125BT_C2840152.pdf
  [MT52L256M32D1PF]: https://www.micron.com/products/memory/dram-components/lpddr/part-catalog/part-detail/mt52l256m32d1pf-107-wt-b
  [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
