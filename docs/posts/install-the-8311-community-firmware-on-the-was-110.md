@@ -235,9 +235,17 @@ configurations based on your network setup:
 
         </div>
 
-        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+        1. Set the SFP+ port as the WAN interface by navigating to **Network > Settings > Internet**.
 
-        2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+        2. Create a static route entry by navigating to **Network > Settings > Routing > Static Routes** and applying
+           the settings below.
+
+            |                         |                  |
+            | ----------------------- | ---------------- |
+            | **Name**                | ONT              |
+            | **Destination Network** | 192.168.11.0/24  |
+            | **Type**                | Interface        |
+            | **Value**               | WAN              |
 
 === "Source NAT"
 
