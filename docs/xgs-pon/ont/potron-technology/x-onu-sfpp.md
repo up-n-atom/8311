@@ -25,7 +25,7 @@ tags:
 | ----------: | --------------------------------------------------- | ------------------- |
 | __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc             | [Architecture] [^4] |
 | __NAND__    | 128 MB *(1 Gbit)*                                   | [WN25N01GV]         |
-| __RAM__     | 1 GB                                                | [RS256M32LD3D1LMZ] Identifies as [MT52L256M32D1PF] |
+| __RAM__     | 1 GB                                                | [RS256M32LD3D1LMZ]  |
 | __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      | [M02181]            |
 | __EEPROM__  | :check_mark:                                        | [M02181]            |
 | __UART__    | UART 	Rx: pin 7 / Tx: pin 2 - 115200-8-1-N          |                     |
@@ -36,7 +36,6 @@ tags:
  [Architecture]: #architecture
  [WN25N01GV]: https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&partNo=W25N01GV
  [RS256M32LD3D1LMZ]: https://www.lcsc.com/datasheet/lcsc_datasheet_2411220107_Rayson-RS256M32LD3D1LMZ-125BT_C2840152.pdf
- [MT52L256M32D1PF]: https://www.micron.com/products/memory/dram-components/lpddr/part-catalog/part-detail/mt52l256m32d1pf-107-wt-b
  [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
 
