@@ -122,8 +122,6 @@ we take no responsibility or liability for the listed resellers.
     An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
     [XS-010X-Q] ONT, an SFU.
 
-    * [Acanac](https://acanac.com/)
-    * [Distributel](https://www.distributel.ca/)
     * [EBOX](https://www.ebox.ca/)
     * [Oricom](https://www.oricom.ca/)
     * [Primus](https://primus.ca/)
