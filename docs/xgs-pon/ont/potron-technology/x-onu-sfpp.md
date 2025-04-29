@@ -226,17 +226,19 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 | Company                                             | Product Number        | E-commerce             | Firmware      |
 | --------------------------------------------------- | --------------------- | ---------------------- | ------------- |
-| [FiberMall](https://www.fibermall.com/)             | [XGSPON-ONU-STICK-V8] | :globe_with_meridians: | 8311          |
+| [FiberMall](https://www.fibermall.com/)             | [XGSPON-ONU-STICK-V8] | :globe_with_meridians: | 8311 fork     |
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]            |                        | PTXG (Potron) |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | 8311 or PTXG (Potron) |
-| [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]           | :globe_with_meridians: | 8311 fork (community branding removed) |
-| [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | :star: [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 or PTXG (Potron) |
+| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | 8311 fork or PTXG (Potron) |
+| [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]           | :globe_with_meridians: | 8311 fork     |
+| [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | :star: [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 fork or PTXG (Potron) |
 
 * <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
+* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or install the official [8311 firmware].</small>
 
   [XGSPON-ONU-STICK-V8]: https://www.fibermall.com/sale-462134-xgspon-onu-sfp-stick-i-temp.htm
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
   [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
+  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
