@@ -233,11 +233,13 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | :star: [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 fork or PTXG (Potron) |
 
 * <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
-* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or install the official [8311 firmware].</small>
+* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or [install] the official [8311 firmware].</small>
 
   [XGSPON-ONU-STICK-V8]: https://www.fibermall.com/sale-462134-xgspon-onu-sfp-stick-i-temp.htm
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
   [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
+
+  [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
   [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
