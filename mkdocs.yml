@@ -111,6 +111,8 @@ nav:
     - ONT:
       - BFW Solutions:
         - xgs-pon/ont/bfw-solutions/was-110.md
+      - Calix:
+        - xgs-pon/ont/calix/100-05610.md
       - Nokia:
         - XS-010X-Q: xgs-pon/ont/nokia/xs-010x-q.md
       - Potron Technology:
