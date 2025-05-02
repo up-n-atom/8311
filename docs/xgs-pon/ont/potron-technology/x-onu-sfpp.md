@@ -184,11 +184,25 @@ i2cget -fy 0 0x51 0x0
 
 ### Write
 
-The EEPROM is write protected. The A2 (0x51) User EEPROM section from 128 (0x80) to 247 (0xF7) can be unlocked using
-the password `68646762` by writing it to A2 (0x51) at offset `0x7B`.
+The EEPROM is write-protected; There are two (2) known passcodes, the user and vendor passcode.
+
+#### User
+
+The A2 (0x51) User EEPROM section from 128 (0x80) to 247 (0xF7) can be unlocked using
+the passcode `68646762` by writing it to A2 (0x51) at offset `0x7B`.
 
 ``` sh
 i2cset -fy 0 0x51 0x7B 0x68 0x64 0x67 0x62 i
+```
+
+#### Vendor
+
+!!! warning "Incorrect writes to the EEPROM can prevent the host from recognizing the X-ONU-SFPP"
+
+A0 (0x50) can be unlocked using the passcode `9142F007` by writing it to A2 (0x51) at offset `0x7B`.
+
+``` sh
+i2cset -fy 0 0x51 0x7B 0x91 0x42 0xF0 0x07 i
 ```
 
 ## Default Credentials
