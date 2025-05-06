@@ -63,6 +63,10 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
 
 ### PON serial number
 
+#### with the web UI
+
+!!! failure "The __PON Serial Number__ has been removed from the __Fiber__ status page to thwart masquerading."
+
 <div class="swiper" markdown>
 
 <div class="swiper-slide" markdown>
@@ -93,6 +97,12 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
 3. From the __Administration__ page, click on the __Fiber__ section inside the __Internet__ panel on the left-hand side.
 
 4. From the __Fiber__ page, copy the __Serial Number__ beginning with `SMBS`.
+
+#### with the web API
+
+1. Within a web browser, navigate to <https://mabbox.bytel.fr/api/v1/wan/sfp>.
+
+2. From the JSON output, search and copy the __Serial Number__ beginning with `SMBS`.
 
 ### PLOAM registration ID
 

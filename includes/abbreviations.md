@@ -13,6 +13,7 @@
 *[IEEE]: Institute of Electrical and Electronics Engineers
 *[IP]: Internet Protocol
 *[ISP]: Internet Service Provider
+*[JSON]: JavaScript Object Notation
 *[LAN]: Local Area Network
 *[MAC]: Medium Access Control
 *[MIB]: Management Information Base
