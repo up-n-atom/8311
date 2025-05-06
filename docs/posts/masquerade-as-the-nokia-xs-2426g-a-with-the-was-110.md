@@ -13,7 +13,7 @@ slug: masquerade-as-the-nokia-xs-2426g-a-with-the-was-110
 
 # Masquerade as the Nokia XS-2426G-A with the WAS-110 or X-ONU-SFPP
 
-![XS-2426G-A](masquerade-as-the-nokia-xs-2426G-a-with-the-was-110/bypass_xs2426ga.webp){ class="nolightbox" }
+![XS-2426G-A](masquerade-as-the-nokia-xs-2426g-a-with-the-was-110/bypass_xs2426ga.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
