@@ -35,7 +35,7 @@ we take no responsibility or liability for the listed resellers.
 
 ## Install the 8311 community firmware
 
-As a prerequisite to masquerading as the XS-010X-Q, the 8311 community firmware is recommended and required for the
+As a prerequisite to masquerading as the XS-250X-A, the 8311 community firmware is recommended and required for the
 remainder of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
@@ -126,8 +126,6 @@ present.
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
 4. __Save__ changes and reboot from the __System__ menu.
-
-### from the shell
 
 ### from the shell
 
