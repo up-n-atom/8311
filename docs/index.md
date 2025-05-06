@@ -8,6 +8,7 @@
     <option value="bell-mts">&#127464;&#127462; Bell MTS</option>
     <option value="bouygues-sa">&#127467;&#127479; Bouygues S.A</option>
     <option value="frontier">&#127482;&#127480; Frontier</option>
+    <option value="lightspeed">&#127468;&#127463; Lightspeed</option>
     <option value="orange-sa">&#127467;&#127479; Orange S.A.</option>
     <option value="orange-polska-sa">&#127477;&#127473; Orange Polska S.A.</option>
     <option value="rogers">&#127464;&#127462; Rogers</option>
