@@ -9,6 +9,8 @@ categories:
   - 8311 Firmware
   - OPNsense
   - Better Internet Store
+  - YouFibre
+  - Netomnia
 description: Replace an ADTRAN ONT with a WAS-110 preloaded with 8311 firmware on XGS-PON
 slug: replace-adtran-ont-with-was-110
 ---
@@ -20,7 +22,7 @@ slug: replace-adtran-ont-with-was-110
 
 This guide outlines how to replace an **ADTRAN SDX621i** ONT on an XGS-PON line using a [WAS-110] module pre-flashed with 8311 firmware.
 
-This has been successfully tested by a user on **Netomnia / YouFibre** in the UK, who received a static IP via DHCP using a cloned MAC and VLAN 911 tagging.
+This has been successfully tested by a user on **Netomnia / YouFibre** in the UK, who received a static IP via DHCP using a cloned MAC.
 
 ---
 
@@ -49,6 +51,13 @@ Once the WAS-110 is inserted into an SFP+ port and connected to the fiber socket
 ---
 
 ## 8311 Configuration
+
+### Masquerade setup
+
+To successfully masquerade on XGS-PON, the original ONT serial number and MAC is mandatory. It, along with other key
+identifiers are available on the bottom label of the ADTRAN SDX621i, shown by the arrows in the following depiction:
+
+![ADTRAN SDX621i label](masquerade-as-the-adtran-sdx621i-with-the-was-110/adtran.webp)
 
 ### Configuration tab
 
