@@ -13,7 +13,7 @@ The website's content aims to be clean and technical. It aids the community with
 helps potential sponsors understand what we are all about!
 
 To contribute to existing guides and/or create new ones, the markdown files can be found within the
-[posts directory](./docs/guides/posts).
+[posts directory](./docs/posts).
 
 Full page screenshots aid users with navigation and are the desired. To take a screenshot, follow the guides for
 your browser of choice:
