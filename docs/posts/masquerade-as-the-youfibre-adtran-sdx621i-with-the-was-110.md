@@ -51,7 +51,7 @@ Once the WAS-110 is connected to your fiber socket and inserted into an SFP+ por
 | Attribute                  | Value                        | Mandatory  | Notes                          |
 | --------------------------|------------------------------|------------|--------------------------------|
 | PON Serial Number (ONT ID)| *Your original ONT serial*   | ✅         | Bottom of ONT           |
-| Equipment ID              | `ADTN`               | ✅         | Matches ZTE ONTs               |
+| Equipment ID              | `ADTN`               | ✅         | Matches ADTRAN ONTs               |
 | Hardware Version          | `1.2.1b`                     | optional   | Can be left as-is              |
 | Sync Circuit Pack Version | `1`                          | optional   | Sometimes required by OLT      |
 | Software Version A        | `3.7.4-2306.5`               | ✅         | Confirmed working              |
