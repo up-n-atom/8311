@@ -1,46 +1,50 @@
 ---
-date: 2025-05-12
+date:
+  created: 2025-05-12
+draft: true
 categories:
   - XGS-PON
-  - YouFibre
-  - Netomnia
+  - ADTRAN
   - WAS-110
   - 8311 Firmware
   - OPNsense
   - Better Internet Store
-description: Configure the WAS-110 on YouFibre / Netomnia XGS-PON with a preloaded 8311 firmware
-slug: connect-to-youfibre-xgs-pon-with-the-was-110
+description: Replace an ADTRAN ONT with a WAS-110 preloaded with 8311 firmware on XGS-PON
+slug: replace-adtran-ont-with-was-110
 ---
 
-# Connect to YouFibre / Netomnia XGS-PON with the WAS-110
-
-<!--![Connect to YouFibre](shared-assets/youfibre_was_110.webp){ class="nolightbox" }-->
+# Replace an ADTRAN SDX ONT with the WAS-110 on XGS-PON
 
 <!-- more -->
 <!-- nocont -->
 
+This guide outlines how to replace an **ADTRAN SDX621i** ONT on an XGS-PON line using a [WAS-110] module pre-flashed with 8311 firmware.
+
+This has been successfully tested by a user on **Netomnia / YouFibre** in the UK, who received a static IP via DHCP using a cloned MAC and VLAN 911 tagging.
+
+---
+
 ## What you need
 
-- A [WAS-110] module, preferably pre-flashed with [8311 firmware](https://github.com/djGrrr/8311-was-110-firmware-builder)
-- SC/APC to LC/APC cable or coupler (check which side your socket terminates with). My YouFibre install came **pre-terminated with SC/APC**, which fits directly into the WAS-110. No extra patch cables or adapters were needed.
-- Your provisioned **PON Serial Number**
-- A router or firewall (e.g. OPNsense) with SFP+ WAN (or an isolated VLAN for WAN)
-- Optional: ability to clone MAC address (for static IP assignment from YouFibre)
+- A [WAS-110] module, pre-flashed with [8311 firmware](https://github.com/djGrrr/8311-was-110-firmware-builder)
+- Your provisioned **PON Serial Number** (from your ISP)
+- A router or firewall (e.g. OPNsense) with a VLAN-capable WAN interface (e.g. VLAN 911)
+- Optional: ability to clone MAC address (required for static IP from some ISPs)
 
-!!! question "Do I need to flash the firmware?"
-    This guide assumes your module comes preloaded with 8311 firmware. Flashing instructions are available separately.
+!!! note "Fiber connector"
+    The original ONT in this case was connected using **SC/APC**, which plugged directly into the WAS-110 — no patch cables or adapters were necessary.
 
 ---
 
 ## Configuration overview
 
-Once the WAS-110 is connected to your fiber socket and inserted into an SFP+ port, follow these steps:
+Once the WAS-110 is inserted into an SFP+ port and connected to the fiber socket:
 
 ### 1. Access the 8311 web UI
 
-- Assign your PC an IP like `192.168.11.3/24`
-- Connect directly or via switch to the ONT
-- Navigate to: `https://192.168.11.1/cgi-bin/luci/admin/8311/config`
+- Assign your computer a static IP (e.g., `192.168.11.3/24`)
+- Connect to the module directly or via switch
+- Visit: `https://192.168.11.1/cgi-bin/luci/admin/8311/config`
 
 ---
 
@@ -48,56 +52,50 @@ Once the WAS-110 is connected to your fiber socket and inserted into an SFP+ por
 
 ### Configuration tab
 
-| Attribute                  | Value                        | Mandatory  | Notes                          |
-| --------------------------|------------------------------|------------|--------------------------------|
-| PON Serial Number (ONT ID)| *Your original ONT serial*   | ✅         | Bottom of ONT           |
-| Equipment ID              | `ADTN`               | ✅         | Matches ADTRAN ONTs               |
-| Hardware Version          | `1.2.1b`                     | optional   | Can be left as-is              |
-| Sync Circuit Pack Version | `1`                          | optional   | Sometimes required by OLT      |
-| Software Version A        | `3.7.4-2306.5`               | ✅         | Confirmed working              |
-| Software Version B        | `3.7.4-2306.5`               | ✅         | Matches A                      |
-| MIB File                  | `/etc/mibs/prx300_1U.ini`    | ✅         | Required. Note **1U Not 1V** 
-for VEIP and OLT match|
-| MAC                  | Cloned from original ONT    | ✅         | Required
-
-!!! bug "Empty VLAN table or no WAN IP?"
-    Disable `Fix VLANs` under the *ISP Fixes* tab and reboot. Without this, DHCP may silently fail.
+| Attribute                  | Value                        | Mandatory  | Notes                                 |
+|---------------------------|------------------------------|------------|---------------------------------------|
+| PON Serial Number (ONT ID)| From original ONT            | ✅         | Found on label of ADTRAN device       |
+| Equipment ID              | `ADTN`                       | ✅         | Matches expected ID for ADTRAN ONTs   |
+| Hardware Version          | `1.2.1b`                     |            |                                       |
+| Sync Circuit Pack Version | `1`                          |            |                                       |
+| Software Version A        | `3.7.4-2306.5`               | ✅         | Confirmed working version             |
+| Software Version B        | `3.7.4-2306.5`               | ✅         | Matches A                             |
+| MIB File                  | `/etc/mibs/prx300_1U.ini`    | ✅         | Note: use `1U`, not `1V`, for VEIP    |
+| MAC Address               | Cloned from original ONT     | ✅         | Required for static IP on some ISPs   |
 
 ---
 
-## Real-world usage notes
+## Real-world example
 
-### 💬 My user report
+A UK-based user successfully replaced their **ADTRAN SDX621i** on **YouFibre (Netomnia)** using a WAS-110 from the [Better Internet Store].
 
-> I managed to get PLOAM to O5.1 (Associated), but my OPNsense WAN didn’t get a DHCP IP until I:
+### Observations:
+
+> PLOAM state reached **O5.1 (Associated)**, but no WAN IP was received until:
 >
-> - Disabled `Fix VLANs`
-> - Rebooted OPNsense
+> - `Fix VLANs` was disabled
+> - OPNsense was rebooted
 >
-
-> The 8311 UI was unaccessible after moving it into the WAN VLAN, tried adding a static route but no use.
-
-> I successfully replaced the ISP ADTRAN SDX621i ONT.
+> The 8311 UI became unreachable after assigning it to the WAN VLAN — a static route attempt was unsuccessful. For ongoing access, it's best to configure the ONT before attaching it to your WAN.
 
 ---
 
 ## Performance
 
-Running at **1 Gbps symmetric**, reports:
+Reported speeds were slightly improved:
 
-> I saw about a 50 Mbps increase in speed, though the main win was space-saving in the network cabinet by eliminating the external ONT.
+> On a 1 Gbps symmetric connection, speed tests showed a 50 Mbps improvement. More importantly, space was freed in the network cabinet by removing the external ONT.
 
 ---
 
 ## Resources
 
-- [8311 Discord Community](https://discord.gg/X7ES6Vu6gJ)
-- [WAS-110 Product Page](../xgs-pon/ont/bfw-solutions/was-110.md)
-- [Troubleshooting Fake O5](../guides/troubleshoot-connectivity-issues-with-the-was-110.md#fake-o5)
+- [WAS-110 Documentation](../xgs-pon/ont/bfw-solutions/was-110.md)
+- [Troubleshooting fake O5](../guides/troubleshoot-connectivity-issues-with-the-was-110.md#fake-o5)
+- [8311 Firmware Builder on GitHub](https://github.com/djGrrr/8311-was-110-firmware-builder)
 
 ---
 
 ## Thanks
 
-Special thanks to [Better Internet Store](https://www.betterinternet.ltd) for support and supplying the pre-flashed module.
-
+Thanks to [Better Internet Store](https://www.betterinternet.ltd) for supplying the pre-flashed module and to the 8311 community for collective testing efforts.
