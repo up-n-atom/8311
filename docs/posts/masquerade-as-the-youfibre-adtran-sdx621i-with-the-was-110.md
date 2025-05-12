@@ -56,7 +56,7 @@ Once the WAS-110 is connected to your fiber socket and inserted into an SFP+ por
 | Sync Circuit Pack Version | `1`                          | optional   | Sometimes required by OLT      |
 | Software Version A        | `3.7.4-2306.5`               | ✅         | Confirmed working              |
 | Software Version B        | `3.7.4-2306.5`               | ✅         | Matches A                      |
-| MIB File                  | `/etc/mibs/prx300_1U.ini`    | ✅         | Required 
+| MIB File                  | `/etc/mibs/prx300_1U.ini`    | ✅         | Required. Note **1U Not 1V** 
 for VEIP and OLT match|
 | MAC                  | Cloned from original ONT    | ✅         | Required
 
