@@ -207,6 +207,19 @@ i2cset -fy 0 0x51 0x7B 0x91 0x42 0xF0 0x07 i
 
 ## Default Credentials
 
+### Web credentials
+
+=== "[FiberMall] 8311 fork"
+
+    !!! note "8311 forks are NOT supported by the 8311 community"
+        Please follow the FiberMall support documentation below or [install] the official [8311 firmware].
+
+        <https://www.fibermall.com/blog/how-to-use-xgspon-onu-stick.htm>
+
+    | Username | Password       |
+    | -------- | -------------- |
+    | root     | Aa123456       |
+
 ### Shell credentials
 
 ???- info "OpenSSH/SSL: unsupported algorithms and changes since 8.8 and newer"
