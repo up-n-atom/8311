@@ -209,7 +209,7 @@ i2cset -fy 0 0x51 0x7B 0x91 0x42 0xF0 0x07 i
 
 ### Web credentials
 
-=== "[FiberMall] 8311 fork"
+=== "FiberMall 8311 fork"
 
     !!! note "8311 forks are NOT supported by the 8311 community"
         Please follow the FiberMall support documentation below or [install] the official [8311 firmware].
