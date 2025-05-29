@@ -7,6 +7,7 @@ categories:
   - Nokia
   - X-ONU-SFPP
   - Telus
+  - AT&T
 description: Masquerade as the Nokia XS-250X-A with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-nokia-xs-250x-a-with-the-was-110
 ---
