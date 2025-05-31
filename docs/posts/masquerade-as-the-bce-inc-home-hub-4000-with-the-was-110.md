@@ -196,7 +196,13 @@ identifiers are available on the back label of the Home Hub 4000, color-coordina
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+![WAS-110 8311 configuration ISP fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 reboot](shared-assets/was_110_luci_reboot.webp){ loading=lazy }
 
 </div>
 

@@ -94,7 +94,13 @@ present.
 
 <div class="swiper-slide" markdown>
 
-![WAS-110 8311 configuration ISP Fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+![WAS-110 8311 configuration ISP fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 reboot](shared-assets/was_110_luci_reboot.webp){ loading=lazy }
 
 </div>
 
@@ -126,7 +132,7 @@ present.
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-4. __Save__ changes and reboot from the __System__ menu.
+4. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
 

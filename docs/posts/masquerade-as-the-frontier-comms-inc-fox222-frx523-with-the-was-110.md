@@ -72,6 +72,12 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
 </div>
 
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 reboot](shared-assets/was_110_luci_reboot.webp){ loading=lazy }
+
+</div>
+
 </div>
 
 1. Within a web browser, navigate to
@@ -120,7 +126,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         | MIB File                         | /etc/mibs/prx300_1U.ini | PPTP i.e. default value         |
         | Pon Slot                         | 10                      |                                 |
 
-3. __Save__ changes and reboot from the __System__ menu.
+3. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
 

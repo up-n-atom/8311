@@ -127,6 +127,12 @@ depiction:
 
 </div>
 
+<div class="swiper-slide" markdown>
+
+![WAS-110 8311 reboot](shared-assets/was_110_luci_reboot.webp){ loading=lazy }
+
+</div>
+
 </div>
 
 1. Within a web browser, navigate to
@@ -165,7 +171,7 @@ depiction:
         | Software Version B         | 3FEARCB1001505                | [Version listing]        |
         | MIB File                   | /etc/mibs/prx300_1U_telus.ini | PPTP                     |
 
-3. __Save__ changes and reboot from the __System__ menu.
+3. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
 
