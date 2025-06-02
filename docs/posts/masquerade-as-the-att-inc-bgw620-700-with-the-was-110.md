@@ -47,7 +47,7 @@ Purchase at your discretion; we take no responsibility or liability for the list
     function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
     the Internet.
 
-## Install mandatory firmware
+## Install firmware
 
 === "WAS-110"
 
@@ -69,7 +69,7 @@ Purchase at your discretion; we take no responsibility or liability for the list
 
 === "HLX-SFPX"
 
-    [HALNy] has provided a customer firmware with satisfactory customization for masquerading as the BGW62-700.
+    [HALNy] has provided a custom firmware with satisfactory customization for masquerading as the BGW62-700.
     It's available by request from [HALNy] and has been made available for download on the
     [8311 Discord community server].
 
@@ -84,16 +84,17 @@ Purchase at your discretion; we take no responsibility or liability for the list
 ## Masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the fiber stats page.
+identifiers are available on the fiber stats page at <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
 === "WAS-110"
 
     The 8311 community firmware extends the ONT terminal shell management tools and configuration into a user-friendly
     web UI. Both are accessible to the end user and can be used separately or in conjunction with each other.
 
+    Choose your preferred setup method: [web UI](#from-the-web-ui) or [shell](#from-the-shell) and carefully follow the
+    steps to avoid unneeded downtime and troubleshooting.
 
-
-    <h3>from the web UI <small>recommended</small></h3>
+    <h3 id="from-the-web-ui">from the web UI <small>recommended</small></h3>
 
     ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
         All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
@@ -149,7 +150,7 @@ identifiers are available on the fiber stats page.
 
     4. __Save__ changes and *reboot* from the __System__ menu.
 
-    <h3>from the shell</h3>
+    <h3 id="from-the-shell">from the shell</h3>
 
     1. Login over secure shell (SSH).
 
