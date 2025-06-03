@@ -73,18 +73,19 @@ Purchase at your discretion; we take no responsibility or liability for the list
     It's available by request from [HALNy] and has been made available for download on the
     [8311 Discord community server].
 
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin* [web credentials].
+    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+       [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __System__ drop-down, click __Flash Firmware__.
     3. From the __Flash Firmware__ page, click __Choose Image__, browse for `HLX-SFPX_V7-0-6t1.zip`, and click
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
 
-      [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
-
 ## Masquerade setup
 
 To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the fiber stats page at <http://192.168.1.254/cgi-bin/fiberstat.ha>
+identifiers are available on the fiber stats page at:
+
+<http://192.168.1.254/cgi-bin/fiberstat.ha>
 
 === "WAS-110"
 
@@ -200,7 +201,8 @@ identifiers are available on the fiber stats page at <http://192.168.1.254/cgi-b
 
     ![HLX-SFPX custom values](shared-assets/hlx_sfpx_settings.webp){ loading=lazy }
 
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin* [web credentials].
+    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+       [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation click __System__.
     3. From the __System__ page, in the __Custom values__ section, fill in the configuration with the following values:
 
@@ -244,5 +246,6 @@ version number: `BGW620_X.XX.X`.
   [HALNy]: https://halny.com/
   [Version listing]: #software-versions
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
