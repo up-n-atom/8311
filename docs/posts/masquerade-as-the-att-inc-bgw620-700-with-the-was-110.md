@@ -54,9 +54,6 @@ Purchase at your discretion; we take no responsibility or liability for the list
     Although not strictly necessary for AT&T, the 8311 community firmware is highly recommended for masquerading as
     the BGW620-700 and used for the remainder of the WAS-110 sections of this guide.
 
-    The 8311 community firmware makes the masquerading process easy for both novice and experienced users with an
-    extensive PLOAM and OMCI customization environment.
-
     There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
 
     __Method 1: <small>recommended</small></h4>__
@@ -89,11 +86,8 @@ identifiers are available on the fiber stats page at:
 
 === "WAS-110"
 
-    The 8311 community firmware extends the ONT terminal shell management tools and configuration into a user-friendly
-    web UI. Both are accessible to the end user and can be used separately or in conjunction with each other.
-
     Choose your preferred setup method: [web UI](#from-the-web-ui) or [shell](#from-the-shell) and carefully follow the
-    steps to avoid unneeded downtime and troubleshooting.
+    steps to avoid unnecessary downtime and troubleshooting.
 
     <h3 id="from-the-web-ui">from the web UI <small>recommended</small></h3>
 
