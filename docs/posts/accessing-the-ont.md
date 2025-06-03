@@ -18,7 +18,7 @@ description: Accessing the ONT
 * [Source NAT](#source-nat)
 * [Static Route](#static-route)
 
-## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Source NAT" }
+## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Static IP" }
 
 === ":material-microsoft: Windows"
 
@@ -250,7 +250,39 @@ description: Accessing the ONT
         iptables -t nat -A POSTROUTING -o eth9 -d 192.168.11.1 -j SNAT --to 192.168.11.2 # (1)!
         ```
 
-        1. Replace `eth9` 
+        1. Replace `eth9`
+
+=== ":simple-mikrotik: MikroTik RouterOS"
+
+    1. Assign a static IP on the Ethernet interface within the same subnet as the ONT by navigating to **IP > Addresses**.
+
+        |                   |                   |
+        | ----------------- | ----------------- |
+        | **Address**       | 192.168.11.2/24   |
+        | **Interface**     | sfp-sfpplus1      |
+
+        ![RouterOS Add IP Address](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_ip_address.webp){ loading=lazy }
+
+    2. From Apply a source NAT rule for the Ethernet interface and assigned IP(s) by navigating to **IP > Firewall > NAT**.
+
+        |                       |                   |
+        | --------------------- | ----------------- |
+        | **Chain**             | srcnat            |
+        | **Dst. Address**      | 192.168.11.1      |
+        | **Out. Interface**    | sfp-sfpplus1      |
+        | **Action**            | src-nat           |
+        | **To Addresses**      | 192.168.11.2      |
+
+        ![RouterOS srcnat Match](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_match.webp){ loading=lazy }
+        ![RouterOS srcnat Action](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_action.webp){ loading=lazy }
+
+    !!! tip "The same actions can be applied from the terminal."
+
+        ``` sh
+        /ip/address add address=192.168.11.2/24 interface=sfp-sfpplus1 network=192.168.11.0
+        /ip firewall nat add action=src-nat chain=srcnat dst-address=192.168.11.1 out-interface=sfp-sfpplus1 to-addresses=192.168.11.2
+        ```
+
 
 ## Static Route
 
@@ -267,5 +299,7 @@ description: Accessing the ONT
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
 
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+
+=== ":simple-mikrotik: MikroTik RouterOS"
 
 You should now be able to access the [WAS-110] at `192.168.11.1`.
