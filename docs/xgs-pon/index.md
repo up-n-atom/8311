@@ -9,6 +9,18 @@ hide:
 
 <div class="grid cards" markdown>
 
+-   __[G.9807.1]__
+
+    ---
+
+    10-Gigabit-capable symmetric passive optical network (XGS-PON)
+
+-   __[G.9807.2]__
+
+    ---
+
+    10 Gigabit-capable passive optical networks (XG(S)-PON): Reach extension
+
 -   __[G.987]__
 
     ---
@@ -47,6 +59,8 @@ hide:
 
 </div>
 
+  [G.9807.1]: https://www.itu.int/rec/T-REC-G.9807.1/en
+  [G.9807.2]: https://www.itu.int/rec/T-REC-G.9807.2/en
   [G.987]: http://www.itu.int/rec/T-REC-G.987/en
   [G.987.1]: http://www.itu.int/rec/T-REC-G.987.1/en
   [G.987.2]: http://www.itu.int/rec/T-REC-G.987.2/en
