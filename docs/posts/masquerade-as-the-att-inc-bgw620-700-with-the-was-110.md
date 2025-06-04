@@ -29,7 +29,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
         ([ITU G.9807.1](../xgs-pon/index.md)). It lacks ONT management ([ITU G.988](../xgs-pon/index.md)), meaning it
         cannot function as a standalone ONT.
 
-    __Do the WAS-110 or HLX-SFPX transceivers support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
+    __Do the WAS-110 or HLX-SFPX ONTs support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
 
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
