@@ -25,13 +25,14 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     __Can I take an SFP+ module provided by AT&T and plug it directly into my own router or switch?__
 
-    :   No, the AT&T supplied SFP+ module is only a physical-layer transceiver compliant with XGS-PON (ITU G.9807.1).
-        It lacks ONT management (ITU G.988), meaning it cannot function as a standalone ONT.
+    :   No, the AT&T supplied SFP+ module is only a physical-layer transceiver compliant with XGS-PON
+        ([ITU G.9807.1](../xgs-pon/index.md)). It lacks ONT management ([ITU G.988](../xgs-pon/index.md)), meaning it
+        cannot function as a standalone ONT.
 
     __Do the WAS-110 or HLX-SFPX transceivers support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
 
     :   No, the BOSA in these modules is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
-        1270 nm upstream. They use the Macom M02180 (WAS-110) and Semtech GN28L96 (HLX-SFPX) drivers, which are
+        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
         designed specifically for 10G PON ONT applications.
 
 ## Determine if you're an XGS-PON subscriber
