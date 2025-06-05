@@ -38,29 +38,45 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 ## Determine if you're an XGS-PON subscriber
 
 !!! info "2 Gbps or higher tiers"
-    If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to [Purchase a WAS-110].
+    If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to
+    [Purchase a WAS-110 or HLX-SFPX ONT].
+
+### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
 ![BGW620-700 Fiber status](masquerade-as-the-att-inc-bgw620-700-with-the-was-110/bgw320_500_505_fiber_status.webp){ loading=lazy }
 
 1. Within a web browser, navigate to
    <http://192.168.1.254/cgi-bin/fiberstat.ha>
-2. Check the status listing for the __Wave Length__ value. A reading of 1270 nm indicates an XGS-PON subscription.
+2. Check the status listing for the __Wave Length__ value. A reading of *1270 nm* indicates an XGS-PON subscription.
 
-## Purchase a WAS-110 or HLX-SFPX
+### with the transceiver
 
-The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide.
-Purchase at your discretion; we take no responsibility or liability for the listed resellers.
+1. Identify the bale clasp color. If orange/red, proceed.
+2. Engage the bale clasp to release the latch and pull out the transceiver.
+3. Inspect label for XGS-PON or 1270 TX.
 
-[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
+## Purchase a WAS-110 or HLX-SFPX ONT
 
-[HLX-SFPX Value-Added Resellers](../xgs-pon/ont/calix/100-05610.md#value-added-resellers)
+The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
+responsibility or liability for the listed resellers.
+
+<div class="grid cards" markdown>
+
+-    __WAS-110__
+
+     [Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
+
+-    __HLX-SFPX__
+
+     [Value-Added Resellers](../xgs-pon/ont/calix/100-05610.md#value-added-resellers)
+
+</div>
 
 !!! question "Is the WAS-110 or HLX-SFPX a router?"
-    The [WAS-110] and [HLX-SFPX] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
-    function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
-    the Internet.
+    The [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole function
+    is to convert Ethernet to PON over fiber. Additional hardware and software are required for internet access.
 
-## Install firmware
+## Install the ONT firmware
 
 === "WAS-110"
 
@@ -69,13 +85,17 @@ Purchase at your discretion; we take no responsibility or liability for the list
 
     There are two (2) methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
 
-    __Method 1: <small>recommended</small></h4>__
+    <div class="grid cards" markdown>
 
-    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
+    -    __Method 1: <small>recommended</small>__
 
-    __Method 2:__
+         [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
 
-    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    -    __Method 2__
+
+         [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+
+    </div>
 
 === "HLX-SFPX"
 
@@ -90,10 +110,10 @@ Purchase at your discretion; we take no responsibility or liability for the list
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
 
-## Masquerade setup
+## Configure the ONT Settings
 
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the fiber stats page at:
+Successful masquerading depends on the original ONT serial number and other identifiers (e.g., software versions),
+all available via your BGW620-700's fiber stats page:
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
@@ -247,7 +267,7 @@ version number: `BGW620_X.XX.X`.
 
 {{ read_csv('docs/posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110/versions.csv') }}
 
-  [Purchase a WAS-110]: #purchase-a-was-110
+  [Purchase a WAS-110 or HLX-SFPX ONT]: #purchase-a-was-110-or-hlx-sfpx-ont
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [HALNy]: https://halny.com/
