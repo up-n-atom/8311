@@ -33,7 +33,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
-        designed specifically for 10G PON ONT applications.
+        designed specifically for 10G PON applications.
 
 ## Determine if you're an XGS-PON subscriber
 
@@ -44,8 +44,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
 1. Within a web browser, navigate to
    <http://192.168.1.254/cgi-bin/fiberstat.ha>
-
-If the wave length matches <em>1270 nm</em>, you're subscribed on XGS-PON.
+2. Check the status listing for the __Wave Length__ value. A reading of 1270 nm indicates an XGS-PON subscription.
 
 ## Purchase a WAS-110 or HLX-SFPX
 
