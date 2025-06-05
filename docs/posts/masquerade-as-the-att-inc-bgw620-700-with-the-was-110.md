@@ -230,10 +230,10 @@ all available via your BGW620-700's fiber stats page:
 
     ![HLX-SFPX custom values](shared-assets/hlx_sfpx_settings.webp){ loading=lazy }
 
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
-       [web credentials]{ data-preview target="_blank" }.
-    2. From the main navigation click __System__.
-    3. From the __System__ page, in the __Custom values__ section, fill in the configuration with the following values:
+    1. Within a web browser, navigate to <http://192.168.33.1/cgi-bin/luci/admin/system/halny-settings/> and, if asked,
+       input the *useradmin* [web credentials]{ data-preview target="_blank" }.
+    3. From the hidden __HALNy Settings__ page, in the __Custom values__ section, fill in the configuration with the
+       following values:
 
         !!! info "All parameters below are <ins>mandatory</ins>"
 
