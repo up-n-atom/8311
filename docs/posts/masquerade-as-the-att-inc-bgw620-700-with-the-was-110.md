@@ -17,7 +17,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 <!-- more -->
 <!-- nocont -->
 
-!!! warning "New Installations"
+!!! warning "New installations"
     Keep the BGW620-700 in active service for roughly a week or two until fully provisioned and the installation ticket
     has been closed.
 
@@ -34,6 +34,12 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
         designed specifically for 10G PON applications.
+
+    __Is the WAS-110 or HLX-SFPX a router?__
+
+    :   The [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole
+        function is to convert Ethernet to PON over fiber. Additional hardware and software are required for internet
+        access.
 
 ## Determine if you're an XGS-PON subscriber
 
@@ -71,10 +77,6 @@ responsibility or liability for the listed resellers.
      [Value-Added Resellers](../xgs-pon/ont/calix/100-05610.md#value-added-resellers)
 
 </div>
-
-!!! question "Is the WAS-110 or HLX-SFPX a router?"
-    The [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole function
-    is to convert Ethernet to PON over fiber. Additional hardware and software are required for internet access.
 
 ## Install the ONT firmware
 
