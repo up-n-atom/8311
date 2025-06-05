@@ -9,6 +9,12 @@ hide:
 
 ## [Youtube](https://www.youtube.com/)
 
+### June 5, 2025
+
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YlJjdwbXvzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ### April 25, 2025
 
 <div class="video">
@@ -19,6 +25,12 @@ hide:
 
 <div class="video">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BluDAuSU1T4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+### August 31, 2024
+
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YNN6PWDTxfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ### September 15, 2024
