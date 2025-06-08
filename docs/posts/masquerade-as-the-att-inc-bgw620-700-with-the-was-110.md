@@ -37,7 +37,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     __Is the WAS-110 or HLX-SFPX a router?__
 
-    :   The [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole
+    :   No, the [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole
         function is to convert Ethernet to PON over fiber. Additional hardware and software are required for internet
         access.
 
@@ -180,7 +180,7 @@ all available via your BGW620-700's fiber stats page:
 
     4. __Save__ changes and *reboot* from the __System__ menu.
 
-    <h3 id="from-the-shell">from the shell</h3>
+    <h3 id="from-the-shell">from the shell <small>alternative</small></h3>
 
     1. Login over secure shell (SSH).
 
