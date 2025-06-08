@@ -8,6 +8,7 @@ categories:
   - Sagemcom
   - FAST 5685
   - F5685LGB-VMB
+  - F5685LGB-VMIE
 description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
 ---
@@ -192,7 +193,7 @@ the [8311 Discord community server].
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
 
-!!! note "Clone the Hub 5x :purple_circle: MAC address on the router's DHCP WAN interface and tag it and anything in-between the WAS-110 with VLAN 100"
+!!! note "Clone the Hub 5x :purple_circle: MAC address on the router's DHCP WAN interface and tag it and anything in-between the WAS-110 with VLAN 100 in the United Kingdom and VLAN 10 in the Republic of Ireland."
 
 ## Hub 5x software versions
 
