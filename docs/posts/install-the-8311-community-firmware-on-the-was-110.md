@@ -373,6 +373,37 @@ configurations based on your network setup:
             !!! warning "These commands will not persist with the next power cycle or web UI change"
                 For boot persistence, please consider installing [on-boot-script-2.x](https://github.com/unifi-utilities/unifios-utilities/tree/main/on-boot-script-2.x).
 
+    === ":simple-mikrotik: MikroTik RouterOS"
+
+        1. Assign a static IP on the Ethernet interface within the same subnet as the ONT by navigating to **IP > Addresses**.
+
+            |                   |                   |
+            | ----------------- | ----------------- |
+            | **Address**       | 192.168.11.2/24   |
+            | **Interface**     | sfp-sfpplus1      |
+
+            ![RouterOS Add IP Address](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_ip_address.webp){ loading=lazy }
+
+        2. From Apply a source NAT rule for the Ethernet interface and assigned IP(s) by navigating to **IP > Firewall > NAT**.
+
+            |                       |                   |
+            | --------------------- | ----------------- |
+            | **Chain**             | srcnat            |
+            | **Dst. Address**      | 192.168.11.1      |
+            | **Out. Interface**    | sfp-sfpplus1      |
+            | **Action**            | src-nat           |
+            | **To Addresses**      | 192.168.11.2      |
+
+            ![RouterOS srcnat Match](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_match.webp){ loading=lazy }
+            ![RouterOS srcnat Action](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_action.webp){ loading=lazy }
+
+        !!! tip "The same actions can be applied from the terminal."
+
+            ``` sh
+            /ip/address add address=192.168.11.2/24 interface=sfp-sfpplus1 network=192.168.11.0
+            /ip firewall nat add action=src-nat chain=srcnat dst-address=192.168.11.1 out-interface=sfp-sfpplus1 to-addresses=192.168.11.2
+            ```
+
 You should now be able to access the [WAS-110] at `192.168.11.1`.
 
 ## Test optics
