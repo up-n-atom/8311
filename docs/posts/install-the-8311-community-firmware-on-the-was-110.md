@@ -375,29 +375,35 @@ configurations based on your network setup:
 
     === ":simple-mikrotik: MikroTik RouterOS"
 
-        1. Assign a static IP on the Ethernet interface within the same subnet as the ONT by navigating to **IP > Addresses**.
+        === "WinBox/WebFig"
 
-            |                   |                   |
-            | ----------------- | ----------------- |
-            | **Address**       | 192.168.11.2/24   |
-            | **Interface**     | sfp-sfpplus1      |
+            1. Assign a static IP on the Ethernet interface within the same subnet as the ONT by navigating to **IP > Addresses**.
+            Be sure to set the interface to the correct SFP+ interface of your ONT.
 
-            ![RouterOS Add IP Address](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_ip_address.webp){ loading=lazy }
+                |                   |                   |
+                | ----------------- | ----------------- |
+                | **Address**       | 192.168.11.2/24   |
+                | **Interface**     | sfp-sfpplus1      |
 
-        2. From Apply a source NAT rule for the Ethernet interface and assigned IP(s) by navigating to **IP > Firewall > NAT**.
+                ![RouterOS Add IP Address](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_ip_address.webp){ loading=lazy }
 
-            |                       |                   |
-            | --------------------- | ----------------- |
-            | **Chain**             | srcnat            |
-            | **Dst. Address**      | 192.168.11.1      |
-            | **Out. Interface**    | sfp-sfpplus1      |
-            | **Action**            | src-nat           |
-            | **To Addresses**      | 192.168.11.2      |
+            2. From Apply a source NAT rule for the Ethernet interface and assigned IP(s) by navigating to **IP > Firewall > NAT**.
+            Be sure to set the out interface to the correct SFP+ interface of your ONT.
 
-            ![RouterOS srcnat Match](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_match.webp){ loading=lazy }
-            ![RouterOS srcnat Action](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_action.webp){ loading=lazy }
+                |                       |                   |
+                | --------------------- | ----------------- |
+                | **Chain**             | srcnat            |
+                | **Dst. Address**      | 192.168.11.1      |
+                | **Out. Interface**    | sfp-sfpplus1      |
+                | **Action**            | src-nat           |
+                | **To Addresses**      | 192.168.11.2      |
 
-        !!! tip "The same actions can be applied from the terminal."
+                ![RouterOS srcnat Match](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_match.webp){ loading=lazy }
+                ![RouterOS srcnat Action](install-8311-community-firmware-on-the-bfw-solutions-was-110/routeros_srcnat_action.webp){ loading=lazy }
+
+        === "Terminal"
+
+            !!! tip "Be sure to change `sfp-sfpplus1` for the correct SFP+ interface of your ONT. These terminal commands will persist."
 
             ``` sh
             /ip/address add address=192.168.11.2/24 interface=sfp-sfpplus1 network=192.168.11.0
