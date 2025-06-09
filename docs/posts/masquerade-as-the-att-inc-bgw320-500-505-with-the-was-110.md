@@ -91,7 +91,7 @@ responsibility or liability for the listed resellers.
 === "WAS-110"
 
     Although not strictly necessary for AT&T, the 8311 community firmware is highly recommended for masquerading as
-    the BGW620-700 and used for the remainder of the WAS-110 sections of this guide.
+    the BGW320-500/505 and used for the remainder of the WAS-110 sections of this guide.
 
     There are two (2) methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
 

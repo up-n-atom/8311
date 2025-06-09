@@ -47,6 +47,9 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
     If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to
     [Purchase a WAS-110 or HLX-SFPX ONT].
 
+There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [web UI](#with-the-web-ui)
+Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
+
 ### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
 
 ![BGW620-700 Fiber status](masquerade-as-the-att-inc-bgw620-700-with-the-was-110/bgw320_500_505_fiber_status.webp){ loading=lazy }
