@@ -33,7 +33,7 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
-        designed specifically for 10G PON applications.
+        designed specifically for 10G-PON applications.
 
     __Is the WAS-110 or HLX-SFPX a router?__
 
@@ -78,7 +78,7 @@ responsibility or liability for the listed resellers.
 
 </div>
 
-## Install the ONT firmware
+## Install ONT firmware
 
 === "WAS-110"
 
@@ -112,7 +112,7 @@ responsibility or liability for the listed resellers.
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
 
-## Configure the ONT Settings
+## Configure ONT Settings
 
 Successful masquerading depends on the original ONT serial number and other identifiers (e.g., software versions),
 all available via your BGW620-700's fiber stats page:
@@ -217,15 +217,6 @@ all available via your BGW620-700's fiber stats page:
         reboot
         ```
 
-    After rebooting the WAS-110, safely remove the SC/APC cable from the BGW620-700 and connect it to the
-    WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
-    For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
-    the [8311 Discord community server].
-
-      [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
-      [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
-      [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
-
 === "HLX-SFPX"
 
     ![HLX-SFPX custom values](shared-assets/hlx_sfpx_settings.webp){ loading=lazy }
@@ -249,7 +240,57 @@ all available via your BGW620-700's fiber stats page:
 
     4. Click __Save & Reboot__ to apply the parameters.
 
-!!! tip "Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire."
+## Validate ONT Connectivity
+
+### Hot plug fiber cable
+
+!!! warning "Avoid direct eye contact with the end of the fiber optic cable"
+
+After rebooting the [WAS-110] or [HLX-SFPX], safely remove the SC/APC fiber optic cable from the BGW620-700 and
+connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
+
+=== "WAS-110"
+
+    ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
+
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* password.
+    2. From the __PON Status__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
+
+    !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [Optical status] section."
+
+      [Optical status]: troubleshoot-connectivity-issues-with-the-was-110.md#optical-status
+
+=== "HLX-SFPX"
+
+    Unavailable at this time.
+
+### Validate OLT Authentication
+
+=== "WAS-110"
+
+    #### O5.1 PLOAM Status
+
+    ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
+
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* password.
+    2. From the __PON Status__ section, verify that the __PON PLOAM Status__ is in an *05.1, Associated state*.
+
+    !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [PLOAM status] section."
+
+      [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
+
+    #### Populated VLAN Tables
+
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root password.
+    2. From the __VLAN Tables__ page, if the __textarea__ is blank, the ONT configuration has not satisfied the OLT.
+
+=== "HLX-SFPX"
+
+    Unavailable at this time.
+
+## Router Setup
+
+Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
 !!! note "Do not be alarmed..."
     If you receive an e-mail and/or text informing you to:
@@ -276,5 +317,6 @@ version number: `BGW620_X.XX.X`.
   [Version listing]: #software-versions
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
   [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
