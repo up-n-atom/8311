@@ -330,7 +330,12 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
 === "HLX-SFPX"
 
-    Unavailable at this time.
+    ![HLX-SFPX PON status](shared-assets/hlx_sfpx_pon_status.webp){ loading=lazy }
+
+    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+       [web credentials]{ data-preview target="_blank" }.
+    2. From the main navigation __Status__ drop-down, click __PON Interface__.
+    3. From the __Optical Information__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
 
 ### Validate OLT Authentication
 
@@ -354,7 +359,12 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
 === "HLX-SFPX"
 
-    Unavailable at this time.
+    ![HLX-SFPX PON status](shared-assets/hlx_sfpx_pon_status.webp){ loading=lazy }
+
+    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+       [web credentials]{ data-preview target="_blank" }.
+    2. From the main navigation __Status__ drop-down, click __PON Interface__.
+    3. From the __Link Information__ section, verify that the __PLOAM State__ is *05*.
 
 ## Router Setup
 
