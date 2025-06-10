@@ -108,6 +108,22 @@ responsibility or liability for the listed resellers.
     It's available by request from [HALNy] and has been made available for download on the
     [8311 Discord community server].
 
+    <div class="swiper" markdown>
+
+    <div class="swiper-slide" step="2" markdown>
+
+    ![HLX-SFPX Firmware](shared-assets/hlx_sfpx_firmware.webp){ loading=lazy }
+
+    </div>
+
+    <div class="swiper-slide" step="3" markdown>
+
+    ![HLX-SFPX Firmware Select](shared-assets/hlx_sfpx_firmware_select.webp){ loading=lazy }
+
+    </div>
+
+    </div>
+
     1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __System__ drop-down, click __Flash Firmware__.
