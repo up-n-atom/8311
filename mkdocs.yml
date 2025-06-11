@@ -81,9 +81,6 @@ plugins:
       skip_classes:
         - nolightbox
       zoomable: false
-  - include-markdown:
-      rewrite_relative_urls: false
-  - macros
   - redirects:
       redirect_maps:
         guides/install-8311-community-firmware-on-the-bfw-solutions-was-110/index.html: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/

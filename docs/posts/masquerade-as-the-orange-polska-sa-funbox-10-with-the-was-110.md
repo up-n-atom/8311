@@ -9,7 +9,7 @@ categories:
   - FAST 5698
 description: Masquerade as the Orange Polska S.A. Funbox 10 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110
-ont_name: Funbox 10
+ont: Funbox 10
 ---
 
 # Masquerade as the Orange Polska S.A. Funbox 10 with the WAS-110 or X-ONU-SFPP
@@ -58,9 +58,9 @@ ont_name: Funbox 10
 
     !!! tip "Take note of the Serial Number, Hardware Version, and ONT Software Versions for the WAS-110 configuration"
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

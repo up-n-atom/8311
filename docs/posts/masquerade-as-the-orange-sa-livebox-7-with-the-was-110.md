@@ -9,7 +9,7 @@ categories:
   - FAST 5694
 description: Masquerade as the Orange S.A. Livebox 7 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-orange-sa-livebox-7-with-the-was-110
-ont_name: Livebox 7
+ont: Livebox 7
 ---
 
 # Masquerade as the Orange S.A. Livebox 7 with the WAS-110 or X-ONU-SFPP
@@ -43,9 +43,9 @@ ont_name: Livebox 7
 
     !!! tip "Take note of the Serial Number and ONT Software Versions for the WAS-110 configuration"
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

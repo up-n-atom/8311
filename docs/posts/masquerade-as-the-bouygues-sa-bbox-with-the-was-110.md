@@ -9,7 +9,7 @@ categories:
   - FAST 5688b
 description: Masquerade as the Bouygues S.A. BBox with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
-ont_name: Bbox
+ont: Bbox
 ---
 
 # Masquerade as the Bouygues S.A Bbox with the WAS-110 or X-ONU-SFPP
@@ -155,9 +155,9 @@ The IMEI can be obtained from the back label of the Bbox or from the web UI.
 
 4. From the __Bbox__ page, copy the __IMEI__ number.
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

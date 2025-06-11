@@ -9,7 +9,7 @@ categories:
   - Rogers
 description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
 slug: swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110
-ont_name: XS-010X-Q
+ont: XS-010X-Q
 ---
 
 # Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
@@ -21,9 +21,9 @@ ont_name: XS-010X-Q
 <!-- more -->
 <!-- nocont -->
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Extract attributes from the XS-010X-Q
 

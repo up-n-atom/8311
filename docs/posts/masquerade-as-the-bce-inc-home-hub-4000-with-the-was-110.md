@@ -13,7 +13,7 @@ categories:
   - FAST 5689
 description: Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bce-inc-home-hub-4000-with-the-was-110
-ont_name: Home Hub 4000
+ont: Home Hub 4000
 ---
 
 # Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110 or X-ONU-SFPP
@@ -108,7 +108,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode
     Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the
     back [label] of the Home Hub 4000.
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
 !!! tip "Beyond budget? *Ontario and Quebec ONLY*"
     An alternative is to subscribe to an Internet Companies Group ISP, a division of Bell Canada, who provision an
@@ -121,7 +121,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode
     If budget is no longer a concern later on, and an SFP is appealing, check out the [XS-010X-Q]
     guide: [Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP](swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110.md)
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

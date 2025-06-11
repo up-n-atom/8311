@@ -11,7 +11,7 @@ categories:
   - Telus
 description: Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-tci-nh20a-nh20t-with-the-was-110
-ont_name: NH20A or NH20T
+ont: NH20A or NH20T
 ---
 
 # Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110 or X-ONU-SFPP
@@ -50,9 +50,9 @@ ont_name: NH20A or NH20T
 
 If the bandwidth is `10000/10000` and/or wavelength is `1270/1577`, you're subscribed on XGS-PON.
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

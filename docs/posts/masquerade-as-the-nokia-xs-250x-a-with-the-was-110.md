@@ -10,7 +10,7 @@ categories:
   - AT&T
 description: Masquerade as the Nokia XS-250X-A with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-nokia-xs-250x-a-with-the-was-110
-ont_name: XS-250X-A
+ont: XS-250X-A
 ---
 
 # Masquerade as the Nokia XS-250X-A with the WAS-110 or X-ONU-SFPP
@@ -20,9 +20,9 @@ ont_name: XS-250X-A
 <!-- more -->
 <!-- nocont -->
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

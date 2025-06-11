@@ -9,7 +9,7 @@ categories:
   - Lightspeed
 description: Masquerade as the Nokia XS-2426G-A with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-nokia-xs-2426g-a-with-the-was-110
-ont_name: XS-2426G-A
+ont: XS-2426G-A
 ---
 
 # Masquerade as the Nokia XS-2426G-A with the WAS-110 or X-ONU-SFPP
@@ -19,9 +19,9 @@ ont_name: XS-2426G-A
 <!-- more -->
 <!-- nocont -->
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 

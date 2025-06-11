@@ -11,7 +11,7 @@ categories:
   - F5685LGB-VMIE
 description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
-ont_name: Hub 5x
+ont: Hub 5x
 ---
 
 # Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
@@ -21,11 +21,11 @@ ont_name: Hub 5x
 <!-- more -->
 <!-- nocont -->
 
-{% include-markdown '../assets/common/purchase-ont.md' %}
+--8<-- "docs/posts/shared-assets/template.md:purchase-ont"
 
-{% include-markdown '../assets/common/lc-connector-warning.md' %}
+--8<-- "docs/posts/shared-assets/template.md:lc-warning"
 
-{% include-markdown '../assets/common/install-8311.md' %}
+--8<-- "docs/posts/shared-assets/template.md:install-8311"
 
 ## Masquerade setup
 
