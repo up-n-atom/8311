@@ -31,9 +31,9 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     __Do the WAS-110 or HLX-SFPX ONTs support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
 
-    :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths — 1577 nm downstream and
-        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) drivers, which are
-        designed specifically for 10G-PON applications.
+    :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
+        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) laser drivers, which
+        are designed specifically for 10G-PON applications.
 
     __Is the WAS-110 or HLX-SFPX a router?__
 
@@ -306,7 +306,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
     #### Populated VLAN Tables
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root password.
-    2. From the __VLAN Tables__ page, if the __textarea__ is blank, the ONT configuration has not satisfied the OLT.
+    2. From the __VLAN Tables__ page, if the __textarea__ states *"No Extended VLAN Tables Detected"*, the ONT configuration has not satisfied the OLT.
 
 === "HLX-SFPX"
 
