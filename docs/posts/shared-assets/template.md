@@ -35,7 +35,7 @@ provisioned LC/APC cable, or a Male LC/APC to Male SC/APC patch cable, both of w
 # --8<-- [start:install-8311]
 ## Install the 8311 community firmware
 
-As a prerequisite to masquerading as the {{ page.meta.ont }}, is recommended and required for the remainder
+As a prerequisite to masquerading, the 8311 community firmware is recommended and required for the remainder
 of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
 
 === "WAS-110"
