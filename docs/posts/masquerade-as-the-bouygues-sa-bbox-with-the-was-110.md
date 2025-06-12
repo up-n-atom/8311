@@ -9,7 +9,6 @@ categories:
   - FAST 5688b
 description: Masquerade as the Bouygues S.A. BBox with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
-ont: Bbox
 ---
 
 # Masquerade as the Bouygues S.A Bbox with the WAS-110 or X-ONU-SFPP

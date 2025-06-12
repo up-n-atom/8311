@@ -9,7 +9,6 @@ categories:
   - Rogers
 description: Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
 slug: swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110
-ont: XS-010X-Q
 ---
 
 # Swap out the Nokia XS-010X-Q for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP

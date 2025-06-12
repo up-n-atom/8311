@@ -11,7 +11,6 @@ categories:
   - FAST 5689E
 description: Masquerade as the BCE Inc. Giga Hub with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bce-inc-giga-hub-with-the-was-110
-ont: Giga Hub
 ---
 
 # Masquerade as the BCE Inc. Giga Hub with the WAS-110 or X-ONU-SFPP

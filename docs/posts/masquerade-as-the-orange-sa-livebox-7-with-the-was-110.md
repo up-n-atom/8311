@@ -9,7 +9,6 @@ categories:
   - FAST 5694
 description: Masquerade as the Orange S.A. Livebox 7 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-orange-sa-livebox-7-with-the-was-110
-ont: Livebox 7
 ---
 
 # Masquerade as the Orange S.A. Livebox 7 with the WAS-110 or X-ONU-SFPP

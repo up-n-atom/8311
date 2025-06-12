@@ -9,7 +9,6 @@ categories:
   - FAST 5698
 description: Masquerade as the Orange Polska S.A. Funbox 10 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-orange-polska-sa-funbox-10-with-the-was-110
-ont: Funbox 10
 ---
 
 # Masquerade as the Orange Polska S.A. Funbox 10 with the WAS-110 or X-ONU-SFPP

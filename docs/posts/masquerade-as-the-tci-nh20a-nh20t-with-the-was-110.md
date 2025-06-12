@@ -11,7 +11,6 @@ categories:
   - Telus
 description: Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-tci-nh20a-nh20t-with-the-was-110
-ont: NH20A or NH20T
 ---
 
 # Masquerade as the Telus Communications Inc. NH20A or NH20T with the WAS-110 or X-ONU-SFPP

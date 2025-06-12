@@ -13,7 +13,6 @@ categories:
   - FAST 5689
 description: Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bce-inc-home-hub-4000-with-the-was-110
-ont: Home Hub 4000
 ---
 
 # Masquerade as the BCE Inc. Home Hub 4000 with the WAS-110 or X-ONU-SFPP

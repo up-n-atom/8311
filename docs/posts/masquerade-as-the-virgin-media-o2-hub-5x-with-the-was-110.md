@@ -11,7 +11,6 @@ categories:
   - F5685LGB-VMIE
 description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
-ont: Hub 5x
 ---
 
 # Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
