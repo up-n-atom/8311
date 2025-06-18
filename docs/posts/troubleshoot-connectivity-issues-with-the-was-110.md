@@ -5,6 +5,7 @@ categories:
   - BFW Solutions
   - XGS-PON
 description: Troubleshoot connectivity issues with the WAS-110
+pin: true
 ---
 
 # Troubleshoot connectivity issues with the WAS-110
