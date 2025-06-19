@@ -259,7 +259,14 @@ all available via your BGW620-700's fiber stats page:
 
     4. Click __Save & Reboot__ to apply the parameters.
 
-## Validate ONT Connectivity
+## Validate ONT connectivity
+
+!!! note "Do not be alarmed..."
+    If you receive an e-mail and/or text informing you to:
+
+    > Check your AT&T Fiber equipment since you might be offline currently.
+
+    The BGW620-700 sends telemetry data to *better* the customer experience.
 
 ### Hot plug fiber cable
 
@@ -288,7 +295,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
     3. From the __Optical Information__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
 
-### Validate OLT Authentication
+### Validate OLT authentication
 
 === "WAS-110"
 
@@ -317,16 +324,10 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
     3. From the __Link Information__ section, verify that the __PLOAM State__ is *05*.
 
-## Router Setup
+## Router tips
 
-Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
-
-!!! note "Do not be alarmed..."
-    If you receive an e-mail and/or text informing you to:
-
-    > Check your AT&T Fiber equipment since you might be offline currently.
-
-    The BGW620-700 sends telemetry data to *better* the customer experience.
+* Configure WAN for DHCP
+* Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
 ## Software versions
 
