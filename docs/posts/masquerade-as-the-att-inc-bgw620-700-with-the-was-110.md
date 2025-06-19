@@ -326,7 +326,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
 ## Router tips
 
-* Configure WAN for DHCP
+* Configure the WAN interface for DHCP mode.
 * Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
 ## Software versions
