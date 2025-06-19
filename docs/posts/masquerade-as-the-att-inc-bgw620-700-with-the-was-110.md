@@ -131,7 +131,7 @@ responsibility or liability for the listed resellers.
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
 
-## Configure ONT Settings
+## Configure ONT settings
 
 Successful masquerading depends on the original ONT serial number and other identifiers (e.g., software versions),
 all available via your BGW620-700's fiber stats page:
