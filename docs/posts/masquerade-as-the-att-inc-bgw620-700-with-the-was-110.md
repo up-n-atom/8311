@@ -259,7 +259,7 @@ all available via your BGW620-700's fiber stats page:
 
     4. Click __Save & Reboot__ to apply the parameters.
 
-## Validate ONT connectivity
+## Verify ONT connectivity
 
 !!! note "Do not be alarmed..."
     If you receive an e-mail and/or text informing you to:
