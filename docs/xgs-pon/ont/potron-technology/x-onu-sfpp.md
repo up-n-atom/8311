@@ -199,7 +199,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 | Company                                             | Product Number        | E-commerce             | Firmware      |
 | --------------------------------------------------- | --------------------- | ---------------------- | ------------- |
-| [Better Internet]                                   | [X-ONU-SFPP][BI-ONT]  | :flag_gb:              | 8311          |
+| [Better Internet]                                   | [X-ONU-SFPP][BI-ONT]  | :flag_gb: <small class="affiliate"></small> | 8311          |
 | [FiberMall]                                         | [XGSPON-ONU-STICK-V8] | :globe_with_meridians: | 8311 fork     |
 | [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]            |                        | PTXG (Potron) |
 | [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | 8311 fork or PTXG (Potron) |

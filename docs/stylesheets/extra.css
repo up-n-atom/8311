@@ -200,3 +200,20 @@ iframe {
 .pon-pm-icon.pon-pm-icon--active::before {
   width: 0.2ch;
 }*/
+
+.affiliate {
+  background: var(--md-primary-fg-color);
+  border-radius: 0.2rem;
+  box-shadow: var(--md-shadow-z1);
+  color: var(--md-primary-bg-color);
+  font-size: 0.64rem;
+  height: 1.2rem;
+  line-height: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+  width: auto;
+}
+
+.affiliate:before {
+  content: 'Affiliate';
+}
