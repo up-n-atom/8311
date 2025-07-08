@@ -32,5 +32,5 @@ jobs:
       - run: pip install git+https://${GH_TOKEN}@github.com/up-n-atom/mkdocs-material-insiders.git
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --remote-branch wiki --force
-        env:
-          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+env:
+  GH_TOKEN: ${{ secrets.MY_TOKEN }}
