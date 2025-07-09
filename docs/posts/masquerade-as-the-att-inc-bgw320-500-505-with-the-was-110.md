@@ -364,7 +364,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
 === "WAS-110"
 
-    #### O5.1 PLOAM Status
+    <h4>Check for O5.1 PLOAM status</h4>
 
     ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
 
@@ -375,7 +375,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
       [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
 
-    #### Populated VLAN Tables
+    <h4>Check for OLT associated VLAN filters</h4>
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root password.
     2. From the __VLAN Tables__ page, if the __textarea__ states *"No Extended VLAN Tables Detected"*, the ONT configuration has not satisfied the OLT.
