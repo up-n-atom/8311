@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.md-typeset__table table:not([class]) td {
+  vertical-align: middle !important;
+}
+
 .md-typeset__table table:not([class]) {
   display: table
 }
