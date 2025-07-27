@@ -159,35 +159,39 @@ present.
 
     === "Without CLEI"
 
-        | Attribute                  | Value                         | Remarks                                    |
-        | -------------------------- | ----------------------------- | ------------------------------------------ |
-        | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
-        | Equipment ID               | \_\_\_\_\_\_\_\_\_XS-010X-Q\__| Model                                      |
-        | Hardware Version           | 3FE49331BDAA01                | ONT P/N. + ICS                             |
-        | Sync Circuit Pack Version  | :check_mark:                  |                                            |
-        | Software Version A         | 3FE49337BOCK17                | Active software version                    |
-        | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
-        | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
-        | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
-        | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
-        | PON Slot                   | 10                            |                                            |
-        | IP Host MAC Address        | 7C:9f:07:4F:98:08             | MAC ID                                     |
+        | Attribute                        | Value                         | Remarks                                    |
+        | -------------------------------- | ----------------------------- | ------------------------------------------ |
+        | PON Serial Number (ONT ID)       | ALCL&hellip;                  | Serial number                              |
+        | Equipment ID                     | \_\_\_\_\_\_\_\_\_XS-010X-Q\__| Model                                      |
+        | Hardware Version                 | 3FE49331BDAA01                | ONT P/N. + ICS                             |
+        | Sync Circuit Pack Version        | :check_mark:                  |                                            |
+        | Software Version A               | 3FE49337BOCK17                | Active software version                    |
+        | Software Version B               | 3FE49337AOCK80                | Standby software version                   |
+        | Firmware Version Match           | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
+        | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
+        | Registration ID                  |                               | Input if __ONT ID__ is not null (all 00's) |
+        | MIB File                         | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
+        | PON Slot                         | 10                            |                                            |
+        | IP Host MAC Address              | 7C:9f:07:4F:98:08             | MAC ID                                     |
 
     === "With CLEI"
 
-        | Attribute                  | Value                         | Remarks                                    |
-        | -------------------------- | ----------------------------- | ------------------------------------------ |
-        | PON Serial Number (ONT ID) | ALCL&hellip;                  | Serial number                              |
-        | Equipment ID               | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
-        | Hardware Version           | 3FE49331AAAB01                | ONT P/N. + ICS                             |
-        | Sync Circuit Pack Version  | :check_mark:                  |                                            |
-        | Software Version A         | 3FE49337AOCK10                | Active software version                    |
-        | Software Version B         | 3FE49337AOCK80                | Standby software version                   |
-        | Firmware Version Match     | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
-        | Registration ID            |                               | Input if __ONT ID__ is not null (all 00's) |
-        | MIB File                   | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
-        | PON Slot                   | 10                            |                                            |
-        | IP Host MAC Address        | FC:B2:D6:18:47:40             | MAC ID                                     |
+        | Attribute                        | Value                         | Remarks                                    |
+        | -------------------------------- | ----------------------------- | ------------------------------------------ |
+        | PON Serial Number (ONT ID)       | ALCL&hellip;                  | Serial number                              |
+        | Equipment ID                     | BVMGY10BRAXS010XQ             | CLEI + Mnemonic                            |
+        | Hardware Version                 | 3FE49331AAAB01                | ONT P/N. + ICS                             |
+        | Sync Circuit Pack Version        | :check_mark:                  |                                            |
+        | Software Version A               | 3FE49337AOCK10                | Active software version                    |
+        | Software Version B               | 3FE49337AOCK80                | Standby software version                   |
+        | Firmware Version Match           | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
+        | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
+        | Registration ID                  |                               | Input if __ONT ID__ is not null (all 00's) |
+        | MIB File                         | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
+        | PON Slot                         | 10                            |                                            |
+        | IP Host MAC Address              | FC:B2:D6:18:47:40             | MAC ID                                     |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
