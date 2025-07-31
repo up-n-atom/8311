@@ -105,8 +105,8 @@ responsibility or liability for the listed resellers.
 === "HLX-SFPX"
 
     [HALNy] has provided a custom firmware with satisfactory customization for masquerading as the BGW62-700.
-    It's available by request from [HALNy] and has been made available for download on the
-    [8311 Discord community server].
+    It's available by request from [HALNy] and has been made available for download at 
+    <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p1.zip>
 
     <div class="swiper" markdown>
 
@@ -127,7 +127,7 @@ responsibility or liability for the listed resellers.
     1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __System__ drop-down, click __Flash Firmware__.
-    3. From the __Flash Firmware__ page, click __Choose Image__, browse for `HLX-SFPX_V7-0-6t1.zip`, and click
+    3. From the __Flash Firmware__ page, click __Choose Image__, browse for `G_ONU_HLX_SFPX_V7-0-7p1-e.bin`, and click
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
 
