@@ -107,7 +107,7 @@ responsibility or liability for the listed resellers.
     [HALNy] has provided a custom firmware with satisfactory customization for masquerading as the BGW62-700.
     It's available by request from [HALNy] and has been made available for download at:
 
-    !!! note "Disable browser HTTPS-Only mode or Always use secure connection temporarily to download"
+    !!! note "Disable browser HTTPS-Only mode or &quot;Always use secure connection&quot; temporarily to download"
 
     <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p1.zip>
 
