@@ -69,6 +69,8 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
 responsibility or liability for the listed resellers.
 
+!!! warning "As of 2025-08-05 it is NOT recommended to purchase a HLX-SFPX unless otherwise stated"
+
 <div class="grid cards" markdown>
 
 -    __WAS-110__
