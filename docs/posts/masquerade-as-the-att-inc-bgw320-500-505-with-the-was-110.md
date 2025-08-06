@@ -74,8 +74,6 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
 responsibility or liability for the listed resellers.
 
-!!! warning "As of 2025-08-05 it is NOT recommended to purchase a HLX-SFPX unless otherwise stated"
-
 <div class="grid cards" markdown>
 
 -    __WAS-110__
@@ -116,7 +114,7 @@ responsibility or liability for the listed resellers.
 
     !!! note "Disable browser HTTPS-Only mode or &quot;Always use secure connection&quot; temporarily to download"
 
-    <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p1.zip>
+    <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p2.zip>
 
     <div class="swiper" markdown>
 
