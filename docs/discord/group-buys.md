@@ -20,20 +20,36 @@ Please be patient, as this is a volunteer-driven process.
 
 ## Statistics
 
-### 2024
+### 2025
 
 ``` mermaid
 xychart-beta
-    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov]
-    y-axis "Unit Sales" 0 --> 290
-    bar [62, 140, 0, 0, 120, 0, 0, 290, 0, 0, 290]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug]
+    y-axis  "Unit Sales" 0 -> 605
+    bar [0, 605, 0, 0, 0, 0, 0, 0]
 ```
 
 ``` mermaid
 xychart-beta
-    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov]
-    y-axis "Price (USD)" 135 --> 165
-    line [165, 160, 160, 160, 160, 160, 160, 155, 155, 155, 160]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug]
+    y-axis "Price (USD)" 0 --> 165
+    bar [0, 165, 0, 0, 0, 0, 0, 0]
+```
+
+### 2024
+
+``` mermaid
+xychart-beta
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    y-axis "Unit Sales" 0 --> 290
+    bar [62, 140, 0, 0, 120, 0, 0, 290, 0, 0, 290, 0]
+```
+
+``` mermaid
+xychart-beta
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    y-axis "Price (USD)" 0 --> 165
+    line [165, 160, 160, 160, 160, 160, 160, 155, 155, 155, 160, 0]
 ```
 
 ### 2023
