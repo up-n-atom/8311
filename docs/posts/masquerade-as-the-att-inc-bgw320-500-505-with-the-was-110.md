@@ -76,6 +76,8 @@ responsibility or liability for the listed resellers.
 
 !!! warning "As of 2025-08-05 it is NOT recommended to purchase a HLX-SFPX unless otherwise stated"
 
+    The HLX-SFPX firmware suffers from I/O errors that corrupt the overlay filesystem, soft-bricking the module.
+
 <div class="grid cards" markdown>
 
 -    __WAS-110__
