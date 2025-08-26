@@ -167,7 +167,7 @@ present.
         | Sync Circuit Pack Version        | :check_mark:                  |                                            |
         | Software Version A               | 3FE49337BOCK17                | Active software version                    |
         | Software Version B               | 3FE49337AOCK80                | Standby software version                   |
-        | Firmware Version Match           | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Firmware Version Match           | ^(3FE49\d{3}[A-Z]OCK\d{2})$   |                                            |
         | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
         | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
         | Registration ID                  |                               | Input if __ONT ID__ is not null (all 00's) |
@@ -185,7 +185,7 @@ present.
         | Sync Circuit Pack Version        | :check_mark:                  |                                            |
         | Software Version A               | 3FE49337AOCK10                | Active software version                    |
         | Software Version B               | 3FE49337AOCK80                | Standby software version                   |
-        | Firmware Version Match           | ^(3FE4933\d[A-Z]OCK\d{2})$    |                                            |
+        | Firmware Version Match           | ^(3FE49\d{3}[A-Z]OCK\d{2})$   |                                            |
         | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
         | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
         | Registration ID                  |                               | Input if __ONT ID__ is not null (all 00's) |
@@ -223,7 +223,7 @@ present.
         fwenv_set -8 cp_hw_ver_sync 1
         fwenv_set -8 sw_verA 3FE49337BOCK17
         fwenv_set -8 sw_verB 3FE49337AOCK80
-        fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+        fwenv_set -8 -b fw_match '^(3FE49\d{3}[A-Z]OCK\d{2})$'
         fwenv_set -8 pon_slot 10
         fwenv_set -8 fix_vlans 0
         ```
@@ -243,7 +243,7 @@ present.
         fwenv_set -8 cp_hw_ver_sync 1
         fwenv_set -8 sw_verA 3FE49337AOCK10
         fwenv_set -8 sw_verB 3FE49337AOCK80
-        fwenv_set -8 -b fw_match '^(3FE4933\d[A-Z]OCK\d{2})$'
+        fwenv_set -8 -b fw_match '^(3FE49\d{3}[A-Z]OCK\d{2})$'
         fwenv_set -8 pon_slot 10
         fwenv_set -8 fix_vlans 0
         ```
