@@ -100,9 +100,17 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
 
 #### with the web API
 
-1. Within a web browser, navigate to <https://mabbox.bytel.fr/api/v1/wan/sfp>.
+1. Within a web browser, navigate to <https://mabbox.bytel.fr/api/v1/wan/sfp> or <https://mabbox.bytel.fr/api/v1/wan/sff>, whichever works.
 
-2. From the JSON output, search and copy the __Serial Number__ beginning with `SMBS`.
+2. From the JSON output, search and copy the __Serial Number__ beginning with `SMBS` or `0x534d4253`. If the
+   __Serial Number__ begins with the hexadecimal notation copy the characters after `0x534d4253` and append to `SMBS`
+   or use the form below.
+  <div style="margin:1em 0;">
+      <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.serno;if(!el.checkValidity())return;el.value=el.value.replace('0x534d4253','SMBS');})(event)">
+          <input type="text" name="serno" placeholder="0x534d4253" pattern="^0x[0-9A-Fa-f]{16}$" />
+          <input type="submit" value="Submit" />
+      </form>
+  </div>
 
 ### PLOAM registration ID
 
