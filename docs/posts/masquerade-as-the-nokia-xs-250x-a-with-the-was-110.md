@@ -122,9 +122,9 @@ present.
     | Equipment ID                     | BVMGJ10BRAXS250XA             | CLEI + Mnemonic                            |
     | Hardware Version                 | 3FE48114ABBD01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
-    | Software Version A               | 3FE47493IJHK03                | Active software version                    |
-    | Software Version B               | 3FE47493BGDB09                | Standby software version                   |
-    | Firmware Version Match           | ^(3FE4793[A-Z]{4}\d{2})$      |                                            |
+    | Software Version A               | 3FE47697JJLI17                | Active software version                    |
+    | Software Version B               | 3FE47493IJHK03                | Standby software version                   |
+    | Firmware Version Match           | ^(3FE47\d{3}[A-Z]{4}\d{2})$   |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
     | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
     | MIB File                         | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value (Telus customers use `prx300_1U_telus.mib`) |
@@ -154,9 +154,9 @@ present.
     fwenv_set -8 equipment_id BVMGJ10BRAXS250XA # (2)!
     fwenv_set -8 hw_ver 3FE48114ABBD01 # (3)!
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3FE47493IJHK03
-    fwenv_set -8 sw_verB 3FE47493BGDB09
-    fwenv_set -8 -b fw_match '^(3FE4793[A-Z]{4}\d{2})$'
+    fwenv_set -8 sw_verA 3FE47697JJLI17
+    fwenv_set -8 sw_verB 3FE47493IJHK03
+    fwenv_set -8 -b fw_match '^(3FE47\d{3}[A-Z]{4}\d{2})$'
     fwenv_set -8 override_active A
     fwenv_set -8 override_commit A
     fwenv_set -8 pon_slot 10
@@ -186,6 +186,10 @@ After rebooting the WAS-110, safely remove the SC/APC cable from the XS-250X-A a
 WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
 For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
 the [8311 Discord community server].
+
+## Software versions
+
+{{ read_csv('docs/posts/masquerade-as-the-nokia-xs-250x-a-with-the-was-110/versions.csv') }}
 
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
