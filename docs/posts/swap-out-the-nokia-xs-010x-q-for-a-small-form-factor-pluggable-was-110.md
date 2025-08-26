@@ -248,7 +248,7 @@ present.
         fwenv_set -8 fix_vlans 0
         ```
 
-        . MAC ID
+        1. MAC ID
         2. Serial number or S/N
         3. CLEI + Mnemonic
         4. ONT P/N + ICS
