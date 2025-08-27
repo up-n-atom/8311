@@ -122,7 +122,7 @@ present.
     | Equipment ID                     | BVMGJ10BRAXS250XA             | CLEI + Mnemonic                            |
     | Hardware Version                 | 3FE48114ABBD01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
-    | Software Version A               | 3FE47697JJLI17                | Active software version                    |
+    | Software Version A               | 3FE47493IJHK03                | Active software version                    |
     | Software Version B               | 3FE47493IJHK03                | Standby software version                   |
     | Firmware Version Match           | ^(3FE47\d{3}[A-Z]{4}\d{2})$   |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
@@ -154,7 +154,7 @@ present.
     fwenv_set -8 equipment_id BVMGJ10BRAXS250XA # (2)!
     fwenv_set -8 hw_ver 3FE48114ABBD01 # (3)!
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3FE47697JJLI17
+    fwenv_set -8 sw_verA 3FE47493IJHK03
     fwenv_set -8 sw_verB 3FE47493IJHK03
     fwenv_set -8 -b fw_match '^(3FE47\d{3}[A-Z]{4}\d{2})$'
     fwenv_set -8 override_active A
@@ -188,6 +188,12 @@ For troubleshooting, please read the [Troubleshoot connectivity issues with the 
 the [8311 Discord community server].
 
 ## Software versions
+
+The following are the last known supported software versions. If the __Firmware Version Match__ attribute is configured
+with the correct regular expression, the __Software Version A/B__ attribute(s) will auto-update to match the firmware
+version transferred by the OLT. Most OLT provisioning systems will attempt to update the firmware via OMCI upon
+detecting a mismatch. Note that this transfer can take several minutes due to the size of the firmware image.
+These images are stored at `/tmp/upgrade/firmware.img` and can be dumped for analysis.
 
 {{ read_csv('docs/posts/masquerade-as-the-nokia-xs-250x-a-with-the-was-110/versions.csv') }}
 
