@@ -190,10 +190,10 @@ the [8311 Discord community server].
 ## Software versions
 
 The following are the last known supported software versions. If the __Firmware Version Match__ attribute is configured
-with the correct regular expression, the __Software Version A/B__ attribute(s) will auto-update to match the firmware
-version transferred by the OLT. Most OLT provisioning systems will attempt to update the firmware via OMCI upon
-detecting a mismatch. Note that this transfer can take several minutes due to the size of the firmware image.
-These images are stored at `/tmp/upgrade/firmware.img` and can be dumped for analysis.
+with the correct regular expression, the __Software Version A/B__ attribute(s) will attempt to auto-update to match the
+firmware version transferred by the OLT, although this isn't foolproof. Most OLT provisioning systems will attempt to
+update the firmware via OMCI upon detecting a mismatch. Note that this transfer can take several minutes due to the
+size of the firmware image. These images are stored at `/tmp/upgrade/firmware.img` and can be dumped for analysis.
 
 Please help us by contributing new versions via the [8311 Discord community server] or submitting a
 [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
