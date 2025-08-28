@@ -122,8 +122,8 @@ present.
     | Equipment ID                     | BVMGJ10BRAXS250XA             | CLEI + Mnemonic                            |
     | Hardware Version                 | 3FE48114ABBD01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
-    | Software Version A               | 3FE47493IJHK03                | Active software version                    |
-    | Software Version B               | 3FE47493IJHK03                | Standby software version                   |
+    | Software Version A               | 3FE47493IJHK03                | Active [software version]                  |
+    | Software Version B               | 3FE47493IJHK03                | Standby [software version]                 |
     | Firmware Version Match           | ^(3FE47\d{3}[A-Z]{4}\d{2})$   |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
     | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
@@ -195,6 +195,9 @@ version transferred by the OLT. Most OLT provisioning systems will attempt to up
 detecting a mismatch. Note that this transfer can take several minutes due to the size of the firmware image.
 These images are stored at `/tmp/upgrade/firmware.img` and can be dumped for analysis.
 
+Please help us by contributing new versions via the [8311 Discord community server] or submitting a
+[Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
+
 {{ read_csv('docs/posts/masquerade-as-the-nokia-xs-250x-a-with-the-was-110/versions.csv') }}
 
   [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
@@ -202,5 +205,6 @@ These images are stored at `/tmp/upgrade/firmware.img` and can be dumped for ana
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
+  [software version]: #software-versions
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
