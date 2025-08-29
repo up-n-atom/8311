@@ -124,7 +124,7 @@ present.
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
     | Software Version A               | 3FE47493IJHK03                | Active [software version]                  |
     | Software Version B               | 3FE47493IJHK03                | Standby [software version]                 |
-    | Firmware Version Match           | ^(3FE47\d{3}[A-Z]{4}\d{2})$   |                                            |
+    | Firmware Version Match           | (3FE[0-9A-Z]{11})$            |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
     | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
     | MIB File                         | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value (Telus customers use `prx300_1U_telus.mib`) |
@@ -156,7 +156,7 @@ present.
     fwenv_set -8 cp_hw_ver_sync 1
     fwenv_set -8 sw_verA 3FE47493IJHK03
     fwenv_set -8 sw_verB 3FE47493IJHK03
-    fwenv_set -8 -b fw_match '^(3FE47\d{3}[A-Z]{4}\d{2})$'
+    fwenv_set -8 -b fw_match '(3FE[0-9A-Z]{11})$'
     fwenv_set -8 override_active A
     fwenv_set -8 override_commit A
     fwenv_set -8 pon_slot 10

@@ -117,7 +117,7 @@ present.
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
     | Software Version A               | 3FE49385IJKL09                | Active software version                    |
     | Software Version B               | 3FE49385IJIJ31                | Standby software version                   |
-    | Firmware Version Match           | ^(3FE49\d{3}[A-Z]{4}\d{2})$   |                                            |
+    | Firmware Version Match           | (3FE[0-9A-Z]{11})$            |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
     | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
     | Registration ID (HEX)            | 44454641554c54                | `DEFAULT` in hex                           |
@@ -149,7 +149,7 @@ present.
     fwenv_set -8 cp_hw_ver_sync 1
     fwenv_set -8 sw_verA 3FE49385IJKL09
     fwenv_set -8 sw_verB 3FE49385IJIJ31
-    fwenv_set -8 -b fw_match '^(3FE49\d{3}[A-Z]{4}\d{2})$'
+    fwenv_set -8 -b fw_match '(3FE[0-9A-Z]{11})$'
     fwenv_set -8 override_active A
     fwenv_set -8 override_commit A
     fwenv_set -8 pon_slot 10
