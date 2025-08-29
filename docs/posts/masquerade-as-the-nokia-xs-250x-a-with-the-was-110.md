@@ -122,8 +122,8 @@ present.
     | Equipment ID                     | BVMGJ10BRAXS250XA             | CLEI + Mnemonic                            |
     | Hardware Version                 | 3FE48114ABBD01                | ONT P/N. + ICS                             |
     | Sync Circuit Pack Version        | :check_mark:                  |                                            |
-    | Software Version A               | 3FE47493IJHK03                | Active [software version]                  |
-    | Software Version B               | 3FE47493IJHK03                | Standby [software version]                 |
+    | Software Version A               | 3FE47493HJKI15                | Active [software version]                  |
+    | Software Version B               | 3FE47493HJKI15                | Standby [software version]                 |
     | Firmware Version Match           | (3FE[0-9A-Z]{11})$            |                                            |
     | Override active firmware bank    | A                             | OLT inits a reboot if on bank B            |
     | Override committed firmware bank | A                             | OLT inits a reboot if on bank B            |
@@ -154,8 +154,8 @@ present.
     fwenv_set -8 equipment_id BVMGJ10BRAXS250XA # (2)!
     fwenv_set -8 hw_ver 3FE48114ABBD01 # (3)!
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3FE47493IJHK03
-    fwenv_set -8 sw_verB 3FE47493IJHK03
+    fwenv_set -8 sw_verA 3FE47493HJKI15
+    fwenv_set -8 sw_verB 3FE47493HJKI15
     fwenv_set -8 -b fw_match '(3FE[0-9A-Z]{11})$'
     fwenv_set -8 override_active A
     fwenv_set -8 override_commit A
