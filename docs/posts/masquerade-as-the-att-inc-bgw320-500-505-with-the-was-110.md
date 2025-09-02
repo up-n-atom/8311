@@ -423,3 +423,7 @@ version number: `BGW320_X.XX.X`.
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
+
+## Troubleshooting
+
+If DHCP isn’t working and your WAS-110 or HLX-SFPX transceiver is connected to a managed switch, make sure to filter or disable any Layer 2 management or discovery protocols (such as LLDP, RSTP, CDP, MNDP, RoMON, etc.) from reaching AT&T’s network. These frames can cause AT&T to ignore your DHCP (v4/v6) and Router Solicitation messages, preventing your device from obtaining an IP address.
