@@ -401,6 +401,10 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 * Configure the WAN interface for DHCP mode.
 * Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
+## Managed switch tips
+
+* Filter or disable any Layer 2 management protocols (e.g., (R)STP) and discovery protocols (e.g., LLDP, CDP, FDP, MNDP, RoMON).
+
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
 The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
@@ -423,7 +427,3 @@ version number: `BGW320_X.XX.X`.
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
-
-## Troubleshooting
-
-If DHCP isn’t working and your WAS-110 or HLX-SFPX transceiver is connected to a managed switch, make sure to filter or disable any Layer 2 management or discovery protocols (such as LLDP, RSTP, CDP, MNDP, RoMON, etc.) from reaching AT&T’s network. These frames can cause AT&T to ignore your DHCP (v4/v6) and Router Solicitation messages, preventing your device from obtaining an IP address.

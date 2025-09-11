@@ -336,6 +336,10 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 * Configure the WAN interface for DHCP mode.
 * Clone the BGW620-700 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
 
+## Managed switch tips
+
+* Filter or disable any Layer 2 management protocols (e.g., (R)STP) and discovery protocols (e.g., LLDP, CDP, FDP, MNDP, RoMON).
+
 ## Software versions
 
 The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
