@@ -33,7 +33,7 @@ xychart-beta
 xychart-beta
     x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     y-axis "Price (USD)" 0 --> 165
-    bar [0, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    line [0, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
 ### 2024
