@@ -24,16 +24,16 @@ Please be patient, as this is a volunteer-driven process.
 
 ``` mermaid
 xychart-beta
-    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug]
-    y-axis  "Unit Sales" 0 -> 605
-    bar [0, 605, 0, 0, 0, 0, 0, 0]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    y-axis  "Unit Sales" 0 --> 605
+    bar [0, 605, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
 ``` mermaid
 xychart-beta
-    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     y-axis "Price (USD)" 0 --> 165
-    bar [0, 165, 0, 0, 0, 0, 0, 0]
+    bar [0, 165, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
 ### 2024
