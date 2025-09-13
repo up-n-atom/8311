@@ -7,8 +7,8 @@ links:
 
 # Gigabit Passive Optical Network
 
-GPON is a gigabit-capable passive optical network standard ([ITU-T](#itu-t-standards) G.984) that delivers
-asymmetrical speeds of up to 2.5 Gbit/s downstream and 1.25 Gbit/s upstream.
+GPON is a gigabit-capable passive optical network standard ([ITU-T G.984]) that delivers asymmetrical speeds of up to
+2.5 Gbit/s downstream and 1.25 Gbit/s upstream.
 
 It emerged as a successor to the EPON ([IEEE 802.3ah]) standard, offering higher bandwidth and greater efficiency. The
 two standards share the same distinct wavelengths for downstream (1490 nm) and upstream (1310 nm). A differentiator
@@ -18,6 +18,7 @@ Despite this physical layer similarity, the standards are not compatible due to 
 and management protocols. GPON and its successors (such as [XGS-PON]) use GEM framing and OMCI management, while EPON
 uses native Ethernet framing with MPCP.
 
+  [ITU-T G.984]: #itu-t-standards
   [XGS-PON]: ../xgs-pon/index.md
   [IEEE 802.3ah]: https://en.wikipedia.org/wiki/IEEE_802.3
 
