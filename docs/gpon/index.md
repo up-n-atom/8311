@@ -15,8 +15,8 @@ two standards share the same distinct wavelengths for downstream (1490 nm) and u
 for GPON is its optional use of a third wavelength (1550 nm) for downstream video overlay.
 
 Despite this physical layer similarity, the standards are not compatible due to their fundamentally different framing
-and management protocols. GPON uses GEM framing and OMCI management, while EPON uses native Ethernet framing with
-MPCP.
+and management protocols. GPON and its successors use GEM framing and OMCI management, while EPON uses native Ethernet
+framing with MPCP.
 
   [IEEE 802.3ah]: https://en.wikipedia.org/wiki/IEEE_802.3
 
