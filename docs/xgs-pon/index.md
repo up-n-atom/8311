@@ -1,9 +1,22 @@
 ---
 hide:
   - feedback
+links:
+  - ../gpon/index.md
 ---
 
 # 10-Gigabit Symmetrical Passive Optical Network
+
+XGS-PON is a 10-Gigabit passive optical network standard ([ITU-T](#itu-t-standards) G.9807.1) that delivers
+symmetrical speeds of up to 10 Gbit/s.
+
+It uses distinct wavelengths for downstream (1577 nm) and upstream (1270 nm) transmission, employing Time Division
+Multiplexing (TDM) and Time Division Multiple Access (TDMA), respectively.
+
+As the successor to [G-PON], it is not backward compatible due to their differing wavelengths. However, this
+distinction allows XGS-PON to coexist on the same fiber as [G-PON] through wavelength division multiplexing (WDM).
+
+  [G-PON]: ../gpon/index.md
 
 ## ITU-T Standards
 
@@ -66,4 +79,3 @@ hide:
   [G.987.2]: http://www.itu.int/rec/T-REC-G.987.2/en
   [G.987.3]: http://www.itu.int/rec/T-REC-G.987.3/en
   [G.988]: http://www.itu.int/rec/T-REC-G.988/en
-
