@@ -56,14 +56,14 @@ xychart-beta
 
 ``` mermaid
 xychart-beta
-    x-axis [Jul, Aug, Sep, Oct, Nov, Dec]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     y-axis "Unit Sales" 0 --> 70
-    bar [10, 46, 0, 110, 0, 70]
+    bar [0, 0, 0, 0, 0, 0, 10, 46, 0, 110, 0, 70]
 ```
 
 ``` mermaid
 xychart-beta
-    x-axis [Jul, Aug, Sep, Oct, Nov, Dec]
-    y-axis "Price (USD)" 135 --> 160
-    line [135, 135, 135, 150, 150, 160]
+    x-axis [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    y-axis "Price (USD)" 0 --> 160
+    line [0, 0, 0, 0, 0, 0, 135, 135, 135, 150, 150, 160]
 ```
