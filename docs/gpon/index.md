@@ -15,9 +15,9 @@ offering higher bandwidth and greater efficiency. The three standards share the 
 downstream (1490 nm) and upstream (1310 nm). A differentiator for GPON is its optional use of a third wavelength
 (1550 nm) for downstream video overlay.
 
-Despite this physical layer similarity, the standards are not compatible due to their fundamentally different framing
-and management protocols. GPON and its successors ([XGS-PON], NG-PON2, 50G-PON) use GEM framing and OMCI for management,
-while BPON relies on ATM framing with OMCI, and EPON uses native Ethernet framing with MPCP.
+Despite this similarity, the standards are not compatible due to their fundamentally different framing and management
+protocols. GPON and its successors ([XGS-PON], NG-PON2, 50G-PON) use GEM framing and OMCI for management, while BPON
+relies on ATM framing with OMCI, and EPON uses native Ethernet framing with MPCP.
 
   [ITU-T G.984]: #itu-t-standards
   [XGS-PON]: ../xgs-pon/index.md
