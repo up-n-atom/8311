@@ -1,6 +1,8 @@
 *[AP]: Access Point
 *[APC]: Angled Physical Contact
+*[ATM]: Asynchronous Transfer Mode
 *[BOSA]: Bidirectional Optical Sub-Assemblies
+*[BPON]: Broadband Passive Optical Network
 *[CDP]: Cisco Discovery Protocol
 *[CLEI]: Common Language Information Services
 *[CLI]: Command Line Interface
@@ -26,6 +28,7 @@
 *[MNDP]: MikroTik Neighbor Discovery Protocol
 *[MPCP]: Multi-Point Control Protocol
 *[NAT]: Network Address Translation
+*[NG-PON2]: Next-Generation Passive Optical Network 2
 *[NIC]: Network Interface Card
 *[OLT]: Optical Line Terminal
 *[ONT]: Optical Network Terminal
