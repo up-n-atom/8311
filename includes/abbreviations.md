@@ -9,7 +9,10 @@
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
 *[EEPROM]: Electrically Erasable Programmable Read-Only Memory
+*[EPON]: Ethernet Passive Optical Network
 *[FDP]: Foundry Discovery Protocol
+*[GEM]: GPON Encapsulation Method
+*[GPON]: Gigabit Passive Optical Network
 *[HGU]: Home Gateway Unit
 *[HTTP]: Hypertext Transfer Protocol
 *[IEEE]: Institute of Electrical and Electronics Engineers
@@ -21,6 +24,7 @@
 *[MAC]: Medium Access Control
 *[MIB]: Management Information Base
 *[MNDP]: MikroTik Neighbor Discovery Protocol
+*[MPCP]: Multi-Point Control Protocol
 *[NAT]: Network Address Translation
 *[NIC]: Network Interface Card
 *[OLT]: Optical Line Terminal
