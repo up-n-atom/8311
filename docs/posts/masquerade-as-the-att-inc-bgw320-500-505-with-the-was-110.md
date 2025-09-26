@@ -137,7 +137,7 @@ responsibility or liability for the listed resellers.
 
     !!! note "Disable browser HTTPS-Only mode or &quot;Always use secure connection&quot; temporarily to download"
 
-    <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p2.zip>
+    <https://active-fw.fibrain.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-8pt2.zip>
 
     <div class="swiper" markdown>
 
