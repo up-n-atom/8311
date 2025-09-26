@@ -69,9 +69,28 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
 responsibility or liability for the listed resellers.
 
-!!! warning "As of 2025-08-05 it is NOT recommended to purchase a HLX-SFPX unless otherwise stated"
+??? quote "HALNy issued a statement on 2025-09-23 concerning the firmware problems and resolution with the HLX-SFPX."
+    > The HLX-SFPX firmware suffers from I/O errors that corrupt the overlay filesystem, soft-bricking the module.
 
-    The HLX-SFPX firmware suffers from I/O errors that corrupt the overlay filesystem, soft-bricking the module.
+    First of all we want to thank you for all your effort during the tests of our product HLX-SFPX. We are impressed by all your experience and knowledge about GPON/XGS-PON ONTs and embedded devices 
+
+    All HALNy products are designed to meet the ISP(Internet Service Providers) requirements.
+    In terms of GPON/XGS-PON ONTs, based on the standard, they are fully managed by the ISP (from the OLT side)
+
+    Although our goal is to support ISPs - we decided to make some exception and implement some of the request from end users on best-effort basis. 
+
+    Unlucky V7.0.6t1. version dedicated to end-users was released to fast to community - causing issue with unable to login on LAN side. The problem is not always present and few actions need to happen to reveal it.
+    The device is not bricked, it will work, pass the traffic, just not possible to login. On version V7.0.7p2 please be careful when you copy the data from the other device. Wrong data may affects OMCI communication which cause not passing the traffic and login to fail.
+
+    We released the new firmware version V7.0.8pt2, which doesn't have this issue:
+
+    <https://active-fw.fibrain.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-8pt2.zip>
+
+    We strongly recommend to update product to above version.
+
+    Again apologize for all inconvenience. We are really amazed with these community! Keep it going.
+
+    In case of any problem with HALNy products please contact with our support team: <support@halny.com>
 
 <div class="grid cards" markdown>
 
@@ -111,9 +130,7 @@ responsibility or liability for the listed resellers.
     [HALNy] has provided a custom firmware with satisfactory customization for masquerading as the BGW62-700.
     It's available by request from [HALNy] and has been made available for download at:
 
-    !!! note "Disable browser HTTPS-Only mode or &quot;Always use secure connection&quot; temporarily to download"
-
-    <http://beta.elmat.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-7p2.zip>
+    <https://active-fw.fibrain.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-8pt2.zip>
 
     <div class="swiper" markdown>
 
