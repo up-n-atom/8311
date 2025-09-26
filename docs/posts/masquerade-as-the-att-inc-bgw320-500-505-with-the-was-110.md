@@ -107,7 +107,23 @@ responsibility or liability for the listed resellers.
 
      [Value-Added Resellers](../xgs-pon/ont/calix/100-05610.md#value-added-resellers)
 
+-    __X-ONU-SFPP <small>WAS-110 substitute</small>__
+
+     [Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
+
 </div>
+
+!!! tip "Due to ongoing tariffs, please prioritize sourcing from domestic stock and sellers."
+
+    If you must purchase from abroad, be aware that additional duties and taxes will be incurred. A breakdown of the
+    applicable rates and HTS codes is provided below:
+
+    | HTC                                                              | Percentage |
+    | ---------------------------------------------------------------- | ---------- |
+    | [8517.62.00.90](https://hts.usitc.gov/search?query=8517.62.0090) | 0%         |
+    | [9903.88.15](https://hts.usitc.gov/search?query=9903.88.15)      | 7.5%       |
+    | [9903.01.24](https://hts.usitc.gov/search?query=9903.01.24)      | 20%        |
+    | [9903.01.32](https://hts.usitc.gov/search?query=9903.01.32)      | 0%         |
 
 ## Install ONT firmware
 
