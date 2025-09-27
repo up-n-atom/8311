@@ -115,15 +115,21 @@ responsibility or liability for the listed resellers.
 
 !!! tip "Due to ongoing tariffs, please prioritize sourcing from domestic stock and sellers."
 
-    If you must purchase from abroad, be aware that additional duties and taxes will be incurred. A breakdown of the
-    applicable rates and HTS codes is provided below:
+    If you must purchase from China, be aware that additional duties and taxes will be incurred. A breakdown of the
+    applicable rates and HTS (Harmonized Tariff Schedule) codes is provided below:
 
-    | HTC                                                              | Percentage |
+    | HTS Code                                                         | Rate       |
     | ---------------------------------------------------------------- | ---------- |
-    | [8517.62.00.90](https://hts.usitc.gov/search?query=8517.62.0090) | 0%         |
+    | [8517.62.0090](https://hts.usitc.gov/search?query=8517.62.0090)  | 0%         |
+    | [9903.01.32](https://hts.usitc.gov/search?query=9903.01.32)      | 0%         |
     | [9903.88.15](https://hts.usitc.gov/search?query=9903.88.15)      | 7.5%       |
     | [9903.01.24](https://hts.usitc.gov/search?query=9903.01.24)      | 20%        |
-    | [9903.01.32](https://hts.usitc.gov/search?query=9903.01.32)      | 0%         |
+
+    Rates and HTS codes may change. Verify with the seller that the most current HTS codes are present on the customs
+    declaration to prevent delays and unexpected fees.
+
+    If you see HTS code [9903.85.08](https://hts.usitc.gov/search?query=9903.85.08) on your CBP Form 7501
+    (Entry Summary), you should file a dispute immediately through your courier's portal.
 
 ## Install ONT firmware
 
