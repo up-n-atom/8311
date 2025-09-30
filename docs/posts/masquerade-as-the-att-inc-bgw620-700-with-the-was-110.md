@@ -60,6 +60,8 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 
 ### with the transceiver
 
+![Nokia Transceiver](shared-assets/transceiver.webp){ loading=lazy }
+
 1. Identify the bale clasp color. If orange/red, proceed.
 2. Engage the bale clasp to release the latch and pull out the transceiver.
 3. Inspect label for XGS-PON or 1270 TX.
