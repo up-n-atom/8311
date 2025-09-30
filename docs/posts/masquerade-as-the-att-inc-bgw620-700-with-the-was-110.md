@@ -37,9 +37,9 @@ slug: masquerade-as-the-att-inc-bgw620-700-with-the-was-110
 
     __Is the WAS-110 or HLX-SFPX a router?__
 
-    :   No, the [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are ONTs, and their sole
-        function is to convert Ethernet to PON over fiber. Additional hardware and software are required for internet
-        access.
+    :   No, the [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
+        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
+        required for internet access.
 
 ## Determine if you're an XGS-PON subscriber
 
