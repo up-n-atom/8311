@@ -71,6 +71,11 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 2. Engage the bale clasp to release the latch and pull out the transceiver.
 3. Inspect label for XGS-PON or 1270 TX.
 
+!!! note "If your wavelength is *1310 nm* and/or the bale clasp is :green_circle: green, you're using [GPON] and should follow the [PON Madness] guide instead"
+
+  [GPON]: ../gpon/index.md
+  [PON Madness]: https://docs.google.com/document/d/1gcT0sJKLmV816LK0lROCoywk9lXbPQ7l_4jhzGIgoTo
+
 ## Purchase a WAS-110 or HLX-SFPX ONT
 
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
