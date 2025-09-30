@@ -11,6 +11,10 @@ categories:
   - Sonic
 description: Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110 or HLX-SFPX
 slug: masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110
+links:
+  - xgs-pon/index.md
+  - posts/troubleshoot-connectivity-issues-with-the-was-110.md
+  - posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110.md
 ---
 
 # Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110 or HLX-SFPX
