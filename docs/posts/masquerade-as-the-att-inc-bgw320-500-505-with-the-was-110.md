@@ -77,12 +77,12 @@ responsibility or liability for the listed resellers.
 ??? quote "HALNy issued a statement on 2025-09-23 concerning the firmware problems and resolution with the HLX-SFPX."
     > The HLX-SFPX firmware suffers from I/O errors that corrupt the overlay filesystem, soft-bricking the module.
 
-    First of all we want to thank you for all your effort during the tests of our product HLX-SFPX. We are impressed by all your experience and knowledge about GPON/XGS-PON ONTs and embedded devices 
+    First of all we want to thank you for all your effort during the tests of our product HLX-SFPX. We are impressed by all your experience and knowledge about GPON/XGS-PON ONTs and embedded devices
 
     All HALNy products are designed to meet the ISP(Internet Service Providers) requirements.
     In terms of GPON/XGS-PON ONTs, based on the standard, they are fully managed by the ISP (from the OLT side)
 
-    Although our goal is to support ISPs - we decided to make some exception and implement some of the request from end users on best-effort basis. 
+    Although our goal is to support ISPs - we decided to make some exception and implement some of the request from end users on best-effort basis.
 
     Unlucky V7.0.6t1. version dedicated to end-users was released to fast to community - causing issue with unable to login on LAN side. The problem is not always present and few actions need to happen to reveal it.
     The device is not bricked, it will work, pass the traffic, just not possible to login. On version V7.0.7p2 please be careful when you copy the data from the other device. Wrong data may affects OMCI communication which cause not passing the traffic and login to fail.
@@ -244,7 +244,7 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
     1. Within a web browser, navigate to
        <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
-       and, if asked, input your <em>root</em> password.
+       and, if asked, input your *root<* [password]{ data-preview target="_blank" }.
 
     2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
@@ -390,7 +390,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
     ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
 
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* password.
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* [password]{ data-preview target="_blank" }.
     2. From the __PON Status__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
 
     !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [Optical status] section."
@@ -414,7 +414,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
     ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
 
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* password.
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* [password]{ data-preview target="_blank" }.
     2. From the __PON Status__ section, verify that the __PON PLOAM Status__ is in an *05.1, Associated state*.
 
     !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [PLOAM status] section."
@@ -423,7 +423,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
     <h4>Check for OLT associated VLAN filters</h4>
 
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root password.
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root [password]{ data-preview target="_blank" }.
     2. From the __VLAN Tables__ page, if the __textarea__ states *"No Extended VLAN Tables Detected"*, the ONT configuration has not satisfied the OLT.
 
 === "HLX-SFPX"
@@ -462,6 +462,7 @@ version number: `BGW320_X.XX.X`.
   [label]: #bgw320-500-505-label
   [Version listing]: #bgw320-500-505-software-versions
   [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
   [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
 
