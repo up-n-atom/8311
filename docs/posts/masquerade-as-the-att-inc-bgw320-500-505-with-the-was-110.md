@@ -115,7 +115,7 @@ responsibility or liability for the listed resellers.
 
 </div>
 
-!!! tip "Due to ongoing tariffs, please prioritize sourcing from domestic stock and sellers."
+!!! tip "Due to ongoing tariffs, prioritize sourcing from domestic stock and sellers."
 
     If you must purchase from China, be aware that additional duties and taxes will be incurred. A breakdown of the
     applicable rates and HTS (Harmonized Tariff Schedule) codes is provided below:
