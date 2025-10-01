@@ -15,183 +15,21 @@ links:
   - xgs-pon/index.md
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
   - posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110.md
+ont: BGW320-500/505
 ---
 
 # Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110 or HLX-SFPX
 
-![Bypass family](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bypass_bgw320.webp){ class="nolightbox" }
+![Bypass family](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bypass_bgw320.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
 
-!!! warning "New installations"
-    Keep the BGW320-500/505 in active service for roughly a week or two until fully provisioned and the installation ticket
-    has been closed.
+{% include 'att-inc-bgw/determine-pon.md' %}
 
-???+ question "Common misconceptions and answers"
+{% include 'att-inc-bgw/purchase-ont.md' %}
 
-    __Can I take an SFP+ module provided by AT&T and plug it directly into my own router or switch?__
-
-    :   No, the AT&T supplied SFP+ module is only a physical-layer transceiver compliant with XGS-PON
-        ([ITU G.9807.1](../xgs-pon/index.md)). It lacks ONT management ([ITU G.988](../xgs-pon/index.md)), meaning it
-        cannot function as a standalone ONT.
-
-    __Do the WAS-110 or HLX-SFPX ONTs support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
-
-    :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
-        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) laser drivers, which
-        are designed specifically for 10G-PON applications.
-
-    __Is the WAS-110 or HLX-SFPX a router?__
-
-    :   No, the [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
-        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
-        required for internet access.
-
-## Determine if you're an XGS-PON subscriber
-
-!!! info "2 Gbps or higher tiers"
-    If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier, skip past to
-    [Purchase a WAS-110 or HLX-SFPX ONT].
-
-There are two (2) methods to determine if you're an XGS-PON subscriber. First, through the [web UI](#with-the-web-ui)
-Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-transceiver).
-
-### with the web UI <small>recommended</small> { #with-the-web-ui data-toc-label="with the web UI" }
-
-!!! info "Since the 6x series firmware, the web UI may report 0 (zero) for the Wave Length. Jump past to [with the transciever](#with-the-transceiver) to help determine if you're an XGS-PON subscriber."
-
-![BGW320-500/505 Fiber status](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_fiber_status.webp){ loading=lazy }
-
-1. Within a web browser, navigate to
-   <http://192.168.1.254/cgi-bin/fiberstat.ha>
-2. Check the status listing for the __Wave Length__ value. A reading of *1270 nm* indicates an XGS-PON subscription.
-
-### with the transceiver
-
-![Nokia Transceiver](shared-assets/transceiver.webp){ loading=lazy }
-
-1. Identify the bale clasp color. If orange/red, proceed.
-2. Engage the bale clasp to release the latch and pull out the transceiver.
-3. Inspect label for XGS-PON or 1270 TX.
-
-!!! note "If your wavelength is *1310 nm* and/or the bale clasp is :green_circle: green, you're using [GPON] and should follow the [PON Madness] guide instead"
-
-  [GPON]: ../gpon/index.md
-  [PON Madness]: https://docs.google.com/document/d/1gcT0sJKLmV816LK0lROCoywk9lXbPQ7l_4jhzGIgoTo
-
-## Purchase a WAS-110 or HLX-SFPX ONT
-
-The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
-responsibility or liability for the listed resellers.
-
-??? quote "HALNy issued a statement on 2025-09-23 concerning the firmware problems and resolution with the HLX-SFPX."
-    > The HLX-SFPX firmware suffers from I/O errors that corrupt the overlay filesystem, soft-bricking the module.
-
-    First of all we want to thank you for all your effort during the tests of our product HLX-SFPX. We are impressed by all your experience and knowledge about GPON/XGS-PON ONTs and embedded devices
-
-    All HALNy products are designed to meet the ISP(Internet Service Providers) requirements.
-    In terms of GPON/XGS-PON ONTs, based on the standard, they are fully managed by the ISP (from the OLT side)
-
-    Although our goal is to support ISPs - we decided to make some exception and implement some of the request from end users on best-effort basis.
-
-    Unlucky V7.0.6t1. version dedicated to end-users was released to fast to community - causing issue with unable to login on LAN side. The problem is not always present and few actions need to happen to reveal it.
-    The device is not bricked, it will work, pass the traffic, just not possible to login. On version V7.0.7p2 please be careful when you copy the data from the other device. Wrong data may affects OMCI communication which cause not passing the traffic and login to fail.
-
-    We released the new firmware version V7.0.8pt2, which doesn't have this issue:
-
-    <https://active-fw.fibrain.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-8pt2.zip>
-
-    We strongly recommend to update product to above version.
-
-    Again apologize for all inconvenience. We are really amazed with these community! Keep it going.
-
-    In case of any problem with HALNy products please contact with our support team: <support@halny.com>
-
-<div class="grid cards" markdown>
-
--    __WAS-110__
-
-     [Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
-
--    __HLX-SFPX__
-
-     [Value-Added Resellers](../xgs-pon/ont/calix/100-05610.md#value-added-resellers)
-
--    __X-ONU-SFPP <small>WAS-110 substitute</small>__
-
-     [Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
-
-</div>
-
-!!! tip "Due to ongoing tariffs, prioritize sourcing from domestic stock and sellers."
-
-    If you must purchase from China, be aware that additional duties and taxes will be incurred. A breakdown of the
-    applicable rates and HTS (Harmonized Tariff Schedule) codes is provided below:
-
-    | HTS Code                                                         | Rate       |
-    | ---------------------------------------------------------------- | ---------- |
-    | [8517.62.0090](https://hts.usitc.gov/search?query=8517.62.0090)  | 0%         |
-    | [9903.01.32](https://hts.usitc.gov/search?query=9903.01.32)      | 0%         |
-    | [9903.88.15](https://hts.usitc.gov/search?query=9903.88.15)      | 7.5%       |
-    | [9903.01.24](https://hts.usitc.gov/search?query=9903.01.24)      | 20%        |
-
-    Rates and HTS codes may change. Verify with the seller that the most current HTS codes are present on the customs
-    declaration to prevent delays and unexpected fees.
-
-    If you see HTS code [9903.85.08](https://hts.usitc.gov/search?query=9903.85.08) on your CBP Form 7501
-    (Entry Summary), you should file a dispute immediately through your courier's portal.
-
-## Install ONT firmware
-
-=== "WAS-110"
-
-    Although not strictly necessary for AT&T, the 8311 community firmware is highly recommended for masquerading as
-    the BGW320-500/505 and used for the remainder of the WAS-110 sections of this guide.
-
-    There are two (2) methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
-
-    <div class="grid cards" markdown>
-
-    -    __Method 1: <small>recommended</small>__
-
-         [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
-
-    -    __Method 2__
-
-         [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
-
-    </div>
-
-=== "HLX-SFPX"
-
-    [HALNy] has provided a custom firmware with satisfactory customization for masquerading as the BGW62-700.
-    It's available by request from [HALNy] and has been made available for download at:
-
-    <https://active-fw.fibrain.pl/aktywa/MATERIALY/HALNy/HLX-SFPX/FIRMWARE/HLX-SFPX_V7-0-8pt2.zip>
-
-    <div class="swiper" markdown>
-
-    <div class="swiper-slide" step="2" markdown>
-
-    ![HLX-SFPX Firmware](shared-assets/hlx_sfpx_firmware.webp){ loading=lazy }
-
-    </div>
-
-    <div class="swiper-slide" step="3" markdown>
-
-    ![HLX-SFPX Firmware Select](shared-assets/hlx_sfpx_firmware_select.webp){ loading=lazy }
-
-    </div>
-
-    </div>
-
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
-       [web credentials]{ data-preview target="_blank" }.
-    2. From the main navigation __System__ drop-down, click __Flash Firmware__.
-    3. From the __Flash Firmware__ page, click __Choose Image__, browse for `G_ONU_HLX_SFPX_V7-0-8pt2-e.bin`, and click
-       __Flash__ to proceed with flashing the firwmare.
-    4. Follow the prompts.
+{% include 'att-inc-bgw/install-ont-fw.md' %}
 
 ## Configure ONT settings
 
@@ -206,11 +44,11 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
 === "BGW320-500"
 
-    ![BGW320-500 label](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_label.webp){ class="nolightbox" }
+    ![BGW320-500 label](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bgw320_500_label.webp){ class="nolightbox" }
 
 === "BGW320-505"
 
-    ![BGW320-505 label](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_505_label.webp){ class="nolightbox" }
+    ![BGW320-505 label](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bgw320_505_label.webp){ class="nolightbox" }
 
 &nbsp;
 
@@ -381,86 +219,18 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
     4. Click __Save & Reboot__ to apply the parameters.
 
-## Verify ONT connectivity
+{% include 'att-inc-bgw/verify-ont.md' %}
 
-!!! note "Do not be alarmed..."
-    If you receive an e-mail and/or text informing you to:
+{% include 'att-inc-bgw/router-tips.md' %}
 
-    > Check your AT&T Fiber equipment since you might be offline currently.
-
-    The BGW320-500/505 sends telemetry data to *better* the customer experience.
-
-### Hot plug fiber cable
-
-!!! warning "Avoid direct eye contact with the end of the fiber optic cable"
-
-After rebooting the [WAS-110] or [HLX-SFPX], safely remove the SC/APC fiber optic cable from the BGW620-700 and
-connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
-
-=== "WAS-110"
-
-    ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
-
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* [password]{ data-preview target="_blank" }.
-    2. From the __PON Status__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
-
-    !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [Optical status] section."
-
-      [Optical status]: troubleshoot-connectivity-issues-with-the-was-110.md#optical-status
-
-=== "HLX-SFPX"
-
-    ![HLX-SFPX PON status](shared-assets/hlx_sfpx_pon_status.webp){ loading=lazy }
-
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
-       [web credentials]{ data-preview target="_blank" }.
-    2. From the main navigation __Status__ drop-down, click __PON Interface__.
-    3. From the __Optical Information__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](troubleshoot-connectivity-issues-with-the-was-110.md#optical-specifications){ data-preview target="_blank" }.
-
-### Validate OLT authentication
-
-=== "WAS-110"
-
-    <h4>Check for O5.1 PLOAM status</h4>
-
-    ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
-
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/status/overview> and, if asked, input your *root* [password]{ data-preview target="_blank" }.
-    2. From the __PON Status__ section, verify that the __PON PLOAM Status__ is in an *05.1, Associated state*.
-
-    !!! tip "For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide's [PLOAM status] section."
-
-      [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
-
-    <h4>Check for OLT associated VLAN filters</h4>
-
-    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/vlans> and, if asked, input your root [password]{ data-preview target="_blank" }.
-    2. From the __VLAN Tables__ page, if the __textarea__ states *"No Extended VLAN Tables Detected"*, the ONT configuration has not satisfied the OLT.
-
-=== "HLX-SFPX"
-
-    ![HLX-SFPX PON status](shared-assets/hlx_sfpx_pon_status.webp){ loading=lazy }
-
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
-       [web credentials]{ data-preview target="_blank" }.
-    2. From the main navigation __Status__ drop-down, click __PON Interface__.
-    3. From the __Link Information__ section, verify that the __PLOAM State__ is *05*.
-
-## Router tips
-
-* Configure the WAN interface for DHCP mode.
-* Clone the BGW320-500/505 :purple_circle: __MAC address__ on the router's DHCP WAN interface to avoid waiting for the 20 minute lease to expire.
-
-## Managed switch tips
-
-* Filter or disable any Layer 2 management protocols (e.g., (R)STP) and discovery protocols (e.g., LLDP, CDP, FDP, MNDP, RoMON).
+{% include 'att-inc-bgw/switch-tips.md' %}
 
 ## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
 
 The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
 software upgrades of the BGW320-500/505 if the WAS-110 reports a fake O5 state.
 
-![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-on-xgs-pon-with-the-bfw-solutions-was-110/bgw320_500_505_update.webp){ loading=lazy }
+![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bgw320_500_505_update.webp){ loading=lazy }
 
 The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
 <http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following string pattern with the
