@@ -45,11 +45,11 @@ Fiber Status page, and second, by inspecting the SFP [transceiver](#with-the-tra
 
 ![Nokia Transceiver](shared-assets/transceiver.webp){ loading=lazy }
 
-1. Identify the bale clasp color. If orange/red, proceed.
+1. Identify the bale clasp color. If *orange/red* :red_circle:, proceed.
 2. Engage the bale clasp to release the latch and pull out the transceiver.
-3. Inspect label for XGS-PON or 1270 TX.
+3. Inspect the label for *XGS-PON* or *1270* TX.
 
-!!! note "If your wavelength is *1310 nm* and/or the bale clasp is :green_circle: green, you're using [GPON] and should follow the [PON Madness] guide instead"
+!!! note "If your wavelength is *1310 nm* and/or the bale clasp is *green* :green_circle:, you're using [GPON] and should follow the [PON Madness] guide instead"
 
   [GPON]: ../gpon/index.md
   [PON Madness]: https://docs.google.com/document/d/1gcT0sJKLmV816LK0lROCoywk9lXbPQ7l_4jhzGIgoTo
