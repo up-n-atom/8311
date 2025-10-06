@@ -93,7 +93,7 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
     1. Within a web browser, navigate to
        <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
-       and, if asked, input your *root<* [password]{ data-preview target="_blank" }.
+       and, if asked, input your *root* [password]{ data-preview target="_blank" }.
 
     2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
