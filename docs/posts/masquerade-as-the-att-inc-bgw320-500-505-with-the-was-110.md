@@ -220,7 +220,7 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
     4. Click __Save & Reboot__ to apply the parameters.
 
   [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
-  [Version listing]: #bgw320-500-505-software-versions
+  [Version listing]: #software-versions
 
 {% include 'att-inc-bgw/verify-ont.md' %}
 
