@@ -1,4 +1,4 @@
-## Purchase a WAS-110 or HLX-SFPX ONT
+## Purchase WAS-110/HLX-SFPX ONT { #purchase-was-110-hlx-sfpx-ont }
 
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
 responsibility or liability for the listed resellers.
@@ -59,3 +59,6 @@ responsibility or liability for the listed resellers.
 
     If you see HTS code [9903.85.08](https://hts.usitc.gov/search?query=9903.85.08) on your CBP Form 7501
     (Entry Summary), you should file a dispute immediately through your courier's portal.
+
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md

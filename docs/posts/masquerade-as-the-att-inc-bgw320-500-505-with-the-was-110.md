@@ -20,7 +20,7 @@ ont: BGW320-500/505
 
 # Masquerade as the AT&T Inc. BGW320-500/505 with the WAS-110 or HLX-SFPX
 
-![Bypass family](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bypass_bgw320.webp){ class="nolightbox" }
+![Bypass family]({{ page.meta.slug }}/bypass_bgw320.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
@@ -54,14 +54,12 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
 === "WAS-110"
 
-    Choose your preferred setup method: [web UI](#from-the-web-ui) or [shell](#from-the-shell) and carefully follow the
-    steps to avoid unnecessary downtime and troubleshooting.
+    Use your preferred setup method and carefully follow the steps to avoid unnecessary downtime and troubleshooting:
 
-    <h3 id="from-the-web-ui">from the web UI <small>recommended</small></h3>
+    * [Web (luci)](#config-via-web)
+    * [Shell (linux)](#config-via-shell)
 
-    ??? info "As of version 2.4.0 `https://` is supported and enabled by default"
-        All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
-        0 or false.
+    <h3 id="config-via-web">Via web <small>recommended</small></h3>
 
     <div class="swiper" markdown>
 
@@ -127,7 +125,7 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
     4. __Save__ changes and *reboot* from the __System__ menu.
 
-    <h3 id="from-the-shell">from the shell <small>alternative</small></h3>
+    <h3 id="config-via-shell">Via shell <small>alternative</small></h3>
 
     1. Login over secure shell (SSH).
 
@@ -182,6 +180,8 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
         reboot
         ```
 
+  [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+
 === "HLX-SFPX"
 
     ![HLX-SFPX custom values](shared-assets/hlx_sfpx_settings.webp){ loading=lazy }
@@ -219,32 +219,30 @@ As well as the bottom label of the BGW320-500/505, color-coordinated in the foll
 
     4. Click __Save & Reboot__ to apply the parameters.
 
+  [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
+  [Version listing]: #bgw320-500-505-software-versions
+
 {% include 'att-inc-bgw/verify-ont.md' %}
 
 {% include 'att-inc-bgw/router-tips.md' %}
 
 {% include 'att-inc-bgw/switch-tips.md' %}
 
-## BGW320-500/505 software versions { #bgw320-500-505-software-versions data-toc-label="BGW320-500/505 software versions" }
+## Software versions
 
-The OLT *can* utilize the software version as a provisioning attribute. It is recommended to stay updated with the
-software upgrades of the BGW320-500/505 if the WAS-110 reports a fake O5 state.
+The {{ page.meta.ont }} uses CWMP instead of OMCI for firmware updates. While the OLT rarely requires approval for
+specific software versions, keeping the [WAS-110] up-to-date is beneficial but not strictly necessary.
 
-![BGW320-500/505 update](masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110/bgw320_500_505_update.webp){ loading=lazy }
+![BGW320-500/505 update]({{ page.meta.slug }}/bgw320_500_505_update.webp){ loading=lazy }
 
-The software version can be acquired by reconnecting the BGW320-500/505 and navigating to
-<http://192.168.1.254/cgi-bin/update.ha> and replacing the `X` placeholders in the following string pattern with the
-version number: `BGW320_X.XX.X`.
-
-  [Purchase a WAS-110 or HLX-SFPX ONT]: #purchase-a-was-110-or-hlx-sfpx-ont
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
-  [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
-  [HALNy]: https://halny.com/
-  [label]: #bgw320-500-505-label
-  [Version listing]: #bgw320-500-505-software-versions
-  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
-  [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
-  [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
-  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
+1. Within a web browser, navigate to
+   <http://192.168.1.254/cgi-bin/update.ha>
+2. Copy/paste the __Current software version__ into the form to generate a __Software Version__ attribute.
+   <div style="margin:1em 0;">
+     <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.softver;if(!el.checkValidity())return;el.value='BGW320_'+escapeHTML(el.value);})(event)">
+       <input type="text" id="softver" placeholder="Current Version" pattern="^\d\.\d{2}\.\d$"/>
+       <input type="submit" value="Generate" />
+     </form>
+   </div>
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>

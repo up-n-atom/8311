@@ -48,3 +48,7 @@
     3. From the __Flash Firmware__ page, click __Choose Image__, browse for `G_ONU_HLX_SFPX_V7-0-8pt2-e.bin`, and click
        __Flash__ to proceed with flashing the firwmare.
     4. Follow the prompts.
+
+  [HALNy]: https://halny.com/
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md

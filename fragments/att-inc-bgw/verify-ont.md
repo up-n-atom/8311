@@ -62,3 +62,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
     3. From the __Link Information__ section, verify that the __PLOAM State__ is *05*.
+
+  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
