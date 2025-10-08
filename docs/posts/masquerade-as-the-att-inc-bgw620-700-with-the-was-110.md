@@ -30,8 +30,8 @@ ont: BGW620-700
 
 ## Configure ONT settings
 
-Successful masquerading depends on the original ONT serial number and other identifiers (e.g., software versions),
-all available via your BGW620-700's fiber stats page:
+To masquerade, you will need the original ONT serial number and other identifiers (e.g., software versions) from your
+{{ page.meta.ont }}'s fiber stats page.
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
 

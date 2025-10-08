@@ -33,12 +33,12 @@ ont: BGW320-500/505
 
 ## Configure ONT settings
 
-Successful masquerading depends on the original ONT serial number and other identifiers (e.g., software versions),
-available via your BGW320-500/505's fiber stats page:
+To masquerade, you will need the original ONT serial number and other identifiers (e.g., software versions) from your
+{{ page.meta.ont }}'s fiber stats page.
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
-As well as the bottom label of the BGW320-500/505, color-coordinated in the following depiction:
+Alternatively, the ONT serial number can be found on the bottom label of the {{ page.meta.ont }}, as depicted below:
 
 <div id="bgw320-500-505-label"></div>
 
