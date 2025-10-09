@@ -1,5 +1,5 @@
 !!! warning "New installations"
-    Keep your {{ page.meta.ont }} in active service for roughly a week or two, until fully provisioned and the
+    Keep your {{ page.meta.ont }} in active service for roughly a week or two until fully provisioned and the
     installation ticket has been closed.
 
 ???+ question "Common misconceptions and answers"
@@ -9,7 +9,7 @@
     :   No, the AT&T supplied SFP+ module is only a physical-layer transceiver compliant with XGS-PON
         [ITU G.9807.1]. It lacks ONT management [ITU G.988], meaning it cannot function as a standalone ONT.
 
-    __Do the WAS-110 or HLX-SFPX ONTs support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
+    __Does the WAS-110 or X-ONU-SFPP ONT support GPON wavelengths (1490 nm downstream and 1310 nm upstream)?__
 
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) laser drivers, which

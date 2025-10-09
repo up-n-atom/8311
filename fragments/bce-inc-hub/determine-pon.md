@@ -4,7 +4,7 @@
 
 ???+ question "Common misconceptions and answers"
 
-    __Do the WAS-110 or X-ONU-SFPP ONTs support GPON wavelengths, specifically 1490 nm downstream and 1310 nm upstream?__
+    __Does the WAS-110 or X-ONU-SFPP ONT support GPON wavelengths (1490 nm downstream and 1310 nm upstream)?__
 
     :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
         1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Macom M02181 ([X-ONU-SFPP]) laser drivers, which
