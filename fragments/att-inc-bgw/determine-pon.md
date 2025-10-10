@@ -27,7 +27,7 @@
 ## Verify XGS-PON service
 
 !!! info "2 Gbps or higher tiers"
-    If you're subscribed to 2 GIG speed or a similar 2 Gbps or higher tier internet package, skip past to
+    If you are subscribed to 2 GIG speed or a similar 2 Gbps or higher tier internet package, skip past to
     [Purchase WAS-110/HLX-SFPX ONT].
 
   [Purchase WAS-110/HLX-SFPX ONT]: #purchase-was-110-hlx-sfpx-ont
@@ -56,7 +56,7 @@ connection uses [XGS-PON]:
 2. Engage the bale clasp to release the latch and pull out the transceiver.
 3. Inspect the label for *XGS-PON* or *1270* TX.
 
-!!! note "If your wavelength is *1310 nm* and/or the bale clasp is *green* :green_circle:, you're using [GPON] and should follow the [PON Madness] guide instead."
+!!! note "If your wavelength is *1310 nm* and/or the bale clasp is *green* :green_circle:, you are using [GPON] and should follow the [PON Madness] guide instead."
 
   [XGS-PON]: ../xgs-pon/index.md
   [GPON]: ../gpon/index.md

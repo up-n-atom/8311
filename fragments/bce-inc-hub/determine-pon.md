@@ -1,6 +1,6 @@
 !!! warning "New installations"
-    Keep the {{ page.meta.ont }} in active service for roughly a week or two until fully provisioned and the installation ticket
-    has been closed.
+    Keep the {{ page.meta.ont }} in active service for roughly a week or two until fully provisioned and the
+    installation ticket has been closed.
 
 ???+ question "Common misconceptions and answers"
 
@@ -19,7 +19,7 @@
 ## Verify XGS-PON service
 
 !!! info "3 Gbps or higher packages"
-    If you're subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase WAS-110/X-ONU-SFPP ONT].
+    If you are subscribed to Gigabit Fibe 3.0 or a similar 3 Gbps or higher package, skip past to [Purchase WAS-110/X-ONU-SFPP ONT].
 
   [Purchase WAS-110/X-ONU-SFPP ONT]: #purchase-was-110-x-onu-sfpp-ont
 
