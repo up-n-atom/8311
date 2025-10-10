@@ -14,10 +14,12 @@
 === "Bell Canada"
 
     * Configure your router WAN interface for PPPoE mode using your B1 username and password.
-    * Enable baby jumbo frames by setting the physical WAN interface's MTU to `1508` and the PPPoE virtual Interface's
-      MTU to `1500`.
 
-    !!! note "If you have forgotten your B1 password, you can reset it on the [MyBell](https://mybell.bell.ca/) portal."
+        !!! note "If you have forgotten your B1 password, you can reset it on the [MyBell](https://mybell.bell.ca/) portal."
+            <!-- placeholder -->
+
+    * Enable baby jumbo frames by setting the WAN's physical interface's MTU to `1508` and the PPPoE virtual Interface's
+      MTU to `1500`.
 
 === "Bell Aliant/MTS"
 
