@@ -50,28 +50,29 @@ VLAN to bridge them.
 
 ### Set WAS-110/X-ONU-SFPP Internet VLAN
 
-<div class="swiper" markdown>
+=== "Web"
 
-<div class="swiper-slide" markdown>
+    <div class="swiper">
+    <div class="swiper-slide" markdown>
+    ![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
+    </div>
+    <div class="swiper-slide" markdown>
+    ![WAS-110 8311 configuration ISP fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
+    </div>
+    </div>
 
-![WAS-110 login](shared-assets/was_110_luci_login.webp){ loading=lazy }
+    1. Within a web browser, navigate to
+       <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
+       and, if asked, input your *root* [password]{ data-preview target="_blank" }.
 
-</div>
+    2. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, set __Internet VLAN__ to `35`.
 
-<div class="swiper-slide" markdown>
-
-![WAS-110 8311 configuration ISP fixes](shared-assets/was_110_luci_config_fixes.webp){ loading=lazy }
-
-</div>
-
-</div>
-
-1. Within a web browser, navigate to
-   <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
-   and, if asked, input your *root* [password]{ data-preview target="_blank" }.
-
-2. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, set __Internet VLAN__ to `35`.
-
-3. __Save__ changes and reboot from the __System__ menu.
+    3. __Save__ changes and reboot from the __System__ menu.
 
   [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+
+=== "Shell"
+
+    ```
+    fwenv_set -8 internet_vlan 35
+    ```
