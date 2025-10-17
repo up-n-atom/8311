@@ -121,14 +121,18 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode # (1)!
     Before you begin, please be aware of the following important caveats to ensure a successful installation:
 
     1. Ensure you use the correct firmware image for your hardware:
-         * __G-010S-P__ `alcatel-g010sp_new_busybox-squashfs.image`
-         * __MA5671A__ or __GPON-ONU-34-20BI__ `huawei-ma5671a_new_busybox-squashfs.image`
+         * __[G-010S-P]__ `alcatel-g010sp_new_busybox-squashfs.image`
+         * __[MA5671A]__ / __[GPON-ONU-34-20BI]__ `huawei-ma5671a_new_busybox-squashfs.image`
     2. Install the non-themed firmware image(s). The themed versions don't render correctly in modern web browsers.
     3. Changing the language via the shell is easier than using the web UI. Run the following commands:
        ```
        uci set luci.main.lang='en'
        uci commit
        ```
+
+  [G-010S-P]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
+  [MA5671A]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
+  [GPON-ONU-34-20BI]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
 
   [XGS-PON]: ../xgs-pon/index.md
   [How to Bypass Gigahub for Bell Aliant (GPON)]: https://github.com/dukeseb/Bell-Gigahub-Bypass-GPON

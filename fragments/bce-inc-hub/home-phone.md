@@ -30,7 +30,7 @@ VLAN to bridge them.
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is located on the back [label] of the Home Hub 4000.
+    1. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
 
 2. From the __WAN mode__ drop-down, switch to `WAN Ethernet` and click __Save__.
 
