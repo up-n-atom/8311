@@ -53,7 +53,7 @@ connection uses [XGS-PON]:
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is located on the back [label] of the {{ page.meta.ont }}.
+    1. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
 
 2. From the __WAN__ page, verify the displayed __current mode__ is XGS-PON.
 
