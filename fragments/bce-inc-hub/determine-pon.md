@@ -53,7 +53,7 @@ connection uses [XGS-PON]:
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
+    1. Press the __Up__/__Down__ arrow buttons on the front of the {{ page.meta.ont }} to select __Modem Management__ or __Modem Password__ and press the __OK__ button to display the password.
 
 2. From the __WAN__ page, verify the displayed __current mode__ is XGS-PON.
 
@@ -113,9 +113,7 @@ xmo-remote-client --password=<password> -a MD5 get-wan-mode # (1)!
 ```
 {% endif %}
 
-1. Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
-
-  [label]: #{{ page.meta.ont | lower | replace(" ", "-") }}-label
+1. Replace the `<password>` argument. Press the __Up__/__Down__ arrow buttons on the front of the {{ page.meta.ont }} to select __Modem Management__ or __Modem Password__ and press the __OK__ button to display the password.
 
 ???- note "If your *current mode* is *GPON*, you should follow the [How to Bypass Gigahub for Bell Aliant (GPON)] guide instead"
     Before you begin, please be aware of the following important caveats to ensure a successful installation:

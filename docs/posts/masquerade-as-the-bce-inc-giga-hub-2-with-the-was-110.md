@@ -1,24 +1,25 @@
 ---
-date: 2024-03-23
+date: 2025-10-18
 categories:
   - XGS-PON
-  - Giga Hub
+  - Giga Hub 2.0
   - WAS-110
   - Bell Canada
   - Bell Aliant
   - Bell MTS
   - Sagemcom
   - FAST 5689E
-description: Masquerade as the BCE Inc. Giga Hub with the WAS-110 or X-ONU-SFPP
-slug: masquerade-as-the-bce-inc-giga-hub-with-the-was-110
+description: Masquerade as the BCE Inc. Giga Hub 2.0 with the WAS-110 or X-ONU-SFPP
+slug: masquerade-as-the-bce-inc-giga-hub-2-with-the-was-110
 links:
   - xgs-pon/index.md
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
   - posts/masquerade-as-the-bce-inc-home-hub-4000-with-the-was-110.md
-ont: Giga Hub
+  - posts/masquerade-as-the-bce-inc-giga-hub-with-the-was-110.md
+ont: Giga Hub 2
 ---
 
-# Masquerade as the BCE Inc. {{ page.meta.ont }} with the WAS-110 or X-ONU-SFPP
+# Masquerade as the BCE Inc. Giga Hub 2.0 with the WAS-110 or X-ONU-SFPP
 
 ![Bypass family]({{ page.meta.slug }}/bypass_{{ page.meta.ont | lower | replace(" ", "_") }}.webp){ class="nolightbox" }
 
@@ -86,11 +87,11 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     | Attribute                  | Value                        | Mandatory    | Remarks                         |
     | -------------------------- | ---------------------------- | ------------ | ------------------------------- |
     | PON Serial Number (ONT ID) | SMBS&hellip;                 | :check_mark: | :blue_circle: ONT S/N           |
-    | Equipment ID               | 5690                         |              |                                 |
-    | Hardware Version           | Fast5689EBell                |              |                                 |
+    | Equipment ID               | 5697                         |              |                                 |
+    | Hardware Version           | Fast5697Bell                 |              |                                 |
     | Sync Circuit Pack Version  | :check_mark:                 |              |                                 |
-    | Software Version A         | SGC8400058                   |              | [Version listing]               |
-    | Software Version B         | SGC8400058                   |              | [Version listing]               |
+    | Software Version A         | SGM831000156                 |              | [Version listing]               |
+    | Software Version B         | SGM83100011E                 |              | [Version listing]               |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini | :check_mark: | VEIP and more                   |
     | IP Host MAC Address        | 40:65:A3:FF:A7:B1            |              | :purple_circle: @MAC + 1        |
 
@@ -116,11 +117,11 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     fwenv_set mib_file
     fwenv_set -8 iphost_mac 40:65:A3:FF:A7:B1 # (1)!
     fwenv_set -8 gpon_sn SMBS... # (2)!
-    fwenv_set -8 equipment_id 5690
-    fwenv_set -8 hw_ver Fast5689EBell
+    fwenv_set -8 equipment_id 5697
+    fwenv_set -8 hw_ver Fast5697Bell
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA SGC8400058 # (3)!
-    fwenv_set -8 sw_verB SGC8400058
+    fwenv_set -8 sw_verA SGM831000156 # (3)!
+    fwenv_set -8 sw_verB SGM83100011E
     fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
     fwenv_set -8 fix_vlans 1
     ```
@@ -149,5 +150,3 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 {% include 'bce-inc-hub/switch-tips.md' %}
 
 {% include 'bce-inc-hub/software-ver.md' %}
-
-{{ read_csv('docs/posts/masquerade-as-the-bce-inc-giga-hub-with-the-was-110/versions.csv') }}

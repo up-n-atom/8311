@@ -30,7 +30,7 @@ VLAN to bridge them.
    and, if asked, input your Administrator password. (1)
    { .annotate }
 
-    1. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
+    1. Press the __Up__/__Down__ arrow buttons on the front of the {{ page.meta.ont }} to select __Modem Management__ or __Modem Password__ and press the __OK__ button to display the password.
 
 2. From the __WAN mode__ drop-down, switch to `WAN Ethernet` and click __Save__.
 
@@ -46,7 +46,7 @@ VLAN to bridge them.
     ```
 {% endif %}
 
-    1. Replace the `<password>` argument. The default Administrator password is the serial number (S/N) located on the back [label] of the {{ page.meta.ont }}.
+    1. Replace the `<password>` argument. Press the __Up__/__Down__ arrow buttons on the front of the {{ page.meta.ont }} to select __Modem Management__ or __Modem Password__ and press the __OK__ button to display the password.
 
 ### Set WAS-110/X-ONU-SFPP Internet VLAN
 
