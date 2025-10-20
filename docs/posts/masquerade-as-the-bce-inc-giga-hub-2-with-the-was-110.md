@@ -8,7 +8,7 @@ categories:
   - Bell Aliant
   - Bell MTS
   - Sagemcom
-  - FAST 5689E
+  - FAST 5697
 description: Masquerade as the BCE Inc. Giga Hub 2.0 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-bce-inc-giga-hub-2-with-the-was-110
 links:
