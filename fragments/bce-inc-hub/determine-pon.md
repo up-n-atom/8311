@@ -103,7 +103,7 @@ Open a terminal and install the open-source XMO client using:
 
 Finally, to determine if you have XGS-PON service, execute the following:
 
-{% if page.meta.ont == 'Giga Hub' %}
+{% if page.meta.ont.startswith('Giga Hub') %}
 ``` sh
 xmo-remote-client --password=<password> get-wan-mode # (1)!
 ```

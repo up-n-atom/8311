@@ -9,9 +9,15 @@ If you would like to help us maintain the software listing, you can contribute n
 Use the following command to extract the external firmware version. This command utilizes the {{ page.meta.ont }}'s
 XMO JSON-RPC and the [xmo-remote-client](#via-xmo-client) described earlier in this guide.
 
+{% if page.meta.ont.startswith('Giga Hub') %}
+``` sh
+xmo-remote-client -p <password> get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
+```
+{% else %}
 ``` sh
 xmo-remote-client -p <password> -a MD5 get-value --path "Device/DeviceInfo/SoftwareVersion" --path "Device/DeviceInfo/ExternalFirmwareVersion"
 ```
+{% endif %}
 
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md

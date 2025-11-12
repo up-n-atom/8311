@@ -36,7 +36,7 @@ VLAN to bridge them.
 
 3. Set the __Voice WAN modes__ to include `wan` (default: `gpon,xgspon`) using the [xmo-remote-client](#via-xmo-client).
 
-{% if page.meta.ont == 'Giga Hub' %}
+{% if page.meta.ont.startswith('Giga Hub') %}
     ``` sh
     xmo-remote-client --password=<password> set-value ---path "Device/Services/BellNetworkCfg/VoiceAllowedWANModes" --value "gpon,xgspon,wan" # (1)!
     ```
