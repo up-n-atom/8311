@@ -20,6 +20,10 @@ slug: masquerade-as-the-frontier-comms-inc-fox222-frx523-with-the-was-110
 <!-- more -->
 <!-- nocont -->
 
+!!! warning "MoCA"
+    The FRX523 must be provisioned by Frontier to use the 10 GbE LAN port. The [WAS-110] will not successfully operate
+    in masquerade mode if the FRX523 is provisioned to use the MoCA LAN port.
+
 ## Purchase a WAS-110
 
 !!! note
