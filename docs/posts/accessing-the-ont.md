@@ -1,15 +1,18 @@
 ---
 draft: true
-date: 2025-01-25
+date: 2025-11-21
 categories:
   - ONT
   - OPNsense
   - pfSense
   - UniFi OS
 description: Accessing the ONT
+pin: true
 ---
 
 # Accessing the ONT
+
+![Access ONT](access-the-ont/access_ont.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
