@@ -17,11 +17,25 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
+
+!!! tip "Accessing an ISP ONT"
+    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
+    the OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the entire ONT via
+    managed entity 256, as defined in ITU-T G.988 section 9.13.3.
+
 * [Static IP](#static-ip)
 * [Source NAT](#source-nat)
 * [Static Route](#static-route)
 
 ## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Static IP" }
+
+A static IP on the same subnet provides direct, local access to the ONT. This approach streamlines setup by
+establishing a simple connection construct without requiring traffic to traverse network boundaries.
+
+This configuration serves as a foundational exercise in core networking principles (a requirement that is reiterated
+in a [Source NAT] configuration), but it only paints half a picture in a typical SOHO internet setup.
+
+ [Source NAT]: #source-nat
 
 === ":material-microsoft: Windows"
 
@@ -110,8 +124,15 @@ pin: true
 === ":simple-freebsd: FreeBSD"
 
     ``` sh
-    ifconfig
+    ifconfig <interface> 192.168.11.2 netmask 255.255.255.0
     ```
+
+    !!! note "The prior command to set the IP address will not persist after a power cycle"
+        For persistence you must edit `/etc/rc.conf` with the following:
+
+        ``` sh
+        ifconfig_<interface>="inet 192.168.11.2 netmask 255.255.255.0"
+        ```
 
 ## Source NAT <small>Router or Firewall</small> { #source-nat data-toc-label="Source NAT" }
 
@@ -292,7 +313,16 @@ pin: true
         /ip firewall nat add action=src-nat chain=srcnat dst-address=192.168.11.1 out-interface=sfp-sfpplus1 to-addresses=192.168.11.2
         ```
 
-## Static Route
+## Static Route <small>UniFi workaround</small> { #static-route data-toc-label="Static Route" }
+
+A static route acts as a workaround for UniFi OS limitations, addressing the lack of SNAT support on physical
+interfaces, though this configuration is not exclusive to UniFi.
+
+Configuring this route is inherently difficult because it must also be applied to the ONT, which is typically a read-only
+device. The 8311 community firmware overcomes this with a built-in [reverse ARP daemon] that ensures the return path
+is defined, allowing traffic to traverse network boundaries.
+
+ [reverse ARP daemon]: https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/files/common/usr/sbin/8311-rarpd.sh>
 
 === ":simple-opnsense: OPNsense"
 
@@ -309,5 +339,3 @@ pin: true
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
 
 === ":simple-mikrotik: MikroTik RouterOS"
-
-You should now be able to access the [WAS-110] at `192.168.11.1`.
