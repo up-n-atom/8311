@@ -17,15 +17,43 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
+!!! info "This guide uses `192.168.11.0/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual [default] settings."
+
+  [default]: #default-ip
 
 !!! tip "Accessing an ISP ONT"
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
     the OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the entire ONT via
-    managed entity 256, as defined in ITU-T G.988 section 9.13.3.
+    managed entity 256, as defined in [ITU-T G.988] section 9.13.3.
+
+  [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
 
 * [Static IP](#static-ip)
 * [Source NAT](#source-nat)
 * [Static Route](#static-route)
+
+## Default IP
+
+Your ONT default IP may conflict with your SOHO network's LAN subnet, as both often use the Class C private range
+(192.168.0.0/16). To avoid this, it is recommended to configure your router to use a less common private range,
+such as Class A (10.0.0.0/8) or Class B (172.16.0.0/12), or at the very least, a less common subnet within Class C
+itself.
+
+The following ONTs commonly used in our guides have the following default IPs you will want to avoid:
+
+| ONT          | DEFAULT IP    |
+| ------------ | ------------- |
+| [WAS-110]    | 192.168.11.1  |
+| [X-ONU-SFPP] | 192.168.1.1   |
+| [HLX-SFPX]   | 192.168.33.1  |
+| [XS-010X-Q]  | 192.168.100.1 |
+
+!!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either 192.168.11.1 or 192.168.1.1, depending on the vendor or firmware version."
+
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
+  [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
+  [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
 
 ## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Static IP" }
 
