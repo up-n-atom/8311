@@ -20,7 +20,6 @@ responsibility or liability for the listed resellers.
     [XS-010X-Q] SFU ONT.
 
     * [EBOX](https://www.ebox.ca/)
-    * [Oricom](https://www.oricom.ca/)
     * [Primus](https://primus.ca/)
 
     If budget constraints are no longer a concern and an SFP solution becomes appealing, consult the guide:

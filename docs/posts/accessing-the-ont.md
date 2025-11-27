@@ -48,7 +48,7 @@ The following ONTs commonly used in our guides have the following default IPs yo
 | [HLX-SFPX]   | 192.168.33.1  |
 | [XS-010X-Q]  | 192.168.100.1 |
 
-!!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either 192.168.11.1 or 192.168.1.1, depending on the vendor or firmware version."
+!!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either 192.168.11.1 or 192.168.1.1, depending on the vendor or firmware installed."
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
