@@ -11,7 +11,7 @@ description: WAS-110 multicast upgrade and recovery
 
 <!-- !!! question "Forgot your root password?" -->
 
-![WAS-110 Recovery](was-110-mulicast-upgrade-and-community-firmware-recovery/was_110_recovery.webp){ class="nolightbox" }
+![WAS-110 Recovery](was-110-multicast-upgrade-and-community-firmware-recovery/was_110_recovery.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
@@ -41,7 +41,7 @@ The [WAS-110] from the Azores factory includes a handy multicast upgrade utility
 including models from the following resellers:
 
 * Azores Networks XSS
-* E.C.I. Networks EN-XGSFPP-OMAC-V2 <small>*Incompatible with the EN-XGSFPP-OMAC*</small>
+* E.C.I. Networks EN-XGSFPP-OMAC-V2 (Azores Firmware) <small>*Incompatible with the EN-XGSFPP-OMAC*</small>
 * FiberMall XGSPON-ONU-STICK <small>*Incompatible with the XGSPON-ONU-STICK-V8 Potron Bootloader*</small>
 
 ## Upgrade Sequence
