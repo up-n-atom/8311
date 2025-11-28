@@ -7,6 +7,4 @@
     The 8311 community has produced many active cooling designs to improve overall temperatures.
     Join the [Discord](https://discord.pon.wiki) for additional tips.
 
-<div class="embed">
-  <iframe width=300" height="340" src="https://www.printables.com/embed/1392938" scrolling="no" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-</div>
+<iframe width=300" height="340" src="https://www.printables.com/embed/1392938" scrolling="no" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
