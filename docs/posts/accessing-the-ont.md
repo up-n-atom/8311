@@ -61,9 +61,7 @@ A static IP on the same subnet provides direct, local access to the ONT. This ap
 establishing a simple connection construct without requiring traffic to traverse network boundaries.
 
 This configuration serves as a foundational exercise in core networking principles (a requirement that is reiterated
-in a [Source NAT] configuration), but it only paints half a picture in a typical SOHO internet setup.
-
- [Source NAT]: #source-nat
+in a [SNAT] configuration), but it only paints half a picture in a typical SOHO internet setup.
 
 === ":material-microsoft: Windows"
 
@@ -343,8 +341,8 @@ in a [Source NAT] configuration), but it only paints half a picture in a typical
 
 ## Static Route <small>UniFi workaround</small> { #static-route data-toc-label="Static Route" }
 
-A static route acts as a workaround for UniFi OS limitations, addressing the lack of SNAT support on physical
-interfaces, though this configuration is not exclusive to UniFi.
+A static route acts as a workaround for UniFi OS limitations, addressing the lack of persistent [SNAT] support on
+physical interfaces, though this configuration is not exclusive to UniFi.
 
 Configuring this route is inherently difficult because it must also be applied to the ONT, which is typically a read-only
 device. The 8311 community firmware overcomes this with a built-in [reverse ARP daemon] that ensures the return path
@@ -367,3 +365,5 @@ is defined, allowing traffic to traverse network boundaries.
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
 
 === ":simple-mikrotik: MikroTik RouterOS"
+
+ [SNAT]: #source-nat
