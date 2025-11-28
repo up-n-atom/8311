@@ -12,13 +12,6 @@ tags:
 
 ![X-ONU-SFPP](x-onu-sfpp/x-onu-sfpp.webp)
 
-!!! warning "Caution: Hot surface"
-    It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,
-    over time they may decrease the product lifespan.
-
-    The 8311 community has produced many active cooling designs to improve overall temperatures.
-    Join the [Discord](https://discord.pon.wiki) for additional tips.
-
 ## Specifications
 
 |             |                                                     |                     |
@@ -155,12 +148,15 @@ i2cset -fy 0 0x51 0x7B 0x91 0x42 0xF0 0x07 i
 
 ### Web credentials
 
-=== "FiberMall 8311 fork"
+=== "Reseller 8311 forks"
 
     !!! note "8311 forks are NOT supported by the 8311 community"
         Please follow the FiberMall support documentation below or [install] the official [8311 firmware].
 
         <https://www.fibermall.com/blog/how-to-use-xgspon-onu-stick.htm>
+
+  [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
+  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
 
     | Username | Password       |
     | -------- | -------------- |
@@ -216,8 +212,18 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
   [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
 
-  [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
-  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
+## Active Cooling
+
+!!! warning "Caution: Hot surface"
+    It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,
+    over time they may decrease the product lifespan.
+
+    The 8311 community has produced many active cooling designs to improve overall temperatures.
+    Join the [Discord](https://discord.pon.wiki) for additional tips.
+
+<div class="embed">
+  <iframe width=300" height="340" src="https://www.printables.com/embed/1392938" scrolling="no" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
