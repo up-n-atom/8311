@@ -32,11 +32,7 @@ tags:
  [M02181]: https://www.macom.com/products/product-detail/MALD-02181
  [Shell credentials]: #shell-credentials
 
-## Architecture
-
-### MaxLinear PRX126 [^2]
-
- --8<-- "docs/xgs-pon/ont/bfw-solutions/was-110.md:arch"
+{% include 'ont/prx126-architecture.md' %}
 
 ## System Information
 
@@ -155,9 +151,6 @@ i2cset -fy 0 0x51 0x7B 0x91 0x42 0xF0 0x07 i
 
         <https://www.fibermall.com/blog/how-to-use-xgspon-onu-stick.htm>
 
-  [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
-  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
-
     | Username | Password       |
     | -------- | -------------- |
     | root     | Aa123456       |
@@ -202,9 +195,6 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 | [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]           | :globe_with_meridians: | 8311 fork     |
 | [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 fork or PTXG (Potron) |
 
-* <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
-* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or [install] the official [8311 firmware].</small>
-
   [Better Internet]: https://store.betterinternet.ltd/?affiliates=6
   [BI-ONT]: https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6
   [FiberMall]: https://www.fibermall.com/
@@ -212,18 +202,13 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
   [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
 
-## Active Cooling
+* <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
+* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or [install] the official [8311 firmware].</small>
 
-!!! warning "Caution: Hot surface"
-    It is advisable to provide sufficient cooling. Although temperatures in excess of 60&deg;C are within specification,
-    over time they may decrease the product lifespan.
+  [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
+  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
 
-    The 8311 community has produced many active cooling designs to improve overall temperatures.
-    Join the [Discord](https://discord.pon.wiki) for additional tips.
-
-<div class="embed">
-  <iframe width=300" height="340" src="https://www.printables.com/embed/1392938" scrolling="no" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-</div>
+{% include 'ont/active-cooling.md' %}
 
 [^1]: <https://www.potrontec.com/index/index/list/cat_id/2.html#11-83>
 [^2]: <https://www.maxlinear.com/product/access/fiber-access/socs-for-optical-networking-units-onu/prx126>
