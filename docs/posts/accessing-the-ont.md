@@ -17,9 +17,22 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
-!!! info "This guide uses `192.168.11.0/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual [default] settings."
+Accessing the management interface of your ONT from within your local network typically involves one of three
+configuration paths:
 
-  [default]: #default-ip
+* [Static IP](#static-ip)
+
+:    A direct and straightforward configuration, but its practicality is usually limited to the initial setup and
+     provisioning of the device.
+
+* [Source NAT](#source-nat)
+
+:    The standard for a secure and permanent configuration, seamlessly managing access from behind your router
+     firewall.
+
+* [Static Route](#static-route)
+
+:    A workaround used only in cases where Source NAT is not practical, such as with UniFi OS.
 
 !!! tip "Accessing an ISP ONT"
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
@@ -27,10 +40,6 @@ pin: true
     managed entity 256, as defined in [ITU-T G.988] section 9.13.3.
 
   [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
-
-* [Static IP](#static-ip)
-* [Source NAT](#source-nat)
-* [Static Route](#static-route)
 
 ## Default IP
 
@@ -54,6 +63,8 @@ The following ONTs commonly used in our guides have the following default IPs yo
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
+
+!!! info "This guide uses `192.168.11.1/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
 
 ## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Static IP" }
 
