@@ -17,6 +17,13 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
+!!! tip "Accessing an ISP ONT"
+    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
+    the OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the entire ONT via
+    managed entity 256, as defined in [ITU-T G.988] section 9.13.3.
+
+  [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
+
 Accessing the management interface of your ONT from within your local network typically involves one of three
 configuration paths:
 
@@ -34,12 +41,8 @@ configuration paths:
 
 :    A workaround used only in cases where Source NAT is not practical, such as with UniFi OS.
 
-!!! tip "Accessing an ISP ONT"
-    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
-    the OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the entire ONT via
-    managed entity 256, as defined in [ITU-T G.988] section 9.13.3.
-
-  [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
+Before configuration, you must identify the ONT's management IP and subnet using manufacturer documentation,
+online sources, or a network scanning tool.
 
 ## Default IP
 
@@ -64,12 +67,20 @@ The following ONTs commonly used in our guides have the following default IPs yo
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
 
+### Nmap
+
+``` sh
+nmap -sn 192.168.0.0/16
+nmap -sn 10.0.0.0/8
+nmap -sn 172.16.0.0/12
+```
+
 !!! info "This guide uses `192.168.11.1/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
 
-## Static IP <small>1-to-1</small> { #static-ip data-toc-label="Static IP" }
+## Static IP <small>Point-to-Point</small> { #static-ip data-toc-label="Static IP" }
 
 A static IP on the same subnet provides direct, local access to the ONT. This approach streamlines setup by
-establishing a simple connection construct without requiring traffic to traverse network boundaries.
+establishing a simple connection construct without requiring traffic to cross network boundaries.
 
 This configuration serves as a foundational exercise in core networking principles (a requirement that is reiterated
 in a [SNAT] configuration), but it only paints half a picture in a typical SOHO internet setup.
@@ -357,13 +368,9 @@ physical interfaces, though this configuration is not exclusive to UniFi.
 
 Configuring this route is inherently difficult because it must also be applied to the ONT, which is typically a read-only
 device. The 8311 community firmware overcomes this with a built-in [reverse ARP daemon] that ensures the return path
-is defined, allowing traffic to traverse network boundaries.
+is defined, allowing traffic to cross network boundaries.
 
  [reverse ARP daemon]: https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/files/common/usr/sbin/8311-rarpd.sh>
-
-=== ":simple-opnsense: OPNsense"
-
-=== ":simple-pfsense: pfSense"
 
 === ":simple-ubiquiti: UniFi OS"
 
@@ -374,7 +381,5 @@ is defined, allowing traffic to traverse network boundaries.
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
 
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
-
-=== ":simple-mikrotik: MikroTik RouterOS"
 
  [SNAT]: #source-nat
