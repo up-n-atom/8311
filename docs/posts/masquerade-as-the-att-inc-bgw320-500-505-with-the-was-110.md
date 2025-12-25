@@ -95,7 +95,8 @@ Alternatively, the ONT serial number can be found on the bottom label of the {{ 
 
     2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-        !!! info "All attributes below are <ins>mandatory</ins>"
+        !!! info "All attributes below are <ins>mandatory</ins>."
+            Replace the :blue_circle: ONT ID with the one found on the {{ page.meta.ont }}'s label.
 
         === "BGW320-500"
 

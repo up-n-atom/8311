@@ -79,16 +79,17 @@ To masquerade, you will need the original ONT serial number and other identifier
     2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
         !!! info "All attributes below are <ins>mandatory</ins>"
+            Replace the ONT ID with the one found on the {{ page.meta.ont }}'s label.
 
-        | Attribute                  | Value                   | Remarks                 |
-        | -------------------------- | -----------------       | ----------------------- |
-        | PON Serial Number (ONT ID) | COMM&hellip;            |                         |
-        | Equipment ID               | iONT620700X             |                         |
-        | Hardware Version           | BGW620-700_2.5          |                         |
-        | Sync Circuit Pack Version  | :check_mark:            |                         |
-        | Software Version A         | BGW620_5.31.9           | [Version listing]       |
-        | Software Version B         | BGW620_5.31.9           | [Version listing]       |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value |
+        | Attribute                  | Value                   | Remarks                  |
+        | -------------------------- | -----------------       | ------------------------ |
+        | PON Serial Number (ONT ID) | COMM&hellip;            | Replace with label value |
+        | Equipment ID               | iONT620700X             |                          |
+        | Hardware Version           | BGW620-700_2.5          |                          |
+        | Sync Circuit Pack Version  | :check_mark:            |                          |
+        | Software Version A         | BGW620_5.31.9           | [Version listing]        |
+        | Software Version B         | BGW620_5.31.9           | [Version listing]        |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value  |
 
     3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
 
