@@ -100,12 +100,12 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                        | Value                   | Remarks                         |
         | -------------------------------- | ----------------------- | ------------------------------- |
-        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle: S/N               |
+        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle: S/N on label      |
         | Equipment ID                     | FOX222                  |                                 |
         | Hardware Version                 | FOX222                  |                                 |
         | Sync Circuit Pack Version        | :check_mark:            |                                 |
-        | Software Version A               | R4.4.08.030             | [Version listing]               |
-        | Software Version B               | R4.4.08.030             | [Version listing]               |
+        | Software Version A               | R4.4.08.030             | [Version listing] <small>listing maybe dated</small> |
+        | Software Version B               | R4.4.08.030             | [Version listing] <small>listing maybe dated</small> |
         | Firmware Version Match           | ^(R\d+(?:\\.\d+){3})$   | Community FW v2.5.0+            |
         | Override active firmware bank    | A                       | OLT inits a reboot if on bank B |
         | Override committed firmware bank | A                       | OLT inits a reboot if on bank B |
@@ -117,7 +117,7 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         | Attribute                        | Value                   | Remarks                               |
         | -------------------------------- | ----------------------- | ------------------------------------- |
-        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle:  S/N                    |
+        | PON Serial Number (ONT ID)       | FTRO&hellip;            | :blue_circle: S/N on label            |
         | Equipment ID                     | FRX523                  |                                       |
         | Hardware Version                 | FRX523                  |                                       |
         | Sync Circuit Pack Version        | :check_mark:            |                                       |
