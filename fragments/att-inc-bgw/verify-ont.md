@@ -14,7 +14,7 @@
 After rebooting the [WAS-110] or [HLX-SFPX], safely remove the SC/APC fiber optic cable from the {{ page.meta.ont }} and
 connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
-=== "WAS-110"
+=== "WAS-110 / X-ONU-SFPP"
 
     ![WAS-110 PON status](shared-assets/was_110_luci_pon_status.webp){ loading=lazy }
 
@@ -36,7 +36,7 @@ connect it to the [WAS-110] or [HLX-SFPX], confirmed by a double-clicking sound.
 
 ### Validate OLT authentication
 
-=== "WAS-110"
+=== "WAS-110 / X-ONU-SFPP"
 
     <h4>Check for O5.1 PLOAM status</h4>
 

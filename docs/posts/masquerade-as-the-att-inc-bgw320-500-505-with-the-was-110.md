@@ -52,7 +52,7 @@ Alternatively, the ONT serial number can be found on the bottom label of the {{ 
 
 &nbsp;
 
-=== "WAS-110"
+=== "WAS-110 / X-ONU-SFPP"
 
     Use your preferred setup method and carefully follow the steps to avoid unnecessary downtime and troubleshooting:
 

@@ -1,4 +1,4 @@
-## Purchase WAS-110/HLX-SFPX ONT { #purchase-was-110-hlx-sfpx-ont }
+## Purchase WAS-110/X-ONU-SFPP/HLX-SFPX ONT { #purchase-was-110-hlx-sfpx-ont }
 
 The [WAS-110] and [HLX-SFPX] are available from select resellers worldwide; purchase at your discretion. We assume no
 responsibility or liability for the listed resellers.

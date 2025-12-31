@@ -35,7 +35,7 @@ To masquerade, you will need the original ONT serial number and other identifier
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
-=== "WAS-110"
+=== "WAS-110 / X-ONU-SFPP"
 
     Use your preferred setup method and carefully follow the steps to avoid unnecessary downtime and troubleshooting:
 
