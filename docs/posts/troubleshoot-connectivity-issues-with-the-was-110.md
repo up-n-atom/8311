@@ -31,8 +31,7 @@ For more details on accessing this interface, please search your hosts' document
 
 #### Host access
 
-##### :simple-linux: Linux { #linux-ddmi data-toc-label="Linux" }
-##### :simple-ubiquiti: Ubiquiti { #ubiquiti-ddmi data-toc-label="Ubiquiti" }
+##### :simple-linux: Linux / :simple-ubiquiti: UniFi OS { #linux-ddmi data-toc-label="Linux" }
 
 ``` sh
 ethtool -m <interface>
@@ -115,7 +114,7 @@ To determine if the [WAS-110] optics are operating within specification, execute
     3. From the __Optical Information__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](#optical-specifications).
 
 ### Validate OLT authentication
-And as with a Linux host, the DDMI[^1] is available locally,
+And as with a Linux host, the DDMI[^1] is available from the [WAS-110] shell,
 where both __Laser output power__ and __Receiver signal average optical power__ can be evaluated.
 
 ``` sh
@@ -165,7 +164,7 @@ To view the current PLOAM status, execute one of the following procedures:
     ![WAS-110 PON status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_pon_status.webp){ loading=lazy }
 
     1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
-    2. From the __PON Status__ page, select the __Status__ tab to view the __PON PLOAM Status__.
+    2. From the __PON Status__ page, select the __Status__ tab to ascertain the __PON PLOAM Status__.
 
     <h5>from the Linux shell</h5>
 
@@ -181,7 +180,7 @@ To view the current PLOAM status, execute one of the following procedures:
 
     1. Navigate to <https://192.168.11.1/html/main.html#status/pon> and, if asked, input your *admin*
        [web credentials].
-    2. From the __Status__ tab, select the __PON__ page to view the __ONU State__.
+    2. From the __Status__ tab, select the __PON__ page to ascertain the __ONU State__.
 
     <h5>from the Linux shell</h5>
 
@@ -196,7 +195,7 @@ To view the current PLOAM status, execute one of the following procedures:
     1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
-    3. View the __PLOAM State__ in the __Link Information__ section.
+    3. Evaluate the __PLOAM State__ in the __Link Information__ section.
 
 #### OMCI clarification
 
