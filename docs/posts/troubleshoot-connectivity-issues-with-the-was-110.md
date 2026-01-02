@@ -372,6 +372,51 @@ env save
         env save
         ```
 
+#### Dealing with Linux and OpenWRT
+
+There are some distributions of Linux that will disable an SFP interface when a transmit fault is noticed.
+This is dealt with in the kernel using [quirks](https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489), these will tell the kernel to do specific actions upon matching the modules EEPROM vendor information with a known list.
+
+In the case of the WAS-110 and X-ONU-SFPP, this includes giving the module more time to boot along with ignoring the assertions on the Tx fault pin.
+
+There are a variety of different vendors of these modules in the wild and if you hit a case where a quirk does not exist for the module you have, this will be noticable in kernel logs such as:
+
+```
+sfp sfp1: module transmit fault indicated
+sfp sfp1: module persistently indicates fault, disabling
+```
+
+There are two angles you could approach this from, either:
+
+ * Add a new quirk to the Linux kernel and recompile, or;
+ * Modify the vendor information on your module to one where the correct quirks already exist.
+
+!!! danger "The below steps will make modifications to your modules EEPROM. Make sure you create backups and are careful when running this process."
+
+To achieve the latter, SSH into the module and read the current EEPROM value as base64, then paste into the form below.
+
+```sh
+base64 /sys/class/pon_mbox/pon_mbox0/device/eeprom50
+```
+
+<textarea id="eeprom-base64" rows="5" style="width: 100%;"></textarea>
+<p>
+  <label class="md-typeset">
+    <input type="radio" name="device-type" value="WAS-110" checked>
+    <span>WAS-110</span>
+  </label>
+  <label class="md-typeset" style="margin-left: 20px;">
+    <input type="radio" name="device-type" value="X-ONU-SFPP">
+    <span>X-ONU-SFPP</span>
+  </label>
+</p>
+<a onclick="generate_eeprom_vendor()" class="md-button">Generate EEPROM Modification</a>
+
+<div class="highlight hidden" style="display: none;">
+  <pre><code id="eeprom-output"></code></pre>
+</div>
+
+
 ### Rx loss
 
 The SFP rx loss pin[^5] (8) is asserted when the SC/APC fiber cable isn't plugged in and/or inactive. Depending on the
