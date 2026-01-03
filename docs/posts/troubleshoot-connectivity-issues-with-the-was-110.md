@@ -372,9 +372,11 @@ env save
         env save
         ```
 
-#### Linux host SFP subsystem
+#### Host Solutions
 
-SFP+ host drivers built on the Linux [SFP subsystem] use SFF-8472[^1] DDMI information to manage modules. This causes
+##### :simple-linux: Linux (SFP subsystem)
+
+SFP+ network drivers built on the Linux [SFP subsystem] use SFF-8472[^1] DDMI to manage modules. This causes
 issues for non-compliant [GPON] and [XGS-PON] sticks. To work around this, maintainers add hardcoded [quirks]. However,
 each new hardware or vendor variant requires a new kernel build. As of kernel 6.17, a quirk for the Yunvo
 SFP+ONU-XGSPON ([X-ONU-SFPP]) module has been included to address this.
@@ -385,9 +387,9 @@ SFP+ONU-XGSPON ([X-ONU-SFPP]) module has been included to address this.
  [quirks]: https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489
 
 If you see the following output in your kernel log, you are either running an older kernel version, or your
-[WAS-110] or [X-ONU-SFPP] module's vendor information does not match the existing quirk.
+[WAS-110] or [X-ONU-SFPP] module's vendor information does not match an existing quirk.
 
-```
+``` sh
 sfp sfp1: module transmit fault indicated
 sfp sfp1: module persistently indicates fault, disabling
 ```
@@ -401,7 +403,7 @@ To resolve this issue, you can take one of two approaches:
 
 To achieve the latter, SSH into the module and read the current EEPROM value as base64, then paste it into the form below.
 
-```sh
+``` sh
 base64 /sys/class/pon_mbox/pon_mbox0/device/eeprom50
 ```
 
