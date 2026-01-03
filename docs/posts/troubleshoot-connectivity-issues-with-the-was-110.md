@@ -374,14 +374,14 @@ env save
 
 #### Linux host SFP subsystem
 
-SFP+ host hardware kernel drivers, which are built on top of the Linux [SFP subsystem], use DDMI information to manage
-modules according to the SFF-8472 standard. This behaviour is problematic for modules like the [WAS-110] and
-[X-ONU-SFPP], as they do not conform to the standard. To address this, kernel maintainers have added hardcoded [quirks]
-for specific hardware, with the caveat that a new kernel build is required to add support for each new vendor or module.
-Starting with kernel version 6.19, a quirk for the Yunvo SFP+ONU-XGSPON (X-ONU-SFPP) has been included to fix the
-TX fault assertion.
+SFP+ host drivers built on the Linux [SFP subsystem] use SFF-8472[^1] DDMI information to manage modules. This causes
+issues for non-compliant [GPON] and [XGS-PON] sticks. To work around this, maintainers add hardcoded [quirks]. However,
+each new hardware or vendor variant requires a new kernel build. As of kernel 6.19, a quirk for the Yunvo
+SFP+ONU-XGSPON ([X-ONU-SFPP]) module has been included to address this.
 
  [SFP subsystem]: https://www.kernel.org/doc/html/latest/networking/sfp-phylink.html
+ [GPON]: ../gpon/index.md
+ [XGS-PON]: ../xgs-pon/index.md
  [quirks]: https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489
 
 If you see the following output in your kernel log, you are either running an older kernel version, or your
