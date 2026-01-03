@@ -384,7 +384,7 @@ SFP+ONU-XGSPON ([X-ONU-SFPP]) module has been included to address this.
  [SFP subsystem]: https://www.kernel.org/doc/html/latest/networking/sfp-phylink.html
  [GPON]: ../gpon/index.md
  [XGS-PON]: ../xgs-pon/index.md
- [quirks]: https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489
+ [quirks]: https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/drivers/net/phy/sfp.c?h=next-20251219#n489
 
 If you see the following output in your kernel log, you are either running an older kernel version, or your
 [WAS-110] or [X-ONU-SFPP] module's vendor information does not match an existing quirk.
