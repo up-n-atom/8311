@@ -372,28 +372,34 @@ env save
         env save
         ```
 
-#### Dealing with Linux and OpenWRT
+#### Linux host SFP subsystem
 
-There are some distributions of Linux that will disable an SFP interface when a transmit fault is noticed.
-This is dealt with in the kernel using [quirks](https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489), these will tell the kernel to do specific actions upon matching the modules EEPROM vendor information with a known list.
+SFP+ host hardware kernel drivers, which are built on top of the Linux [SFP subsystem], use DDMI information to manage
+modules according to the SFF-8472 standard. This behaviour is problematic for modules like the [WAS-110] and
+[X-ONU-SFPP], as they do not conform to the standard. To address this, kernel maintainers have added hardcoded [quirks]
+for specific hardware, with the caveat that a new kernel build is required to add support for each new vendor or module.
+Starting with kernel version 6.19, a quirk for the Yunvo SFP+ONU-XGSPON (X-ONU-SFPP) has been included to fix the
+TX fault assertion.
 
-In the case of the WAS-110 and X-ONU-SFPP, this includes giving the module more time to boot along with ignoring the assertions on the Tx fault pin.
+ [SFP subsystem]: https://www.kernel.org/doc/html/latest/networking/sfp-phylink.html
+ [quirks]: https://github.com/torvalds/linux/blob/master/drivers/net/phy/sfp.c#L489
 
-There are a variety of different vendors of these modules in the wild and if you hit a case where a quirk does not exist for the module you have, this will be noticable in kernel logs such as:
+If you see the following output in your kernel log, you are either running an older kernel version, or your
+[WAS-110] or [X-ONU-SFPP] module's vendor information does not match the existing quirk.
 
 ```
 sfp sfp1: module transmit fault indicated
 sfp sfp1: module persistently indicates fault, disabling
 ```
 
-There are two angles you could approach this from, either:
+To resolve this issue, you can take one of two approaches:
 
- * Add a new quirk to the Linux kernel and recompile, or;
- * Modify the vendor information on your module to one where the correct quirks already exist.
+1. Add a new quirk for your module and recompile your kernel.
+2. Modify the vendor information on the module itself to match an existing quirk.
 
-!!! danger "The below steps will make modifications to your modules EEPROM. Make sure you create backups and are careful when running this process."
+!!! danger "The steps below will make modifications to your module's EEPROM. Make sure you create backups and proceed with caution."
 
-To achieve the latter, SSH into the module and read the current EEPROM value as base64, then paste into the form below.
+To achieve the latter, SSH into the module and read the current EEPROM value as base64, then paste it into the form below.
 
 ```sh
 base64 /sys/class/pon_mbox/pon_mbox0/device/eeprom50
@@ -469,6 +475,7 @@ host controller and implementation, the interface may enter a power saving state
 1. Replace spf`X` with the port name/number.
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
   [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
 
