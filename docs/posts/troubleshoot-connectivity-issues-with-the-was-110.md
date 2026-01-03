@@ -376,7 +376,7 @@ env save
 
 SFP+ host drivers built on the Linux [SFP subsystem] use SFF-8472[^1] DDMI information to manage modules. This causes
 issues for non-compliant [GPON] and [XGS-PON] sticks. To work around this, maintainers add hardcoded [quirks]. However,
-each new hardware or vendor variant requires a new kernel build. As of kernel 6.19, a quirk for the Yunvo
+each new hardware or vendor variant requires a new kernel build. As of kernel 6.17, a quirk for the Yunvo
 SFP+ONU-XGSPON ([X-ONU-SFPP]) module has been included to address this.
 
  [SFP subsystem]: https://www.kernel.org/doc/html/latest/networking/sfp-phylink.html
