@@ -13,6 +13,7 @@ description: Masquerade as the BCE Inc. Giga Hub 2.0 with the WAS-110 or X-ONU-S
 slug: masquerade-as-the-bce-inc-giga-hub-2-with-the-was-110
 links:
   - xgs-pon/index.md
+  - posts/accessing-the-ont.md
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
   - posts/masquerade-as-the-bce-inc-home-hub-4000-with-the-was-110.md
   - posts/masquerade-as-the-bce-inc-giga-hub-with-the-was-110.md
