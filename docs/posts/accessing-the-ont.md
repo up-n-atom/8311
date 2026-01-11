@@ -17,7 +17,7 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
-!!! info "This guide uses `192.168.11.1/24` (ONT) and `192.168.11.2/24` (Gateway) for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
+!!! info "This guide uses `192.168.11.1/24` (ONT) and `192.168.11.2/24` (WAN) for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
 
 !!! tip "Accessing an ISP ONT"
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
