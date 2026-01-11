@@ -222,8 +222,51 @@ Please help us by contributing new versions via the [8311 Discord community serv
 
 ## Routing guides
 
+These guides will help you configuring your router for the new connection.
+
 * [OPNsense - Orange France FTTH IPv4 & IPv6](https://docs.opnsense.org/manual/how-tos/orange_fr_fttp.html)
 * [Orange bypass on Debian](https://akhamar.github.io/orange-bypass-debian/)
+* [Replace Livebox with UDM PRO SE](https://stoufiler.github.io/isp/bypass-livebox/#step-6-connect-to-gpon-via-telnet)
+
+The [GOBOX](https://github.com/StephanGR/gobox) utility can also help in getting
+the required information for the routing configuration, and can be used as such:
+
+```sh
+./GO-BOX --ip 192.168.1.1 livebox
+```
+
+When prompted, type your Livebox admin password.
+
+For the vendor type `sagem`.
+
+The output should look like this:
+```pre
+Enter Password:
+
+✅ Successfully connected to livebox ! ✅
+
+============LEOX GPON COMMAND============
+flash set GPON_SN SMBS02A045F6
+flash set PON_VENDOR_ID SMBS
+## Unplug fiber from Livebox and plug it into UDM and wait a minute ##
+Execute this command -> omcicli mib get 131
+OLT VENDOR ID (HWTC, ALCL, ...) : sagem
+Unknown OLT VENDOR ID, defaulting to 128
+Execute this command -> flash set OMCC_VER 128
+=========================================
+
+===========UDM PRO SE SETTINGS===========
+NAME              : LEOX GPON
+VLAN ID           : 832
+MAC Address Clone : XX:XX:XX:XX:XX:XX
+DHCP OPTION 60    : sagem
+DHCP OPTION 77    : FSVDSL_livebox.Internet.softathome.Livebox7
+DHCP OPTION 90    : XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+DHCP CoS          : 6 (Requires Network App 7.4.X or later)
+=========================================
+```
+
+> Note that your Livebox IP might be different, but 192.168.1.1 is the default one
 
   [Purchase a WAS-110 or X-ONU-SFPP]: #purchase-a-was-110-or-x-onu-sfpp
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
