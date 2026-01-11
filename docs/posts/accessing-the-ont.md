@@ -23,7 +23,7 @@ pin: true
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
 
     The OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the ONT via managed
-    entity 256, as defined in [ITU-T G.988]. Physically disconnecting the fiber ensures the management interfacei
+    entity 256, as defined in [ITU-T G.988]. Physically disconnecting the fiber ensures the management interface
     remains accessible.
 
   [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en

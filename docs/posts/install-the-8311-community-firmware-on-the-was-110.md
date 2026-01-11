@@ -123,8 +123,8 @@ switch.
     The [WAS-110] running the default Azores firmware will trigger RX_LOS if the SC/APC fiber cable is unplugged or
     inactive. Some host interfaces will enter a power-saving state, making the [WAS-110] inaccessible.
 
-The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, following one (1) of the
-configurations in the [Accessing the ONT](accessing-the-ont.md) guide.
+The default IP address of the [WAS-110] is `192.168.11.1/24`. To connect successfully, follow one (1) of the
+configurations in the [Accessing the ONT](accessing-the-ont.md) guide and proceed.
 
 ## Test optics
 
