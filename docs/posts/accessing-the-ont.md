@@ -350,7 +350,7 @@ networks] on the WAN interface.
 
         1. Replace `eth9`
 
-=== ":simple-mikrotik: MikroTik RouterOS"
+=== ":simple-mikrotik: RouterOS"
 
     === "WinBox/WebFig"
 
