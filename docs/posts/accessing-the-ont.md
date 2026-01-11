@@ -195,7 +195,7 @@ connection, which is generally incompatible with a dedicated static IP.
 
 ## Source NAT <small>Router or Firewall</small> { #source-nat data-toc-label="Source NAT" }
 
-Source NAT provides stateful translation for traffic behind the firewall to reach the ONT, which resides upstream of
+Source NAT (SNAT) provides stateful translation for traffic behind the firewall to reach the ONT, which resides upstream of
 the firewall on the public-facing WAN interface. This translation makes the ONT's management interface appear as a
 reachable local network device.
 
