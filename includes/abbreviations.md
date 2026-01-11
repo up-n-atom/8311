@@ -22,6 +22,7 @@
 *[ISP]: Internet Service Provider
 *[JSON]: JavaScript Object Notation
 *[LAN]: Local Area Network
+*[LCT]: Local Craft Terminal
 *[LLDP]: Link Layer Discovery Protocol
 *[MAC]: Medium Access Control
 *[MIB]: Management Information Base

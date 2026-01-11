@@ -1,11 +1,11 @@
 ---
-draft: true
-date: 2025-11-21
+date: 2026-01-10
 categories:
   - ONT
   - OPNsense
   - pfSense
   - UniFi OS
+  - RouterOS
 description: Accessing the ONT
 pin: true
 ---
@@ -17,10 +17,14 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
+!!! info "This guide uses `192.168.11.1/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
+
 !!! tip "Accessing an ISP ONT"
-    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable. This is because
-    the OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the entire ONT via
-    managed entity 256, as defined in [ITU-T G.988] section 9.13.3.
+    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
+
+    The OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the ONT via managed
+    entity 256, as defined in [ITU-T G.988]. Physically disconnecting the fiber ensures the management interfacei
+    remains accessible.
 
   [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
 
@@ -46,10 +50,10 @@ online sources, or a network scanning tool.
 
 ## Default IP
 
-Your ONT default IP may conflict with your SOHO network's LAN subnet, as both often use the Class C private range
-(192.168.0.0/16). To avoid this, it is recommended to configure your router to use a less common private range,
-such as Class A (10.0.0.0/8) or Class B (172.16.0.0/12), or at the very least, a less common subnet within Class C
-itself.
+Your ONT's default IP may conflict with your local network because both often use the same common Class C private range
+(192.168.0.0/16). To avoid this address confusion, it is recommended to move your local network to a less common
+private range such as Class A (10.0.0.0/8) or Class B (172.16.0.0/12). This ensures your router can clearly distinguish
+between your home devices and the ONT management interface.
 
 The following ONTs commonly used in our guides have the following default IPs you will want to avoid:
 
@@ -67,23 +71,30 @@ The following ONTs commonly used in our guides have the following default IPs yo
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
 
-### Nmap
+If the IP is unknown, the industry-standard, cross-platform tool [nmap] can aid in network discovery. The following
+examples scan the three (3) [private IP address] ranges ([RFC 1918]).
+
+ [nmap]: https://nmap.org/
+ [private IP address]: https://en.wikipedia.org/wiki/Private_network
+ [RFC 1918]: https://www.rfc-editor.org/rfc/rfc1918
 
 ``` sh
-nmap -sn 192.168.0.0/16
+nmap -sn 192.168.0.0/16 # (1)!
 nmap -sn 10.0.0.0/8
 nmap -sn 172.16.0.0/12
 ```
 
-!!! info "This guide uses `192.168.11.1/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
+1. `192.168.0.0/16` is the most common default range used by consumer network equipment.
 
 ## Static IP <small>Point-to-Point</small> { #static-ip data-toc-label="Static IP" }
 
 A static IP on the same subnet provides direct, local access to the ONT. This approach streamlines setup by
-establishing a simple connection construct without requiring traffic to cross network boundaries.
+establishing a simple local connection, allowing devices to communicate directly without requiring traffic to cross
+network boundaries or utilize a gateway
 
-This configuration serves as a foundational exercise in core networking principles (a requirement that is reiterated
-in a [SNAT] configuration), but it only paints half a picture in a typical SOHO internet setup.
+While this configuration serves as a foundational exercise in core networking, it represents an incomplete solution for
+a typical SOHO setup. In these environments, the WAN interface must simultaneously maintain a public internet
+connection, which is generally incompatible with a dedicated static IP.
 
 === ":material-microsoft: Windows"
 
@@ -99,7 +110,7 @@ in a [SNAT] configuration), but it only paints half a picture in a typical SOHO 
            ++ctrl+shift+enter++.
 
 
-    1. Retrieve the host __Interface Name__ the WAS-110 is connected to.
+    1. Identify the host __Interface Name__ the WAS-110 is connected to.
 
         ``` sh
         netsh interface ip show config
@@ -129,7 +140,7 @@ in a [SNAT] configuration), but it only paints half a picture in a typical SOHO 
 
     1. Launch __Terminal App__.
 
-    2. Retrieve the __Network Service__ the WAS-110 is connected to.
+    2. Identify the __Network Service__ the WAS-110 is connected to.
 
         ``` sh
         sudo networksetup -listallnetworkservices
@@ -183,6 +194,19 @@ in a [SNAT] configuration), but it only paints half a picture in a typical SOHO 
         ```
 
 ## Source NAT <small>Router or Firewall</small> { #source-nat data-toc-label="Source NAT" }
+
+Source NAT provides stateful translation for traffic behind the firewall to reach the ONT, which resides upstream of
+the firewall on the public-facing WAN interface. This translation makes the ONT's management interface appear as a
+reachable local network device.
+
+This configuration typically requires that the traffic be translated to a source IP on the same subnet as the ONT LCT
+because the LCT is generally restricted to its own subnet. This is commonly achieved by adding a secondary [IP alias]
+to the firewall's WAN interface. This translation ensures traffic originates from this local address, which enables
+access and overrides default firewall rules that would otherwise block traffic to [private or bogon
+networks] on the WAN interface.
+
+ [IP alias]: https://en.wikipedia.org/wiki/IP_aliasing
+ [private or bogon networks]: https://en.wikipedia.org/wiki/Bogon_filtering
 
 === ":simple-opnsense: OPNsense"
 
@@ -363,12 +387,14 @@ in a [SNAT] configuration), but it only paints half a picture in a typical SOHO 
 
 ## Static Route <small>UniFi workaround</small> { #static-route data-toc-label="Static Route" }
 
-A static route acts as a workaround for UniFi OS limitations, addressing the lack of persistent [SNAT] support on
-physical interfaces, though this configuration is not exclusive to UniFi.
+A static route acts as a workaround for UniFi OS limitations, specifically the lack of persistent SNAT support on
+physical interfaces.
 
-Configuring this route is inherently difficult because it must also be applied to the ONT, which is typically a read-only
-device. The 8311 community firmware overcomes this with a built-in [reverse ARP daemon] that ensures the return path
-is defined, allowing traffic to cross network boundaries.
+
+Configuring this route is difficult because it creates an asymmetric return path. While the router knows how to send
+traffic to the ONT, the ONT is typically a read-only device and does not know how to route return traffic back to the
+internal LAN. The 8311 community firmware overcomes this with a built-in [reverse ARP daemon]. This tool ensures the
+return path is defined and allows traffic to successfully cross network boundaries without manual ONT configuration.
 
  [reverse ARP daemon]: https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/files/common/usr/sbin/8311-rarpd.sh>
 
