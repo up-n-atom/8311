@@ -1,6 +1,7 @@
 *[AP]: Access Point
 *[APC]: Angled Physical Contact
 *[ATM]: Asynchronous Transfer Mode
+*[bogon]: Bogus Logon
 *[BOSA]: Bidirectional Optical Sub-Assemblies
 *[BPON]: Broadband Passive Optical Network
 *[CDP]: Cisco Discovery Protocol
