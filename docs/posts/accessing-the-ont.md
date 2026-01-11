@@ -17,7 +17,7 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
-!!! info "This guide uses `192.168.11.1/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
+!!! info "This guide uses `192.168.11.1/24` and `192.168.11.2/24` for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
 
 !!! tip "Accessing an ISP ONT"
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
@@ -57,12 +57,13 @@ between your home devices and the ONT management interface.
 
 The following ONTs commonly used in our guides have the following default IPs you will want to avoid:
 
-| ONT          | DEFAULT IP    |
-| ------------ | ------------- |
-| [WAS-110]    | 192.168.11.1  |
-| [X-ONU-SFPP] | 192.168.1.1   |
-| [HLX-SFPX]   | 192.168.33.1  |
-| [XS-010X-Q]  | 192.168.100.1 |
+| ONT                   | DEFAULT IP    |
+| --------------------- | ------------- |
+| [WAS-110]             | 192.168.11.1  |
+| [X-ONU-SFPP]          | 192.168.1.1   |
+| [HLX-SFPX]            | 192.168.33.1  |
+| [XS-010X-Q]           | 192.168.100.1 |
+| [SPS-34-24T-HP-TDFO]  | 192.168.1.10  |
 
 !!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either `192.168.11.1` or `192.168.1.1`, depending on the vendor or firmware installed."
 
@@ -70,6 +71,7 @@ The following ONTs commonly used in our guides have the following default IPs yo
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
+  [SPS-34-24T-HP-TDFO]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
 
 If the IP is unknown, the industry-standard, cross-platform tool [nmap] can aid in network discovery. The following
 examples scan the three (3) [private IP address] ranges ([RFC 1918]).
@@ -166,7 +168,7 @@ connection, which is generally incompatible with a dedicated static IP.
 
     !!! note "The following commands set the IP address but will not persist after a power cycle"
         For persistence check your distribution documentation, such as
-        [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
+        [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration).
 
     !!! note "The following commands must be run as root `su -` or prepended with `sudo`"
 
