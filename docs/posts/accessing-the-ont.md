@@ -90,7 +90,7 @@ nmap -sn 172.16.0.0/12
 
 A static IP on the same subnet provides direct, local access to the ONT. This approach streamlines setup by
 establishing a simple local connection, allowing devices to communicate directly without requiring traffic to cross
-network boundaries or utilize a gateway
+network boundaries or utilize a gateway.
 
 While this configuration serves as a foundational exercise in core networking, it represents an incomplete solution for
 a typical SOHO setup. In these environments, the WAN interface must simultaneously maintain a public internet
@@ -407,5 +407,14 @@ return path is defined and allows traffic to successfully cross network boundari
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
 
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+
+        |                                  |                                   |
+        | -------------------------------- | --------------------------------- |
+        | **Name**                         | WAS-110                           |
+        | **Device**                       | Gateway                           |
+        | **Distance**                     | -                                 |
+        | **Type**                         | Interface                         |
+        | **Value**                        | WAN                               |
+        | **Destination**                  | 192.168.11.0/24                   |
 
  [SNAT]: #source-nat
