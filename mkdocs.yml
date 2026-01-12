@@ -98,6 +98,7 @@ plugins:
         guides/swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-bfw-solutions-was-110/index.html: https://pon.wiki/guides/swap-out-the-nokia-xs-010x-q-for-a-small-form-factor-pluggable-was-110/
         guides/masquerade-as-the-orange-sa-livebox-7-on-xgs-pon-with-the-bfw-solutions-was-110/index.html: https://pon.wiki/guides/masquerade-as-the-orange-sa-livebox-7-with-the-was-110/
         guides/masquerade-as-the-bouygues-sa-bbox-on-xgs-pon-with-the-bfw-solutions-was-110/index.html: https://pon.wiki/guides/masquerade-as-the-bouygues-sa-bbox-with-the-was-110/
+        guides/troubleshoot-connectivity-issues-with-the-was-110/index.html: https://pon.wiki/guides/troubleshoot-connectivity-issues-with-the-was-110-or-x-onu-sfpp/
   - search
   - table-reader
 watch:
