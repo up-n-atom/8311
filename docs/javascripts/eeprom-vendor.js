@@ -80,22 +80,17 @@ function generate_eeprom_vendor() {
         const commands = [
             '# Unlock EEPROM',
             unlockCommand,
-            '',
-            `# Write Vendor Name to "${VENDOR_ID}" (offset 0x14, 16 bytes)`,
+            `# Write Vendor Name "${VENDOR_ID}" (offset 0x14, 16 bytes)`,
             generateCommand(data, 0x14, 16),
-            '',
-            `# Write Part Number to "${VENDOR_PN}" (offset 0x28, 16 bytes)`,
+            `# Write Part Number "${VENDOR_PN}" (offset 0x28, 16 bytes)`,
             generateCommand(data, 0x28, 16),
-            '',
-            `# Write Checksum to 0x${checksum.toString(16).padStart(2, '0')} (offset 0x3F, 1 byte)`,
+            `# Write Checksum 0x${checksum.toString(16).padStart(2, '0')} (offset 0x3F, 1 byte)`,
             generateCommand(data, 0x3F, 1),
-            '',
             '# Reboot',
             'reboot'
         ];
 
         output.textContent = commands.join('\n');
-
     } catch (e) {
         output.textContent = 'Error: ' + e.message;
     }

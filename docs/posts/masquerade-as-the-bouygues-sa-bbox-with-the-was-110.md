@@ -106,7 +106,7 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
    __Serial Number__ begins with the hexadecimal notation copy the characters after `0x534d4253` and append to `SMBS`
    or use the form below.
   <div style="margin:1em 0;">
-      <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.serno;if(!el.checkValidity())return;el.value=el.value.replace('0x534d4253','SMBS');})(event)">
+      <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.serno;if(!el.checkValidity())return;el.value=escapeHTML(el.value).replace('0x534d4253','SMBS');})(event)">
           <input type="text" name="serno" placeholder="0x534d4253" pattern="^0x[0-9A-Fa-f]{16}$" />
           <input type="submit" value="Submit" />
       </form>
@@ -118,18 +118,16 @@ The registration ID is composed of a seventy-two (72) octets from the fifteen (1
 0's and suffixed with fifty-two (52) 1's.
 
 <div>
-  <form onsubmit="document.querySelector('#__code_0 > code').innerHTML = '0'.repeat(5) + escapeHTML(event.target.elements['imei'].value) + '1'.repeat(52); event.preventDefault(); location.assign(`${location.origin}${location.pathname}#ploam-registration-id`)">
-    <input type="text" id="imei" placeholder="IMEI" pattern="^[0-9A-Fa-f]{15}$"/>
+  <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.imei;if(!el.checkValidity())return;document.querySelector('#regid').textContent='0'.repeat(5)+escapeHTML(el.value)+'1'.repeat(52);location.assign(`${location.origin}${location.pathname}#ploam-registration-id`);})(event)">
+    <input type="text" id="imei" placeholder="IMEI" pattern="^[0-9A-Fa-f]{15}$" />
     <input type="submit" value="Submit" />
   </form>
 </div>
-
-``` sh
-00000XXXXXXXXXXXXXXX1111111111111111111111111111111111111111111111111111
-```
+<div class="highlight">
+  <pre><code id="regid">00000XXXXXXXXXXXXXXX1111111111111111111111111111111111111111111111111111</code></pre>
+</div>
 
 The IMEI can be obtained from the back label of the Bbox or from the web UI.
-
 
 <div class="swiper" markdown>
 

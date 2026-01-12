@@ -418,12 +418,10 @@ base64 /sys/class/pon_mbox/pon_mbox0/device/eeprom50
     <span>X-ONU-SFPP</span>
   </label>
 </p>
-<a onclick="generate_eeprom_vendor()" class="md-button">Generate EEPROM Modification</a>
-
-<div class="highlight hidden" style="display: none;">
+<a onclick="generate_eeprom_vendor()" class="md-button">Generate</a>
+<div class="highlight" style="display: none;">
   <pre><code id="eeprom-output"></code></pre>
 </div>
-
 
 ### Rx loss
 
