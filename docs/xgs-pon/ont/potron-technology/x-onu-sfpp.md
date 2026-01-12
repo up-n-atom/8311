@@ -198,7 +198,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
   [Better Internet]: https://store.betterinternet.ltd/?affiliates=6
   [BI-ONT]: https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6
-  [EXEN]: https://exen.sh/products/x-onu-sfpp-was-110-alternative?variant=42411156471904
+  [EXEN]: https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki
   [FiberMall]: https://www.fibermall.com/
   [XGSPON-ONU-STICK-V8]: https://www.fibermall.com/sale-462134-xgspon-onu-sfp-stick-i-temp.htm
   [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
