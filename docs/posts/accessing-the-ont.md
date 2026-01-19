@@ -43,7 +43,8 @@ configuration paths:
 
 * [Static Route](#static-route)
 
-:    A workaround used only in cases where Source NAT is not practical, such as with UniFi OS.
+:    A workaround used only in cases where Policy-Based Routing (PBR) is restricted, such as with UniFi OS or various
+     TP-Link offerings.
 
 Before configuration, you must identify the ONT's management IP and subnet using manufacturer documentation,
 online sources, or a network scanning tool.
@@ -387,11 +388,10 @@ networks] on the WAN interface.
         /ip firewall nat add action=src-nat chain=srcnat dst-address=192.168.11.1 out-interface=sfp-sfpplus1 to-addresses=192.168.11.2
         ```
 
-## Static Route <small>UniFi workaround</small> { #static-route data-toc-label="Static Route" }
+## Static Route <small>Restricted PBR environments</small> { #static-route data-toc-label="Static Route" }
 
-A static route acts as a workaround for UniFi OS limitations, specifically the lack of persistent SNAT support on
-physical interfaces.
-
+Static routes serve as a manual redirection mechanism in environments where Policy-Based Routing (PBR) or granular
+outbound NAT controls are restricted.
 
 Configuring this route is difficult because it creates an asymmetric return path. While the router knows how to send
 traffic to the ONT, the ONT is typically a read-only device and does not know how to route return traffic back to the

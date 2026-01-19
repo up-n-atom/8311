@@ -35,6 +35,7 @@
 *[OLT]: Optical Line Terminal
 *[ONT]: Optical Network Terminal
 *[OMCI]: ONU Management and Control Interface
+*[PBR]: Policy-Based Routing
 *[PLOAM]: Physical Layer Operation Administration and Maintenance
 *[PON]: Passive Optical Network
 *[PPP]: Point-to-Point Protocol
