@@ -32,7 +32,7 @@ ont: BGW620-700
 ## Configure ONT settings
 
 To masquerade, you will need the original ONT serial number and other identifiers (e.g., software versions) from your
-{{ page.meta.ont }}'s fiber stats page.
+{{ page.meta.ont }}'s fiber stats page, as well as the bottom label.
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
 
@@ -82,15 +82,15 @@ To masquerade, you will need the original ONT serial number and other identifier
         !!! info "All attributes below are <ins>mandatory</ins>"
             Replace the ONT ID with the one found on the {{ page.meta.ont }}'s label.
 
-        | Attribute                  | Value                   | Remarks                  |
-        | -------------------------- | -----------------       | ------------------------ |
-        | PON Serial Number (ONT ID) | COMM&hellip;            | Replace with label value |
-        | Equipment ID               | iONT620700X             |                          |
-        | Hardware Version           | BGW620-700_2.5          |                          |
-        | Sync Circuit Pack Version  | :check_mark:            |                          |
-        | Software Version A         | BGW620_5.31.9           | [Version listing]        |
-        | Software Version B         | BGW620_5.31.9           | [Version listing]        |
-        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value  |
+        | Attribute                  | Value                   | Remarks                                       |
+        | -------------------------- | -----------------       | --------------------------------------------- |
+        | PON Serial Number (ONT ID) | COMM&hellip;            | Replace with the ONT ID from the bottom label |
+        | Equipment ID               | iONT620700X             |                                               |
+        | Hardware Version           | BGW620-700_2.5          |                                               |
+        | Sync Circuit Pack Version  | :check_mark:            |                                               |
+        | Software Version A         | BGW620_5.31.9           | [Version listing]                             |
+        | Software Version B         | BGW620_5.31.9           | [Version listing]                             |
+        | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value                       |
 
     3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
 
@@ -144,17 +144,18 @@ To masquerade, you will need the original ONT serial number and other identifier
     3. From the hidden __HALNy Settings__ page, in the __Custom values__ section, fill in the configuration with the
        following values:
 
-        !!! info "All parameters below are <ins>mandatory</ins>"
+        !!! info "All attributes below are <ins>mandatory</ins>"
+            Replace the ONT ID with the one found on the {{ page.meta.ont }}'s label.
 
-        | Parameter                  | Value                   | Remarks                 |
-        | -------------------------- | -----------------       | ----------------------- |
-        | State                      | Enable                  |                         |
-        | PON Serial Number          | COMM&hellip;            |                         |
-        | Equipment ID               | iONT620700X             |                         |
-        | Hardware Version           | BGW620-700_2.5          |                         |
-        | Sync Circuit Pack Version  | Enable                  |                         |
-        | Software Version A         | BGW620_5.31.9           | [Version listing]       |
-        | Software Version B         | BGW620_5.31.9           | [Version listing]       |
+        | Parameter                  | Value                   | Remarks                                       |
+        | -------------------------- | -----------------       | --------------------------------------------- |
+        | State                      | Enable                  |                                               |
+        | PON Serial Number          | COMM&hellip;            | Replace with the ONT ID from the bottom label |
+        | Equipment ID               | iONT620700X             |                                               |
+        | Hardware Version           | BGW620-700_2.5          |                                               |
+        | Sync Circuit Pack Version  | Enable                  |                                               |
+        | Software Version A         | BGW620_5.31.9           | [Version listing]                             |
+        | Software Version B         | BGW620_5.31.9           | [Version listing]                             |
 
     4. Click __Save & Reboot__ to apply the parameters.
 
