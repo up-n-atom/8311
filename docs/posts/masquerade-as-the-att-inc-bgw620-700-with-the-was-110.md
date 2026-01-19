@@ -145,7 +145,7 @@ To masquerade, you will need the original ONT serial number and other identifier
        following values:
 
         !!! info "All attributes below are <ins>mandatory</ins>"
-            Replace the ONT ID with the one found on the {{ page.meta.ont }}'s label.
+            Replace the PON Serial Number with the ONT ID found on the {{ page.meta.ont }}'s label.
 
         | Parameter                  | Value                   | Remarks                                       |
         | -------------------------- | -----------------       | --------------------------------------------- |
