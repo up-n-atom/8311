@@ -419,4 +419,51 @@ return path is defined and allows traffic to successfully cross network boundari
         | **Value**                        | WAN                               |
         | **Destination**                  | 192.168.11.0/24                   |
 
+=== ":simple-tplink: Deco"
+
+    !!! info "These instructions are based on TP-Link Deco app version 3.10.25. Steps may vary slightly in earlier or future versions."
+
+    <div class="swiper" markdown style="max-width:400px">
+
+    <div class="swiper-slide" step="2" markdown>
+
+    ![Deco Homepage](access-the-ont/deco_homepage.webp){ loading=lazy width="400" }
+
+    </div>
+
+    <div class="swiper-slide" step="3" markdown>
+
+    ![Deco More Options](access-the-ont/deco_more_options.webp){ loading=lazy width="400" }
+
+    </div>
+
+    <div class="swiper-slide" step="4" markdown>
+
+    ![Deco Advanced Configuration](access-the-ont/deco_advanced_options.webp){ loading=lazy width="400" }
+
+    </div>
+
+    <div class="swiper-slide" step="5" markdown>
+
+    ![Deco Static Routing](access-the-ont/deco_static_routing.webp){ loading=lazy width="400" }
+
+    </div>
+
+    </div>
+
+    1. **Install and set up** the TP-Link Deco app using the official guide:
+       [Getting to know your Deco app](https://www.tp-link.com/us/support/faq/1593/).
+    2. From the **Home** tab, tap **More** in the bottom navigation bar.
+    3. In the **More** menu, tap **Advanced**.
+    4. Tap **Static Routing**.
+    5. Tap the :material-plus-thick: (plus) icon to create a new static route.
+
+        |                                  |                                   |
+        | -------------------------------- | --------------------------------- |
+        | **Name**                         | WAS-110                           |
+        | **Network Destination**          | 192.168.11.0                      |
+        | **Subnet Mask**                  | 255.255.255.0                     |
+        | **Default Gateway**              | 0.0.0.0                           |
+        | **Interface**                    | WAN                               |
+
  [SNAT]: #source-nat
