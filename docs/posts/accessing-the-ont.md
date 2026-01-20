@@ -17,7 +17,7 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
-!!! info "This guide uses `192.168.11.1/24` (ONT) and `192.168.11.2/24` (WAN) for demonstration purposes. Be sure to replace this IP address and subnet mask with your ONT's actual default settings."
+!!! info "This guide uses `192.168.11.1/24` (ONT) and `192.168.11.2/24` (WAN) for demonstration purposes. Be sure to replace the IP addresses and subnet mask with your actual default settings."
 
 !!! tip "Accessing an ISP ONT"
     Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
@@ -43,8 +43,8 @@ configuration paths:
 
 * [Static Route](#static-route)
 
-:    A workaround used only in cases where Policy-Based Routing (PBR) is restricted, such as with UniFi OS or various
-     TP-Link offerings.
+:    A workaround used only in cases where manual Source NAT (SNAT) is restricted or non-existent, such as with
+     UniFi OS or various TP-Link offerings.
 
 Before configuration, you must identify the ONT's management IP and subnet using manufacturer documentation,
 online sources, or a network scanning tool.
@@ -388,10 +388,10 @@ networks] on the WAN interface.
         /ip firewall nat add action=src-nat chain=srcnat dst-address=192.168.11.1 out-interface=sfp-sfpplus1 to-addresses=192.168.11.2
         ```
 
-## Static Route <small>Restricted PBR environments</small> { #static-route data-toc-label="Static Route" }
+## Static Route <small>Restricted environments</small> { #static-route data-toc-label="Static Route" }
 
 Static routes serve as a manual redirection mechanism in environments where Policy-Based Routing (PBR) or granular
-outbound NAT controls are restricted.
+outbound NAT controls are restricted or non-existent.
 
 Configuring this route is difficult because it creates an asymmetric return path. While the router knows how to send
 traffic to the ONT, the ONT is typically a read-only device and does not know how to route return traffic back to the
@@ -402,12 +402,25 @@ return path is defined and allows traffic to successfully cross network boundari
 
 === ":simple-ubiquiti: UniFi OS"
 
+    !!! note "UniFi OS utilizes a logical abstraction layer that binds network policy to virtual interfaces (e.g., WAN, LAN) rather than raw physical ports (e.g., eth9)."
+
+    <div class="swiper" markdown>
+
+    <div class="swiper-slide" markdown>
+
     ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp){ loading=lazy }
 
-    1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+    </div>
+
+    <div class="swiper-slide" markdown>
 
     ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
 
+    </div>
+
+    </div>
+
+    1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
     2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
 
         |                                  |                                   |
