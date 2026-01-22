@@ -402,7 +402,7 @@ return path is defined and allows traffic to successfully cross network boundari
 
 === ":simple-ubiquiti: UniFi OS"
 
-    !!! note "UniFi OS utilizes a logical abstraction layer that binds network policy to virtual interfaces (e.g., WAN, LAN) rather than raw physical ports (e.g., eth9)."
+    !!! note "UniFi OS utilizes a logical abstraction layer that binds network policy to virtual interfaces (e.g., WAN, LAN) rather than physical interfaces (e.g., eth9)."
 
     <div class="swiper" markdown>
 
