@@ -54,6 +54,19 @@ ethtool -m <interface>
 | __Tx Power__ | 4    | 9    | dBm  | +/- 2         |
 | __Rx Power__ | -29  | -8   | dBm  | +/- 3         |
 
+##### Industry Standard Signal Ranges
+| &nbsp; | Great       | Good      | Fair (Warning) | Poor (Action)       |
+| ------ | ----------- | --------- | -------------- | ------------------- |
+| __Rx__ | −14 to −20  | −8 to −24 | −24 to −27     | Lower than −27      |
+| __Tx__ | +2 to +4    | +1 to +7  | 0 to +1        | Below 0 or Above +8 |
+
+|                |   |
+| -------------- | - |
+| <small>__Great__</small> | <small>Your connection is perfect.</small> |
+| <small>__Good__</small>  | <small>Your connection is stable and healthy.</small> |
+| <small>__Fair__</small>  | <small>Your internet might be slow or drop occasionally. Check your connectors and cables, dirty or bent?</small> |
+| <small>__Poor__</small>  | <small>Your connection is failing. Contact support.</small> |
+
 #### Optical status
 
 To determine if the [WAS-110] optics are operating within specification, execute one of the following procedures:
