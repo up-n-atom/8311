@@ -17,16 +17,20 @@ pin: true
 <!-- more -->
 <!-- nocont -->
 
-!!! info "This guide uses `192.168.11.1/24` (ONT) and `192.168.11.2/24` (WAN) for demonstration purposes. Be sure to replace the IP addresses and subnet mask with your actual default settings."
+!!! info "This guide uses `192.168.11.1/24` **(ONT)** and `192.168.11.2/24` **(WAN)** for demonstration purposes. Be sure to replace the IP addresses and subnet mask with your actual default settings."
 
 !!! tip "Accessing an ISP ONT"
-    Before connecting to an ISP ONT, it may be necessary to physically disconnect the fiber cable.
-
-    The OLT can disable the Local Craft Terminal (LCT) by setting the Administrative State for the ONT via managed
-    entity 256, as defined in [ITU-T G.988]. Physically disconnecting the fiber ensures the management interface
-    remains accessible.
+    You may need to **physically disconnect the fiber cable** to access the management interface. The OLT can remotely
+    disable the Local Craft Terminal (LCT) via the ONT's **Administrative State** (Managed Entity 256 - [ITU-T G.988]).
+    Disconnecting the fiber ensures the management interface remains accessible.
 
   [ITU-T G.988]: http://www.itu.int/rec/T-REC-G.988/en
+
+!!! danger "WAN vs LAN"
+    **The ONT resides on the WAN side of your network, not the LAN.** These are distinct networks. In their final,
+    functional state, these two IP address spaces **must be separate and unique** for the router to distinguish between
+    them. Additionally, do not conflict the **ONT Management IP** with your **Internet IP**. Your WAN interface must be
+    configured to accommodate both.
 
 Accessing the management interface of your ONT from within your local network typically involves one of three
 configuration paths:
@@ -66,7 +70,7 @@ The following ONTs commonly used in our guides have the following default IPs yo
 | [XS-010X-Q]           | 192.168.100.1 |
 | [SPS-34-24T-HP-TDFO]  | 192.168.1.10  |
 
-!!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either `192.168.11.1` or `192.168.1.1`, depending on the vendor or firmware installed."
+!!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either `192.168.11.1` or `192.168.1.1`, depending on the vendor."
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
@@ -390,8 +394,8 @@ networks] on the WAN interface.
 
 ## Static Route <small>Restricted environments</small> { #static-route data-toc-label="Static Route" }
 
-Static routes serve as a manual redirection mechanism in environments where Policy-Based Routing (PBR) or granular
-outbound NAT controls are restricted or non-existent.
+Static routes serve as a manual redirection mechanism in environments where granular outbound NAT controls or NAT
+policies are restricted or non-existent.
 
 Configuring this route is difficult because it creates an asymmetric return path. While the router knows how to send
 traffic to the ONT, the ONT is typically a read-only device and does not know how to route return traffic back to the
