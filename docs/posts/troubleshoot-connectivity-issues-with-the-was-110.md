@@ -64,7 +64,7 @@ ethtool -m <interface>
 | -------------- | - |
 | <small>__Great__</small> | <small>Your connection is perfect.</small> |
 | <small>__Good__</small>  | <small>Your connection is stable and healthy.</small> |
-| <small>__Fair__</small>  | <small>Your internet might be slow or drop occasionally. Check your connectors and cables, loose, dirty or bent?</small> |
+| <small>__Fair__</small>  | <small>Your internet might be slow or drop occasionally. Check your connectors and cables: are they loose, dirty or bent?</small> |
 | <small>__Poor__</small>  | <small>Your connection is failing. Contact support.</small> |
 
 #### Optical status
