@@ -11,7 +11,7 @@
 
 ### Temperature Monitoring
 
-#### The Digital Diagnostic Monitor Interface
+#### Digital Diagnostic Monitor Interface
 
 For more details on accessing this interface, please search your hosts' documentation for
 Digital Diagnostic Monitoring (DDM) or Digital Optical Monitoring (DOM).
