@@ -9,24 +9,37 @@
 
 <iframe width=300" height="340" src="https://www.printables.com/embed/1392938" scrolling="no" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
-### Temperature Monitoring
+### Temperature monitoring
 
 #### Digital Diagnostic Monitor Interface
 
 For more details on accessing this interface, please search your hosts' documentation for
 Digital Diagnostic Monitoring (DDM) or Digital Optical Monitoring (DOM).
 
-##### Linux
+##### :simple-linux: Linux host { #linux-host-ddmi data-toc-label="Linux" }
 
-```sh
-ethtool -m <interface>
+``` sh
+ethtool -m <interface> #(1)!
 ```
 
-##### FreeBSD
+1. Replace `<interface>` with the interface name.
 
-```sh
-ifconfig -vvv <interface>
+##### :simple-freebsd: FreeBSD host { #freebsd-host-ddmi data-toc-label="FreeBSD" }
+
+``` sh
+ifconfig -vvv <interface> #(1)!
 ```
+
+1. Replace `<interface>` with the interface name.
+
+##### :simple-mikrotik: RouterOS host { #routeros-host-ddmi data-toc-label="RouterOS" }
+
+
+``` sh
+/interface ethernet monitor <sfpX> #(1)!
+```
+
+1. Replace sfp`X` with the port name/number.
 
 #### 8311 Community Firmware API
 
