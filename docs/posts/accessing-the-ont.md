@@ -1,11 +1,11 @@
 ---
 date: 2026-01-10
 categories:
-  - ONT
   - OPNsense
   - pfSense
   - UniFi OS
   - RouterOS
+  - Deco
 description: Accessing the ONT
 pin: true
 ---
@@ -29,7 +29,7 @@ pin: true
 !!! danger "WAN vs LAN"
     **The ONT resides on the WAN side of your network, not the LAN.** These are distinct networks. In their final,
     functional state, these two IP address spaces **must be separate and unique** for the router to distinguish between
-    them. Additionally, do not conflict the **ONT Management IP** with your **Internet IP**. Your WAN interface must be
+    them. Additionally, do not conflict the **ONT LCT IP** with your **Internet IP**. Your WAN interface must be
     configured to accommodate both.
 
 Accessing the management interface of your ONT from within your local network typically involves one of three
