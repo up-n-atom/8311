@@ -112,6 +112,27 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
       </form>
   </div>
 
+The above steps can be summarized into a single-line terminal command:
+
+=== ":material-microsoft: Windows"
+
+
+    ``` sh
+    (Invoke-RestMethod -Uri "https://mabbox.bytel.fr/api/v1/wan/sff").wan.serial_number -replace "0x534d4253", "SMBS"
+    ```
+
+=== ":simple-apple: macOS"
+
+    ``` sh
+    curl -s https://mabbox.bytel.fr/api/v1/wan/sff | plutil -extract 0.wan.serial_number raw - | sed 's/0x534d4253/SMBS/'
+    ```
+
+=== ":simple-linux: Linux"
+
+    ``` sh
+    curl -s https://mabbox.bytel.fr/api/v1/wan/sff | jq -r '.[] | select(.wan.serial_number != null) | .wan.serial_number | sub("0x534d4253"; "SMBS")'
+    ```
+
 ### PLOAM registration ID
 
 The registration ID is composed of a seventy-two (72) octets from the fifteen (15) octet IMEI prefixed with five (5)
