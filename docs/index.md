@@ -4,7 +4,7 @@
     <option value="att">&#127482;&#127480; AT&T</option>
     <option value="bell-aliant">&#127464;&#127462; Bell Aliant</option>
     <option value="bell-canada">&#127464;&#127462; Bell Canada</option>
-    <option value="bell-icg">&#127464;&#127462; Bell ICG</option>
+    <option value="ebox">&#127464;&#127462; EBOX</option>
     <option value="bell-mts">&#127464;&#127462; Bell MTS</option>
     <option value="bouygues-sa">&#127467;&#127479; Bouygues S.A</option>
     <option value="frontier">&#127482;&#127480; Frontier</option>
