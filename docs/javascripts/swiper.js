@@ -1,29 +1,63 @@
-const swiper = new Swiper('.swiper', {
-  createElements: true,
-  pagination: {
-    auto: true,
-    clickable: true,
-    renderBullet: function (index, className) {
-      const step = this.slides[index].hasAttribute('step') ? this.slides[index].getAttribute('step') : index + 1;
-      return '<span class="' + className + '">' + step + "</span>";
-    },
-  },
-  navigation: true,
-  on: {
-    afterInit: function (swiper) {
-      let stepsElement = this.el.nextElementSibling;
-
-      while (!(stepsElement instanceof HTMLOListElement)) {
-        stepsElement = stepsElement.nextElementSibling || stepsElement.nextSibling;
+(() => {
+  const sync = (s, list) => {
+    s.slides.forEach((el, i) => {
+      const idx = el.hasAttribute('step') ? Number(el.getAttribute('step')) - 1 : i;
+      const li = list.children[idx];
+      if (li instanceof HTMLLIElement) {
+        li.dataset.slideTo = i;
+        li.classList.toggle('step-flash', i === s.activeIndex);
       }
+    });
+  };
 
-      this.slides.map((el, i) => el.hasAttribute('step') ? el.getAttribute('step') - 1 : i).forEach(function (index, slide) {
-        if (index < stepsElement.children.length && stepsElement.children[index] instanceof HTMLLIElement) {
-          ['click', 'mouseover'].forEach(function (e) {
-            stepsElement.children[index].addEventListener(e, () => swiper.slideTo(slide));
-          });
+  const load = () => {
+    new Swiper('.swiper', {
+      createElements: true,
+      observer: true,
+      observeParents: true,
+      pagination: {
+        auto: true,
+        clickable: true,
+        renderBullet: function(i, cls) {
+          const step = this.slides[i].getAttribute('step') || (i + 1);
+          return `<span class="${cls}">${step}</span>`;
         }
-      });
-    },
-  },
-});
+      },
+      navigation: true,
+      on: {
+        init: function(s) {
+          let list = s.el.nextElementSibling;
+          while (list && !(list instanceof HTMLOListElement)) {
+            list = list.nextElementSibling;
+          }
+
+          if (!list) return;
+
+          sync(s, list);
+
+          ['click', 'mouseover'].forEach(type => {
+            list.addEventListener(type, (e) => {
+              const li = e.target.closest('li');
+              if (!li?.dataset.slideTo) return;
+
+              const targetIdx = Number(li.dataset.slideTo);
+              if (type === 'click' || s.activeIndex !== targetIdx) {
+                s.slideTo(targetIdx);
+              }
+            });
+          });
+
+          s.linkedList = list;
+          list.dataset.swiperLinked = "true";
+        },
+
+        observerUpdate: (s) => s.linkedList && sync(s, s.linkedList),
+        slideChange: (s) => s.linkedList && sync(s, s.linkedList)
+      }
+    });
+  };
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', load)
+    : load();
+})();

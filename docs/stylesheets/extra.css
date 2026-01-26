@@ -113,6 +113,7 @@ input[type=submit] {
   padding: 0.2rem 0.4rem;
   text-align: center;
   width: auto;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .swiper-pagination-bullet:before {
@@ -123,6 +124,26 @@ input[type=submit] {
   background: var(--md-primary-fg-color);
   box-shadow: var(--md-shadow-z1);
   color: var(--md-primary-bg-color);
+}
+
+ol[data-swiper-linked] li {
+  position: relative;
+  cursor: pointer;
+}
+
+ol[data-swiper-linked] li::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+ol[data-swiper-linked] li.step-flash::before {
+  background-color: var(--md-primary-fg-color);
 }
 
 .video {
