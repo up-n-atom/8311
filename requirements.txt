@@ -4,3 +4,4 @@ mkdocs-glightbox
 mkdocs-table-reader-plugin
 mkdocs-redirects
 mkdocs-macros-plugin
+mkdocs-minify-plugin
