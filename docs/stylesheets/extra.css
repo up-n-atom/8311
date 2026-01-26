@@ -40,6 +40,10 @@
   display: none;
 }
 
+.md-typeset table:not([class]) + * {
+  margin-top: 1em;
+}
+
 /*.md-typeset__table th:empty {
   display: none;
   border: none;
@@ -161,36 +165,61 @@ ol[data-swiper-linked] li.step-flash::before {
   height: 100%;
 }
 
+.table-toggle-bridge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.table-toggle-bridge::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--md-typeset-table-color, #e0e0e0);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 .pon-pm-icon {
-   align-items: center;
-   background-color: var(--md-default-bg-color);
-   border: 0.05rem solid var(--md-typeset-table-color);
-   border-radius: 50%;
-   cursor: pointer;
-   display: inline-flex;
-   height: 2em;
-   justify-content: center;
-   margin-left: 50%;
-   position: relative;
-   transform: translate(-50%);
-   width: 2em;
+  align-items: center;
+  background-color: var(--md-default-bg-color);
+  border: 0.05rem solid var(--md-typeset-table-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2em;
+  width: 2em;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  outline: 0.5rem solid var(--md-default-bg-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .pon-pm-icon:hover {
   background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
 }
 
-.pon-pm-icon::after,
-.pon-pm-icon::before {
-  position: absolute;
+.pon-pm-icon::before,
+.pon-pm-icon::after {
   content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
   height: 1em;
   width: 0.2ch;
   background-color: var(--md-default-fg-color--light);
-  left: 50%;
-  top: 50%;
-  transition: transform 0.2s ease;
   transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
 }
 
 .pon-pm-icon:hover::after,
@@ -198,33 +227,24 @@ ol[data-swiper-linked] li.step-flash::before {
   background-color: var(--md-accent-bg-color);
 }
 
+.pon-pm-icon.pon-pm-icon--active::before,
+.pon-pm-icon.pon-pm-icon--active::after {
+  background-color: var(--md-default-fg-color--light);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.pon-pm-icon.pon-pm-icon--active:hover::before,
+.pon-pm-icon.pon-pm-icon--active:hover::after {
+  background-color: var(--md-accent-bg-color);
+}
+
 .pon-pm-icon::before {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.pon-pm-icon.pon-pm-icon--active::before {
-  transition: transform 0.3s ease;
-}
-
-/*.pon-pm-icon:hover::before,*/
-.pon-pm-icon:active::before {
+.pon-pm-icon::after {
   transform: translate(-50%, -50%) rotate(0deg);
 }
-
-/*.pon-pm-icon:hover::after,*/
-.pon-pm-icon:active::after,
-.pon-pm-icon.pon-pm-icon--active::after {
-  transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-.pon-pm-icon.pon-pm-icon--active::before {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-/*.pon-pm-icon.pon-pm-icon--active::after,
-.pon-pm-icon.pon-pm-icon--active::before {
-  width: 0.2ch;
-}*/
 
 .affiliate {
   background: var(--md-primary-fg-color);

@@ -1,93 +1,58 @@
-class SassyTables {
-    static filterColumn = 'mandatory';
-    static controlHtml = '<button type="button" class="pon-pm-icon"></button>';
+(() => {
+  const CONFIG = {
+    columnText: 'mandatory',
+    controlHtml: '<button type="button" class="pon-pm-icon"></button>',
+    activeClass: 'pon-pm-icon--active'
+  };
 
-    constructor() {
-        this.processTables();
+  const animateRow = (row, show) => {
+    if (show) {
+      row.style.display = '';
+      row.animate([
+        { opacity: 0, transform: 'translateY(-5px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 250, easing: 'ease-out' });
+    } else {
+      const anim = row.animate([
+        { opacity: 1 },
+        { opacity: 0, transform: 'translateY(-5px)' }
+      ], { duration: 200, easing: 'ease-in' });
+      anim.onfinish = () => row.style.display = 'none';
     }
+  };
 
-    processTables() {
-        const tables = document.querySelectorAll('table');
+  const processTable = (table) => {
+    const headers = Array.from(table.querySelectorAll('thead th, thead td'));
+    const colIdx = headers.findIndex(h => h.textContent.trim().toLowerCase() === CONFIG.columnText) + 1;
 
-        tables.forEach(table => this.processTable(table));
-    }
+    if (colIdx === 0) return;
 
-    processTable(table) {
-        const headerRow = table.querySelector('thead tr');
+    const rows = Array.from(table.querySelectorAll('tbody tr')).filter(row => {
+      const cell = row.querySelector(`td:nth-child(${colIdx})`);
+      return cell && !cell.childElementCount && !cell.textContent.trim().length;
+    });
 
-        if (!headerRow) return;
+    if (!rows.length) return;
 
-        const columnIndex = this.findColumnIndexWithText(headerRow, SassyTables.filterColumn);
+    rows.forEach(row => row.style.display = 'none');
 
-        if (columnIndex === -1) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-toggle-bridge';
 
-        const tableRows = this.findEmptyColumnRows(table, columnIndex);
+    const template = document.createElement('template');
+    template.innerHTML = CONFIG.controlHtml;
+    const btn = template.content.firstElementChild;
 
-        if (tableRows.length > 0) {
-            tableRows.forEach(tableRow => {
-                tableRow.style.display = 'none';
-            });
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isActive = btn.classList.toggle(CONFIG.activeClass);
+      rows.forEach(row => animateRow(row, isActive));
+    });
 
-            this.addToggleControl(table, tableRows);
-        }
-    }
+    wrapper.appendChild(btn);
+    table.insertAdjacentElement('afterend', wrapper);
+  };
 
-    findColumnIndexWithText(tableRow, filterText) {
-        const headings = tableRow.querySelectorAll('th, td');
-
-        for (let i = 0; i < headings.length; i++) {
-            if (headings[i].textContent.trim().toLowerCase() === filterText.toLowerCase()) {
-                return i + 1;
-            }
-        }
-
-        return -1;
-    }
-
-    findEmptyColumnRows(table, columnIndex) {
-        const tableRows = table.querySelectorAll('tbody tr');
-
-        const emptyRows = [];
-
-        tableRows.forEach(tableRow => {
-            const cell = tableRow.querySelector(`td:nth-child(${columnIndex})`);
-
-            if (cell && !cell.childElementCount && !cell.textContent.trim().length) {
-                emptyRows.push(tableRow);
-            }
-        });
-
-        return emptyRows;
-    }
-
-    createToggleControl() {
-        const template = document.createElement('template');
-
-        template.innerHTML = SassyTables.controlHtml;
-
-        return template.content.firstElementChild;
-
-    }
-
-    addToggleControl(table, hiddenRows) {
-        const toggleControl = this.createToggleControl();
-
-        toggleControl.addEventListener('transitionend', (e) => {
-          e.preventDefault;
-            hiddenRows.forEach(row => {
-                row.style.display = e.target.classList.contains('pon-pm-icon--active') ? '' : 'none';
-            });
-        });
-
-        toggleControl.addEventListener('click', (e) => {
-            e.preventDefault;
-            toggleControl.classList.toggle('pon-pm-icon--active');
-        });
-
-        table.insertAdjacentElement('afterend', toggleControl);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  new SassyTables();
-});
+  const load = () => document.querySelectorAll('table').forEach(processTable);
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', load) : load();
+})();
