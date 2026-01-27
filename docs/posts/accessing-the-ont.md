@@ -479,7 +479,7 @@ return path is defined and allows traffic to successfully cross network boundari
             | **Value**                        | WAN                               |
             | **Destination**                  | 192.168.11.0/24                   |
 
-    === "Network <9.2"
+    === "Network <=9.2"
 
         <div class="swiper" markdown>
 
