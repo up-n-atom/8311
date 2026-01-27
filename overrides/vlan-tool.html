@@ -101,7 +101,7 @@
         const tpidMatch = (() => {
           switch(filterTpid) {
             case 0: return true;
-            case 4: return tag.tpid === TPID.DEFAULT;
+            case 4: return tag.tpid === 0x8100;
             case 5: return tag.tpid === inputTpid;
             case 6: return tag.tpid === inputTpid && tag.dei === 0;
             case 7: return tag.tpid === inputTpid && tag.dei === 1;
