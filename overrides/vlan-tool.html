@@ -129,31 +129,15 @@
 
       transform(frame, outputTpid = 0x8100) {
         if (this.tag_rem === 3) return null;
-        const resolveP = (p) => {
-          switch(p) {
-            case 7: return p;
-            case 8: return frame.innerTag?.pcp ?? 0;
-            case 9: return frame.outerTag?.pcp ?? 0;
-            default: return 0;
-          }
-        };
-
-        const resolveV = (v) => {
-          switch(v) {
-            case 4094: return v;
-            case 4096: return frame.innerTag?.vid ?? 0;
-            case 4097: return frame.outerTag?.vid ?? 0;
-            default: return 0;
-          }
-        };
-
+        const resolveP = (p) => (p <= 7 ? p : (p === 8 ? frame.innerTag?.pcp : (p === 9 ? frame.outerTag?.pcp : 0)) || 0);
+        const resolveV = (v) => (v <= 4094 ? v : (v === 4096 ? frame.innerTag?.vid : (v === 4097 ? frame.outerTag?.vid : 0)) || 0);
         const resolveT = (td) => {
-          switch(td) {
-            case 0: return [frame.innerTag?.tpid ?? TPID.DEFAULT, frame.innerTag?.dei ?? 0];
-            case 1: return [frame.outerTag?.tpid ?? TPID.DEFAULT, frame.outerTag?.dei ?? 0];
-            case 4: return [0x8100, 0];
-            default: return [outputTpid, 0];
-          }
+            switch(td) {
+                case 0: return [frame.innerTag?.tpid ?? 0x8100, frame.innerTag?.dei ?? 0];
+                case 1: return [frame.outerTag?.tpid ?? 0x8100, frame.outerTag?.dei ?? 0];
+                case 4: return [0x8100, 0];
+                default: return [outputTpid, 0];
+            }
         };
 
         let tags = [];
@@ -398,7 +382,7 @@
         const pcp = parseInt(row.querySelector('[data-field="pcp"]').value);
         const vid = parseInt(row.querySelector('[data-field="vid"]').value);
 
-        Model.testFrames[label] = EthFrame.fromSingleTag(parseInt(vid), parseInt(pcp));
+        Model.testFrames[label] = EthFrame.fromSingleTag(Number(vid), Number(pcp));
 
         View.updateRowUI(label);
         View.syncHighlights();
