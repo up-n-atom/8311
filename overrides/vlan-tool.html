@@ -129,8 +129,18 @@
 
       transform(frame, outputTpid = 0x8100) {
         if (this.tag_rem === 3) return null;
-        const resolveP = (p) => (p <= 7 ? p : (p === 8 ? frame.innerTag?.pcp : (p === 9 ? frame.outerTag?.pcp : 0)) || 0);
-        const resolveV = (v) => (v <= 4094 ? v : (v === 4096 ? frame.innerTag?.vid : (v === 4097 ? frame.outerTag?.vid : 0)) || 0);
+        const resolveP = (p) => {
+          if (p <= 7) return p;
+          if (p === 8) return frame.innerTag?.pcp ?? 0;
+          if (p === 9) return frame.outerTag?.pcp ?? 0;
+          return 0;
+        };
+        const resolveV = (v) => {
+          if (v <= 4094) return v;
+          if (v === 4096) return frame.innerTag?.vid ?? 0;
+          if (v === 4097) return frame.outerTag?.vid ?? 0;
+          return 0;
+        };
         const resolveT = (td) => {
             switch(td) {
                 case 0: return [frame.innerTag?.tpid ?? 0x8100, frame.innerTag?.dei ?? 0];
@@ -139,7 +149,6 @@
                 default: return [outputTpid, 0];
             }
         };
-
         let tags = [];
         if (this.t_out_prio !== 15) tags.push(new VlanTag(resolveV(this.t_out_vid), resolveP(this.t_out_prio), ...resolveT(this.t_out_tpid)));
         if (this.t_in_prio !== 15) tags.push(new VlanTag(resolveV(this.t_in_vid), resolveP(this.t_in_prio), ...resolveT(this.t_in_tpid)));
