@@ -31,9 +31,9 @@
       <h1>Extended VLAN Tagging Operation Table</h1>
       <textarea id="inputData" class="md-input" rows="8" placeholder="Paste extended VLAN table..."></textarea>
       <button id="runBtn" class="md-button md-button--primary">Run Analysis</button>
-      <div id="service" class="mdx-container"></div>
-      <div id="config" class="mdx-container"></div>
-      <div id="ops" class="mdx-container"></div>
+      <div id="service" class="mdx-container" markdown="0"></div>
+      <div id="config" class="mdx-container" markdown="0"></div>
+      <div id="ops" class="mdx-container" markdown="0"></div>
     </div>
   </div>
 {% endblock %}
@@ -248,7 +248,7 @@
       renderServices() {
         const container = document.getElementById('service');
         if (!Model.services.length) {
-          return container.innerHTML = `<h2>Service Discovery</h2><p>No service VLANs discovered.</p>`;
+          return container.innerHTML = `<p>No service VLANs discovered.</p>`;
         }
         const rows = Model.services.map(s => `<tr><td>${s.name}</td><td>${s.vid}</td><td>${s.confidence}%</td></tr>`).join('');
         container.innerHTML = `<table><caption>Service Discovery</caption><thead><tr><th>Service</th><th>VID</th><th>Confidence</th></tr></thead><tbody>${rows}</tbody></table>`;
