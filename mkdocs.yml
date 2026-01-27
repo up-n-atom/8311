@@ -131,6 +131,9 @@ nav:
         - XS-010X-Q: xgs-pon/ont/nokia/xs-010x-q.md
       - Potron Technology:
         - X-ONU-SFPP: xgs-pon/ont/potron-technology/x-onu-sfpp.md
+  - TOOLS:
+    - tools/index.md
+    - VLAN Analyser: tools/vlan.md
   - DISCORD:
     - discord/index.md
     - History: discord/history.md

@@ -1,0 +1,415 @@
+{% extends "main.html" %}
+{% block styles %}
+  {{ super() }}
+  <style>
+    .mdx-container { width: 100%; overflow-x: auto; margin-top: 1rem; }
+    .md-typeset .md-input { height: inherit !important; }
+    textarea { width: 100%; resize: none; border: 1px solid var(--md-default-fg-color--lighter) !important; box-sizing: border-box; }
+    table { width: 100%; min-width: 60em; border: none !important;  border-collapse: collapse !important; display: table !important; text-align: center; }
+    th { background-color: var(--md-typeset-table-color--light); border: .05rem solid var(--md-typeset-table-color); min-width: inherit !important; }
+    caption { font-size: 1.5625em; line-height: 1.4; margin: 0.64em 0; font-weight: 300; text-align: left; }
+    td, th { vertical-align: inherit !important; }
+    .conf-row { cursor: pointer; }
+    .conf-row.active { box-shadow: inset 0 0 0 2px var(--md-primary-fg-color) !important;/*background-color: var(--md-primary-fg-color) !important; color: var(--md-primary-bg-color);*/  }
+    .conf-row.active:hover { box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; background-color: transparent !important;/*background-color: var(--md-accent-fg-color) !important; color: var(--md-accent-bg-color);*/}
+    .rule-row { transition: background-color 1s; position: relative; }
+    .rule-row.sticky-active {
+      background-color: #64dd171a !important;
+      box-shadow: inset 0 0 0 2px #64dd17 !important;
+      font-weight: bold;
+      z-index: 2;
+     }
+     .rule-row.hover-active:not(.sticky-active) {
+       background-color: var(--hover) !important;
+       box-shadow: inset 0 0 0 1px #64dd17;
+     }
+  </style>
+{% endblock %}
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner md-typeset">
+      <h1>Extended VLAN Tagging Operation Table</h1>
+      <textarea id="inputData" class="md-input" rows="8" placeholder="Paste extended VLAN table..."></textarea>
+      <button id="runBtn" class="md-button md-button--primary">Run Analysis</button>
+      <div id="service" class="mdx-container"></div>
+      <div id="config" class="mdx-container"></div>
+      <div id="ops" class="mdx-container"></div>
+    </div>
+  </div>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script>
+    class VlanTag {
+      constructor(vid, pcp = 0, tpid = 0x8100, dei = 0) {
+        this.vid = vid;
+        this.pcp = pcp;
+        this.tpid = tpid;
+        this.dei = dei;
+        Object.freeze(this);
+      }
+    }
+
+    class EthFrame {
+      constructor(tags = []) {
+        this.tags = Object.freeze([...tags]);
+      }
+      static raw() { return new EthFrame([]); }
+      static fromSingleTag(vlan, pcp = 0) { return new EthFrame([new VlanTag(vlan, pcp)]); }
+      static fromPriority(pcp = 0) { return EthFrame.fromSingleTag(0, pcp); }
+
+      get isRaw() { return this.tags.length === 0; }
+      get isSingleTagged() { return this.tags.length === 1; }
+      get isDoubleTagged() { return this.tags.length >= 2; }
+      get innerTag() { return this.tags.length > 0 ? this.tags[this.tags.length - 1] : null; }
+      get outerTag() { return this.tags.length >= 2 ? this.tags[this.tags.length - 2] : null; }
+    }
+
+    class VlanTagOp {
+      constructor(fields) {
+        const [
+          f_out_prio, f_out_vid, f_out_tpid,
+          f_in_prio, f_in_vid, f_in_tpid,
+          f_ext_crit, f_eth_type, tag_rem,
+          t_out_prio, t_out_vid, t_out_tpid,
+          t_in_prio, t_in_vid, t_in_tpid
+        ] = fields;
+
+        Object.assign(this, {
+          f_out_prio, f_out_vid, f_out_tpid, f_in_prio, f_in_vid, f_in_tpid,
+          f_ext_crit, f_eth_type, tag_rem,
+          t_out_prio, t_out_vid, t_out_tpid, t_in_prio, t_in_vid, t_in_tpid
+        });
+      }
+
+      get isUntaggedFilter() { return this.f_out_prio === 15 && this.f_in_prio === 15; }
+      get isSingleTaggedFilter() { return this.f_out_prio === 15 && this.f_in_prio !== 15; }
+      get isDoubleTaggedFilter() { return this.f_out_prio !== 15; }
+
+      get isDefault() {
+        const base = this.f_out_vid === 4096 && this.f_in_vid === 4096 && this.f_ext_crit === 0;
+        return base && (
+          (this.f_out_prio === 15 && this.f_in_prio === 15) ||
+          (this.f_out_prio === 15 && this.f_in_prio === 14) ||
+          (this.f_out_prio === 14 && this.f_in_prio === 14)
+        );
+      }
+
+      #matchTag(tag, filterPrio, filterVid, filterTpid, inputTpid) {
+        if (!tag) return false;
+
+        const tpidMatch = (() => {
+          switch(filterTpid) {
+            case 0: return true;
+            case 4: return tag.tpid === TPID.DEFAULT;
+            case 5: return tag.tpid === inputTpid;
+            case 6: return tag.tpid === inputTpid && tag.dei === 0;
+            case 7: return tag.tpid === inputTpid && tag.dei === 1;
+            default: return false;
+          }
+        })();
+
+        if (!tpidMatch) return false;
+        if (filterPrio < 8 && filterPrio !== tag.pcp) return false;
+        if (filterVid !== 4096 && filterVid !== tag.vid) return false;
+
+        return true;
+      }
+
+      matchesFilter(frame, inputTpid = 0x8100) {
+        if (frame.isRaw && !this.isUntaggedFilter) return false;
+        if (frame.isSingleTagged && !this.isSingleTaggedFilter) return false;
+        if (frame.isDoubleTagged && !this.isDoubleTaggedFilter) return false;
+
+        if (frame.isDoubleTagged && !this.#matchTag(frame.outerTag, this.f_out_prio, this.f_out_vid, this.f_out_tpid, inputTpid)) return false;
+        if (!frame.isRaw && !this.#matchTag(frame.innerTag, this.f_in_prio, this.f_in_vid, this.f_in_tpid, inputTpid)) return false;
+
+        return true;
+      }
+
+      transform(frame, outputTpid = 0x8100) {
+        if (this.tag_rem === 3) return null;
+        const resolveP = (p) => {
+          switch(p) {
+            case 7: return p;
+            case 8: return frame.innerTag?.pcp ?? 0;
+            case 9: return frame.outerTag?.pcp ?? 0;
+            default: return 0;
+          }
+        };
+
+        const resolveV = (v) => {
+          switch(v) {
+            case 4094: return v;
+            case 4096: return frame.innerTag?.vid ?? 0;
+            case 4097: return frame.outerTag?.vid ?? 0;
+            default: return 0;
+          }
+        };
+
+        const resolveT = (td) => {
+          switch(td) {
+            case 0: return [frame.innerTag?.tpid ?? TPID.DEFAULT, frame.innerTag?.dei ?? 0];
+            case 1: return [frame.outerTag?.tpid ?? TPID.DEFAULT, frame.outerTag?.dei ?? 0];
+            case 4: return [0x8100, 0];
+            default: return [outputTpid, 0];
+          }
+        };
+
+        let tags = [];
+        if (this.t_out_prio !== 15) tags.push(new VlanTag(resolveV(this.t_out_vid), resolveP(this.t_out_prio), ...resolveT(this.t_out_tpid)));
+        if (this.t_in_prio !== 15) tags.push(new VlanTag(resolveV(this.t_in_vid), resolveP(this.t_in_prio), ...resolveT(this.t_in_tpid)));
+        return tags.length > 0 ? new EthFrame(tags) : new EthFrame(frame.tags.slice(this.tag_rem));
+      }
+    }
+
+    class VlanTagOpTable {
+      constructor(ops = []) {
+        this.ops = ops.sort((a, b) => {
+          const aDef = +a.isDefault;
+          const bDef = +b.isDefault;
+          if (aDef !== bDef) return aDef - bDef;
+          const keys = ['f_out_prio', 'f_out_vid', 'f_out_tpid', 'f_in_prio', 'f_in_vid', 'f_in_tpid', 'f_ext_crit', 'f_eth_type'];
+          for (let k of keys) if (a[k] !== b[k]) return a[k] - b[k];
+          return 0;
+        });
+      }
+
+      static fromStream(text) {
+        const ops = [];
+        text.split('\n').forEach(line => {
+          const parts = line.trim().split(/\s+/);
+          if (parts.length === 15 && parts.every(p => /^\d+$/.test(p))) {
+            const vals = parts.map(Number);
+            if (vals.slice(8).every((v, i) => v === [3, 15, 8191, 7, 15, 8191, 7][i])) return;
+            [vals[6], vals[7]] = [vals[7], vals[6]];
+            ops.push(new VlanTagOp(vals));
+          }
+        });
+        return new VlanTagOpTable(ops);
+      }
+
+      processFrame(frame) {
+        for (let op of this.ops) {
+          if (op.matchesFilter(frame)) return { frame: op.transform(frame), op };
+        }
+        return { frame: null, op: null };
+      }
+    }
+
+    class VlanClassifier {
+      static rankVlanFromPriority(table, targetPrio = 0) {
+        const calcLikelihood = (op) => {
+          let likelihood = 0.5;
+          let weight = 0.40;
+          likelihood *= (op.f_in_vid >= 1 && op.f_in_vid <= 4094) ? 0.95 : 0.05;
+          if (op.f_in_prio === targetPrio) { likelihood *= 0.90; weight = 0.70; }
+          else if (op.f_in_prio === 8) { likelihood *= (targetPrio === 0) ? 0.50 : 0.10; }
+          else { likelihood *= 0.05; }
+          if (op.t_in_prio === targetPrio) { likelihood *= (targetPrio !== 0) ? 0.999 : 0.95; }
+          else if (op.t_in_prio === 8) { likelihood *= (targetPrio !== 0) ? weight : 0.85; }
+          else { likelihood *= 0.0001; }
+          likelihood *= (op.t_in_vid !== op.f_in_vid && op.t_in_vid <= 4094) ? 0.85 : 0.82;
+          return likelihood;
+        };
+        let results = [];
+        let totalLik = 0.0;
+        table.ops.forEach((op) => {
+          if (op.isSingleTaggedFilter && !op.isDefault && op.tag_rem !== 3) {
+            const lik = calcLikelihood(op);
+            totalLik += lik;
+            results.push({ vid: op.f_in_vid, likelihood: lik });
+          }
+        });
+        return results.map(r => ({
+          ...r,
+          confidence: totalLik > 0 ? parseFloat(((r.likelihood / totalLik) * 100).toFixed(2)) : 0.0
+        })).sort((a, b) => b.likelihood - a.likelihood);
+      }
+    }
+
+    const Model = {
+      table: null,
+      services: [],
+      testFrames: {},
+      selectedLabel: null,
+
+      setData(raw) {
+        this.table = VlanTagOpTable.fromStream(raw);
+        this.services = [{n:"HSI",p:0}, {n:"VOIP",p:5}, {n:"IPTV",p:4}].reduce((acc, spec) => {
+          const res = VlanClassifier.rankVlanFromPriority(this.table, spec.p)[0];
+          if (res) acc.push({ name: spec.n, vid: res.vid, confidence: res.confidence });
+          return acc;
+        }, []);
+        this.testFrames = {
+          "Untagged": EthFrame.raw(),
+          "Priority-Tagged": EthFrame.fromPriority(0)
+        };
+        if (this.services.length) {
+          this.testFrames["Service-Tagged"] = EthFrame.fromSingleTag(this.services[0].vid, 0);
+        }
+      }
+    };
+
+    const View = {
+      renderServices() {
+        const container = document.getElementById('service');
+        if (!Model.services.length) {
+          return container.innerHTML = `<h2>Service Discovery</h2><p>No service VLANs discovered.</p>`;
+        }
+        const rows = Model.services.map(s => `<tr><td>${s.name}</td><td>${s.vid}</td><td>${s.confidence}%</td></tr>`).join('');
+        container.innerHTML = `<table><caption>Service Discovery</caption><thead><tr><th>Service</th><th>VID</th><th>Confidence</th></tr></thead><tbody>${rows}</tbody></table>`;
+      },
+
+      renderRouterConfs() {
+        let h = `<table><caption>Router Configuration</caption><thead>
+          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">S-Tag (PON)</th><th colspan="2">C-Tag (PON)</th></tr>
+          <tr><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th></tr>
+          </thead><tbody>`;
+
+        Object.entries(Model.testFrames).forEach(([label, f]) => {
+          const { frame: resFrame, op } = Model.table.processFrame(f);
+          const key = Controller.getRuleKey(op);
+          const isServiceTagged = (label === "Service-Tagged");
+
+          const curPcp = f.innerTag ? f.innerTag.pcp : 0;
+          const curVid = f.innerTag ? f.innerTag.vid : '-';
+
+          let pcpHtml = isServiceTagged ?
+            `<select data-field="pcp" data-label="${label}">` +
+            [0,1,2,3,4,5,6,7].map(p => `<option value="${p}" ${p==curPcp?'selected':''}>${p}</option>`).join('') + `</select>` :
+            (f.innerTag ? f.innerTag.pcp : '-');
+          let vidHtml = isServiceTagged ?
+            `<select data-field="vid" data-label="${label}">` +
+            Model.services.map(s => `<option value="${s.vid}" ${s.vid==curVid?'selected':''}>${s.vid}</option>`).join('') + `</select>` :
+            curVid;
+
+          h += `<tr class="conf-row" data-label="${label}" data-rule="${key}" data-is-service="${isServiceTagged}">
+            <td><strong>${label}</strong></td>
+            <td>${f.outerTag?f.outerTag.pcp:'-'}</td><td>${f.outerTag?f.outerTag.vid:'-'}</td>
+            <td>${pcpHtml}</td><td>${vidHtml}</td>
+            <td class="rule-cell">${op ? Model.table.ops.indexOf(op) : '-'}</td>
+            ${this.fToCells(resFrame)}
+            </tr>`;
+        });
+        document.getElementById('config').innerHTML = h + `</tbody></table>`;
+      },
+
+      renderOpTable() {
+        let h = `<table><caption>Operation Table</caption><thead>
+        <tr><th rowspan="3">#</th><th colspan="6">Filter (UNI)</th><th colspan="7">Treatment (PON)</th></tr>
+        <tr><th colspan="3">OUTER</th><th colspan="3">INNER</th><th rowspan="2">Remove Tags</th><th colspan="3">OUTER</th><th colspan="3">INNER</th></tr>
+        <tr><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th></tr>
+        </thead><tbody>`;
+        Model.table.ops.forEach((op, i) => {
+          h += `<tr id="${Controller.getRuleKey(op)}" class="rule-row"><td>${i}</td>
+            <td>${op.f_out_prio}</td><td>${op.f_out_vid}</td><td>${op.f_out_tpid}</td>
+            <td>${op.f_in_prio}</td><td>${op.f_in_vid}</td><td>${op.f_in_tpid}</td>
+            <td>${op.tag_rem}</td>
+            <td>${op.t_out_prio}</td><td>${op.t_out_vid}</td><td>${op.t_out_tpid}</td>
+            <td>${op.t_in_prio}</td><td>${op.t_in_vid}</td><td>${op.t_in_tpid}</td></tr>`;
+        });
+        document.getElementById('ops').innerHTML = h + `</tbody></table>`;
+      },
+
+      updateRowUI(label) {
+        const row = document.querySelector(`[data-label="${label}"]`);
+        if (!row) return;
+
+        const frame = Model.testFrames[label];
+        const { frame: resFrame, op } = Model.table.processFrame(frame);
+
+        row.dataset.rule = Controller.getRuleKey(op);
+        row.querySelector('.rule-cell').textContent = op ? Model.table.ops.indexOf(op) : '-';
+
+        while (row.cells.length > 6) row.deleteCell(6);
+
+        row.insertAdjacentHTML('beforeend', this.fToCells(resFrame));
+      },
+
+      syncHighlights() {
+        document.querySelectorAll('.conf-row').forEach(r => r.classList.remove('active'));
+        document.querySelectorAll('.rule-row').forEach(r => r.classList.remove('sticky-active'));
+
+        if (Model.selectedLabel) {
+          const row = document.querySelector(`[data-label="${Model.selectedLabel}"]`);
+          row?.classList.add('active');
+          const targetRule = document.getElementById(row?.dataset.rule);
+          if (targetRule) {
+            targetRule.classList.add('sticky-active');
+            targetRule.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
+      },
+
+      fToCells(f) {
+        if (!f) return `<td colspan="4" class="discard-msg">DISCARDED</td>`;
+        return [
+            f.outerTag?.pcp ?? '-', f.outerTag?.vid ?? '-',
+            f.innerTag?.pcp ?? '-', f.innerTag?.vid ?? '-'
+        ].map(val => `<td>${val}</td>`).join('');
+      }
+    };
+
+    const Controller = {
+      init() {
+        document.getElementById('runBtn').onclick = () => {
+          const input = document.getElementById('inputData').value;
+          if(!input.trim()) return;
+          Model.setData(input);
+          View.renderServices();
+          View.renderRouterConfs();
+          View.renderOpTable();
+        };
+
+        document.addEventListener('change', e => {
+          const field = e.target.dataset.field;
+          if (field) {
+            const label = e.target.dataset.label;
+            this.handleUpdate(label);
+          }
+        });
+
+        document.addEventListener('click', e => {
+          const row = e.target.closest('.conf-row');
+          if (row) {
+             Model.selectedLabel = row.dataset.label;
+             View.syncHighlights();
+          }
+        });
+
+        document.addEventListener('mouseover', e => {
+          const row = e.target.closest('.conf-row');
+          if (row) {
+            const rule = document.getElementById(row.dataset.rule);
+            if (rule) rule.classList.add('hover-active');
+          }
+        });
+
+        document.addEventListener('mouseout', e => {
+          document.querySelectorAll('.rule-row').forEach(r => r.classList.remove('hover-active'));
+        });
+      },
+
+      handleUpdate(label, field, value) {
+        const row = document.querySelector(`[data-label="${label}"]`);
+        if (!row) return;
+
+        const pcp = parseInt(row.querySelector('[data-field="pcp"]').value);
+        const vid = parseInt(row.querySelector('[data-field="vid"]').value);
+
+        Model.testFrames[label] = EthFrame.fromSingleTag(parseInt(vid), parseInt(pcp));
+
+        View.updateRowUI(label);
+        View.syncHighlights();
+      },
+
+      getRuleKey: (op) => {
+        if (!op) return 'none';
+        return `rule_${op.f_out_prio}_${op.f_out_vid}_${op.f_in_prio}_${op.f_in_vid}_${op.tag_rem}`;
+      },
+    };
+
+    document.addEventListener('DOMContentLoaded', () => { Controller.init(); });
+  </script>
+{% endblock %}
