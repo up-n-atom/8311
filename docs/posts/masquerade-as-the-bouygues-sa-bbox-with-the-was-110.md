@@ -284,6 +284,11 @@ of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip pa
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
+    !!! tip "Identify VLANs"
+        Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
+        You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
+        from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
+
 4. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
