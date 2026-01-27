@@ -142,12 +142,12 @@
           return 0;
         };
         const resolveT = (td) => {
-            switch(td) {
-                case 0: return [frame.innerTag?.tpid ?? 0x8100, frame.innerTag?.dei ?? 0];
-                case 1: return [frame.outerTag?.tpid ?? 0x8100, frame.outerTag?.dei ?? 0];
-                case 4: return [0x8100, 0];
-                default: return [outputTpid, 0];
-            }
+          switch(td) {
+            case 0: return [frame.innerTag?.tpid ?? 0x8100, frame.innerTag?.dei ?? 0];
+            case 1: return [frame.outerTag?.tpid ?? 0x8100, frame.outerTag?.dei ?? 0];
+            case 4: return [0x8100, 0];
+            default: return [outputTpid, 0];
+          }
         };
         let tags = [];
         if (this.t_out_prio !== 15) tags.push(new VlanTag(resolveV(this.t_out_vid), resolveP(this.t_out_prio), ...resolveT(this.t_out_tpid)));
@@ -338,8 +338,8 @@
       fToCells(f) {
         if (!f) return `<td colspan="4" class="discard-msg">DISCARDED</td>`;
         return [
-            f.outerTag?.pcp ?? '-', f.outerTag?.vid ?? '-',
-            f.innerTag?.pcp ?? '-', f.innerTag?.vid ?? '-'
+          f.outerTag?.pcp ?? '-', f.outerTag?.vid ?? '-',
+          f.innerTag?.pcp ?? '-', f.innerTag?.vid ?? '-'
         ].map(val => `<td>${val}</td>`).join('');
       }
     };
