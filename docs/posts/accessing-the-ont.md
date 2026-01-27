@@ -448,33 +448,69 @@ return path is defined and allows traffic to successfully cross network boundari
 
     !!! note "UniFi OS utilizes a logical abstraction layer that binds network policy to virtual interfaces (e.g., WAN, LAN) rather than physical interfaces (e.g., eth9)."
 
-    <div class="swiper" markdown>
+    !!! warning "These steps are intended __ONLY__ for DHCP or Static IP WAN connections"
+        If your WAN is configured for PPPoE, you cannot use the GUI to create a static route to the physical WAN interface.
 
-    <div class="swiper-slide" markdown>
+    === "Network 9.4+"
 
-    ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp){ loading=lazy }
+        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+        2. Create a static route pointing at the WAN interface. This is under **Settings > Policy Table > Create New Policy > Route**
 
-    </div>
+            |                                  |                                   |
+            | -------------------------------- | --------------------------------- |
+            | **Name**                         | WAS-110                           |
+            | **Device**                       | Gateway                           |
+            | **Distance**                     | -                                 |
+            | **Type**                         | Interface                         |
+            | **Value**                        | WAN                               |
+            | **Destination**                  | 192.168.11.0/24                   |
 
-    <div class="swiper-slide" markdown>
+    === "Network 9.3"
 
-    ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
+        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+        2. Create a static route pointing at the WAN interface. This is under **Network >  Settings > Policy Engine > Policy-Based Routes > Create Route**
 
-    </div>
+            |                                  |                                   |
+            | -------------------------------- | --------------------------------- |
+            | **Name**                         | WAS-110                           |
+            | **Device**                       | Gateway                           |
+            | **Distance**                     | -                                 |
+            | **Type**                         | Interface                         |
+            | **Value**                        | WAN                               |
+            | **Destination**                  | 192.168.11.0/24                   |
 
-    </div>
+    === "Network <9.2"
 
-    1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
-    2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+        <div class="swiper" markdown>
 
-        |                                  |                                   |
-        | -------------------------------- | --------------------------------- |
-        | **Name**                         | WAS-110                           |
-        | **Device**                       | Gateway                           |
-        | **Distance**                     | -                                 |
-        | **Type**                         | Interface                         |
-        | **Value**                        | WAN                               |
-        | **Destination**                  | 192.168.11.0/24                   |
+        <div class="swiper-slide" markdown>
+
+        ![Ubiquity WAN](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_wan_full.webp){ loading=lazy }
+
+        </div>
+
+        <div class="swiper-slide" markdown>
+
+        ![Ubiquity Static Route](install-8311-community-firmware-on-the-bfw-solutions-was-110/ubiquity_routes_full.webp){ loading=lazy }
+
+        </div>
+
+        </div>
+
+        1. Set the SFP port as the WAN interface. This is under **Network > Settings > Internet**.
+        2. Create a static route pointing at the WAN interface. This is under **Network > Settings > Routing > Static Routes**
+
+            |                                  |                                   |
+            | -------------------------------- | --------------------------------- |
+            | **Name**                         | WAS-110                           |
+            | **Device**                       | Gateway                           |
+            | **Distance**                     | -                                 |
+            | **Type**                         | Interface                         |
+            | **Value**                        | WAN                               |
+            | **Destination**                  | 192.168.11.0/24                   |
+
+    If these steps do not match your current UniFi Network version, please refer to the official Ubiquiti guide:
+    <https://help.ui.com/hc/en-us/articles/12566175125783-UniFi-Gateway-Policy-Based-Routing>
 
 === ":simple-tplink: Deco"
 
