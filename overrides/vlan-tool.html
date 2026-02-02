@@ -266,7 +266,7 @@
             (f.innerTag ? f.innerTag.pcp : '-');
           let vidHtml = isServiceTagged ?
             `<select data-field="vid" data-label="${label}">` +
-            Model.services.map(s => `<option value="${s.vid}" ${s.vid==curVid?'selected':''}>${s.vid}</option>`).join('') + `</select>` :
+            Model.services.filter((s, i, self) => i === self.findIndex(x => x.vid === s.vid)).map(s => `<option value="${s.vid}" ${s.vid==curVid?'selected':''}>${s.vid}</option>`).join('') + `</select>` :
             curVid;
 
           h += `<tr class="conf-row" data-label="${label}" data-rule="${key}" data-is-service="${isServiceTagged}">
