@@ -11,18 +11,10 @@
     td, th { vertical-align: inherit !important; }
     .conf-row { cursor: pointer; }
     .conf-row.active { -webkit-box-shadow: inset 0 0 0 2px var(--md-primary-fg-color) !important; -moz-box-shadow: inset 0 0 0 2px var(--md-primary-fg-color) !important; box-shadow: inset 0 0 0 2px var(--md-primary-fg-color) !important; }
-    .conf-row.active:hover { -webkit-box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; -moz-box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; background-color: transparent !important;/*background-color: var(--md-accent-fg-color) !important; color: var(--md-accent-bg-color);*/}
+    .conf-row.active:hover {-webkit-box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; -moz-box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; box-shadow: inset 0 0 0 2px var(--md-accent-fg-color) !important; background-color: transparent !important; }
     .rule-row { transition: background-color 1s; position: relative; }
-    .rule-row.sticky-active {
-      background-color: #64dd171a !important;
-      box-shadow: inset 0 0 0 2px #64dd17 !important;
-      font-weight: bold;
-      z-index: 2;
-     }
-     .rule-row.hover-active:not(.sticky-active) {
-       background-color: var(--hover) !important;
-       box-shadow: inset 0 0 0 1px #64dd17;
-     }
+    .rule-row.sticky-active { background-color: #64dd171a !important; -webkit-box-shadow: inset 0 0 0 2px #64dd17 !important; -moz- box-shadow: inset 0 0 0 2px #64dd17 !important; box-shadow: inset 0 0 0 2px #64dd17 !important; font-weight: bold; z-index: 2; }
+    .rule-row.hover-active:not(.sticky-active) { background-color: var(--hover) !important; -webkit-box-shadow: inset 0 0 0 1px #64dd17; -moz-box-shadow: inset 0 0 0 1px #64dd17; box-shadow: inset 0 0 0 1px #64dd17; }
   </style>
 {% endblock %}
 {% block container %}
