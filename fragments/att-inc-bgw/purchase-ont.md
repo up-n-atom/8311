@@ -6,7 +6,7 @@ responsibility or liability for the listed resellers.
 ??? info "Purchase SC/APC variant; if unavailable, add an SC/APC (female) to SC/UPC (male) 0dB attenuator for conversion."
     AT&T and most North American ISPs terminate their fiber at the ONT using SC/APC (green) connectors.
 
-    __APC:__ Angled Physical Contact (APC) tips are polished to 8 degrees. This eliminates signal reflections on the
+    Angled Physical Contact (APC) tips are polished to 8 degrees. This eliminates signal reflections on the
     fiber.
 
     __Compatibility:__ Never mismatch SC/APC (green) and SC/UPC (blue). This causes signal loss and can
