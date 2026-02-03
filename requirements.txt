@@ -5,3 +5,4 @@ mkdocs-table-reader-plugin
 mkdocs-redirects
 mkdocs-macros-plugin
 mkdocs-minify-plugin
+mkdocs-git-revision-date-localized-plugin
