@@ -262,3 +262,11 @@ ol[data-swiper-linked] li.step-flash::before {
 .affiliate:before {
   content: 'Affiliate';
 }
+
+.glightbox img {
+  transition: transform 0.3s;
+}
+
+.glightbox img:hover {
+  transform: scale(1.025);
+}
