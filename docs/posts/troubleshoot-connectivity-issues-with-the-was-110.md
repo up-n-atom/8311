@@ -55,17 +55,53 @@ ethtool -m <interface>
 | __Rx Power__ | -29  | -8   | dBm  | +/- 3         |
 
 ##### Industry standard signal ranges
-| &nbsp;       | Great       | Good      | Fair (Warning) | Poor (Action)       |
-| ------------ | ----------- | --------- | -------------- | ------------------- |
-| __Tx Power__ | 2 to 4      | 1 to 7    | 0 to 1         | Below 0 or Above 8  |
-| __Rx Power__ | −14 to −20  | −8 to −24 | −24 to −27     | Lower than −27      |
 
-|   |   |
-| - | - |
-| <small>__Great__</small> | <small>Your connection is perfect.</small> |
-| <small>__Good__</small>  | <small>Your connection is stable and healthy.</small> |
-| <small>__Fair__</small>  | <small>Your internet might be slow or drop occasionally. Check your connectors and cables: are they loose, dirty or bent?</small> |
-| <small>__Poor__</small>  | <small>Your connection is failing. Contact support.</small> |
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Great</th>
+      <th>Good</th>
+      <th>Fair (Warning)</th>
+      <th>Poor (Action)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tx Power</strong></td>
+      <td>2 to 4</td>
+      <td>1 to 7</td>
+      <td>0 to 1</td>
+      <td>Below 0 or Above 8</td>
+    </tr>
+    <tr>
+      <td><strong>Rx Power</strong></td>
+      <td>−14 to −20</td>
+      <td>−8 to −24</td>
+      <td>−24 to −27</td>
+      <td>Lower than −27</td>
+    </tr>
+  </tbody>
+  <tfoot>
+   <tr>
+    <td>
+      <small><strong>Great</strong></small></td>
+      <td colspan="4"><small>Your connection is perfect.</small></td>
+    </tr>
+    <tr>
+      <td><small><strong>Good</strong></small></td>
+      <td colspan="4"><small>Your connection is stable and healthy.</small></td>
+    </tr>
+    <tr>
+      <td><small><strong>Fair</strong></small></td>
+      <td colspan="4"><small>Your internet might be slow or drop occasionally. Check your connectors and cables: are they loose, dirty or bent?</small></td>
+    </tr>
+    <tr>
+      <td><small><strong>Poor</strong></small></td>
+      <td colspan="4"><small>Your connection is failing. Contact support.</small></td>
+    </tr>
+  </tfoot>
+</table>
 
 #### Optical status
 
