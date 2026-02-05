@@ -17,31 +17,34 @@
         { opacity: 1 },
         { opacity: 0, transform: 'translateY(-5px)' }
       ], { duration: 200, easing: 'ease-in' });
-      anim.onfinish = () => row.style.display = 'none';
+      anim.onfinish = () => (row.style.display = 'none');
     }
   };
 
   const processTable = (table) => {
-    const headers = Array.from(table.querySelectorAll('thead th, thead td'));
+    if (table.dataset.toggleInitialized) return;
+
+    const headers = [...table.querySelectorAll('thead th, thead td')];
     const colIdx = headers.findIndex(h => h.textContent.trim().toLowerCase() === CONFIG.columnText) + 1;
 
     if (colIdx === 0) return;
 
-    const rows = Array.from(table.querySelectorAll('tbody tr')).filter(row => {
+    const rows = [...table.querySelectorAll('tbody tr')].filter(row => {
       const cell = row.querySelector(`td:nth-child(${colIdx})`);
       return cell && !cell.childElementCount && !cell.textContent.trim().length;
     });
 
-    if (!rows.length) return;
+    if (rows.length === 0) return;
 
-    rows.forEach(row => row.style.display = 'none');
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'table-toggle-bridge';
+    rows.forEach(row => (row.style.display = 'none'));
 
     const template = document.createElement('template');
     template.innerHTML = CONFIG.controlHtml;
     const btn = template.content.firstElementChild;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-toggle-bridge';
+    wrapper.appendChild(btn);
 
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -49,10 +52,17 @@
       rows.forEach(row => animateRow(row, isActive));
     });
 
-    wrapper.appendChild(btn);
     table.insertAdjacentElement('afterend', wrapper);
+    table.dataset.toggleInitialized = "true";
   };
 
   const load = () => document.querySelectorAll('table').forEach(processTable);
-  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', load) : load();
+
+  if (typeof app !== "undefined") {
+    app.document$.subscribe(load);
+  } else {
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', load)
+      : load();
+  }
 })();

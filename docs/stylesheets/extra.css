@@ -104,7 +104,7 @@ input[type=submit] {
 }
 
 .swiper-horizontal {
-  padding: 1rem;
+  padding: 0 0 1rem 0;
 }
 
 .swiper-pagination-bullet {
@@ -268,5 +268,9 @@ ol[data-swiper-linked] li.step-flash::before {
 }
 
 .glightbox img:hover {
-  transform: scale(1.025);
+  transform: scale(0.975);
+}
+
+.gslide-inline .ginlined-content {
+  padding: 0 !important;
 }

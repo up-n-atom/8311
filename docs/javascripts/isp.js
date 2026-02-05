@@ -1,31 +1,43 @@
-function escapeHTML(string) {
-  const map = {
+(() => {
+  const escapeHTML = (str) => {
+    const map = {
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#x27;',
       "/": '&#x2F;',
-  };
-  const reg = /[&<>"'/]/ig;
-  return string.replace(reg, (match)=>(map[match]));
-}
-
-window.addEventListener("pageshow", () => {
-  try {
-    const selectElement = document.querySelector('select[isp]');
-    selectElement.value = '#';
-  } catch (e) {}
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  try {
-    const selectElement = document.querySelector('select[isp]');
-    selectElement.onchange = (event) => {
-      const category = event.target.value;
-      if (category && category !== '#') {
-        window.location.href = `${location.origin}/category/${category}`;
-      }
     };
-  } catch (e) {}
-});
+    return str.replace(/[&<>"'/]/g, (m) => map[m]);
+  };
+
+  const setupISPSelector = () => {
+    const selectElement = document.querySelector('select[isp]');
+
+    if (!selectElement) return;
+
+    selectElement.value = '#';
+
+    if (selectElement.dataset.ispInitialized) return;
+
+    selectElement.addEventListener('change', (event) => {
+      const ispName = event.target.value;
+      if (ispName && ispName !== '#') {
+        window.location.href = `${window.location.origin}/category/${ispName}`;
+      }
+    });
+
+    selectElement.dataset.ispInitialized = "true";
+  };
+
+  if (typeof app !== "undefined") {
+    app.document$.subscribe(setupISPSelector);
+  } else {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupISPSelector);
+    } else {
+      setupISPSelector();
+    }
+    window.addEventListener("pageshow", setupISPSelector);
+  }
+})();

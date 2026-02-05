@@ -59,12 +59,14 @@ theme:
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.png
 extra_css:
+  - https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css
   - stylesheets/extra.css
 extra_javascript:
   - javascripts/isp.js
   - javascripts/swiper.js
   - javascripts/table.js
   - javascripts/eeprom-vendor.js
+  - javascripts/mermaid-zoom.js
 hooks:
   - hooks/external_links_md_extension.py
 plugins:
@@ -91,8 +93,10 @@ plugins:
       minify_js: true
       minify_css: true
       js_files:
+        - javascripts/mermaid-zoom.js
         - javascripts/swiper.js
         - javascripts/table.js
+        - javascripts/isp.js
       css_files:
         - stylesheets/extra.css
   - redirects:

@@ -1,4 +1,6 @@
-(() => {
+(async () => {
+  const Swiper = (await import('https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs')).default;
+
   const sync = (s, list) => {
     s.slides.forEach((el, i) => {
       const idx = el.hasAttribute('step') ? Number(el.getAttribute('step')) - 1 : i;
@@ -10,7 +12,11 @@
     });
   };
 
-  const load = () => {
+  const load = async () => {
+    document.querySelectorAll('.swiper').forEach(el => {
+      if (el.swiper) el.swiper.destroy();
+    });
+
     new Swiper('.swiper', {
       createElements: true,
       observer: true,
@@ -19,6 +25,7 @@
         auto: true,
         clickable: true,
         renderBullet: function(i, cls) {
+          // Reverting to your exact property access
           const step = this.slides[i].getAttribute('step') || (i + 1);
           return `<span class="${cls}">${step}</span>`;
         }
@@ -33,18 +40,23 @@
 
           if (!list) return;
 
+          // Create a signal to clean up the list listeners if the page changes
+          s.controller = new AbortController();
+          const { signal } = s.controller;
+
           sync(s, list);
 
           ['click', 'mouseover'].forEach(type => {
             list.addEventListener(type, (e) => {
               const li = e.target.closest('li');
-              if (!li?.dataset.slideTo) return;
+              const targetIdx = li?.dataset?.slideTo;
+              if (targetIdx === undefined) return;
 
-              const targetIdx = Number(li.dataset.slideTo);
-              if (type === 'click' || s.activeIndex !== targetIdx) {
-                s.slideTo(targetIdx);
+              const idx = Number(targetIdx);
+              if (type === 'click' || s.activeIndex !== idx) {
+                s.slideTo(idx);
               }
-            });
+            }, { signal });
           });
 
           s.linkedList = list;
@@ -52,12 +64,18 @@
         },
 
         observerUpdate: (s) => s.linkedList && sync(s, s.linkedList),
-        slideChange: (s) => s.linkedList && sync(s, s.linkedList)
+        slideChange: (s) => s.linkedList && sync(s, s.linkedList),
+        // Ensures that if the swiper is destroyed, the list listeners are too
+        destroy: (s) => s.controller?.abort()
       }
     });
   };
 
-  document.readyState === 'loading'
-    ? document.addEventListener('DOMContentLoaded', load)
-    : load();
+  if (typeof app !== "undefined") {
+    app.document$.subscribe(load);
+  } else {
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', load)
+      : await load();
+  }
 })();
