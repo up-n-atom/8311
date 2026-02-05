@@ -9,18 +9,20 @@
     return shadow;
   };
 
-  const getPZConfig = (isInline, controller) => ({
+  const getPZConfig = (isInline, controller, state) => ({
     zoomEnabled: true,
     controlIconsEnabled: true,
     fit: true,
     center: true,
     minZoom: 0.1,
     maxZoom: 10,
-    mouseWheelZoomEnabled: !isInline,
     customEventsHandler: {
       haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel'],
       init({ instance, svgElement }) {
         const { signal } = controller;
+
+        const dragThreshold = 5;
+        let lastTouchX, lastTouchY;
 
         this.onResize = () => {
           instance.resize();
@@ -31,9 +33,48 @@
         const onGrab = () => (svgElement.style.cursor = 'grabbing');
         const onRelease = () => (svgElement.style.cursor = 'grab');
 
-        window.addEventListener('resize', this.onResize, { signal });
+        const onStart = (x, y, isTouch) => {
+          state.isDragging = false;
+          state.startX = x;
+          state.startY = y;
+          if (isTouch) {
+            lastTouchX = x;
+            lastTouchY = y;
+          }
+          onGrab();
+        };
+
+        const onMove = (x, y, isTouch) => {
+          if (Math.abs(x - state.startX) > dragThreshold ||
+              Math.abs(y - state.startY) > dragThreshold) {
+            state.isDragging = true;
+          }
+
+          if (isTouch) {
+            instance.panBy({ x: x - lastTouchX, y: y - lastTouchY });
+            lastTouchX = x;
+            lastTouchY = y;
+          }
+        };
+
+        svgElement.addEventListener('mousedown', (e) => onStart(e.clientX, e.clientY, false), { signal });
+        window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY, false), { signal });
         window.addEventListener('mouseup', onRelease, { signal });
-        svgElement.addEventListener('mousedown', onGrab, { signal });
+
+        svgElement.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) onStart(e.touches[0].clientX, e.touches[0].clientY, true);
+        }, { signal, passive: false });
+
+        svgElement.addEventListener('touchmove', (e) => {
+          if (e.touches.length === 1) {
+            e.preventDefault(); // Stop page scroll
+            onMove(e.touches[0].clientX, e.touches[0].clientY, true);
+          }
+        }, { signal, passive: false });
+
+        svgElement.addEventListener('touchend', onRelease, { signal });
+
+        window.addEventListener('resize', this.onResize, { signal });
 
         instance.resize();
         instance.center();
@@ -63,6 +104,7 @@
   const renderPanZoom = (host, svg) => {
     const shadow = shadowRoots.get(host);
     const inlineController = new AbortController();
+    const pzState = { isDragging: false, startX: 0, startY: 0 };
 
     const vb = svg.getAttribute('viewBox')?.split(/\s+/).map(Number);
     if (vb?.length === 4) {
@@ -78,28 +120,10 @@
     svg.style.cssText = 'max-width:none; width:100%; height:100%; cursor:grab;';
     ['width', 'height'].forEach(attr => svg.removeAttribute(attr));
 
-    const inlinePZ = svgPanZoom(svg, getPZConfig(true, inlineController));
-
-    let isDragging = false;
-    let startX = 0;
-    let startY = 0;
-    const dragThreshold = 5;
-
-    svg.addEventListener('mousedown', (e) => {
-      isDragging = false;
-      startX = e.clientX;
-      startY = e.clientY;
-    }, { signal: inlineController.signal });
-
-    svg.addEventListener('mousemove', (e) => {
-      if (Math.abs(e.clientX - startX) > dragThreshold ||
-          Math.abs(e.clientY - startY) > dragThreshold) {
-        isDragging = true;
-      }
-    }, { signal: inlineController.signal });
+    const inlinePZ = svgPanZoom(svg, getPZConfig(true, inlineController, pzState));
 
     svg.addEventListener('click', (e) => {
-      if (isDragging) {
+      if (pzState.isDragging) {
         e.stopImmediatePropagation();
         return;
       }
@@ -125,7 +149,7 @@
         if (!container) return;
         container.appendChild(expandedSvg);
         const lbController = new AbortController();
-        const expandedPZ = svgPanZoom(expandedSvg, getPZConfig(false, lbController));
+        const expandedPZ = svgPanZoom(expandedSvg, getPZConfig(false, lbController, pzState));
         lb.on('close', () => {
           expandedPZ.destroy();
           expandedSvg.remove();
