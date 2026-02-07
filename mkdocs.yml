@@ -78,7 +78,10 @@ plugins:
       post_excerpt_max_categories: 3
       post_url_format: "guides/{slug}"
       pagination_per_page: 5
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      exclude:
+        - on-the-web.md
+        - tools/index.md
   - glightbox:
       loop: false
       skip_classes:
