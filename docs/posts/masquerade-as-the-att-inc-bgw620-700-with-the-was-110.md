@@ -27,6 +27,8 @@ ont: BGW620-700
 
 {% include 'att-inc-bgw/purchase-ont.md' %}
 
+{% include 'att-inc-bgw/pre-config.md' %}
+
 {% include 'att-inc-bgw/install-ont-fw.md' %}
 
 ## Configure ONT settings
