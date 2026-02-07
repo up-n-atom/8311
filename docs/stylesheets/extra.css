@@ -274,3 +274,37 @@ ol[data-swiper-linked] li.step-flash::before {
 .gslide-inline .ginlined-content {
   padding: 0 !important;
 }
+
+.md-copyright, .md-about, .md-legal, .md-social {
+  padding: 1rem 0;
+  margin: 0 .6rem !important;
+  width: 100%;
+}
+
+@media screen and (min-width:45em) {
+  .md-copyright, .md-about, .md-legal, .md-social {
+    width: auto;
+  }
+}
+
+.md-footer-meta .md-nav__title {
+  color: var(--md-footer-fg-color--light);
+}
+
+.md-footer-meta .md-nav__list {
+  list-style: none;
+  margin-left: 0 !important;
+}
+
+.md-footer-meta .md-nav__title {
+  padding: 0 !important;
+}
+
+.md-footer-meta .md-nav__item {
+  margin-left: 0 !important;
+}
+
+.md-pagination__current, .md-pagination__link, .md-pagination__link:focus, .md-pagination__link:hover {
+  transition: background-color .5s ease, color .5s ease;
+  border-radius: 9999px;
+}
