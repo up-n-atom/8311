@@ -243,7 +243,7 @@ specific software versions, keeping the [WAS-110] up-to-date is beneficial but n
    <http://192.168.1.254/cgi-bin/update.ha>
 2. Copy/paste the __Current software version__ into the form to generate a __Software Version__ attribute.
    <div style="margin:1em 0;">
-     <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.softver;if(!el.checkValidity())return;el.value='BGW320_'+escapeHTML(el.value);})(event)">
+     <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.softver;if(!el.checkValidity())return;el.value='BGW320_'+el.value;})(event)">
        <input type="text" id="softver" placeholder="Current Version" pattern="^\d\.\d{2}\.\d$"/>
        <input type="submit" value="Generate" />
      </form>

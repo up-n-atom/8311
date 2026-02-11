@@ -106,7 +106,7 @@ slug: masquerade-as-the-bouygues-sa-bbox-with-the-was-110
    __Serial Number__ begins with the hexadecimal notation copy the characters after `0x534d4253` and append to `SMBS`
    or use the form below.
   <div style="margin:1em 0;">
-      <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.serno;if(!el.checkValidity())return;el.value=escapeHTML(el.value).replace('0x534d4253','SMBS');})(event)">
+      <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.serno;if(!el.checkValidity())return;el.value=el.value.replace('0x534d4253','SMBS');})(event)">
           <input type="text" name="serno" placeholder="0x534d4253" pattern="^0x[0-9A-Fa-f]{16}$" />
           <input type="submit" value="Submit" />
       </form>
@@ -139,7 +139,7 @@ The registration ID is composed of a seventy-two (72) octets from the fifteen (1
 0's and suffixed with fifty-two (52) 1's.
 
 <div>
-  <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.imei;if(!el.checkValidity())return;document.querySelector('#regid').textContent='0'.repeat(5)+escapeHTML(el.value)+'1'.repeat(52);location.assign(`${location.origin}${location.pathname}#ploam-registration-id`);})(event)">
+  <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.imei;if(!el.checkValidity())return;document.querySelector('#regid').textContent='0'.repeat(5)+el.value+'1'.repeat(52);location.assign(`${location.origin}${location.pathname}#ploam-registration-id`);})(event)">
     <input type="text" id="imei" placeholder="IMEI" pattern="^[0-9A-Fa-f]{15}$" />
     <input type="submit" value="Submit" />
   </form>
