@@ -130,6 +130,10 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         | MIB File                         | /etc/mibs/prx300_1U.ini | PPTP i.e. default value               |
         | Pon Slot                         | 10                      |                                       |
 
+    !!! note "FRX523v2 Software Versions"
+        Some users have reported that they are stuck in the O5.1 "fake" state. While some have had success using the downgraded
+        version `R4.4.13.067`, others have not. Your mileage may vary.
+
 3. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
@@ -227,6 +231,7 @@ version. Otherwise, upon a reboot, the WAS-110 will operate in a fake O5 state u
 
     | Software Version |
     | ---------------- |
+    | R4.4.37.019      |
     | R4.4.13.067      |
     | R4.4.13.064      |
     | R4.4.13.061      |
