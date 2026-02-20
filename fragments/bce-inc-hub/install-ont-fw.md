@@ -22,7 +22,7 @@ You must first install the 8311 community firmware for VEIP support to masquerad
 
     -    __Method 2__
 
-         [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+         [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
     </div>
 
@@ -40,7 +40,7 @@ You must first install the 8311 community firmware for VEIP support to masquerad
 
     __Step 2: Multicast upgrade__
 
-    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
          guide to install the 8311 community firmware.
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md

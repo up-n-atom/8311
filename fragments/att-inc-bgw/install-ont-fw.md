@@ -23,7 +23,7 @@
 
     -    __Method 2__
 
-         [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+         [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
     </div>
 
@@ -71,7 +71,7 @@
 
     __Step 2: Multicast upgrade__
 
-    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
          guide to install the 8311 community firmware.
 
   [HALNy]: https://halny.com/
