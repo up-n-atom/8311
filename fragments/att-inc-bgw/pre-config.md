@@ -1,7 +1,7 @@
 ## Pre-configuration
 
-Before beginning the ONT configuration, ensure you have addressed the following networking requirements to prevent
-authentication lockouts.
+Before beginning the ONT configuration, ensure you have addressed the following networking requirements to enable
+successful communication with the PON.
 
 ### DHCP MAC Spoofing
 
@@ -16,7 +16,7 @@ WAN physical interface.__
 
 ### LCT Access Route
 
-To configure the ONT, your router must be able to reach its Local Craft Terminal (LCT) interface. Follow the
-[Accessing the ONT] guide to set up the proper network routing between your router and the ONT.
+To install, upgrade, and configure the ONT, your router must be able to reach its Local Craft Terminal (LCT) interface.
+__Follow the [Accessing the ONT] guide to set up the proper network routing between your router and the ONT.__
 
   [Accessing the ONT]: accessing-the-ont.md
