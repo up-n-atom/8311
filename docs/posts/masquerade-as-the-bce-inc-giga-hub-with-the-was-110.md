@@ -30,6 +30,8 @@ ont: Giga Hub
 
 {% include 'bce-inc-hub/purchase-ont.md' %}
 
+{% include 'bce-inc-hub/pre-config.md' %}
+
 {% include 'bce-inc-hub/install-ont-fw.md' %}
 
 ## Configure ONT settings

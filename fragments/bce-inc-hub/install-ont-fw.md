@@ -2,7 +2,7 @@
 
 You must first install the 8311 community firmware for VEIP support to masquerade as the {{ page.meta.ont }} on XGS-PON.
 
-!!! note "Upgrading a pre-flashed 8311 WAS-110 or X-ONU-SFPP"
+??? note "Upgrading a pre-flashed 8311 WAS-110 or X-ONU-SFPP"
     If your [WAS-110] came with 8311 firmware pre-installed, you do not need to follow the full installation guide
     below. Instead, you can go directly to the [Supplementary Upgrades] section to re-install the
     [official 8311 community build] to both A and B partitions.

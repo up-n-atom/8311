@@ -49,6 +49,10 @@ responsibility or liability for the listed resellers.
 
      [Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
 
+     ---
+
+     [EXEN Shop](https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki) <small class="affiliate"></small>
+
 </div>
 
 !!! tip "Due to ongoing tariffs, prioritize sourcing from domestic stock and sellers."
