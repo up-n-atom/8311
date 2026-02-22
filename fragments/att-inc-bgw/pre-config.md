@@ -19,4 +19,4 @@ WAN physical interface.__
 To configure the ONT, your router must be able to reach its Local Craft Terminal (LCT) interface. Follow the
 [Accessing the ONT] guide to set up the proper network routing between your router and the ONT.
 
-  [Accessing the ONT]: access-the-ont.md
+  [Accessing the ONT]: accessing-the-ont.md
