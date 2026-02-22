@@ -44,7 +44,7 @@ Unlock the power of the bazaar and participate in the fun!
 
 <div class="grid cards" markdown>
 
--   [Group buys] **Suspended due to tariffs**
+-   [Group buys] **(Suspended due to tariffs)**
 
     ---
 
