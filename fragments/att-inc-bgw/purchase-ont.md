@@ -51,7 +51,7 @@ responsibility or liability for the listed resellers.
 
      ---
 
-     [EXEN Shop](https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki) <small class="affiliate"></small>
+     [EXEN Shop](https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki) :flag_us: <small class="affiliate"></small>
 
 </div>
 
