@@ -6,6 +6,8 @@ hide:
 
 # Group buys
 
+!!! warning "Group buys have been suspended due to the ongoing global tariffs set by the U.S. administration."
+
 Group buys are run semi-frequently and will be announced by an event notification.
 
 To participate in an upcoming group buy, you must first unlock the *Bazaar* in the __#Channels & Roles__ channel.
