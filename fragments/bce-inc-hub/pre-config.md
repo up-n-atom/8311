@@ -6,7 +6,7 @@ successful communication with the PON.
 ### DHCP MAC Spoofing (Bell MTS/Aliant)
 
 The ISP’s DHCP server identifies your connection via the Unique MAC address of the original equipment. To ensure the
-ISP "trusts" your new hardware immediately, you must __clone the {{ page.meta.ont }} MAC address onto your ^^router^^'s
+ISP "trusts" your new hardware immediately, you must __clone the {{ page.meta.ont }} MAC address onto your ^^gateway^^'s
 WAN physical interface.__
 
 !!! info "The "Lease Window" Issue"
@@ -15,7 +15,7 @@ WAN physical interface.__
 
 ### LCT Access Route
 
-To install, upgrade, and configure the ONT, your router must be able to reach its Local Craft Terminal (LCT) interface.
+To install, upgrade, and configure the ONT, your gateway must be able to reach its Local Craft Terminal (LCT) interface.
 __Follow the [Accessing the ONT] guide to set up the proper network routing between your gateway and the ONT mangement plane.__
 
   [Accessing the ONT]: accessing-the-ont.md
