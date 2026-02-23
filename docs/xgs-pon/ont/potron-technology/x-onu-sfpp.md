@@ -186,29 +186,73 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 
 ## Value-Added Resellers
 
-| Company                                             | Product Number        | E-commerce             | Firmware      |
-| --------------------------------------------------- | --------------------- | ---------------------- | ------------- |
-| [Better Internet]                                   | [X-ONU-SFPP][BI-ONT]  | :flag_gb: <small class="affiliate"></small> | 8311          |
-| [EXEN]                                              | [X-ONU-SFPP][EXEN]    | :flag_us: <small class="affiliate"></small> | 8311          |
-| [FiberMall]                                         | [XGSPON-ONU-STICK-V8] | :globe_with_meridians: | 8311 fork     |
-| [Full Vision Com-Tech](https://fullvisiontech.com/) | [FV-NS10S]            |                        | PTXG (Potron) |
-| [H-COM](https://www.zhaoyongoptics.com/)            | SPP425H-GAB4          | [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html) | 8311 fork or PTXG (Potron) |
-| [LuLeey](https://www.luleey.com/)                   | [LL-XS1025]           | :globe_with_meridians: | 8311 fork     |
-| [Yunvo](https://www.yunvoptic.com/)                 | SFP+ONU-XGSPON        | [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html) | 8311 fork or PTXG (Potron) |
-
-  [Better Internet]: https://store.betterinternet.ltd/?affiliates=6
-  [BI-ONT]: https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6
-  [EXEN]: https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki
-  [FiberMall]: https://www.fibermall.com/
-  [XGSPON-ONU-STICK-V8]: https://www.fibermall.com/sale-462134-xgspon-onu-sfp-stick-i-temp.htm
-  [FV-NS10S]: http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en
-  [LL-XS1025]: https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/
-
-* <small>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small>
-* <small>8311 forks are NOT supported by the 8311 community, ask the vendor for support or [install] the official [8311 firmware].</small>
+<table markdown>
+<thead markdown>
+<tr markdown>
+<th markdown>Company</th>
+<th markdown>Product Number</th>
+<th markdown>E-commerce</th>
+<th markdown>Firmware</th>
+</tr>
+</thead>
+<tbody markdown>
+<tr markdown>
+<td markdown>[Better Internet](https://store.betterinternet.ltd/)</td>
+<td markdown>[X-ONU-SFPP](https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6)</td>
+<td markdown>:flag_gb: <small class="affiliate"></small></td>
+<td markdown>8311</td>
+</tr>
+<tr markdown>
+<td markdown>[EXEN](https://exen.sh/)</td>
+<td markdown>[X-ONU-SFPP](https://exen.sh/products/x-onu-sfpp-was-110-alternative?utm_source=pon_wiki)</td>
+<td markdown>:flag_us: <small class="affiliate"></small></td>
+<td markdown>8311</td>
+</tr>
+<tr markdown>
+<td markdown>[FiberMall](https://www.fibermall.com/)</td>
+<td markdown>[XGSPON-ONU-STICK-V8](https://www.fibermall.com/sale-462134-xgspon-onu-sfp-stick-i-temp.htm)</td>
+<td markdown>:globe_with_meridians:</td>
+<td markdown>8311<sup>2</sup></td>
+</tr>
+<tr markdown>
+<td markdown>[Full Vision Com-Tech](https://fullvisiontech.com/)</td>
+<td markdown>[FV-NS10S](http://fullvisiontech.com/web/index.php?topclassid=16&classid=133&id=141&lanstr=en)</td>
+<td markdown></td>
+<td markdown>PTXG (Potron)</td>
+</tr>
+<tr markdown>
+<td markdown>[H-COM](https://www.zhaoyongoptics.com/)</td>
+<td markdown>SPP425H-GAB4</td>
+<td markdown>:globe_with_meridians: [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html)</td>
+<td markdown>8311<sup>2</sup></td>
+</tr>
+<tr markdown>
+<td markdown>[LuLeey](https://www.luleey.com/)</td>
+<td markdown>[LL-XS1025](https://www.luleey.com/product/xgspon-stick-onu-sfp-transceiver/)</td>
+<td markdown>:globe_with_meridians:</td>
+<td markdown>8311<sup>2</sup></td>
+</tr>
+<tr markdown>
+<td markdown>[Yunvo](https://www.yunvoptic.com/)</td>
+<td markdown>SFP+ONU-XGSPON</td>
+<td markdown>:globe_with_meridians: [Alibaba](https://www.alibaba.com/product-detail/10G-SFP-1270-1577nm-20km-SC_10000019105245.html)</td>
+<td markdown>PTXG (Potron), 8311<sup>2</sup></td>
+</tr>
+</tbody>
+<tfoot markdown>
+<tr markdown>
+<td colspan="4" markdown>
+<ol markdown>
+<li markdown><small markdown>Purchase at your discretion, we take no responsibility or liability for the listed resellers.</small></li>
+<li markdown><small markdown>8311 forks are NOT supported by the 8311 community. Ask the vendor for support or [install] the official [8311 community firmware].</small></li>
+</ol>
+</td>
+</tr>
+</tfoot>
+</table>
 
   [install]: https://pon.wiki/guides/install-the-8311-community-firmware-on-the-was-110/#supplementary-upgrades
-  [8311 firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
+  [8311 community firmware]: https://github.com/djGrrr/8311-was-110-firmware-builder/releases
 
 {% include 'ont/active-cooling.md' %}
 

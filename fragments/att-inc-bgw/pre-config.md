@@ -17,6 +17,6 @@ WAN physical interface.__
 ### LCT Access Route
 
 To install, upgrade, and configure the ONT, your router must be able to reach its Local Craft Terminal (LCT) interface.
-__Follow the [Accessing the ONT] guide to set up the proper network routing between your router and the ONT.__
+__Follow the [Accessing the ONT] guide to set up the proper network routing between your gateway and the ONT management plane.__
 
   [Accessing the ONT]: accessing-the-ont.md
