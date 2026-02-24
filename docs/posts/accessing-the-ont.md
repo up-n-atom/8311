@@ -219,11 +219,11 @@ networks] on the WAN interface.
 graph TD
 
   %% Style Definitions
-  classDef lanNode fill:#fff,stroke:#475569,stroke-width:2px;
-  classDef interfaceNode fill:#fff,stroke:#64748b,stroke-width:2px;
-  classDef natNode fill:#f1f5f9,stroke:#475569,stroke-width:2px,stroke-dasharray: 8 4;
-  classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px;
-  classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px;
+  classDef lanNode fill:#fff,stroke:#475569,stroke-width:2px
+  classDef interfaceNode fill:#fff,stroke:#64748b,stroke-width:2px
+  classDef natNode fill:#f1f5f9,stroke:#475569,stroke-width:2px,stroke-dasharray: 10 5
+  classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px
+  classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px
 
   %% Internal LAN Section
   subgraph LAN_Group [" "]
