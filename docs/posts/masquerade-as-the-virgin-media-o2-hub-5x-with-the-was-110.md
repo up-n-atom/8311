@@ -113,7 +113,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    ??? tip "Identify VLANs (Optional: Virgin uses VLAN `100` in the [UK](https://en.wikipedia.org/wiki/ISO_3166-2:GB) and `10` in [IE](https://en.wikipedia.org/wiki/ISO_3166-2:IE))"
+    ??? tip "Identify VLANs (Optional: Virgin uses VLAN `100` in the UK and `10` in IE"
         Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
         You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
         from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
