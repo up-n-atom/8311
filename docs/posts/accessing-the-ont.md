@@ -231,7 +231,7 @@ graph TD
   end
 
   %% Firewall / Gateway Section
-  subgraph GW_Group [" "]
+  subgraph GW_Group ["Gateway"]
     %% Title Column (Left)
     L_Range("<font color=white>LAN Range: 172.17.0.0/16"):::titleNode
     G_Title("<font color=white>Firewall - Stateful Translation"):::titleNode
