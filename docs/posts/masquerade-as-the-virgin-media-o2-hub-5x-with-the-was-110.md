@@ -131,8 +131,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle:
-        __8311_iphost_mac__ with the provisioned values on the back [label] of the {{ page.meta.ont }}.
+        <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the __PON S/N__ found on the {{ page.meta.ont }} [label].
 
     ``` sh hl_lines="1 3 9 10"
     fwenv_set mib_file
