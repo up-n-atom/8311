@@ -239,8 +239,8 @@ graph TD
 
 
     %% Flow Column (Right)
-    L_IF("<b>LAN Interface</b><br/>172.17.0.1"):::interfaceNode
-    NAT("<b>Source NAT Action</b><br/>Replace: 172.17.0.100<br/>With: 192.168.11.2"):::natNode
+    L_IF("<b>LAN Interface</b><br/>172.17.0.1 (Static)"):::interfaceNode
+    NAT("<b>Source NAT Action</b><br/>Replace: 172.17.0.100<br/>With: 192.168.11.2 (Alias)"):::natNode
     W_IF("<b>WAN Interface</b><br/>Public IP: 203.0.113.42 (DHCP)<br/>Alias IP: 192.168.11.2 (Static)"):::interfaceNode
 
     %% Force Vertical Stacking (Connections)
@@ -253,12 +253,12 @@ graph TD
   %% ONT Section
   subgraph ONT_Group [" "]
     O_Range("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
-    ONT("<b>ONT LCT</b><br/>IP: 192.168.11.1"):::ontNode
+    ONT("<b>ONT LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
   end
 
   %% External Packet Flow
-  PC ==>|Packet SRC: 172.17.0.100| L_IF
-  W_IF ==>|Packet SRC: 192.168.11.2| ONT
+  PC ==>|SRC: 172.17.0.100<br/>DST: 192.168.11.1| L_IF
+  W_IF ==>|SRC: 192.168.11.2<br/>DST: 192.168.11.1| ONT
   W_Alias --- O_Range
 
   %% Hiding the lines between titleNodes (Indices 0 and 1 of the --- links)
