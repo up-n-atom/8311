@@ -37,6 +37,11 @@ ont: Hub 5x
         HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
         required for internet access.
 
+    __Are the gateway MAC and OMCI IP Host MAC attribute the same?__
+
+    :   No, they are different. The __IP Host MAC__ is hardcoded as `C4:EB:43:00:00:01`, while the gateway MAC is the
+        value found on the the [label] located at the bottom of the {{ page.meta.ont }}.
+
 {% include 'vmed-ltd-hub/purchase-ont.md' %}
 
 {% include 'vmed-ltd-hub/pre-config.md' %}
@@ -45,7 +50,7 @@ ont: Hub 5x
 
 ## Configure ONT settings
 
-To masquerade as the {{ page.meta.ont }}, you will need its ONT serial number, which is located on the back label as
+To masquerade as the {{ page.meta.ont }}, you will need its ONT serial number, which is located on the bottom label as
 depicted below.
 
 ![{{ page.meta.ont }} label]({{ page.meta.slug }}/{{ page.meta.ont | lower | replace(" ", "_") }}_label.webp){ class="nolightbox" id="{{ page.meta.ont | lower | replace(" ", "-") }}-label" }
