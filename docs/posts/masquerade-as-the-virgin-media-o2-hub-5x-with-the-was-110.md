@@ -37,7 +37,7 @@ ont: Hub 5x
         HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
         required for internet access.
 
-    __Are the gateway MAC and OMCI IP Host MAC attribute the same?__
+    __Are the gateway MAC and IP Host MAC attribute the same?__
 
     :   No, they are different. The __IP Host MAC__ is hardcoded as `C4:EB:43:00:00:01`, while the gateway MAC is the
         value found on the the [label] located at the bottom of the {{ page.meta.ont }}.
