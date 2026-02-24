@@ -111,7 +111,7 @@
       const [,, vBWidth, vBHeight] = vb;
       host.style.height = 'auto';
       host.style.aspectRatio = `${vBWidth} / ${vBHeight}`;
-      host.style.maxHeight = '75vh';
+      host.style.maxHeight = '30vh';
       host.style.width = '100%';
       host.style.overflow = 'hidden';
       host.style.position = 'relative';

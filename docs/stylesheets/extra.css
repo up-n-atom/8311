@@ -308,3 +308,15 @@ ol[data-swiper-linked] li.step-flash::before {
   transition: background-color .5s ease, color .5s ease;
   border-radius: 9999px;
 }
+
+.mermaid {
+  background: radial-gradient(circle, #ccc 10%, transparent 11%);
+  background-size: 1.5em 1.5em;
+  opacity: 1
+}
+
+#lb-container {
+  background: radial-gradient(circle, #ccc 10%, transparent 11%);
+  background-size: 2em 2em;
+  opacity: 1
+}

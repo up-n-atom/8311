@@ -215,6 +215,61 @@ networks] on the WAN interface.
  [IP alias]: https://en.wikipedia.org/wiki/IP_aliasing
  [private or bogon networks]: https://en.wikipedia.org/wiki/Bogon_filtering
 
+``` mermaid
+graph TD
+
+  %% Style Definitions
+  classDef lanNode fill:#fff,stroke:#475569,stroke-width:2px;
+  classDef interfaceNode fill:#fff,stroke:#64748b,stroke-width:2px;
+  classDef natNode fill:#f1f5f9,stroke:#475569,stroke-width:2px,stroke-dasharray: 8 4;
+  classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px;
+  classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px;
+
+  %% Internal LAN Section
+  subgraph LAN_Group [" "]
+    PC("<b>LAN PC</b><br/>IP: 172.17.0.100<br/>(DHCP)"):::lanNode
+  end
+
+  %% Firewall / Gateway Section
+  subgraph GW_Group [" "]
+    %% Title Column (Left)
+    L_Range("<font color=white>LAN Range: 172.17.0.0/16"):::titleNode
+    G_Title("<font color=white>Firewall - Stateful Translation"):::titleNode
+    W_Alias("<font color=white>WAN Alias/Secondary IP"):::titleNode
+
+
+    %% Flow Column (Right)
+    L_IF("<b>LAN Interface</b><br/>172.17.0.1"):::interfaceNode
+    NAT("<b>Source NAT Action</b><br/>Replace: 172.17.0.100<br/>With: 192.168.11.2"):::natNode
+    W_IF("<b>WAN Interface</b><br/>Public IP: 203.0.113.42 (DHCP)<br/>Alias IP: 192.168.11.2 (Static)"):::interfaceNode
+
+    %% Force Vertical Stacking (Connections)
+    L_Range --- G_Title
+    G_Title --- W_Alias
+    L_IF --> NAT
+    NAT --> W_IF
+  end
+
+  %% ONT Section
+  subgraph ONT_Group [" "]
+    O_Range("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
+    ONT("<b>ONT LCT</b><br/>IP: 192.168.11.1"):::ontNode
+  end
+
+  %% External Packet Flow
+  PC ==>|Packet SRC: 172.17.0.100| L_IF
+  W_IF ==>|Packet SRC: 192.168.11.2| ONT
+  W_Alias --- O_Range
+
+  %% Hiding the lines between titleNodes (Indices 0 and 1 of the --- links)
+  linkStyle 0,1 stroke-width:0px;
+
+  %% Subgraph Box Styling
+  style LAN_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+  style GW_Group fill:#e2e8f0,stroke:#1e293b,stroke-width:3px
+  style ONT_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+```
+
 === ":simple-opnsense: OPNsense"
 
     <div class="swiper" markdown>
