@@ -11,83 +11,51 @@ categories:
   - F5685LGB-VMIE
 description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
+links:
+  - xgs-pon/index.md
+  - posts/accessing-the-ont.md
+  - posts/troubleshoot-connectivity-issues-with-the-was-110.md
+ont: Hub 5x
 ---
 
 # Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
 
-![Bypass Hub 5x](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/bypass_hub_5x.webp){ class="nolightbox" }
+![Bypass Hub 5x](masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110/bypass_hub_5x.webp){ class="nolightbox" }
 
 <!-- more -->
 <!-- nocont -->
 
-## Purchase a WAS-110 or X-ONU-SFPP and LC/APC to SC/APC adapter or cable
+!!! warning "New subscriber installations"
+    Keep the {{ page.meta.ont }} in active service for roughly a week until fully provisioned and the installation
+    ticket has been closed.
 
-The [WAS-110] and [X-ONU-SFPP] are available from select resellers worldwide. To streamline the process, some resellers
-are pre-flashing the 8311 community firmware and highly recommended for the [X-ONU-SFPP]. Purchase at your discretion;
-we take no responsibility or liability for the listed resellers.
+???+ question "Common misconceptions and answers"
 
-[WAS-110 Value-Added Resellers](../xgs-pon/ont/bfw-solutions/was-110.md#value-added-resellers)
+    __Is the WAS-110 or X-ONU-SFPP a router?__
 
-[X-ONU-SFPP Value-Added Resellers](../xgs-pon/ont/potron-technology/x-onu-sfpp.md#value-added-resellers)
+    :   No, the [WAS-110] and [X-ONU-SFPP] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
+        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
+        required for internet access.
 
-!!! question "Is the WAS-110 or X-ONU-SFPP a router?"
-    The [WAS-110] and [X-ONU-SFPP] are __NOT__ a substitute for a layer 7 router; They are an *ONT*, and their __ONLY__
-    function is to convert *Ethernet* to *PON* over fiber medium. Additional hardware and software are required to access
-    the Internet.
+{% include 'vmed-ltd-hub/purchase-ont.md' %}
 
-!!! warning "APC and UPC connectors are not equal nor compatible[^1]"
+{% include 'vmed-ltd-hub/pre-config.md' %}
 
-A Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] or [X-ONU-SFPP] with the
-provisioned LC/APC cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchased at
-<https://www.amazon.co.uk/>.
+{% include 'bce-inc-hub/install-ont-fw.md' %}
 
-## Install the 8311 community firmware
+## Configure ONT settings
 
-As a prerequisite to masquerading as the Hub 5x, the 8311 community firmware is necessary because of the VEIP
-requirement. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP], skip past to the [masquerade setup](#masquerade-setup).
+To masquerade as the {{ page.meta.ont }}, you will need its ONT serial number, which is located on the back label as
+depicted below.
 
-=== "WAS-110"
+![{{ page.meta.ont }} label]({{ page.meta.slug }}/{{ page.meta.ont | lower | replace(" ", "_") }}_label.webp){ class="nolightbox" id="{{ page.meta.ont | lower | replace(" ", "-") }}-label" }
 
-    There are two methods to install the 8311 community firmware onto the [WAS-110], outlined in the following guides:
+Use your preferred setup method and carefully follow the steps to avoid unnecessary downtime and troubleshooting:
 
-    __Method 1: <small>recommended</small></h4>__
+* [Web (luci)](#config-via-web)
+* [Shell (linux)](#config-via-shell)
 
-    :    [Install the 8311 community firmware on the WAS-110](install-the-8311-community-firmware-on-the-was-110.md)
-
-    __Method 2:__
-
-    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
-
-=== "X-ONU-SFPP"
-
-    The [X-ONU-SFPP] 8311 community firmware installation requires a two-step process and is more prone to failure and
-    bricking.
-
-    !!! warning "This process is not thoroughly documented and can lead to a bricked device"
-
-    __Step 1: Install the Azores bootloader__
-
-    :    Skip past to the solution in the following [issue tracker](../xgs-pon/ont/potron-technology/8311-uboot.md#solution)
-         on how to install the Azores bootloader.
-
-    __Step 2: Multicast upgrade__
-
-    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
-
-## Masquerade setup
-
-To successfully masquerade on XGS-PON, the original ONT serial number is mandatory. It, along with other key
-identifiers are available on the bottom label of the Hub 5x, color-coordinated in the following depiction:
-
-<div id="hub-5x-label"></div>
-
-![Hub 5x label](masquerade-as-the-virgin-media-o2-hub-5x-with-the-bfw-solutions-was-110/hub_5x_label.webp){ class="nolightbox" id="hub-5x-label" }
-
-### from the web UI <small>recommended</small> { #from-the-web-ui data-toc-label="from the web UI"}
-
-??? info "As of version 2.4.0 `https://` is supported and enabled by default"
-    All `http://` URLs will redirect to `https://` unless the `8311_https_redirect` environment variable is set to
-    0 or false.
+### Via web <small>recommended</small> { #config-via-web data-toc-label="Via web"}
 
 <div class="swiper" markdown>
 
@@ -119,34 +87,35 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 
 1. Within a web browser, navigate to
    <https://192.168.11.1/cgi-bin/luci/admin/8311/config>
-   and, if asked, input your <em>root</em> password.
+   and, if asked, input your *root* [password]{ data-preview target="_blank" }.
 
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
-    !!! reminder "Reminder"
-        <ins>Replace</ins> the mandatory :blue_circle: __PON Serial Number__ with the provisioned value on the bottom
-        [label] of the Hub 5x.
+    !!! reminder
+        <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the one found on the { page.meta.ont }} label.
+
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
     | -------------------------- | ----------------------------- | ------------ | ----------------------- |
     | PON Serial Number (ONT ID) | SMBS&hellip;                  | :check_mark: | :blue_circle: PON S/N   |
-    | Equipment ID               | F5685LGB                      |              |                         |
-    | Hardware Version           | 1.2.1b                        |              |                         |
+    | Equipment ID               | MERCV3                        |              |                         |
+    | Hardware Version           | 1.0                           |              |                         |
     | Sync Circuit Pack Version  | :check_mark:                  |              |                         |
     | Software Version A         | 3.7.4-2306.5                  |              | [Version listing]       |
     | Software Version B         | 3.7.4-2306.5                  |              | [Version listing]       |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
+    | IP Host MAC Address        | C4:EB:43:00:00:01             |              | Shared hardcoded MAC    |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    !!! tip "Identify VLANs"
+    ??? tip "Identify VLANs (Optional: Virgin uses VLAN 100 across its subscriber network)"
         Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
         You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
         from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
 
 4. __Save__ changes and *reboot* from the __System__ menu.
 
-### from the shell
+### Via shell { #config-via-shell }
 
 1. Login over secure shell (SSH).
 
@@ -157,31 +126,25 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
 2. Configure the 8311 U-Boot environment.
 
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
-        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ with the provisioned value on the bottom
-        [label] of the Hub 5x.
+        <ins>Replace</ins> the mandatory :blue_circle: __8311_gpon_sn__ and optional :purple_circle:
+        __8311_iphost_mac__ with the provisioned values on the back [label] of the {{ page.meta.ont }}.
 
-    ``` sh hl_lines="1 2 8 9"
+    ``` sh hl_lines="1 3 9 10"
     fwenv_set mib_file
-    fwenv_set -8 gpon_sn SMBS... # (1)!
-    fwenv_set -8 equipment_id F5685LGB
-    fwenv_set -8 hw_ver 1.2.1b
+    fwenv_set -8 iphost_mac !C4:EB:43:00:00:01 #(1)!
+    fwenv_set -8 gpon_sn SMBS... # (2)!
+    fwenv_set -8 equipment_id MERCV3
+    fwenv_set -8 hw_ver 1.0
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3.7.4-2306.5 # (2)!
+    fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
     fwenv_set -8 sw_verB 3.7.4-2306.5
     fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
     fwenv_set -8 fix_vlans 0
     ```
 
-    1. :blue_circle: PON S/N
-    2. [Version listing]
-
-    !!! info "Additional details and variables are described at the original repository [^2]"
-        `/usr/sbin/fwenv_set` is a helper script that executes `/usr/sbin/fw_setenv` twice consecutively.
-
-        The WAS-110 functions as an A/B system, requiring the U-Boot environment variables to be set twice, once for each
-        environment.
-
-        The `-8` option prefixes the U-Boot environment variable with `8311_`.
+    1. Hardcoded MAC address used by all subscribers
+    2. :blue_circle: PON S/N
+    3. [Version listing]
 
 3. Verify the 8311 U-boot environment and reboot.
 
@@ -190,35 +153,36 @@ identifiers are available on the bottom label of the Hub 5x, color-coordinated i
     reboot
     ```
 
-After rebooting the WAS-110, safely remove the SC/APC cable from the Hub 5x and connect it to the
-WAS-110. If all previous steps were followed correctly, the WAS-110 should operate with O5.1 [PLOAM status].
-For troubleshooting, please read the [Troubleshoot connectivity issues with the WAS-110] guide before seeking help on
-the [8311 Discord community server].
+  [Version listing]: #software-versions
+  [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+  [label]: #{{ page.meta.ont | lower | replace(" ", "-") }}-label
 
-  [PLOAM status]: troubleshoot-connectivity-issues-with-the-was-110.md#ploam-status
-  [Troubleshoot connectivity issues with the WAS-110]: troubleshoot-connectivity-issues-with-the-was-110.md
+{% include 'bce-inc-hub/verify-ont.md' %}
 
-!!! note "Clone the Hub 5x :purple_circle: MAC address on the router's DHCP WAN interface and tag it and anything in-between the WAS-110 with VLAN 100 in the United Kingdom and VLAN 10 in the Republic of Ireland."
 
-## Hub 5x software versions
+## Router tips
 
-The software version <ins>can</ins> be utilized as a provisioning attribute by the OLT, but this is not the case for
-the Hub 5x, which uses CWMP[^3]. However, it is recommended to keep somewhat up-to-date with the following listing, but
-it is not strictly necessary.
+!!! Note "Detailed router setup falls outside the scope of the documentation due to the multitude of available solutions."
+
+* Apply the [pre-configuration](#pre-configuration) requirements.
+* Configure the WAN VLAN to `100`.
+* Configure the WAN for DHCP mode.
+
+{% include 'bce-inc-hub/switch-tips.md' %}
+
+## Software versions
+
+The {{ page.meta.ont }} uses CWMP instead of OMCI for firmware updates. While the OLT rarely requires approval for
+specific software versions, keeping the [WAS-110] or [X-ONU-SFPP] up-to-date is beneficial but not strictly necessary.
+
+If you would like to help us maintain the software listing, you can contribute new versions via the
+[8311 Discord community server] or by submitting a [Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
 
 | Software Version |
 | ---------------- |
 | 3.7.4-2306.5     |
 
-Please help us by contributing new versions via the [8311 Discord community server] or submitting a
-[Pull Request](https://github.com/up-n-atom/8311/pulls) on GitHub.
-
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [label]: #hub-5x-label
   [Version listing]: #hub-5x-software-versions
-  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
-
-[^1]: <https://www.servethehome.com/apc-and-upc-in-fiber-connectors-and-why-this-matters/>
-[^2]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
-[^3]: <https://en.wikipedia.org/wiki/TR-069>
