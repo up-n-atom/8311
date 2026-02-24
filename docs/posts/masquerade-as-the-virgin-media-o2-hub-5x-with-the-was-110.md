@@ -187,6 +187,7 @@ If you would like to help us maintain the software listing, you can contribute n
 | ---------------- |
 | 3.7.4-2306.5     |
 
+  [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
   [label]: #hub-5x-label
