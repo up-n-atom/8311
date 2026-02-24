@@ -106,14 +106,14 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     | Equipment ID               | MERCV3                        |              |                         |
     | Hardware Version           | 1.0                           |              |                         |
     | Sync Circuit Pack Version  | :check_mark:                  |              |                         |
-    | Software Version A         | 3.7.4-2306.5                  |              | [Version listing]       |
-    | Software Version B         | 3.7.4-2306.5                  |              | [Version listing]       |
+    | Software Version A         | 7.8.3-2410.5                  |              | [Version listing]       |
+    | Software Version B         | 7.8.3-2410.5                  |              | [Version listing]       |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
     | IP Host MAC Address        | C4:EB:43:00:00:01             |              | Shared hardcoded MAC    |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    ??? tip "Identify VLANs (Optional: Virgin uses VLAN 100 across its subscriber network)"
+    ??? tip "Identify VLANs (Optional: Virgin uses VLAN `100` in the [UK](https://en.wikipedia.org/wiki/ISO_3166-2:GB) and `10` in [IE](https://en.wikipedia.org/wiki/ISO_3166-2:IE))"
         Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
         You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
         from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
@@ -141,8 +141,8 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     fwenv_set -8 equipment_id MERCV3
     fwenv_set -8 hw_ver 1.0
     fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 3.7.4-2306.5 # (3)!
-    fwenv_set -8 sw_verB 3.7.4-2306.5
+    fwenv_set -8 sw_verA 7.8.3-2410.5 # (3)!
+    fwenv_set -8 sw_verB 7.8.3-2410.5
     fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
     fwenv_set -8 fix_vlans 0
     ```
@@ -170,7 +170,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 !!! Note "Detailed router setup falls outside the scope of the documentation due to the multitude of available solutions."
 
 * Apply the [pre-configuration](#pre-configuration) requirements.
-* Configure the WAN VLAN to `100`.
+* Configure the WAN VLAN to `100` in the United Kingdom of Great Britain and Northern Ireland and `10` in the Republic of Ireland.
 * Configure the WAN for DHCP mode.
 
 {% include 'bce-inc-hub/switch-tips.md' %}
@@ -185,6 +185,7 @@ If you would like to help us maintain the software listing, you can contribute n
 
 | Software Version |
 | ---------------- |
+| 7.8.3-2410.5     |
 | 3.7.4-2306.5     |
 
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
