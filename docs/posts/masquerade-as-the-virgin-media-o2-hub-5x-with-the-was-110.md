@@ -97,7 +97,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 2. From the __8311 Configuration__ page, on the __PON__ tab, fill in the configuration with the following values:
 
     !!! reminder
-        <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the one found on the { page.meta.ont }} label.
+        <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the one found on the {{ page.meta.ont }} label.
 
 
     | Attribute                  | Value                         | Mandatory    | Remarks                 |
