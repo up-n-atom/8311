@@ -9,8 +9,7 @@ responsibility or liability for the listed resellers.
     Angled Physical Contact (APC) tips are polished to 8 degrees. This eliminates signal reflections on the
     fiber.
 
-    __Compatibility:__ Never mismatch SC/APC (green) and SC/UPC (blue). This causes signal loss and can
-    __permanently damage__ the fiber faces.
+    !!! warning "Never mismatch SC/APC (green) and SC/UPC (blue). This causes signal loss and can permanently damage the fiber faces."
 
 <div class="grid cards" markdown>
 
