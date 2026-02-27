@@ -121,7 +121,7 @@ graph TD
   end
 
   subgraph ONT_Group ["ONT"]
-    O_Title("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
+    O_Title("<font color=white>Local Subnet: 192.168.11.0/24"):::titleNode
     ONT("<b>LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
   end
 
@@ -260,8 +260,9 @@ graph TD
   classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px
   classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px
 
-  subgraph LAN_Group [" "]
-    PC("<b>LAN PC</b><br/>IP: 172.17.0.100<br/>(DHCP)"):::lanNode
+  subgraph LAN_Group ["Admin PC"]
+    PC_Title("<font color=white>LAN Client"):::titleNode
+    PC("IP: 172.17.0.100<br/>(DHCP)"):::lanNode
   end
 
   subgraph GW_Group ["Gateway"]
@@ -280,10 +281,12 @@ graph TD
     NAT --> W_IF
   end
 
-  subgraph ONT_Group [" "]
-    O_Range("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
-    ONT("<b>ONT LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
+  subgraph ONT_Group ["ONT"]
+    O_Range("<font color=white>Local Subnet: 192.168.11.0/24"):::titleNode
+    ONT("<b>LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
   end
+
+  PC_Title === GW_Group
 
   PC ==>|SRC: 172.17.0.100<br/>DST: 192.168.11.1| L_IF
   W_IF ==>|SRC: 192.168.11.2<br/>DST: 192.168.11.1| ONT
@@ -539,11 +542,11 @@ graph TD
 
   subgraph GW_Group ["Gateway / Router"]
     GW_Title("<font color=white>Static Route: 192.168.11.0/24"):::titleNode
-    GW("<b>Router</b><br/>WAN MAC: 00:00:5E:00:53:01<br/>WAN IP: 203.0.113.42"):::routeNode
+    GW("WAN MAC: 00:00:5E:00:53:01<br/>WAN IP: 203.0.113.42"):::routeNode
   end
 
-  subgraph ONT_Group ["ONT"]
-    O_Title("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
+  subgraph ONT_Group ["ONT (8311 Firmware)"]
+    O_Title("<font color=white>Local Subnet: 192.168.11.0/24"):::titleNode
     ONT("<b>LCT Port</b><br/>192.168.11.1"):::linkNode
 
     subgraph Daemon ["Reverse ARP Daemon"]
@@ -557,7 +560,7 @@ graph TD
   end
 
   PC_Title === GW_Group
-  GW_Title --- O_Title
+  GW_Title --- |Same| O_Title
 
   PC ==> |"1<br/>Target: 192.168.11.1"| GW
   GW ==> |"2<br/>Routed via WAN"| ONT
