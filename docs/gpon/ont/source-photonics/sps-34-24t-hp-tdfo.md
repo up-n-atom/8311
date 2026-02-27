@@ -34,31 +34,39 @@ tags:
 ``` mermaid
 %%{ init: { 'flowchart': { 'htmlLabels': false, 'curve': 'stepBefore' } } }%%
 flowchart LR
-    Z[" "] <-- GPON ODN -->
-    A(BOSA)
-    subgraph SOC
-        B("LDD") ~~~
-        C("LA") ~~~
-        D("CDR/
-        SERDES") <-->
-        E("GPON
-        MAC") <-->
-        F("Network
-        Processsor") <-->
-        G("Ethernet
-        MAC")
-        H("Controller")
-        D --> B
-        C --> D
-    end
-    B --> A
-    A --> C
-    G <-- SGMII --> X[" "]
-    H <-- I2C --> Y[" "]
-    SOC ~~~
-    I("Flash")
-    classDef CLEAR fill:transparent,stroke:transparent,color:transparent
-    class Z,Y,X CLEAR
+  Z[" "] <-- GPON ODN --> A(BOSA)
+
+  subgraph SOC
+    B("LDD") ~~~
+    C("LA") ~~~
+    D("CDR/<br/>SERDES") <-->
+    E("GPON<br/>MAC") <-->
+    F("Network<br/>Processsor") <-->
+    G("Ethernet<br/>MAC")
+    H("Controller")
+
+    %% Internal Logic Flow
+    D --> B
+    C --> D
+  end
+
+  B --> A
+  A --> C
+
+  G <-- SGMII --> X[" "]
+  H <-- I2C --> Y[" "]
+
+  SOC ~~~ I("Flash")
+
+  classDef slateNode fill:#ffffff,stroke:#475569,stroke-width:2px,color:#1e293b
+  classDef slateHighlight fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+  classDef ghost fill:transparent,stroke:transparent,color:transparent
+
+  style SOC fill:#f8fafc,stroke:#1e293b,stroke-width:2px,stroke-dasharray: 10 5
+
+  class A,D,E,F,G,H,I slateNode
+  class B,C slateHighlight
+  class Z,X,Y ghost
 ```
 
 ## System Information
