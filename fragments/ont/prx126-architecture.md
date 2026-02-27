@@ -6,56 +6,44 @@
 ``` mermaid
 %%{ init: { 'flowchart': { 'htmlLabels': false, 'curve': 'stepBefore' } } }%%
 flowchart LR
-    Z[" "] <--Fiber -->
-    A(BOSA)
-    B("DRIVER/
-    LA
-    (PMD)")
-    A --> B
-    B --> A
-    subgraph SOC
-        C("SERDES
-        /CDR")
-        subgraph MAC
-            D("10G(E)PON
-            PCS&MAC/
-            TC") ~~~
-            E("10G-
-            Ethernet
-            PCS&MAC")
-        end
-        C <--> MAC
-        F("Network
-        Processsor
-        /Package
-        Switch")
-        MAC <--> F
-        G("10G-
-        Ethernet
-        PCS&
-        MAC")
-        F <--> G <-->
-        H("SERDES
-        /CDR")
-        I("XO/PLL") ~~~
-        J("Multi-Core Processor/Subsystem Controller")
+  Z[" "] <-- Fiber --> A(BOSA)
+  B("DRIVER/<br/>LA<br/>(PMD)")
+  A --> B
+  B --> A
+
+  subgraph SOC
+    C("SERDES<br/>/CDR")
+    subgraph MAC
+      D("10G(E)PON<br/>PCS&MAC/<br/>TC") ~~~
+      E("10G-<br/>Ethernet<br/>PCS&MAC")
     end
-    B <--> C
-    Y[" "]
-    Y -- SFI/XFI --> H
-    H --> Y
-    J <-- I2C --> X[" "]
-    SOC ~~~
-    K("Crystal 40Mhz") ~~~
-    L("SLC NAND Flash") ~~~
-    M("LPDDR3")
-    style SOC fill:transparent,stroke:limegreen,stroke-width:2px,color:#fff,stroke-dasharray: 10 5
-    style MAC fill:PapayaWhip,stroke:SandyBrown,color:transparent,stroke-width:2px
-    classDef SEA fill:LightSkyBlue,font-weight:bold,stroke:DodgerBlue,stroke-width:2px
-    classDef CORAL fill:PapayaWhip,font-weight:bold,stroke:SandyBrown,stroke-width:2px
-    classDef CLEAR fill:transparent,stroke:transparent,color:transparent
-    class A,C,F,G,I,J,K,H,L,M SEA
-    class B,D,E,G CORAL
-    class Z,Y,X CLEAR
+    C <--> MAC
+    F("Network<br/>Processsor<br/>/Package<br/>Switch")
+    MAC <--> F
+    G("10G-<br/>Ethernet<br/>PCS&<br/>MAC")
+    F <--> G <--> H("SERDES<br/>/CDR")
+    I("XO/PLL") ~~~
+    J("Multi-Core Processor/Subsystem Controller")
+  end
+
+  B <--> C
+  Y[" "]
+  Y -- SFI/XFI --> H
+  H --> Y
+  J <-- I2C --> X[" "]
+
+  SOC ~~~ K("Crystal 40Mhz") ~~~ L("SLC NAND Flash") ~~~ M("LPDDR3")
+
+  classDef slateNode fill:#ffffff,stroke:#475569,stroke-width:2px,color:#1e293b
+  classDef slateHighlight fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+  classDef slateInterface fill:#334155,stroke:#1e293b,color:#ffffff,font-weight:bold
+  classDef ghost fill:transparent,stroke:transparent,color:transparent
+
+  style SOC fill:#f8fafc,stroke:#1e293b,stroke-width:2px,stroke-dasharray: 10 5
+  style MAC fill:#e2e8f0,stroke:#64748b,stroke-width:2px
+
+  class A,C,F,H,I,J,K,L,M slateNode
+  class B,D,E,G slateHighlight
+  class Z,Y,X ghost
 ```
 # --8<-- [end:arch]
