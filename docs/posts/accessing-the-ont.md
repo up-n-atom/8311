@@ -103,6 +103,43 @@ While this configuration serves as a foundational exercise in core networking, i
 a typical SOHO setup. In these environments, the WAN interface must simultaneously maintain a public internet
 connection, which is generally incompatible with a dedicated static IP.
 
+``` mermaid
+graph TD
+  classDef lanNode fill:#fff,stroke:#475569,stroke-width:2px
+  classDef linkNode fill:#f1f5f9,stroke:#475569,stroke-width:2px,stroke-dasharray: 5 5
+  classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px
+  classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px
+
+  subgraph PC_Group ["Admin PC"]
+    PC_Title("<font color=white>Host Interface: Static Config"):::titleNode
+    PC("<b>NIC</b><br/>IP: 192.168.11.2<br/>Subnet: 255.255.255.0"):::lanNode
+  end
+
+  subgraph Link_Group ["Physical Layer"]
+    L_Title("<font color=white>L2 Broadcast Domain / Direct Ethernet"):::titleNode
+    L2("<b>Layer 2 Path</b><br/>MAC Resolution (ARP)"):::linkNode
+  end
+
+  subgraph ONT_Group ["ONT"]
+    O_Title("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
+    ONT("<b>LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
+  end
+
+  PC_Title --- L_Title
+  L_Title --- O_Title
+  O_Title ---|Same Local Subnet| PC_Title
+
+  PC ==>|<b>IP Packet</b><br/>DST: 192.168.11.1| L2
+  L2 ==>|<b>Ethernet Frame</b><br/>SRC MAC: PC<br/>DST MAC: ONT| ONT
+
+  linkStyle 0,1 stroke-width:0px;
+  linkStyle 2 stroke:#475569,stroke-width:2px,stroke-dasharray: 3 3;
+
+  style PC_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+  style Link_Group fill:#e2e8f0,stroke:#1e293b,stroke-width:3px
+  style ONT_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+```
+
 === ":material-microsoft: Windows"
 
     !!! info "For the shameless mouse clickers..."
@@ -217,54 +254,43 @@ networks] on the WAN interface.
 
 ``` mermaid
 graph TD
-
-  %% Style Definitions
   classDef lanNode fill:#fff,stroke:#475569,stroke-width:2px
   classDef interfaceNode fill:#fff,stroke:#64748b,stroke-width:2px
   classDef natNode fill:#f1f5f9,stroke:#475569,stroke-width:2px,stroke-dasharray: 10 5
   classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px
   classDef ontNode fill:#f8fafc,stroke:#475569,stroke-width:2px
 
-  %% Internal LAN Section
   subgraph LAN_Group [" "]
     PC("<b>LAN PC</b><br/>IP: 172.17.0.100<br/>(DHCP)"):::lanNode
   end
 
-  %% Firewall / Gateway Section
   subgraph GW_Group ["Gateway"]
-    %% Title Column (Left)
     L_Range("<font color=white>LAN Range: 172.17.0.0/16"):::titleNode
     G_Title("<font color=white>Firewall - Stateful Translation"):::titleNode
     W_Alias("<font color=white>WAN Alias/Secondary IP"):::titleNode
 
 
-    %% Flow Column (Right)
     L_IF("<b>LAN Interface</b><br/>172.17.0.1 (Static)"):::interfaceNode
     NAT("<b>Source NAT Action</b><br/>Replace: 172.17.0.100<br/>With: 192.168.11.2 (Alias)"):::natNode
     W_IF("<b>WAN Interface</b><br/>Public IP: 203.0.113.42 (DHCP)<br/>Alias IP: 192.168.11.2 (Static)"):::interfaceNode
 
-    %% Force Vertical Stacking (Connections)
     L_Range --- G_Title
     G_Title --- W_Alias
     L_IF --> NAT
     NAT --> W_IF
   end
 
-  %% ONT Section
   subgraph ONT_Group [" "]
     O_Range("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
     ONT("<b>ONT LCT</b><br/>IP: 192.168.11.1 (Static)"):::ontNode
   end
 
-  %% External Packet Flow
   PC ==>|SRC: 172.17.0.100<br/>DST: 192.168.11.1| L_IF
   W_IF ==>|SRC: 192.168.11.2<br/>DST: 192.168.11.1| ONT
   W_Alias --- O_Range
 
-  %% Hiding the lines between titleNodes (Indices 0 and 1 of the --- links)
   linkStyle 0,1 stroke-width:0px;
 
-  %% Subgraph Box Styling
   style LAN_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
   style GW_Group fill:#e2e8f0,stroke:#1e293b,stroke-width:3px
   style ONT_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
@@ -498,6 +524,52 @@ internal LAN. The 8311 community firmware overcomes this with a built-in [revers
 return path is defined and allows traffic to successfully cross network boundaries without manual ONT configuration.
 
  [reverse ARP daemon]: https://github.com/djGrrr/8311-was-110-firmware-builder/blob/master/files/common/usr/sbin/8311-rarpd.sh>
+
+``` mermaid
+graph TD
+  classDef linkNode fill:#f8fafc,stroke:#475569,stroke-width:2px
+  classDef titleNode fill:#1e293b,stroke:#1e293b,font-weight:bold,font-size:14px
+  classDef routeNode fill:#fff,stroke:#475569,stroke-width:2px
+  classDef logicNode fill:#f8fafc,stroke:#475569,stroke-width:1px
+
+  subgraph LAN_Group ["Admin PC"]
+    PC_Title("<font color=white>LAN Client"):::titleNode
+    PC("IP: 172.17.0.100"):::linkNode
+  end
+
+  subgraph GW_Group ["Gateway / Router"]
+    GW_Title("<font color=white>Static Route: 192.168.11.0/24"):::titleNode
+    GW("<b>Router</b><br/>WAN MAC: 00:00:5E:00:53:01<br/>WAN IP: 203.0.113.42"):::routeNode
+  end
+
+  subgraph ONT_Group ["ONT"]
+    O_Title("<font color=white>ONT Mgmt: 192.168.11.0/24"):::titleNode
+    ONT("<b>LCT Port</b><br/>192.168.11.1"):::linkNode
+
+    subgraph Daemon ["Reverse ARP Daemon"]
+      TCPDUMP["tcpdump -i eth0_0_1_lct...<br/>Sniff ARP/IP Packets"]:::logicNode
+      IP_NEIGH["ip neigh replace"]:::logicNode
+    end
+
+    ONT -.->|"3<br/>Detect Inbound Traffic"| TCPDUMP
+    TCPDUMP -.-> |Extracts MAC/IP| IP_NEIGH
+    IP_NEIGH -.->|"4<br/>Inject Neighbour"| ONT
+  end
+
+  PC_Title === GW_Group
+  GW_Title --- O_Title
+
+  PC ==> |"1<br/>Target: 192.168.11.1"| GW
+  GW ==> |"2<br/>Routed via WAN"| ONT
+
+  ONT ==> |"5<br/>Frame to Router MAC"| GW
+  GW ==> |"6<br/>Successful Return"| PC
+
+  style LAN_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+  style GW_Group fill:#e2e8f0,stroke:#1e293b,stroke-width:3px
+  style ONT_Group fill:#f1f5f9,stroke:#cbd5e1,stroke-width:1px
+  style Daemon fill:#fff,stroke:#475569,stroke-dasharray: 5 5,stroke-width:1px
+```
 
 === ":simple-ubiquiti: UniFi OS"
 
