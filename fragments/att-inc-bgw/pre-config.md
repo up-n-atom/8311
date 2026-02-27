@@ -20,3 +20,11 @@ To install, upgrade, and configure the ONT, your gateway must be able to reach i
 __Follow the [Accessing the ONT] guide to set up the proper network routing between your gateway and the ONT management plane.__
 
   [Accessing the ONT]: accessing-the-ont.md
+
+!!! note "HLX-SFPX (HTTP Only)"
+    The HLX-SFPX web server uses __unencrypted HTTP__ and does not support HTTPS.
+
+    To access the web management interface, you may need to __disable HTTPS-Only Mode__ (or similar
+    &quot;Always use secure connection&quot; settings) in your browser.
+
+    !!! warning "For local management only. Avoid using over public or untrusted networks."

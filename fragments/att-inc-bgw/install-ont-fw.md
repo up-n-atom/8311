@@ -50,7 +50,7 @@
 
     </div>
 
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+    1. Within a web browser, navigate to <http://192.168.33.1/> and, if asked, input the *useradmin*
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __System__ drop-down, click __Flash Firmware__.
     3. From the __Flash Firmware__ page, click __Choose Image__, browse for `G_ONU_HLX_SFPX_V7-0-8pt2-e.bin`, and click
