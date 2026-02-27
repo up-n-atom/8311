@@ -241,7 +241,7 @@ To view the current PLOAM status, execute one of the following procedures:
 
     ![HLX-SFPX PON status](shared-assets/hlx_sfpx_pon_status.webp){ loading=lazy }
 
-    1. Within a web browser, navigate to <https://192.168.33.1/> and, if asked, input the *useradmin*
+    1. Within a web browser, navigate to <http://192.168.33.1/> and, if asked, input the *useradmin*
        [web credentials]{ data-preview target="_blank" }.
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
     3. Evaluate the __PLOAM State__ in the __Link Information__ section.
