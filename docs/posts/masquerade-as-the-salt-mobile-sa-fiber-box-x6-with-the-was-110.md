@@ -89,7 +89,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     | Software Version A         | SGCk10005062                 | [Software Versions]             |
     | Software Version B         | SGCk100041C6                 | [Software Versions]             |
     | MIB File                   | /etc/mibs/prx300_1V_bell.ini | [ONU mode]                      |
-    | IP Host MAC Address        | AA:BB:CC:DD:EE:FF            | Found on [Transciever] label    |
+    | IP Host MAC Address        | AA:BB:CC:DD:EE:FF            | Found on [Transceiver] label    |
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
