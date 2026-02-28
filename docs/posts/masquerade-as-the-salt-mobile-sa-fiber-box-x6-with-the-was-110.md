@@ -93,7 +93,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
-    ??? tip "Identify VLANs (Optional: Salt uses VLAN `30` for Internet and `40` for VOIP"
+    ??? tip "Identify VLANs (Optional: Salt uses VLAN `30` for Internet and `40` for VOIP)"
         Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
         You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
         from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
