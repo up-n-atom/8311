@@ -120,7 +120,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     fwenv_set -8 hw_ver XGSR1644
     fwenv_set -8 cp_hw_ver_sync 1
     fwenv_set -8 sw_verA SGCk10005062 #(3)!
-    fwenv_set -8 sw_verB SGCk100041C6 #(3)!
+    fwenv_set -8 sw_verB SGCk100041C6
     fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini #(4)!
     fwenv_set -8 fix_vlans 0
     ```
