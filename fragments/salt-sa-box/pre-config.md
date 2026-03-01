@@ -36,6 +36,12 @@ The ONU mode will be either **PPTP** (represented by MIB files ending in 'U') or
 xmo-remote-client --host=192.168.1.1 get-onu-mode
 ```
 
+### DHCP MAC Spoofing
+
+The ISP’s DHCP server identifies your connection via the Unique MAC address of the original equipment. To ensure the
+ISP "trusts" your new hardware immediately, you must __clone the {{ page.meta.ont }} MAC address onto your ^^gateway^^'s
+WAN physical interface.__ The MAC address can be found on the underside label.
+
 ### LCT Access Route
 
 To install, upgrade, and configure the ONT, your gateway must be able to reach its Local Craft Terminal (LCT) interface.
