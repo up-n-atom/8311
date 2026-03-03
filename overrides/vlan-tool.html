@@ -119,7 +119,7 @@
         return true;
       }
 
-      transform(frame, outputTpid = 0x8100) {
+      apply_treatement(frame, outputTpid = 0x8100) {
         if (this.tag_rem === 3) return null;
         const resolveP = (p) => {
           if (p <= 7) return p;
@@ -144,7 +144,7 @@
         let tags = [];
         if (this.t_out_prio !== 15) tags.push(new VlanTag(resolveV(this.t_out_vid), resolveP(this.t_out_prio), ...resolveT(this.t_out_tpid)));
         if (this.t_in_prio !== 15) tags.push(new VlanTag(resolveV(this.t_in_vid), resolveP(this.t_in_prio), ...resolveT(this.t_in_tpid)));
-        return tags.length > 0 ? new EthFrame(tags) : new EthFrame(frame.tags.slice(this.tag_rem));
+        return new EthFrame([...tags, ...frame.tags.slice(this.tag_rem)]);
       }
     }
 
@@ -176,7 +176,7 @@
 
       processFrame(frame) {
         for (let op of this.ops) {
-          if (op.matchesFilter(frame)) return { frame: op.transform(frame), op };
+          if (op.matchesFilter(frame)) return { frame: op.apply_treatement(frame), op };
         }
         return { frame: null, op: null };
       }
@@ -200,7 +200,7 @@
         let results = [];
         let totalLik = 0.0;
         table.ops.forEach((op) => {
-          if (op.isSingleTaggedFilter && !op.isDefault && op.tag_rem !== 3) {
+          if (op.isSingleTaggedFilter && !op.isDefault && op.tag_rem !== 3 && op.f_in_vid <= 4094) {
             const lik = calcLikelihood(op);
             totalLik += lik;
             results.push({ vid: op.f_in_vid, likelihood: lik });
@@ -248,8 +248,8 @@
 
       renderRouterConfs() {
         let h = `<table><caption>Router Configuration</caption><thead>
-          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">S-Tag (PON)</th><th colspan="2">C-Tag (PON)</th></tr>
-          <tr><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th></tr>
+          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">Y-Tag (PON)</th><th colspan="2">X-Tag (PON)</th><th colspan="2">S-Tag (PON)</th><th colspan="2">C-Tag (PON)</th></tr>
+          <tr><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th></tr>
           </thead><tbody>`;
 
         Object.entries(Model.testFrames).forEach(([label, f]) => {
@@ -328,11 +328,31 @@
       },
 
       fToCells(f) {
-        if (!f) return `<td colspan="4" class="discard-msg">DISCARDED</td>`;
-        return [
-          f.outerTag?.pcp ?? '-', f.outerTag?.vid ?? '-',
-          f.innerTag?.pcp ?? '-', f.innerTag?.vid ?? '-'
-        ].map(val => `<td>${val}</td>`).join('');
+        if (!f) return `<td colspan="8" class="discard-msg">DISCARDED</td>`;
+
+        const addsY = this.t_out_prio !== 15;
+        const addsX = this.t_in_prio !== 15;
+        const newCount = addsY + addsX;
+
+        const newTags = f.tags.slice(0, newCount);
+        const oldTags = f.tags.slice(newCount);
+
+        let Y = null, X = null;
+
+        if (addsY && addsX) {
+          [Y, X] = newTags;
+        } else if (addsY) {
+          Y = newTags[0];
+        } else if (addsX) {
+          X = newTags[0];
+        }
+
+        const S = oldTags[0];
+        const C = oldTags[1];
+
+        return [Y, X, S, C].map(t =>
+          `<td>${t ? t.pcp : '-'}</td><td>${t ? t.vid : '-'}</td>`
+        ).join('');
       }
     };
 
