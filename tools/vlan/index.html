@@ -278,7 +278,7 @@
       renderServices() {
         const container = document.getElementById('service');
         if (!Model.services.length) {
-          return container.innerHTML = `<p>No service VLANs discovered.</p>`;
+          return container.innerHTML = `<p>No UNI service VLANs discovered.</p>`;
         }
         const rows = Model.services.map(s => `<tr><td>${s.name}</td><td>${s.vid}</td><td>${s.confidence}%</td></tr>`).join('');
         container.innerHTML = `<table><caption>Service Discovery</caption><thead><tr><th>Service</th><th>VID</th><th>Confidence</th></tr></thead><tbody>${rows}</tbody></table>`;
@@ -286,7 +286,7 @@
 
       renderRouterConfs() {
         let h = `<table><caption>Router Configuration</caption><thead>
-          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">Y-Tag (PON)</th><th colspan="2">X-Tag (PON)</th><th colspan="2">S-Tag (PON)</th><th colspan="2">C-Tag (PON)</th></tr>
+          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">Y-Tag (ANI)</th><th colspan="2">X-Tag (ANI)</th><th colspan="2">S-Tag (ANI)</th><th colspan="2">C-Tag (ANI)</th></tr>
           <tr><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th></tr>
           </thead><tbody>`;
 
