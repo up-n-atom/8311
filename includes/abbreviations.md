@@ -1,3 +1,4 @@
+*[ANI]: Access Network Interface
 *[AP]: Access Point
 *[APC]: Angled Physical Contact
 *[ATM]: Asynchronous Transfer Mode
@@ -53,6 +54,7 @@
 *[TX]: Transmit
 *[UART]: Universal Asynchronous Receiver/Transmitter
 *[UI]: User Interface
+*[UNI]: User Network Interface
 *[UPC]: Ultra Physical Contact
 *[USB]: Universal Serial Bus
 *[VEIP]: Virtual Ethernet Interface Point
