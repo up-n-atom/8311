@@ -1,3 +1,6 @@
+!!! tip "Bell Canada (Ontario/Quebec)"
+    Start with PPPoE passthrough before committing to a full bypass.
+
 !!! warning "New installations"
     Keep the {{ page.meta.ont }} in active service for roughly a week or two until fully provisioned and the
     installation ticket has been closed.
