@@ -263,15 +263,19 @@ rules can also be deceiving, even though it is technically valid.
   <tbody>
     <tr>
       <td>15, 4096, x, 15, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
-      <td>no tags</td>
+      <td>Untagged</td>
     </tr>
     <tr>
       <td>15, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
-      <td>1 tag</td>
+      <td>
+        <a href="https://en.wikipedia.org/wiki/IEEE_802.1Q" rel="noopener" target="_blank">Dot1Q</a>
+      </td>
     </tr>
     <tr>
       <td>14, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
-      <td>2 tags</td>
+      <td>
+        <a href="https://en.wikipedia.org/wiki/IEEE_802.1ad" rel="noopener" target="_blank">QinQ</a>
+      </td>
     </tr>
   </tbody>
   <tfoot>
