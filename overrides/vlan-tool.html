@@ -304,9 +304,10 @@
 
       renderRouterConfs() {
         let h = `<table><caption>Router Configuration</caption><thead>
-          <tr><th rowspan="2">Layer 2 (WAN)</th><th colspan="2">S-Tag (UNI)</th><th colspan="2">C-Tag (UNI)</th><th rowspan="2">Rule Match</th><th colspan="2">Y-Tag (ANI)</th><th colspan="2">X-Tag (ANI)</th><th colspan="2">S-Tag (ANI)</th><th colspan="2">C-Tag (ANI)</th></tr>
+          <tr><th colspan="5">WAN (UNI)</th><th>ONT</th><th colspan="8">PON (ANI)</th></tr>
+          <tr><th rowspan="2">Layer 2</th><th colspan="2">S-Tag</th><th colspan="2">C-Tag</th><th rowspan="2">Table Op Match</th><th colspan="2">Y-Tag</th><th colspan="2">X-Tag</th><th colspan="2">S-Tag</th><th colspan="2">C-Tag</th></tr>
           <tr><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th><th>PCP</th><th>VID</th></tr>
-          </thead><tbody>`;
+          </thead><tfoot><tr><td colspan="14">Supports only Dot1Q (IEEE 802.1Q) router configurations</td></tr></tfoot><tbody>`;
 
         Object.entries(Model.testFrames).forEach(([label, f]) => {
           const { frame: resFrame, op } = Model.table.processFrame(f);
@@ -338,7 +339,7 @@
 
       renderOpTable() {
         let h = `<table><caption>Operation Table</caption><thead>
-        <tr><th rowspan="3">#</th><th colspan="6">Filter (UNI)</th><th colspan="7">Treatment (PON)</th></tr>
+        <tr><th rowspan="3">#</th><th colspan="6">Filter (UNI)</th><th colspan="7">Treatment (ANI)</th></tr>
         <tr><th colspan="3">OUTER</th><th colspan="3">INNER</th><th rowspan="2">Remove Tags</th><th colspan="3">OUTER</th><th colspan="3">INNER</th></tr>
         <tr><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th></tr>
         </thead><tbody>`;
