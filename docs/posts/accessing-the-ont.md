@@ -127,7 +127,7 @@ graph TD
 
   PC_Title --- L_Title
   L_Title --- O_Title
-  O_Title ---|Same Local Subnet| PC_Title
+  O_Title ---|Within ONT Subnet| PC_Title
 
   PC ==>|<b>IP Packet</b><br/>DST: 192.168.11.1| L2
   L2 ==>|<b>Ethernet Frame</b><br/>SRC MAC: PC<br/>DST MAC: ONT| ONT
@@ -290,7 +290,7 @@ graph TD
 
   PC ==>|SRC: 172.17.0.100<br/>DST: 192.168.11.1| L_IF
   W_IF ==>|SRC: 192.168.11.2<br/>DST: 192.168.11.1| ONT
-  W_Alias --- O_Range
+  W_Alias ---|Within ONT Subnet| O_Range
 
   linkStyle 0,1 stroke-width:0px;
 
@@ -560,7 +560,7 @@ graph TD
   end
 
   PC_Title === GW_Group
-  GW_Title --- |Same| O_Title
+  GW_Title --- |Matching Subnet| O_Title
 
   PC ==> |"1<br/>Target: 192.168.11.1"| GW
   GW ==> |"2<br/>Routed via WAN"| ONT
