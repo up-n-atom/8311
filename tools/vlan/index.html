@@ -113,6 +113,30 @@
         });
       }
 
+      static fromBytes(buffer) {
+        if (buffer.length !== 16) throw new Error("Expected 16 bytes");
+
+        const view = new DataView(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+        const w1 = view.getUint32(0, false);
+        const w2 = view.getUint32(4, false);
+        const w3 = view.getUint32(8, false);
+        const w4 = view.getUint32(12, false);
+
+        if ((w3 >>> 0) === 0xFFFFFFFF && (w4 >>> 0) === 0xFFFFFFFF) {
+          return null;
+        }
+
+        return new VlanTagOp([
+          (w1 >> 28) & 0xF, (w1 >> 15) & 0x1FFF, (w1 >> 12) & 0x7,
+          (w2 >> 28) & 0xF, (w2 >> 15) & 0x1FFF, (w2 >> 12) & 0x7,
+          (w2 >> 4) & 0xFF,
+          w2 & 0xF,
+          (w3 >> 30) & 0x3,
+          (w3 >> 16) & 0xF, (w3 >> 3) & 0x1FFF, w3 & 0x7,
+          (w4 >> 16) & 0xF, (w4 >> 3) & 0x1FFF, w4 & 0x7
+        ]);
+      }
+
       get isUntaggedFilter() { return this.f_out_prio === 15 && this.f_in_prio === 15; }
       get isSingleTaggedFilter() { return this.f_out_prio === 15 && this.f_in_prio !== 15; }
       get isDoubleTaggedFilter() { return this.f_out_prio !== 15; }
@@ -200,8 +224,39 @@
       }
 
       static fromStream(text) {
+        const lines = text.split('\n').filter(l => l.trim().length > 0);
+        if (!lines.length) return new VlanTagOpTable();
+
+        let table = VlanTagOpTable.fromHexStream(lines);
+
+        if (table.ops.length === 0) {
+          table = VlanTagOpTable.fromTableStream(lines);
+        }
+        return table;
+      }
+
+      static fromHexStream(lines) {
         const ops = [];
-        text.split('\n').forEach(line => {
+        lines.forEach(line => {
+          const cleanHex = line.replace(/0x|\\x|\s/g, "");
+
+          if (cleanHex.length === 32) {
+            try {
+              const bytes = new Uint8Array(
+                cleanHex.match(/.{1,2}/g).map(byte => parseInt(byte, 16))
+              );
+              ops.push(VlanTagOp.fromBytes(bytes));
+            } catch (e) {
+              console.error("Hex parse error:", e);
+            }
+          }
+        });
+        return new VlanTagOpTable(ops);
+      }
+
+      static fromTableStream(lines) {
+        const ops = [];
+        lines.forEach(line => {
           const parts = line.trim().split(/\s+/);
           if (parts.length === 15 && parts.every(p => /^\d+$/.test(p))) {
             const vals = parts.map(Number);
