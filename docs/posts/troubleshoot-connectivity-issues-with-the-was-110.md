@@ -249,7 +249,7 @@ To view the current PLOAM status, execute one of the following procedures:
 #### OMCI clarification
 
 To identify fake O5, execute the following command procedures. If the output is empty, the operational state is
-*"fake"* because the OLT failed to return the expected Dot1Q[^6] configuration. An output that only contains default
+*"fake"* because the OLT failed to return the expected configuration. An output that only contains default
 rules can also be deceiving, even though it is technically valid.
 
 <table>
@@ -262,17 +262,17 @@ rules can also be deceiving, even though it is technically valid.
   </thead>
   <tbody>
     <tr>
-      <td>15, 4096, x, 15, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>15, 4096, X, 15, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
       <td>Untagged</td>
     </tr>
     <tr>
-      <td>15, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>15, 4096, X, 14, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
       <td>
         <a href="https://en.wikipedia.org/wiki/IEEE_802.1Q" rel="noopener" target="_blank">Dot1Q</a>
       </td>
     </tr>
     <tr>
-      <td>14, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>14, 4096, X, 14, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
       <td>
         <a href="https://en.wikipedia.org/wiki/IEEE_802.1ad" rel="noopener" target="_blank">QinQ</a>
       </td>
@@ -280,11 +280,10 @@ rules can also be deceiving, even though it is technically valid.
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="2">x is a "don't care" field and should be set to zero.</td>
+      <td colspan="2">X is a "don't care" field and should be set to zero.</td>
     </tr>
   </tfoot>
 </table>
-
 
 === "8311 firmware"
 
@@ -569,4 +568,3 @@ host controller and implementation, the interface may enter a power saving state
 [^3]: <https://www.linux.org/docs/man8/ethtool.html>
 [^4]: <https://en.wikipedia.org/wiki/Small_Form-factor_Pluggable#Signals>
 [^5]: [SFF-8419](https://members.snia.org/document/dl/25880)
-[^6]: <https://en.wikipedia.org/wiki/IEEE_802.1Q>
