@@ -576,12 +576,12 @@ host controller and implementation, the interface may enter a power saving state
 ### Nokia OLT (ALCL)
 
 ``` sh
-omci_pipe.sh meadg 131 0 1 | grep -q 'ALCL' && echo 'Nokia OLT' || echo 'Other OLT'
+omci_pipe.sh meadg 131 0 1 | grep -q '41 4C 43 4C' && echo 'Nokia OLT' || echo 'Other OLT'
 ```
 
 #### GEM port encryption misconfiguration (key errors)
 
-1. Check GEM port for __Key Errors__ and make note of the __GEM ID(s)__.
+1. Check GEM port for __Key Errors__ and make note of the __GEM ID__(s).
 
     ``` sh
     pontop -b -g 'GEM/XGEM Port Counters'
@@ -590,7 +590,7 @@ omci_pipe.sh meadg 131 0 1 | grep -q 'ALCL' && echo 'Nokia OLT' || echo 'Other O
 2. If key errors are present (greater than 0), check GEM port __Encryption Key Ring__ attribute value.
 
     ``` sh
-    omci_pipe.sh meadg 268 <GEM ID> 10 # (1)
+    omci_pipe.sh meadg 268 <GEM ID> 10 | awk -F'attr_data=' '{print $2}' # (1)
     ```
 
     1. Replace `<GEM ID>` with the one found in the output for GEM/XGEM Port Counters page.
