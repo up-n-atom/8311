@@ -69,36 +69,36 @@ ethtool -m <interface>
   <tbody>
     <tr>
       <td><strong>Tx Power</strong></td>
-      <td>2 to 4</td>
+      <td>2 to 5</td>
       <td>1 to 7</td>
-      <td>0 to 1</td>
-      <td>Below 0 or Above 8</td>
+      <td>0 to 8</td>
+      <td>< 0 or > 8</td>
     </tr>
     <tr>
       <td><strong>Rx Power</strong></td>
       <td>−14 to −20</td>
       <td>−8 to −24</td>
       <td>−24 to −27</td>
-      <td>Lower than −27</td>
+      <td>< −27 or > -8</td>
     </tr>
   </tbody>
   <tfoot>
    <tr>
     <td>
       <small><strong>Great</strong></small></td>
-      <td colspan="4"><small>Your connection is perfect.</small></td>
+      <td colspan="4"><small>Optimal performance; low Bit Error Rate (BER).</small></td>
     </tr>
     <tr>
       <td><small><strong>Good</strong></small></td>
-      <td colspan="4"><small>Your connection is stable and healthy.</small></td>
+      <td colspan="4"><small>Typical operating range for most ISP networks.</small></td>
     </tr>
     <tr>
       <td><small><strong>Fair</strong></small></td>
-      <td colspan="4"><small>Your internet might be slow or drop occasionally. Check your connectors and cables: are they loose, dirty or bent?</small></td>
+      <td colspan="4"><small>Marginal; may see Error Corrections (FEC).</small></td>
     </tr>
     <tr>
       <td><small><strong>Poor</strong></small></td>
-      <td colspan="4"><small>Your connection is failing. Contact support.</small></td>
+      <td colspan="4"><small>Risk of Loss of Signal (LOS) or reciever damage.</small></td>
     </tr>
   </tfoot>
 </table>
@@ -217,8 +217,17 @@ To view the current PLOAM status, execute one of the following procedures:
 
     <h5>from the Linux shell</h5>
 
+    <h6>PLOAM Status</h6>
+
     ``` sh
     pontop -b -g s
+    ```
+
+    <h6>PLOAM counters</h6>
+
+    ``` sh
+    pontop -b -g 'PLOAM Downstream Counters'
+    pontop -b -g 'PLOAM Upstream Counters'
     ```
 
 === "Azores firmware"
@@ -233,8 +242,17 @@ To view the current PLOAM status, execute one of the following procedures:
 
     <h5>from the Linux shell</h5>
 
+    <h6>PLOAM Status</h6>
+
     ``` sh
     pontop -b -g s
+    ```
+
+    <h6>PLOAM counters</h6>
+
+    ``` sh
+    pontop -b -g 'PLOAM Downstream Counters'
+    pontop -b -g 'PLOAM Upstream Counters'
     ```
 
 === "HLX-SFPX"
@@ -252,37 +270,33 @@ To identify fake O5, execute the following command procedures. If the output is 
 *"fake"* because the OLT failed to return the expected configuration. An output that only contains default
 rules can also be deceiving, even though it is technically valid.
 
-<table>
-  <caption>Default Rules</caption>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>15, 4096, X, 15, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
-      <td>Untagged</td>
-    </tr>
-    <tr>
-      <td>15, 4096, X, 14, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/IEEE_802.1Q" rel="noopener" target="_blank">Dot1Q</a>
-      </td>
-    </tr>
-    <tr>
-      <td>14, 4096, X, 14, 4096, X, 0, (0, 15, X, X, 15, X, X)</td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/IEEE_802.1ad" rel="noopener" target="_blank">QinQ</a>
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="2">X is a "don't care" field and should be set to zero.</td>
-    </tr>
-  </tfoot>
+<table markdown>
+<caption markdown>Default Rules</caption>
+<thead markdown>
+<tr markdown>
+<th markdown></th>
+<th markdown></th>
+</tr>
+</thead>
+<tbody markdown>
+<tr markdown>
+<td markdown>15, 4096, `X`, 15, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>Untagged</td>
+</tr>
+<tr markdown>
+<td markdown>15, 4096, `X`, 14, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>[Dot1Q](https://en.wikipedia.org/wiki/IEEE_802.1Q)</td>
+</tr>
+<tr markdown>
+<td markdown>14, 4096, `X`, 14, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>[QinQ](https://en.wikipedia.org/wiki/IEEE_802.1ad)</td>
+</tr>
+</tbody>
+<tfoot markdown>
+<tr markdown>
+<td colspan="2" markdown>X is a "don't care" field and should be set to zero.</td>
+</tr>
+</tfoot>
 </table>
 
 === "8311 firmware"
@@ -556,6 +570,61 @@ host controller and implementation, the interface may enter a power saving state
 ```
 
 1. Replace spf`X` with the port name/number.
+
+## Common issues & workarounds
+
+### Nokia OLT (ALCL)
+
+``` sh
+omci_pipe.sh meadg 131 0 1 | grep -q 'ALCL' && echo 'Nokia OLT' || echo 'Other OLT'
+```
+
+#### GEM port encryption misconfiguration (key errors)
+
+1. Check GEM port for __Key Errors__ and make note of the __GEM ID(s)__.
+
+    ``` sh
+    pontop -b -g 'GEM/XGEM Port Counters'
+    ```
+
+2. If key errors are present (greater than 0), check GEM port __Encryption Key Ring__ attribute value.
+
+    ``` sh
+    omci_pipe.sh meadg 268 <GEM ID> 10 # (1)
+    ```
+
+    1. Replace `<GEM ID>` with the one found in the output for GEM/XGEM Port Counters page.
+
+3. If the __Encryption Key Ring__ value is 0 or 1, change it to 3 (downstream encryption only).
+
+    ``` sh
+    omci_pipe.sh meads 268 <GEM ID> 10 3 # (1)
+    ```
+
+    1. Replace `<GEM ID>` with the one found in the output for GEM/XGEM Port Counters page.
+
+??? abstract "Related workaround found on the XS-010X-Q (`/usr/lib/libomci.so`)"
+
+    A similar workaround is also found on the **XS-010X-Q** within `/usr/lib/libomci.so`. Specifically, the logic is
+    found in the `ca_omci_saturn_gemflow_add` function:
+
+    ``` c title="Ghidra Disassembly Snippet"
+    ...
+    if ((*(int *)((int)local_38 + 0x13c) == 6) && (*(int *)((int)local_38 + 0x148) != 2)) {
+        local_38 = (char *)0x7eb;
+        omci_log_msg(8,4,"%s() [%d]Don\'t enable us aes for ALCL\n","ca_omci_saturn_gemflow_add",0x7eb);
+        omci_log_print(1,8,"%s() [%d]Don\'t enable us aes for ALCL\r\n","ca_omci_saturn_gemflow_add",
+                       local_38);
+        if (param_1[0x16] == 1) {
+          local_3c = 3;
+        }
+        else {
+          local_3c = (undefined1)param_1[0x16];
+        }
+        iVar5 = param_1[3];
+    }
+    ...
+    ```
 
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
