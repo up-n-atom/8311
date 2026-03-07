@@ -248,8 +248,39 @@ To view the current PLOAM status, execute one of the following procedures:
 
 #### OMCI clarification
 
-To help identify fake O5, execute the following command procedures and if the response is empty, the operational state is
-*"fake"* as the OLT did not respond with the dot1q[^6] configuration.
+To identify fake O5, execute the following command procedures. If the output is empty, the operational state is
+*"fake"* because the OLT failed to return the expected Dot1Q[^6] configuration. An output that only contains default
+rules can also be deceiving, even though it is technically valid.
+
+<table>
+  <caption>Default Rules</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>15, 4096, x, 15, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>no tags</td>
+    </tr>
+    <tr>
+      <td>15, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>1 tag</td>
+    </tr>
+    <tr>
+      <td>14, 4096, x, 14, 4096, x, 0, (0, 15, x, x, 15, x, x)</td>
+      <td>2 tags</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2">x is a "don't care" field and should be set to zero.</td>
+    </tr>
+  </tfoot>
+</table>
+
 
 === "8311 firmware"
 
