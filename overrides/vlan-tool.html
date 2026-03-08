@@ -342,7 +342,7 @@
         <tr><th rowspan="3">#</th><th colspan="6">Filter (UNI)</th><th colspan="7">Treatment (ANI)</th></tr>
         <tr><th colspan="3">OUTER</th><th colspan="3">INNER</th><th rowspan="2">Remove Tags</th><th colspan="3">OUTER</th><th colspan="3">INNER</th></tr>
         <tr><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th><th>Prio</th><th>VID</th><th>TPID</th></tr>
-        </thead><tfoot><tr><td colspan="14">Sorted by operation order, i.e. Filter (UNI) values</td></tr></tfoot><tbody>`;
+        </thead><tfoot><tr><td colspan="14">Sorted by operation order, i.e. Filter values - top-down processing</td></tr></tfoot><tbody>`;
         Model.table.ops.forEach((op, i) => {
           h += `<tr id="${Controller.getRuleKey(op)}" class="rule-row"><td>${i}</td>
             <td>${op.f_out_prio}</td><td>${op.f_out_vid}</td><td>${op.f_out_tpid}</td>
