@@ -337,12 +337,12 @@ indicators to pinpoint whether a fault originates with the OLT, the ODN, or your
 
 #### Common alarms
 
-| Alarm Code | Description             | Cause                                                                                    |
-| ---------- | ----------------------- | ---------------------------------------------------------------------------------------- |
-| LOS        | Loss of Signal          | Physical break in fiber, disconnected cable, OLT port failure                            |
-| LODS       | Loss of Downstream Sync | Excessive attenuation (distance, dirty connectors) or fault ONT receiver                 |
-| LOF        | Loss of Frame           | High Bit Error Rate (BER) or severe signal interference                                  |
-| O7         | Emergency Stop          | An ONT is in "Rogue" state or has been disabled by the OLT. **(Disconnect immediately)** |
+| Alarm Code | Description             | Cause                                                                                 |
+| ---------- | ----------------------- | ------------------------------------------------------------------------------------- |
+| LOS        | Loss of Signal          | Physical break in fiber, disconnected cable, or OLT port failure                      |
+| LODS       | Loss of Downstream Sync | Excessive attenuation (distance, dirty connectors) or fault ONT receiver              |
+| LOF        | Loss of Frame           | High Bit Error Rate (BER) or severe signal interference                               |
+| O7         | Emergency Stop          | ONT is in "Rogue" state or has been disabled by the OLT. **(Disconnect immediately)** |
 
 !!! danger "Rogue ONT (O7)"
     An O7 alarm often indicates a "Rogue ONT" that is transmitting light outside of its assigned time slot. This can
