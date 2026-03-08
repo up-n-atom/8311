@@ -344,7 +344,7 @@ indicators to pinpoint whether a fault originates with the OLT, the ODN, or your
 | LOF        | Loss of Frame           | High Bit Error Rate (BER) or severe signal interference                                  |
 | O7         | Emergency Stop          | An ONT is in "Rogue" state or has been disabled by the OLT. **(Disconnect immediately)** |
 
-!!! danger "Warning: Rogue ONTs (O7)"
+!!! danger "Rogue ONT (O7)"
     An O7 alarm often indicates a "Rogue ONT" that is transmitting light outside of its assigned time slot. This can
     "blind" the OLT port and drop service for every other subscriber on that same PON split.
 
