@@ -10,16 +10,15 @@ tags:
 
 ## Specifications
 
-|             |                                                     |                     |
-| ----------: | --------------------------------------------------- | ------------------- |
-| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc             | [Architecture] [^4] |
-| __NAND__    | 128 MB *(1 Gbit)*                                   |                     |
-| __RAM__     | 1 GB                                                |                     |
-| __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      |                     |
-| __EEPROM__  | :check_mark:                                        |                     |
-| __UART__    | UART 	Rx: pin 7 / Tx: pin 2 - 115200-8-1-N          |                     |
-| __IP__      | 192.168.1.1                                         |                     |
-| __SSH__     | :check_mark:                                        |                     |
+|             |                                                     |                |
+| ----------: | --------------------------------------------------- | -------------- |
+| __SoC__     | PRX126 @ 400 MHz - MIPS interAptiv 34Kc             | [Architecture] |
+| __NAND__    | 128 MB *(1 Gbit)*                                   |                |
+| __RAM__     | 1 GB                                                |                |
+| __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      |                |
+| __EEPROM__  | :check_mark:                                        |                |
+| __IP__      | 192.168.1.1                                         |                |
+| __SSH__     | :check_mark:                                        |                |
 
  [Architecture]: #architecture
 
