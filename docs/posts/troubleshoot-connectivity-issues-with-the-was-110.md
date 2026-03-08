@@ -162,7 +162,6 @@ To determine if the [WAS-110] optics are operating within specification, execute
     2. From the main navigation __Status__ drop-down, click __PON Interface__.
     3. From the __Optical Information__ section, evaluate that the __RX Power__ and __TX Power__ are within [spec](#optical-specifications).
 
-### Validate OLT authentication
 And as with a Linux host, the DDMI[^1] is available from the [WAS-110] shell,
 where both __Laser output power__ and __Receiver signal average optical power__ can be evaluated.
 
@@ -170,7 +169,7 @@ where both __Laser output power__ and __Receiver signal average optical power__ 
 ethtool -m pon0
 ```
 
-!!! failure "Optic fault test"
+!!! failure "Simplex optic fault test"
 
     <h5>Test 1</h5>
 
@@ -185,7 +184,7 @@ ethtool -m pon0
        __No signal__, you're likely subscribed to GPON (1490nm downstream and 1310nm upstream) which isn't a compatible
        wavelength for the [WAS-110].
 
-### Fake O5
+### OLT authentication
 
 #### Activation states
 
@@ -197,6 +196,8 @@ ethtool -m pon0
 - O6 POPUP state
 - O7 Emergancy stop state
 
+#### Fake O5
+
 A common term tossed around is <q>fake</q> O5, which is a misnomer that occurs when PLOAM message activation succeeds,
 including Serial Number and/or Registration ID authentication. However, the failure is further along in the
 registration chain, such as OMCI. It pertains to invalid managed entity attributes with common associations to device
@@ -204,7 +205,7 @@ integrity, such as hardware and/or software versioning.
 
 #### PLOAM status
 
-To view the current PLOAM status, execute one of the following procedures:
+To view the current PLOAM status (activation state), execute one of the following procedures:
 
 === "8311 firmware"
 
@@ -328,6 +329,57 @@ omci_pipe.sh meg 131 0
 ```
 
 Typically, OLT operators enforce versioning compliance when software management is not handled over CWMP[^2].
+
+### Alarms
+
+Alarms are critical for diagnosing hardware failures, authentication errors, and physical layer issues. Use these
+indicators to pinpoint whether a fault originates with the OLT, the ODN, or your ONT.
+
+#### Common alarms
+
+| Alarm Code | Description             | Cause                                                                                    |
+| ---------- | ----------------------- | ---------------------------------------------------------------------------------------- |
+| LOS        | Loss of Signal          | Physical break in fiber, disconnected cable, OLT port failure                            |
+| LODS       | Loss of Downstream Sync | Excessive attenuation (distance, dirty connectors) or fault ONT receiver                 |
+| LOF        | Loss of Frame           | High Bit Error Rate (BER) or severe signal interference                                  |
+| O7         | Emergency Stop          | An ONT is in "Rogue" state or has been disabled by the OLT. **(Disconnect immediately)** |
+
+!!! danger "Warning: Rogue ONTs (O7)"
+    An O7 alarm often indicates a "Rogue ONT" that is transmitting light outside of its assigned time slot. This can
+    "blind" the OLT port and drop service for every other subscriber on that same PON split.
+
+To view real-time faults and begin remediation, execute one of the following procedures:
+
+``` sh title="Example: fiber disconnect/broken"
+Page: Active alarms
+Alarm type       Alarm                     Description
+LEVEL            PON_ALARM_STATIC_LOS      Loss of signal
+LEVEL            PON_ALARM_STATIC_LODS     Loss of downstream synchronization
+LEVEL            PON_ALARM_STATIC_ERR_LOSS Same signal as LOS just configured as level sensitive
+```
+
+=== "8311 firmware"
+
+    <h5>from the Web UI</h5>
+
+    ![WAS-110 PON alarm status](troubleshoot-connectivity-issues-with-the-bfw-solutions-was-110/was_110_luci_alarm_status.webp){ loading=lazy }
+
+    1. Navigate to <https://192.168.11.1/cgi-bin/luci/admin/8311/pon_status> and, if asked, input your *root* password.
+    2. From the __PON Status__ page, select the __Alarms__ tab to check for __Active Alarms__.
+
+    <h5>from the Linux shell</h5>
+
+    ``` sh
+    pontop -b -g w
+    ```
+
+=== "Azores firmware"
+
+    <h5>from the Linux shell</h5>
+
+    ``` sh
+    pontop -b -g w
+    ```
 
 ## LAN troubleshooting
 
