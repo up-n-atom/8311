@@ -223,7 +223,7 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 <tr markdown>
 <td markdown>[H-COM](https://www.zhaoyongoptics.com/)</td>
 <td markdown>SPP425H-GAB4</td>
-<td markdown>:globe_with_meridians: [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://www.aliexpress.com/item/1005007856556526.html)</td>
+<td markdown>:globe_with_meridians: [Alibaba](https://www.alibaba.com/product-detail/XGS-PON-ONU-SFP-Stick-with_1601261149622.html) / [AliExpress](https://s.click.aliexpress.com/e/_mLVFkgd) <small class="affiliate"></small></td>
 <td markdown>8311<sup>2</sup></td>
 </tr>
 <tr markdown>
