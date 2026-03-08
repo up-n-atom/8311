@@ -590,7 +590,7 @@ omci_pipe.sh meadg 131 0 1 | grep -q '41 4C 43 4C' && echo 'Nokia OLT' || echo '
 2. If key errors are present (greater than 0), check GEM port __Encryption Key Ring__ attribute value.
 
     ``` sh
-    omci_pipe.sh meadg 268 <GEM ID> 10 | awk -F'attr_data=' '{print $2}' # (1)
+    omci_pipe.sh meadg 268 <GEM ID> 10 | awk -F'attr_data=' '{print $2}' # (1)!
     ```
 
     1. Replace `<GEM ID>` with the one found in the output for GEM/XGEM Port Counters page.
@@ -598,7 +598,7 @@ omci_pipe.sh meadg 131 0 1 | grep -q '41 4C 43 4C' && echo 'Nokia OLT' || echo '
 3. If the __Encryption Key Ring__ value is 0 or 1, change it to 3 (downstream encryption only).
 
     ``` sh
-    omci_pipe.sh meads 268 <GEM ID> 10 3 # (1)
+    omci_pipe.sh meads 268 <GEM ID> 10 3 # (1)!
     ```
 
     1. Replace `<GEM ID>` with the one found in the output for GEM/XGEM Port Counters page.
