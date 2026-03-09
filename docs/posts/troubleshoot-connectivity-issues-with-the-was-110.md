@@ -623,7 +623,7 @@ host controller and implementation, the interface may enter a power saving state
 ### Nokia OLT (ALCL)
 
 ``` sh
-omci_pipe.sh meadg 131 0 1 | grep -q '41 4C 43 4C' && echo 'Nokia OLT' || echo 'Other OLT'
+omci_pipe.sh meadg 131 0 1 | awk '/41 4C 43 4C/ {print "Nokia OLT"; id=1} /20 20 20 20/ {print "Fake O5"; id=1} END {if (!id) print "Other OLT"}'
 ```
 
 #### GEM port encryption misconfiguration (key errors)
