@@ -69,6 +69,7 @@ The following ONTs commonly used in our guides have the following default IPs yo
 | [HLX-SFPX]            | 192.168.33.1  |
 | [XS-010X-Q]           | 192.168.100.1 |
 | [SPS-34-24T-HP-TDFO]  | 192.168.1.10  |
+| [WT-ONU-STICK]        | 192.168.1.1   |
 
 !!! warning "The default IP for the [WAS-110] and [X-ONU-SFPP] can be either `192.168.11.1` or `192.168.1.1`, depending on the vendor."
 
@@ -77,6 +78,7 @@ The following ONTs commonly used in our guides have the following default IPs yo
   [HLX-SFPX]: ../xgs-pon/ont/calix/100-05610.md
   [XS-010X-Q]: ../xgs-pon/ont/nokia/xs-010x-q.md
   [SPS-34-24T-HP-TDFO]: ../gpon/ont/source-photonics/sps-34-24t-hp-tdfo.md
+  [WT-ONU-STICK]: ../xgs-pon/ont/wintop-optical-technology/wt-onu-stick.md
 
 If the IP is unknown, the industry-standard, cross-platform tool [nmap] can aid in network discovery. The following
 examples scan the three (3) [private IP address] ranges ([RFC 1918]).
