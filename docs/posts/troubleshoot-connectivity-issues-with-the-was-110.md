@@ -281,23 +281,18 @@ rules can also be deceiving, even though it is technically valid.
 </thead>
 <tbody markdown>
 <tr markdown>
-<td markdown>15, 4096, `X`, 15, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>15, 4096, 0, 15, 4096, 0, 0, (0, 15, 0, 0, 15, 0, 0)</td>
 <td markdown>Untagged</td>
 </tr>
 <tr markdown>
-<td markdown>15, 4096, `X`, 14, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>15, 4096, 0, 14, 4096, 0, 0, (0, 15, 0, 0, 15, 0, 0)</td>
 <td markdown>[Dot1Q](https://en.wikipedia.org/wiki/IEEE_802.1Q)</td>
 </tr>
 <tr markdown>
-<td markdown>14, 4096, `X`, 14, 4096, `X`, 0, (0, 15, `X`, `X`, 15, `X`, `X`)</td>
+<td markdown>14, 4096, 0, 14, 4096, 0, 0, (0, 15, 0, 0, 15, 0, 0)</td>
 <td markdown>[QinQ](https://en.wikipedia.org/wiki/IEEE_802.1ad)</td>
 </tr>
 </tbody>
-<tfoot markdown>
-<tr markdown>
-<td colspan="2" markdown>X is a "don't care" field and should be set to zero.</td>
-</tr>
-</tfoot>
 </table>
 
 === "8311 firmware"
