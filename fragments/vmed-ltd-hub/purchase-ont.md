@@ -35,6 +35,10 @@ responsibility or liability for the listed resellers.
 
 ### LC/APC to SC/APC adapter or cable { #purchase-adapter }
 
+!!! note "Adapter Promotion"
+    Supporters of the 8311 Community who have recently purchased a compatible module and made a £5+ donation may be eligible to claim a free SC/APC to LC/APC adapter kit (UK only) from Better Internet Ltd.
+    See the [community promotion page](https://store.betterinternet.ltd/8311-supporter-promo/) for details.
+
 A Female LC/APC to Male SC/APC adapter is necessary for connecting to the [WAS-110] or [X-ONU-SFPP] with the
 provisioned LC/APC cable, or a Male LC/APC to Male SC/APC patch cable, both of which can be purchased at
 <https://www.amazon.co.uk/>.
