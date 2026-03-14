@@ -5,6 +5,7 @@ categories:
   - Fiber Box X6
   - WAS-110
   - Salt Mobile SA
+  - Epic Ltd
   - Sagemcom
 description: Masquerade as the Salt Mobile SA Fiber Box X6 with the WAS-110 or X-ONU-SFPP
 slug: masquerade-as-the-salt-mobile-sa-fiber-box-x6-with-the-was-110

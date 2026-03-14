@@ -18,14 +18,19 @@ The PON serial number uniquely identifies your ONT within the network.
 xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/OnuG/SerialNumber"
 ```
 
+!!! note "Web UI Box Serial Number and GPON Serial Number..."
+    The __GPON Serial Number__ is a hexadecimal string where `47464142` equals `GFAB` in ASCII and
+    matches the __Box Serial Number__.
+
+
 #### Software versions
 
 ONTs utilize an A/B architecture for resilience; consequently, two software versions are identified. These are stored
 as hex-encoded strings and must be processed through a hex-to-ASCII converter to be read in a human-readable format.
 
 ``` sh
-xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions[@uid=1]/Version"
-xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions[@uid=2]/Version"
+xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions/SoftwareImage[@uid=1]/Version"
+xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions/SoftwareImage[@uid=2]/Version"
 ```
 
 #### ONU mode (MIB file) { #onu-mode }

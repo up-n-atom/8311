@@ -7,6 +7,7 @@
     <option value="ebox">&#127464;&#127462; EBOX</option>
     <option value="bell-mts">&#127464;&#127462; Bell MTS</option>
     <option value="bouygues-sa">&#127467;&#127479; Bouygues S.A</option>
+    <option value="epic-ltd">&#127464;&#127486; Epic</option>
     <option value="frontier">&#127482;&#127480; Frontier</option>
     <option value="lightspeed">&#127468;&#127463; Lightspeed</option>
     <option value="orange-sa">&#127467;&#127479; Orange S.A.</option>
