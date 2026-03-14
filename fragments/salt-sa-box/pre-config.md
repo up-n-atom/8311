@@ -26,7 +26,8 @@ xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/Equip
 #### Software versions
 
 ONTs utilize an A/B architecture for resilience; consequently, two software versions are identified. These are stored
-as hex-encoded strings and must be processed through a hex-to-ASCII converter to be read in a human-readable format.
+as hex-encoded strings and must be processed through a hex-to-ASCII converter to be read in a human-readable format for
+configuration.
 
 ``` sh
 xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions/SoftwareImage[@uid=1]/Version"
