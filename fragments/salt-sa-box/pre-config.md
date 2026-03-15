@@ -19,9 +19,8 @@ xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/Equip
 ```
 
 !!! note "Web UI Box Serial Number and GPON Serial Number..."
-    The __GPON Serial Number__ is a hexadecimal string where `47464142` equals `GFAB` in ASCII and
+    The __GPON Serial Number__ is a hex-encoded string where `47464142` equals `GFAB` in ASCII and
     matches the __Box Serial Number__.
-
 
 #### Software versions
 
