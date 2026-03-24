@@ -69,7 +69,7 @@ ethtool -m <interface>
   <tbody>
     <tr>
       <td><strong>Tx Power</strong></td>
-      <td>2 to 5</td>
+      <td>3 to 5</td>
       <td>1 to 7</td>
       <td>0 to 8</td>
       <td>< 0 or > 8</td>
