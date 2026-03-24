@@ -29,13 +29,10 @@ ont: Hub 5x
     Keep the {{ page.meta.ont }} in active service for roughly a week until fully provisioned and the installation
     ticket has been closed.
 
+
 ???+ question "Common misconceptions and answers"
 
-    __Is the WAS-110 or X-ONU-SFPP a router?__
-
-    :   No, the [WAS-110] and [X-ONU-SFPP] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
-        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
-        required for internet access.
+    {% include 'common/gateway-question.md' %}
 
     __Are the gateway MAC and IP Host MAC attribute the same?__
 

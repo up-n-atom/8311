@@ -9,20 +9,12 @@
     :   No, the AT&T supplied SFP+ module is only a physical-layer transceiver compliant with XGS-PON
         [ITU G.9807.1]. It lacks ONT management [ITU G.988], meaning it cannot function as a standalone ONT.
 
-    __Does the WAS-110 or X-ONU-SFPP ONT support GPON wavelengths (1490 nm downstream and 1310 nm upstream)?__
-
-    :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
-        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Semtech GN28L96 ([HLX-SFPX]) laser drivers, which
-        are designed specifically for 10G-PON applications.
-
-    __Is the WAS-110 or HLX-SFPX a router?__
-
-    :   No, the [WAS-110] and [HLX-SFPX] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
-        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
-        required for internet access.
-
  [ITU G.9807.1]: ../xgs-pon/index.md
  [ITU G.988]: ../xgs-pon/index.md
+
+    {% include 'common/gpon-question.md' %}
+
+    {% include 'common/gateway-question.md' %}
 
 ## Verify XGS-PON service
 

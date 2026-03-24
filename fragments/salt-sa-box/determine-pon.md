@@ -4,17 +4,9 @@
 
 ???+ question "Common misconceptions and answers"
 
-    __Does the WAS-110 or X-ONU-SFPP ONT support GPON wavelengths (1490 nm downstream and 1310 nm upstream)?__
+    {% include 'common/gpon-question.md' %}
 
-    :   No, the BOSA in these ONTs is calibrated exclusively for XGS-PON wavelengths: 1577 nm downstream and
-        1270 nm upstream. They use the Macom M02180 ([WAS-110]) and Macom M02181 ([X-ONU-SFPP]) laser drivers, which
-        are designed specifically for 10G-PON applications.
-
-    __Is the WAS-110 or X-ONU-SFPP a router?__
-
-    :   No, the [WAS-110] and [X-ONU-SFPP] are __NOT__ substitutes for a Layer 7 router. They are SFU ONTs, as opposed to
-        HGU, and their sole function is to convert Ethernet to PON over fiber. Additional hardware and software are
-        required for internet access.
+    {% include 'common/gateway-question.md' %}
 
 ## Verify XGS-PON service
 
