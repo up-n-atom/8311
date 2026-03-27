@@ -17,6 +17,7 @@ tags:
 | __RAM__     | 1 GB                                                |                |
 | __BOSA__    | SC/UPC *or* SC/APC - Tx: 1270 nm / Rx: 1577 nm      |                |
 | __EEPROM__  | :check_mark:                                        |                |
+| __UART__    | UART 	Rx: pin 7 / Tx: pin 2 - 115200-8-1-N          |                |
 | __IP__      | 192.168.1.1                                         |                |
 | __SSH__     | :check_mark:                                        |                |
 
