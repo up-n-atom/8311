@@ -230,6 +230,7 @@ Please help us by contributing new versions via the [8311 Discord community serv
 
 * [OPNsense - Orange France FTTH IPv4 & IPv6](https://docs.opnsense.org/manual/how-tos/orange_fr_fttp.html)
 * [Orange bypass on Debian](https://akhamar.github.io/orange-bypass-debian/)
+* [UniFi OS IPTV](https://github.com/jbbodart/orange-iptv)
 
   [Purchase a WAS-110 or X-ONU-SFPP]: #purchase-a-was-110-or-x-onu-sfpp
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
