@@ -278,7 +278,7 @@ Please help us by contributing new versions via the [8311 Discord community serv
 
 5. From the __Settings__ tab, copy the __Username__ and click on __Change Password__ in the __Password__ section.
 
-## IPTV (UniFi OS)
+### IPTV (UniFi OS)
 
 <https://github.com/slavickox/orange-polska-iptv-unifi>
 
