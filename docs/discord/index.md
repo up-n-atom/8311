@@ -5,10 +5,9 @@ hide:
 
 # 8311 Discord Server
 
-The 8311 community is spearheaded by professionals and enthusiasts united by a common goal: to bypass the Internet
-Service Provider (ISP) Customer Premises Equipment (CPE) using commodity hardware. Together, we leverage our collective
-expertise and passion to advocate for greater control and flexibility in how we access and utilize technology at the
-edge.
+The 8311 community is spearheaded by professionals and enthusiasts united by a common goal: to bypass the ISP CPE using
+commodity hardware. Together, we leverage our collective expertise and passion to advocate for greater control and
+flexibility in how we access and utilize technology at the edge.
 
 ## Namesake
 
