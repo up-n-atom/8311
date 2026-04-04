@@ -19,12 +19,12 @@ Join the [8311 community server] and start your bypass with 10 easy steps...
 6. Unlock the *Bazaar* in __#Channels & Roles__ and join in any available [group buys] and/or
    [giveaways]
 7. Enable __@SPAM__ role in __#Channels & Roles__ to get giveaway notifications
-7. Check __#Browse Channels__ for additional categories and/or channels that may pique your interest
-8. Add <https://pon.wiki/> to your browser favourites
+8. Check __#Browse Channels__ for additional categories and/or channels that may pique your interest
+9. Add <https://pon.wiki/> to your browser favourites
 
 Optional:
 
-9. Show your support by boosting the server (__#speed-boosts__) and/or donating to the wiki fund
+10. Show your support by boosting the server (__#speed-boosts__) and/or donating to the wiki fund
    <https://ko-fi.com/pondotwiki>
 
   [#rules]: index.md#rules
