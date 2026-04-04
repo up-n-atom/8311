@@ -8,7 +8,7 @@ hide:
 
 !!! question "New to Discord? check out their official [Getting Started](https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started) guide."
 
-Join the [8311 community server] and start your bypass with 8 easy steps...
+Join the [8311 community server] and start your bypass with 10 easy steps...
 
 1. Read and abide to the __[#rules]__
 2. Choose one or many ISP(s) in __#Channels & Roles__, if you haven't already
@@ -18,6 +18,7 @@ Join the [8311 community server] and start your bypass with 8 easy steps...
 5. Drop a Hello! in __#chit-chat__
 6. Unlock the *Bazaar* in __#Channels & Roles__ and join in any available [group buys] and/or
    [giveaways]
+7. Enable __@SPAM__ role in __#Channels & Roles__ to get giveaway notifications
 7. Check __#Browse Channels__ for additional categories and/or channels that may pique your interest
 8. Add <https://pon.wiki/> to your browser favourites
 
