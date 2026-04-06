@@ -10,8 +10,8 @@ In October 2018, a group of Canadian software developers began collaborating on 
 **now-defunct [DSLReports]**. Due to the forum's restrictive policies regarding reverse engineering and its disdain for
 "[hacker]" culture, the group migrated to a [Slack] workspace dubbed **"BELLY-UP."**
 
-The community initially focused on the technical "cat-and-mouse" game of rooting Bell Canada’s [Sagemcom]-manufactured
-gateways (the Home Hub 3000 and 4000). This mission evolved into developing support for 2.5Gbps network hardware based
+The community initially focused on the "cat-and-mouse" game of rooting Bell Canada’s [Sagemcom] gateways
+(the Home Hub 3000 and 4000). Interest later shifted towards developing support for 2.5Gbps network hardware based
 on [Broadcom] WarpCore and [Marvell] ARMADA architectures. These efforts enabled users to
 **extract the ISP-provided SFP+ GPON ONTs** (such as the [Huawei]  [MA5671A], [Alcatel-Lucent]  [G-010S-P], or [Nokia]
 G-010S-A) and use them in their own equipment, effectively bypassing the restrictive ISP gateway.
