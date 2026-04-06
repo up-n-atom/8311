@@ -23,6 +23,7 @@
 *[HTTP]: Hypertext Transfer Protocol
 *[IDS]: Intrusion Detection Systems
 *[IEEE]: Institute of Electrical and Electronics Engineers
+*[IGMP]: Internet Group Management Protocol
 *[IP]: Internet Protocol
 *[IPS]: Intrusion Prevention Systems
 *[IPTV]: Internet Protocol Television

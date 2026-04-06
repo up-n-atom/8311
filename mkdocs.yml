@@ -34,6 +34,8 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tilde
   - sane_lists
   - tables

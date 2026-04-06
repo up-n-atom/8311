@@ -146,7 +146,7 @@ Take the questionnaire below to determine if your environment and technical skil
       const isRisk = questions[idx].blocker ? currentAns === true : currentAns === false;
       if (isRisk) {
         hintContainer.innerHTML = `
-          <div class="admonition warning">
+          <div class="admonition info">
             <p class="admonition-title">${questions[idx].hint}</p>
           </div>`;
         hintContainer.style.display = 'block';
@@ -234,15 +234,31 @@ Take the questionnaire below to determine if your environment and technical skil
 
 Follow a cautious, test‑driven approach.
 
-1. **Define goals** (VPN, Secure DNS, Ad-Blocking, IPS/IDS).
-2. **Confirm ISP requirements** (VLANs, Authentication, VoIP, IPTV).
-3. **Purchase purpose‑built hardware:**
+- [ ] **Define goals**
 
-    !!! warning "Avoid all‑in‑one consumer gear! Do not rely on mesh routers or gaming routers for core routing and security."
+    !!! tip "Speed should be ^^an afterthought^^, not the main focus."
 
-    - **Gateway/Router:** Dedicated device for routing, firewall, VPN, and IDS/IPS.
-    - **Access Points:** Managed wireless access points for Wi‑Fi coverage.
-    - **Switches:** Managed switches for VLANs, PoE, and traffic control.
+    - [ ] Secure DNS
+    - [ ] Ad-Blocking
+    - [ ] VPN
+    - [ ] IDS/IPS
+    - [ ] Self-hosting
 
-4. **Test first:** Run a custom router behind ISP CPE in **passthrough or bridge mode** before full replacement.
-5. **Harden and maintain:** Enable secure admin access, schedule updates, backup configs, and keep a recovery plan.
+- [ ] **Confirm ISP requirements**
+
+    - [ ] VLANs (Triple Play)
+    - [ ] Authentication (Dot1X)
+    - [ ] VoIP
+    - [ ] IPTV (IGMP)
+
+- [ ] **Research purpose‑built hardware**
+
+    !!! tip "Avoid all‑in‑one's! Do not rely on mesh routers or gaming routers for core routing and security."
+
+    - [ ] **Gateway/Router:** Dedicated device for routing, firewall, VPN, and IDS/IPS.
+    - [ ] **Access Points:** Managed wireless access points for Wi‑Fi coverage.
+    - [ ] **Switches:** Managed switches for VLANs, PoE, and traffic control.
+
+- [ ] **Evaluate current setup**
+
+    !!! tip "Before attempting a full bypass, run your custom router behind the ISP CPE in ^^passthrough or bridge mode^^. For most users, this setup is sufficient."
