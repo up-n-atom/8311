@@ -247,7 +247,7 @@ Follow a cautious, test‑driven approach.
 - [ ] **Confirm ISP requirements**
 
     - [ ] VLANs (Triple Play)
-    - [ ] Authentication (Dot1X)
+    - [ ] Authentication (PPPoE, Dot1X)
     - [ ] VoIP
     - [ ] IPTV (IGMP)
 
