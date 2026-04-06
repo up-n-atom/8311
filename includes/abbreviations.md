@@ -12,6 +12,8 @@
 *[CWMP]: CPE WAN Management Protocol
 *[DDMI]: Digital Diagnostic Monitor Interface
 *[DHCP]: Dynamic Host Configuration Protocol
+*[DoH]: DNS over HTML
+*[DoT]: DNS over TLS
 *[EEPROM]: Electrically Erasable Programmable Read-Only Memory
 *[EPON]: Ethernet Passive Optical Network
 *[FDP]: Foundry Discovery Protocol
@@ -19,8 +21,11 @@
 *[GPON]: Gigabit Passive Optical Network
 *[HGU]: Home Gateway Unit
 *[HTTP]: Hypertext Transfer Protocol
+*[IDS]: Intrusion Detection Systems
 *[IEEE]: Institute of Electrical and Electronics Engineers
 *[IP]: Internet Protocol
+*[IPS]: Intrusion Prevention Systems
+*[IPTV]: Internet Protocol Television
 *[ISP]: Internet Service Provider
 *[JSON]: JavaScript Object Notation
 *[LAN]: Local Area Network
@@ -38,6 +43,7 @@
 *[OMCI]: ONU Management and Control Interface
 *[PBR]: Policy-Based Routing
 *[PLOAM]: Physical Layer Operation Administration and Maintenance
+*[PoE]: Power over Ethernet
 *[PON]: Passive Optical Network
 *[PPP]: Point-to-Point Protocol
 *[PPPoE]: Point-to-Point Protocol over Ethernet
@@ -59,5 +65,7 @@
 *[USB]: Universal Serial Bus
 *[VEIP]: Virtual Ethernet Interface Point
 *[VLAN]: Virtual Local Area Network
+*[VoIP]: Voice over Internet Protocol
+*[VPN]: Virtual Private Network
 *[WAN]: Wide Area Network
 *[XGS-PON]: 10-Gigabit Symmetrical Passive Optical Network
