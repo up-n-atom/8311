@@ -250,6 +250,7 @@ Follow a cautious, test‑driven approach.
     - [ ] Authentication (PPPoE, Dot1X)
     - [ ] VoIP
     - [ ] IPTV (IGMP)
+    - [ ] MAC
 
 - [ ] **Research purpose‑built hardware**
 
