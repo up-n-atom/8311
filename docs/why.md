@@ -94,8 +94,24 @@ Bypassing ISP CPE puts full network control at your edge, enabling improvements 
 
 Take the questionnaire below to determine if your environment and technical skills are suited for a CPE bypass.
 
-<div id="bypass-check" class="md-typeset">
+<div id="questionnaire" class="md-typeset">
+  <div class="admonition note" style="padding: 1.5em;">
+    <p id="question" style="font-size: 0.8rem; font-weight: bold; margin-bottom: 1em; color: var(--md-default-fg-color);"></p>
+    <div id="hint-container" style="display:none; margin-bottom: 1em;"></div>
+    <div style="margin-bottom: 2em; display: flex; gap: 5px;">
+      <button id="yes" class="md-button" style="min-width: 80px;">Yes</button>
+      <button id="no" class="md-button" style="min-width: 80px;">No</button>
     </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--md-default-fg-color--lightest); padding-top: 1.5em;">
+      <div>
+        <button id="prev" class="md-button md-button--secondary">Prev</button>
+        <button id="next" class="md-button md-button--secondary">Next</button>
+      </div>
+      <div id="status" style="font-size: 0.85em; font-weight: normal; opacity: 0.7;"></div>
+    </div>
+    <div id="result" style="margin-top: 1.5em; display: none;"></div>
+  </div>
+</div>
 
 <script>
 (async () => {
@@ -134,9 +150,9 @@ Take the questionnaire below to determine if your environment and technical skil
     const result = container.querySelector('#result');
     const status = container.querySelector('#status');
     const hintContainer = container.querySelector('#hint-container');
-    const qText = container.querySelector('#q-text');
+    const question = container.querySelector('#question');
 
-    qText.textContent = `${idx + 1}. ${questions[idx].q}`;
+    question.textContent = `${idx + 1}. ${questions[idx].q}`;
 
     const answeredCount = answers.filter(a => a !== null).length;
     status.textContent = `Question ${idx + 1} of ${questions.length}`;
@@ -167,7 +183,7 @@ Take the questionnaire below to determine if your environment and technical skil
         result.innerHTML = `<p class="admonition-title">ISP-specific services may fail. We recommend using 'Bridge Mode' instead of a full bypass.</p>`;
       } else if (skillGaps >= 2) {
         result.className = "admonition warning";
-        result.innerHTML = `<p class="admonition-title">Your responses suggest a skill gap that could lead to downtime. Reconsider your want(s) to bypass.</p>`;
+        result.innerHTML = `<p class="admonition-title">Your responses suggest a skill gap. Reconsider your reasoning to bypass.</p>`;
       } else {
         result.className = "admonition success";
         result.innerHTML = `<p class="admonition-title">You have the requisite knowledge to bypass, please proceed with due-diligence.</p>`;
@@ -188,31 +204,8 @@ Take the questionnaire below to determine if your environment and technical skil
   };
 
   const init = () => {
-    const container = document.querySelector('#bypass-check');
+    const container = document.querySelector('#questionnaire');
     if (!container) return;
-
-    container.innerHTML = `
-      <div class="admonition note" style="padding: 1.5em;">
-        <p id="q-text" style="font-size: 0.8rem; font-weight: bold; margin-bottom: 1em; color: var(--md-default-fg-color);"></p>
-
-        <div id="hint-container" style="display:none; margin-bottom: 1em;"></div>
-
-        <div style="margin-bottom: 2em; display: flex; gap: 5px;">
-          <button id="yes" class="md-button" style="min-width: 80px;">Yes</button>
-          <button id="no" class="md-button" style="min-width: 80px;">No</button>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--md-default-fg-color--lightest); padding-top: 1.5em;">
-          <div>
-            <button id="prev" class="md-button md-button--secondary">Prev</button>
-            <button id="next" class="md-button md-button--secondary">Next</button>
-          </div>
-          <div id="status" style="font-size: 0.85em; font-weight: normal; opacity: 0.7;"></div>
-        </div>
-
-        <div id="result" style="margin-top: 1.5em; display: none;"></div>
-      </div>
-    `;
 
     container.querySelector('#yes').onclick = () => { answers[idx] = true; updateUI(container); };
     container.querySelector('#no').onclick = () => { answers[idx] = false; updateUI(container); };
