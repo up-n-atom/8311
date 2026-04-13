@@ -3,6 +3,7 @@ date: 2024-08-11
 categories:
   - XGS-PON
   - XS-010X-Q
+  - XS-010X-R
   - WAS-110
   - Nokia
   - EBOX
@@ -192,6 +193,12 @@ present.
         | MIB File                         | /etc/mibs/prx300_1U.ini       | PPTP i.e. default value                    |
         | PON Slot                         | 10                            |                                            |
         | IP Host MAC Address              | FC:B2:D6:18:47:40             | MAC ID                                     |
+
+    !!! note "XS-010X-R"
+        Model __XS-010X-R__ blocks access to web UI, making it impossible to find the SW Versions A/B. 
+        One value known to work currently is `3TN00669AOCK59`, which coincides with the change in HW version
+        prefix `3FE.. -> 3TN..`. Match regex also should be changed to `(3TN[0-9A-Z]{11})$`. The rest of the 
+        parameters can be found on the sticker. 
 
 3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
 
