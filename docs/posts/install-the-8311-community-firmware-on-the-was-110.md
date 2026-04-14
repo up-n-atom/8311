@@ -139,7 +139,7 @@ are abnormal, contact the seller immediately to start the RMA process. If you're
 
 1. [Enable SSH] from the web UI by following the steps outlined below in the shell upgrade section.
 
-2. Login to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ data-preview target="_blank" }.
+2. Log in to the [WAS-110] remote shell over SSH using the *root* [shell credentials]{ data-preview target="_blank" }.
 
     ``` sh
     ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1
@@ -213,48 +213,48 @@ SSH must be enabled from the web UI prior to running the shell commands.
 
 </div>
 
-1. Within a web browser, navigate to
+1. Navigate to
    <https://192.168.11.1/html/main.html#service/servicecontrol>
-   and, if asked, input the *admin* [web credentials]{ data-preview target="_blank" }.
+   in a web browser and enter your *admin* [web credentials]{ data-preview target="_blank" }.
 
-2. From the __Service Control__ page, check the __SSH__ checkbox and click __Save__.
+2. On the __Service Control__ page, check the __SSH__ checkbox and click __Save__.
 
 ### Upgrade firmware
 
 Run the following commands from the host terminal to upgrade to the 8311 community firmware.
 
-Input the *root* [shell credentials]{ data-preview target="_blank" } when asked.
+1. Input the *root* [shell credentials]{ data-preview target="_blank" } if prompted.
 
-=== ":material-microsoft: Windows"
+    === ":material-microsoft: Windows"
 
-    ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
-        The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
-        If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
-        before 8.9.0.0, please remove `-O` from the `scp` command parameters.
+        ??? note "Prior to Windows 11 Build 22631.4391 (KB5044380) and Windows 10 Build 19045.5073 (KB5045594)..."
+            The `scp` command used the legacy SCP protocol without the need for specifying the `-O` optional parameter.
+            If you're using an older Windows build or an [OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) version
+            before 8.9.0.0, please remove `-O` from the `scp` command parameters.
+
+            ``` sh
+            ssh -V # (1)!
+            ```
+
+            1. OpenSSH version info
+
+            If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
+
+            Also, a popular GUI alternative to the `ssh` command is [Putty](https://putty.org/).
 
         ``` sh
-        ssh -V # (1)!
+        scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
+        ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
         ```
 
-        1. OpenSSH version info
+    === ":simple-apple: macOS / :simple-linux: Linux"
 
-        If you continue to have issues, consider installing and running [WinSCP](https://winscp.net/), a GUI client.
+        ``` sh
+        scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa /tmp/local-upgrade.tar root@192.168.11.1:/tmp/
+        ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
+        ```
 
-        Also, a popular GUI alternative to the `ssh` command is [Putty](https://putty.org/).
-
-    ``` sh
-    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa %Temp%\8311\local-upgrade.tar root@192.168.11.1:/tmp/
-    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 "tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar"
-    ```
-
-=== ":simple-apple: macOS / :simple-linux: Linux"
-
-    ``` sh
-    scp -O -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa /tmp/local-upgrade.tar root@192.168.11.1:/tmp/
-    ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
-    ```
-
-Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+2. Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
 [supplementary upgrade].
 
 !!! note "New SSH host keys will be generated"
@@ -309,31 +309,31 @@ Once rebooted, enjoy the labor of love of the 8311 community. As a first step, i
 
 !!! danger "50/50 chance of soft-bricking the [WAS-110] if proceeded!"
 
-1. Within a web browser, navigate to
+1. Navigate to
    <https://192.168.11.1/html/main.html#admin/upgrade>
-   and, if asked, input the *admin* [web credentials]{ data-preview target="_blank" }.
+   in a web browser and enter your *admin* [web credentials]{ data-preview target="_blank" }.
 
-2. From the __Firmware Upgrade__ page, browse for `local-upgrade.img` from the extracted download, and click
+2. On the __Firmware Upgrade__ page, browse for the `local-upgrade.img` file from the extracted download and click
    __Upgrade__.
 
-Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
+3. Patiently wait out the process, 4 to 5 minutes, or until the web session becomes unresponsive.
 
-??? tip "Run a continuous ping"
-    To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
+    ??? tip "Run a continuous ping"
+        To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
 
-    === ":material-microsoft: Windows"
+        === ":material-microsoft: Windows"
 
-        ``` sh
-        ping -t 192.168.11.1
-        ```
+            ``` sh
+            ping -t 192.168.11.1
+            ```
 
-    === ":simple-apple: macOS / :simple-linux: Linux"
+        === ":simple-apple: macOS / :simple-linux: Linux"
 
-        ``` sh
-        ping 192.168.11.1
-        ```
+            ``` sh
+            ping 192.168.11.1
+            ```
 
-Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+4. Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
 [supplementary upgrade].
 
 ## Supplementary upgrades
@@ -362,13 +362,35 @@ the ONT. It is therefore recommended to install the community firmware on both A
 
     can be removed from future command usage.
 
+<div class="swiper" markdown>
+
+<div class="swiper-slide" markdown>
+
 ![WAS-110 firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_firmware.webp){ loading=lazy }
 
-1. Within a web browser, navigate to
-   <https://192.168.11.1/cgi-bin/luci/admin/8311/firmware>
-   and, if asked, input your *root* password.
+</div>
 
-2. From the __Firmware__ page, browse for `local-upgrade.tar` from the extracted download, and click __Upload__.
+<div class="swiper-slide" markdown>
+
+![WAS-110 browse firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_browse_firmware.webp){ loading=lazy }
+
+</div>
+
+<div class="swiper-slide" markdown>
+
+![WAS-110 install firmware](install-8311-community-firmware-on-the-bfw-solutions-was-110/was_110_luci_install_firmware.webp){ loading=lazy }
+
+</div>
+
+</div>
+
+1. Navigate to
+   <https://192.168.11.1/cgi-bin/luci/admin/8311/firmware>
+   in a web browser and enter your *root* password if prompted.
+
+2. On the __Firmware__ page, browse for the `local-upgrade.tar` file from the extracted download and click __Upload__.
+
+3. Once the upload is complete, click __Install and Reboot__ to finish the upgrade.
 
   [Debian]: https://www.debian.org/
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
@@ -377,6 +399,28 @@ the ONT. It is therefore recommended to install the community firmware on both A
   [supplementary upgrade]: #supplementary-upgrades
   [shell upgrade]: #upgrade-firmware
   [Enable SSH]: #enable-ssh
+
+## Factory Reset
+
+8311 configuration is stored within **U-Boot environment variables**.
+
+1. **Log in** to the [WAS-110] remote shell over SSH as the **root** user:
+
+    ``` sh
+    ssh root@192.168.11.1
+    ```
+
+    ???+ question "Forgot your root password?"
+        If you have forgotten your 8311 root password, you can reset it by following the
+        [Multicast Upgrade and Community Firmware Recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
+        guide.
+
+
+2. **Remove** all 8311 U-Boot environment variables:
+
+    ``` sh
+    fw_printenv | awk -F'=' '/8311/ {print $1}' | xargs fw_setenv
+    ```
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
