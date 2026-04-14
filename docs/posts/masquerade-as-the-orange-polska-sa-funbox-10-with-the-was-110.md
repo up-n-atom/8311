@@ -88,7 +88,7 @@ remainder of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP
 
     __Method 2:__
 
-    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    :    [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
 === "X-ONU-SFPP"
 
@@ -104,7 +104,7 @@ remainder of this guide. If you purchased a pre-flashed [WAS-110] or [X-ONU-SFPP
 
     __Step 2: Multicast upgrade__
 
-    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+    :    Follow through the [WAS-110 multicast upgrade and community firmware recovery](was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
 ## Masquerade setup
 

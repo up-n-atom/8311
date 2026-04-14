@@ -72,7 +72,7 @@ serial USB such as the [SFP Media Buddy].
         The 8311 community firmware includes the Azores bootloader with the preboot multicast upgrade feature as
         described in the guide:
 
-        [WAS-110 multicast upgrade and community firmware recovery](../../../posts/was-110-mulicast-upgrade-and-community-firmware-recovery.md)
+        [WAS-110 multicast upgrade and community firmware recovery](../../../posts/was-110-multicast-upgrade-and-community-firmware-recovery.md)
 
 2. Extract the bootloader from `whole-image.img` using Linux, macOS or WSL and verify it's integrity, i.e. `uboot-azores.bin: OK`.
 
