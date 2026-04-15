@@ -343,7 +343,7 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
 --8<-- "docs/xgs-pon/ont/bfw-solutions/was-110.md:mtd"
 
 The [WAS-110] uses an A/B architecture, which means there are two adjacent firmware images: an active image
-(the currently running and firmware) and an inactive image. Either image can be selected as active, and upon upgrade,
+(the currently running firmware) and an inactive image. Either image can be selected as active, and upon upgrade,
 the inactive image will be overwritten and become the newly active image after reboot, i.e. committed image.
 
 Furthermore, the OLT has the capability to select the active firmware image, upgrade the inactive image, and reboot
@@ -391,6 +391,30 @@ the ONT. It is therefore recommended to install the community firmware on both A
 2. On the __Firmware__ page, browse for the `local-upgrade.tar` file from the extracted download and click __Upload__.
 
 3. Once the upload is complete, click __Install and Reboot__ to finish the upgrade.
+
+    ??? tip "Run a continuous ping"
+        To recieve an early indication that the [WAS-110] has completed its upgrade reboot cycle, run a continuous ping:
+
+        === ":material-microsoft: Windows"
+
+            ``` sh
+            ping -t 192.168.11.1
+            ```
+
+        === ":simple-apple: macOS / :simple-linux: Linux"
+
+            ``` sh
+            ping 192.168.11.1
+            ```
+
+4. Once rebooted, enjoy this labor of love from the 8311 community. As a first step, we recommend performing a
+[supplementary upgrade].
+
+## Supplementary upgrades
+
+### A/B architecture
+
+--8<-- "docs/xgs-pon/ont/bfw-solutions/was-110.md:mtd"
 
   [Debian]: https://www.debian.org/
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
