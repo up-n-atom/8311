@@ -446,6 +446,12 @@ the ONT. It is therefore recommended to install the community firmware on both A
     fw_printenv | awk -F'=' '/^8311/ {print $1}' | xargs fw_setenv
     ```
 
+3. **Verify** all 8311 environment variables have been successfully removed:
+
+    ``` sh
+    fw_printenv | grep '^8311'
+    ```
+
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
 
