@@ -254,7 +254,7 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
         ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa root@192.168.11.1 'tar xvf /tmp/local-upgrade.tar -C /tmp/ -- upgrade.sh && /tmp/upgrade.sh -y -r /tmp/local-upgrade.tar'
         ```
 
-2. Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+2. Once rebooted, enjoy this labor of love from the 8311 community. As a first step, we recommend performing a
 [supplementary upgrade].
 
 !!! note "New SSH host keys will be generated"
@@ -333,7 +333,7 @@ Run the following commands from the host terminal to upgrade to the 8311 communi
             ping 192.168.11.1
             ```
 
-4. Once rebooted, enjoy the labor of love of the 8311 community. As a first step, it is recommended to perform a
+4. Once rebooted, enjoy this labor of love from the 8311 community. As a first step, we recommend performing a
 [supplementary upgrade].
 
 ## Supplementary upgrades
