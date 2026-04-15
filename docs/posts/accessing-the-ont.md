@@ -356,7 +356,7 @@ graph TD
         | **Statistics**                   | :material-checkbox-blank-outline:  |
         | **Description**                  | WAS-110                            |
 
-    3. Switch to Hybrid outbound NAT by navigating to **Firewall > Outbound > NAT**, selecting
+    3. Switch to Hybrid outbound NAT by navigating to **Firewall > NAT > Outbound**, selecting
        **Hybrid outbound NAT rule generation**, clicking **Save**, and clicking **Apply changes**.
 
     4. Add a manual outbound NAT rule, click :material-plus-thick: in the **Manual rules** table, apply the
