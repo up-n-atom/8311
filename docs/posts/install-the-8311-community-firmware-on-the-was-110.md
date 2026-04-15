@@ -419,7 +419,7 @@ the ONT. It is therefore recommended to install the community firmware on both A
 2. **Remove** all 8311 U-Boot environment variables:
 
     ``` sh
-    fw_printenv | awk -F'=' '/8311/ {print $1}' | xargs fw_setenv
+    fw_printenv | awk -F'=' '/^8311/ {print $1}' | xargs fw_setenv
     ```
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
