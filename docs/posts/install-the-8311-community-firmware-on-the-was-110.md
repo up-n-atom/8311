@@ -410,20 +410,6 @@ the ONT. It is therefore recommended to install the community firmware on both A
 4. Once rebooted, enjoy this labor of love from the 8311 community. As a first step, we recommend performing a
 [supplementary upgrade].
 
-## Supplementary upgrades
-
-### A/B architecture
-
---8<-- "docs/xgs-pon/ont/bfw-solutions/was-110.md:mtd"
-
-  [Debian]: https://www.debian.org/
-  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
-  [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
-  [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
-  [supplementary upgrade]: #supplementary-upgrades
-  [shell upgrade]: #upgrade-firmware
-  [Enable SSH]: #enable-ssh
-
 ## Factory Reset
 
 8311 configuration is stored within **U-Boot environment variables**.
