@@ -255,6 +255,7 @@ Follow a cautious, test‑driven approach.
     - [ ] VPN
     - [ ] IDS/IPS
     - [ ] Self-hosting
+    - [ ] Form factor
 
 - [ ] **Confirm ISP requirements**
 
