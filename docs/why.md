@@ -240,10 +240,9 @@ Follow a cautious, test‑driven approach.
 - [ ] **Confirm ISP requirements**
 
     - [ ] VLANs (Triple Play)
-    - [ ] Authentication (PPPoE, Dot1X)
+    - [ ] Authentication (PPPoE, Dot1X, MAC)
     - [ ] VoIP
     - [ ] IPTV (IGMP)
-    - [ ] MAC
 
 - [ ] **Research purpose‑built hardware**
 
