@@ -132,8 +132,8 @@ Before any installation, it's highly recommended to do a simple optics [fault te
 are abnormal, contact the seller immediately to start the RMA process. If you're uncertain, please double-check on the
 [8311 Discord].
 
-[fault test]: troubleshoot-connectivity-issues-with-the-was-110.md#optical-status
-[8311 Discord]: https://discord.pon.wiki/
+  [fault test]: troubleshoot-connectivity-issues-with-the-was-110.md#optical-status
+  [8311 Discord]: https://discord.pon.wiki/
 
 ## Dump & backup firmware <small>optional</small> { #dump-and-backup-firmware data-toc-label="Dump & backup firmware" }
 
@@ -437,6 +437,14 @@ the ONT. It is therefore recommended to install the community firmware on both A
     ``` sh
     fw_printenv | grep '^8311'
     ```
+
+  [Debian]: https://www.debian.org/
+  [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
+  [web credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
+  [shell credentials]: ../xgs-pon/ont/bfw-solutions/was-110.md#shell-credentials
+  [supplementary upgrade]: #supplementary-upgrades
+  [shell upgrade]: #upgrade-firmware
+  [Enable SSH]: #enable-ssh
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
 [^2]: <https://github.com/djGrrr/8311-xgspon-bypass>
