@@ -23,12 +23,12 @@ tags:
 | __EEPROM__  | :check_mark:                                        | [M02181]            |
 | __UART__    | UART 	Rx: pin 7 / Tx: pin 2 - 115200-8-1-N          |                     |
 
-### OEM Firmware
+### OEM Firmware (PTXG)
 
 |             |                                                     |                     |
 | ----------: | --------------------------------------------------- | ------------------- |
-| __IP__      | 192.168.1.1                                         | PTXG Firmware       |
-| __HTTP(S)__ | :x:                                                 | PTXG Firmware       |
+| __IP__      | 192.168.1.1                                         |                     |
+| __HTTP(S)__ | :x:                                                 |                     |
 | __SSH__     | :check_mark:                                        | [Shell credentials] |
 
  [Architecture]: #architecture
