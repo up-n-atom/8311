@@ -7,7 +7,7 @@ hide:
 
 # Why Bypass Your ISP CPE
 
-!!! danger "AI-Generated Guidance & Reality Check"
+???+ danger "AI-Generated Guidance & Reality Check"
     If you arrived at this site based on advice, diagnosis, or directions provided by an AI or Large Language Model
     (LLM): **Please pause and consult with a qualified professional or a trusted human peer.**
 
