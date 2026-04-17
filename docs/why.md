@@ -22,9 +22,8 @@ hide:
     * State-level conspiracy narrative
     * Any other forms or irrational or non-technical speculation
 
-    This is a community for **geeks, hardware tinkering, and networking theory**. If your interest in this technology
-    is driven by a sense of personal threat or a conspiracy, we strongly advise you to seek a human second opinion to
-    safeguard against AI-reinforced misinformation.
+    If your interest in this technology is driven by a sense of personal threat or a conspiracy, we strongly advise you
+    to seek a human second opinion to safeguard against AI-reinforced misinformation.
 
 Replacing or bypassing Internet Service Provider (ISP) fiber Customer Premises Equipment (CPE) grants you granular
 control and privacy, but it shifts the burden of maintenance from the provider to you.
