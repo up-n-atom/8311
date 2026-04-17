@@ -25,7 +25,7 @@ hide:
     If your interest in this technology is driven by a sense of personal threat or a conspiracy, we strongly advise you
     to seek a human second opinion to safeguard against AI-reinforced misinformation.
 
-Replacing or bypassing Internet Service Provider (ISP) fiber Customer Premises Equipment (CPE) grants you granular
+Replacing or bypassing Internet Service Provider (ISP) Customer Premises Equipment (CPE) grants you granular
 control and privacy, but it shifts the burden of maintenance from the provider to you.
 
 ## The Risks (Why NOT)
