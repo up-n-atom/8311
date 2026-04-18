@@ -8,6 +8,8 @@ tags:
 
 # WT-ONU-STICK (WT XGSPON ONU Stick) [^1] [^2]
 
+![WT-ONU-STICK](wt-onu-stick/wt-onu-stick.webp)
+
 ## Specifications
 
 |             |                                                     |                |
