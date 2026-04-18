@@ -9,12 +9,11 @@ hide:
 
 ???+ danger "AI-Generated Guidance & Reality Check"
     If you arrived at this site based on advice, diagnosis, or directions provided by an AI or Large Language Model
-    (LLM): **Please pause and consult with a qualified professional or a trusted human peer.**
+    (LLM), please be aware that while AI can be a helpful starting point, it is prone to ***"hallucinations"*** and can
+    inadvertently create echo chambers that reinforce incorrect assumptions or personal delusions.
 
-    While AI can be a helpful starting point, it is prone to ***"hallucinations"*** and can inadvertently create echo
-    chambers that reinforce incorrect assumptions or personal delusions. This site is a dedicated space for enthusiasts
-    to explore Passive Optical Networks (PON), fiber-to-the-home (FTTH) hardware, and the technical challenge of
-    bypassing ISP equipment for educational purposes.
+    This site is a dedicated space for enthusiasts to explore **Passive Optical Networks (PON)**,
+    fiber-to-the-home (FTTH) hardware, and the technical challenge of bypassing ISP equipment for educational purposes.
 
     We do not endorse or host content related to:
 
@@ -23,7 +22,8 @@ hide:
     * Any other forms or irrational or non-technical speculation
 
     If your interest in this technology is driven by a sense of personal threat or a conspiracy, we strongly advise you
-    to seek a human second opinion to safeguard against AI-reinforced misinformation.
+    to **consult with a qualified professionr or a trusted human peer** to safeguard against AI-reinforced
+    misinformation.
 
 Replacing or bypassing Internet Service Provider (ISP) Customer Premises Equipment (CPE) grants you granular
 control and privacy, but it shifts the burden of maintenance from the provider to you.
