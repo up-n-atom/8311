@@ -22,7 +22,7 @@ hide:
     * Any other forms or irrational or non-technical speculation
 
     If your interest in this technology is driven by a sense of personal threat or a conspiracy, we strongly advise you
-    to **consult with a qualified professionr or a trusted human peer** to safeguard against AI-reinforced
+    to **consult with a qualified professional or a trusted human peer** to safeguard against AI-reinforced
     misinformation.
 
 Replacing or bypassing Internet Service Provider (ISP) Customer Premises Equipment (CPE) grants you granular
