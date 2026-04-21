@@ -45,5 +45,51 @@ ifconfig -vvv <interface> #(1)!
 
 #### 8311 Community Firmware API
 
+##### JSON Endpoint
 Version 2.8.2 and later support a [JSON](https://en.wikipedia.org/wiki/JSON) endpoint at
 <https://192.168.11.1/cgi-bin/luci/8311/metrics>.
+
+##### Home Assistant Entities based on JSON Endpoint
+``` YAML
+rest:
+    scan_interval: 600
+    resource: https://192.168.11.1/cgi-bin/luci/8311/metrics
+    sensor:
+      - name: "PON CPU 1 Temp"
+        value_template: "{{ value_json.cpu1_tempC | round(2) }}"
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state_class: measurement
+      - name: "PON CPU 2 Temp"
+        value_template: "{{ value_json.cpu2_tempC | round(2) }}"
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state_class: measurement
+      - name: "PON Optics Temp"
+        value_template: "{{ value_json.optic_tempC | round(2) }}"
+        unit_of_measurement: "°C"
+        state_class: measurement
+        device_class: temperature
+      - name: "PON Voltage"
+        value_template: "{{ value_json.module_voltage | round(2) }}"
+        device_class: voltage
+        state_class: measurement
+        unit_of_measurement: "V"
+      - name: "PON State"
+        value_template: "{{ value_json.ploam_state }}"
+      - name: "PON Rx Power"
+        value_template: "{{ value_json.rx_power_dBm }}"
+        device_class: signal_strength
+        state_class: measurement
+        unit_of_measurement: "dBm"
+      - name: "PON Tx Power"
+        value_template: "{{ value_json.tx_power_dBm }}"
+        device_class: signal_strength
+        state_class: measurement
+        unit_of_measurement: "dBm"
+      - name: "PON Tx Bias"
+        value_template: "{{ value_json.tx_bias_mA }}"
+        device_class: current
+        state_class: measurement
+        unit_of_measurement: "mA"
+```
