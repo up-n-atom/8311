@@ -35,5 +35,3 @@ walks of life can collaborate to achieve true networking independence.
   [Nokia]: https://en.wikipedia.org/wiki/Nokia
   [Discord]: https://en.wikipedia.org/wiki/Discord
   [8311 community]: https://discord.com/servers/8311-886329492438671420
-
-![Timeline](../assets/images/history.webp){ loading=lazy class="nolightbox" }
