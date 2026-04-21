@@ -38,5 +38,4 @@ screenshots mentioned above.
 
 ## Issues
 
-Issues can be reported here on github or our [community discord server](https://discord.pon.wiki). Pull requests are
-especially welcome.
+Issues can be reported here on github. Pull requests are especially welcome.
