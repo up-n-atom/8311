@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 ## Active Cooling
 
 !!! warning "Caution: Hot surface"

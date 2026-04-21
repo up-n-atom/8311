@@ -11,15 +11,15 @@ In October 2018, a group of Canadian software developers began collaborating on 
 "[hacker]" culture, the group migrated to a [Slack] workspace dubbed **"BELLY-UP."**
 
 The community initially focused on the "cat-and-mouse" game of rooting Bell Canada’s [Sagemcom] gateways
-(the Home Hub 3000 and 4000). Interest later shifted towards developing support for 2.5Gbps network hardware based
+(the Home Hub 3000 and 4000). Interest quickly shifted towards developing support for 2.5Gbps network hardware based
 on [Broadcom] WarpCore and [Marvell] ARMADA architectures. These efforts enabled users to
 **extract the ISP-provided SFP+ GPON ONTs** (such as the [Huawei]  [MA5671A], [Alcatel-Lucent]  [G-010S-P], or [Nokia]
 G-010S-A) and use them in their own equipment, effectively bypassing the restrictive ISP gateway.
 
-As interest in the [Broadcom] WarpCore patches surged, the community outgrew [Slack]’s free-tier limitations.
+As interest in the [Broadcom] WarpCore patches surged and the community outgrew [Slack]’s free-tier limitations.
 In September 2021, "BELLY-UP" transitioned to [Discord], rebranding as the **[8311 community]**. This move allowed the
-group to serve a growing global audience of **"bypass" enthusiasts**, fostering a space where individuals from all
-walks of life can collaborate to achieve true networking independence.
+group to serve a growing global audience of **bypass enthusiasts**, fostering a space where individuals from all
+walks of life can collaborate to achieve networking independence at the edge.
 
   [DSLReports]: https://web.archive.org/web/20250000000000*/https://www.dslreports.com
   [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada

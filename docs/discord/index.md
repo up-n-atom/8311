@@ -5,9 +5,10 @@ hide:
 
 # 8311 Discord Server
 
-The 8311 community is spearheaded by professionals and enthusiasts united by a common goal: to bypass the ISP CPE using
-commodity hardware. Together, we leverage our collective expertise and passion to advocate for greater control and
-flexibility in how we access and utilize technology at the edge.
+The 8311 community is spearheaded by professionals and enthusiasts united by a common goal: to bypass the ISP Fiber CPE
+using commodity hardware, similarly to MAC address spoofing on cable-ISP networks. Together, we leverage our collective
+expertise and passion to advocate for greater control and flexibility in how we access and utilize technology at the
+edge.
 
 ## Namesake
 
@@ -32,7 +33,7 @@ Additionally, the following rules have been put in place to keep the server civi
 1. Keep it technical and well-mannered
 2. NO ^^politics^^ or ^^religion^^ (incl. tech, ie. Linux vs BSD)
 3. NO hate speech (racism, sexism, etc.)
-4. NO ^^explicit^^ or ^^violent^^ material
+4. NO ^^explicit^^, ^^violent^^, or ^^prohibited^^ material (incl. weapons or drugs)
 5. NO ^^spam^^ (incl. CAPS, pings)
 6. NO ^^solicitation^^ and/or ^^advertising^^ *(excluding __#self-promo__)*
 7. DO NOT disclose, publish, or sell personal information of any member past or present
