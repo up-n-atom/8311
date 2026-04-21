@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 ## Active Cooling
 
 !!! warning "Caution: Hot surface"
@@ -50,6 +54,8 @@ Version 2.8.2 and later support a [JSON](https://en.wikipedia.org/wiki/JSON) end
 <https://192.168.11.1/cgi-bin/luci/8311/metrics>.
 
 ##### Home Assistant Entities based on JSON Endpoint
+
+{% raw %}
 ``` YAML
 rest:
     scan_interval: 600
@@ -93,3 +99,4 @@ rest:
         state_class: measurement
         unit_of_measurement: "mA"
 ```
+{% endraw %}
