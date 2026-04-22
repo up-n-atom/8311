@@ -123,8 +123,8 @@ To masquerade, you will need the original ONT serial number and other identifier
         fwenv_set -8 equipment_id iONT620700X
         fwenv_set -8 hw_ver BGW620-700_2.5
         fwenv_set -8 cp_hw_ver_sync 1
-        fwenv_set -8 sw_verA BGW620_5.31.9
-        fwenv_set -8 sw_verB BGW620_5.31.9
+        fwenv_set -8 sw_verA BGW620_5.38.3
+        fwenv_set -8 sw_verB BGW620_5.38.3
         fwenv_set -8 fix_vlans 1
         ```
 
@@ -164,8 +164,8 @@ To masquerade, you will need the original ONT serial number and other identifier
         | Equipment ID               | iONT620700X             |                                               |
         | Hardware Version           | BGW620-700_2.5          |                                               |
         | Sync Circuit Pack Version  | Enable                  |                                               |
-        | Software Version A         | BGW620_5.31.9           | [Version listing]                             |
-        | Software Version B         | BGW620_5.31.9           | [Version listing]                             |
+        | Software Version A         | BGW620_5.38.3           | [Version listing]                             |
+        | Software Version B         | BGW620_5.38.3           | [Version listing]                             |
 
     4. Click __Save & Reboot__ to apply the parameters.
 
