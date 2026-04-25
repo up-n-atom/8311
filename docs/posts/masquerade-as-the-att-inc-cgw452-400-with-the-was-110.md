@@ -1,26 +1,26 @@
 ---
-date: 2026-04-22
+date: 2026-04-25
 categories:
   - XGS-PON
-  - CGW420-505
+  - CGW452-400
   - BGW620-700
   - WAS-110
   - AT&T
   - Vantiva
-description: Masquerade as the AT&T Inc. CGW420-505 with the WAS-110 or HLX-SFPX
-slug: masquerade-as-the-att-inc-cgw420-505-with-the-was-110
+description: Masquerade as the AT&T Inc. CGW452-400 with the WAS-110 or HLX-SFPX
+slug: masquerade-as-the-att-inc-cgw452-400-with-the-was-110
 links:
   - xgs-pon/index.md
   - posts/accessing-the-ont.md
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
   - posts/masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110.md
   - posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110.md
-ont: BGW420-505
+ont: BGW452-400
 ---
 
-# Masquerade as the AT&T Inc. CGW420-505 with the WAS-110 or HLX-SFPX
+# Masquerade as the AT&T Inc. CGW452-400 with the WAS-110 or HLX-SFPX
 
-![Bypass family](masquerade-as-the-att-inc-bgw620-700-with-the-was-110/bypass_bgw620.webp){ class="nolightbox" }
+![Bypass family]
 
 <!-- more -->
 <!-- nocont -->
@@ -35,13 +35,11 @@ ont: BGW420-505
 
 ## Getting Started Business Fiber Important Notes
 
-The CGW420-505 is equipped with a cellular modem for backup internet functionality and is distributed with AT&T Business Fiber. It is imparitive that once you have all the information you need to transition from the CGW420-505 to a masquerade set-up that you remove power from the device so that your own masqueraded router has no issues reacquiring your Transit (and) Static Block IP Addresses from AT&T.
-
-Please note that you will actually be masquerading your provided device as a BGW620-700 but you will be utilizing the CGW420-505's information. This does pose a problem for integrations like Home Assistant that don't recognize the "WNCA" serial unlike the "COMM" serial provided on the BGW620-700.
+The CGW452-400 is equipped with a cellular modem for limited backup internet functionality and is distributed with AT&T Business Fiber. It is imparitive that once you have all the information you need to transition from the CGW452-400 to a masquerade set-up that you remove power from the device so that your own ONU has no issues reacquiring your connection to the AT&T Fiber Network.
 
 ## Configure ONT settings
 
-To masquerade, you will need the original ONT serial number and other identifiers (e.g., software versions) from your
+To masquerade, you will need the original ONT serial number identifier (e.g., __WNCA...__) from your
 {{ page.meta.ont }}'s fiber stats page, as well as the bottom label.
 
 <http://192.168.1.254/cgi-bin/fiberstat.ha>
@@ -95,11 +93,7 @@ To masquerade, you will need the original ONT serial number and other identifier
         | Attribute                  | Value                   | Remarks                                       |
         | -------------------------- | -----------------       | --------------------------------------------- |
         | PON Serial Number (ONT ID) | WNCA&hellip;            | Replace with the ONT ID from the bottom label |
-        | Equipment ID               | iONT620700X             |                                               |
-        | Hardware Version           | BGW620-700_2.5          |                                               |
         | Sync Circuit Pack Version  | :check_mark:            |                                               |
-        | Software Version A         | BGW620_5.38.3           | [Version listing]                             |
-        | Software Version B         | BGW620_5.38.3           | [Version listing]                             |
         | MIB File                   | /etc/mibs/prx300_1U.ini | PPTP i.e. default value                       |
 
     3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down.
@@ -120,11 +114,7 @@ To masquerade, you will need the original ONT serial number and other identifier
 
         ``` sh
         fwenv_set -8 gpon_sn WNCA...
-        fwenv_set -8 equipment_id iONT620700X
-        fwenv_set -8 hw_ver BGW620-700_2.5
         fwenv_set -8 cp_hw_ver_sync 1
-        fwenv_set -8 sw_verA BGW620_5.38.3
-        fwenv_set -8 sw_verB BGW620_5.38.3
         fwenv_set -8 fix_vlans 1
         ```
 
@@ -161,11 +151,8 @@ To masquerade, you will need the original ONT serial number and other identifier
         | -------------------------- | -----------------       | --------------------------------------------- |
         | State                      | Enable                  |                                               |
         | PON Serial Number          | WNCA&hellip;            | Replace with the ONT ID from the bottom label |
-        | Equipment ID               | iONT620700X             |                                               |
-        | Hardware Version           | BGW620-700_2.5          |                                               |
         | Sync Circuit Pack Version  | Enable                  |                                               |
-        | Software Version A         | BGW620_5.38.3           | [Version listing]                             |
-        | Software Version B         | BGW620_5.38.3           | [Version listing]                             |
+
 
     4. Click __Save & Reboot__ to apply the parameters.
 
@@ -178,21 +165,18 @@ To masquerade, you will need the original ONT serial number and other identifier
 
 {% include 'att-inc-bgw/switch-tips.md' %}
 
-## Software versions
+## Troubleshooting
 
-The {{ page.meta.ont }} uses CWMP instead of OMCI for firmware updates. While the OLT rarely requires approval for
-specific software versions, keeping the [WAS-110] up-to-date is beneficial but not strictly necessary.
+The {{ page.meta.ont }} is unique in that it is almost primarily used in AT&T Business Fiber and not generally available "in the wild." While these settings work with the tested OLT, it may not entirely mean that this masquerade is able to be used by all customers with CGW452-400, keeping the [WAS-110] settings up-to-date with any new discoveries may be beneficial but not strictly necessary.
 
-1. Within a web browser, navigate to
-   <http://192.168.1.254/cgi-bin/update.ha>
-2. Copy/paste the __Current software version__ into the form to generate a __Software Version__ attribute.
-   <div style="margin:1em 0;">
-     <form onsubmit="(function(e){e.preventDefault();var f=e.currentTarget,el=f.elements.softver;if(!el.checkValidity())return;el.value='BGW620_'+el.value;})(event)">
-       <input type="text" id="softver" placeholder="Current Version" pattern="^\d\.\d{2}\.\d$"/>
-       <input type="submit" value="Generate" />
-     </form>
-   </div>
+__For the purpose of showing a successful bypass__, see below for screenshots of what your [WAS-110] Web GUI should look like.
 
-{{ read_csv('docs/posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110/versions.csv') }}
+    ![ONT ID & Short Circuit Pack](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_01.webp){ loading=lazy }
+
+    ![Fix VLANs](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_02.webp){ loading=lazy }
+
+    !["Non-False" PLOAM Status O5.1](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_03.webp){ loading=lazy }
+
+    ![PLOAM Status on 8311 [WAS-110] Page](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_04.webp){ loading=lazy }
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
