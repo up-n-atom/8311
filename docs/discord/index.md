@@ -1,14 +1,17 @@
 ---
 hide:
+  - navigation
+  - toc
   - feedback
 ---
 
 # 8311 Discord Server
 
-The 8311 community is spearheaded by professionals and enthusiasts united by a common goal: to bypass the ISP Fiber CPE
-using commodity hardware, similarly to MAC address spoofing on cable-ISP networks. Together, we leverage our collective
-expertise and passion to advocate for greater control and flexibility in how we access and utilize technology at the
-edge.
+The Discord community for all things edge networking, centered on fiber‑optic networking and led by pros and
+enthusiasts, united in instilling computer‑networking independence from Ethernet to PON.
+
+Together we leverage our collective expertise and passion to advocate for greater control and flexibility in how we
+access and utilize technology at the edge.
 
 ## Namesake
 
@@ -19,6 +22,12 @@ were to become the [Baby Bells], including that of [Bell Canada].
   [Alexander Graham Bell]: https://en.wikipedia.org/wiki/Alexander_Graham_Bell
   [Baby Bells]: https://en.wikipedia.org/wiki/Regional_Bell_Operating_Company#Baby-Bell
   [Bell Canada]: https://en.wikipedia.org/wiki/Bell_Canada
+
+&ast; *8311 is an independent community and is not affiliated with, endorsed by, or sponsored by Bell or any Bell‑named entity.*
+
+### Pronouncement
+
+*“eighty‑three eleven”*.
 
 ## Rules
 
@@ -32,13 +41,13 @@ Additionally, the following rules have been put in place to keep the server civi
 
 1. Keep it technical and well-mannered
 2. NO ^^politics^^ or ^^religion^^ (incl. tech, ie. Linux vs BSD)
-3. NO hate speech (racism, sexism, etc.)
+3. NO hate speech (racism, sexism, harassment, intimidation, etc.)
 4. NO ^^explicit^^, ^^violent^^, or ^^prohibited^^ material (incl. weapons or drugs)
 5. NO ^^spam^^ (incl. CAPS, pings)
 6. NO ^^solicitation^^ and/or ^^advertising^^ *(excluding __#self-promo__)*
-7. DO NOT disclose, publish, or sell personal information of any member past or present
+7. DO NOT disclose, publish, or sell personal information of any member past or present (incl. off-platform)
 8. DO NOT direct message members without prior permission or discussion in a public channel
-9. DO NOT discuss ANY forms of theft of service OR fraud
+9. DO NOT discuss ANY forms of theft of service, fraud, OR malice
 
 ## Bazaar
 
@@ -83,7 +92,7 @@ __Baby Jumbo__ (Ethernet frames with a payload slightly > 1500 bytes)
 
 __PON:material-star:__ (Passive Optical Network wiki superstars)
 
-:   [Documentation] and [Code] Contributors
+:   Documentation and Code Contributors
 
 __LSO__ (Large Send Offload)
 
@@ -92,6 +101,3 @@ __LSO__ (Large Send Offload)
 __Broadcast Packet__
 
 :   [Social Media Personalities](../on-the-web.md)
-
-  [Documentation]: https://github.com/up-n-atom/8311
-  [Code]: https://github.com/djGrrr/8311-was-110-firmware-builder
