@@ -15,7 +15,7 @@ links:
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
   - posts/masquerade-as-the-att-inc-bgw320-500-505-with-the-was-110.md
   - posts/masquerade-as-the-att-inc-bgw620-700-with-the-was-110.md
-ont: BGW452-400
+ont: CGW452-400
 ---
 
 # Masquerade as the AT&T Inc. CGW452-400 with the WAS-110 or HLX-SFPX
