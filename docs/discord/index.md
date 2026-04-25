@@ -27,7 +27,7 @@ were to become the [Baby Bells], including that of [Bell Canada].
 
 ### Pronouncement
 
-In spoken English: *“eighty‑three eleven”*.
+*“eighty‑three eleven”*.
 
 ## Rules
 
