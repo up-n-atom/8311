@@ -20,8 +20,6 @@ ont: CGW452-400
 
 # Masquerade as the AT&T Inc. CGW452-400 with the WAS-110 or HLX-SFPX
 
-![Bypass family]
-
 <!-- more -->
 <!-- nocont -->
 
@@ -171,12 +169,12 @@ The {{ page.meta.ont }} is unique in that it is almost primarily used in AT&T Bu
 
 __For the purpose of showing a successful bypass__, see below for screenshots of what your [WAS-110] Web GUI should look like.
 
-    ![ONT ID & Short Circuit Pack](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_01.webp){ loading=lazy }
+![ONT ID & Short Circuit Pack](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_01.webp){ loading=lazy }
 
-    ![Fix VLANs](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_02.webp){ loading=lazy }
+![Fix VLANs](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_02.webp){ loading=lazy }
 
-    !["Non-False" PLOAM Status O5.1](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_03.webp){ loading=lazy }
+!["Non-False" PLOAM Status O5.1](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_03.webp){ loading=lazy }
 
-    ![PLOAM Status on 8311 [WAS-110] Page](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_04.webp){ loading=lazy }
+![PLOAM Status on 8311 [WAS-110] Page](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/screenshot_cgw450_04.webp){ loading=lazy }
 
 [^1]: <https://github.com/djGrrr/8311-was-110-firmware-builder>
