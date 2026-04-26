@@ -25,9 +25,9 @@ were to become the [Baby Bells], including that of [Bell Canada].
 
 &ast; *8311 is an independent community and is not affiliated with, endorsed by, or sponsored by Bell or any Bell‑named entity.*
 
-### Pronouncement
+### Pronunciation
 
-*“eighty‑three eleven”*.
+*“eighty‑three eleven”*
 
 ## Rules
 
