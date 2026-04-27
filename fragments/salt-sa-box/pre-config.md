@@ -29,8 +29,8 @@ as hex-encoded strings and must be processed through a hex-to-ASCII converter to
 used for configuration.
 
 ``` sh
-xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions/SoftwareImage[@uid=1]/Version"
-xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareVersions/SoftwareImage[@uid=2]/Version"
+xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareImages/SoftwareImage[@uid=1]/Version"
+xmo-remote-client --host=192.168.1.1 get-value --path "Device/Optical/G988/EquipmentManagement/SoftwareImages/SoftwareImage[@uid=2]/Version"
 ```
 
 #### ONU mode (MIB file) { #onu-mode }
