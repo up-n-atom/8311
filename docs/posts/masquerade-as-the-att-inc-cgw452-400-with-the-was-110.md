@@ -20,6 +20,8 @@ ont: CGW452-400
 
 # Masquerade as the AT&T Inc. CGW452-400 with the WAS-110 or HLX-SFPX
 
+![Bypass family](masquerade-as-the-att-inc-cgw452-400-with-the-was-110/bypass_cgw452.webp){ class="nolightbox" }
+
 <!-- more -->
 <!-- nocont -->
 
