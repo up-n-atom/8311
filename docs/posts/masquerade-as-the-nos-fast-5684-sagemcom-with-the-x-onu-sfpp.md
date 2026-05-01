@@ -24,11 +24,11 @@ ont: Fast 5684 Sagemcom
 
 {% include 'nos-sagemcom/determine-pon.md' %}
 
-{% include 'nos-sagemcom/purchase-ont.md' %}
+{% include 'fragments/bce-inc-hub/purchase-ont.md' %}
 
-{% include 'nos-sagemcom/pre-config.md' %}
+{% include 'fragments/bce-inc-hub/pre-config.md' %}
 
-{% include 'nos-sagemcom/install-ont-fw.md' %}
+{% include 'fragments/bce-inc-hub/install-ont-fw.md' %}
 
 !!! danger "PLOAM Password" 
     Before proceeding please make sure you have your PLOAM Password from your Fast 5684 Sagemcom.
@@ -113,7 +113,7 @@ Alternatively, for the ONT serial number, it can be found on the label of the {{
   [web credentials]: ../xgs-pon/ont/calix/100-05610.md#web-credentials
   [Version listing]: #software-versions
 
-{% include 'nos-sagemcom/verify-ont.md' %}
+{% include 'fragments/bce-inc-hub/verify-ont.md' %}
 
 !!! success "Congratulations"
     If you made it this far and your PON Status shows an O5.1, you can now store the ISP's modem in a safe place until your lease ends.
