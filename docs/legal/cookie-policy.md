@@ -18,4 +18,4 @@ The website Operator **does not provide a centralized cookie management tool**. 
 
 ## Terms of Use
 
-The use of cookies and local storage is subject to the broader **[Terms and Conditions](/terms-conditions/)** of this website, including all disclaimers regarding third-party infrastructure and the passive role of the website **Operator**.
+The use of cookies and local storage is subject to the broader **[Terms and Conditions](terms-conditions.md)** of this website, including all disclaimers regarding third-party infrastructure and the passive role of the website **Operator**.

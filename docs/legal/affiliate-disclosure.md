@@ -27,4 +27,4 @@ The presence of an affiliate link **does not constitute a guarantee** of a produ
 
 ## Legal Notice
 
-This disclosure is provided in conjunction with the **[Terms and Conditions](/terms-conditions)** and **[Privacy Policy](/privacy-policy)**. All interactions with external links are subject to the risk acknowledgments and limitations of liability defined therein.
+This disclosure is provided in conjunction with the **[Terms and Conditions](terms-conditions.md)** and **[Privacy Policy](privacy-policy.md)**. All interactions with external links are subject to the risk acknowledgments and limitations of liability defined therein.
