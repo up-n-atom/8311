@@ -21,6 +21,12 @@ hide:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6RTNO-nMGBc" title="AT&amp;T Fiber Without the Gateway (It Actually Works)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
+### March 25, 2026
+
+<div class="video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b0UBUbnssWs" title="AT&amp;T Fiber/BGW320 Bypass: Direct to UniFi Dream Machine Pro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ### March 22, 2026
 
 <div class="video">
