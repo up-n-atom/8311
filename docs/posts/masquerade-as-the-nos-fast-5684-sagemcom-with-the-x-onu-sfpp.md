@@ -24,9 +24,9 @@ ont: Fast 5684 Sagemcom
 
 {% include 'nos-sagemcom/determine-pon.md' %}
 
-{% include 'bce-inc-hub/purchase-ont.md' %}
+{% include 'salt-sa-box/purchase-ont.md' %}
 
-{% include 'bce-inc-hub/pre-config.md' %}
+{% include 'nos-sagemcom/pre-config.md' %}
 
 {% include 'bce-inc-hub/install-ont-fw.md' %}
 
@@ -34,7 +34,8 @@ ont: Fast 5684 Sagemcom
     Before proceeding please make sure you have your PLOAM Password from your Fast 5684 Sagemcom.
 
 ## Configure ONT settings
-To masquerade, you will need the original ONT serial number and the PLOAM password. 
+
+To masquerade, you will need the original ONT serial number and the PLOAM password.
 The ONT serial number and other identifiers (e.g., hardware version, software version) from your
 {{ page.meta.ont }}'s can be found in the router's stats page or using the ISP's App, NOSNET.
 
@@ -106,7 +107,7 @@ Alternatively, for the ONT serial number, it can be found on the label of the {{
             | Software Version B         | P-00                    |                         |
 
     3. __Save__ changes and *reboot* from the __System__ menu.
-    
+
 
   [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
 
