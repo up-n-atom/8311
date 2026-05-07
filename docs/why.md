@@ -30,7 +30,7 @@ control and privacy, but it shifts the burden of maintenance from the provider t
 
 ## The Risks (Why NOT)
 
-Bypassing adds complexity and is not necessary or advisable for most users.
+Bypassing is not necessary or advisable for most users, as it poses several downsides:
 
 - **Complexity**  
   ISP hardware is designed for **plug-and-play reliability and convenience**. Bypassing introduces multiple points
@@ -58,13 +58,13 @@ Bypassing adds complexity and is not necessary or advisable for most users.
 
 ## The Rewards
 
-Bypassing ISP CPE puts full network control at your edge, enabling improvements in several areas.
+Bypassing puts full network control at your edge, enabling improvements in several areas:
 
 - **True Transparent Bridging**  
   Eliminate **Double NAT** and the restricted **NAT table/state limits** of ISP's CPE.
 
 - **Optimized Throughput**  
-  Overcome hardware bottlenecks to ensure **full saturation** of subscribed bandwidth.
+  Overcome hardware bottlenecks to ensure **full saturation** of subscribed bandwidth, e.g. 10Gbps or 2.5Gbps networking.
 
 - **Bufferbloat Mitigation**  
   Implement advanced **QoS** to eliminate **bufferbloat** and ensure **lower latency**.
@@ -93,7 +93,7 @@ Bypassing ISP CPE puts full network control at your edge, enabling improvements 
   [Snort]: https://www.snort.org/
 
 - **Policy-Based Routing (PBR)**  
-  Direct outbound traffic flows by forcing **VPN tunnels** ([WireGuard]/[OpenVPN]) for sensitive clients.
+  Direct outbound traffic flows by forcing **VPN tunnels** ([WireGuard]/[OpenVPN]) for sensitive clients, e.g. Ad-Hoc Road Warrior.
 
   [WireGuard]: https://www.wireguard.com/
   [OpenVPN]: https://openvpn.net/
