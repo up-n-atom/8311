@@ -158,7 +158,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
   [password]: ../xgs-pon/ont/bfw-solutions/was-110.md#web-credentials
   [label]: #{{ page.meta.ont | lower | replace(" ", "-") }}-label
 
-{% include 'bce-inc-hub/verify-ont.md' %}
+{% include 'vmed-ltd-hub/verify-ont.md' %}
 
 
 ## Router tips
