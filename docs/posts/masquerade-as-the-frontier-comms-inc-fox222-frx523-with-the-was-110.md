@@ -134,6 +134,12 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
         Some users have reported that they are stuck in the O5.1 "fake" state. While some have had success using the downgraded
         version `R4.4.13.067`, others have not. Your mileage may vary.
 
+    !!! note "Registration ID fallback"
+        Some OLTs reject the `DEFAULT` Registration ID and the ONT will reach O5.1 but fail to authenticate (no OMCI MIB
+        upload, no T-CONTs or GEM ports provisioned). If this occurs, try an all-zeros Registration ID instead — 22 bytes
+        of `0x00`, i.e. `00000000000000000000000000000000000000000000`. Note that `ONU Authentication Status` may continue
+        to display as `0` even when authentication succeeds; verify by actual throughput rather than the status field.
+
 3. __Save__ changes and *reboot* from the __System__ menu.
 
 ### from the shell
@@ -189,6 +195,18 @@ identifiers are available on the back label of the FOX222 or FRX523, color-coord
 
         1. :blue_circle: S/N
         2. [Version listing]
+
+    !!! note "Registration ID fallback"
+        Some OLTs reject the `DEFAULT` Registration ID and the ONT will reach O5.1 but fail to authenticate (no OMCI MIB
+        upload, no T-CONTs or GEM ports provisioned). If this occurs, try an all-zeros Registration ID instead — 22 bytes
+        of `0x00`:
+
+        ``` sh
+        fwenv_set -8 reg_id_hex 00000000000000000000000000000000000000000000
+        ```
+
+        Note that `ONU Authentication Status` may continue to display as `0` even when authentication succeeds; verify by
+        actual throughput rather than the status field.
 
 3. Verify the 8311 U-boot environment and reboot.
 
