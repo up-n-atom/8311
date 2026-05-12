@@ -202,9 +202,9 @@ To access the U-Boot console type `admin` at the prompt: `Hit enter to stop auto
 </thead>
 <tbody markdown>
 <tr markdown>
-<td markdown>[Better Internet](https://store.betterinternet.ltd/)</td>
-<td markdown>[X-ONU-SFPP](https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6)</td>
-<td markdown>:flag_gb: <small class="affiliate"></small></td>
+<td markdown>[Better Internet](https://store.betterinternet.ltd/?ref=pon_wiki)</td>
+<td markdown>[X-ONU-SFPP](https://store.betterinternet.ltd/products/x-onu-sfpp?ref=pon_wiki)</td>
+<td markdown>:flag_gb: :flag_eu: <small class="affiliate"></small></td>
 <td markdown>8311</td>
 </tr>
 <tr markdown>
