@@ -26,7 +26,7 @@ responsibility or liability for the listed resellers.
 
      ---
 
-     :flag_gb: [Better Internet](https://store.betterinternet.ltd/product/x-onu-sfpp/?affiliates=6) <small class="affiliate"></small>
+     :flag_gb: [Better Internet](https://store.betterinternet.ltd/products/x-onu-sfpp?ref=pon_wiki) <small class="affiliate"></small>
 
 </div>
 
