@@ -116,7 +116,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     | Override committed firmware bank | A                               | :check_mark: | OLT inits a reboot if on bank B |
     | Firmware Version Match           | `([0-9]+\.[0-9]+\.[0-9]+_prod)` |              |                                 |
 
-3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down and set the internet VLAN to `911`.
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down and set the internet VLAN to `911`.
 
 4. __Save__ changes and *reboot* from the __System__ menu.
 
