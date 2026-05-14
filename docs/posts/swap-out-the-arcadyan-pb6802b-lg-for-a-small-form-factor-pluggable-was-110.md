@@ -1,26 +1,25 @@
 ---
-date: 2024-06-23
+date: 2026-05-12
 categories:
   - XGS-PON
-  - Hub 5x
+  - Arcadyan Technology
+  - PB6802B-LG
   - WAS-110
   - Virgin Media
-  - Sagemcom
-  - FAST 5685
-  - F5685LGB-VMB
-  - F5685LGB-VMIE
-description: Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
-slug: masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110
+  - GiffGaff
+  - Nexfibre
+description: Swap out the Arcadyan PB6802B-LG for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
+slug: swap-out-the-arcadyan-pb6802b-lg-for-a-small-form-factor-pluggable-was-110
 links:
   - xgs-pon/index.md
   - posts/accessing-the-ont.md
   - posts/troubleshoot-connectivity-issues-with-the-was-110.md
-ont: Hub 5x
+ont: Arcadyan PB6802B-LG
 ---
 
-# Masquerade as the Virgin Media O2 Hub 5x with the WAS-110 or X-ONU-SFPP
+# Swap out the Arcadyan PB6802B-LG for a Small Form-factor Pluggable WAS-110 or X-ONU-SFPP
 
-![Bypass Hub 5x](masquerade-as-the-virgin-media-o2-hub-5x-with-the-was-110/bypass_hub_5x.webp){ class="nolightbox" }
+!!! abstract "This is strictly for the form-factor as they're all SFU (bridge-only) ONTs"
 
 <!-- more -->
 <!-- nocont -->
@@ -34,16 +33,24 @@ ont: Hub 5x
 
     {% include 'common/gateway-question.md' %}
 
-    __Are the gateway MAC and IP Host MAC attribute the same?__
-
-    :   No, they are different. The __IP Host MAC__ is hardcoded as `C4:EB:43:00:00:01`, while the gateway MAC is the
-        value found on the the [label] located at the bottom of the {{ page.meta.ont }}.
-
 {% include 'vmed-ltd-hub/purchase-ont.md' %}
 
-{% include 'vmed-ltd-hub/pre-config.md' %}
+
+## Pre-configuration
+
+Before beginning the ONT configuration, ensure you have addressed the following networking requirements to enable
+successful communication with the PON.
+
+
+### LCT Access Route
+
+To install, upgrade, and configure the ONT, your gateway must be able to reach its Local Craft Terminal (LCT) interface.
+__Follow the [Accessing the ONT] guide to set up the proper network routing between your gateway and the ONT management plane.__
+
+  [Accessing the ONT]: accessing-the-ont.md
 
 {% include 'bce-inc-hub/install-ont-fw.md' %}
+
 
 ## Configure ONT settings
 
@@ -56,6 +63,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 
 * [Web (luci)](#config-via-web)
 * [Shell (linux)](#config-via-shell)
+
 
 ### Via web <small>recommended</small> { #config-via-web data-toc-label="Via web"}
 
@@ -96,26 +104,22 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     !!! reminder
         <ins>Replace</ins> the :blue_circle: __PON Serial Number__ with the one found on the {{ page.meta.ont }} [label].
 
+    | Attribute                        | Value                           | Mandatory    | Remarks                         |
+    | -------------------------------- | ------------------------------- | ------------ | ------------------------------- |
+    | PON Serial Number (ONT ID)       | ARLG&hellip;                    | :check_mark: | :blue_circle: PON S/N           |
+    | Equipment ID                     | PB6802B-LG                      | :check_mark: |                                 |
+    | Hardware Version                 | PB6802B-LG                      | :check_mark: |                                 |
+    | Software Version A               | 3.1.6_prod                      | :check_mark: | [Version listing]               |
+    | Software Version B               | 3.1.6_prod                      |              | [Version listing]               |
+    | MIB File                         | /etc/mibs/prx300_1V.ini         | :check_mark: | VEIP                            |
+    | Override active firmware bank    | A                               | :check_mark: | OLT inits a reboot if on bank B |
+    | Override committed firmware bank | A                               | :check_mark: | OLT inits a reboot if on bank B |
+    | Firmware Version Match           | `([0-9]+\.[0-9]+\.[0-9]+_prod)` |              |                                 |
 
-    | Attribute                  | Value                         | Mandatory    | Remarks                 |
-    | -------------------------- | ----------------------------- | ------------ | ----------------------- |
-    | PON Serial Number (ONT ID) | SMBS&hellip;                  | :check_mark: | :blue_circle: PON S/N   |
-    | Equipment ID               | MERCV3                        |              |                         |
-    | Hardware Version           | 1.0                           |              |                         |
-    | Sync Circuit Pack Version  | :check_mark:                  |              |                         |
-    | Software Version A         | 7.8.3-2410.5                  |              | [Version listing]       |
-    | Software Version B         | 7.8.3-2410.5                  |              | [Version listing]       |
-    | MIB File                   | /etc/mibs/prx300_1V_bell.ini  | :check_mark: | VEIP and more           |
-    | IP Host MAC Address        | C4:EB:43:00:00:01             |              | Shared hardcoded MAC    |
-
-3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, disable __Fix VLANs__ from the drop-down.
-
-    ??? tip "Identify VLANs (Optional: Virgin uses VLAN `100` in the UK and `10` in IE"
-        Once configuration is complete and the fiber is connected, wait for successful authentication (__O5 state__).
-        You can then use the [VLAN Table Analyser](../tools/vlan.md) to identify service VLANs by copying the table
-        from the VLANs page (<https://192.168.11.1/cgi-bin/luci/admin/8311/vlans>) and pasting it into the tool.
+3. From the __8311 Configuration__ page, on the __ISP Fixes__ tab, enable __Fix VLANs__ from the drop-down and set the internet VLAN to `911`.
 
 4. __Save__ changes and *reboot* from the __System__ menu.
+
 
 ### Via shell { #config-via-shell }
 
@@ -130,22 +134,22 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
     !!! reminder "Highlighted lines are <ins>mandatory</ins>"
         <ins>Replace</ins> the :blue_circle: __8311_gpon_sn__ with the __PON S/N__ found on the {{ page.meta.ont }} [label].
 
-    ``` sh hl_lines="1 3 9 10"
-    fwenv_set mib_file
-    fwenv_set -8 iphost_mac !C4:EB:43:00:00:01 #(1)!
-    fwenv_set -8 gpon_sn SMBS... # (2)!
-    fwenv_set -8 equipment_id MERCV3
-    fwenv_set -8 hw_ver 1.0
-    fwenv_set -8 cp_hw_ver_sync 1
-    fwenv_set -8 sw_verA 7.8.3-2410.5 # (3)!
-    fwenv_set -8 sw_verB 7.8.3-2410.5
-    fwenv_set -8 mib_file /etc/mibs/prx300_1V_bell.ini
-    fwenv_set -8 fix_vlans 0
+    ``` sh hl_lines="1 2 3 4 5 6 7 8 10"
+    fwenv_set -8 equipment_id=PB6802B-LG
+    fwenv_set -8 hw_ver=PB6802B-LG
+    fwenv_set -8 override_active=A
+    fwenv_set -8 override_commit=A
+    fwenv_set -8 gpon_sn=ARLG... # (1)!
+    fwenv_set -8 mib_file=/etc/mibs/prx300_1V.ini
+    fwenv_set -8 fix_vlans=1
+    fwenv_set -8 internet_vlan=911
+    fwenv_set -8 fw_match_b64=KFswLTldK1wuWzAtOV0rXC5bMC05XStfcHJvZCk=
+    fwenv_set -8 sw_verA=3.1.6_prod # (2)!
+    fwenv_set -8 sw_verB=3.1.6_prod
     ```
 
-    1. Hardcoded MAC address used by all subscribers
-    2. :blue_circle: PON S/N
-    3. [Version listing]
+    1. :blue_circle: PON S/N
+    2. [Version listing]
 
 3. Verify the 8311 U-boot environment and reboot.
 
@@ -166,7 +170,7 @@ Use your preferred setup method and carefully follow the steps to avoid unnecess
 !!! Note "Detailed router setup falls outside the scope of the documentation due to the multitude of available solutions."
 
 * Apply the [pre-configuration](#pre-configuration) requirements.
-* Configure the WAN VLAN to `100` in the United Kingdom of Great Britain and Northern Ireland and `10` in the Republic of Ireland.
+* Configure the WAN VLAN to `911`.
 * Configure the WAN for DHCP mode.
 
 {% include 'bce-inc-hub/switch-tips.md' %}
@@ -181,11 +185,11 @@ If you would like to help us maintain the software listing, you can contribute n
 
 | Software Version |
 | ---------------- |
-| 7.8.3-2410.5     |
-| 3.7.4-2306.5     |
+| 3.1.6_prod       |
+| 3.1.1_prod       |
 
   [8311 Discord community server]: https://discord.com/servers/8311-886329492438671420
   [WAS-110]: ../xgs-pon/ont/bfw-solutions/was-110.md
   [X-ONU-SFPP]: ../xgs-pon/ont/potron-technology/x-onu-sfpp.md
-  [label]: #hub-5x-label
-  [Version listing]: #hub-5x-software-versions
+  [label]: #arcadyan-pb6802b-lg-label
+  [Version listing]: #software-versions
